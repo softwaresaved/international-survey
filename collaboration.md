@@ -42,6 +42,8 @@ With that section we intended to know
 
 In the RSE survey we used
 
+Note that in the template the questions are in order to make it easier to work with them. However they need to be randomised.
+
 
 ## RSE definition issue
 
@@ -66,6 +68,10 @@ We included two questions to know more about the good practice
 
 We are aware that some RSE can work in private sector and still contribute to research. We are not studying that aspect in UK because our mission is about the RSE working in academy. As consequence, the question are not adapted for the private sector
 
+
+## Gender
+
+This question is quite difficult to create in order to capture the different genders that exists. However, the population will not be necessarily big and the study is not gender centred so we decided to only keep *woman* *man* *other* *prefer not to say*. The category *other* will capture all the potential diversity without creating too much different categories that would have to be grouped together for the analysis. However, it may still be a good option to include all categories or at least a blank field. In that case, adding the option *Trans* and *FREE TEXT*, should be enough. In the present template we left as we did for our own survey.
 
 ## Analysis
 
