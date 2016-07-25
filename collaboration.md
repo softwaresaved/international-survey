@@ -29,13 +29,13 @@ The collaboration will be done on this repository to ensure access to the inform
 The first iteration of the survey did not set up the question as *mandatory*. During the analysis we realised that was a mistake. It is impossible to distinguish the NA to other type of answer. It is then strongly recommended to set up all question to mandatory, execpt for sensible question such as gender - salary. 
  
  
-# Questions
+# Details on questions
 
 This section lists different identified issues or concerns about specifics sections in the survey. 
 
 ## Reasons to leave previous position
 
-With that section we intended to know 
+With that section we intended to know why the respondents would have leave their previous work in private sector. We build the items based on several lists of the mosts shared reasons to leave the jobs
  
  
 ## Work indicators
