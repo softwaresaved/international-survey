@@ -19,7 +19,7 @@ For every questions that imply a fixed list of anwers, a spefic csv file can be 
 
 ## Technical solution
 
-We decided to use the open source [limesurvey](www.limesurvey.org) service to create the survey. This solution present advantage in term of price and variety of hosting solutions. Also it is easier to share survey template that can be later modified by each organisation/countries. The template is in FOLDER. 
+We decided to use the open source [limesurvey](http://www.limesurvey.org) service to create the survey. This solution present advantage in term of price and variety of hosting solutions. Also it is easier to share survey template that can be later modified by each organisation/countries. The template is in FOLDER. 
 
 The collaboration will be done on this repository to ensure access to the information for every one and respect the principle of transparency. However, on early stage, the repository is going to be set up on *private mode* until everyone agrees on going on *public*. 
 
@@ -49,15 +49,15 @@ Note that in the template the questions are in order to make it easier to work w
 
 This section is essential to tailor the answer to the population of interest only. However, the definition of RSE is difficult because it is a relatively new role and there is no consensus on it yet. 
 
-For the previous study, we named the population **Research Software Engineer (RSE)** because it is the term adopted in UK. We know that this term is not possible in Canada. Therefore this needs to be adopted to the most common used term in the respective country/organisation. 
+For the previous study, we named the population **Research Software Engineer (RSEs)** because it is the term adopted in UK. We know that this term is not possible in Canada. Therefore this needs to be adopted to the most common used term in the respective country/organisation. 
 
-The questions we used to define RSE come from the [UKRSE website](http://www.rse.ac.uk/who.html). However, we removed items they were obviously biaised toward a negative definition of the role as well as the one created on the assumption that RSE are post-doc.
+The questions we used to define RSE come from the [UKRSE website](http://www.rse.ac.uk/who.html). However, we removed items they were obviously biaised toward a negative definition of the role as well as the one created on the assumption that RSE are post-doc. Despite the terminology a work on the definition should be done to include more possible variety of RSE around organisations.
+There should also have a way to distinguishes RSE among themselves, which type of coding, work and assistance they provide. The first step toward such distinctions should be done by asking open questions on and analyse it later to see if tendencies are emerging.
  
  
 ## Contribution to papers
 
-We added four questions to know in which extend the RSE are recognised for their paper contribution. This section should have more items about other type of contribution. It would be interesting to know in which extend their code is cited in the papers or if they have written about the 
-
+We added four questions to know in which extend the RSE are recognised for their paper contribution. This section should have more items about other types of contribution. It would be interesting to know in which extend their code is cited in the papers and how it is done. 
 
 ## Good practices
 
@@ -66,7 +66,7 @@ We included two questions to know more about the good practice
 
 ## Academia and private sector
 
-We are aware that some RSE can work in private sector and still contribute to research. We are not studying that aspect in UK because our mission is about the RSE working in academy. As consequence, the question are not adapted for the private sector
+We are aware that some RSEs can work in private sector and still contribute to research. We are not studying that aspect in UK because our mission is about the RSEs working in academy. As consequence, the questions are not adapted for the private sector but a discussion on that aspect is needed. 
 
 
 ## Gender
