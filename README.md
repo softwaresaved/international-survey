@@ -4,39 +4,47 @@ The starting point is the already made survey the SSI conducted in UK during mar
 [//]: # (INSERT the different sections from article)
 
 
-## Explanation of the fields in ['summary_questions.csv']('summary_questions.csv')
+## Explanation of the columns in ['summary_questions.csv']('summary_questions.csv')
 
-* **Section**: The sections are
-* **Type**:
-* **Question**: The question as asked to the participants
+* **Section**: The sections are the actual separation of the survey in different thematic sections. Some overlap may exists when some questions are used as distractors or in case of sensitive questions needed to be asked at the end of the survey
+
+* **Type**: The type is a code to identify to which concept the question is associated too. When several questions are about the same aspect, they are numbered.
+
+* **Question**: The question as presented to the participant
+
 * **Format**: The type of format of the answer:
-    * 'Y/N/NA`:
-    * 'FREETEXT`:
-    * `FREENUMERIC`:
-    * `Dropdown list`:
-    * `Likert scale`:
-* **Mandatory**:
+    * `Y/N/NA`: Yes or No format (with optional N/A when applicable)
+    * `FREETEXT`: A field where participant can encode any text
+    * `FREENUMERIC`: A field where participat can encode any number
+    * `Dropdown list`: A list of choice. All the lists are stored in the ['listAnswers'](./listAnswers') folder
+    * `Likert scale`: A likert scale is used. The type of likert scale is mentioned.
+
+* **Mandatory**: If a answer need to be given by the participants before going further in the survey
+
 * **Conditional**: If the question appears only under a specific question, the condition is explicitly stated in that field
-* **Diff from original**: If the question as been `modified`/`addedd`/*removed` or remain the `same` comparatively to the first iteration of the survey
+
+* **Diff from original**: If the question as been `modified`/`added`/`removed` or remain the `same` comparatively to the first iteration of the survey
+
+    There is three types of modifications that is possible to do:
+    * **Adding/removing questions** to take into account the specificity of the country or situation that were not taken into account. In that case, it could be situations that are not encounter else where or that a similar situation is shared among countries. In that case the questions and the answers have to be made from scratch. This can be also applied for omission in the UK survey. Therefore it is a possibility to enhance the original survey
+
+    * **Adapting the answers to the country** - Some answers are not valid in other countries. The most obvious example is the list of university. In that case a new set of answers has to be created that is independent to the others versions
+    * **Creating correspondances between countries** - This last type of modification is the most difficult but essential. It is to create correspondence between countries. The straight forward example is with salary. We need to create scales of salary. We have to build different salary scales that can be easily compared in the future.
+
+For every questions that imply a fixed list of answers, a specific csv file can be found in the ['listAnswers']('./listAnswers/'). Any adapted and newly created list of answers need to follow the same format to make the adaptation and reuse easier.
+
 * **Source of information**: When applicable, the source of the information itself
+
 * **Change for each country?**: If the answer to the question need to be adapted to the country
+
 * **Comment**: Various comment about the question
-
-
-There is three types of modifications that is possible to do
-* **Adding/removing questions** to take into account the specificity of the country or situation that were not taken into account. In that case, it could be situations that are not encounter else where or that a similar situation is shared among countries. In that case the questions and the answers have to be made from scratch. This can be also applied for omission in the UK survey. Therefore it is a possibility to enhance the original survey
-
-* **Adapting the answers to the country** - Some answers are not valid in other countries. The most obvious example is the list of university. In that case a new set of answers has to be created that is independent to the others versions
-
-* **Creating correspondances between countries** - This last type of modification is the most difficult but essential. It is to create correspondence between countries. The straight forward example is with salary. We need to create scales of salary. We have to build different salary scales that can be easily compared in the future.
-
-
-For every questions that imply a fixed list of answers, a specific csv file can be found in the ['/listAnswers']('./listAnswers'). Any adapted and newly created list of answers need to follow the same format to make the adaptation and reuse easier.
 
 
 ## Technical solution
 
-We decided to use the open source [limesurvey](http://www.limesurvey.org) service to create the survey. This solution present advantage in term of price and variety of hosting solutions. Also it is easier to share survey template that can be later modified by each organisation/countries. The template is in FOLDER.
+We decided to use the open source [limesurvey](http://www.limesurvey.org) service to create the survey. This solution present advantage in term of price and variety of hosting solutions. Also it is easier to share survey template that can be later modified by each organisation/countries. The template is in [template/](./templates').
+
+To distribute the survey, a docker container is going to be provided with the associated templates.
 
 The collaboration will be done on this repository to ensure access to the information for every one and respect the principle of transparency. However, on early stage, the repository is going to be set up on *private mode* until everyone agrees on going on *public*.
 
@@ -52,7 +60,7 @@ This section lists different identified issues or concerns about specifics secti
 
 ## Reasons to leave previous position
 
-With that section we intended to know why the respondents would have leave their previous work in private sector. We build the items based on several lists of the mosts shared reasons to leave the jobs
+With that section we intended to know why the respondents would have leave their previous work in private sector. We build the items based on several lists of the most shared reasons to leave the jobs
 
 
 ## Work indicators
@@ -68,7 +76,7 @@ This section is essential to tailor the answer to the population of interest onl
 
 For the previous study, we named the population **Research Software Engineer (RSEs)** because it is the term adopted in UK. We know that this term is not possible in Canada. Therefore this needs to be adopted to the most common used term in the respective country/organisation.
 
-The questions we used to define RSE come from the [UKRSE website](http://www.rse.ac.uk/who.html). However, we removed items they were obviously biaised toward a negative definition of the role as well as the one created on the assumption that RSE are post-doc. Despite the terminology a work on the definition should be done to include more possible variety of RSE around organisations.
+The questions we used to define RSE come from the [UKRSE website](http://www.rse.ac.uk/who.html). However, we removed items they were obviously biased toward a negative definition of the role as well as the one created on the assumption that RSE are post-doc. Despite the terminology a work on the definition should be done to include more possible variety of RSE around organisations.
 There should also have a way to distinguishes RSE among themselves, which type of coding, work and assistance they provide. The first step toward such distinctions should be done by asking open questions on and analyse it later to see if tendencies are emerging.
 
 
@@ -79,7 +87,6 @@ We added four questions to know in which extend the RSE are recognised for their
 ## Good practices
 
 We included two questions to know more about the good practice
-
 
 ## Academia and private sector
 
