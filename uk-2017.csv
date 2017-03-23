@@ -42,7 +42,7 @@ Section,Done in Lime,Type,Question,Format,Mandatory,Conditional,Source of inform
 4,y,conf2can,"If yes, which conference(s)/workshop(s)",FREETEXT,,conf2_can,,,
 4,y,stability1,What is the bus factor of your most important software project?,Drop down list,Y,,,,
 4,y,stability2,Is there a technical hand-over plan for your most important software project?,Y/N/NA,Y,,,,
-4,y,currentWork2,Are you working in a larger group/organisation to provide this help/expertise?,Y/N/NA,,if yes to currentWork1,,N,Split previous question into two to avoid double items
+4,y,currentWork2,Do you work for a Research Software Group?,Y/N/NA,,,,N,Split previous question into two to avoid double items
 4,y,proj1can,How many software projects are you currently involved in?,FREENUMERIC,,,,,
 4,y,proj4can,How are your projects typically tested (check all that apply)? ,"No formal testing, the developers do their own testing, dedicated test engineers, user testing",,,,,
 4,y,open01can,"Do you release some of the software projects you’ve worked on, under an open source licence or as free software",Y/N/NA,Y,,,,
