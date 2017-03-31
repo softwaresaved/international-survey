@@ -9,7 +9,7 @@
 # In[1]:
 
 # Load libraries
-
+import re
 import pandas as pd
 import matplotlib
 
@@ -21,19 +21,21 @@ matplotlib.use('TkAgg')
 
 import matplotlib.pyplot as plt
 
-#  When using this script with ipython and vim
+#  When using this script with ipython and vimss
 plt.ion()
 plt.show()
 
 import numpy as np
 
 
-# In[2]:
 
 # Load dataset
 df = pd.read_csv('./dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
 # Number of row == number of participants
 len(df.index)
+
+# Replacing all the answer "Prefer not to answer" by NaN, as they are not useful in the analysis
+df.replace('Prefer not to answer', np.NaN, inplace=True)
 
 
 # ### Date submitted
@@ -51,67 +53,59 @@ len(df.index)
 # A question asked the participants in which country they were currently working and specify when it was not Canada.
 #
 
-# In[4]:
 
 pd.crosstab(df['In which country do you work?'], columns='Countries')
 
 
 # There is only 4 others. Which are only one from Japan, 2 from USA and one from UK.
 
-# In[5]:
 
 pd.crosstab(df['In which country do you work? [Other]'], columns='Other countries')
 
 
-# As this answer are not useful for CANARIE, because these people are not working in Canada, they are removed from the dataset.
+#/ As this answer are not useful for CANARIE, because these people are not working in Canada, they are removed from the dataset.
 
-# In[6]:
 
 df = df.loc[df['In which country do you work?'] != 'Other']
 # Getting the number of row from the reduced dataframe
 len(df.index)
 
 
+
 # ### Writing software as part of the work
 #
 # One question asked if the participants write software for research as part of their work.
 
-# In[7]:
 
 pd.crosstab(df['Do you write software for research as part of your job?'], columns='Writing software')
 
 
 # 13 answered 'No'. This survey, being about researcher that write codes, they are removed from the dataset
 
-# In[8]:
 
 df = df.loc[df['Do you write software for research as part of your job?'] == 'Yes']
 # Getting the number of row from the reduced dataframe
 len(df.index)
 
 
-# ## Univariate analysis
-#
-#
+
+
+# ########################## QUESTIONS CLEANING ###############################
 
 # ### Languages
 #
 # The survey was in French and in English. The option choose by the participant was collected. It is possible then to see the proportion of participants that answered the survey in French or in English
 
-# In[9]:
 
 pd.crosstab(df['Start language'], columns='Language')
 
 
-# In[10]:
 
 df['Start language'].value_counts().plot(kind='bar')
 
 
 # ### Education level
 # The question asked the level of education
-
-# In[11]:
 
 # Recode the column as categorical variable
 df['What is the highest level of education you have attained?'] = df['What is the highest level of education you have attained?'].astype('category')
@@ -126,69 +120,374 @@ df['What is the highest level of education you have attained?'].cat.reorder_cate
 pd.crosstab(df['What is the highest level of education you have attained?'], columns='Education level')
 
 
-# In[12]:
-
 df['What is the highest level of education you have attained?'].value_counts().plot(kind='barh', sort_columns=True)
 
 
-# ### Discipline
-#
-# In which discipline the participants obtained their highest qualification. The answers were from the [NSERC codes](http://www.nserc-crsng.gc.ca/Help-Aide/Codes-ListeDeCodes_Eng.asp).
-# However, it is the option 'Other', followed by a freetext option, which is the most chosen.
-# Therefore, before plotting it, we need to clean and merge these answers with the NESRC ones.
-
-# #### Discipline -- Other
-#
-#
-
-# In[19]:
-
-df = pd.read_csv('./dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
-# df['In which discipline is your highest academic qualification? [Other]'] = df['In which discipline is your highest academic qualification? [Other]'].str.lower().astype('category')
-
-
-# # Recode the different categories to an existing (High level NSERC code).
-def recode_disciplines(x):
-    """
-    Recode values from Disciplines -- Others to match
-    prexisting categories from NSERC code
-    """
-    dict_of_replacement = {'bioinfo': 'Bioinformatics',
-                           'computer': 'Information technology',
-                           'informatique': 'Information technology',
-                           'history': 'Social sciences and humanities',
-                           'biophysics': 'Physics',
-                           'software': 'Information and communication services',
-                           'dance': 'Social Sciences and Humanities',
-                           'musique': 'Social Sciences and Humanities'}
-    if not pd.isnull(x):
-        for k in dict_of_replacement:
-            if k.lower() in str(x).lower():
-                return dict_of_replacement[k].capitalize()
-
-        return 'Other'
-
-# # Apply the re encoding to the column discipline Other
-df['In which discipline is your highest academic qualification? [Other]'] = df['In which discipline is your highest academic qualification? [Other]'].apply(recode_disciplines)
-
-# Now it just need to merge the two discipline column into one
-
-# In[15]:
-
-df['In which discipline is your highest academic qualification?'].replace('Other',df['In which discipline is your highest academic qualification? [Other]'], inplace=True)
-
-df['In which discipline is your highest academic qualification?'] = df['In which discipline is your highest academic qualification?'].apply(str.capitalize).astype('category')
-
-
-
-# In[82]:
 
 pd.crosstab(df['In which discipline is your highest academic qualification?'], columns='Disciplines')
 
 
-# In[83]:
-
 df['In which discipline is your highest academic qualification?'].value_counts().plot(kind='barh', sort_columns=True)
 
 
-# In[84]:
+# ### Time spend on different activities
+# First it is needed to recode some values (1, 5, 10) to remove the associated text and get only the number.
+
+
+
+
+
+
+# Calculate the average of all the time_activity questions and plotting them
+
+df[time_activity].mean(axis=0).plot(kind='bar')
+df[time_activity].plot(kind='bar')
+df[time_activity]
+
+
+
+
+
+
+
+######### QUESTIONS WITH LIKERT SCALE
+
+def recode_likert_time(df, colname):
+    recode_time = {'never': '1',
+                   '5': '5',
+                   '10': '10'}
+    recode_value(df, colname, recode_time)
+
+# ## 'On average, how much of your time is spent developing software?',
+# ## 'On average, how much of your time is spent on research?'
+# ## 'On average, how much of the time you spend developing software is spent on new development/enhancement?'
+# ## 'On average, how much of the time you spend developing software is devoted to maintenance and support activities?'
+# ## 'On average, how much time do you spend on management?'
+# ## 'On average, how much time do you spend on other activities?'
+time_activity = ['On average, how much of your time is spent developing software?',
+                 'On average, how much of your time is spent on research?',
+                 'On average, how much of the time you spend developing software is spent on new development/enhancement?',
+                 'On average, how much of the time you spend developing software is devoted to maintenance and support activities?',
+                 'On average, how much time do you spend on management?',
+                 'On average, how much time do you spend on other activities?']
+for i in time_activity:
+    df[i] = df[i].apply(recode_values, args=(recode_time,)).astype('category')
+
+
+# ## 'What percentage of these developers are dedicated to the project full time?',
+
+df['What percentage of these developers are dedicated to the project full time?'].unique()
+
+
+
+######### QUESTION WITH NUMERICAL ANSWER ABOUT FREQUENCY
+
+def replace_project(x):
+
+    if pd.isnull(x):
+        return
+    if x >=1 and x <=3:
+        return "1-3"
+    elif x >=4 and x <=6:
+        return "4-6"
+    elif x >=7 and x <=9:
+        return "7-9"
+    elif x > 10:
+        return ">10"
+
+
+# ## 'How many software developers typically work on your projects?',
+d = pd.crosstab(df['How many software developers typically work on your projects?'], margins=False, colnames=[''], columns = 'Number of software developers')
+d
+d.plot(kind='bar')
+
+
+# ## 'How many software projects are you currently involved in?',
+
+df['How many software projects are you currently involved in?[recat]'] = df['How many software projects are you currently involved in?'].apply(replace_project)
+
+d = pd.crosstab(df['How many software projects are you currently involved in?[recat]'], margins=False, colnames=[''], columns='Number of software projects')
+d
+d.plot(kind='bar')
+
+
+# How many years of software development experience do you have?
+d = pd.crosstab(df['How many years of software development experience do you have?'], columns='Year of development')
+d.plot(kind='bar')
+
+# ## 'How many software components from science.canarie.ca have you integrated into your projects?',
+
+
+
+
+##########  Questions with a potential 'Other' that may need to be recoded
+
+def explore_other(colname):
+    """
+    To output the unique value of the column
+    and the column '[Other]' associated with it
+    :params:
+        :colnames str(): string to match the column
+    :return: None
+    """
+    col_other = colname + ' [Other]'
+    print('Unique values in the normal column')
+    print(df[colname].unique())
+    print('Unique values in the other columns')
+    print(df[col_other].unique())
+    return colname
+
+
+def recode_values(x, replacement_values, default=False):
+    """
+    Function to use with an  apply on a Serie to replace values if they match
+    the values from the dictionary passed into the argument.
+    :params:
+        :replacement_values dict(): K are the content to match and values the content
+        to replace with
+        : default: if a value is given to default, this value will be return, if it is
+        false, the passed value is returned instead
+    :return:
+        :x: the x is returned or the replacement values if found in the dictionary or the
+        default if not None.
+    """
+    if not pd.isnull(x):
+        for k in replacement_values:
+            if str(k).lower() in str(x).lower():
+                try:
+                    return replacement_values[k]
+                except AttributeError:
+                    raise
+            if default:
+                return default
+        return x
+
+
+def merging_others(df, colname,  replacement_values=None):
+    """
+    Function to wrap the different modification applied on
+    the columns that have a `other` column associated.
+    Only search if some others could be merged with the prexisting answers
+    and merge it to into the original column, then transform the column into
+    categorical variable
+    :params:
+        :df pd.df(): dataframe containing the data
+        :colname str(): string that have the column header to select the right column
+        :replacement_values dict(): contain which value to match in the column 'other' as
+        the key and which value to replace with. If it is None, skip the transformation (Default)
+    :return:
+        :None: The operation is a replace `inplace`
+    """
+    colname_other = var+ ' [Other]'
+
+    if replacement_values:
+        df[colname_other] = df[colname_other].apply(recode_values, args=(replacement_values, 'Ohter'))
+
+        df[colname].replace('Other', df[colname_other], inplace=True)
+
+    df[colname] = df[colname_other].apply(str.capitalize).astype('category')
+
+
+
+# ## 'In which discipline is your highest academic qualification?'
+# ## 'In which discipline is your highest academic qualification? [Other]'
+
+# In which discipline the participants obtained their highest qualification. The answers were from the [NSERC codes](http://www.nserc-crsng.gc.ca/Help-Aide/Codes-ListeDeCodes_Eng.asp).
+# However, it is the option 'Other', followed by a freetext option, which is the most chosen.
+# Therefore, before plotting it, we need to clean and merge these answers with the NESRC ones.
+
+var = explore_other('In which discipline is your highest academic qualification?')
+discipline_values = {'bioinfo': 'Bioinformatics',
+                     'computer': 'Information technology',
+                     'informatique': 'Information technology',
+                     'history': 'Social sciences and humanities',
+                     'biophysics': 'Physics',
+                     'software': 'Information and communication services',
+                     'dance': 'Social Sciences and Humanities',
+                     'musique': 'Social Sciences and Humanities',
+                     'agric': 'Agricultural engineering'}
+merging_others(df, var, discipline_values)
+
+
+# ## 'What development methodology does your current project use?',
+# ## 'What development methodology does your current project use? [Other]',
+var = explore_other('What development methodology does your current project use?')
+methodology_values = {'agile': 'Agile',
+                      'scrum': 'Scrum',
+                      'depends on the project': 'No formal methodology'}
+merging_others(df, var, methodology_values)
+
+
+# ## 'What type of organization do you work for?',
+# ## 'What type of organization do you work for? [Other]',
+var = explore_other('What type of organization do you work for?')
+mergin_others(df, var)
+
+
+# ## 'In which application area do you primarily work?',
+# ## 'In which application area do you primarily work? [Other]',
+var = explore_other('In which application area do you primarily work?')
+merging_others(df, var, discipline_values)
+
+
+# ## 'What is the nature of your current employment?',
+# ## 'What is the nature of your current employment? [Other]',
+var = explore_other('What is the nature of your current employment?')
+merging_others(df, var)
+
+
+# ## 'What is your Operating System of choice for development?',
+# ## 'What is your Operating System of choice for development? [Other]',
+var = explore_other('What is your Operating System of choice for development?')
+os_deploy_values = {'*': 'Several OS'}
+merging_other(df, var, os_deploy_values)
+
+
+# ## 'What is your Operating System of choice for deployment?',
+# ## 'What is your Operating System of choice for deployment? [Other]',
+var = explore_other('What is your Operating System of choice for deployment?')
+os_dev_values = {'linux': 'Several OS',
+                 'windows': 'Several OS',
+                 'mac': 'Several OS'}
+mergin_other(df, var, os_dev_values)
+
+
+
+######### Questions that are splitted between several questions but about the same concepts
+
+
+# ## 'What would you hope to get out of such an organization? [Networking]',
+# ## 'What would you hope to get out of such an organization? [Software collaborations]',
+# ## 'What would you hope to get out of such an organization? [Research collaborations]',
+# ## 'What would you hope to get out of such an organization? [Training]',
+# ## 'What would you hope to get out of such an organization? [Research Software Standards and Interoperability]',
+# ## 'What would you hope to get out of such an organization? [Job opportunities]',
+# ## 'What would you hope to get out of such an organization? [Other]',
+
+# ## 'How are your projects typically tested?  [No formal testing]',
+# ## 'How are your projects typically tested?  [The developers do their own testing]',
+# ## 'How are your projects typically tested?  [Dedicated test engineers]',
+# ## 'How are your projects typically tested?  [User testing]',
+
+# ## 'How is your current research software work funded? [Employer]',
+# ## 'How is your current research software work funded? [CANARIE]',
+# ## 'How is your current research software work funded? [Canadian Foundation for Innovation (CFI)]',
+# ## 'How is your current research software work funded? [Canadian Institutes of Health Research (CIHR)]',
+# ## 'How is your current research software work funded? [Genome Canada]',
+# ## 'How is your current research software work funded? [Natural Sciences and Engineering Research Council of Canada (NSERC)]',
+# ## 'How is your current research software work funded? [Social Sciences and Humanities Research Council (SSHRC)]',
+# ## 'How is your current research software work funded? [I don't know]',
+# ## 'How is your current research software work funded? [Other]',
+
+# Get the list of the associated questions
+list_var = ["How is your current research software work funded? [Employer]",
+            "How is your current research software work funded? [CANARIE]",
+            "How is your current research software work funded? [Canadian Foundation for Innovation (CFI)]",
+            "How is your current research software work funded? [Canadian Institutes of Health Research (CIHR)]",
+            "How is your current research software work funded? [Genome Canada]",
+            "How is your current research software work funded? [Natural Sciences and Engineering Research Council of Canada (NSERC)]",
+            "How is your current research software work funded? [Social Sciences and Humanities Research Council (SSHRC)]",
+            "How is your current research software work funded? [I don't know]",
+            "How is your current research software work funded? [Other]"]
+list_values = [s.split('[', 1)[1].split(']')[0] for s in list_var]
+
+/
+# Split the string of the columns name and extract the value within the brackets
+def get_type_funding(x, colname):
+    if pd.notnull(x):
+        replace_value = colname.split('[', 1)[1].split(']')[0]
+        return replace_value
+
+for colname in list_var:
+    df['test_{}'.format(colname)] = df[colname].apply(get_type_funding, args=(colname,))
+df["How is your current research software work funded? [Employer]"].unique
+df['test_How is your current research software work funded? [Employer]']
+# ## 'What platform(s) are your research software projects deployed on? [Compute Canada HPC]',
+# ## 'What platform(s) are your research software projects deployed on? [University computer centre]',
+# ## 'What platform(s) are your research software projects deployed on? [Other HPC]',
+# ## 'What platform(s) are your research software projects deployed on? [Cloud service]',
+# ## 'What platform(s) are your research software projects deployed on? [Stand-alone server(s)]',
+# ## 'What platform(s) are your research software projects deployed on? [Laptop/desktop]',
+# ## 'What platform(s) are your research software projects deployed on? [Mobile]',
+# ## 'What platform(s) are your research software projects deployed on? [Other]',
+
+
+
+######## QUESTIONS WITH LOGICAL FOLLOWING QUESTIONS
+
+# ## 'Do you work within a group that provides software development help or expertise to researchers from across your organization?',
+# ## 'Is there such a group within your organization?',
+# ## 'Do you think such a group would have value?',
+# ## 'Would you be interested in participating in such a group?',
+
+
+# ## 'Have you ever presented your software work at a conference or workshop? ',
+# ## 'Which conference(s)/workshop(s)?',
+
+
+# ## 'When you release code, how often do you use an open source license?',
+# ## 'List any open repositories (eg. GitHub) to which your software projects have been published.',
+# ## 'When you release code or data, how often do you assign a Digital Object Identifier (DOI) to it?',
+
+
+# ## 'Are you a member of an association of Research Software Developers (e.g UK RSE)?',
+# ## 'Would you be interested in joining such an organization if one was formed in Canada?',
+
+
+# ## 'Do any of your current projects make use of a data management or data archiving component?',
+# ## 'Is it part of your software or an external system? (please specify)',
+
+
+# ## 'Have you contributed software to research that has been published in a journal or presented at a conference?',
+# ## 'In general, when your software contributes to a paper, are you acknowledged in that paper?',
+# ## 'Are you generally named as the main author of the paper?',
+# ## 'Are you generally named as a co-author of the paper?',
+# ## 'Are you generally acknowledged in the main paper?',
+
+
+
+
+##########  QUESTIONS THAT HAVE BEEN ANSWERED BY YES OR NO
+
+# ## 'Do your research software projects typically include a project manager?',
+
+# ## 'Do any of your current projects accommodate the open/public sharing of data?',
+
+# ## 'Is the creation of a Digital Object Identifier (DOI) and metadata for individual assets supported?',
+
+# ## 'Have you developed software that is accessed from multiple institutions?',
+
+# ## 'Do any of your current or previous projects make use of the Canadian Access Federation (CAF) Federated Identity Management (FIM) service?',
+
+# ## 'Have you ever visited the Research Software Registry at science.canarie.ca?',
+
+
+# ## 'Do you consider yourself a professional software developer?'
+df['Do you consider yourself a professional software developer?']
+d = pd.crosstab(df['Do you consider yourself a professional software developer?'], margins=False, colnames=[''], columns='Consider as software developer')
+d.plot(kind='bar')
+
+
+
+
+
+
+
+######### QUESTIONS WITH COMPLETE FREE TEXT
+
+# ## 'What is your current job title?',
+
+
+# ## 'In your opinion, what are the three most important skills that a Research Software Developer must possess? These skills can be technical and non-technical.',
+
+
+# ## 'What three skills would you like to acquire or improve to help your work as a Research Software Developer? These skills can be technical and non-technical.',
+
+
+# ## 'What are the three tools or services you use most often in your software work?',
+
+
+# ## 'What programming languages do you use in developing research software? Please list in order, beginning with most frequently used.',
+
+
+# ## 'List any public identity providers (e.g. Google, Facebook, Live, LinkedIn, Twitter, etc.) used in your current or previous projects.',
