@@ -9,8 +9,8 @@
 # In[1]:
 
 # Load libraries
-import re
 import pandas as pd
+import numpy as np
 import matplotlib
 
 # When using Ipython within vim
@@ -24,9 +24,6 @@ import matplotlib.pyplot as plt
 #  When using this script with ipython and vimss
 plt.ion()
 plt.show()
-
-import numpy as np
-
 
 
 # Load dataset
@@ -63,13 +60,12 @@ pd.crosstab(df['In which country do you work?'], columns='Countries')
 pd.crosstab(df['In which country do you work? [Other]'], columns='Other countries')
 
 
-#/ As this answer are not useful for CANARIE, because these people are not working in Canada, they are removed from the dataset.
+# As this answer are not useful for CANARIE, because these people are not working in Canada, they are removed from the dataset.
 
 
 df = df.loc[df['In which country do you work?'] != 'Other']
 # Getting the number of row from the reduced dataframe
 len(df.index)
-
 
 
 # ### Writing software as part of the work
@@ -88,18 +84,13 @@ df = df.loc[df['Do you write software for research as part of your job?'] == 'Ye
 len(df.index)
 
 
-
-
 # ########################## QUESTIONS CLEANING ###############################
 
 # ### Languages
 #
 # The survey was in French and in English. The option choose by the participant was collected. It is possible then to see the proportion of participants that answered the survey in French or in English
 
-
 pd.crosstab(df['Start language'], columns='Language')
-
-
 
 df['Start language'].value_counts().plot(kind='bar')
 
@@ -123,7 +114,6 @@ pd.crosstab(df['What is the highest level of education you have attained?'], col
 df['What is the highest level of education you have attained?'].value_counts().plot(kind='barh', sort_columns=True)
 
 
-
 pd.crosstab(df['In which discipline is your highest academic qualification?'], columns='Disciplines')
 
 
@@ -134,54 +124,8 @@ df['In which discipline is your highest academic qualification?'].value_counts()
 # First it is needed to recode some values (1, 5, 10) to remove the associated text and get only the number.
 
 
+# ####### QUESTION WITH NUMERICAL ANSWER ABOUT FREQUENCY
 
-
-
-
-
-
-
-
-
-
-
-######### QUESTIONS WITH LIKERT SCALE
-
-def recode_likert_time(df, colname):
-    recode_time = {'never': '1',
-                   '5': '5',
-                   '10': '10'}
-    recode_value(df, colname, recode_time)
-
-# ## 'On average, how much of your time is spent developing software?',
-# ## 'On average, how much of your time is spent on research?'
-# ## 'On average, how much of the time you spend developing software is spent on new development/enhancement?'
-# ## 'On average, how much of the time you spend developing software is devoted to maintenance and support activities?'
-# ## 'On average, how much time do you spend on management?'
-# ## 'On average, how much time do you spend on other activities?'
-time_activity = ['On average, how much of your time is spent developing software?',
-                 'On average, how much of your time is spent on research?',
-                 'On average, how much of the time you spend developing software is spent on new development/enhancement?',
-                 'On average, how much of the time you spend developing software is devoted to maintenance and support activities?',
-                 'On average, how much time do you spend on management?',
-                 'On average, how much time do you spend on other activities?']
-for i in time_activity:
-    df[i] = df[i].apply(recode_values, args=(recode_time,)).astype('category')
-
-
-# Calculate the average of all the time_activity questions and plotting them
-
-df[time_activity].mean(axis=0).plot(kind='bar')
-df[time_activity].plot(kind='bar')
-df[time_activity]
-
-# ## 'What percentage of these developers are dedicated to the project full time?',
-
-df['What percentage of these developers are dedicated to the project full time?'].unique()
-
-
-
-######### QUESTION WITH NUMERICAL ANSWER ABOUT FREQUENCY
 
 def replace_project(x):
 
@@ -198,7 +142,7 @@ def replace_project(x):
 
 
 # ## 'How many software developers typically work on your projects?',
-d = pd.crosstab(df['How many software developers typically work on your projects?'], margins=False, colnames=[''], columns = 'Number of software developers')
+d = pd.crosstab(df['How many software developers typically work on your projects?'], margins=False, colnames=[''], columns='Number of software developers')
 d.plot(kind='bar')
 
 
@@ -212,15 +156,13 @@ d.plot(kind='bar')
 
 
 # How many years of software development experience do you have?
-d = pd.crosstab(df['How many years of software development experience do you have?'], colnames=[''],columns='Year of development')
+d = pd.crosstab(df['How many years of software development experience do you have?'], colnames=[''], columns='Year of development')
 d.plot(kind='bar')
 
 # ## 'How many software components from science.canarie.ca have you integrated into your projects?',
 
 
-
-
-##########  Questions with a potential 'Other' that may need to be recoded
+# ########  Questions with a potential 'Other' that may need to be recoded
 
 def explore_other(colname):
     """
@@ -260,7 +202,7 @@ def recode_values(x, replacement_values, default=False):
     return x
 
 
-def merging_others(df, colname,  replacement_values=None):
+def merging_others(df, colname, replacement_values=None):
     """
     Function to wrap the different modification applied on
     the columns that have a `other` column associated.
@@ -283,6 +225,16 @@ def merging_others(df, colname,  replacement_values=None):
     df[colname] = df[colname].str.capitalize().astype('category')
 
 
+def plot_others(df, colname, sort_order=False):
+    """
+    Plot the others variables
+    :params:
+        :df pd.df(): dataframe containing the data
+        :colname str(): string that have the column header to select the right column
+    """
+    d = pd.crosstab(df[colname], colnames=['Amount'], columns='counts')
+    d.plot(kind='bar')
+    return d
 
 # ## 'In which discipline is your highest academic qualification?'
 # ## 'In which discipline is your highest academic qualification? [Other]'
@@ -290,6 +242,7 @@ def merging_others(df, colname,  replacement_values=None):
 # In which discipline the participants obtained their highest qualification. The answers were from the [NSERC codes](http://www.nserc-crsng.gc.ca/Help-Aide/Codes-ListeDeCodes_Eng.asp).
 # However, it is the option 'Other', followed by a freetext option, which is the most chosen.
 # Therefore, before plotting it, we need to clean and merge these answers with the NESRC ones.
+
 
 var = explore_other('In which discipline is your highest academic qualification?')
 discipline_values = {'bioinfo': 'Bioinformatics',
@@ -302,7 +255,10 @@ discipline_values = {'bioinfo': 'Bioinformatics',
                      'musique': 'Social Sciences and Humanities',
                      'agric': 'Agricultural engineering'}
 merging_others(df, var, discipline_values)
-
+plot_others(df, var, order=True)
+d = pd.crosstab(df['How many software projects are you currently involved in?[recat]'], margins=False, colnames=[''], columns='Number of software projects')
+d
+d.plot(kind='bar')
 
 
 # ## 'What development methodology does your current project use?',
@@ -312,12 +268,12 @@ methodology_values = {'agile': 'Agile',
                       'scrum': 'Scrum',
                       'depends on the project': 'No formal methodology'}
 merging_others(df, var, methodology_values)
-df[var]
+plot_others(df, var)
 
 # ## 'What type of organization do you work for?',
 # ## 'What type of organization do you work for? [Other]',
 var = explore_other('What type of organization do you work for?')
-mergin_others(df, var)
+merging_others(df, var)
 
 
 # ## 'In which application area do you primarily work?',
@@ -347,8 +303,41 @@ os_dev_values = {'linux': 'Several OS',
 merging_others(df, var, os_dev_values)
 
 
+# ####### QUESTIONS WITH LIKERT SCALE
 
-######### Questions that are splitted between several questions but about the same concepts
+
+# ## 'On average, how much of your time is spent developing software?',
+# ## 'On average, how much of your time is spent on research?'
+# ## 'On average, how much of the time you spend developing software is spent on new development/enhancement?'
+# ## 'On average, how much of the time you spend developing software is devoted to maintenance and support activities?'
+# ## 'On average, how much time do you spend on management?'
+# ## 'On average, how much time do you spend on other activities?'
+time_activity = ['On average, how much of your time is spent developing software?',
+                 'On average, how much of your time is spent on research?',
+                 'On average, how much of the time you spend developing software is spent on new development/enhancement?',
+                 'On average, how much of the time you spend developing software is devoted to maintenance and support activities?',
+                 'On average, how much time do you spend on management?',
+                 'On average, how much time do you spend on other activities?']
+
+recode_time = {'never': '1',
+               '5': '5',
+               '10': '10'}
+for i in time_activity:
+    df[i] = df[i].apply(recode_values, args=(recode_time,)).astype('category')
+
+
+# Calculate the average of all the time_activity questions and plotting them
+
+df[time_activity].mean(axis=0).plot(kind='bar')
+df[time_activity].plot(kind='bar')
+df[time_activity]
+
+# ## 'What percentage of these developers are dedicated to the project full time?',
+
+df['What percentage of these developers are dedicated to the project full time?'].unique()
+
+
+# ####### Questions that are splitted between several questions but about the same concepts
 
 
 # ## 'What would you hope to get out of such an organization? [Networking]',
@@ -386,17 +375,19 @@ list_var = ["How is your current research software work funded? [Employer]",
             "How is your current research software work funded? [Other]"]
 list_values = [s.split('[', 1)[1].split(']')[0] for s in list_var]
 
-/
+
 # Split the string of the columns name and extract the value within the brackets
 def get_type_funding(x, colname):
     if pd.notnull(x):
         replace_value = colname.split('[', 1)[1].split(']')[0]
         return replace_value
 
+
 for colname in list_var:
     df['test_{}'.format(colname)] = df[colname].apply(get_type_funding, args=(colname,))
 df["How is your current research software work funded? [Employer]"].unique
 df['test_How is your current research software work funded? [Employer]']
+
 # ## 'What platform(s) are your research software projects deployed on? [Compute Canada HPC]',
 # ## 'What platform(s) are your research software projects deployed on? [University computer centre]',
 # ## 'What platform(s) are your research software projects deployed on? [Other HPC]',
@@ -407,8 +398,7 @@ df['test_How is your current research software work funded? [Employer]']
 # ## 'What platform(s) are your research software projects deployed on? [Other]',
 
 
-
-######## QUESTIONS WITH LOGICAL FOLLOWING QUESTIONS
+# ###### QUESTIONS WITH LOGICAL FOLLOWING QUESTIONS
 
 # ## 'Do you work within a group that provides software development help or expertise to researchers from across your organization?',
 # ## 'Is there such a group within your organization?',
@@ -440,9 +430,7 @@ df['test_How is your current research software work funded? [Employer]']
 # ## 'Are you generally acknowledged in the main paper?',
 
 
-
-
-##########  QUESTIONS THAT HAVE BEEN ANSWERED BY YES OR NO
+# ########  QUESTIONS THAT HAVE BEEN ANSWERED BY YES OR NO
 
 # ## 'Do your research software projects typically include a project manager?',
 
@@ -463,12 +451,7 @@ d = pd.crosstab(df['Do you consider yourself a professional software developer?'
 d.plot(kind='bar')
 
 
-
-
-
-
-
-######### QUESTIONS WITH COMPLETE FREE TEXT
+# ####### QUESTIONS WITH COMPLETE FREE TEXT
 
 # ## 'What is your current job title?',
 
