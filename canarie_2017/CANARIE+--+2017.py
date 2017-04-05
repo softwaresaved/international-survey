@@ -138,11 +138,6 @@ df['In which discipline is your highest academic qualification?'].value_counts()
 
 
 
-# Calculate the average of all the time_activity questions and plotting them
-
-df[time_activity].mean(axis=0).plot(kind='bar')
-df[time_activity].plot(kind='bar')
-df[time_activity]
 
 
 
@@ -174,6 +169,12 @@ for i in time_activity:
     df[i] = df[i].apply(recode_values, args=(recode_time,)).astype('category')
 
 
+# Calculate the average of all the time_activity questions and plotting them
+
+df[time_activity].mean(axis=0).plot(kind='bar')
+df[time_activity].plot(kind='bar')
+df[time_activity]
+
 # ## 'What percentage of these developers are dedicated to the project full time?',
 
 df['What percentage of these developers are dedicated to the project full time?'].unique()
@@ -198,7 +199,6 @@ def replace_project(x):
 
 # ## 'How many software developers typically work on your projects?',
 d = pd.crosstab(df['How many software developers typically work on your projects?'], margins=False, colnames=[''], columns = 'Number of software developers')
-d
 d.plot(kind='bar')
 
 
@@ -212,7 +212,7 @@ d.plot(kind='bar')
 
 
 # How many years of software development experience do you have?
-d = pd.crosstab(df['How many years of software development experience do you have?'], columns='Year of development')
+d = pd.crosstab(df['How many years of software development experience do you have?'], colnames=[''],columns='Year of development')
 d.plot(kind='bar')
 
 # ## 'How many software components from science.canarie.ca have you integrated into your projects?',
@@ -245,7 +245,7 @@ def recode_values(x, replacement_values, default=False):
     :params:
         :replacement_values dict(): K are the content to match and values the content
         to replace with
-        : default: if a value is given to default, this value will be return, if it is
+        :default: if a value is given to default, this value will be return, if it is
         false, the passed value is returned instead
     :return:
         :x: the x is returned or the replacement values if found in the dictionary or the
@@ -254,13 +254,10 @@ def recode_values(x, replacement_values, default=False):
     if not pd.isnull(x):
         for k in replacement_values:
             if str(k).lower() in str(x).lower():
-                try:
-                    return replacement_values[k]
-                except AttributeError:
-                    raise
-            if default:
-                return default
-        return x
+                return replacement_values[k]
+        if default:
+            return default
+    return x
 
 
 def merging_others(df, colname,  replacement_values=None):
@@ -279,13 +276,11 @@ def merging_others(df, colname,  replacement_values=None):
         :None: The operation is a replace `inplace`
     """
     colname_other = var+ ' [Other]'
-
     if replacement_values:
-        df[colname_other] = df[colname_other].apply(recode_values, args=(replacement_values, 'Ohter'))
-
+        df[colname_other] = df[colname_other].apply(recode_values, args=(replacement_values, 'Other'))
         df[colname].replace('Other', df[colname_other], inplace=True)
 
-    df[colname] = df[colname_other].apply(str.capitalize).astype('category')
+    df[colname] = df[colname].str.capitalize().astype('category')
 
 
 
@@ -309,6 +304,7 @@ discipline_values = {'bioinfo': 'Bioinformatics',
 merging_others(df, var, discipline_values)
 
 
+
 # ## 'What development methodology does your current project use?',
 # ## 'What development methodology does your current project use? [Other]',
 var = explore_other('What development methodology does your current project use?')
@@ -316,7 +312,7 @@ methodology_values = {'agile': 'Agile',
                       'scrum': 'Scrum',
                       'depends on the project': 'No formal methodology'}
 merging_others(df, var, methodology_values)
-
+df[var]
 
 # ## 'What type of organization do you work for?',
 # ## 'What type of organization do you work for? [Other]',
@@ -335,12 +331,11 @@ merging_others(df, var, discipline_values)
 var = explore_other('What is the nature of your current employment?')
 merging_others(df, var)
 
-
 # ## 'What is your Operating System of choice for development?',
 # ## 'What is your Operating System of choice for development? [Other]',
 var = explore_other('What is your Operating System of choice for development?')
 os_deploy_values = {'*': 'Several OS'}
-merging_other(df, var, os_deploy_values)
+merging_others(df, var, os_deploy_values)
 
 
 # ## 'What is your Operating System of choice for deployment?',
@@ -349,7 +344,7 @@ var = explore_other('What is your Operating System of choice for deployment?')
 os_dev_values = {'linux': 'Several OS',
                  'windows': 'Several OS',
                  'mac': 'Several OS'}
-mergin_other(df, var, os_dev_values)
+merging_others(df, var, os_dev_values)
 
 
 
