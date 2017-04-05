@@ -30,6 +30,7 @@ Section,Done in Lime,Type,Question,Format,Mandatory,Conditional,Source of inform
 2,y,currentEmp13,Please select all the disciplines you are working for,Drop down list,Y,If Yes in currentEmp7,Same source as for academic field,y,
 3,y,prevEmp1,What was your previous job?,Drop down list,Y,,,N,
 3,y,prevEmp2,How important were the following features to your decision to accept your current position?,Drop down list,Y,,"RSE interviews, review main features that people liked in their job",N,Want to get more info on what parts of the job attracted people to the position
+3,y,prevEmpCode3, How many years have you been coding professionally?,FREENUMERIC,Y,,,,
 4,y,currentWork1,Do you provide help and expertise in software development to researchers from across your organisation?,Y/N/NA,y,,,N,Updated English
 4,y,currentWork3,What percentage of your time do you spend developing software each week?,FREENUMERIC,Y,,,N,
 4,y,paper1,Has your software contributed to research that has been published in a journal or at a conference?,Y/N/NA,Y,,,N,
@@ -49,6 +50,11 @@ Section,Done in Lime,Type,Question,Format,Mandatory,Conditional,Source of inform
 4,y,open1can,What percentage of the software projects you've worked on are released under an open source license or as free software?,FREENUMERIC,y,if YES to open01can,,,
 4,y,open03an,Do you associate a Digital Object Identifier (DOI) to some of the software project you’ve worked on?,Y/N/NA,y,,,,
 4,y,open3can,What percentage of the software projects you've worked on have an associated Digital Object Identifier (DOI)?,FREENUMERIC,y,if YES to open03can,,,
+4,y,train1,Do you conduct training of researchers in computational skills,Y/N,y,,,,
+4,y,train2,How many time in a year do you conduct this training?,FREENUMERIC,,if YES to train1,,,
+4,y,train3,What training programs are you involved with (comma separated list),FREETEXT,,if YES to train1,,,
+,,,,,,,,,
+,,,,,,,,,
 5,y,perfCheck1,Do you receive sufficient information on the results of your work?,Likert (Time),Y,,,,
 5,y,perfCheck2,Does your work give you the opportunity to check on how well you are doing your work?,Likert (Time),Y,,,,
 5,y,perfCheck3,"In your work, do you have access to sufficient data and information?",Likert (Time),Y,,,,
@@ -79,7 +85,7 @@ Section,Done in Lime,Type,Question,Format,Mandatory,Conditional,Source of inform
 6,y,skill2,What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.,3 FREETEXT (skills),Y,,,,
 6,y,tool1,What are the three tools or services you use most often to achieve your work?,3 FREETEXT (skills),Y,,,,
 6,y,tool2,What is your Operating System of choice for use at work?,Drop down list,Y,,,,
-,y,tool4can,"What programming languages do you use in developing research software? Please list in order, beginning with most frequently used.",Drop down list,,,,,
+,y,tool4can,What programming languages do you use in developing research software?,Drop down list,,,,,
 6,y,socio2,Please select your gender,Drop down list,Y,,https://www.gov.uk/service-manual/user-centred-design/resources/patterns/gender-and-sex.html,Y,
 6,y,socio3,Please select your age,Drop down list,Y,,,Y,
 6,y,socio4,Please select the range of your salary,Drop down list,Y,,,Y,
@@ -87,3 +93,4 @@ Section,Done in Lime,Type,Question,Format,Mandatory,Conditional,Source of inform
 6,y,ukrse1,Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list),Y/N/NA,Y,,,,
 6,y,ukrse2,How did you build your network within the RSE community? ,Drop down list,Y,,,,
 6,y,ukrse3,Please give us details on how you create your network ,FREETEXT,,if other to ukrse2,,,
+6,y,disa1,Do you have a condition that is defined as a disability by the Equality Act 2010*,Y/N/NA,Y,,,,
