@@ -126,6 +126,7 @@ df['In which discipline is your highest academic qualification?'].value_counts()
 
 # ####### QUESTION WITH NUMERICAL ANSWER ABOUT FREQUENCY
 
+# Recategorise the answers into 10 categories
 
 def replace_project(x):
 
@@ -137,8 +138,16 @@ def replace_project(x):
         return "4-6"
     elif x >=7 and x <=9:
         return "7-9"
-    elif x > 10:
-        return ">10"
+    elif x > 10 and x <= 12:
+        return "10-12"
+    elif x > 13 and x <= 15:
+        return "13-15"
+    elif x > 16 and x <= 18:
+        return "16-18"
+    elif x > 19 and x <= 21:
+        return "19-21"
+    elif x >= 22:
+        return ">=22"
 
 
 # ## 'How many software developers typically work on your projects?',
@@ -225,7 +234,7 @@ def merging_others(df, colname, replacement_values=None):
     df[colname] = df[colname].str.capitalize().astype('category')
 
 
-def plot_others(df, colname, sort_order=False):
+def plot_others(df, colname, sort_order=False, stacked=False):
     """
     Plot the others variables
     :params:
@@ -233,7 +242,7 @@ def plot_others(df, colname, sort_order=False):
         :colname str(): string that have the column header to select the right column
     """
     d = pd.crosstab(df[colname], colnames=['Amount'], columns='counts')
-    d.plot(kind='bar')
+    d.plot(kind='bar', stacked=stacked)
     return d
 
 # ## 'In which discipline is your highest academic qualification?'
@@ -255,10 +264,7 @@ discipline_values = {'bioinfo': 'Bioinformatics',
                      'musique': 'Social Sciences and Humanities',
                      'agric': 'Agricultural engineering'}
 merging_others(df, var, discipline_values)
-plot_others(df, var, order=True)
-d = pd.crosstab(df['How many software projects are you currently involved in?[recat]'], margins=False, colnames=[''], columns='Number of software projects')
-d
-d.plot(kind='bar')
+plot_others(df, var)
 
 
 # ## 'What development methodology does your current project use?',
@@ -274,25 +280,30 @@ plot_others(df, var)
 # ## 'What type of organization do you work for? [Other]',
 var = explore_other('What type of organization do you work for?')
 merging_others(df, var)
-
+plot_others(df, var)
 
 # ## 'In which application area do you primarily work?',
 # ## 'In which application area do you primarily work? [Other]',
 var = explore_other('In which application area do you primarily work?')
 merging_others(df, var, discipline_values)
+plot_others(df, var)
+
 
 
 # ## 'What is the nature of your current employment?',
 # ## 'What is the nature of your current employment? [Other]',
 var = explore_other('What is the nature of your current employment?')
 merging_others(df, var)
+plot_others(df, var)
+
+
 
 # ## 'What is your Operating System of choice for development?',
 # ## 'What is your Operating System of choice for development? [Other]',
 var = explore_other('What is your Operating System of choice for development?')
-os_deploy_values = {'*': 'Several OS'}
+os_deploy_values = {' ': 'Several OS'}
 merging_others(df, var, os_deploy_values)
-
+plot_others(df, var)
 
 # ## 'What is your Operating System of choice for deployment?',
 # ## 'What is your Operating System of choice for deployment? [Other]',
@@ -301,7 +312,7 @@ os_dev_values = {'linux': 'Several OS',
                  'windows': 'Several OS',
                  'mac': 'Several OS'}
 merging_others(df, var, os_dev_values)
-
+plot_others(df, var)
 
 # ####### QUESTIONS WITH LIKERT SCALE
 
@@ -334,10 +345,28 @@ df[time_activity]
 
 # ## 'What percentage of these developers are dedicated to the project full time?',
 
-df['What percentage of these developers are dedicated to the project full time?'].unique()
+plot_others(df, 'What percentage of these developers are dedicated to the project full time?')
 
 
 # ####### Questions that are splitted between several questions but about the same concepts
+
+
+def count_unique_value(df, colnames, dropna=False, normalize=False):
+    """
+    Count the values of different columns and transpose the count
+    :params:
+        :df pd.df(): dataframe containing the data
+        :colnames list(): list of strings corresponding to the column header to select the right column
+    :return:
+        :result_df pd.df(): dataframe with the count of each answer for each columns
+    """
+    # Subset the columns
+    df_sub = df[colnames]
+
+    # Calculate the counts for them
+    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    # Transpose the column to row to be able to plot a stacked bar chart
+    return df_sub.transpose()
 
 
 # ## 'What would you hope to get out of such an organization? [Networking]',
@@ -348,6 +377,21 @@ df['What percentage of these developers are dedicated to the project full time?'
 # ## 'What would you hope to get out of such an organization? [Job opportunities]',
 # ## 'What would you hope to get out of such an organization? [Other]',
 
+hope = ['What would you hope to get out of such an organization? [Networking]',
+        'What would you hope to get out of such an organization? [Software collaborations]',
+        'What would you hope to get out of such an organization? [Research collaborations]',
+        'What would you hope to get out of such an organization? [Training]',
+        'What would you hope to get out of such an organization? [Research Software Standards and Interoperability]',
+        'What would you hope to get out of such an organization? [Job opportunities]']
+
+### The column '[Other]' contain only one 'Colloque?' and is therefore discarded
+df['What would you hope to get out of such an organization? [Other]'].unique()
+
+# Plotting a bar chart
+count_hope.plot(kind='bar', stacked=True)
+
+
+plot_others(df, 'What would you hope to get out of such an organization? [Networking]', stacked=True)
 # ## 'How are your projects typically tested?  [No formal testing]',
 # ## 'How are your projects typically tested?  [The developers do their own testing]',
 # ## 'How are your projects typically tested?  [Dedicated test engineers]',
