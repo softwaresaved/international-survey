@@ -234,13 +234,15 @@ def merging_others(df, colname, replacement_values=None):
     df[colname] = df[colname].str.capitalize().astype('category')
 
 
-def plot_others(df, colname, sort_order=False, stacked=False):
+def plot_others(df, columns, colnames=False, sort_order=False, stacked=False):
     """
     Plot the others variables
     :params:
         :df pd.df(): dataframe containing the data
         :colname str(): string that have the column header to select the right column
     """
+    if colnames == False:
+        colnames = columns
     d = pd.crosstab(df[colname], colnames=['Amount'], columns='counts')
     d.plot(kind='bar', stacked=stacked)
     return d
@@ -351,7 +353,7 @@ plot_others(df, 'What percentage of these developers are dedicated to the projec
 # ####### Questions that are splitted between several questions but about the same concepts
 
 
-def count_unique_value(df, colnames, dropna=False, normalize=False):
+def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
     """
     Count the values of different columns and transpose the count
     :params:
@@ -362,6 +364,9 @@ def count_unique_value(df, colnames, dropna=False, normalize=False):
     """
     # Subset the columns
     df_sub = df[colnames]
+
+    if rename_columns is True:
+        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
@@ -388,7 +393,8 @@ hope = ['What would you hope to get out of such an organization? [Networking]',
 df['What would you hope to get out of such an organization? [Other]'].unique()
 
 # Plotting a bar chart
-count_hope.plot(kind='bar', stacked=True)
+count_hope = count_unique_value(df, hope, rename_columns=True)
+count_hope.plot(kind='bar', colnames=['Which hope to get out of such an organization'], stacked=True)
 
 
 plot_others(df, 'What would you hope to get out of such an organization? [Networking]', stacked=True)
