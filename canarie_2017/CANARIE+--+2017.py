@@ -6,6 +6,8 @@
 
 # ## Loading libraries to work in notebook
 
+# In[1]:
+
 # Load libraries
 import pandas as pd
 import numpy as np
@@ -15,18 +17,20 @@ import matplotlib
 matplotlib.use('TkAgg')
 
 # When using within jupyter
-# get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
+get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
 
 import matplotlib.pyplot as plt
 
 #  When using this script with ipython and vim
-plt.ion()
-plt.show()
+#plt.ion()
+#plt.show()
+
 
 # ## Preparation and filtering of the dataset
 #
 # The data are stored in the csv file. It contains 114 answers that need to be filtered to only keep participants that are from Canada, completed the survey and are developing software
 
+# In[2]:
 
 # Load dataset
 df = pd.read_csv('./dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
@@ -43,6 +47,8 @@ df = df[df['Date submitted'].notnull()]
 # Getting the number of row from the reduced dataframe
 len(df.index)
 
+
+# In[4]:
 
 # Countries
 #A question asked the participants in which country they were currently working and specify when it was not Canada.
@@ -69,6 +75,7 @@ len(df.index)
 
 # A bit of cleaning, all answer "Prefer not to answer" are replace with a NaN value. They are not giving any information and were present to offer the possibility to the participants to select that option.
 
+# In[6]:
 
 # Replacing all the answer "Prefer not to answer" by NaN, as they are not useful in the analysis
 df.replace('Prefer not to answer', np.NaN, inplace=True)
@@ -82,6 +89,7 @@ df.columns = df.columns.str.replace('\xa0', '')
 # These different sections reflects the process of exploration (analysing the different questions by their type of answer rather than the chronological order that the participants had to follow).
 #
 
+# In[7]:
 
 def explore_other(colname, printUnique=False):
     """
@@ -99,6 +107,8 @@ def explore_other(colname, printUnique=False):
         print(df[col_other].unique())
     return colname
 
+
+# In[8]:
 
 def recode_values(x, replacement_values, default=False):
     """
@@ -121,6 +131,8 @@ def recode_values(x, replacement_values, default=False):
             return default
     return x
 
+
+# In[9]:
 
 def merging_others(df, colname, replacement_values=None):
     """
@@ -145,13 +157,45 @@ def merging_others(df, colname, replacement_values=None):
     df[colname] = df[colname].str.capitalize().astype('category')
 
 
-def freq_table(df, colnames=False, columns=False):
+# In[10]:
+
+def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=False):
     """
     """
-    return pd.crosstab(df[colnames], colnames=[''], columns=columns)
+    if add_ratio:
+        output = pd.concat([pd.crosstab(df[colnames], columns='count', normalize=False),
+          pd.crosstab(df[colnames], columns='ratio', normalize=True)], axis=1)
+    else:
+        output = pd.crosstab(df[colnames], colnames=[''], columns=columns)
+    if sort_order:
+        output = output.sort_values(by='count')
+    return output
 
 
-def plotting(df, columns, colnames=False, sort_order=False, stacked=False, horizontal=False):
+# In[11]:
+
+def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizontal=False):
+    """
+    Plot the others variables
+    :params:
+        :df pd.df(): dataframe containing the data, should be a df of frequencies
+        created with crosstab
+        :colname str(): string that have the column header to select the right column
+    """
+    type_plot = 'bar'
+    # Call the freq_table function to create the count to plot
+    # d = freq_table(df, colnames, columns)
+    if sort_order:
+        df = df.sort_values(by=colnames, ascending=False)
+    if horizontal is True:
+        type_plot='barh'
+
+    df[colnames].plot(kind=type_plot, stacked=stacked)
+
+
+# In[12]:
+
+def save_freq_plotting(df, columns, colnames=False, sort_order=False, stacked=False, horizontal=False):
     """
     Plot the others variables
     :params:
@@ -172,6 +216,9 @@ def plotting(df, columns, colnames=False, sort_order=False, stacked=False, horiz
     return d
 
 
+# In[13]:
+
+## TODO Remove the part of this function that output a freq_table to call freq_table() instead
 def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
     """
     Count the values of different columns and transpose the count
@@ -192,20 +239,32 @@ def count_unique_value(df, colnames, rename_columns=False, dropna=False, normali
     # Transpose the column to row to be able to plot a stacked bar chart
     return df_sub.transpose()
 
+
 # # Exploration of the results
 
 # ## Languages
 #
 # The survey was in French and in English. The option choose by the participant was collected. It is possible then to see the proportion of participants that answered the survey in French or in English
 
-language_count = pd.crosstab(df['Start language'], columns='Language')
+# In[14]:
 
-language_count.plot(kind='bar')
+language_count = freq_table(df, 'Start language', add_ratio=True, sort_order=True)
+
+
+# In[15]:
+
+language_count
+
+
+# In[16]:
+
+language_count['count'].plot(kind='bar')
 
 
 # ## Education level
 # The question asked the level of education
 
+# In[17]:
 
 # Recode the column as categorical variable
 df['What is the highest level of education you have attained?'] = df['What is the highest level of education you have attained?'].astype('category')
@@ -217,19 +276,29 @@ df['What is the highest level of education you have attained?'].cat.reorder_cate
                                                                                         'Masters Degree',
                                                                                         'Doctorate'],
                                                                                        inplace=True)
-education_count = pd.crosstab(df['What is the highest level of education you have attained?'], columns='Education level')
-
-education_count.plot(kind='barh', sort_columns=True)
 
 
+# In[18]:
 
-# ## Disciplines
-# In which discipline the participants obtained their highest qualification. The answers were from the [NSERC codes](http://www.nserc-crsng.gc.ca/Help-Aide/Codes-ListeDeCodes_Eng.asp).
-# The questions has the possibility to answer 'Other', followed by a 'freetext' field.
-# On the uncleaned dataset, it was the most choosen answer. However, after looking at it, some answer could
-# be transformed back into one of the category.
+education_count = freq_table(df, 'What is the highest level of education you have attained?', add_ratio=True, sort_order=True)
 
 
+# In[19]:
+
+education_count
+
+
+# In[20]:
+
+education_count['count'].plot(kind='barh', sort_columns=True)
+
+
+# In[21]:
+
+freq_table(df, 'In which discipline is your highest academic qualification? [Other]', sort_order=True)
+
+
+# In[22]:
 
 var = explore_other('In which discipline is your highest academic qualification?')
 discipline_values = {'bioinfo': 'Bioinformatics',
@@ -242,17 +311,38 @@ discipline_values = {'bioinfo': 'Bioinformatics',
                      'musique': 'Social Sciences and Humanities',
                      'agric': 'Agricultural engineering'}
 merging_others(df, var, discipline_values)
+disciplines = freq_table(df, var, add_ratio=True, sort_order=True)
+
+
+# In[23]:
+
+disciplines
+
+
+# In[24]:
 
 # Now the data is cleaned, it is possible to plot it
-plotting(df, var, sort_order=True)
+freq_plotting(disciplines, sort_order=True)
 
 
+# In[25]:
 
-software_dev_number = pd.crosstab(df['How many software developers typically work on your projects?'], margins=False, colnames=[''], columns='Number of software developers')
+software_dev_number = freq_table(df, 'How many software developers typically work on your projects?', add_ratio=True)
 # Reorganise the row names to match the normal order
 software_dev_number = software_dev_number.reindex(['Just me', '2', '3-5',  '6-9', '10+'])
-software_dev_number.plot(kind='bar')
 
+
+# In[26]:
+
+software_dev_number
+
+
+# In[27]:
+
+freq_plotting(software_dev_number)
+
+
+# In[28]:
 
 # ## 'How many software projects are you currently involved in?',
 
@@ -283,9 +373,9 @@ def replace_project(x):
 
 df['How many software projects are you currently involved in?[recat]'] = df['How many software projects are you currently involved in?'].apply(replace_project)
 
-d = pd.crosstab(df['How many software projects are you currently involved in?[recat]'], margins=False, colnames=[''], columns='Number of software projects')
+software_project = freq_table(df, 'How many software projects are you currently involved in?[recat]', add_ratio=True, sort_order=True)
 # Reorganise the row names that contains the categories to plot in the right order
-d = d.reindex(['1-3',
+software_project = software_project.reindex(['1-3',
                '4-6',
                '7-9',
                '10-12',
@@ -293,77 +383,192 @@ d = d.reindex(['1-3',
                '16-18',
                '19-21',
                '>22'])
-d.plot(kind='bar')
 
+
+# In[29]:
+
+software_project
+
+
+# In[30]:
+
+freq_plotting(software_project)
+
+
+# In[31]:
 
 # How many years of software development experience do you have?
-d = pd.crosstab(df['How many years of software development experience do you have?'], colnames=[''], columns='Year of development')
-
+year_dev = freq_table(df, 'How many years of software development experience do you have?', add_ratio=True, sort_order=True)
 
 # Transform the float number into a integer to plot without the .0
-d = d.rename(lambda x: str(int(x)))
-d.plot(kind='bar')
+year_dev = year_dev.rename(lambda x: str(int(x)))
 
+
+# In[32]:
+
+year_dev
+
+
+# In[129]:
+
+freq_plotting(year_dev, sort_order=True)
+
+
+# In[34]:
 
 # ## 'How many software components from science.canarie.ca have you integrated into your projects?',
-d = pd.crosstab(df['How many software components from science.canarie.ca have you integrated into your projects?'],
-                colnames=[''], columns='Software components from science.canarie.ca')
-d = d.rename(lambda x: str(int(x)))
-d.plot(kind='bar')
+
+software_component = freq_table(df,'How many software components from science.canarie.ca have you integrated into your projects?', add_ratio=True, sort_order=True)
+software_component = software_component.rename(lambda x: str(int(x)))
 
 
+# In[35]:
+
+software_component
+
+
+# In[128]:
+
+freq_plotting(software_component, sort_order=True)
+
+
+# In[37]:
 
 # ## 'What percentage of these developers are dedicated to the project full time?',
 
-d = pd.crosstab(df['What percentage of these developers are dedicated to the project full time?'], colnames=[''], columns='Percentage of developers dedicated to the project full time')
-
-d = d.reindex(['0%',
+project_full_time = freq_table(df, 'What percentage of these developers are dedicated to the project full time?', add_ratio=True, sort_order=True)
+project_full_time = project_full_time.reindex(['0%',
                '25%',
                '50%',
                '75%',
                '100%'
                ])
 
-d.plot(kind='bar')
 
+# In[38]:
+
+project_full_time
+
+
+# In[39]:
+
+freq_plotting(project_full_time)
+
+
+# In[40]:
 
 var = explore_other('What development methodology does your current project use?')
 methodology_values = {'agile': 'Agile',
                       'scrum': 'Scrum',
                       'depends on the project': 'No formal methodology'}
 merging_others(df, var, methodology_values)
-plotting(df, var, sort_order=True)
 
+
+# In[41]:
+
+methodology = freq_table(df, var, add_ratio=True, sort_order=True)
+
+
+# In[42]:
+
+methodology
+
+
+# In[127]:
+
+freq_plotting(methodology, sort_order=True)
+
+
+# In[44]:
 
 var = explore_other('What type of organization do you work for?')
 merging_others(df, var)
-plotting(df, var, sort_order=True)
+university_work = freq_table(df, var, add_ratio=True, sort_order=True)
 
+
+# In[45]:
+
+university_work
+
+
+# In[46]:
+
+freq_plotting(university_work, sort_order=True)
+
+
+# In[47]:
 
 var = explore_other('In which application area do you primarily work?')
 merging_others(df, var, discipline_values)
-plotting(df, var)
+application_area = freq_table(df, var, add_ratio=True, sort_order=True)
 
+
+# In[48]:
+
+application_area
+
+
+# In[49]:
+
+freq_plotting(application_area, sort_order=True)
+
+
+# In[50]:
 
 var = explore_other('What is the nature of your current employment?')
 merging_others(df, var)
-plotting(df, var, sort_order=True, horizontal=True)
+nature_employment = freq_table(df, var, add_ratio=True, sort_order=True)
 
+
+# In[51]:
+
+nature_employment
+
+
+# In[52]:
+
+freq_plotting(nature_employment, sort_order=True)
+
+
+# In[53]:
 
 var = explore_other('What is your Operating System of choice for development?')
 os_deploy_values = {' ': 'Several OS'}
 merging_others(df, var, os_deploy_values)
-plotting(df, var, sort_order=True)
+os_development = freq_table(df, var, add_ratio=True, sort_order=True)
 
+
+# In[54]:
+
+os_development
+
+
+# In[55]:
+
+freq_plotting(os_development, sort_order=True)
+
+
+# In[56]:
 
 var = explore_other('What is your Operating System of choice for deployment?')
 os_dev_values = {'linux': 'Several OS',
                  'windows': 'Several OS',
                  'mac': 'Several OS'}
 merging_others(df, var, os_dev_values)
-plotting(df, var, sort_order=True)
+os_development = freq_table(df, var, add_ratio=True, sort_order=True)
 
 
+# In[57]:
+
+os_development
+
+
+# In[58]:
+
+freq_plotting(os_development, sort_order=True)
+
+
+# In[59]:
 
 time_activity = ['On average, how much of your time is spent developing software?',
                  'On average, how much of your time is spent on research?',
@@ -384,8 +589,19 @@ for i in time_activity:
 # The option 'coerce' is needed to force passing the NaN values
 df[time_activity] = df[time_activity].apply(pd.to_numeric, errors='coerce')
 mean_activity = df[time_activity].mean(axis=0)
-mean_activity.plot(kind='barh')
 
+
+# In[60]:
+
+mean_activity.sort_values()
+
+
+# In[61]:
+
+mean_activity.sort_values().plot(kind='barh')
+
+
+# In[62]:
 
 hope = ['What would you hope to get out of such an organization? [Networking]',
         'What would you hope to get out of such an organization? [Software collaborations]',
@@ -398,8 +614,19 @@ hope = ['What would you hope to get out of such an organization? [Networking]',
 
 # Plotting a bar chart
 count_hope = count_unique_value(df, hope, rename_columns=True, dropna=True)
-count_hope.plot(kind='bar')
 
+
+# In[63]:
+
+count_hope['Yes'].sort_values()
+
+
+# In[64]:
+
+count_hope['Yes'].sort_values().plot(kind='bar')
+
+
+# In[65]:
 
 fund = ["How is your current research software work funded? [Employer]",
         "How is your current research software work funded? [CANARIE]",
@@ -415,8 +642,19 @@ df["How is your current research software work funded? [Other]"].unique()
 
 # The different funding
 count_fund = count_unique_value(df, fund, rename_columns=True)
-count_fund.plot(kind='bar')
 
+
+# In[66]:
+
+count_fund['Yes'].sort_values()
+
+
+# In[67]:
+
+count_fund['Yes'].sort_values().plot(kind='bar')
+
+
+# In[68]:
 
 plateform = ['What platform(s) are your research software projects deployed on? [Compute Canada HPC]',
              'What platform(s) are your research software projects deployed on? [University computer centre]',
@@ -431,8 +669,21 @@ freq_table(df, "What platform(s) are your research software projects deployed on
 
 
 count_plateform = count_unique_value(df, plateform, rename_columns=True)
-count_plateform.plot(kind='bar')
 
+
+
+
+# In[69]:
+
+count_plateform['Yes'].sort_values()
+
+
+# In[70]:
+
+count_plateform['Yes'].sort_values().plot(kind='bar')
+
+
+# In[71]:
 
 testing = ['How are your projects typically tested? [No formal testing]',
            'How are your projects typically tested? [The developers do their own testing]',
@@ -440,8 +691,19 @@ testing = ['How are your projects typically tested? [No formal testing]',
            'How are your projects typically tested? [User testing]']
 
 count_testing = count_unique_value(df, testing, rename_columns=True)
-count_testing.plot(kind='bar')
 
+
+# In[72]:
+
+count_testing['Yes'].sort_values()
+
+
+# In[73]:
+
+count_testing['Yes'].sort_values().plot(kind='bar')
+
+
+# In[74]:
 
 various_q = ['Do your research software projects typically include a project manager?',
              'Do any of your current projects accommodate the open/public sharing of data?',
@@ -452,9 +714,19 @@ various_q = ['Do your research software projects typically include a project man
              'Do you consider yourself a professional software developer?']
 
 count_various_q = count_unique_value(df, various_q, rename_columns=False, dropna=True)
-count_various_q.plot(kind='bar')
 
 
+# In[75]:
+
+count_various_q['Yes'].sort_values()
+
+
+# In[100]:
+
+count_various_q['Yes'].sort_values().plot(kind='barh')
+
+
+# In[77]:
 
 organization = ['Do you work within a group that provides software development help or expertise to researchers from across your organization?',
                 'Is there such a group within your organization?',
@@ -462,7 +734,19 @@ organization = ['Do you work within a group that provides software development h
                 'Would you be interested in participating in such a group?']
 
 count_orga = count_unique_value(df, organization, dropna=True)
-count_orga.plot(kind='barh')
+
+
+# In[78]:
+
+count_orga['Yes'].sort_values()
+
+
+# In[79]:
+
+count_orga['Yes'].sort_values().plot(kind='barh')
+
+
+# In[80]:
 
 recognition = ['Have you contributed software to research that has been published in a journal or presented at a conference?',
                'In general, when your software contributes to a paper, are you acknowledged in that paper?',
@@ -471,57 +755,123 @@ recognition = ['Have you contributed software to research that has been publishe
                'Are you generally acknowledged in the main paper?']
 
 count_recognition = count_unique_value(df, recognition, dropna=True)
-count_recognition.plot(kind='barh')
+
+
+# In[81]:
+
+count_recognition['Yes'].sort_values()
+
+
+# In[82]:
+
+count_recognition['Yes'].sort_values().plot(kind='barh')
+
+
+# In[83]:
 
 rse_canada = ['Are you a member of an association of Research Software Developers (e.g UK RSE)?',
               'Would you be interested in joining such an organization if one was formed in Canada?']
 count_rse_canada = count_unique_value(df, rse_canada, dropna=True)
-count_rse_canada.plot(kind='barh')
+count_rse_canada
 
 
+# In[84]:
+
+count_rse_canada['Yes']
 
 
+# In[85]:
 
-conference = ['Have you ever presented your software work at a conference or workshop?',
-              'Which conference(s)/workshop(s)?']
-count_conference = count_unique_value(df, conference, dropna=True)
-count_conference.plot(kind='barh')
-pd.crosstab(df['Have you ever presented your software work at a conference or workshop?'],  columns='Conference').plot(kind='bar')
+count_rse_canada['Yes'].plot(kind='barh', title='UK RSE and Canada -- Only Yes answers')
 
 
+# In[156]:
 
-open_code = ['When you release code, how often do you use an open source license?',
-             'List any open repositories (eg. GitHub) to which your software projects have been published.',
-             'When you release code or data, how often do you assign a Digital Object Identifier (DOI) to it?']
-count_open = count_unique_value(df, open_code, dropna=True)
-count_open.plot(kind='barh')
+conference_YN = 'Have you ever presented your software work at a conference or workshop?'
+count_conference = freq_table(df, conference_YN, add_ratio=True, sort_order=True)
 
 
+# In[157]:
+
+count_conference
+
+
+# In[163]:
+
+freq_plotting(count_conference)
+
+
+# In[167]:
+
+#conference_list = 'Which conference(s)/workshop(s)?'
+#freq_table(df, conference_list, sort_order=True)
+
+
+# In[164]:
+
+open_code_YN = ['When you release code, how often do you use an open source license?',
+                'When you release code or data, how often do you assign a Digital Object Identifier (DOI) to it?']
+
+
+count_open = count_unique_value(df, open_code_YN, dropna=True)
+
+
+# In[165]:
+
+count_open
+
+
+# In[166]:
+
+count_open.plot(kind='bar')
+
+
+# In[117]:
+
+open_code_list = 'List any open repositories (eg. GitHub) to which your software projects have been published.'
+
+
+# In[92]:
 
 data_management = ['Do any of your current projects make use of a data management or data archiving component?',
                    'Is it part of your software or an external system? (please specify)']
 
 count_data_management = count_unique_value(df, data_management, dropna=True)
+
+
+# In[93]:
+
 count_data_management.plot(kind='barh')
 
 
-# ####### QUESTIONS WITH COMPLETE FREE TEXT
+# In[94]:
 
 # ## 'What is your current job title?',
 
 pd.crosstab(df['What is your current job title?'].str.capitalize(), colnames=[''], columns='Job title')
 
+
+# In[95]:
+
 # ## 'In your opinion, what are the three most important skills that a Research Software Developer must possess? These skills can be technical and non-technical.',
 
+
+# In[96]:
 
 # ## 'What three skills would you like to acquire or improve to help your work as a Research Software Developer? These skills can be technical and non-technical.',
 
 
+# In[97]:
+
 # ## 'What are the three tools or services you use most often in your software work?',
 
 
+# In[98]:
+
 # ## 'What programming languages do you use in developing research software? Please list in order, beginning with most frequently used.',
 
+
+# In[99]:
 
 # ## 'List any public identity providers (e.g. Google, Facebook, Live, LinkedIn, Twitter, etc.) used in your current or previous projects.',
 
