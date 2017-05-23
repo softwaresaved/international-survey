@@ -17,7 +17,6 @@ plt.ion()
 plt.show()
 
 
-
 """
 Plotting function to draw a likert scale.
 
@@ -29,7 +28,7 @@ This script is an adaptation of the answers found:
 """
 
 
-def get_colors(values, colormap=plt.cm.RdBu, vmin=None, vmax=None):
+def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
     """
     Function to automatically gets a colormap for all the values passed in,
     Have the option to normalise the colormap.
@@ -53,11 +52,25 @@ def get_colors(values, colormap=plt.cm.RdBu, vmin=None, vmax=None):
         return colormap(norm(range(len(values))))
 
 
-def calculate_percentage(df):
-    def get_percentage(row):
-        total = np.sum(row)
-        return [np.round(((x/total)*100, 2), 2) for x in row]
-    return np.array(df.apply(perc, axis=1))
+# TODO Simplify this function
+def compute_percentage(df, by_row=True, by_col=False):
+    """
+    Transform every cell into a percentage
+    """
+    def compute_percentage(row, total=None):
+        if total is None:
+            total = np.sum(row)
+        return [np.round(((x /total) *100), 2) for x in row]
+
+    if by_row is True and by_col is False:
+        return np.array(df.apply(compute_percentage, axis=1))
+
+    elif by_col is True and by_row is False:
+        return np.array(df.apply(compute_percentage, axis=0))
+
+    elif by_row is True and by_col is True:
+        total = df.values.sum()
+        return np.array(df.apply(compute_percentage, total=total))
 
 
 def get_middle(inputlist):
@@ -71,7 +84,7 @@ def get_middle(inputlist):
         first_half list(): list of the first half element
         middle_elmenet int():
     """
-    middle = float(len(inputlist)/2)
+    middle = float(len(inputlist) /2)
     if len(inputlist) % 2 !=0:
         # If the list has a true middle element it needs
         # to be accessed by adding 0.5 to the index
@@ -88,7 +101,23 @@ def get_middle(inputlist):
 
 def create_bars(df, y_pos, colors, left_invisible_bar):
     """
+    Loop through the columns and create an horizontal bar for each.
+    First it creates all the left bars, for all the columns, then the
+    one on the right. Each time, it add the distance from the previous bar.
+    If 'left_invisible_bar' is passed, it will create a empty gap on the left
+    before the first bar to centred the plot in the middle
+
+    :params:
+        df df():
+        y_pos np.array():
+        d np.array():
+        colors np.array():
+        left_invisible_bar np.array():
+
+    :return:
+        patch_handles list:
     """
+
     patch_handles = []
     for i, c in enumerate(df.columns):
         d = np.array(df[c])
@@ -109,14 +138,14 @@ def likert_scale(df, set_label=False, middle_line=True):
     :params:
     :return:
     """
-    fig = plt.figure(figsize=(10,8))
+    fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111)
 
     colors = get_colors(df)
     y_pos = np.arange(len(df.index))
     middle, first_half = get_middle(df.columns)
     try:
-        middles = df[first_half].sum(axis=1)+df[middle]*.5
+        middles = df[first_half].sum(axis=1) + df[middle] *.5
     except ValueError:  # In case middle value is none
         middles = df[first_half].sum(axis=1)
 
@@ -130,14 +159,14 @@ def likert_scale(df, set_label=False, middle_line=True):
 
     if set_label:
         # Create percentage for each cells to have the right annotation
-        percentages = calculate_percentage(df)
+        percentages = compute_percentage(df)
         # go through all of the bar segments and annotate
         for j in range(len(patch_handles)):
             for i, patch in enumerate(patch_handles[j].get_children()):
                 bl = patch.get_xy()
-                x = 0.5*patch.get_width() + bl[0]
-                y = 0.5*patch.get_height() + bl[1]
-                ax.text(x,y, "%d%%" % (percentages[i,j]), ha='center')
+                x = 0.5 *patch.get_width() +bl[0]
+                y = 0.5 *patch.get_height() +bl[1]
+                ax.text(x, y, "%d%%" % (percentages[i, j]), ha='center')
 
     if middle_line:
         # Draw a dashed line on the middle to visualise it
@@ -146,12 +175,12 @@ def likert_scale(df, set_label=False, middle_line=True):
         z.set_zorder(-1)
 
     # Set up the limit from 0 to the longest total barchart
-    plt.xlim(0, complete_longest+.5)
+    plt.xlim(0, complete_longest +.5)
     # Create the values with the same length as the xlim
     xvalues = range(0, int(complete_longest), 2)
 
     # Create label by using the absolute value of the
-    xlabels = [str(abs(x-longest)) for x in xvalues]
+    xlabels = [str(abs(x - longest)) for x in xvalues]
     plt.xticks(xvalues, xlabels)
     ax.set_yticks(y_pos)
     ax.set_yticklabels(df.index)
@@ -159,18 +188,15 @@ def likert_scale(df, set_label=False, middle_line=True):
     plt.show()
 
 
-
-
 def main():
     """
     """
 
-    def get_df():
+    def get_likert_scale():
 
-        ###### Generating the dataset for testing
+        # #### Generating the dataset for testing
         # Load dataset
         df = pd.read_csv('./dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
-
 
         def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
             """
@@ -192,10 +218,8 @@ def main():
             # Transpose the column to row to be able to plot a stacked bar chart
             return df_sub.transpose()
 
-
         open_code_YN = ['When you release code, how often do you use an open source license?',
                         'When you release code or data, how often do you assign a Digital Object Identifier (DOI) to it?']
-
 
         count_open = df[open_code_YN].apply(pd.Series.value_counts, dropna=True).transpose()
         count_open = count_unique_value(df, open_code_YN, dropna=True)
@@ -206,6 +230,12 @@ def main():
     # Overload the data with a df type
     df = get_df()
     likert_scale(df)
+
+    dummy = pd.DataFrame([[1, 2, 3, 4, 5], [5, 6, 7, 8, 5], [10, 4, 2, 10, 5]],
+                        columns=["SD", "D", "N", "A", "SA"],
+                        index=["Key 1", "Key B", "Key III"])
+    dummy.values.sum()
+    compute_percentage(dummy, True, True)
 
 if __name__ == "__main__":
     main()
