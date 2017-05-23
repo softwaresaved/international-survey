@@ -1,6 +1,5 @@
 # coding: utf-8
 # /usr/bin/python
-import math
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -73,6 +72,46 @@ def compute_percentage(df, by_row=True, by_col=False):
         return np.array(df.apply(compute_percentage, total=total))
 
 
+def create_bars(df, ax, y_pos, colors, left_invisible_bar):
+    """
+    Loop through the columns and create an horizontal bar for each.
+    First it creates all the left bars, for all the columns, then the
+    one on the right. Each time, it add the distance from the previous bar.
+    If 'left_invisible_bar' is passed, it will create a empty gap on the left
+    before the first bar to centred the plot in the middle
+
+    :params:
+        df df(): The dataframe containing the information
+        ax plt(): The subplot to draw on
+        y_pos np.array(): an array of the number of bars (likert items)
+        colors np.array(): an array containing the colors for the different answers
+        left_invisible_bar np.array(): the empty left gap needed to
+            centre the stacked bar
+
+    :return:
+        patch_handles list(): A list containing the drawn horizontal stacked bars
+    """
+    patch_handles = []
+    for i, c in enumerate(df.columns):
+        d = np.array(df[c])
+        new_bar = ax.barh(y_pos,
+                          d,
+                          color=colors[i],
+                          align='center',
+                          left=left_invisible_bar)
+        patch_handles.append(new_bar)
+        # accumulate the left-hand offsets
+        left_invisible_bar += d
+    return patch_handles
+
+
+def compute_middle_sum(df, first_half, middle):
+    try:
+        return df[first_half].sum(axis=1) + df[middle] *.5
+    except ValueError:  # In case middle value is none
+        return df[first_half].sum(axis=1)
+
+
 def get_middle(inputlist):
     """
     Return the first half of a list and the middle element
@@ -99,40 +138,15 @@ def get_middle(inputlist):
     return None, inputlist[:int(middle)]
 
 
-def create_bars(df, y_pos, colors, left_invisible_bar):
+def get_total_mid_answers(df):
     """
-    Loop through the columns and create an horizontal bar for each.
-    First it creates all the left bars, for all the columns, then the
-    one on the right. Each time, it add the distance from the previous bar.
-    If 'left_invisible_bar' is passed, it will create a empty gap on the left
-    before the first bar to centred the plot in the middle
-
-    :params:
-        df df():
-        y_pos np.array():
-        d np.array():
-        colors np.array():
-        left_invisible_bar np.array():
-
-    :return:
-        patch_handles list:
+    Get the list of the columns
     """
-
-    patch_handles = []
-    for i, c in enumerate(df.columns):
-        d = np.array(df[c])
-        new_bar = ax.barh(y_pos,
-                          d,
-                          color=colors[i],
-                          align='center',
-                          left=left_invisible_bar)
-        patch_handles.append(new_bar)
-        # accumulate the left-hand offsets
-        left_invisible_bar += d
-    return patch_handles
+    middle, first_half = get_middle(df.columns)
+    return compute_middle_sum(df, first_half, middle)
 
 
-def likert_scale(df, set_label=False, middle_line=True):
+def likert_scale(df, labels=True, middle_line=True, legend=True):
     """
     The idea is to create a fake bar on the left to center the bar on the same point.
     :params:
@@ -141,31 +155,33 @@ def likert_scale(df, set_label=False, middle_line=True):
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111)
 
+    # Generate an array of colors based on different colormap. The default value
+    # Use a divergent colormap.
     colors = get_colors(df)
     y_pos = np.arange(len(df.index))
-    middle, first_half = get_middle(df.columns)
-    try:
-        middles = df[first_half].sum(axis=1) + df[middle] *.5
-    except ValueError:  # In case middle value is none
-        middles = df[first_half].sum(axis=1)
 
+    # Compute the middle of the possible answers. Assuming the answers are columns
+    # Get the sum of the middles +.5 if middle value and without .5 if splitted in 2
+    # equal divides
+    middles = get_total_mid_answers(df)
     longest = middles.max()
+
     # Create the left bar to centre the barchart in the middle
     left_invisible_bar = np.array((middles - longest).abs())
     # Calculate the longest bar with the left gap in it to plot the x_value at the end
     # Calculate the total of the longest bar to have the appropriate width
     complete_longest = (df.sum(axis=1) + left_invisible_bar).max()
-    bars = create_bars(df, y_pos, colors, left_invisible_bar)
+    bars = create_bars(df, ax, y_pos, colors, left_invisible_bar)
 
-    if set_label:
+    if labels:
         # Create percentage for each cells to have the right annotation
         percentages = compute_percentage(df)
         # go through all of the bar segments and annotate
-        for j in range(len(patch_handles)):
-            for i, patch in enumerate(patch_handles[j].get_children()):
-                bl = patch.get_xy()
-                x = 0.5 *patch.get_width() +bl[0]
-                y = 0.5 *patch.get_height() +bl[1]
+        for j in range(len(bars)):
+            for i, bar in enumerate(bars[j].get_children()):
+                bl = bar.get_xy()
+                x = 0.5 *bar.get_width() +bl[0]
+                y = 0.5 *bar.get_height() +bl[1]
                 ax.text(x, y, "%d%%" % (percentages[i, j]), ha='center')
 
     if middle_line:
@@ -173,6 +189,9 @@ def likert_scale(df, set_label=False, middle_line=True):
         z = plt.axvline(longest, linestyle='--', color='black', alpha=.5)
         # Plot the line behind the barchart
         z.set_zorder(-1)
+
+    if legend:
+        pass
 
     # Set up the limit from 0 to the longest total barchart
     plt.xlim(0, complete_longest +.5)
@@ -191,8 +210,7 @@ def likert_scale(df, set_label=False, middle_line=True):
 def main():
     """
     """
-
-    def get_likert_scale():
+    def get_likert_score():
 
         # #### Generating the dataset for testing
         # Load dataset
@@ -228,14 +246,15 @@ def main():
         return likert_value
 
     # Overload the data with a df type
-    df = get_df()
+    df = get_likert_score()
     likert_scale(df)
 
     dummy = pd.DataFrame([[1, 2, 3, 4, 5], [5, 6, 7, 8, 5], [10, 4, 2, 10, 5]],
-                        columns=["SD", "D", "N", "A", "SA"],
-                        index=["Key 1", "Key B", "Key III"])
+                         columns=["SD", "D", "N", "A", "SA"],
+                         index=["Key 1", "Key B", "Key III"])
     dummy.values.sum()
     compute_percentage(dummy, True, True)
+
 
 if __name__ == "__main__":
     main()
