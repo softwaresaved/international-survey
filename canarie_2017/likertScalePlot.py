@@ -1,5 +1,22 @@
 # coding: utf-8
 # /usr/bin/python
+
+"""
+Plotting function to draw a likert scale.
+
+To plot diverging horizontal barchart as needed for a likert scale
+A simple code that try to mimic what it is possible with the package HH in R.
+This script is an adaptation of the answers found:
+ http://stackoverflow.com/questions/23142358/create-a-diverging-stacked-bar-chart-in-matplotlib
+ http://stackoverflow.com/questions/21397549/stack-bar-plot-in-matplotlib-and-add-label-to-each-section-and-suggestions
+"""
+
+__author__ = 'Olivier PHILIPPE'
+__copyright__ = 'Copyright 2017 The University of Southampton ' \
+                'on behalf of the Software Sustainability Institute'
+__licence__ = 'BSD 3-clause'
+
+
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -14,17 +31,6 @@ import matplotlib.pyplot as plt
 #  When using this script with ipython and vim
 plt.ion()
 plt.show()
-
-
-"""
-Plotting function to draw a likert scale.
-
-To plot diverging horizontal barchart as needed for a likert scale
-A simple code that try to mimic what it is possible with the package HH in R.
-This script is an adaptation of the answers found:
-    Source 1: http://stackoverflow.com/questions/23142358/create-a-diverging-stacked-bar-chart-in-matplotlib
-    Source 2: http://stackoverflow.com/questions/21397549/stack-bar-plot-in-matplotlib-and-add-label-to-each-section-and-suggestions
-"""
 
 
 def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
@@ -72,7 +78,7 @@ def compute_percentage(df, by_row=True, by_col=False):
         return np.array(df.apply(compute_percentage, total=total))
 
 
-def create_bars(df, ax, y_pos, colors, left_invisible_bar):
+def create_bars(df, ax, y_pos, colors, left_gap):
     """
     Loop through the columns and create an horizontal bar for each.
     First it creates all the left bars, for all the columns, then the
@@ -85,7 +91,7 @@ def create_bars(df, ax, y_pos, colors, left_invisible_bar):
         ax plt(): The subplot to draw on
         y_pos np.array(): an array of the number of bars (likert items)
         colors np.array(): an array containing the colors for the different answers
-        left_invisible_bar np.array(): the empty left gap needed to
+        left_gap np.array(): the empty left gap needed to
             centre the stacked bar
 
     :return:
@@ -98,10 +104,10 @@ def create_bars(df, ax, y_pos, colors, left_invisible_bar):
                           d,
                           color=colors[i],
                           align='center',
-                          left=left_invisible_bar)
+                          left=left_gap)
         patch_handles.append(new_bar)
         # accumulate the left-hand offsets
-        left_invisible_bar += d
+        left_gap += d
     return patch_handles
 
 
@@ -158,16 +164,22 @@ def likert_scale(df, labels=True, middle_line=True, legend=True):
     # Generate an array of colors based on different colormap. The default value
     # Use a divergent colormap.
     colors = get_colors(df)
+
+    # Get the position of each bar for all the items
     y_pos = np.arange(len(df.index))
 
     # Compute the middle of the possible answers. Assuming the answers are columns
     # Get the sum of the middles +.5 if middle value and without .5 if splitted in 2
     # equal divides
     middles = get_total_mid_answers(df)
-    longest = middles.max()
+
+    # Calculate the longest middle bar to set up the middle of the x-axis for the x-lables
+    # and plot the middle line
+    longest_middle = middles.max()
 
     # Create the left bar to centre the barchart in the middle
-    left_invisible_bar = np.array((middles - longest).abs())
+    left_invisible_bar = np.array((middles - longest_middle).abs())
+
     # Calculate the longest bar with the left gap in it to plot the x_value at the end
     # Calculate the total of the longest bar to have the appropriate width
     complete_longest = (df.sum(axis=1) + left_invisible_bar).max()
@@ -186,7 +198,7 @@ def likert_scale(df, labels=True, middle_line=True, legend=True):
 
     if middle_line:
         # Draw a dashed line on the middle to visualise it
-        z = plt.axvline(longest, linestyle='--', color='black', alpha=.5)
+        z = plt.axvline(longest_middle, linestyle='--', color='black', alpha=.5)
         # Plot the line behind the barchart
         z.set_zorder(-1)
 
@@ -199,7 +211,7 @@ def likert_scale(df, labels=True, middle_line=True, legend=True):
     xvalues = range(0, int(complete_longest), 2)
 
     # Create label by using the absolute value of the
-    xlabels = [str(abs(x - longest)) for x in xvalues]
+    xlabels = [str(abs(x - longest_middle)) for x in xvalues]
     plt.xticks(xvalues, xlabels)
     ax.set_yticks(y_pos)
     ax.set_yticklabels(df.index)
