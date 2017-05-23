@@ -16,7 +16,7 @@ __copyright__ = 'Copyright 2017 The University of Southampton ' \
                 'on behalf of the Software Sustainability Institute'
 __licence__ = 'BSD 3-clause'
 
-
+import math
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -55,27 +55,6 @@ def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
         return colormap(norm(values))
     except (AttributeError, TypeError):  # May happen when gives a list of categorical values
         return colormap(norm(range(len(values))))
-
-
-# TODO Simplify this function
-def compute_percentage(df, by_row=True, by_col=False):
-    """
-    Transform every cell into a percentage
-    """
-    def compute_percentage(row, total=None):
-        if total is None:
-            total = np.sum(row)
-        return [np.round(((x /total) *100), 2) for x in row]
-
-    if by_row is True and by_col is False:
-        return np.array(df.apply(compute_percentage, axis=1))
-
-    elif by_col is True and by_row is False:
-        return np.array(df.apply(compute_percentage, axis=0))
-
-    elif by_row is True and by_col is True:
-        total = df.values.sum()
-        return np.array(df.apply(compute_percentage, total=total))
 
 
 def create_bars(df, ax, y_pos, colors, left_gap):
@@ -152,13 +131,50 @@ def get_total_mid_answers(df):
     return compute_middle_sum(df, first_half, middle)
 
 
-def likert_scale(df, labels=True, middle_line=True, legend=True):
+# TODO Simplify this function
+def compute_percentage(df, by_row=True, by_col=False):
+    """
+    Transform every cell into a percentage
+    """
+    def compute_percentage(row, total=None):
+        if total is None:
+            total = np.sum(row)
+        return [np.round(((x /total) *100), 2) for x in row]
+
+    if by_row is True and by_col is False:
+        return np.array(df.apply(compute_percentage, axis=1))
+
+    elif by_col is True and by_row is False:
+        return np.array(df.apply(compute_percentage, axis=0))
+
+    elif by_row is True and by_col is True:
+        total = df.values.sum()
+        return np.array(df.apply(compute_percentage, total=total))
+
+
+def add_labels(df, ax, bars, rotation=0):
+    """
+    """
+    # Create percentage for each cells to have the right annotation
+    percentages = compute_percentage(df)
+    # go through all of the bar segments and annotate
+    for j in range(len(bars)):
+        for i, bar in enumerate(bars[j].get_children()):
+            bl = bar.get_xy()
+            x = 0.5 *bar.get_width() +bl[0]
+            y = 0.5 *bar.get_height() +bl[1]
+            ax.text(x, y, "{}\n%".format(percentages[i, j]), ha='center', rotation=rotation)
+
+
+def likert_scale(df, labels=True, middle_line=True, legend=True, rotation=0):
     """
     The idea is to create a fake bar on the left to center the bar on the same point.
     :params:
     :return:
     """
+    # Create the figure object
     fig = plt.figure(figsize=(10, 8))
+    # Create an axes object in the figure
     ax = fig.add_subplot(111)
 
     # Generate an array of colors based on different colormap. The default value
@@ -176,47 +192,60 @@ def likert_scale(df, labels=True, middle_line=True, legend=True):
     # Calculate the longest middle bar to set up the middle of the x-axis for the x-lables
     # and plot the middle line
     longest_middle = middles.max()
+    print('LONGEST MIDDLE: {}'.format(longest_middle))
 
     # Create the left bar to centre the barchart in the middle
     left_invisible_bar = np.array((middles - longest_middle).abs())
 
     # Calculate the longest bar with the left gap in it to plot the x_value at the end
-    # Calculate the total of the longest bar to have the appropriate width
+    # Calculate the total of the longest bar to have the appropriate width +
+    # the invisible bar in case it is used to center everything
     complete_longest = (df.sum(axis=1) + left_invisible_bar).max()
+
+    # Create the horizontal bars
     bars = create_bars(df, ax, y_pos, colors, left_invisible_bar)
 
+    # Add labels to each box
     if labels:
-        # Create percentage for each cells to have the right annotation
-        percentages = compute_percentage(df)
-        # go through all of the bar segments and annotate
-        for j in range(len(bars)):
-            for i, bar in enumerate(bars[j].get_children()):
-                bl = bar.get_xy()
-                x = 0.5 *bar.get_width() +bl[0]
-                y = 0.5 *bar.get_height() +bl[1]
-                ax.text(x, y, "%d%%" % (percentages[i, j]), ha='center')
+        add_labels(df, ax, bars, rotation)
 
+    # Create a line on the middle
     if middle_line:
         # Draw a dashed line on the middle to visualise it
         z = plt.axvline(longest_middle, linestyle='--', color='black', alpha=.5)
         # Plot the line behind the barchart
         z.set_zorder(-1)
 
+    # Add legend
     if legend:
-        pass
+        ax.legend(bars, df.columns)
 
     # Set up the limit from 0 to the longest total barchart
-    plt.xlim(0, complete_longest +.5)
-    # Create the values with the same length as the xlim
-    xvalues = range(0, int(complete_longest), 2)
+    ax.set_xlim([0, complete_longest + .5])
 
+
+    # Create the values with the same length as the xlim
+    # xvalues = range(0, int(complete_longest), int((int(longest_middle)%5)))
+
+    xvalues = [i - (longest_middle%5)
+               for i in range(0, int(complete_longest),
+                              int(int(longest_middle)/5))]
+
+
+
+    print('Value for the range: length: {}  -- step: {}'.format(int(complete_longest),
+                                                                int((int(longest_middle/5)))))
+    print('COMPLETE LONGEST: {}'.format(complete_longest))
+    print('XVALUES')
+    print(xvalues)
     # Create label by using the absolute value of the
     xlabels = [str(abs(x - longest_middle)) for x in xvalues]
+    print('XLABELS')
+    print(xlabels)
     plt.xticks(xvalues, xlabels)
     ax.set_yticks(y_pos)
     ax.set_yticklabels(df.index)
     ax.set_xlabel('Distance')
-    plt.show()
 
 
 def main():
@@ -261,11 +290,10 @@ def main():
     df = get_likert_score()
     likert_scale(df)
 
-    dummy = pd.DataFrame([[1, 2, 3, 4, 5], [5, 6, 7, 8, 5], [10, 4, 2, 10, 5]],
-                         columns=["SD", "D", "N", "A", "SA"],
+    dummy = pd.DataFrame([[1, 2, 3, 4, 5, 2], [5, 6, 7, 8, 5, 2], [10, 4, 2, 10, 5, 2]],
+                         columns=["SD", "D", "N", "A", "SA", 'TEST'],
                          index=["Key 1", "Key B", "Key III"])
-    dummy.values.sum()
-    compute_percentage(dummy, True, True)
+    likert_scale(dummy)
 
 
 if __name__ == "__main__":
