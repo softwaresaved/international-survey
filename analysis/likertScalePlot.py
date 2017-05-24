@@ -166,7 +166,7 @@ def add_labels(df, ax, bars, rotation=0):
             bl = bar.get_xy()
             x = 0.5 *bar.get_width() +bl[0]
             y = 0.5 *bar.get_height() +bl[1]
-            ax.text(x, y, "{}\n%".format(percentages[i, j]), ha='center', rotation=rotation)
+            ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
 
 
 def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True, rotation=0):
@@ -282,7 +282,7 @@ def main():
 
         # #### Generating the dataset for testing
         # Load dataset
-        df = pd.read_csv('./dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
+        df = pd.read_csv('./canarie_17/dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
 
 
         open_code_YN = ['When you release code, how often do you use an open source license?',
