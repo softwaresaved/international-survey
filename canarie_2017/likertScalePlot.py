@@ -255,6 +255,26 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
     ax.set_xlabel('Distance')
 
 
+def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
+    """
+    Count the values of different columns and transpose the count
+    :params:
+        :df pd.df(): dataframe containing the data
+        :colnames list(): list of strings corresponding to the column header to select the right column
+    :return:
+        :result_df pd.df(): dataframe with the count of each answer for each columns
+    """
+    # Subset the columns
+    df_sub = df[colnames]
+
+    if rename_columns is True:
+        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
+
+    # Calculate the counts for them
+    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    # Transpose the column to row to be able to plot a stacked bar chart
+    return df_sub.transpose()
+
 def main():
     """
     """
@@ -264,25 +284,6 @@ def main():
         # Load dataset
         df = pd.read_csv('./dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
 
-        def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
-            """
-            Count the values of different columns and transpose the count
-            :params:
-                :df pd.df(): dataframe containing the data
-                :colnames list(): list of strings corresponding to the column header to select the right column
-            :return:
-                :result_df pd.df(): dataframe with the count of each answer for each columns
-            """
-            # Subset the columns
-            df_sub = df[colnames]
-
-            if rename_columns is True:
-                df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
-
-            # Calculate the counts for them
-            df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-            # Transpose the column to row to be able to plot a stacked bar chart
-            return df_sub.transpose()
 
         open_code_YN = ['When you release code, how often do you use an open source license?',
                         'When you release code or data, how often do you assign a Digital Object Identifier (DOI) to it?']
