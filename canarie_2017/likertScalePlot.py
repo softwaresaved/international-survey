@@ -12,8 +12,6 @@ This script is an adaptation of the answers found:
 """
 
 __author__ = 'Olivier PHILIPPE'
-__copyright__ = 'Copyright 2017 The University of Southampton ' \
-                'on behalf of the Software Sustainability Institute'
 __licence__ = 'BSD 3-clause'
 
 import math
@@ -152,6 +150,11 @@ def compute_percentage(df, by_row=True, by_col=False):
         return np.array(df.apply(compute_percentage, total=total))
 
 
+def normalise_per_row(df):
+    df = df.div(df.sum(axis=1), axis=0)
+    return df.multiply(100)
+
+
 def add_labels(df, ax, bars, rotation=0):
     """
     """
@@ -166,7 +169,7 @@ def add_labels(df, ax, bars, rotation=0):
             ax.text(x, y, "{}\n%".format(percentages[i, j]), ha='center', rotation=rotation)
 
 
-def likert_scale(df, labels=True, middle_line=True, legend=True, rotation=0):
+def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True, rotation=0):
     """
     The idea is to create a fake bar on the left to center the bar on the same point.
     :params:
@@ -183,6 +186,9 @@ def likert_scale(df, labels=True, middle_line=True, legend=True, rotation=0):
 
     # Get the position of each bar for all the items
     y_pos = np.arange(len(df.index))
+
+    if normalise:
+        df = normalise_per_row(df)
 
     # Compute the middle of the possible answers. Assuming the answers are columns
     # Get the sum of the middles +.5 if middle value and without .5 if splitted in 2
@@ -227,11 +233,12 @@ def likert_scale(df, labels=True, middle_line=True, legend=True, rotation=0):
     # Create the values with the same length as the xlim
     # xvalues = range(0, int(complete_longest), int((int(longest_middle)%5)))
 
-    xvalues = [i - (longest_middle%5)
-               for i in range(0, int(complete_longest),
-                              int(int(longest_middle)/5))]
-
-
+    if normalise:
+        xvalues = range(0, 100, 20)
+    else:
+        xvalues = [math.floor(i - (longest_middle%5))
+                for i in range(0, int(complete_longest),
+                                int(int(longest_middle)/5))]
 
     print('Value for the range: length: {}  -- step: {}'.format(int(complete_longest),
                                                                 int((int(longest_middle/5)))))
@@ -239,7 +246,7 @@ def likert_scale(df, labels=True, middle_line=True, legend=True, rotation=0):
     print('XVALUES')
     print(xvalues)
     # Create label by using the absolute value of the
-    xlabels = [str(abs(x - longest_middle)) for x in xvalues]
+    xlabels = [str(math.floor(abs(x - longest_middle))) for x in xvalues]
     print('XLABELS')
     print(xlabels)
     plt.xticks(xvalues, xlabels)
