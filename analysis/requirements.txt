@@ -1,0 +1,10 @@
+appdirs==1.4.3
+decorator==4.0.11
+ipython-genutils==0.2.0
+jsonschema==2.6.0
+jupyter-core==4.3.0
+nbformat==4.3.0
+packaging==16.8
+pyparsing==2.2.0
+six==1.10.0
+traitlets==4.3.2
