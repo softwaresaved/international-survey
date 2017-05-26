@@ -103,3 +103,9 @@ def replace_project(x):
     elif x >= 22:
         return ">=22"
 
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
