@@ -11,9 +11,16 @@ Use the code from: https://gist.github.com/fperez/9716279
 
 import nbformat as nbf
 
+from data_process.uk_2017 import cleaning as uk_2017_cleaning
+from data_process.uk_2017 import action_file as uk_2017_action
+print(uk_2017_cleaning)
 
-def main():
 
+def example_generate_notebook():
+    """
+    Scrip to programatically generate notebook for exploratory analysis
+    Use the code from: https://gist.github.com/fperez/9716279
+    """
     nb = nbf.v4.new_notebook()
 
     text = """\
@@ -33,6 +40,9 @@ def main():
     with open(fname, 'w') as f:
         nbf.write(nb, f)
 
+
+def main():
+    print(uk_2017_action.
 
 if __name__ == "__main__":
     main()
