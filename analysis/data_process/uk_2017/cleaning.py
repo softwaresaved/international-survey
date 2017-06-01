@@ -53,7 +53,7 @@ df.columns = df.columns.str.replace('\xa0', '')
 
 # Some columns have a tabular instead of a space
 df.columns = df.columns.str.replace('\t', ' ')
-df = df.rename(columns= lambda x: re.sub('(?<=\s) +|^ +(?=\s)| (?= +[\n\0])', ' ', x))
+df = df.rename(columns=lambda x: re.sub('(?<=\s) +|^ +(?=\s)| (?= +[\n\0])', ' ', x))
 # # Replace all ending white space
 df.columns = df.columns.str.strip()
 
@@ -67,7 +67,12 @@ def grouping_question(df):
     Group question together by merging them when they have a [TAG]
     at the end of their column name.
     They group them in a list of list to be able to parse later.
-    The list as the columns name for later operation on the df
+    The list as the columns name for later operation on the df.
+    1. Loop through the columns of the dataframe
+    2. Check if the question is similar to the previous one,
+    if it is True, it add it to a list until it is False
+    3. When it is False, add that list to a larger list that
+    contains all the columns split in group lists.
 
     :params pd.dataframe(): dataframe to parse all columns
 
@@ -86,7 +91,17 @@ def grouping_question(df):
             return True
 
     def get_particule(col):
+        """
+        Do a regex match to get the bracket content and return the
+        matched string, or None if not
 
+        :param:
+            col str(): the column name to apply the regex on it
+
+        :return:
+            last_bit str(): the str between the bracket (w/ the bracket)
+            None, if no match is found
+        """
         re_match_brac = '\[([^]]+)\]'
         last_bit = re.search(re_match_brac, col)
         if last_bit:
@@ -99,6 +114,18 @@ def grouping_question(df):
         First it check if the size of the list is
         It removed the text within brackets and the brackets
         to compare if the two strings are similar.
+
+        :params:
+            col str(): column name
+            full_list list(): entire list of the all passed grouped questions
+            current_list list(): the current list of the previous questions.
+
+        :returns:
+            full_list list(): the same full_list appended with the current_list
+            if the current question was different than the previous one
+            current_list list(): the same current_list, appended with the current
+            question if similar to the last element of it or a new one only composed
+            of the current question if it was different
         """
         # if len(current_list) > 0:
         current_particule = get_particule(col)
@@ -116,12 +143,12 @@ def grouping_question(df):
         Split the list into one list with single element
         and a list with the grouped questions
         :param:
-            :group_q list(): list of the list
+            group_q list(): list of the list
         of question previously grouped or not
 
-        :return:
-            :single_q list(): list of single question
-            :group_q list(): list of group of questions
+        :returns:
+            single_q list(): list of single question
+            group_q list(): list of group of questions
         """
         single_q = list()
         i = 0
@@ -142,8 +169,12 @@ def grouping_question(df):
     single_q, group_q = split_group(grouped_question)
     return single_q, group_q
 
+
 single_q, group_q = grouping_question(df)
-len(single_q)
-len(group_q)
-group_q
-single_q
+
+
+# # Write the question type into a config file for plotting
+
+# # Write the filtered df into a new file to be used for later analysis
+
+
