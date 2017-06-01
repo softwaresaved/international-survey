@@ -49,7 +49,7 @@ if len(df.loc[:, df.columns.to_series().str.contains('Prefer not to answer').tol
     df.replace('Prefer not to answer', np.NaN, inplace=True)
 
 # Some columns have a unbreakable space in their name, replace it
-df.columns = df.columns.str.replace('\xa0', '')
+df.columns = df.columns.str.replace('\xa0', ' ')
 
 # Some columns have a tabular instead of a space
 df.columns = df.columns.str.replace('\t', ' ')
@@ -177,4 +177,13 @@ single_q, group_q = grouping_question(df)
 
 # # Write the filtered df into a new file to be used for later analysis
 
+for col in group_q:
+    for c in col:
+        print(c)
+        print(len(df[c].unique()))
+        print(df[c].unique())
+        print('\n')
 
+
+df['Which of the following sources are used to fundyour current, largest project? [Volunteers]']
+list(df.columns)
