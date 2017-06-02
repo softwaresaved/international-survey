@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import re
+import os
+import csv
+import glob
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -19,6 +22,32 @@ plt.show()
 pd.set_option('display.max_rows', 300)
 # Load dataset
 df = pd.read_csv('./dataset/raw_results-survey245554.csv')
+
+
+# load the different answers to questions to classify questions based on that
+answer_items_folder = '../../../survey_creation/uk_17/listAnswers'
+
+# Parse list of files
+def get_answer_item(path_to_file):
+    """
+    Parse all the files contained in the folder and
+    create a dictionary with the data contained into the value
+    and the filename as key
+
+    :param: path_to_file str(): path to the folder
+    :return: dict(): containing all the data
+    """
+    answer_item_dict = dict()
+    for filename in glob.glob(os.path.join(path_to_file, '*.csv')):
+        with open(filename) as f:
+            file_key, _ = os.path.splitext(os.path.basename(filename))
+            reader = csv.reader(f, delimiter=':')  # Set the delimiter as : to avoid taking
+                                                   # the comma as delimiter
+            answer_item_dict[file_key] = [i[0] for i in reader]
+
+answer_item_dict = get_answer_item(answer_items_folder)
+
+
 # Number of row == number of participants
 len(df.index)
 
@@ -29,6 +58,7 @@ df = df.drop(columns_to_drop, axis=1)
 
 # # Drop the columns about the time for each questions if present (from limesurvey)
 df = df.loc[:, ~df.columns.str.contains('^Question time|Group time')]
+df = df.loc[:, ~df.columns.str.contains('Question time')]
 
 # # The last page is the last page the participants reached. To
 # # do a compromise between keeping some and getting rid of the participants that haven't complete
@@ -43,10 +73,11 @@ df = df.loc[df['Last page']> 1]
 # This reduce the size of the population to:
 len(df.index)
 
-# # Check if there is Prefer not to answer
-if len(df.loc[:, df.columns.to_series().str.contains('Prefer not to answer').tolist()].columns) > 0:
-    # Replacing all the answer "Prefer not to answer" by NaN, as they are not useful in the analysis
-    df.replace('Prefer not to answer', np.NaN, inplace=True)
+# Replace variation of 'Do not want to answer', Do not wish to declare', 'Prefer not to say' into nan
+# if len(df.loc[:, df.columns.to_series().str.contains('Prefer not to answer').tolist()].columns) > 0:
+df.replace('Prefer not to answer', np.NaN, inplace=True)
+df.replace('Do not wish to declare', np.NaN, inplace=True)
+df.replace('Do not wish to answer', np.NaN, inplace=True)
 
 # Some columns have a unbreakable space in their name, replace it
 df.columns = df.columns.str.replace('\xa0', ' ')
@@ -60,6 +91,7 @@ df.columns = df.columns.str.strip()
 # Replace Yes and No to Boolean when it is possible
 y_n_bool = {'Yes': True, 'No': False}
 df.replace(y_n_bool)
+
 
 
 def grouping_question(df):
@@ -174,34 +206,6 @@ single_q, group_q = grouping_question(df)
 
 
 # # Split grouped questions in type
-time_scale = ['8' '7' '3' '5' '6' '10 (All my time)' '9' '2' '4' '1 (None at all)']
-likert_agree_answers = ['Neither agree or disagree', 'Agree', 'Disagree', 'Strongly Agree', 'Strongly disagree']
-likert_time_answers = ['Often', 'Sometimes', 'Never', 'Very Often', 'Always']
-likert_satisfied_answers = ['0 - Not at all satisfied', '1', '2',
-                            '3', '4', '5', '6', '7', '8', '9',
-                            '10 - Completely satisfied']
-y_n_answers = ['Yes', 'No']
-
-career_factors = [''
-
-['Flexible working hours' 'Opportunity for career advancement'
- 'Opportunity to develop software' 'I want to learn new skills'
- 'Desire to work in a research environment' 'The salary'
- 'Ability to work across disciplines' 'Desire to advance research'
- 'Freedom to choose own working practices'
-
- 'Freedom to choose own working practices'
- 'Desire to work in a research environment' 'The salary'
- 'Opportunity for career advancement' 'Flexible working hours']
-
-
-
-
-
-
-
-
-
 
 
 for col in group_q:
@@ -210,11 +214,17 @@ for col in group_q:
         print(len(df[c].unique()))
         print(df[c].unique())
         print('\n')
+
+for q in single_q:
+    print(q)
+    print('\n')
+    print(df[q[0]].unique())
+    print('\n')
+    print('\n')
+    print('\n')
+    print('\n')
+
+
 # # Write the question type into a config file for plotting
 
 # # Write the filtered df into a new file to be used for later analysis
-
-
-
-df['Which of the following sources are used to fundyour current, largest project? [Volunteers]']
-list(df.columns)
