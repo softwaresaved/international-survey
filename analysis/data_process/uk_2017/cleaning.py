@@ -173,9 +173,36 @@ def grouping_question(df):
 single_q, group_q = grouping_question(df)
 
 
-# # Write the question type into a config file for plotting
+# # Split grouped questions in type
+time_scale = ['8' '7' '3' '5' '6' '10 (All my time)' '9' '2' '4' '1 (None at all)']
+likert_agree_answers = ['Neither agree or disagree', 'Agree', 'Disagree', 'Strongly Agree', 'Strongly disagree']
+likert_time_answers = ['Often', 'Sometimes', 'Never', 'Very Often', 'Always']
+likert_satisfied_answers = ['0 - Not at all satisfied', '1', '2',
+                            '3', '4', '5', '6', '7', '8', '9',
+                            '10 - Completely satisfied']
+y_n_answers = ['Yes', 'No']
 
-# # Write the filtered df into a new file to be used for later analysis
+career_factors = [''
+
+['Flexible working hours' 'Opportunity for career advancement'
+ 'Opportunity to develop software' 'I want to learn new skills'
+ 'Desire to work in a research environment' 'The salary'
+ 'Ability to work across disciplines' 'Desire to advance research'
+ 'Freedom to choose own working practices'
+
+ 'Freedom to choose own working practices'
+ 'Desire to work in a research environment' 'The salary'
+ 'Opportunity for career advancement' 'Flexible working hours']
+
+
+
+
+
+
+
+
+
+
 
 for col in group_q:
     for c in col:
@@ -183,6 +210,10 @@ for col in group_q:
         print(len(df[c].unique()))
         print(df[c].unique())
         print('\n')
+# # Write the question type into a config file for plotting
+
+# # Write the filtered df into a new file to be used for later analysis
+
 
 
 df['Which of the following sources are used to fundyour current, largest project? [Volunteers]']
