@@ -51,7 +51,6 @@ def get_answer_item(path_to_file):
 
 answer_item_dict = get_answer_item(answer_items_folder)
 
-answer_item_dict
 
 # Number of row == number of participants
 len(df.index)
@@ -72,9 +71,11 @@ nb_answer = pd.DataFrame(df['Last page'].value_counts()).sort_index(ascending=Tr
 nb_answer['cumfreq'] = nb_answer.cumsum()
 nb_answer.plot(kind='bar')
 
+# SPECIFIC UK
 # Overall, as soon as the participants passed the first page, they reached the last page.
 # In consequence, if a participant passed the first page, (s)he is kept.
 df = df.loc[df['Last page']> 1]
+
 # This reduce the size of the population to:
 len(df.index)
 
@@ -84,18 +85,32 @@ df.replace('Prefer not to answer', np.NaN, inplace=True)
 df.replace('Do not wish to declare', np.NaN, inplace=True)
 df.replace('Do not wish to answer', np.NaN, inplace=True)
 
-# Some columns have a unbreakable space in their name, replace it
-df.columns = df.columns.str.replace('\xa0', ' ')
+# # Replace Yes and No to Boolean when it is possible
+# y_n_bool = {'Yes': True, 'No': False}
+# df.replace(y_n_bool)
 
-# Some columns have a tabular instead of a space
-df.columns = df.columns.str.replace('\t', ' ')
-df = df.rename(columns=lambda x: re.sub('(?<=\s) +|^ +(?=\s)| (?= +[\n\0])', ' ', x))
-# # Replace all ending white space
-df.columns = df.columns.str.strip()
 
-# Replace Yes and No to Boolean when it is possible
-y_n_bool = {'Yes': True, 'No': False}
-df.replace(y_n_bool)
+def cleaning_columns_white_space(df):
+    """
+    Various cleaning white spaces in columns name
+    Can extend that function if some other form of errors
+    are found later
+
+    :params:
+        df dataframe(): the input dataframe
+
+    :return:
+        df dataframe(): the same df but with cleaned columns
+    """
+    # Some columns have a unbreakable space in their name, replace it
+    df.columns = df.columns.str.replace('\xa0', ' ')
+    # Some columns have a tabular instead of a space
+    df.columns = df.columns.str.replace('\t', ' ')
+    df = df.rename(columns=lambda x: re.sub('(?<=\s) +|^ +(?=\s)| (?= +[\n\0])', ' ', x))
+    #Replace all ending white space
+    df.columns = df.columns.str.strip()
+    return df
+
 
 def merging_others(df, colname, replacement_values=None):
     """
@@ -220,6 +235,7 @@ def grouping_question(df):
         full_list.append(current_list)
         current_list = [col]
         return full_list, current_list
+
 
     def split_group(group_q):
         """
