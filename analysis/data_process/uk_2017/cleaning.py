@@ -295,3 +295,65 @@ for q in single_q:
 # # Write the question type into a config file for plotting
 
 # # Write the filtered df into a new file to be used for later analysis
+df['On average, how many times a year do you take part in providing training?']
+np.issubdtype(df['On average, how many times a year do you take part in providing training?'].dtype, np.number)
+
+
+def check_answers(df, questions):
+
+    def get_unique_answer(df, questions):
+        """
+        Create a set of unique answers for
+        each of grouped questions
+        """
+        for group in questions:
+            unique_answer = set()
+            for q in group:
+                unique_answer = set(unique_answer | set(df[q].unique()))
+                # unique_answer.add(df[q].unique())
+            # Remove the nan element
+            try:
+                unique_answer.remove(np.nan)
+            except KeyError:
+                pass
+            yield group, unique_answer
+
+    def common_element(set1, set2):
+        """
+        If the len of common element between the two sets
+        are at least 0.5 of the len of the set1
+        return True, False otherwise
+        """
+        def f(x):
+            try:
+                return(int(x))
+            except ValueError:
+                return None
+
+        # Remove the integer elements from the set because
+        # They are common to all likert scales
+        set1 = set([x for x in set1 if f(x)])
+        if len(set1.intersection(set2)) >= len(set1)/2:
+            return True
+        else:
+            return False
+
+    def get_type_data(answer_item_dict, unique_answer):
+        # if np.issubdtype(unique_answer.dtype, np.number):
+        #     return group, 'integer'
+        for q in answer_item_dict:
+            if common_element(answer_item_dict[q], unique_answer):
+                return q
+        return 'messy_data'
+
+    for group, unique_answer in get_unique_answer(df, questions):
+        type_answer = get_type_data(answer_item_dict, unique_answer)
+        print(group)
+        print(type_answer)
+        print('\n')
+        print('\n')
+        print('\n')
+        print('\n')
+
+
+check_answers(df, group_q)
