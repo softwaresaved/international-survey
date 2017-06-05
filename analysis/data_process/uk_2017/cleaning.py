@@ -20,14 +20,8 @@ import matplotlib.pyplot as plt
 plt.ion()
 plt.show()
 pd.set_option('display.max_rows', 300)
-# Load dataset
-df = pd.read_csv('./dataset/raw_results-survey245554.csv')
 
 
-# load the different answers to questions to classify questions based on that
-answer_items_folder = '../../../survey_creation/uk_17/listAnswers'
-
-# Parse list of files that contains all the possible created answers
 def get_answer_item(path_to_file):
     """
     Parse all the files contained in the folder and
@@ -43,26 +37,21 @@ def get_answer_item(path_to_file):
     for filename in glob.glob(os.path.join(path_to_file, '*.csv')):
         with open(filename) as f:
             file_key, _ = os.path.splitext(os.path.basename(filename))
-            reader = csv.reader(f, delimiter=':')  # Set the delimiter as : to avoid taking
-                                                   # the comma as delimiter
+            # Set the delimiter as : to avoid taking
+            # the comma as delimiter
+            reader = csv.reader(f, delimiter=':')
             answer_item_dict[file_key] = [i[0] for i in reader]
 
     return answer_item_dict
 
-answer_item_dict = get_answer_item(answer_items_folder)
 
-
-# Number of row == number of participants
-len(df.index)
-
-# # Drop unused fields
 def dropping_lime_useless(df):
     """
     Dropping all the columns created by limesurvey and
     not needed for later analysis
     """
     columns_to_drop = ['Response ID', 'Date submitted', 'Start language',
-                    'Date started', 'Date last action', 'Referrer URL']
+                       'Date started', 'Date last action', 'Referrer URL']
     df = df.drop(columns_to_drop, axis=1)
 
     # # Drop the columns about the time for each questions if present (from limesurvey)
@@ -71,25 +60,6 @@ def dropping_lime_useless(df):
     df = df.loc[:, ~df.columns.str.contains('Question time')]
     df = df.loc[:, ~df.columns.str.contains('Group time')]
     return df
-
-# # The last page is the last page the participants reached. To
-# # do a compromise between keeping some and getting rid of the participants that haven't complete
-# # enough answers
-nb_answer = pd.DataFrame(df['Last page'].value_counts()).sort_index(ascending=True)
-nb_answer['cumfreq'] = nb_answer.cumsum()
-nb_answer.plot(kind='bar')
-
-# SPECIFIC UK
-# Overall, as soon as the participants passed the first page, they reached the last page.
-# In consequence, if a participant passed the first page, (s)he is kept.
-df = df.loc[df['Last page']> 1]
-
-# This reduce the size of the population to:
-len(df.index)
-
-# # Replace Yes and No to Boolean when it is possible
-# y_n_bool = {'Yes': True, 'No': False}
-# df.replace(y_n_bool)
 
 
 def cleaning_columns_white_space(df):
@@ -109,7 +79,7 @@ def cleaning_columns_white_space(df):
     # Some columns have a tabular instead of a space
     df.columns = df.columns.str.replace('\t', ' ')
     df = df.rename(columns=lambda x: re.sub('(?<=\s) +|^ +(?=\s)| (?= +[\n\0])', ' ', x))
-    #Replace all ending white space
+    # Replace all ending white space
     df.columns = df.columns.str.strip()
     return df
 
@@ -124,28 +94,6 @@ def cleaning_missing_na(df):
     df.replace('Do not wish to declare', np.NaN, inplace=True)
     df.replace('Do not wish to answer', np.NaN, inplace=True)
     return df
-
-
-def merging_others(df, colname, replacement_values=None):
-    """
-    Function to wrap the different modification applied on
-    the columns that have a `other` column associated.
-    Search if some others could be merged with the prexisting answers
-    and merge it into the original column, then transform the column into
-    categorical variable
-    :params:
-        :df pd.df(): dataframe containing the data
-        :colname str(): string that have the column header to select the right column
-        :replacement_values dict(): contain which value to match in the column 'other' as
-        the key and which value to replace with. If it is None, skip the transformation (Default)
-    :return:
-        :None: The operation is a replace `inplace`
-    """
-    if replacement_values:
-        df[colname_other] = df[colname_other].apply(recode_values, args=(replacement_values, 'Other'))
-        df[colname].replace('Other', df[colname_other], inplace=True)
-
-    df[colname] = df[colname].str.capitalize().astype('category')
 
 
 def duplicating_other(df):
@@ -166,7 +114,7 @@ def duplicating_other(df):
     for col in df.columns:
         if col[-7:] == '[Other]':
             # Duplicate the column
-            df['[OTHER_RAW] '+col] = df[col]
+            df['[OTHER_RAW] '+ col] = df[col]
             # Replace all the values with 'Yes'
             df[col] = df[col].apply(lambda x: 'Yes' if not pd.isnull(x) else np.nan)
     return df
@@ -250,7 +198,6 @@ def grouping_question(df):
         current_list = [col]
         return full_list, current_list
 
-
     def split_group(group_q):
         """
         Split the list into one list with single element
@@ -282,38 +229,8 @@ def grouping_question(df):
     single_q, group_q = split_group(grouped_question)
     return single_q, group_q
 
-df = duplicating_other(df)
-single_q, group_q = grouping_question(df)
 
-
-
-# # Split grouped questions in type
-
-for col in group_q:
-    for c in col:
-        print(c)
-        print(len(df[c].unique()))
-        print(df[c].unique())
-        print('\n')
-
-for q in single_q:
-    print(q)
-    print('\n')
-    print(df[q[0]].unique())
-    print('\n')
-    print('\n')
-    print('\n')
-    print('\n')
-
-
-# # Write the question type into a config file for plotting
-
-# # Write the filtered df into a new file to be used for later analysis
-df['On average, how many times a year do you take part in providing training?']
-np.issubdtype(df['On average, how many times a year do you take part in providing training?'].dtype, np.number)
-
-
-def check_answers(df, questions):
+def check_answers(df, questions, answer_item_dict):
 
     def get_unique_answer(df, questions):
         """
@@ -347,7 +264,7 @@ def check_answers(df, questions):
         # Remove the integer elements from the set because
         # They are common to all likert scales
         set1 = set([x for x in set1 if f(x)])
-        if len(set1.intersection(set2)) >= len(set1)/2:
+        if len(set1.intersection(set2)) >= len(set1) /2:
             return True
         else:
             return False
@@ -370,4 +287,70 @@ def check_answers(df, questions):
         print('\n')
 
 
-check_answers(df, group_q)
+check_answers(df, group_q, answer_item_dict)
+
+
+def main():
+    """
+    """
+    # Load dataset
+    df = pd.read_csv('./dataset/raw_results-survey245554.csv')
+
+    # load the different answers to questions to classify questions based on that
+    answer_items_folder = '../../../survey_creation/uk_17/listAnswers'
+
+    # Parse list of files that contains all the possible created answers
+    answer_item_dict = get_answer_item(answer_items_folder)
+
+    # Number of row == number of participants
+    len(df.index)
+
+    # # The last page is the last page the participants reached. To
+    # # do a compromise between keeping some and getting rid of the participants that haven't complete
+    # # enough answers
+    nb_answer = pd.DataFrame(df['Last page'].value_counts()).sort_index(ascending=True)
+    nb_answer['cumfreq'] = nb_answer.cumsum()
+    nb_answer.plot(kind='bar')
+
+    # SPECIFIC UK
+    # Overall, as soon as the participants passed the first page, they reached the last page.
+    # In consequence, if a participant passed the first page, (s)he is kept.
+    df = df.loc[df['Last page']> 1]
+
+    # This reduce the size of the population to:
+    len(df.index)
+
+    # # Replace Yes and No to Boolean when it is possible
+    # y_n_bool = {'Yes': True, 'No': False}
+    # df.replace(y_n_bool)
+
+    df = duplicating_other(df)
+    single_q, group_q = grouping_question(df)
+
+    # # Split grouped questions in type
+
+    for col in group_q:
+        for c in col:
+            print(c)
+            print(len(df[c].unique()))
+            print(df[c].unique())
+            print('\n')
+
+    for q in single_q:
+        print(q)
+        print('\n')
+        print(df[q[0]].unique())
+        print('\n')
+        print('\n')
+        print('\n')
+        print('\n')
+
+    # # Write the question type into a config file for plotting
+
+    # # Write the filtered df into a new file to be used for later analysis
+    df['On average, how many times a year do you take part in providing training?']
+    np.issubdtype(df['On average, how many times a year do you take part in providing training?'].dtype, np.number)
+
+
+if __name__ == "__main__":
+    main()
