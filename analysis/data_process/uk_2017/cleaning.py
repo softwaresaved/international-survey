@@ -56,13 +56,21 @@ answer_item_dict = get_answer_item(answer_items_folder)
 len(df.index)
 
 # # Drop unused fields
-columns_to_drop = ['Response ID', 'Date submitted', 'Start language',
-                   'Date started', 'Date last action', 'Referrer URL']
-df = df.drop(columns_to_drop, axis=1)
+def dropping_lime_useless(df):
+    """
+    Dropping all the columns created by limesurvey and
+    not needed for later analysis
+    """
+    columns_to_drop = ['Response ID', 'Date submitted', 'Start language',
+                    'Date started', 'Date last action', 'Referrer URL']
+    df = df.drop(columns_to_drop, axis=1)
 
-# # Drop the columns about the time for each questions if present (from limesurvey)
-df = df.loc[:, ~df.columns.str.contains('^Question time|Group time')]
-df = df.loc[:, ~df.columns.str.contains('Question time')]
+    # # Drop the columns about the time for each questions if present (from limesurvey)
+    # #FIXME See if the regex works or not
+    # df = df.loc[:, ~df.columns.str.contains('^Question time|Group time')]
+    df = df.loc[:, ~df.columns.str.contains('Question time')]
+    df = df.loc[:, ~df.columns.str.contains('Group time')]
+    return df
 
 # # The last page is the last page the participants reached. To
 # # do a compromise between keeping some and getting rid of the participants that haven't complete
@@ -78,12 +86,6 @@ df = df.loc[df['Last page']> 1]
 
 # This reduce the size of the population to:
 len(df.index)
-
-# Replace variation of 'Do not want to answer', Do not wish to declare', 'Prefer not to say' into nan
-# if len(df.loc[:, df.columns.to_series().str.contains('Prefer not to answer').tolist()].columns) > 0:
-df.replace('Prefer not to answer', np.NaN, inplace=True)
-df.replace('Do not wish to declare', np.NaN, inplace=True)
-df.replace('Do not wish to answer', np.NaN, inplace=True)
 
 # # Replace Yes and No to Boolean when it is possible
 # y_n_bool = {'Yes': True, 'No': False}
@@ -109,6 +111,18 @@ def cleaning_columns_white_space(df):
     df = df.rename(columns=lambda x: re.sub('(?<=\s) +|^ +(?=\s)| (?= +[\n\0])', ' ', x))
     #Replace all ending white space
     df.columns = df.columns.str.strip()
+    return df
+
+
+def cleaning_missing_na(df):
+    """
+    Cleaning all the prefer not say and na answers
+    """
+    # Replace variation of 'Do not want to answer', Do not wish to declare', 'Prefer not to say' into nan
+    # if len(df.loc[:, df.columns.to_series().str.contains('Prefer not to answer').tolist()].columns) > 0:
+    df.replace('Prefer not to answer', np.NaN, inplace=True)
+    df.replace('Do not wish to declare', np.NaN, inplace=True)
+    df.replace('Do not wish to answer', np.NaN, inplace=True)
     return df
 
 
