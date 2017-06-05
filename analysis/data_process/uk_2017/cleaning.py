@@ -257,13 +257,16 @@ def check_answers(df, questions, answer_item_dict):
         """
         def f(x):
             try:
-                return(int(x))
+                int(x)
             except ValueError:
-                return None
+                return x
 
         # Remove the integer elements from the set because
         # They are common to all likert scales
+        print(set1)
         set1 = set([x for x in set1 if f(x)])
+        print(set1)
+        # print(set2)
         if len(set1.intersection(set2)) >= len(set1) /2:
             return True
         else:
@@ -279,13 +282,14 @@ def check_answers(df, questions, answer_item_dict):
 
     for group, unique_answer in get_unique_answer(df, questions):
         type_answer = get_type_data(answer_item_dict, unique_answer)
-        print(group)
-        print(type_answer)
-        print('\n')
-        print('\n')
-        print('\n')
-        print('\n')
-
+        pass
+        # print(group)
+        # print(type_answer)
+        # print('\n')
+        # print('\n')
+        # print('\n')
+        # print('\n')
+        #
 
 check_answers(df, group_q, answer_item_dict)
 
