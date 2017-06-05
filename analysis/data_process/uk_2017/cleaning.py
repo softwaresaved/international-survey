@@ -27,15 +27,17 @@ df = pd.read_csv('./dataset/raw_results-survey245554.csv')
 # load the different answers to questions to classify questions based on that
 answer_items_folder = '../../../survey_creation/uk_17/listAnswers'
 
-# Parse list of files
+# Parse list of files that contains all the possible created answers
 def get_answer_item(path_to_file):
     """
     Parse all the files contained in the folder and
     create a dictionary with the data contained into the value
     and the filename as key
 
-    :param: path_to_file str(): path to the folder
-    :return: dict(): containing all the data
+    :param:
+        path_to_file str(): path to the folder
+    :return:
+        dict(): containing all the data
     """
     answer_item_dict = dict()
     for filename in glob.glob(os.path.join(path_to_file, '*.csv')):
@@ -45,8 +47,11 @@ def get_answer_item(path_to_file):
                                                    # the comma as delimiter
             answer_item_dict[file_key] = [i[0] for i in reader]
 
+    return answer_item_dict
+
 answer_item_dict = get_answer_item(answer_items_folder)
 
+answer_item_dict
 
 # Number of row == number of participants
 len(df.index)
@@ -92,6 +97,50 @@ df.columns = df.columns.str.strip()
 y_n_bool = {'Yes': True, 'No': False}
 df.replace(y_n_bool)
 
+def merging_others(df, colname, replacement_values=None):
+    """
+    Function to wrap the different modification applied on
+    the columns that have a `other` column associated.
+    Search if some others could be merged with the prexisting answers
+    and merge it into the original column, then transform the column into
+    categorical variable
+    :params:
+        :df pd.df(): dataframe containing the data
+        :colname str(): string that have the column header to select the right column
+        :replacement_values dict(): contain which value to match in the column 'other' as
+        the key and which value to replace with. If it is None, skip the transformation (Default)
+    :return:
+        :None: The operation is a replace `inplace`
+    """
+    if replacement_values:
+        df[colname_other] = df[colname_other].apply(recode_values, args=(replacement_values, 'Other'))
+        df[colname].replace('Other', df[colname_other], inplace=True)
+
+    df[colname] = df[colname].str.capitalize().astype('category')
+
+
+def duplicating_other(df):
+    """
+    When there is an option for 'Other', the column contains the value typed
+    by the participants. However, to plot later, it is better to recode all this
+    values as 'Yes', as for the other items. Then duplicating these value in another
+    column with the tags [Other Raw] for later analysis if we want to analyse it in
+    details.
+    Creating the tag [Other Raw] at the beginning of the column name to avoid that
+    columns being picked up by the grouping_question()
+
+    :params:
+
+    :return:
+        :df dataframe(): Return the modified dataframe
+    """
+    for col in df.columns:
+        if col[-7:] == '[Other]':
+            # Duplicate the column
+            df['[OTHER_RAW] '+col] = df[col]
+            # Replace all the values with 'Yes'
+            df[col] = df[col].apply(lambda x: 'Yes' if not pd.isnull(x) else np.nan)
+    return df
 
 
 def grouping_question(df):
@@ -106,12 +155,14 @@ def grouping_question(df):
     3. When it is False, add that list to a larger list that
     contains all the columns split in group lists.
 
-    :params pd.dataframe(): dataframe to parse all columns
+    :params:
+        pd.dataframe(): dataframe to parse all columns
 
-    :return list(): a list() of list() of columns name str(). Each list
-    contains one group of question.
-    If a list only contains one question, this question doesn't belong
-    to any group
+    :return:
+        list(): a list() of list() of columns name str(). Each list
+        contains one group of question.
+        If a list only contains one question, this question doesn't belong
+        to any group
     """
     def compare_question(current_question, previous_question, current_particule, previous_particule):
         """
@@ -176,7 +227,7 @@ def grouping_question(df):
         and a list with the grouped questions
         :param:
             group_q list(): list of the list
-        of question previously grouped or not
+            of question previously grouped or not
 
         :returns:
             single_q list(): list of single question
@@ -201,12 +252,12 @@ def grouping_question(df):
     single_q, group_q = split_group(grouped_question)
     return single_q, group_q
 
-
+df = duplicating_other(df)
 single_q, group_q = grouping_question(df)
 
 
-# # Split grouped questions in type
 
+# # Split grouped questions in type
 
 for col in group_q:
     for c in col:
