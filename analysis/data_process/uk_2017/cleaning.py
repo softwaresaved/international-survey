@@ -4,6 +4,7 @@
 import re
 import os
 import csv
+import json
 import glob
 import pandas as pd
 import numpy as np
@@ -289,17 +290,19 @@ def check_answers(df, questions, answer_item_dict):
                 return q
         return 'messy_data'
 
+    type_question = dict()
     for group, unique_answer in get_unique_answer(df, questions):
         type_answer = get_type_data(answer_item_dict, unique_answer)
-        print(group)
-        print(unique_answer)
-        print(type_answer)
-        print('\n')
-        print('\n')
-        print('\n')
-        print('\n')
-        #
+        type_question.setdefault(type_answer, []).append(group)
+    return type_question
 
+
+def write_config_file(output_location, single_q, group_q):
+    """
+    """
+    single_q.update(group_q)
+    with open(output_location, 'w') as f:
+        json.dump(single_q, f)
 
 
 def main():
@@ -310,6 +313,9 @@ def main():
 
     # load the different answers to questions to classify questions based on that
     answer_items_folder = '../../../survey_creation/uk_17/listAnswers'
+
+    # Location for the json file of all questions
+    resulting_json_q = 'q
 
     # Parse list of files that contains all the possible created answers
     answer_item_dict = get_answer_item(answer_items_folder)
@@ -335,32 +341,18 @@ def main():
     # # Replace Yes and No to Boolean when it is possible
     # y_n_bool = {'Yes': True, 'No': False}
     # df.replace(y_n_bool)
-
+    df = dropping_lime_useless(df)
+    df = cleaning_columns_white_space(df)
+    df = cleaning_missing_na(df)
     df = duplicating_other(df)
     single_q, group_q = grouping_question(df)
 
-    # # Split grouped questions in type
-
-    for col in group_q:
-        for c in col:
-            print(c)
-            print(len(df[c].unique()))
-            print(df[c].unique())
-            print('\n')
-
-    for q in single_q:
-        print(q)
-        print('\n')
-        print(df[q[0]].unique())
-        print('\n')
-        print('\n')
-        print('\n')
-        print('\n')
-
     # Split all the groups in appropriated type of questions
-    check_answers(df, group_q, answer_item_dict)
-    check_answers(df, single_q, answer_item_dict)
+    group_q = check_answers(df, group_q, answer_item_dict)
+    single_q = check_answers(df, single_q, answer_item_dict)
+    single_q
 
+    write_config_file(resulting_json_q, group_q, single_q)
 
 if __name__ == "__main__":
     main()
