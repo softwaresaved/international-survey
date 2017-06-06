@@ -293,19 +293,24 @@ def write_config_file(output_location, single_q, group_q):
         json.dump(dict_to_write, f)
 
 
+def write_df(output_location, df):
+    """
+    """
+    df.to_csv(output_location)
+
 def main():
     """
     """
     import matplotlib
-# from include import plotting
-# When using Ipython within vim
+    # from include import plotting
+    # When using Ipython within vim
     matplotlib.use('TkAgg')
 
-# When using within jupyter
-# get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
+    # When using within jupyter
+    # get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
 
     import matplotlib.pyplot as plt
-#  When using this script with ipython and vim
+    #  When using this script with ipython and vim
     plt.ion()
     plt.show()
     pd.set_option('display.max_rows', 300)
@@ -316,7 +321,8 @@ def main():
     answer_items_folder = '../../../survey_creation/uk_17/listAnswers'
 
     # Location for the json file of all questions
-    resulting_json_q = './to_plot.json'
+    json_location = './to_plot.json'
+    cleaned_df_location = './dataset/cleaned_data.csv'
 
     # Parse list of files that contains all the possible created answers
     answer_item_dict = get_answer_item(answer_items_folder)
@@ -340,8 +346,6 @@ def main():
     len(df.index)
 
     # # Replace Yes and No to Boolean when it is possible
-    # y_n_bool = {'Yes': True, 'No': False}
-    # df.replace(y_n_bool)
     df = dropping_lime_useless(df)
     df = cleaning_columns_white_space(df)
     df = cleaning_missing_na(df)
@@ -353,7 +357,8 @@ def main():
     single_q = check_answers(df, single_q, answer_item_dict)
     single_q
 
-    write_config_file(resulting_json_q, group_q, single_q)
+    write_config_file(json_location, group_q, single_q)
+    write_df(cleaned_df_location, df)
 
 if __name__ == "__main__":
     main()
