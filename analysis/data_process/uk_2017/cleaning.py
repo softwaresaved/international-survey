@@ -255,26 +255,35 @@ def check_answers(df, questions, answer_item_dict):
         are at least 0.5 of the len of the set1
         return True, False otherwise
         """
-        def f(x):
-            try:
-                int(x)
-            except ValueError:
-                return x
 
         # Remove the integer elements from the set because
         # They are common to all likert scales
-        print(set1)
-        set1 = set([x for x in set1 if f(x)])
-        print(set1)
-        # print(set2)
-        if len(set1.intersection(set2)) >= len(set1) /2:
+        if len(set(set1).intersection(set2)) >= len(set1) /2:
             return True
         else:
             return False
 
+    def check_numbers(input_set):
+        """
+        Check if the strings can be converted in int
+        In that case, it means that it is either a discrete
+        scale or a likert scale
+        """
+        def f(x):
+            try:
+                return float(x)
+            except ValueError:
+                None
+
+        set_int = set([x for x in input_set if f(x)])
+        if len(set_int) == len(input_set):
+            return True
+
     def get_type_data(answer_item_dict, unique_answer):
-        # if np.issubdtype(unique_answer.dtype, np.number):
-        #     return group, 'integer'
+        if len(unique_answer) <= 1:
+            return 'single_item'
+        if check_numbers(unique_answer):
+            return 'discrete'
         for q in answer_item_dict:
             if common_element(answer_item_dict[q], unique_answer):
                 return q
@@ -282,16 +291,15 @@ def check_answers(df, questions, answer_item_dict):
 
     for group, unique_answer in get_unique_answer(df, questions):
         type_answer = get_type_data(answer_item_dict, unique_answer)
-        pass
-        # print(group)
-        # print(type_answer)
-        # print('\n')
-        # print('\n')
-        # print('\n')
-        # print('\n')
+        print(group)
+        print(unique_answer)
+        print(type_answer)
+        print('\n')
+        print('\n')
+        print('\n')
+        print('\n')
         #
 
-check_answers(df, group_q, answer_item_dict)
 
 
 def main():
@@ -349,11 +357,9 @@ def main():
         print('\n')
         print('\n')
 
-    # # Write the question type into a config file for plotting
-
-    # # Write the filtered df into a new file to be used for later analysis
-    df['On average, how many times a year do you take part in providing training?']
-    np.issubdtype(df['On average, how many times a year do you take part in providing training?'].dtype, np.number)
+    # Split all the groups in appropriated type of questions
+    check_answers(df, group_q, answer_item_dict)
+    check_answers(df, single_q, answer_item_dict)
 
 
 if __name__ == "__main__":
