@@ -8,19 +8,6 @@ import json
 import glob
 import pandas as pd
 import numpy as np
-import matplotlib
-# from include import plotting
-# When using Ipython within vim
-matplotlib.use('TkAgg')
-
-# When using within jupyter
-# get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
-
-import matplotlib.pyplot as plt
-#  When using this script with ipython and vim
-plt.ion()
-plt.show()
-pd.set_option('display.max_rows', 300)
 
 
 def get_answer_item(path_to_file):
@@ -300,14 +287,28 @@ def check_answers(df, questions, answer_item_dict):
 def write_config_file(output_location, single_q, group_q):
     """
     """
-    single_q.update(group_q)
+    dict_to_write = {'single_questions': single_q,
+                     'grouped_questions': group_q}
     with open(output_location, 'w') as f:
-        json.dump(single_q, f)
+        json.dump(dict_to_write, f)
 
 
 def main():
     """
     """
+    import matplotlib
+# from include import plotting
+# When using Ipython within vim
+    matplotlib.use('TkAgg')
+
+# When using within jupyter
+# get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
+
+    import matplotlib.pyplot as plt
+#  When using this script with ipython and vim
+    plt.ion()
+    plt.show()
+    pd.set_option('display.max_rows', 300)
     # Load dataset
     df = pd.read_csv('./dataset/raw_results-survey245554.csv')
 
@@ -315,7 +316,7 @@ def main():
     answer_items_folder = '../../../survey_creation/uk_17/listAnswers'
 
     # Location for the json file of all questions
-    resulting_json_q = 'q
+    resulting_json_q = './to_plot.json'
 
     # Parse list of files that contains all the possible created answers
     answer_item_dict = get_answer_item(answer_items_folder)
