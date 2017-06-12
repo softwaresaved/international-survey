@@ -237,19 +237,27 @@ def check_answers(df, questions, answer_item_dict):
                 pass
             yield group, unique_answer
 
-    def common_element(set1, set2):
+    def common_element(dict_of_answers, set2, *args):
         """
         If the len of common element between the two sets
         are at least 0.5 of the len of the set1
         return True, False otherwise
         """
+        def check_set(set1, set2, *args):
+            element_to_remove = ['other', 'none', 'prefer not to say', 'other/not listed']
+            set11 = set([str(x).lower() for x in set1 if str(x).lower not in element_to_remove])
+            set22 = set([str(x).lower() for x in set2 if str(x).lower not in element_to_remove])
 
-        # Remove the integer elements from the set because
-        # They are common to all likert scales
-        if len(set(set1).intersection(set2)) >= len(set1) /2:
-            return True
-        else:
-            return False
+            common_set = set11.intersection(set22)
+            if len(common_set) >= (len(set22)-1):  # In case Nan or other none response
+                print(args[0])
+                print(common_set)
+                return True
+
+        for q in dict_of_answers:
+            if check_set(dict_of_answers[q], set2, *args):
+                print(q)
+                return q
 
     def check_numbers(input_set):
         """
@@ -265,22 +273,37 @@ def check_answers(df, questions, answer_item_dict):
 
         set_int = set([x for x in input_set if f(x)])
         if len(set_int) == len(input_set):
-            return True
+            return 'discrete'
+        # Assuming that a likert scale did not have the answer 0 - Disagree or 10 - Disagree, which means it only have
+        # int(). However, as it can only have 8 items (maximum 10 items with 2 items that cannot be converted
+        # to int(), it should satisfied this condition to be considered as likert_undefined
+        if len(set_int) < 8 and len(set_int) >=3:
+            if len(input_set) <=10:  # Lowest possible likert scale exluding the extremity
+                return 'likert_undefined'
 
-    def get_type_data(answer_item_dict, unique_answer):
+    def get_type_data(answer_item_dict, unique_answer, *args):
+        """
+        """
         if len(unique_answer) <= 1:
             return 'single_item'
-        if check_numbers(unique_answer):
-            return 'discrete'
-        for q in answer_item_dict:
-            if common_element(answer_item_dict[q], unique_answer):
-                return q
-        return 'messy_data'
+
+        number = check_numbers(unique_answer)
+        if number == 'discrete':
+            return number
+
+        q_from_csv = common_element(answer_item_dict, unique_answer, *args)
+        if q_from_csv:
+            return q_from_csv
+
+        else:
+            return 'messy_data'
 
     type_question = dict()
+    # Need to loop through the list because some questions are grouped, and the single questions are single element in a list
     for group, unique_answer in get_unique_answer(df, questions):
-        type_answer = get_type_data(answer_item_dict, unique_answer)
+        type_answer = get_type_data(answer_item_dict, unique_answer, group[0])
         type_question.setdefault(type_answer, []).append(group)
+
     return type_question
 
 
@@ -327,9 +350,6 @@ def main():
     # Parse list of files that contains all the possible created answers
     answer_item_dict = get_answer_item(answer_items_folder)
 
-    # Number of row == number of participants
-    len(df.index)
-
     # # The last page is the last page the participants reached. To
     # # do a compromise between keeping some and getting rid of the participants that haven't complete
     # # enough answers
@@ -342,23 +362,21 @@ def main():
     # In consequence, if a participant passed the first page, (s)he is kept.
     df = df.loc[df['Last page']> 1]
 
-    # This reduce the size of the population to:
-    len(df.index)
-
     # # Replace Yes and No to Boolean when it is possible
     df = dropping_lime_useless(df)
     df = cleaning_columns_white_space(df)
     df = cleaning_missing_na(df)
     df = duplicating_other(df)
     single_q, group_q = grouping_question(df)
+    single_q
 
     # Split all the groups in appropriated type of questions
     group_q = check_answers(df, group_q, answer_item_dict)
     single_q = check_answers(df, single_q, answer_item_dict)
-    single_q
 
     write_config_file(json_location, group_q, single_q)
     write_df(cleaned_df_location, df)
+
 
 if __name__ == "__main__":
     main()
