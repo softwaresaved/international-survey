@@ -250,13 +250,13 @@ def check_answers(df, questions, answer_item_dict):
 
             common_set = set11.intersection(set22)
             if len(common_set) >= (len(set22)-1):  # In case Nan or other none response
-                print(args[0])
-                print(common_set)
+                # print(args[0])
+                # print(common_set)
                 return True
 
         for q in dict_of_answers:
             if check_set(dict_of_answers[q], set2, *args):
-                print(q)
+                # print(q)
                 return q
 
     def check_numbers(input_set):
@@ -368,13 +368,12 @@ def main():
     df = cleaning_missing_na(df)
     df = duplicating_other(df)
     single_q, group_q = grouping_question(df)
-    single_q
 
     # Split all the groups in appropriated type of questions
     group_q = check_answers(df, group_q, answer_item_dict)
     single_q = check_answers(df, single_q, answer_item_dict)
 
-    write_config_file(json_location, group_q, single_q)
+    write_config_file(json_location, single_q, group_q)
     write_df(cleaned_df_location, df)
 
 
