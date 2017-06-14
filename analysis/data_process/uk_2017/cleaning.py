@@ -81,6 +81,8 @@ def cleaning_missing_na(df):
     df.replace('Prefer not to answer', np.NaN, inplace=True)
     df.replace('Do not wish to declare', np.NaN, inplace=True)
     df.replace('Do not wish to answer', np.NaN, inplace=True)
+    df.replace("I don't know", np.NaN, inplace=True)
+    df.repalce("Don't want to answer", np.NaN, inplace=True)
     return df
 
 
