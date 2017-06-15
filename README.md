@@ -45,7 +45,7 @@ We now provide some more detail about the columns in the questions csv file. You
 
 * **code**: This is the unique ID for each question. It mandatory because it is used to compare the same questions across results from different countries and different years. When adding a new question, please follow the format for the Code, which is:
 
-'''<short description><number><country code>'''
+```<short description><number><country code>```
 
 * **question**: The question in English as presented to the participant.
 
