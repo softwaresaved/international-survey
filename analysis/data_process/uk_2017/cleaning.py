@@ -42,8 +42,8 @@ def dropping_lime_useless(df):
                        'Date started', 'Date last action', 'Referrer URL']
     df = df.drop(columns_to_drop, axis=1)
 
-    # # Drop the columns about the time for each questions if present (from limesurvey)
-    # #FIXME See if the regex works or not
+    # Drop the columns about the time for each questions if present (from limesurvey)
+    # FIXME See if the regex works or not
     # df = df.loc[:, ~df.columns.str.contains('^Question time|Group time')]
     df = df.loc[:, ~df.columns.str.contains('Question time')]
     df = df.loc[:, ~df.columns.str.contains('Group time')]
