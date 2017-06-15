@@ -1,7 +1,45 @@
 # International collaboration for survey
 
-The starting point is the already made survey the SSI conducted in UK during march 2016.
-[//]: # (INSERT the different sections from article)
+In 2016 the Software Sustainability Institute ran the first survey of Research Software Engineers (RSEs) - the people who write code in academia. This produced the first insight into the demographics, job satisfaction, and practices of RSEs. To support and broaden this work, the Institute will run the UK survey every year and - it is hoped - will expand the survey so that insight and comparison can be made across different countries. Ultimately, we hope that these results, the anonymised version of which will all be open licensed, will act as a valuable resource to understand and improve the working conditions for RSEs.
+
+In 2017, we have conducted surveys in the UK and in Canada. We now have German and Dutch collaborators, and we are looking at expanding into Norway, South Africa and the US.
+
+# Working with us on a new survey
+
+The following are instructions on how to work with us on a new survey. Below, you will find more detail about the contents of this repository and how the surveys are conducted.
+
+## Creating a new survey
+
+We are flexible to adapting the survey to your needs. However, we also want to make the inter-country analysis as easy as possible. For this reason, we have a few guiding principles that - in a perfect world - we can agree to stick to:
+
+1. We make as few adaptations as possible to the core questions
+1. We apply for ethics approval at the University of Southampton (where Simon Hettrick and Olivier Philippe are based) to run the survey.
+1. We run the survey under the University of Southampton's Limesurvey account so that all data is processed in the same way (and we pay for it)
+1. We store all anonymised data on Zenodo under a Creations Commons By Attribution licence with ourselves and yourself as joint authors
+1. We destroy the data set with with non-anonymised data (i.e. those with email addresses) because it's no longer necessary
+
+What we need from you:
+
+1. Locate the directory related to your country's survey in [survey creation](https://github.com/softwaresaved/international-survey/tree/master/survey_creation).
+1. In your country directory, you will find three files
+..1. listAnswers directory: containing csv file that contain answers for questions where a list of potential answers is presented
+..1. Text directory: containing md files that contain the welcome and end message for the survey
+..1. question csv file: containing a csv that contains the core questions for your survey
+1. Review the core questions (in "questions_<country>_<year>.csv") and decide if there are any changes (additions, removals or edits) that you think will be necessary. Simon Hettrick and Olivier Philippe at the Institute will organise a discussion with you to discuss these changes.
+1. The listAnswers folder contains csv files that hold information that is relevant to the UK (e.g. all UK universities, standard UK academic salary ranges in pounds). We need you to provide answers that are relevant to your country (e.g. all German universities, or standard Dutch academic salary ranges in Euros).
+1. The Text directory contains the welcome and end messages that are presented at the start and end of the survey. Please review these and decide on whether you are happy with the content
+1. Now that the content of the questions, answers and welcome and end text is to everyone's approval, we need you to translate the text into your native language(s).
+1. Once we are all happy that the survey is ready, you will disseminate the survey in your own country
+
+Where to put translated text:
+
+1. Translated questions should be added to the "questions_<country>_<year>.csv" under one or more of the columns "Trans lang 1", "Trans lang 2", "Trans lang 3" (contact us if you have more than three national languages).
+1. Translated welcome and end text should replace the English-language version in the appropriate files in the Text directory.
+1. Tranlsated lists of answers should replace the English-language versions in the csv files held in the listAnswers directory
+
+Creating new questions:
+
+1. 
 
 
 ## Explanation of the columns in ['summary_questions.csv']('summary_questions.csv')
