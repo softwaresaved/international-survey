@@ -1,3 +1,5 @@
 venv/*
 notebooks/.ipynb_checkpoints/
 raw_*.csv
+__pycache__/
+
