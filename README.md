@@ -22,9 +22,9 @@ What we need from you:
 
 1. Locate the directory related to your country's survey in [survey creation](https://github.com/softwaresaved/international-survey/tree/master/survey_creation).
 1. In your country directory, you will find three files
-..1. listAnswers directory: containing csv file that contain answers for questions where a list of potential answers is presented
-..1. Text directory: containing md files that contain the welcome and end message for the survey
-..1. question csv file: containing a csv that contains the core questions for your survey
+   1. listAnswers directory: containing csv file that contain answers for questions where a list of potential answers is presented
+   1. Text directory: containing md files that contain the welcome and end message for the survey
+   1. question csv file: containing a csv that contains the core questions for your survey
 1. Review the core questions (in "questions_<country>_<year>.csv") and decide if there are any changes (additions, removals or edits) that you think will be necessary. Simon Hettrick and Olivier Philippe at the Institute will organise a discussion with you to discuss these changes.
 1. The listAnswers folder contains csv files that hold information that is relevant to the UK (e.g. all UK universities, standard UK academic salary ranges in pounds). We need you to provide answers that are relevant to your country (e.g. all German universities, or standard Dutch academic salary ranges in Euros).
 1. The Text directory contains the welcome and end messages that are presented at the start and end of the survey. Please review these and decide on whether you are happy with the content
