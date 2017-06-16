@@ -12,3 +12,5 @@ Aim to release the German survey by mid or end of August and close it by end of 
   - Make use of RSE17 publicity to spread invitation for survey
 
 
+Wünschst du dir eine Konferenz in D zu dem Thema?
+Wie bist du vernetzt in deiner Institution?
