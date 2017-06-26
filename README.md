@@ -54,13 +54,20 @@ We now provide some more detail about the columns in the questions csv file. You
    * `Y/N/NA`: Yes or No format (with optional N/A when applicable)
    * `FREETEXT`: An open text based answer added by the participant
    * `FREENUMERIC`: A field where participant can encode any number
-   * `LISTANSWER <name of csv in the listAnswer directory>`: questions that are answered from one of the options in the appropriate csv file in the listAnswer folder.
+   * `DATETIME`: A field that only date can be chosen
+   * `DROP DOWN LIST`: A list of answers the participant can choose from
+   * `MUlTIPLE CHOICE`: A list of answers the participant can choose from. (S)He can choose as many as (s)he wants.
+   * `LIKERT`: any type of likert scale.
+   
+* **answer_file**: This column gives the name of the csv file located in `listAnswers` folder, where the appropriate answers options are stored
 
 * **conditional**: This indicates whether a question only appears if an specific answer was given to a previous question.
 
 * **source**: If a specic resource (e.g. a list on Wikipedia, a government policy doc, etc.) was used to generate a list of potential answers, please reference it here.
 
 * **comment**: Any comments that you wish to make.
+
+* **lang_trans{1-3}**: Column to write down the translation of the question.
 
 # Organisation of the repository
 
