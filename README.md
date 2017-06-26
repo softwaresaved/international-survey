@@ -56,7 +56,7 @@ We now provide some more detail about the columns in the questions csv file. You
    * `FREENUMERIC`: A field where participant can encode any number
    * `DATETIME`: A field that only date can be chosen
    * `DROP DOWN LIST`: A list of answers the participant can choose from
-   * `MUlTIPLE CHOICE`: A list of answers the participant can choose from. (S)He can choose as many as (s)he wants.
+   * `MULTIPLE CHOICE`: A list of answers the participant can choose from. (S)He can choose as many as (s)he wants.
    * `LIKERT`: any type of likert scale.
    
 * **answer_file**: This column gives the name of the csv file located in `listAnswers` folder, where the appropriate answers options are stored
