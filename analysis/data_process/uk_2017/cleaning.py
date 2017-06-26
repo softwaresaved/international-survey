@@ -10,6 +10,9 @@ import pandas as pd
 import numpy as np
 
 
+from config import CleaningConfig
+
+
 def get_answer_item(path_to_file):
     """
     Parse all the files contained in the folder and
@@ -251,7 +254,7 @@ def check_answers(df, questions, answer_item_dict):
             set22 = set([str(x).lower() for x in set2 if str(x).lower not in element_to_remove])
 
             common_set = set11.intersection(set22)
-            if len(common_set) >= (len(set22)-1):  # In case Nan or other none response
+            if len(common_set) >= (len(set22) -1):  # In case Nan or other none response
                 # print(args[0])
                 # print(common_set)
                 return True
@@ -340,17 +343,19 @@ def main():
     plt.show()
     pd.set_option('display.max_rows', 300)
     # Load dataset
-    df = pd.read_csv('./dataset/raw_results-survey245554.csv')
+    df = pd.read_csv(CleaningConfig.raw_data)
 
     # load the different answers to questions to classify questions based on that
-    answer_items_folder = '../../../survey_creation/uk_17/listAnswers'
+    question_file = CleaningConfig.question_file
+    answer_folder = CleaningConfig.answer_folder
+
 
     # Location for the json file of all questions
-    json_location = './to_plot.json'
-    cleaned_df_location = './dataset/cleaned_data.csv'
+    json_location = CleaningConfig.json_to_plot_location
+    cleaned_df_location = CleaningConfig.cleaned_df_location
 
     # Parse list of files that contains all the possible created answers
-    answer_item_dict = get_answer_item(answer_items_folder)
+    answer_item_dict = get_answer_item(answer_folder)
 
     # # The last page is the last page the participants reached. To
     # # do a compromise between keeping some and getting rid of the participants that haven't complete
