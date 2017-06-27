@@ -40,55 +40,6 @@ def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=
     return output
 
 
-def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizontal=False):
-    """
-    Plot the others variables
-    :params:
-        :df pd.df(): dataframe containing the data, should be a df of frequencies
-        created with crosstab
-        :colname str(): string that have the column header to select the right column
-    """
-    type_plot = 'bar'
-    # Call the freq_table function to create the count to plot
-    # d = freq_table(df, colnames, columns)
-    if sort_order:
-        df = df.sort_values(by=colnames, ascending=False)
-    if horizontal is True:
-        type_plot='barh'
-
-    df[colnames].plot(kind=type_plot, stacked=stacked)
-
-
-# def save_freq_plotting(df, columns, colnames=False, sort_order=False, stacked=False, horizontal=False):
-#     """
-#     Plot the others variables
-#     :params:
-#         :df pd.df(): dataframe containing the data
-#         :colname str(): string that have the column header to select the right column
-#     """
-#     type_plot = 'bar'
-#     if colnames is False:
-#         colnames = columns
-#     # Call the freq_table function to create the count to plot
-#     d = freq_table(df, colnames, columns)
-#     if sort_order:
-#         d = d.sort_values(by=colnames, ascending=False)
-#     if horizontal is True:
-#         type_plot='barh'
-#
-#     d.plot(kind=type_plot, stacked=stacked)
-#     return d
-
-def plot_discrete():
-    """
-    """
-    # Calculate the average of all the time_activity questions and plotting them
-    # Convert the different column to an int value to be able to calculate the mean after
-    # The option 'coerce' is needed to force passing the NaN values
-    # df[time_activity] = df[time_activity].apply(pd.to_numeric, errors='coerce')
-    # mean_activity = df[time_activity].mean(axis=0)
-    pass
-
 
 def process_question(df, q, type_chart):
     """
@@ -100,28 +51,6 @@ def process_question(df, q, type_chart):
     if type_chart == 'barchart':
         result = freq_table(data_to_plot)
         return result
-
-
-def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
-    """
-    Count the values of different columns and transpose the count
-    :params:
-        :df pd.df(): dataframe containing the data
-        :colnames list(): list of strings corresponding to the column header to select the right column
-    :return:
-        :result_df pd.df(): dataframe with the count of each answer for each columns
-    """
-    # Subset the columns
-    colnames = [i for j in colnames for i in j]
-    df_sub = df[colnames]
-
-    if rename_columns is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
-
-    # Calculate the counts for them
-    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-    # Transpose the column to row to be able to plot a stacked bar chart
-    return df_sub.transpose()
 
 
 def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
@@ -162,10 +91,13 @@ def add_labels(df, ax, bars, rotation=0):
             ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
 
 
-def plot_y_n(df, sort_order=False, horizontal=False,
-             legend=True, set_label=False):
+
+
+def plot_y_n_multiple(df, sort_order=False, horizontal=False,
+                      legend=True, set_label=False):
     """
-    Plotting Y-N values as stacked bars
+    Plotting Y-N values as stacked bars when passed several questions at the same time.
+    If want to plot single question Y-N see plot_single_y_n()
     :params:
         :df pd.df(): dataframe containing the data, should be a df of frequencies
         created with crosstab
@@ -225,8 +157,86 @@ def plot_y_n(df, sort_order=False, horizontal=False,
     return fig
 
 
-plot_y_n(data_to_plot, sort_order=True, horizontal=False, set_label=True)
-data_to_plot
+
+
+def plot_y_n_single(df):
+    """
+    """
+    return df.plot(kind='barh', stacked=True)
+
+
+def plot_freq_bar_single(df):
+    """
+    """
+    df.plot(kind='bar')
+
+def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizontal=False):
+    """
+    Plot the others variables
+    :params:
+        :df pd.df(): dataframe containing the data, should be a df of frequencies
+        created with crosstab
+        :colname str(): string that have the column header to select the right column
+    """
+    type_plot = 'bar'
+    # Call the freq_table function to create the count to plot
+    # d = freq_table(df, colnames, columns)
+    if sort_order:
+        df = df.sort_values(by=colnames, ascending=False)
+    if horizontal is True:
+        type_plot='barh'
+
+    df[colnames].plot(kind=type_plot, stacked=stacked)
+
+
+def plot_discrete():
+    """
+    """
+    # Calculate the average of all the time_activity questions and plotting them
+    # Convert the different column to an int value to be able to calculate the mean after
+    # The option 'coerce' is needed to force passing the NaN values
+    # df[time_activity] = df[time_activity].apply(pd.to_numeric, errors='coerce')
+    # mean_activity = df[time_activity].mean(axis=0)
+    pass
+
+def count_unique_value_multiple(df, colnames, rename_columns=False, dropna=False, normalize=False):
+    """
+    Count the values of different columns and transpose the count
+    :params:
+        :df pd.df(): dataframe containing the data
+        :colnames list(): list of strings corresponding to the column header to select the right column
+    :return:
+        :result_df pd.df(): dataframe with the count of each answer for each columns
+    """
+    # Subset the columns
+    colnames = [i for j in colnames for i in j]
+    df_sub = df[colnames]
+
+    if rename_columns is True:
+        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
+
+    # Calculate the counts for them
+    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    # Transpose the column to row to be able to plot a stacked bar chart
+    # return df_sub
+    return df_sub.transpose()
+
+
+def count_unique_value_single(df, colnames):
+    """
+    """
+    return df[colnames].value_counts()
+
+
+def count_multiple_choice(df, colnames, rename_columns=True):
+    """
+    """
+    df_sub = df[colnames]
+    if rename_columns is True:
+        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
+    df_sub = df_sub[df_sub == 'Yes'].count()
+    df_sub.sort_values(ascending=False, inplace=True)
+    return df_sub
 
 
 def main():
@@ -241,11 +251,45 @@ def main():
     location_type_q = './to_plot.json'
     type_questions = get_type_question(location_type_q)
 
-    data_to_plot = count_unique_value(df, type_questions['single_questions']['yes_no'],
-                                      normalize=True,dropna=True)
-    data_to_plot.sort_values(by='Yes').plot(kind='barh', stacked=True)
 
-    data_to_plot
+    # Test single question having Y_N
+    single_test_y_n = count_unique_value_single(df, 'Do you consider yourself a professional software developer?')
+    plot_y_n_single(single_test_y_n)
+
+    # Test multiples questions having Y_N
+    test_y_n_multiple = count_unique_value_multiple(df, type_questions['single_questions']['yes_no'],
+                                         normalize=True,dropna=True)
+    plot_y_n_multiple(test_y_n_multiple, sort_order=True, horizontal=False, set_label=True)
+
+    test_bar = count_unique_value(df, type_questions['single_questions']['education'], dropna=True)
+    df['What is the highest qualification you have obtained?'].value_counts().plot(kind='bar')
+    test_bar.plot(kind='bar')
+
+
+    # Multiple choice questions
+    to_check = type_questions['grouped_questions']['yes_no'][0]
+    freq_yes_test = count_unique_choice(df, to_check)
+    freq_yes_test.sort_values(axis=0)
+    freq_yes_test.plot(kind='bar')
+
+
+    # Plot ranking
+
+
+
+    # Calculate the counts for them
+    # Likert scales
+
+    # ## Single items
+
+    # ## Several items
+
+
+
+
+
+
+
 
 
     for group in type_questions['grouped_questions']:
