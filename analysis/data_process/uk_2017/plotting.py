@@ -57,8 +57,8 @@ def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizon
         type_plot='barh'
 
     df[colnames].plot(kind=type_plot, stacked=stacked)
-#
-#
+
+
 # def save_freq_plotting(df, columns, colnames=False, sort_order=False, stacked=False, horizontal=False):
 #     """
 #     Plot the others variables
@@ -78,6 +78,28 @@ def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizon
 #
 #     d.plot(kind=type_plot, stacked=stacked)
 #     return d
+
+def plot_discrete():
+    """
+    """
+    # Calculate the average of all the time_activity questions and plotting them
+    # Convert the different column to an int value to be able to calculate the mean after
+    # The option 'coerce' is needed to force passing the NaN values
+    # df[time_activity] = df[time_activity].apply(pd.to_numeric, errors='coerce')
+    # mean_activity = df[time_activity].mean(axis=0)
+    pass
+
+
+def process_question(df, q, type_chart):
+    """
+    """
+    if any(isinstance(el, list) for el in q):
+        return count_unique_value(df, q)
+    else:
+        data_to_plot = df[q]
+    if type_chart == 'barchart':
+        result = freq_table(data_to_plot)
+        return result
 
 
 def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
@@ -100,12 +122,6 @@ def count_unique_value(df, colnames, rename_columns=False, dropna=False, normali
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     # Transpose the column to row to be able to plot a stacked bar chart
     return df_sub.transpose()
-
-
-def plot_likert():
-    """
-    """
-    pass
 
 
 def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
@@ -132,77 +148,85 @@ def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
         return colormap(norm(range(len(values))))
 
 
-def create_bars(df, ax, y_pos, colors, left_gap=False):
+def add_labels(df, ax, bars, rotation=0):
     """
-    Loop through the columns and create an horizontal bar for each.
-    First it creates all the left bars, for all the columns, then the
-    one on the right. Each time, it add the distance from the previous bar.
-    If 'left_invisible_bar' is passed, it will create a empty gap on the left
-    before the first bar to centred the plot in the middle
-
-    :params:
-        df df(): The dataframe containing the information
-        ax plt(): The subplot to draw on
-        y_pos np.array(): an array of the number of bars (likert items)
-        colors np.array(): an array containing the colors for the different answers
-        left_gap np.array(): the empty left gap needed to
-            centre the stacked bar
-
-    :return:
-        patch_handles list(): A list containing the drawn horizontal stacked bars
     """
-    patch_handles = []
-    for i, c in enumerate(df.columns):
-        d = np.array(df[c])
-        if left_gap:
-            new_bar = ax.barh(y_pos, d, color=colors[i], align='center', left=left_gap)
-            # accumulate the left-hand offsets
-            left_gap += d
-        else:
-            new_bar = ax.barh(y_pos, d, color=colors[i], align='center', left=left_gap)
-        patch_handles.append(new_bar)
-    return patch_handles
+    # Create percentage for each cells to have the right annotation
+    percentages = compute_percentage(df)
+    # go through all of the bar segments and annotate
+    for j in range(len(bars)):
+        for i, bar in enumerate(bars[j].get_children()):
+            bl = bar.get_xy()
+            x = 0.5 *bar.get_width() +bl[0]
+            y = 0.5 *bar.get_height() +bl[1]
+            ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
 
 
-def plot_y_n(df, colnames='count', sort_order=False, stacked=False, horizontal=False, set_label=False):
+def plot_y_n(df, sort_order=False, horizontal=False,
+             legend=True, set_label=False):
     """
-    Plot the others variables
+    Plotting Y-N values as stacked bars
     :params:
         :df pd.df(): dataframe containing the data, should be a df of frequencies
         created with crosstab
-        :colname str(): string that have the column header to select the right column
+        :sort_order bool(): to order the value by the number of yes
+        :horizontal bool(): to plot the bar horizontal rather than vertical (Default behaviour)
+        :legend bool(): to show the legend or not
+        :set_labels bool(): to add labels on the individuals bars
+        :set_n bool(): to show the total n for each items
+
+    :return:
+        :fig matplotlib.plt.plot(): Return the plot itself
     """
     df = df[['Yes', 'No']]
     fig, ax = plt.subplots()
     index = np.arange(len(df))
-    bar_width = 0.35
+    colors = plt.cm.tab10
+    bar_width = 0.9
     opacity = 0.7
-    yes_bar = plt.bar(index, df['Yes'], width=bar_width, bottom=None, color='blue', label='Yes')
-    no_bar = plt.bar(index, df['No'], width=bar_width, bottom=df['Yes'], color='red', label='No')
+
+    # To set up the label on x or y axis
+    label_txt = df.index
+    label_ticks = range(len(df.index))
+
+    # Sorting the df with the Yes values
+    if sort_order is True:
+        df.sort_values(by='Yes', inplace=True, ascending=False)
+    else:
+        pass
+
+    if horizontal is True:
+        for i, d in enumerate(df.index):
+            yes_bar = ax.barh(index[i], width=df['Yes'][i], height=bar_width, color=colors(0), label='Yes')
+            no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(1), label='No')
+    else:
+        yes_bar = ax.bar(index, df['Yes'], width=bar_width, bottom=None, color=colors(0), label='Yes')
+        no_bar = ax.bar(index, df['No'], width=bar_width, bottom=df['Yes'], color=colors(1), label='No')
+
+    if set_label is True:
+        pass
+
+    # Add the legend
+    ax.legend((yes_bar, no_bar), ('Yes', 'No'))
+
+    # Add the x-labels
+    if horizontal is True:
+        plt.yticks(label_ticks, label_txt)
+    else:
+        # This set the xlimits to center the xtick with the bin
+        # Explanation found here:
+        # https://stackoverflow.com/a/27084005/3193951
+        plt.xlim([-1, len(df.index)])
+        plt.xticks(label_ticks, label_txt, rotation=90)
+
+    # Modifying the whitespaces between the bars and the graph
+    plt.margins(0.02, 0.02)
+
     return fig
 
 
-def plot_discrete():
-    """
-    """
-    # Calculate the average of all the time_activity questions and plotting them
-    # Convert the different column to an int value to be able to calculate the mean after
-    # The option 'coerce' is needed to force passing the NaN values
-    # df[time_activity] = df[time_activity].apply(pd.to_numeric, errors='coerce')
-    # mean_activity = df[time_activity].mean(axis=0)
-    pass
-
-
-def process_question(df, q, type_chart):
-    """
-    """
-    if any(isinstance(el, list) for el in q):
-        return count_unique_value(df, q)
-    else:
-        data_to_plot = df[q]
-    if type_chart == 'barchart':
-        result = freq_table(data_to_plot)
-        return result
+plot_y_n(data_to_plot, sort_order=True, horizontal=False, set_label=True)
+data_to_plot
 
 
 def main():
@@ -217,8 +241,11 @@ def main():
     location_type_q = './to_plot.json'
     type_questions = get_type_question(location_type_q)
 
-    data_to_plot = count_unique_value(df, type_questions['single_questions']['yes_no'], dropna=True)
+    data_to_plot = count_unique_value(df, type_questions['single_questions']['yes_no'],
+                                      normalize=True,dropna=True)
     data_to_plot.sort_values(by='Yes').plot(kind='barh', stacked=True)
+
+    data_to_plot
 
 
     for group in type_questions['grouped_questions']:
