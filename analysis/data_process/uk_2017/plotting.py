@@ -40,7 +40,6 @@ def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=
     return output
 
 
-
 def process_question(df, q, type_chart):
     """
     """
@@ -162,7 +161,8 @@ def plot_y_n_multiple(df, sort_order=False, horizontal=False,
 def plot_y_n_single(df):
     """
     """
-    return df.plot(kind='barh', stacked=True)
+    colormap = plt.cm.tab10
+    return df.plot(kind='barh', stacked=True, color=[colormap(0), colormap(1)])
 
 
 def plot_freq_bar_single(df):
@@ -198,6 +198,7 @@ def plot_discrete():
     # df[time_activity] = df[time_activity].apply(pd.to_numeric, errors='coerce')
     # mean_activity = df[time_activity].mean(axis=0)
     pass
+
 
 def count_unique_value_multiple(df, colnames, rename_columns=False, dropna=False, normalize=False):
     """
