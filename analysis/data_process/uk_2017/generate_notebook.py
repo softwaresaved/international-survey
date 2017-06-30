@@ -22,13 +22,19 @@ class GenerateNotebook:
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()
 
-    def add_text(self, text_to_add):
+    def add_section(self, text):
+        return self._add_text('# Section: {}'.format(text))
+
+    def add_question_title(self, text):
+        return self._add_text('## {}'.format(text))
+
+    def _add_text(self, text_to_add):
         """
         """
         formatting_text = nbf.v4.new_markdown_cell(text_to_add)
         self._append_notebook(formatting_text)
 
-    def add_code(self, code_to_add):
+    def _add_code(self, code_to_add):
         """
         """
         formatting_code = nbf.v4.new_markdown_cell(code_to_add)
@@ -37,37 +43,18 @@ class GenerateNotebook:
     def _append_notebook(self, cell_to_add):
         """
         """
-        self.nb['cell'].append(cell_to_add)
-
-    def example_generate_notebook():
-        """
-        Scrip to programatically generate notebook for exploratory analysis
-        Use the code from: https://gist.github.com/fperez/9716279
-        """
-
-        text = """\
-                    # My first automatic Jupyter Notebook
-                    This is an auto-generated notebook.\
-            """
-
-        code = """\
-                    %pylab inline
-                    hist(normal(size=2000), bins=50);"""
-
-        nb['cells'] = [nbf.v4.new_markdown_cell(text),
-                    nbf.v4.new_code_cell(code)]
-
-        fname = './notebooks/test.ipynb'
+        self.nb.setdefault('cells', []).append(cell_to_add)
 
     def save_notebook(self):
         """
         Save the notebook on the hard drive
         """
         with open(self.outfilename, 'w') as f:
-            nbf.write(nb, f)
+            nbf.write(self.nb, f)
 
 
 def main():
+
     pass
 
 
