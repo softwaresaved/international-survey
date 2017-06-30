@@ -26,6 +26,7 @@ class PlottingConfig(CleaningConfig):
 
 class NotebookConfig(PlottingConfig):
 
+    root_folder = './uk_2017'
     notebook_filename = '../uk_17.ipynb'
     to_import = ['import pandas as pd',
                  'import numpy as np',
@@ -33,4 +34,5 @@ class NotebookConfig(PlottingConfig):
                  'import matplotlib',
                  'import matplotlib.pyplot as plt',
                  'from uk_2017.config import CleaningConfig, PlottingConfig, NotebookConfig',
-                 'import uk_2017.plotting']
+                 'from uk_2017.frequency import freq_choose'
+                 'from uk_2017.plotting import plot_choose']

@@ -2,17 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import re
-import os
-import csv
 import json
-import glob
 import pandas as pd
 import numpy as np
 
-from config import CleaningConfig
+from config import CleaningConfig, PlottingConfig, NotebookConfig
 from cleaning import CleaningData
-import generate_notebook
-import plotting
+from generate_notebook import GenerateNotebook
 
 """
 Action file that holds all the different configuration for a
@@ -25,27 +21,36 @@ in the same folder
 
 
 def main():
-    import matplotlib
-    # from include import plotting
-    # When using Ipython within vim
-    matplotlib.use('TkAgg')
-    import matplotlib.pyplot as plt
-
-    #  When using this script with ipython and vim
-    plt.ion()
-    plt.show()
     pd.set_option('display.max_rows', 300)
 
     # Load dataset
     df = pd.read_csv(CleaningConfig.raw_data)
+
+    # Cleaning_process
     cleaning_process = CleaningData(df)
-    cleaning_process.cleaning()
+    df = cleaning_process.cleaning()
     cleaning_process.write_df()
     cleaning_process.write_config_file()
-    for q in cleaning_process.survey_structure:
-        print(cleaning_process.survey_structure[q]['original_question'])
-        # print(q['original_question'])
 
+    # Plotting Process
+
+    # Notebook writing
+    notebook = GenerateNotebook(NotebookConfig.notebook_filename)
+
+    for q in cleaning_process.survey_structure:
+        question = cleaning_process.survey_structure[q]
+        original_question = question['original_question']
+        try:
+            list_question = question['survey_q']
+            notebook.add_question_title(original_question)
+            print(question['survey_q'])
+            notebook.add_freq_table(question['survey_q'], question['type_question'])
+            notebook.add_plot(question['survey_q'], question['type_question'])
+        except Exception:  #FIXME Need to record all exception in a separated logfile for further investigation
+            pass
+        # print(q['original_question'])
+    print('Saving notebook')
+    notebook.save_notebook()
 
 
 if __name__ == "__main__":
