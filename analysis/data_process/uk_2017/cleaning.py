@@ -40,6 +40,7 @@ class CleaningData(CleaningConfig):
             self.grouping_question(self.df)
         else:
             pass
+        return self.df
 
     def compare_question(self):
         """
@@ -238,7 +239,8 @@ class CleaningData(CleaningConfig):
                     code = get_question_code(col, 1)
                     try:
                         self.survey_structure[code].setdefault('survey_q', []).append(col)
-                    except KeyError:
+                    except KeyError: #FIXME Need to record all exception in a separated logfile for further investigation
+
                         pass
                         # if code == 'OTHER_RAW':
                         #     self.survey_structure['OTHER_RAW'] = dict()

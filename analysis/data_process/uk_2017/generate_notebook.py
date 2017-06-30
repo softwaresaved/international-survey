@@ -10,9 +10,11 @@ Use the code from: https://gist.github.com/fperez/9716279
 """
 
 import nbformat as nbf
+from config import NotebookConfig
+from plotting import count_unique_value_single
 
 
-class GenerateNotebook:
+class GenerateNotebook(NotebookConfig):
     """
     """
     def __init__(self, notebook_filename):
@@ -21,12 +23,40 @@ class GenerateNotebook:
         self.outfilename = notebook_filename
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()
+        self._import()
+        self._load_dataset()
+
+    def _import(self):
+        """
+        Import all the needed library
+        """
+        self.add_section('Importing modules')
+        import_code = '\n'.join(self.to_import)
+        self._add_code(import_code)
+
+    def _load_dataset(self):
+        """
+        """
+        self._add_text('# Loading dataset')
+        loading = """df =  pd.read_csv('{}')""".format(self.cleaned_df_location)
+        self._add_code(loading)
 
     def add_section(self, text):
         return self._add_text('# Section: {}'.format(text))
 
     def add_question_title(self, text):
         return self._add_text('## {}'.format(text))
+
+    def add_freq_table(self, to_freq):
+        """
+        """
+        code_to_freq = """count_unique_value_single(df, "{}")""".format(to_freq)
+        return self._add_code(code_to_freq)
+
+    def add_plot(self, to_plot):
+        """
+        """
+        pass
 
     def _add_text(self, text_to_add):
         """
@@ -37,7 +67,7 @@ class GenerateNotebook:
     def _add_code(self, code_to_add):
         """
         """
-        formatting_code = nbf.v4.new_markdown_cell(code_to_add)
+        formatting_code = nbf.v4.new_code_cell(code_to_add)
         self._append_notebook(formatting_code)
 
     def _append_notebook(self, cell_to_add):
