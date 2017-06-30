@@ -57,8 +57,7 @@ class CleaningData(CleaningConfig):
             for row in reader:
                 section = row[0]
                 code = row[1]
-                # question = self.cleaning_some_white_space(row[2])
-                question = row[2]
+                question = self.cleaning_some_white_space(row[2])
                 type_question = row[4]
                 file_answer = '{}/{}.csv'.format(self.answer_folder, row[4])
                 result_dict[code] = {'section': section,
@@ -110,7 +109,6 @@ class CleaningData(CleaningConfig):
         Clean some white space issues encountered in some text
         questions
         """
-        print(string)
         # Some columns have a unbreakable space in their name, replace it
         string = string.replace('\xa0', ' ')
         string = string.replace('\u00a0', ' ')
@@ -120,7 +118,6 @@ class CleaningData(CleaningConfig):
         string = re.sub('(?<=\s) +|^ +(?=\s)| (?= +[\n\0])', ' ', string)
         # Replace all ending white space
         string = string.strip()
-        print(string)
         return string
 
     def cleaning_columns_white_space(self, df):
