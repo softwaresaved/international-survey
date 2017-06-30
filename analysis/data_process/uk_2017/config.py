@@ -26,4 +26,11 @@ class PlottingConfig(CleaningConfig):
 
 class NotebookConfig(PlottingConfig):
 
-    pass
+    notebook_filename = '../uk_17.ipynb'
+    to_import = ['import pandas as pd',
+                 'import numpy as np',
+                 'get_ipython().magic("matplotlib inline")',
+                 'import matplotlib',
+                 'import matplotlib.pyplot as plt',
+                 'from uk_2017.config import CleaningConfig, PlottingConfig, NotebookConfig',
+                 'import uk_2017.plotting']
