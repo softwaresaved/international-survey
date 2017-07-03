@@ -15,8 +15,6 @@ class CleaningConfig:
     # Location for the json file of all questions
     json_to_plot_location = './to_plot.json'
     cleaned_df_location = './dataset/cleaned_data.csv'
-    # If the data input in the cleaning class are structured according to the csv file
-    structured = True
 
 
 class PlottingConfig(CleaningConfig):
@@ -26,13 +24,13 @@ class PlottingConfig(CleaningConfig):
 
 class NotebookConfig(PlottingConfig):
 
-    root_folder = './uk_2017'
+    notebook_folder = './notebooks'
     notebook_filename = '../uk_17.ipynb'
     to_import = ['import pandas as pd',
                  'import numpy as np',
                  'get_ipython().magic("matplotlib inline")',
                  'import matplotlib',
                  'import matplotlib.pyplot as plt',
-                 'from uk_2017.config import CleaningConfig, PlottingConfig, NotebookConfig',
-                 'from uk_2017.frequency import freq_choose'
-                 'from uk_2017.plotting import plot_choose']
+                 'from config import CleaningConfig, PlottingConfig, NotebookConfig',
+                 # 'from frequency import freq_choose',
+                 'from plotting import plot_choose']

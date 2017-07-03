@@ -35,11 +35,8 @@ class CleaningData(CleaningConfig):
         self.df = self.cleaning_columns_white_space(self.df)
         self.df = self.cleaning_missing_na(self.df)
         self.df = self.duplicating_other(self.df)
-        if self.structured:
-            self.survey_structure = self.get_survey_structure()
-            self.grouping_question(self.df)
-        else:
-            pass
+        self.survey_structure = self.get_survey_structure()
+        self.grouping_question(self.df)
         return self.df
 
     def compare_question(self):
@@ -133,11 +130,7 @@ class CleaningData(CleaningConfig):
         :return:
             df dataframe(): the same df but with cleaned columns
         """
-        # df.columns = df.columns.str.replace('\xa0', ' ')
-        # df.columns = df.columns.str.replace('\t', ' ')
-        df = df.rename(columns=lambda x: self.cleaning_some_white_space(x))
-        # df.columns = df.columns.str.strip()
-        return df
+        return df.rename(columns=lambda x: self.cleaning_some_white_space(x))
 
     def cleaning_missing_na(self, df):
         """
@@ -153,58 +146,6 @@ class CleaningData(CleaningConfig):
         return df
 
     def grouping_question(self, df):
-
-
-        def check_similar_q(col, full_list, current_list):
-            """
-            Check if the colnames passed is similar to the previous
-            one.
-            First it check if the size of the list is
-            It removed the text within brackets and the brackets
-            to compare if the two strings are similar.
-
-            :params:
-                col str(): column name
-                full_list list(): entire list of the all passed grouped questions
-                current_list list(): the current list of the previous questions.
-
-            :returns:
-                full_list list(): the same full_list appended with the current_list
-                if the current question was different than the previous one
-                current_list list(): the same current_list, appended with the current
-                question if similar to the last element of it or a new one only composed
-                of the current question if it was different.
-            """
-            current_code = get_question_code(col)
-            previous_code = get_question_code(current_list[-1])
-            if current_code == previous_code:
-                current_list.append(col)
-                return full_list, current_list
-                # if compare_question(col, current_list[-1], current_code, previous_code):
-            full_list.append(current_list)
-            current_list = [col]
-            return full_list, current_list
-
-        def split_group(group_q):
-            """
-            Split the list into one list with single element
-            and a list with the grouped questions
-            :param:
-                group_q list(): list of the list
-                of question previously grouped or not
-
-            :returns:
-                single_q list(): list of single question
-                group_q list(): list of group of questions
-            """
-            single_q = list()
-            i = 0
-            while i < len(group_q):
-                if len(group_q[i]) == 1:
-                    single_q.append(group_q.pop(i))
-                else:
-                    i+=1
-            return single_q, group_q
 
         def get_question_code(column_name, element_to_return):
             """
@@ -230,36 +171,26 @@ class CleaningData(CleaningConfig):
                     return  splitted_col[0].split('[')[0]
             return code
 
-        if self.structured:
-            for col in df.columns:
-                code = get_question_code(col, 0)
+        for col in df.columns:
+            code = get_question_code(col, 0)
+            try:
+                self.survey_structure[code].setdefault('survey_q', []).append(col)
+            except KeyError:
+                code = get_question_code(col, 1)
                 try:
                     self.survey_structure[code].setdefault('survey_q', []).append(col)
-                except KeyError:
-                    code = get_question_code(col, 1)
-                    try:
-                        self.survey_structure[code].setdefault('survey_q', []).append(col)
-                    except KeyError: #FIXME Need to record all exception in a separated logfile for further investigation
+                except KeyError: #FIXME Need to record all exception in a separated logfile for further investigation
 
-                        pass
-                        # if code == 'OTHER_RAW':
-                        #     self.survey_structure['OTHER_RAW'] = dict()
-                        #     self.survey_structure['OTHER_RAW'].setdefault('survey_q', [].append(col))
-                        # elif code == 'SQ001' or code == 'SQ002':
-                        #     self.survey_structure['satisGen'] = dict()
-                        #     self.survey_structure['satisGen'].setdefault('survey_q', [].append(col))
-                        # else:
-                        #     print(code)
-                        #     print(col)
-        else:
-            grouped_question = list()
-            for col in df.columns:
-                try:
-                    grouped_question, current_list = check_similar_q(col, grouped_question, current_list)
-                except (NameError, TypeError):  # NameError when it parsed the 1st column
-                    current_list = [col]
-
-            self.single_q, self.group_q = split_group(grouped_question)
+                    pass
+                    # if code == 'OTHER_RAW':
+                    #     self.survey_structure['OTHER_RAW'] = dict()
+                    #     self.survey_structure['OTHER_RAW'].setdefault('survey_q', [].append(col))
+                    # elif code == 'SQ001' or code == 'SQ002':
+                    #     self.survey_structure['satisGen'] = dict()
+                    #     self.survey_structure['satisGen'].setdefault('survey_q', [].append(col))
+                    # else:
+                    #     print(code)
+                    #     print(col)
 
     def duplicating_other(self, df):
         """
