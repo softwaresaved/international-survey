@@ -4,40 +4,15 @@
 import json
 import pandas as pd
 import numpy as np
-import matplotlib
-# from include import plotting
-# When using Ipython within vim
-matplotlib.use('TkAgg')
+# import matplotlib
+# # from include import plotting
+# # When using Ipython within vim
+# matplotlib.use('TkAgg')
 
 # When using within jupyter
 # get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
 
 import matplotlib.pyplot as plt
-
-
-def get_type_question(input_location):
-    """
-    """
-    with open(input_location, 'r') as f:
-        return json.load(f)
-
-
-def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=False):
-    """
-    """
-    if colnames:
-        df_to_freq = df[colnames]
-    else:
-        df_to_freq = df
-    if add_ratio:
-        output = pd.concat([pd.crosstab(df_to_freq, columns='count', normalize=False),
-                            pd.crosstab(df_to_freq, columns='ratio', normalize=True)],
-                           axis=1)
-    else:
-        output = pd.crosstab(df_to_freq, colnames=[''], columns=columns)
-    if sort_order:
-        output = output.sort_values(by='count')
-    return output
 
 
 def process_question(df, q, type_chart):
@@ -200,44 +175,10 @@ def plot_discrete():
     pass
 
 
-def count_unique_value_multiple(df, colnames, rename_columns=False, dropna=False, normalize=False):
-    """
-    Count the values of different columns and transpose the count
-    :params:
-        :df pd.df(): dataframe containing the data
-        :colnames list(): list of strings corresponding to the column header to select the right column
-    :return:
-        :result_df pd.df(): dataframe with the count of each answer for each columns
-    """
-    # Subset the columns
-    colnames = [i for j in colnames for i in j]
-    df_sub = df[colnames]
-
-    if rename_columns is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
-
-    # Calculate the counts for them
-    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-    # Transpose the column to row to be able to plot a stacked bar chart
-    # return df_sub
-    return df_sub.transpose()
 
 
-def count_unique_value_single(df, colnames):
-    """
-    """
-    return df[colnames].value_counts()
-
-
-def count_multiple_choice(df, colnames, rename_columns=True):
-    """
-    """
-    df_sub = df[colnames]
-    if rename_columns is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
-    df_sub = df_sub[df_sub == 'Yes'].count()
-    df_sub.sort_values(ascending=False, inplace=True)
-    return df_sub
+def plot_choose():
+    pass
 
 
 def main():
@@ -285,32 +226,6 @@ def main():
 
     # ## Several items
 
-
-
-
-
-
-
-
-
-    for group in type_questions['grouped_questions']:
-        pass
-
-    for group in type_questions['single_questions']:
-        if group == 'yes_no':  # aggregate in case of grouped_questions
-            for q in type_questions['single_questions'][group]:
-                process_question(df, q, 'yes_no')
-
-        elif q == 'decision_job':  # ranking
-            pass
-        elif q.startswith('likert'):  # likert
-            pass
-        elif q == 'messy_data':  # wordcounts
-            pass
-        elif q == 'single_item':  # passing
-            pass
-        else:  # Should be easily plotted in bar chart for all other cases
-            pass
 
 if __name__ == "__main__":
     main()
