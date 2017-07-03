@@ -36,7 +36,8 @@ class CleaningData(CleaningConfig):
         self.df = self.cleaning_missing_na(self.df)
         self.df = self.duplicating_other(self.df)
         self.survey_structure = self.get_survey_structure()
-        self.grouping_question(self.df)
+        self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
+        self.structure_by_section = self.transform_for_notebook(self.survey_structure)
         return self.df
 
     def compare_question(self):
@@ -56,11 +57,13 @@ class CleaningData(CleaningConfig):
                 section = row[0]
                 code = row[1]
                 question = self.cleaning_some_white_space(row[2])
+                answer_format = row[3]
                 type_question = row[4]
                 file_answer = '{}/{}.csv'.format(self.answer_folder, row[4])
                 result_dict[code] = {'section': section,
                                      'original_question': question,
                                      'type_question': type_question,
+                                     'answer_format': answer_format,
                                      'file_answer': file_answer}
         return result_dict
 
@@ -145,7 +148,7 @@ class CleaningData(CleaningConfig):
         df.replace("Don't want to answer", np.NaN, inplace=True)
         return df
 
-    def grouping_question(self, df):
+    def grouping_question(self, df, input_dict):
 
         def get_question_code(column_name, element_to_return):
             """
@@ -174,23 +177,51 @@ class CleaningData(CleaningConfig):
         for col in df.columns:
             code = get_question_code(col, 0)
             try:
-                self.survey_structure[code].setdefault('survey_q', []).append(col)
+                input_dict[code].setdefault('survey_q', []).append(col)
             except KeyError:
                 code = get_question_code(col, 1)
                 try:
-                    self.survey_structure[code].setdefault('survey_q', []).append(col)
+                    input_dict[code].setdefault('survey_q', []).append(col)
                 except KeyError: #FIXME Need to record all exception in a separated logfile for further investigation
 
                     pass
                     # if code == 'OTHER_RAW':
-                    #     self.survey_structure['OTHER_RAW'] = dict()
-                    #     self.survey_structure['OTHER_RAW'].setdefault('survey_q', [].append(col))
+                    #     input_dict['OTHER_RAW'] = dict()
+                    #     input_dict['OTHER_RAW'].setdefault('survey_q', [].append(col))
                     # elif code == 'SQ001' or code == 'SQ002':
-                    #     self.survey_structure['satisGen'] = dict()
-                    #     self.survey_structure['satisGen'].setdefault('survey_q', [].append(col))
+                    #     input_dict['satisGen'] = dict()
+                    #     input_dict['satisGen'].setdefault('survey_q', [].append(col))
                     # else:
                     #     print(code)
                     #     print(col)
+        return input_dict
+
+    def transform_for_notebook(self, input_dict):
+        """
+        Function to parse the created dictionary 'self.survey_structure' to create
+        a version of the dictionary to be parsed by 'action_file.py' in order to create
+        the appropriate notebook and split the questions' parsing following the sections split
+        and the similarity code to group same type of questions together
+
+        :params: input_dict dict(): contains all the details about the columns name in the limesurvey
+        data and the information stored in the csv file in the `self.question_file`.
+
+        :return: the transformed dictionary with the following structure:
+            {Section int(): {Similar_code int(): {q_code int(): {'original_question': str(),
+                                                                 'type_question': str(),
+                                                                 'file_answer': str(),
+                                                                 'answer_format': str(),
+                                                                 'survey_q': list()}}}}
+        """
+        output_dict = dict()
+        for q in input_dict:
+            section = input_dict[q]['section']
+            question = {q: input_dict[q]}
+            del question[q]['section']
+            output_dict.setdefault(section, {}).update(question)
+        # for k in output_dict:
+        #     print('Section: {} -- Len: {}'.format(k, len(output_dict[k])))
+        return output_dict
 
     def duplicating_other(self, df):
         """
@@ -223,11 +254,7 @@ class CleaningData(CleaningConfig):
     def write_config_file(self):
         """
         """
-        if self.structured:
-            dict_to_write = self.survey_structure
-        else:
-            dict_to_write = {'single_questions': self.single_q,
-                             'grouped_questions': self.group_q}
+        dict_to_write = self.survey_structure
         with open(self.json_to_plot_location, 'w') as f:
             json.dump(dict_to_write, f)
 
