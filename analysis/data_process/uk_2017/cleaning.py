@@ -8,6 +8,7 @@ import json
 import glob
 import pandas as pd
 import numpy as np
+from collections import OrderedDict
 
 
 from config import CleaningConfig
@@ -207,11 +208,11 @@ class CleaningData(CleaningConfig):
         data and the information stored in the csv file in the `self.question_file`.
 
         :return: the transformed dictionary with the following structure:
-            {Section int(): {Similar_code int(): {q_code int(): {'original_question': str(),
-                                                                 'type_question': str(),
-                                                                 'file_answer': str(),
-                                                                 'answer_format': str(),
-                                                                 'survey_q': list()}}}}
+            {Section int(): {q_code int(): {'original_question': str(),
+                                            'type_question': str(),
+                                            'file_answer': str(),
+                                            'answer_format': str(),
+                                            'survey_q': list()}}}}
         """
         output_dict = dict()
         for q in input_dict:
@@ -221,7 +222,8 @@ class CleaningData(CleaningConfig):
             output_dict.setdefault(section, {}).update(question)
         # for k in output_dict:
         #     print('Section: {} -- Len: {}'.format(k, len(output_dict[k])))
-        return output_dict
+
+        return sorted(output_dict.keys())
 
     def duplicating_other(self, df):
         """
