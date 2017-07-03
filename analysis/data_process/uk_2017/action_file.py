@@ -49,6 +49,8 @@ def main():
         except Exception:  #FIXME Need to record all exception in a separated logfile for further investigation
             pass
         # print(q['original_question'])
+    print('Running notebook')
+    notebook.run_notebook()
     print('Saving notebook')
     notebook.save_notebook()
 
