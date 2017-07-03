@@ -37,20 +37,23 @@ def main():
     # Notebook writing
     notebook = GenerateNotebook(NotebookConfig.notebook_filename)
 
-    for q in cleaning_process.survey_structure:
-        question = cleaning_process.survey_structure[q]
-        original_question = question['original_question']
-        try:
-            list_question = question['survey_q']
-            notebook.add_question_title(original_question)
-            print(question['survey_q'])
-            notebook.add_freq_table(question['survey_q'], question['type_question'])
-            notebook.add_plot(question['survey_q'], question['type_question'])
-        except Exception:  #FIXME Need to record all exception in a separated logfile for further investigation
-            pass
-        # print(q['original_question'])
+    for s in cleaning_process.structure_by_section:
+        section = cleaning_process.structure_by_section[s]
+        notebook.add_section(s)
+        for question in section:
+            original_question = section[question]['original_question']
+            try:
+                list_question = section[question]['survey_q']
+                answer_format = section[question]['answer_format']
+                file_answer = section[question]['file_answer']
+                notebook.add_question_title(original_question)
+                notebook.add_freq_table(list_question, answer_format)
+                notebook.add_plot(question['survey_q'], answer_format, file_answer)
+            except Exception:  #FIXME Need to record all exception in a separated logfile for further investigation
+                pass
     print('Running notebook')
     notebook.run_notebook()
+    # Catching error before saving
     print('Saving notebook')
     notebook.save_notebook()
 
