@@ -14,7 +14,8 @@ from nbconvert.preprocessors import ExecutePreprocessor
 
 
 from config import NotebookConfig
-from plotting import count_unique_value_single
+from plotting import plot_choose
+from counting import count_unique_value
 
 
 class GenerateNotebook(NotebookConfig):

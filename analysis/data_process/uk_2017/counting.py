@@ -61,3 +61,10 @@ def count_multiple_choice(df, colnames, rename_columns=True):
     df_sub = df_sub[df_sub == 'Yes'].count()
     df_sub.sort_values(ascending=False, inplace=True)
     return df_sub
+
+
+def get_count():
+    """
+    Choose which type of counting needs to be done
+    """
+

@@ -8,6 +8,7 @@ import numpy as np
 
 from config import CleaningConfig, PlottingConfig, NotebookConfig
 from cleaning import CleaningData
+from counting import get_count
 from generate_notebook import GenerateNotebook
 
 """
@@ -46,9 +47,10 @@ def main():
                 list_question = section[question]['survey_q']
                 answer_format = section[question]['answer_format']
                 file_answer = section[question]['file_answer']
+                counted_value = get_count(list_question, answer_format)
                 notebook.add_question_title(original_question)
-                notebook.add_freq_table(list_question, answer_format)
-                notebook.add_plot(question['survey_q'], answer_format, file_answer)
+                notebook.add_freq_table(counted_value, answer_format)
+                notebook.add_plot(counted_value, answer_format, file_answer)
             except Exception:  #FIXME Need to record all exception in a separated logfile for further investigation
                 pass
     print('Running notebook')

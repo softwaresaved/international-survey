@@ -175,8 +175,6 @@ def plot_discrete():
     pass
 
 
-
-
 def plot_choose():
     pass
 

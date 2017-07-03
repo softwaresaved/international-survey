@@ -223,8 +223,6 @@ class CleaningData(CleaningConfig):
             question = {q: input_dict[q]}
             del question[q]['section']
             output_dict.setdefault(section, {}).update(question)
-        # for k in output_dict:
-        #     print('Section: {} -- Len: {}'.format(k, len(output_dict[k])))
 
         return OrderedDict(sorted(output_dict.items()))
 
