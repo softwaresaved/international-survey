@@ -39,6 +39,9 @@ class CleaningData(CleaningConfig):
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
+        print(self.structure_by_section)
+        for q in self.structure_by_section:
+            print(self.structure_by_section[q])
         return self.df
 
     def compare_question(self):
@@ -223,7 +226,7 @@ class CleaningData(CleaningConfig):
         # for k in output_dict:
         #     print('Section: {} -- Len: {}'.format(k, len(output_dict[k])))
 
-        return sorted(output_dict.keys())
+        return OrderedDict(sorted(output_dict.items()))
 
     def duplicating_other(self, df):
         """
