@@ -10,6 +10,9 @@ Use the code from: https://gist.github.com/fperez/9716279
 """
 
 import nbformat as nbf
+from nbconvert.preprocessors import ExecutePreprocessor
+
+
 from config import NotebookConfig
 from plotting import count_unique_value_single
 
@@ -25,6 +28,8 @@ class GenerateNotebook(NotebookConfig):
         self.nb = nbf.v4.new_notebook()
         self._import()
         self._load_dataset()
+        # Processor to run the notebook
+        self.processor = ExecutePreprocessor(timeout=600, kernel_name='python3')
 
     def _import(self):
         """
@@ -74,6 +79,14 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         self.nb.setdefault('cells', []).append(cell_to_add)
+
+    def run_notebook(self):
+        """
+        Run the notebook before saving it
+        Source of information:
+            http://nbconvert.readthedocs.io/en/latest/execute_api.html
+        """
+        self.processor.preprocess(self.nb, {'metadata':{'path': './'}})
 
     def save_notebook(self):
         """
