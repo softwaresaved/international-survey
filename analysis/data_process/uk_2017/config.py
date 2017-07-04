@@ -24,13 +24,14 @@ class PlottingConfig(CleaningConfig):
 
 class NotebookConfig(PlottingConfig):
 
-    notebook_folder = './notebooks'
-    notebook_filename = '../uk_17.ipynb'
+    notebook_folder = './'
+    notebook_filename = 'uk_17.ipynb'
     to_import = ['import pandas as pd',
                  'import numpy as np',
                  'get_ipython().magic("matplotlib inline")',
                  'import matplotlib',
                  'import matplotlib.pyplot as plt',
                  'from config import CleaningConfig, PlottingConfig, NotebookConfig',
+                 'from counting import get_count',
                  # 'from frequency import freq_choose',
                  'from plotting import plot_choose']
