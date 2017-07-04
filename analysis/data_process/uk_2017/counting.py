@@ -23,6 +23,7 @@ def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=
         output = output.sort_values(by='count')
     return output
 
+
 def count_unique_value_multiple(df, colnames, rename_columns=False, dropna=False, normalize=False):
     """
     Count the values of different columns and transpose the count
@@ -32,8 +33,6 @@ def count_unique_value_multiple(df, colnames, rename_columns=False, dropna=False
     :return:
         :result_df pd.df(): dataframe with the count of each answer for each columns
     """
-    # Subset the columns
-    colnames = [i for j in colnames for i in j]
     df_sub = df[colnames]
 
     if rename_columns is True:
@@ -42,7 +41,6 @@ def count_unique_value_multiple(df, colnames, rename_columns=False, dropna=False
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     # Transpose the column to row to be able to plot a stacked bar chart
-    # return df_sub
     return df_sub.transpose()
 
 
@@ -63,8 +61,39 @@ def count_multiple_choice(df, colnames, rename_columns=True):
     return df_sub
 
 
-def get_count():
+def get_count(df, questions, type_question):
     """
     Choose which type of counting needs to be done
+
+    :params:
+        df dataframe(): dataframe containing all the data
+        questions list(): list of the question strings to
+        type_questions str(): type of questions that list_questions represent
+
+    :return:
     """
 
+    #
+    # questions = [i for j in questions for i in j]
+
+    if type_question.lower() == 'y/n/na':
+        if len(questions) > 1:
+            questions = questions[0]
+            return count_unique_value_single(df, questions)
+        return count_unique_value_multiple(df, questions, normalize=True, dropna=True)
+    elif type_question.lower() == 'likert':
+        pass
+    elif type_question.lower() == 'one choice':
+        pass
+    elif type_question.lower() == 'ranking':
+        pass
+    elif type_question.lower() == 'multiple choice':
+        pass
+    elif type_question.lower() == 'freetext':
+        pass
+    elif type_question.lower() == 'freenumeric':
+        pass
+    elif type_question.lower() == 'datetime':
+        pass
+    else:
+        pass
