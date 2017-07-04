@@ -50,21 +50,26 @@ class GenerateNotebook(NotebookConfig):
         """
         return self._add_text('# Section: {}'.format(text))
 
+    def add_group(self, text):
+        """
+        """
+        return self._add_text('## Group of question: {}'.format(text))
+
     def add_question_title(self, text):
         """
         """
-        return self._add_text('## {}'.format(text))
+        return self._add_text('### {}'.format(text))
 
     def add_count(self, *args):
         """
         """
-        count_count = """get_count(df, {}, "{}")""".format(*args)
+        count_count = """v_to_count = get_count(df, {}, "{}")""".format(*args)
         return self._add_code(count_count)
 
-    def add_freq_table(self, to_freq):
+    def add_freq_table(self):
         """
         """
-        code_to_freq = """count_unique_value_single(df, "{}")""".format(to_freq)
+        code_to_freq = """count_unique_value_single(df, v_to_count)"""
         return self._add_code(code_to_freq)
 
     def add_plot(self, to_plot):

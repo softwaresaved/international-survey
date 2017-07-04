@@ -23,10 +23,10 @@ def grouping_likert_yn(group_question):
     for q in group_question:
         current_type = group_question[q]['answer_format'].lower()
         if previous_type is not None:
-            if current_type not in ['y/n/na', 'likert']:
-                if current_type != previous_type:
-                    yield regroup_q, regroup_txt_q, previous_type
-                    regroup_q, regroup_txt_q = list(), list()
+            # if previous_type not in ['y/n/na', 'likert'] or current_type not in ['y/n/na', 'likert']:
+            if current_type != previous_type:
+                yield regroup_q, regroup_txt_q, previous_type
+                regroup_q, regroup_txt_q = list(), list()
 
         survey_q = group_question[q]['survey_q']
         original_q = group_question[q]['original_question']
@@ -49,8 +49,6 @@ def main():
     cleaning_process.write_df()
     cleaning_process.write_config_file()
 
-    # Plotting Process
-
     # Notebook writing
     notebook = GenerateNotebook(NotebookConfig.notebook_filename)
 
@@ -64,7 +62,8 @@ def main():
                 original_question = question[1]
                 answer_format = question[2]
                 try:
-                    notebook.add_question_title(original_question)
+                    for txt in original_question:
+                        notebook.add_question_title(txt)
                     notebook.add_count(list_questions, answer_format)
                     # notebook.add_freq_table(list_questions, answer_format)
                     # notebook.add_plot(counted_value, answer_format, file_answer)
