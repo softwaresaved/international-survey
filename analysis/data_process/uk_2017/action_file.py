@@ -20,7 +20,7 @@ in the same folder
 """
 
 
-def group_and_split_q(group_question):
+def grouping_likert_yn(group_question):
     """
     """
     regroup_q, regroup_txt_q = list(), list()
@@ -28,9 +28,10 @@ def group_and_split_q(group_question):
     for q in group_question:
         current_type = group_question[q]['answer_format'].lower()
         if previous_type is not None:
-            if current_type != previous_type:
-                yield regroup_q, regroup_txt_q, previous_type
-                regroup_q, regroup_txt_q = list(), list()
+            if current_type not in ['y/n/na', 'likert']:
+                if current_type != previous_type:
+                    yield regroup_q, regroup_txt_q, previous_type
+                    regroup_q, regroup_txt_q = list(), list()
 
         survey_q = group_question[q]['survey_q']
         original_q = group_question[q]['original_question']
@@ -69,7 +70,7 @@ def main():
             # original_question = section[group][key_group]['original_question']
             # notebook.add_question_title(original_question)
             notebook.add_group(group)
-            for question in group_and_split_q(section[group]):
+            for question in grouping_likert_yn(section[group]):
                 list_questions = question[0]
                 original_questions = question[1]
                 answer_format = question[2]
