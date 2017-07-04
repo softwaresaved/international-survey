@@ -39,9 +39,6 @@ class CleaningData(CleaningConfig):
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
-        print(self.structure_by_section)
-        for q in self.structure_by_section:
-            print(self.structure_by_section[q])
         return self.df
 
     def compare_question(self):
@@ -175,7 +172,7 @@ class CleaningData(CleaningConfig):
                 try:
                     code = splitted_col[0].split('[')[1][:-1]  # -1 to remove the last ] in the string
                 except IndexError:  # In case not splitting like that just return the other code
-                    return  splitted_col[0].split('[')[0]
+                    return splitted_col[0].split('[')[0]
             return code
 
         for col in df.columns:
@@ -186,7 +183,7 @@ class CleaningData(CleaningConfig):
                 code = get_question_code(col, 1)
                 try:
                     input_dict[code].setdefault('survey_q', []).append(col)
-                except KeyError: #FIXME Need to record all exception in a separated logfile for further investigation
+                except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
 
                     pass
                     # if code == 'OTHER_RAW':
@@ -200,6 +197,21 @@ class CleaningData(CleaningConfig):
                     #     print(col)
         return input_dict
 
+    @staticmethod
+    def get_root_code(string):
+        """
+        """
+        def return_until_digit(string):
+            """
+            """
+            for x in string:
+                if x.isalpha():
+                    yield x
+                else:
+                    break
+
+        return ''.join([x for x in return_until_digit(string)])
+
     def transform_for_notebook(self, input_dict):
         """
         Function to parse the created dictionary 'self.survey_structure' to create
@@ -211,18 +223,19 @@ class CleaningData(CleaningConfig):
         data and the information stored in the csv file in the `self.question_file`.
 
         :return: the transformed dictionary with the following structure:
-            {Section int(): {q_code int(): {'original_question': str(),
-                                            'type_question': str(),
-                                            'file_answer': str(),
-                                            'answer_format': str(),
-                                            'survey_q': list()}}}}
+            {Section int(): {root_code int(): {q_code int(): {'original_question': str(),
+                                                              'type_question': str(),
+                                                              'file_answer': str(),
+                                                              'answer_format': str(),
+                                                              'survey_q': list()}}}}}
         """
         output_dict = dict()
         for q in input_dict:
             section = input_dict[q]['section']
             question = {q: input_dict[q]}
+            root_code = self.get_root_code(q)
             del question[q]['section']
-            output_dict.setdefault(section, {}).update(question)
+            output_dict.setdefault(section, {}).setdefault(root_code, {}).update(question)
 
         return OrderedDict(sorted(output_dict.items()))
 
