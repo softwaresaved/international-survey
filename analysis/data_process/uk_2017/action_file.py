@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import re
-import json
 import pandas as pd
-import numpy as np
-
-from config import CleaningConfig, PlottingConfig, NotebookConfig
+from config import CleaningConfig, NotebookConfig
 from cleaning import CleaningData
-from counting import get_count
 from generate_notebook import GenerateNotebook
 
 """
@@ -63,18 +58,13 @@ def main():
         section = cleaning_process.structure_by_section[s]
         notebook.add_section(s)
         for group in section:
-            # In that case, there is only one question in the group and
-            # the list of question should be passed too the counting
-            # and plotting directly
-            # key_group = list(section[group].keys())[0]
-            # original_question = section[group][key_group]['original_question']
-            # notebook.add_question_title(original_question)
             notebook.add_group(group)
             for question in grouping_likert_yn(section[group]):
                 list_questions = question[0]
-                original_questions = question[1]
+                original_question = question[1]
                 answer_format = question[2]
                 try:
+                    notebook.add_question_title(original_question)
                     notebook.add_count(list_questions, answer_format)
                     # notebook.add_freq_table(list_questions, answer_format)
                     # notebook.add_plot(counted_value, answer_format, file_answer)
