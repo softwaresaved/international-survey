@@ -14,8 +14,6 @@ from nbconvert.preprocessors import ExecutePreprocessor
 
 
 from config import NotebookConfig
-from plotting import plot_choose
-from counting import count_unique_value
 
 
 class GenerateNotebook(NotebookConfig):
@@ -48,10 +46,20 @@ class GenerateNotebook(NotebookConfig):
         self._add_code(loading)
 
     def add_section(self, text):
+        """
+        """
         return self._add_text('# Section: {}'.format(text))
 
     def add_question_title(self, text):
+        """
+        """
         return self._add_text('## {}'.format(text))
+
+    def add_count(self, *args):
+        """
+        """
+        count_count = """get_count(df, {}, "{}")""".format(*args)
+        return self._add_code(count_count)
 
     def add_freq_table(self, to_freq):
         """
