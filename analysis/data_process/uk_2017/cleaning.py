@@ -39,6 +39,7 @@ class CleaningData(CleaningConfig):
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
+
         return self.df
 
     def compare_question(self):
@@ -195,6 +196,7 @@ class CleaningData(CleaningConfig):
                     # else:
                     #     print(code)
                     #     print(col)
+
         return input_dict
 
     @staticmethod
@@ -231,11 +233,16 @@ class CleaningData(CleaningConfig):
         """
         output_dict = dict()
         for q in input_dict:
-            section = input_dict[q]['section']
-            question = {q: input_dict[q]}
-            root_code = self.get_root_code(q)
-            del question[q]['section']
-            output_dict.setdefault(section, {}).setdefault(root_code, {}).update(question)
+            try:
+                input_dict[q]['survey_q']
+
+                section = input_dict[q]['section']
+                question = {q: input_dict[q]}
+                root_code = self.get_root_code(q)
+                del question[q]['section']
+                output_dict.setdefault(section, {}).setdefault(root_code, {}).update(question)
+            except KeyError:
+                pass
 
         return OrderedDict(sorted(output_dict.items()))
 
