@@ -23,17 +23,24 @@ def grouping_likert_yn(group_question):
     previous_type = None
     for q in group_question:
         current_type = group_question[q]['answer_format'].lower()
-        if previous_type is not None:
-            if previous_type not in ['y/n/na', 'likert'] and current_type not in ['y/n/na', 'likert']:
-                if current_type != previous_type:
-                    yield regroup_q, regroup_txt_q, previous_type
-                    regroup_q, regroup_txt_q = list(), list()
-
         survey_q = group_question[q]['survey_q']
-        print(survey_q)
         original_q = group_question[q]['original_question']
-        regroup_q.extend(survey_q)
-        regroup_txt_q.append(original_q)
+
+        if previous_type in ['y/n/na', 'likert'] or current_type in ['y/n/na', 'likert']:
+            if current_type == previous_type or previous_type is None:
+                regroup_q.extend(survey_q)
+                regroup_txt_q.append(original_q)
+            else:
+                yield regroup_q, regroup_txt_q, previous_type
+                regroup_q, regroup_txt_q = list(), list()
+                regroup_q.extend(survey_q)
+                regroup_txt_q.append(original_q)
+        else:
+            yield regroup_q, regroup_txt_q, previous_type
+            regroup_q, regroup_txt_q = list(), list()
+            regroup_q.extend(survey_q)
+            regroup_txt_q.append(original_q)
+
         previous_type = current_type
 
     yield regroup_q, regroup_txt_q, previous_type
