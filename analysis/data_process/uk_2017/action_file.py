@@ -73,9 +73,10 @@ def main():
                 try:
                     for txt in original_question:
                         notebook.add_question_title(txt)
-                    notebook.add_count(list_questions, answer_format)
+                    test = notebook.add_count(list_questions, answer_format)
+                    print(test)
                     # notebook.add_freq_table()
-                    # notebook.add_plot(counted_value, answer_format, file_answer)
+                    notebook.add_plot(answer_format)
                 except KeyError:
                     print('Error for the question: {}'.format(original_question))
 
