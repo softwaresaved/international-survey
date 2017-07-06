@@ -63,13 +63,22 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_v
     else:
         df_sub = df[colnames].to_frame(name=colnames)
 
+
     df_sub = df_sub.apply(pd.Series.value_counts,
                           dropna=dropna,
                           normalize=normalize)
     if sort_values is True:
         df_sub.sort_values(ascending=False, inplace=True)
     # Transpose the column to row to be able to plot a stacked bar chart
-    return df_sub.transpose()
+    df_sub = df_sub.transpose()
+    if dropna is True:
+        df_sub = df_sub[['Yes', 'No']]
+    else:
+        df_sub = df_sub[['Yes', 'No', 'NA']]
+    if multiple is False:
+        print(df_sub)
+    return df_sub
+
 
 
 def get_count(df, questions, type_question):
@@ -145,6 +154,7 @@ def main():
                 try:
                     v_to_count = get_count(df, list_questions, answer_format)
                     plot = get_plot(v_to_count, answer_format)
+                    plot
                     # if v_to_count is not None:
                     #     print(v_to_count)
 
