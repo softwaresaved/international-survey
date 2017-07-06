@@ -66,16 +66,11 @@ class GenerateNotebook(NotebookConfig):
         count_count = """v_to_count = get_count(df, {}, "{}")""".format(*args)
         return self._add_code(count_count)
 
-    def add_freq_table(self):
+    def add_plot(self, *args):
         """
         """
-        code_to_freq = """freq_table(v_to_count)"""
-        return self._add_code(code_to_freq)
-
-    def add_plot(self, to_plot):
-        """
-        """
-        pass
+        plot = """get_plot(v_to_count, "{}")""".format(*args)
+        return self._add_code(plot)
 
     def _add_text(self, text_to_add):
         """

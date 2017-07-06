@@ -64,10 +64,42 @@ def add_labels(df, ax, bars, rotation=0):
             y = 0.5 *bar.get_height() +bl[1]
             ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
 
+def plot_freq_bar_single(df):
+    """
+    """
+    df.plot(kind='bar')
+
+def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizontal=False):
+    """
+    Plot the others variables
+    :params:
+        :df pd.df(): dataframe containing the data, should be a df of frequencies
+        created with crosstab
+        :colname str(): string that have the column header to select the right column
+    """
+    type_plot = 'bar'
+    # Call the freq_table function to create the count to plot
+    # d = freq_table(df, colnames, columns)
+    if sort_order:
+        df = df.sort_values(by=colnames, ascending=False)
+    if horizontal is True:
+        type_plot='barh'
+
+    df[colnames].plot(kind=type_plot, stacked=stacked)
 
 
+def plot_discrete():
+    """
+    """
+    # Calculate the average of all the time_activity questions and plotting them
+    # Convert the different column to an int value to be able to calculate the mean after
+    # The option 'coerce' is needed to force passing the NaN values
+    # df[time_activity] = df[time_activity].apply(pd.to_numeric, errors='coerce')
+    # mean_activity = df[time_activity].mean(axis=0)
+    pass
 
-def plot_y_n_multiple(df, sort_order=False, horizontal=False,
+
+def plot_y_n_multiple(df, sort_order=False, horizontal=True,
                       legend=True, set_label=False):
     """
     Plotting Y-N values as stacked bars when passed several questions at the same time.
@@ -131,53 +163,47 @@ def plot_y_n_multiple(df, sort_order=False, horizontal=False,
     return fig
 
 
-
-
 def plot_y_n_single(df):
     """
     """
     colormap = plt.cm.tab10
-    return df.plot(kind='barh', stacked=True, color=[colormap(0), colormap(1)])
+    df_plotted = df.plot(kind='bar', stacked=False, color=[colormap(0), colormap(1)],
+                   title=df.index[0])
+    df_plotted = plot.set_xlabel('Yes - No')
+    return df_plotted
 
 
-def plot_freq_bar_single(df):
-    """
-    """
-    df.plot(kind='bar')
+def get_plot(df, type_question):
 
-def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizontal=False):
-    """
-    Plot the others variables
-    :params:
-        :df pd.df(): dataframe containing the data, should be a df of frequencies
-        created with crosstab
-        :colname str(): string that have the column header to select the right column
-    """
-    type_plot = 'bar'
-    # Call the freq_table function to create the count to plot
-    # d = freq_table(df, colnames, columns)
-    if sort_order:
-        df = df.sort_values(by=colnames, ascending=False)
-    if horizontal is True:
-        type_plot='barh'
+    if type_question.lower() == 'y/n/na':
+        if len(df.index) == 1:
+            return plot_y_n_single(df)
+        else:
+            return plot_y_n_multiple(df)
 
-    df[colnames].plot(kind=type_plot, stacked=stacked)
+    elif type_question.lower() == 'one choice':
+        pass
 
+    elif type_question.lower() == 'multiple choice':
+        pass
 
-def plot_discrete():
-    """
-    """
-    # Calculate the average of all the time_activity questions and plotting them
-    # Convert the different column to an int value to be able to calculate the mean after
-    # The option 'coerce' is needed to force passing the NaN values
-    # df[time_activity] = df[time_activity].apply(pd.to_numeric, errors='coerce')
-    # mean_activity = df[time_activity].mean(axis=0)
-    pass
+    elif type_question.lower() == 'likert':
+        pass
 
+    elif type_question.lower() == 'ranking':
+        pass
 
-def plot_choose():
-    pass
+    elif type_question.lower() == 'freetext':
+        pass
 
+    elif type_question.lower() == 'freenumeric':
+        pass
+
+    elif type_question.lower() == 'datetime':
+        pass
+
+    else:
+        pass
 
 def main():
 
