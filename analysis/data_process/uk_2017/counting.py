@@ -97,12 +97,10 @@ def get_count(df, questions, type_question):
 
     if type_question.lower() == 'y/n/na':
         if len(questions) == 1:
-            print('Single YN')
             questions = questions[0]
             multiple = False
             normalize = False
         else:
-            print('Multiple YN')
             multiple = True
             normalize = True
         return count_yn(df, questions, multiple=multiple, normalize=normalize,
