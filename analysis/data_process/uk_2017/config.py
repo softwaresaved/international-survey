@@ -32,6 +32,6 @@ class NotebookConfig(PlottingConfig):
                  'import matplotlib',
                  'import matplotlib.pyplot as plt',
                  'from config import CleaningConfig, PlottingConfig, NotebookConfig',
-                 'from counting import get_count',
+                 'from counting import get_count, freq_table',
                  # 'from frequency import freq_choose',
                  'from plotting import plot_choose']
