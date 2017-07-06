@@ -9,6 +9,9 @@ import numpy as np
 def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=False):
     """
     """
+    if df is None:
+        return None
+    print(df)
     if colnames:
         df_to_freq = df[colnames]
     else:

@@ -69,7 +69,7 @@ class GenerateNotebook(NotebookConfig):
     def add_freq_table(self):
         """
         """
-        code_to_freq = """count_unique_value_single(df, v_to_count)"""
+        code_to_freq = """freq_table(v_to_count)"""
         return self._add_code(code_to_freq)
 
     def add_plot(self, to_plot):
