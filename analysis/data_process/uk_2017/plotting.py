@@ -167,9 +167,11 @@ def plot_y_n_single(df):
     """
     """
     colormap = plt.cm.tab10
+
+    df.sort_values(by='Yes', inplace=True, ascending=False)
     df_plotted = df.plot(kind='bar', stacked=False, color=[colormap(0), colormap(1)],
-                   title=df.index[0])
-    df_plotted = plot.set_xlabel('Yes - No')
+                   # title=df.index[0],
+                        xticks=[])
     return df_plotted
 
 
