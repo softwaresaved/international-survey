@@ -25,25 +25,26 @@ def grouping_likert_yn(group_question):
         current_type = group_question[q]['answer_format'].lower()
         survey_q = group_question[q]['survey_q']
         original_q = group_question[q]['original_question']
+        file_answer = group_question[q]['file_answer']
 
         if previous_type in ['y/n/na', 'likert'] or current_type in ['y/n/na', 'likert']:
             if current_type == previous_type or previous_type is None:
                 regroup_q.extend(survey_q)
                 regroup_txt_q.append(original_q)
             else:
-                yield regroup_q, regroup_txt_q, previous_type
+                yield regroup_q, regroup_txt_q, previous_type, file_answer
                 regroup_q, regroup_txt_q = list(), list()
                 regroup_q.extend(survey_q)
                 regroup_txt_q.append(original_q)
         else:
-            yield regroup_q, regroup_txt_q, previous_type
+            yield regroup_q, regroup_txt_q, previous_type, file_answer
             regroup_q, regroup_txt_q = list(), list()
             regroup_q.extend(survey_q)
             regroup_txt_q.append(original_q)
 
         previous_type = current_type
 
-    yield regroup_q, regroup_txt_q, previous_type
+    yield regroup_q, regroup_txt_q, previous_type, file_answer
 
 
 def main():
@@ -70,12 +71,12 @@ def main():
                 list_questions = question[0]
                 original_question = question[1]
                 answer_format = question[2]
-                if answer_format in ['y/n/na']:
+                file_answer = question[3]
+                if answer_format in ['y/n/na', 'likert']:
                     try:
                         for txt in original_question:
                             notebook.add_question_title(txt)
-                        test = notebook.add_count(list_questions, answer_format)
-                        # print(test)
+                        notebook.add_count(list_questions, answer_format, file_answer)
                         # notebook.add_freq_table()
                         notebook.add_plot(answer_format)
                     except KeyError:
