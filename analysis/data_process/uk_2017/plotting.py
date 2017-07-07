@@ -4,7 +4,7 @@
 import json
 import pandas as pd
 import numpy as np
-# import matplotlib
+import matplotlib
 # # from include import plotting
 # # When using Ipython within vim
 # matplotlib.use('TkAgg')
@@ -138,7 +138,7 @@ def plot_y_n_multiple(df, sort_order=False, horizontal=True,
     if horizontal is True:
         for i, d in enumerate(df.index):
             yes_bar = ax.barh(index[i], width=df['Yes'][i], height=bar_width, color=colors(0), label='Yes')
-            no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(1), label='No')
+            no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(3), label='No')
     else:
         yes_bar = ax.bar(index, df['Yes'], width=bar_width, bottom=None, color=colors(0), label='Yes')
         no_bar = ax.bar(index, df['No'], width=bar_width, bottom=df['Yes'], color=colors(1), label='No')
@@ -168,13 +168,19 @@ def plot_y_n_multiple(df, sort_order=False, horizontal=True,
 def plot_y_n_single(df):
     """
     """
-    colormap = plt.cm.tab10
-
+    colormap = plt.cm.Dark2
     df.sort_values(by='Yes', inplace=True, ascending=False)
-    df_plotted = df.plot(kind='bar', stacked=False, color=[colormap(0), colormap(1)],
+    df_plotted = df.plot(kind='bar', stacked=False, color=[colormap(0), colormap(3)],
                    # title=df.index[0],
                         xticks=[])
     return df_plotted
+
+
+def plot_likert(df):
+    try:
+        return likert_scale(df)
+    except ValueError:  # posx and posy should be finite values
+        return df
 
 
 def get_plot(df, type_question):
@@ -185,14 +191,14 @@ def get_plot(df, type_question):
         else:
             return plot_y_n_multiple(df)
 
+    elif type_question.lower() == 'likert':
+        return plot_likert(df)
+
     elif type_question.lower() == 'one choice':
         pass
 
     elif type_question.lower() == 'multiple choice':
         pass
-
-    elif type_question.lower() == 'likert':
-        return likert_scale(df)
 
     elif type_question.lower() == 'ranking':
         pass
