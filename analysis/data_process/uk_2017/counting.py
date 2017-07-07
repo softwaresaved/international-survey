@@ -52,7 +52,8 @@ def count_choice(df, colnames, rename_columns=False,
     if sort_values is True:
         df_sub.sort_values(ascending=False, inplace=True)
     # Transpose the column to row to be able to plot a stacked bar chart
-    return df_sub.transpose()
+    df_sub = df_sub.transpose()
+    return df_sub
 
 
 def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_values=False):
@@ -75,13 +76,41 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_v
         df_sub = df_sub[['Yes', 'No']]
     else:
         df_sub = df_sub[['Yes', 'No', 'NA']]
-    if multiple is False:
-        print(df_sub)
     return df_sub
 
 
+def count_likert(df, colnames, likert_answer, rename_columns=False, dropna=True, normalize=False):
+    """
+    Count the values of different columns and transpose the count
+    :params:
+        :df pd.df(): dataframe containing the data
+        :colnames list(): list of strings corresponding to the column header to select the right column
+    :return:
+        :result_df pd.df(): dataframe with the count of each answer for each columns
+    """
+    # Subset the columns
+    df_sub = df[colnames]
 
-def get_count(df, questions, type_question):
+    if rename_columns is True:
+        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
+
+    # Calculate the counts for them
+    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    # Transpose the column to row to be able to plot a stacked bar chart
+    if likert_answer:
+        likert_answer = [x for x in likert_answer if x in df_sub.index]
+        df_sub = df_sub.reindex(index=likert_answer)
+    return df_sub.transpose()
+
+
+def get_answer(file_answer):
+    """
+    """
+    with open(file_answer, 'r') as f:
+        return [x[:-1] for x in f.readlines()]
+
+
+def get_count(df, questions, type_question, file_answer):
     """
     Choose which type of counting needs to be done
 
@@ -92,9 +121,6 @@ def get_count(df, questions, type_question):
 
     :return:
     """
-    #
-    # questions = [i for j in questions for i in j]
-
     if type_question.lower() == 'y/n/na':
         if len(questions) == 1:
             questions = questions[0]
@@ -113,10 +139,14 @@ def get_count(df, questions, type_question):
 
     elif type_question.lower() == 'multiple choice':
         pass
-        # return count_choice(df, questions, multiple_choice=True)
 
     elif type_question.lower() == 'likert':
-        pass
+        try:
+            likert_answer = get_answer(file_answer)
+        except FileNotFoundError:
+            likert_answer = None
+        return count_likert(df, questions, likert_answer)
+
     elif type_question.lower() == 'ranking':
         pass
     elif type_question.lower() == 'freetext':
@@ -133,6 +163,19 @@ def main():
     """
     """
     pd.set_option('display.max_rows', 300)
+    import matplotlib
+
+    # When using Ipython within vim
+    matplotlib.use('TkAgg')
+
+    # When using within jupyter
+
+    import matplotlib.pyplot as plt
+    import time
+    #  When using this script with ipython and vim
+    plt.ion()
+    plt.show()
+
 
     # Load dataset
     df = pd.read_csv(CleaningConfig.raw_data)
@@ -149,19 +192,24 @@ def main():
                 list_questions = question[0]
                 original_question = question[1]
                 answer_format = question[2]
+                file_answer = question[3]
                 try:
-                    v_to_count = get_count(df, list_questions, answer_format)
-                    plot = get_plot(v_to_count, answer_format)
-                    plot
+                    v_to_count = get_count(df, list_questions, answer_format, file_answer)
+                    if answer_format == 'likert':
+                        try:
+                            get_plot(v_to_count, answer_format)
+                        except TypeError:
+                            pass
                     # if v_to_count is not None:
                     #     print(v_to_count)
 
                     # notebook.add_freq_table(list_questions, answer_format)
                     # notebook.add_plot(counted_value, answer_format, file_answer)
-                except KeyError:
-                    print('Error for the question: {}'.format(original_question))
+                # except KeyError:
+                #     print('Error for the question: {}'.format(original_question))
                 except AttributeError:
                     print('Nothing return')
+    time.sleep(30)
 
 
 if __name__ == "__main__":

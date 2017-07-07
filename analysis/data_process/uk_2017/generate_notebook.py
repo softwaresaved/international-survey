@@ -48,29 +48,31 @@ class GenerateNotebook(NotebookConfig):
     def add_section(self, text):
         """
         """
-        return self._add_text('# Section: {}'.format(text))
+        self._add_text('# Section: {}'.format(text))
 
     def add_group(self, text):
         """
         """
-        return self._add_text('## Group of question: {}'.format(text))
+        self._add_text('## Group of question: {}'.format(text))
 
     def add_question_title(self, text):
         """
         """
-        return self._add_text('### {}'.format(text))
+        self._add_text('### {}'.format(text))
 
     def add_count(self, *args):
         """
         """
-        count_count = """v_to_count = get_count(df, {}, "{}")""".format(*args)
-        return self._add_code(count_count)
+        count_count = """v_to_count = get_count(df, {},
+                                                "{}",
+                                                "{}")""".format(*args)
+        self._add_code(count_count)
 
     def add_plot(self, *args):
         """
         """
         plot = """get_plot(v_to_count, "{}")""".format(*args)
-        return self._add_code(plot)
+        self._add_code(plot)
 
     def _add_text(self, text_to_add):
         """

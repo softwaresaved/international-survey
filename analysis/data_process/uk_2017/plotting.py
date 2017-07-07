@@ -14,6 +14,8 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 
+from likertScalePlot import likert_scale
+
 
 def process_question(df, q, type_chart):
     """
@@ -190,7 +192,7 @@ def get_plot(df, type_question):
         pass
 
     elif type_question.lower() == 'likert':
-        pass
+        return likert_scale(df)
 
     elif type_question.lower() == 'ranking':
         pass

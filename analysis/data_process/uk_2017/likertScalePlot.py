@@ -1,5 +1,5 @@
-# coding: utf-8
-# /usr/bin/python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """
 Plotting function to draw a likert scale.
@@ -20,10 +20,11 @@ import numpy as np
 import matplotlib
 
 # When using Ipython within vim
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 
 # When using within jupyter
 # get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
+
 
 import matplotlib.pyplot as plt
 #  When using this script with ipython and vim
@@ -169,6 +170,34 @@ def add_labels(df, ax, bars, rotation=0):
             ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
 
 
+def draw_middle_line(normalise, longest_middle):
+    """
+    """
+    # Draw a dashed line on the middle to visualise it
+    if normalise:
+        z = plt.axvline(100, linestyle='--', color='black', alpha=.5)
+    else:
+        z = plt.axvline(longest_middle, linestyle='--', color='black', alpha=.5)
+    # Plot the line behind the barchart
+    z.set_zorder(-1)
+
+
+def drawing_x_labels(normalise, complete_longest, longest_middle):
+    """
+    """
+    # Create the values with the same length as the xlim
+    if normalise:
+        xvalues = range(0, 210, 10)
+        xlabels = [str(math.floor(abs(x - 100))) for x in xvalues]
+    else:
+        print('NOT normalised')
+        xvalues = [math.floor(i - (longest_middle %5))
+                   for i in range(0, int(complete_longest),
+                                  int(int(longest_middle)/ 5))]
+        xlabels = [str(math.floor(abs(x - longest_middle))) for x in xvalues]
+    plt.xticks(xvalues, xlabels)
+
+
 def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True, rotation=0):
     """
     The idea is to create a fake bar on the left to center the bar on the same point.
@@ -197,7 +226,10 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
 
     # Calculate the longest middle bar to set up the middle of the x-axis for the x-lables
     # and plot the middle line
-    longest_middle = middles.max()
+    if normalise:
+        longest_middle = 100
+    else:
+        longest_middle = middles.max()
     print('LONGEST MIDDLE: {}'.format(longest_middle))
 
     # Create the left bar to centre the barchart in the middle
@@ -211,48 +243,32 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
     # Create the horizontal bars
     bars = create_bars(df, ax, y_pos, colors, left_invisible_bar)
 
+    # Set up the limit from 0 to the longest total barchart
+    # Keeping this drawing before drawing_x_labels or it will failed to draw
+    # all the labels on the right side
+    ax.set_xlim([-0.5, complete_longest + 0.5])
+
+    # Drawing x_labels
+    drawing_x_labels(normalise, complete_longest, longest_middle)
+    ax.set_xlabel('Percentages')
+
+    # Setting up the y-axis
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(df.index)
+
     # Add labels to each box
     if labels:
         add_labels(df, ax, bars, rotation)
 
     # Create a line on the middle
     if middle_line:
-        # Draw a dashed line on the middle to visualise it
-        z = plt.axvline(longest_middle, linestyle='--', color='black', alpha=.5)
-        # Plot the line behind the barchart
-        z.set_zorder(-1)
+        draw_middle_line(normalise, longest_middle)
 
     # Add legend
     if legend:
         ax.legend(bars, df.columns)
 
-    # Set up the limit from 0 to the longest total barchart
-    ax.set_xlim([0, complete_longest + .5])
-
-
-    # Create the values with the same length as the xlim
-    # xvalues = range(0, int(complete_longest), int((int(longest_middle)%5)))
-
-    if normalise:
-        xvalues = range(0, 100, 20)
-    else:
-        xvalues = [math.floor(i - (longest_middle%5))
-                for i in range(0, int(complete_longest),
-                                int(int(longest_middle)/5))]
-
-    print('Value for the range: length: {}  -- step: {}'.format(int(complete_longest),
-                                                                int((int(longest_middle/5)))))
-    print('COMPLETE LONGEST: {}'.format(complete_longest))
-    print('XVALUES')
-    print(xvalues)
-    # Create label by using the absolute value of the
-    xlabels = [str(math.floor(abs(x - longest_middle))) for x in xvalues]
-    print('XLABELS')
-    print(xlabels)
-    plt.xticks(xvalues, xlabels)
-    ax.set_yticks(y_pos)
-    ax.set_yticklabels(df.index)
-    ax.set_xlabel('Distance')
+    return fig
 
 
 def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
@@ -275,29 +291,12 @@ def count_unique_value(df, colnames, rename_columns=False, dropna=False, normali
     # Transpose the column to row to be able to plot a stacked bar chart
     return df_sub.transpose()
 
+
 def main():
     """
     """
-    def get_likert_score():
 
-        # #### Generating the dataset for testing
-        # Load dataset
-        df = pd.read_csv('./canarie_17/dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
-
-
-        open_code_YN = ['When you release code, how often do you use an open source license?',
-                        'When you release code or data, how often do you assign a Digital Object Identifier (DOI) to it?']
-
-        count_open = df[open_code_YN].apply(pd.Series.value_counts, dropna=True).transpose()
-        count_open = count_unique_value(df, open_code_YN, dropna=True)
-        # Only likert values without the 'Prefer not to answer'
-        likert_value = count_open.ix[:, count_open.columns != 'Prefer not to answer']
-        return likert_value
-
-    # Overload the data with a df type
-    df = get_likert_score()
-    likert_scale(df)
-
+    # df = pd.DataFrame(np.random.randint(0,100,size=(100, 3)), columns=list('XYZ'))
     dummy = pd.DataFrame([[1, 2, 3, 4, 5, 2], [5, 6, 7, 8, 5, 2], [10, 4, 2, 10, 5, 2]],
                          columns=["SD", "D", "N", "A", "SA", 'TEST'],
                          index=["Key 1", "Key B", "Key III"])
