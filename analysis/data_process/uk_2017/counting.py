@@ -5,13 +5,14 @@ import json
 import pandas as pd
 import numpy as np
 
+from config import CleaningConfig, NotebookConfig
+from cleaning import CleaningData
+from action_file import grouping_likert_yn
+from plotting import get_plot
 
 def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=False):
     """
     """
-    if df is None:
-        return None
-    print(df)
     if colnames:
         df_to_freq = df[colnames]
     else:
@@ -27,7 +28,9 @@ def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=
     return output
 
 
-def count_unique_value_multiple(df, colnames, rename_columns=False, dropna=False, normalize=False):
+def count_choice(df, colnames, rename_columns=False,
+                 dropna=False, normalize=False,
+                 multiple_choice=False, sort_values=False):
     """
     Count the values of different columns and transpose the count
     :params:
@@ -42,26 +45,40 @@ def count_unique_value_multiple(df, colnames, rename_columns=False, dropna=False
         df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
 
     # Calculate the counts for them
-    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    if multiple_choice is True:
+        df_sub = df_sub[df_sub == 'Yes'].apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    else:
+        df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    if sort_values is True:
+        df_sub.sort_values(ascending=False, inplace=True)
     # Transpose the column to row to be able to plot a stacked bar chart
     return df_sub.transpose()
 
 
-def count_unique_value_single(df, colnames):
+def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_values=False):
     """
     """
-    return df[colnames].value_counts()
+    if multiple is True:
+        df_sub = df[colnames]
+    else:
+        df_sub = df[colnames].to_frame(name=colnames)
 
 
-def count_multiple_choice(df, colnames, rename_columns=True):
-    """
-    """
-    df_sub = df[colnames]
-    if rename_columns is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
-    df_sub = df_sub[df_sub == 'Yes'].count()
-    df_sub.sort_values(ascending=False, inplace=True)
+    df_sub = df_sub.apply(pd.Series.value_counts,
+                          dropna=dropna,
+                          normalize=normalize)
+    if sort_values is True:
+        df_sub.sort_values(ascending=False, inplace=True)
+    # Transpose the column to row to be able to plot a stacked bar chart
+    df_sub = df_sub.transpose()
+    if dropna is True:
+        df_sub = df_sub[['Yes', 'No']]
+    else:
+        df_sub = df_sub[['Yes', 'No', 'NA']]
+    if multiple is False:
+        print(df_sub)
     return df_sub
+
 
 
 def get_count(df, questions, type_question):
@@ -75,22 +92,32 @@ def get_count(df, questions, type_question):
 
     :return:
     """
-
     #
     # questions = [i for j in questions for i in j]
 
     if type_question.lower() == 'y/n/na':
-        if len(questions) > 1:
+        if len(questions) == 1:
             questions = questions[0]
-            return count_unique_value_single(df, questions)
-        return count_unique_value_multiple(df, questions, normalize=True, dropna=True)
-    elif type_question.lower() == 'likert':
-        pass
+            multiple = False
+            normalize = False
+        else:
+            multiple = True
+            normalize = True
+        return count_yn(df, questions, multiple=multiple, normalize=normalize,
+                        dropna=True)
+
+
     elif type_question.lower() == 'one choice':
         pass
-    elif type_question.lower() == 'ranking':
-        pass
+        # return count_choice(df, questions, multiple_choice=False)
+
     elif type_question.lower() == 'multiple choice':
+        pass
+        # return count_choice(df, questions, multiple_choice=True)
+
+    elif type_question.lower() == 'likert':
+        pass
+    elif type_question.lower() == 'ranking':
         pass
     elif type_question.lower() == 'freetext':
         pass
@@ -100,3 +127,42 @@ def get_count(df, questions, type_question):
         pass
     else:
         pass
+
+
+def main():
+    """
+    """
+    pd.set_option('display.max_rows', 300)
+
+    # Load dataset
+    df = pd.read_csv(CleaningConfig.raw_data)
+
+    # Cleaning_process
+    cleaning_process = CleaningData(df)
+    df = cleaning_process.cleaning()
+    cleaning_process.write_df()
+    cleaning_process.write_config_file()
+    for s in cleaning_process.structure_by_section:
+        section = cleaning_process.structure_by_section[s]
+        for group in section:
+            for question in grouping_likert_yn(section[group]):
+                list_questions = question[0]
+                original_question = question[1]
+                answer_format = question[2]
+                try:
+                    v_to_count = get_count(df, list_questions, answer_format)
+                    plot = get_plot(v_to_count, answer_format)
+                    plot
+                    # if v_to_count is not None:
+                    #     print(v_to_count)
+
+                    # notebook.add_freq_table(list_questions, answer_format)
+                    # notebook.add_plot(counted_value, answer_format, file_answer)
+                except KeyError:
+                    print('Error for the question: {}'.format(original_question))
+                except AttributeError:
+                    print('Nothing return')
+
+
+if __name__ == "__main__":
+    main()
