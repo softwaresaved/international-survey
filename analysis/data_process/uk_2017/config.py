@@ -33,4 +33,5 @@ class NotebookConfig(PlottingConfig):
                  'import matplotlib.pyplot as plt',
                  'from config import CleaningConfig, PlottingConfig, NotebookConfig',
                  'from counting import get_count',
-                 'from plotting import get_plot']
+                 'from plotting import get_plot',
+                 'from likertScalePlot import likert_scale']
