@@ -70,14 +70,16 @@ def main():
                 list_questions = question[0]
                 original_question = question[1]
                 answer_format = question[2]
-                try:
-                    for txt in original_question:
-                        notebook.add_question_title(txt)
-                    notebook.add_count(list_questions, answer_format)
-                    # notebook.add_freq_table()
-                    # notebook.add_plot(counted_value, answer_format, file_answer)
-                except KeyError:
-                    print('Error for the question: {}'.format(original_question))
+                if answer_format in ['y/n/na']:
+                    try:
+                        for txt in original_question:
+                            notebook.add_question_title(txt)
+                        test = notebook.add_count(list_questions, answer_format)
+                        print(test)
+                        # notebook.add_freq_table()
+                        notebook.add_plot(answer_format)
+                    except KeyError:
+                        print('Error for the question: {}'.format(original_question))
 
     print('Running notebook')
     notebook.run_notebook()
