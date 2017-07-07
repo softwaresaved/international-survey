@@ -6,7 +6,7 @@ section,code,question,answer_format,answer_file,conditional,source,comment,lang_
 1,edu4,Do you hold any other professional qualifications?,FREETEXT,,,,,,,
 1,rse1,Do you write code as part of your job?,Y/N/NA,,,,,,,
 1,rse3,Who uses the code that you write?,LIKERT,likert_usage_5,,,,,,
-
+,,,,,,,,,,
 1,soft2can,Do you consider yourself a professional software developer?,Y/N/NA,,,,,,,
 1,soft1can,How many years of Software development experience do you have?,FREENUMERIC,,,,,,,
 1,time1can,"In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)",LIKERT,likert_time_10,,,,,,
@@ -20,7 +20,6 @@ section,code,question,answer_format,answer_file,conditional,source,comment,lang_
 2,currentEmp4,Which organisation do you work for?,FREETEXT,,If NOT ‘University’ at currentEmp1,,,,,
 2,currentEmp5,What is your official job title?,FREETEXT,,,,,,,
 2,currentEmp6,"Are you known in your group by a different job title? If so, please enter the job title you use",FREETEXT,,,,,,,
-<<<<<<< HEAD
 2,currentEmp12,Do you work full time or part time,ONE CHOICE,type_hours,,,,,,
 2,currentEmp10,What type of contract are you employed on?,ONE CHOICE,type_contract,,Lost source but modified,,,,
 2,currentEmp9,When did you start your current contract,DATETIME,,,,,,,
