@@ -75,7 +75,7 @@ def main():
                         for txt in original_question:
                             notebook.add_question_title(txt)
                         test = notebook.add_count(list_questions, answer_format)
-                        print(test)
+                        # print(test)
                         # notebook.add_freq_table()
                         notebook.add_plot(answer_format)
                     except KeyError:
