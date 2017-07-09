@@ -32,15 +32,27 @@ def count_choice(df, colnames, rename_columns=True,
 
     if rename_columns is True and multiple_choice is True:
         df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+        title = [s.split('[')[1] for s in colnames]
 
     # Calculate the counts for them
     if multiple_choice is True:
-        print(df_sub)
+        df_sub.fillna(value='No', inplace=True)
         df_sub = df_sub[df_sub == 'Yes'].apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     else:
         df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-    if sort_values is True:
+
+    # FIXME NEED TO CLEAN ALL THIS MESS
+    if multiple_choice is True:
+        df_sub.fillna(value=0, inplace=True)
+        df_sub = df_sub.astype(int)
+        df_sub = df_sub.ix['Yes']
+        df_sub = df_sub.to_frame()
+
+        # df_sub = df_sub.transpose()
+
+        # if sort_values is True:
         df_sub.sort_values(by='Yes', ascending=False, inplace=True, na_position='last')
+
     # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
     return df_sub
@@ -169,6 +181,8 @@ def main():
 
     # Load dataset
     df = pd.read_csv(CleaningConfig.raw_data)
+    print(df['open3can[SQ001]. How often do you associate your software with a Digital Object Identifier (DOI)? []'])
+    raise
 
     # Cleaning_process
     cleaning_process = CleaningData(df)
@@ -187,7 +201,6 @@ def main():
                     print(answer_format)
                     try:
                         v_to_count = get_count(df, list_questions, answer_format, file_answer)
-                        print(v_to_count)
                         get_plot(v_to_count, answer_format)
                     except ValueError:
                         raise
