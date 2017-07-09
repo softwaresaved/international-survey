@@ -36,5 +36,4 @@ class NotebookConfig(PlottingConfig):
                  'from plotting import get_plot',
                  'from IPython.display import display',
                  'from likertScalePlot import likert_scale']
-    processing_options = {'metadata': {'path': './',
-                                       'hide_input': True}}
+    processing_options = {'metadata': {'path': './'}}

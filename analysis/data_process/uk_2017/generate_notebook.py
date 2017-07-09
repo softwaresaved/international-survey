@@ -24,6 +24,7 @@ class GenerateNotebook(NotebookConfig):
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()
         self._import()
+        self._hide_code()
         self._setup_matplotlib()
         self._load_dataset()
         # Processor to run the notebook
@@ -39,13 +40,18 @@ class GenerateNotebook(NotebookConfig):
         import_code = '\n'.join(self.to_import)
         self._add_code(import_code)
 
+    def _hide_code(self):
+        """
+        """
+        pass
+
     def _setup_matplotlib(self):
         """
         Set up matplotlib for Jupyter
         """
 
-        self._add_code("""get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter """)
-        # self._add_code("""matplotlib.rcParams['figure.figsize'] = (10.0, 8.0)""")
+        self._add_code("""get_ipython().magic('matplotlib inline')  # Activate that line to use in Jupyter """ + "\n" +
+        """matplotlib.rcParams['figure.figsize'] = (15.0, 8.0)""")
 
     def _load_dataset(self):
         """

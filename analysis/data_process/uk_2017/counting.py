@@ -52,6 +52,7 @@ def count_choice(df, colnames, rename_columns=True,
 
         # if sort_values is True:
         df_sub.sort_values(by='Yes', ascending=False, inplace=True, na_position='last')
+        df_sub.columns = ['Count']
 
     # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
