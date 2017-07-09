@@ -65,6 +65,9 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     """
     """
     df = df.transpose()
+    ## Set up a bigger size
+    if len(df.columns) > 10:
+        matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
     plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
@@ -128,8 +131,8 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
         # Reverse the list otherwise the bars are build in the reverse
         # order than the dataframe
         # Not WORKING
-        df = df.reindex(index=df.index[::-1])
-        for i, d in enumerate(df.index[::-1]):
+        # df = df.reindex(index=df.index[::-1])
+        for i, d in enumerate(df.index):
             yes_bar = ax.barh(index[i], width=df['Yes'][i], height=bar_width, color=colors(0), label='Yes')
             no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(3), label='No')
     else:
@@ -167,7 +170,7 @@ def plot_y_n_single(df, dropna=True):
     df.sort_values(by='Yes', inplace=True, ascending=False)
     df = df.transpose()
     ax = df.plot(kind='bar', stacked=False, color=[colormap(0), colormap(3)],
-                title=df.columns[0], legend=None)
+                 title=df.columns[0], legend=None)
     return ax
 
 
