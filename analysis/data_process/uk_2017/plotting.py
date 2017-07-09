@@ -121,13 +121,13 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     # Sorting the df with the Yes values
     if sort_order.lower() == 'yes':
         df.sort_values(by='Yes', inplace=True, ascending=False)
-    elif sort_order.lower() == 'name':
-        df.sort_values(by=df.index, axis=0, ascending=True, inplace=True)
-    else:
-        pass
 
     if horizontal is True:
-        for i, d in enumerate(df.index):
+        # Reverse the list otherwise the bars are build in the reverse
+        # order than the dataframe
+        # Not WORKING
+        df = df.reindex(index=df.index[::-1])
+        for i, d in enumerate(df.index[::-1]):
             yes_bar = ax.barh(index[i], width=df['Yes'][i], height=bar_width, color=colors(0), label='Yes')
             no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(3), label='No')
     else:
