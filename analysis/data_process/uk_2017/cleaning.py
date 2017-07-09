@@ -272,6 +272,8 @@ class CleaningData(CleaningConfig):
                 df['[OTHER_RAW]. '+ col] = df[col]
                 # Replace all the values with 'Yes'
                 df[col] = df[col].apply(lambda x: 'Yes' if not pd.isnull(x) else np.nan)
+                # Droping the column
+                df = df.drop(col, axis=1)
         return df
 
     def write_config_file(self):
