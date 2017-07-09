@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import nbformat as nbf
+from nbconvert.preprocessors import ExecutePreprocessor
+from config import NotebookConfig
+
 __author__: 'Olivier PHILIPPE'
 __licence__: 'BSD3-clause'
 
@@ -8,12 +12,6 @@ __licence__: 'BSD3-clause'
 Scrip to programatically generate notebook for exploratory analysis
 Use the code from: https://gist.github.com/fperez/9716279
 """
-
-import nbformat as nbf
-from nbconvert.preprocessors import ExecutePreprocessor
-
-
-from config import NotebookConfig
 
 
 class GenerateNotebook(NotebookConfig):
@@ -26,9 +24,12 @@ class GenerateNotebook(NotebookConfig):
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()
         self._import()
+        self._setup_matplotlib()
         self._load_dataset()
         # Processor to run the notebook
-        self.processor = ExecutePreprocessor(timeout=600, kernel_name='python3')
+        self.processor = ExecutePreprocessor(timeout=600,
+                                             kernel_name='python3',
+                                             allow_errors=True)
 
     def _import(self):
         """
@@ -37,6 +38,14 @@ class GenerateNotebook(NotebookConfig):
         self.add_section('Importing modules')
         import_code = '\n'.join(self.to_import)
         self._add_code(import_code)
+
+    def _setup_matplotlib(self):
+        """
+        Set up matplotlib for Jupyter
+        """
+
+        self._add_code("""get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter """)
+        # self._add_code("""matplotlib.rcParams['figure.figsize'] = (10.0, 8.0)""")
 
     def _load_dataset(self):
         """
@@ -68,10 +77,16 @@ class GenerateNotebook(NotebookConfig):
                                                 "{}")""".format(*args)
         self._add_code(count_count)
 
+    def add_display(self):
+        """
+        """
+        display = """display(v_to_count) """
+        self._add_code(display)
+
     def add_plot(self, *args):
         """
         """
-        plot = """get_plot(v_to_count, "{}")""".format(*args)
+        plot = """_ = get_plot(v_to_count, "{}")""".format(*args)
         self._add_code(plot)
 
     def _add_text(self, text_to_add):
@@ -97,7 +112,7 @@ class GenerateNotebook(NotebookConfig):
         Source of information:
             http://nbconvert.readthedocs.io/en/latest/execute_api.html
         """
-        self.processor.preprocess(self.nb, {'metadata':{'path': './'}})
+        self.processor.preprocess(self.nb, self.processing_options)
 
     def save_notebook(self):
         """

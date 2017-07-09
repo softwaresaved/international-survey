@@ -10,25 +10,8 @@ from cleaning import CleaningData
 from action_file import grouping_likert_yn
 from plotting import get_plot
 
-def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=False):
-    """
-    """
-    if colnames:
-        df_to_freq = df[colnames]
-    else:
-        df_to_freq = df
-    if add_ratio:
-        output = pd.concat([pd.crosstab(df_to_freq, columns='count', normalize=False),
-                            pd.crosstab(df_to_freq, columns='ratio', normalize=True)],
-                           axis=1)
-    else:
-        output = pd.crosstab(df_to_freq, colnames=[''], columns=columns)
-    if sort_order:
-        output = output.sort_values(by='count')
-    return output
 
-
-def count_choice(df, colnames, rename_columns=False,
+def count_choice(df, colnames, rename_columns=True,
                  dropna=False, normalize=False,
                  multiple_choice=False, sort_values=False):
     """
@@ -41,7 +24,7 @@ def count_choice(df, colnames, rename_columns=False,
     """
     df_sub = df[colnames]
 
-    if rename_columns is True:
+    if rename_columns is True and multiple_choice is True:
         df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
 
     # Calculate the counts for them
@@ -50,7 +33,7 @@ def count_choice(df, colnames, rename_columns=False,
     else:
         df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     if sort_values is True:
-        df_sub.sort_values(ascending=False, inplace=True)
+        df_sub.sort_values(ascending=False, inplace=True, na_position='last')
     # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
     return df_sub
@@ -69,17 +52,17 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_v
                           dropna=dropna,
                           normalize=normalize)
     if sort_values is True:
-        df_sub.sort_values(ascending=False, inplace=True)
+        df_sub.sort_values(ascending=True, inplace=True)
     # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
     if dropna is True:
         df_sub = df_sub[['Yes', 'No']]
     else:
-        df_sub = df_sub[['Yes', 'No', 'NA']]
+        df_sub = df_sub[['Yes', 'No', np.nan]]
     return df_sub
 
 
-def count_likert(df, colnames, likert_answer, rename_columns=False, dropna=True, normalize=False):
+def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, normalize=False):
     """
     Count the values of different columns and transpose the count
     :params:
@@ -125,36 +108,41 @@ def get_count(df, questions, type_question, file_answer):
         if len(questions) == 1:
             questions = questions[0]
             multiple = False
-            normalize = False
         else:
             multiple = True
-            normalize = True
-        return count_yn(df, questions, multiple=multiple, normalize=normalize,
-                        dropna=True)
+        return count_yn(df, questions, multiple=multiple,
+                        dropna=False)
 
 
     elif type_question.lower() == 'one choice':
-        pass
-        # return count_choice(df, questions, multiple_choice=False)
+        return count_choice(df, questions, multiple_choice=False)
 
     elif type_question.lower() == 'multiple choice':
-        pass
+        return count_choice(df, questions, multiple_choice=True)
 
     elif type_question.lower() == 'likert':
         try:
             likert_answer = get_answer(file_answer)
         except FileNotFoundError:
             likert_answer = None
-        return count_likert(df, questions, likert_answer)
+        if len(questions) == 1:
+            rename_columns = False
+        else:
+            rename_columns = True
+        return count_likert(df, questions, likert_answer, rename_columns)
 
     elif type_question.lower() == 'ranking':
         pass
+
     elif type_question.lower() == 'freetext':
         pass
+
     elif type_question.lower() == 'freenumeric':
         pass
+
     elif type_question.lower() == 'datetime':
         pass
+
     else:
         pass
 
@@ -193,23 +181,19 @@ def main():
                 original_question = question[1]
                 answer_format = question[2]
                 file_answer = question[3]
-                try:
-                    v_to_count = get_count(df, list_questions, answer_format, file_answer)
-                    if answer_format == 'likert':
-                        try:
-                            get_plot(v_to_count, answer_format)
-                        except TypeError:
-                            pass
-                    # if v_to_count is not None:
-                    #     print(v_to_count)
+                v_to_count = get_count(df, list_questions, answer_format, file_answer)
+                if answer_format == 'likert':
+                    try:
+                        get_plot(v_to_count, answer_format)
+                    except ValueError:
+                        raise
+                # if v_to_count is not None:
+                #     print(v_to_count)
 
-                    # notebook.add_freq_table(list_questions, answer_format)
-                    # notebook.add_plot(counted_value, answer_format, file_answer)
-                # except KeyError:
-                #     print('Error for the question: {}'.format(original_question))
-                except AttributeError:
-                    print('Nothing return')
-    time.sleep(30)
+                # notebook.add_freq_table(list_questions, answer_format)
+                # notebook.add_plot(counted_value, answer_format, file_answer)
+            # except KeyError:
+            #     print('Error for the question: {}'.format(original_question))
 
 
 if __name__ == "__main__":
