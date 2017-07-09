@@ -32,7 +32,7 @@ plt.ion()
 plt.show()
 
 
-def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
+def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None, axis=1):
     """
     Function to automatically gets a colormap for all the values passed in,
     Have the option to normalise the colormap.
@@ -48,7 +48,10 @@ def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
 
     Original version found on stackerOverflow (w/o the try/except) but cannot find it back
     """
-    values = df.columns
+    if axis == 0:
+        values = df.index
+    elif axis == 1:
+        values = df.columns
     norm = plt.Normalize(vmin, vmax)
     try:
         return colormap(norm(values))
@@ -167,7 +170,9 @@ def add_labels(df, ax, bars, rotation=0):
             bl = bar.get_xy()
             x = 0.5 *bar.get_width() +bl[0]
             y = 0.5 *bar.get_height() +bl[1]
-            ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
+            # Avoid labels when percentage is under 5 (the bar is too small)
+            if percentages[i, j] > 5:
+                ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
 
 
 def draw_middle_line(normalise, longest_middle):
@@ -204,71 +209,74 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
     :params:
     :return:
     """
-    # Create the figure object
-    fig = plt.figure(figsize=(10, 8))
-    # Create an axes object in the figure
-    ax = fig.add_subplot(111)
+    try:
+        # Create the figure object
+        fig = plt.figure(figsize=(10, 8))
+        # Create an axes object in the figure
+        ax = fig.add_subplot(111)
 
-    # Generate an array of colors based on different colormap. The default value
-    # Use a divergent colormap.
-    colors = get_colors(df)
+        # Generate an array of colors based on different colormap. The default value
+        # Use a divergent colormap.
+        colors = get_colors(df)
 
-    # Get the position of each bar for all the items
-    y_pos = np.arange(len(df.index))
+        # Get the position of each bar for all the items
+        y_pos = np.arange(len(df.index))
 
-    if normalise:
-        df = normalise_per_row(df)
+        if normalise:
+            df = normalise_per_row(df)
 
-    # Compute the middle of the possible answers. Assuming the answers are columns
-    # Get the sum of the middles +.5 if middle value and without .5 if splitted in 2
-    # equal divides
-    middles = get_total_mid_answers(df)
+        # Compute the middle of the possible answers. Assuming the answers are columns
+        # Get the sum of the middles +.5 if middle value and without .5 if splitted in 2
+        # equal divides
+        middles = get_total_mid_answers(df)
 
-    # Calculate the longest middle bar to set up the middle of the x-axis for the x-lables
-    # and plot the middle line
-    if normalise:
-        longest_middle = 100
-    else:
-        longest_middle = middles.max()
-    print('LONGEST MIDDLE: {}'.format(longest_middle))
+        # Calculate the longest middle bar to set up the middle of the x-axis for the x-lables
+        # and plot the middle line
+        if normalise:
+            longest_middle = 100
+        else:
+            longest_middle = middles.max()
 
-    # Create the left bar to centre the barchart in the middle
-    left_invisible_bar = np.array((middles - longest_middle).abs())
+        # Create the left bar to centre the barchart in the middle
+        left_invisible_bar = np.array((middles - longest_middle).abs())
 
-    # Calculate the longest bar with the left gap in it to plot the x_value at the end
-    # Calculate the total of the longest bar to have the appropriate width +
-    # the invisible bar in case it is used to center everything
-    complete_longest = (df.sum(axis=1) + left_invisible_bar).max()
+        # Calculate the longest bar with the left gap in it to plot the x_value at the end
+        # Calculate the total of the longest bar to have the appropriate width +
+        # the invisible bar in case it is used to center everything
+        complete_longest = (df.sum(axis=1) + left_invisible_bar).max()
 
-    # Create the horizontal bars
-    bars = create_bars(df, ax, y_pos, colors, left_invisible_bar)
+        # Create the horizontal bars
+        bars = create_bars(df, ax, y_pos, colors, left_invisible_bar)
 
-    # Set up the limit from 0 to the longest total barchart
-    # Keeping this drawing before drawing_x_labels or it will failed to draw
-    # all the labels on the right side
-    ax.set_xlim([-0.5, complete_longest + 0.5])
+        # Set up the limit from 0 to the longest total barchart
+        # Keeping this drawing before drawing_x_labels or it will failed to draw
+        # all the labels on the right side
+        ax.set_xlim([-0.5, complete_longest + 0.5])
 
-    # Drawing x_labels
-    drawing_x_labels(normalise, complete_longest, longest_middle)
-    ax.set_xlabel('Percentages')
+        # Drawing x_labels
+        drawing_x_labels(normalise, complete_longest, longest_middle)
+        ax.set_xlabel('Percentages')
 
-    # Setting up the y-axis
-    ax.set_yticks(y_pos)
-    ax.set_yticklabels(df.index)
+        # Setting up the y-axis
+        ax.set_yticks(y_pos)
+        ax.set_yticklabels(df.index)
 
-    # Add labels to each box
-    if labels:
-        add_labels(df, ax, bars, rotation)
+        # Add labels to each box
+        if labels:
+            add_labels(df, ax, bars, rotation)
 
-    # Create a line on the middle
-    if middle_line:
-        draw_middle_line(normalise, longest_middle)
+        # Create a line on the middle
+        if middle_line:
+            draw_middle_line(normalise, longest_middle)
 
-    # Add legend
-    if legend:
-        ax.legend(bars, df.columns)
+        # Add legend
+        if legend:
+            ax.legend(bars, df.columns)
 
-    return fig
+        return fig
+    except Exception:
+        print(df)
+        return df
 
 
 def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
@@ -300,6 +308,12 @@ def main():
     dummy = pd.DataFrame([[1, 2, 3, 4, 5, 2], [5, 6, 7, 8, 5, 2], [10, 4, 2, 10, 5, 2]],
                          columns=["SD", "D", "N", "A", "SA", 'TEST'],
                          index=["Key 1", "Key B", "Key III"])
+    #
+    # dummy = pd.DataFrame([[1], [2], [3]],
+    #                      columns=['TEST'],
+    #                      index=['Key1', 'Key2', 'Key3'])
+
+
     likert_scale(dummy)
 
 
