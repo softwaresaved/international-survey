@@ -48,9 +48,6 @@ def count_choice(df, colnames, rename_columns=True,
         df_sub = df_sub.ix['Yes']
         df_sub = df_sub.to_frame()
 
-        # df_sub = df_sub.transpose()
-
-        # if sort_values is True:
         df_sub.sort_values(by='Yes', ascending=False, inplace=True, na_position='last')
         df_sub.columns = ['Count']
 
