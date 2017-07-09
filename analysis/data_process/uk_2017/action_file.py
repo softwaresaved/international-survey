@@ -21,6 +21,7 @@ def grouping_likert_yn(group_question):
     """
     regroup_q, regroup_txt_q = list(), list()
     previous_type = None
+    previous_file_answer = None
     for q in group_question:
         current_type = group_question[q]['answer_format'].lower()
         survey_q = group_question[q]['survey_q']
@@ -29,21 +30,28 @@ def grouping_likert_yn(group_question):
 
         if previous_type in ['y/n/na', 'likert'] or current_type in ['y/n/na', 'likert']:
             if current_type == previous_type or previous_type is None:
+                if previous_type == 'likert' and current_type == 'likert':
+                    if previous_file_answer != file_answer:
+                        yield regroup_q, regroup_txt_q, previous_type, previous_file_answer
+                        regroup_q, regroup_txt_q = list(), list()
+                        regroup_q.extend(survey_q)
+                        regroup_txt_q.append(original_q)
                 regroup_q.extend(survey_q)
                 regroup_txt_q.append(original_q)
             else:
-                yield regroup_q, regroup_txt_q, previous_type, file_answer
+                yield regroup_q, regroup_txt_q, previous_type, previous_file_answer
                 regroup_q, regroup_txt_q = list(), list()
                 regroup_q.extend(survey_q)
                 regroup_txt_q.append(original_q)
         else:
             if len(regroup_q) > 0:
-                yield regroup_q, regroup_txt_q, previous_type, file_answer
+                yield regroup_q, regroup_txt_q, previous_type, previous_file_answer
             regroup_q, regroup_txt_q = list(), list()
             regroup_q.extend(survey_q)
             regroup_txt_q.append(original_q)
 
         previous_type = current_type
+        previous_file_answer = file_answer
 
     yield regroup_q, regroup_txt_q, previous_type, file_answer
 
