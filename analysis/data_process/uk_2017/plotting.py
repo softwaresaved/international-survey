@@ -44,7 +44,6 @@ def plot_bar_char(df, sort_order=False, stacked=False,
     if horizontal is True:
         type_plot='barh'
 
-
     bars = create_bars(df, type_plot, stacked, colors)
 
     # Modifying the whitespaces between the bars and the graph
@@ -66,7 +65,7 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     """
     """
     df = df.transpose()
-    plt = plot_bar_char(df, sort_order=False, stacked=False, horizontal=False, dropna=dropna)
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
     return plt
@@ -75,7 +74,10 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
 def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
     """
     """
-    plt = plot_bar_char(df, sort_order=False, stacked=False, horizontal=False, dropna=dropna)
+    df = df.transpose()
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
+    # plt.set_xticklabels(df.columns, rotation=0)
+    plt.suptitle(df.columns[0])
     return plt
 
 
@@ -175,40 +177,44 @@ def plot_likert(df):
 
 def get_plot(df, type_question):
 
-    if type_question.lower() == 'y/n/na':
-        if len(df.index) == 1:
-            return plot_y_n_single(df)
-        return plot_y_n_multiple(df, sort_order='name')
+    try:
+        if type_question.lower() == 'y/n/na':
+            if len(df.index) == 1:
+                return plot_y_n_single(df)
+            return plot_y_n_multiple(df, sort_order='name')
 
-    elif type_question.lower() == 'likert':
-        if len(df.index) == 1:
-            return plot_unique_var(df)
-        return plot_likert(df)
+        elif type_question.lower() == 'likert':
+            if len(df.index) == 1:
+                return plot_unique_var(df)
+            return plot_likert(df)
 
-    elif type_question.lower() == 'one choice':
-        if len(df.index) == 1:
-            return plot_unique_var(df, stacked=False, horizontal=False)
-        return plot_multiple_var(df, stacked=False, horizontal=False)
+        elif type_question.lower() == 'one choice':
+            if len(df.index) == 1:
+                return plot_unique_var(df, stacked=False, horizontal=False)
+            return plot_multiple_var(df, stacked=False, horizontal=False)
 
-    elif type_question.lower() == 'multiple choice':
-        if len(df.index) == 1:
-            return plot_unique_var(df, stacked=False, horizontal=False)
-        return plot_multiple_var(df, stacked=False, horizontal=False)
+        elif type_question.lower() == 'multiple choices':
+            if len(df.index) == 1:
+                return plot_unique_var(df, stacked=False, horizontal=False,
+                                      sort_order=False)
+            return plot_multiple_var(df, stacked=False, horizontal=False)
 
-    elif type_question.lower() == 'ranking':
-        pass
+        elif type_question.lower() == 'ranking':
+            pass
 
-    elif type_question.lower() == 'freetext':
-        pass
+        elif type_question.lower() == 'freetext':
+            pass
 
-    elif type_question.lower() == 'freenumeric':
-        pass
+        elif type_question.lower() == 'freenumeric':
+            pass
 
-    elif type_question.lower() == 'datetime':
-        pass
+        elif type_question.lower() == 'datetime':
+            pass
 
-    else:
-        pass
+        else:
+            pass
+    except TypeError:  # In Case an empty v_count is passed
+        return None
 
 
 def main():
