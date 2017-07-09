@@ -122,7 +122,7 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     if sort_order.lower() == 'yes':
         df.sort_values(by='Yes', inplace=True, ascending=False)
     elif sort_order.lower() == 'name':
-        df.sort_values(axis=0, ascending=True, inplace=True)
+        df.sort_values(by=df.index, axis=0, ascending=True, inplace=True)
     else:
         pass
 
@@ -187,13 +187,13 @@ def get_plot(df, type_question):
 
     elif type_question.lower() == 'one choice':
         if len(df.index) == 1:
-            return plot_unique_var(df, sort_order=False, stacked=False, horizontal=False)
-        return plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False)
+            return plot_unique_var(df, stacked=False, horizontal=False)
+        return plot_multiple_var(df, stacked=False, horizontal=False)
 
     elif type_question.lower() == 'multiple choice':
         if len(df.index) == 1:
-            return plot_unique_var(df, sort_order=False, stacked=False, horizontal=False)
-        return plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False)
+            return plot_unique_var(df, stacked=False, horizontal=False)
+        return plot_multiple_var(df, stacked=False, horizontal=False)
 
     elif type_question.lower() == 'ranking':
         pass
