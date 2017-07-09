@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import json
 import pandas as pd
 import numpy as np
 
@@ -9,6 +8,13 @@ from config import CleaningConfig, NotebookConfig
 from cleaning import CleaningData
 from action_file import grouping_likert_yn
 from plotting import get_plot
+
+
+def get_answer(file_answer):
+    """
+    """
+    with open(file_answer, 'r') as f:
+        return [x[:-1] for x in f.readlines()]
 
 
 def count_choice(df, colnames, rename_columns=True,
@@ -25,15 +31,16 @@ def count_choice(df, colnames, rename_columns=True,
     df_sub = df[colnames]
 
     if rename_columns is True and multiple_choice is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
+        df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
 
     # Calculate the counts for them
     if multiple_choice is True:
+        print(df_sub)
         df_sub = df_sub[df_sub == 'Yes'].apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     else:
         df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     if sort_values is True:
-        df_sub.sort_values(ascending=False, inplace=True, na_position='last')
+        df_sub.sort_values(by='Yes', ascending=False, inplace=True, na_position='last')
     # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
     return df_sub
@@ -75,7 +82,7 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     df_sub = df[colnames]
 
     if rename_columns is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
+        df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
@@ -86,11 +93,6 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     return df_sub.transpose()
 
 
-def get_answer(file_answer):
-    """
-    """
-    with open(file_answer, 'r') as f:
-        return [x[:-1] for x in f.readlines()]
 
 
 def get_count(df, questions, type_question, file_answer):
@@ -117,7 +119,7 @@ def get_count(df, questions, type_question, file_answer):
     elif type_question.lower() == 'one choice':
         return count_choice(df, questions, multiple_choice=False)
 
-    elif type_question.lower() == 'multiple choice':
+    elif type_question.lower() == 'multiple choices':
         return count_choice(df, questions, multiple_choice=True)
 
     elif type_question.lower() == 'likert':
@@ -181,9 +183,11 @@ def main():
                 original_question = question[1]
                 answer_format = question[2]
                 file_answer = question[3]
-                v_to_count = get_count(df, list_questions, answer_format, file_answer)
-                if answer_format == 'likert':
+                if answer_format == 'multiple choices':
+                    print(answer_format)
                     try:
+                        v_to_count = get_count(df, list_questions, answer_format, file_answer)
+                        print(v_to_count)
                         get_plot(v_to_count, answer_format)
                     except ValueError:
                         raise

@@ -292,7 +292,7 @@ def count_unique_value(df, colnames, rename_columns=False, dropna=False, normali
     df_sub = df[colnames]
 
     if rename_columns is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
+        df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
