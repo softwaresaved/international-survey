@@ -18,8 +18,9 @@ class CleaningConfig:
 
 
 class PlottingConfig(CleaningConfig):
-
-    pass
+    count_na = True
+    plot_na = False
+    normalise = False
 
 
 class NotebookConfig(PlottingConfig):
@@ -28,10 +29,12 @@ class NotebookConfig(PlottingConfig):
     notebook_filename = 'uk_17.ipynb'
     to_import = ['import pandas as pd',
                  'import numpy as np',
-                 'get_ipython().magic("matplotlib inline")',
                  'import matplotlib',
                  'import matplotlib.pyplot as plt',
                  'from config import CleaningConfig, PlottingConfig, NotebookConfig',
                  'from counting import get_count',
                  'from plotting import get_plot',
+                 'from IPython.display import display',
                  'from likertScalePlot import likert_scale']
+    processing_options = {'metadata': {'path': './',
+                                       'hide_input': True}}
