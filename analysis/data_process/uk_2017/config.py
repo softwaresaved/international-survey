@@ -16,6 +16,7 @@ class CleaningConfig:
     json_to_plot_location = './to_plot.json'
     cleaned_df_location = './dataset/cleaned_data.csv'
     count_na = True
+    normalise = False
 
 
 class PlottingConfig(CleaningConfig):

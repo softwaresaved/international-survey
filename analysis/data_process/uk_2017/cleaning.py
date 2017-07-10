@@ -16,7 +16,7 @@ from config import CleaningConfig
 
 class CleaningData(CleaningConfig):
     """
-    Class to perfom some generic cleaning and recording an anonimized
+    Class to perfom some generic cleaning and recording an anonymized
     dataframe into a csv file at the end. Also record a json file
     that take all the questions headers from limesurvey data and match them
     with the question file to enable automatic process during the plotting
@@ -281,7 +281,6 @@ class CleaningData(CleaningConfig):
             for q in input_dict:
                 try:
                     input_dict[q]['survey_q']
-
                     section = input_dict[q]['section']
                     question = {q: input_dict[q]}
                     root_code = get_root_code(q)
