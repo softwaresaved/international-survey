@@ -23,6 +23,7 @@ def grouping_likert_yn(group_question):
     previous_type = None
     previous_file_answer = None
     for q in group_question:
+        print(group_question[q])
         current_type = group_question[q]['answer_format'].lower()
         survey_q = group_question[q]['survey_q']
         original_q = group_question[q]['original_question']
@@ -84,9 +85,9 @@ def main():
                         notebook.add_question_title(txt)
                     notebook.add_count(list_questions, answer_format, file_answer)
                     notebook.add_display_count()
-                    if answer_format in ['y/n/na', 'one choice']:
-                        notebook.add_percentage()
-                        notebook.add_display_percentage()
+                    # if answer_format in ['y/n/na', 'one choice']:
+                    #     notebook.add_percentage()
+                    #     notebook.add_display_percentage()
                     notebook.add_plot(answer_format)
                 except KeyError:
                     print('Error for the question: {}'.format(original_question))
