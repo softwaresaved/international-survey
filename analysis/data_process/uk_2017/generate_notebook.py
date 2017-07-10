@@ -30,7 +30,7 @@ class GenerateNotebook(NotebookConfig):
         # Processor to run the notebook
         self.processor = ExecutePreprocessor(timeout=600,
                                              kernel_name='python3',
-                                             allow_errors=True)
+                                             allow_errors=self.allow_errors)
 
     def _import(self):
         """
@@ -47,8 +47,7 @@ class GenerateNotebook(NotebookConfig):
         """
         rows = """pd.set_option('display.max_rows', 1000)"""
         columns = """pd.set_option('display.max_columns', 1000) """
-        height = """pd.set_option('display.height', 1000) """
-        self._add_code('\n'.join([rows, columns, height]))
+        self._add_code('\n'.join([rows, columns]))
 
     def _setup_matplotlib(self):
         """

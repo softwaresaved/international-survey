@@ -15,18 +15,20 @@ class CleaningConfig:
     # Location for the json file of all questions
     json_to_plot_location = './to_plot.json'
     cleaned_df_location = './dataset/cleaned_data.csv'
+    count_na = True
 
 
 class PlottingConfig(CleaningConfig):
-    count_na = True
+
     plot_na = False
-    normalise = False
+    normalise = True
 
 
 class NotebookConfig(PlottingConfig):
 
     notebook_folder = './'
     notebook_filename = 'uk_17.ipynb'
+    allow_errors = True
     to_import = ['import pandas as pd',
                  'import numpy as np',
                  'import matplotlib',
