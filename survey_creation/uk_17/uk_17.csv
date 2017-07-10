@@ -33,7 +33,7 @@ section,code,question,answer_format,answer_file,conditional,source,comment,lang_
 4,paper3,Are you generally named as the main author of the paper?,Y/N/NA,,if yes to paper2,,,,,
 4,paper4,Are you generally named as a co-author of the paper?,Y/N/NA,,if no to paper3,,,,,
 4,paper5,Are you generally acknowledged in the main text of the paper? ,Y/N/NA,,,,,,,
-4,conf1can,Have you ever presented your software work at a conference or workshop?,FREETEXT,,,,,,,
+4,conf1can,Have you ever presented your software work at a conference or workshop?,Y/N/NA,,,,,,,
 4,conf2can,Which conference(s)/workshop(s),FREETEXT,,conf2_can,,,,,
 4,proj1can,How many software projects are you currently involved in?,FREENUMERIC,,,,,,,
 4,stability1,What is the bus factor of your most important software project?,ONE CHOICE,bus_factor,,,,,,
