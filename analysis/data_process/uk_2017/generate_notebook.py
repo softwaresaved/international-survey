@@ -24,7 +24,7 @@ class GenerateNotebook(NotebookConfig):
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()
         self._import()
-        self._hide_code()
+        self._setup_display()
         self._setup_matplotlib()
         self._load_dataset()
         # Processor to run the notebook
@@ -40,18 +40,23 @@ class GenerateNotebook(NotebookConfig):
         import_code = '\n'.join(self.to_import)
         self._add_code(import_code)
 
-    def _hide_code(self):
+    def _setup_display(self):
         """
+        Extending the limit of rows and columns
+        displayed
         """
-        pass
+        rows = """pd.set_option('display.max_rows', 1000)"""
+        columns = """pd.set_option('display.max_columns', 1000) """
+        height = """pd.set_option('display.height', 1000) """
+        self._add_code('\n'.join([rows, columns, height]))
 
     def _setup_matplotlib(self):
         """
         Set up matplotlib for Jupyter
         """
-
-        self._add_code("""get_ipython().magic('matplotlib inline')  # Activate that line to use in Jupyter """ + "\n" +
-        """matplotlib.rcParams['figure.figsize'] = (15.0, 8.0)""")
+        magic_inline = """get_ipython().magic('matplotlib inline')  # Activate that line to use in Jupyter """
+        size_figures = """matplotlib.rcParams['figure.figsize'] = (15.0, 8.0)"""
+        self._add_code('\n'.join([magic_inline, size_figures]))
 
     def _load_dataset(self):
         """
