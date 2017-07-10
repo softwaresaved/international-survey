@@ -34,8 +34,6 @@ def grouping_likert_yn(group_question):
                     if previous_file_answer != file_answer:
                         yield regroup_q, regroup_txt_q, previous_type, previous_file_answer
                         regroup_q, regroup_txt_q = list(), list()
-                        regroup_q.extend(survey_q)
-                        regroup_txt_q.append(original_q)
                 regroup_q.extend(survey_q)
                 regroup_txt_q.append(original_q)
             else:
@@ -81,12 +79,14 @@ def main():
                 original_question = question[1]
                 answer_format = question[2]
                 file_answer = question[3]
-                # if answer_format in ['y/n/na', 'likert']:
                 try:
                     for txt in original_question:
                         notebook.add_question_title(txt)
                     notebook.add_count(list_questions, answer_format, file_answer)
-                    notebook.add_display()
+                    notebook.add_display_count()
+                    if answer_format in ['y/n/na', 'one choice']:
+                        notebook.add_percentage()
+                        notebook.add_display_percentage()
                     notebook.add_plot(answer_format)
                 except KeyError:
                     print('Error for the question: {}'.format(original_question))
