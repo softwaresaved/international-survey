@@ -141,8 +141,6 @@ class CleaningData(CleaningConfig):
         """
         Cleaning all the prefer not say and na answers
         """
-        # Replace variation of 'Do not want to answer', Do not wish to declare', 'Prefer not to say' into nan
-        # if len(df.loc[:, df.columns.to_series().str.contains('Prefer not to answer').tolist()].columns) > 0:
         df.replace('Prefer not to answer', np.NaN, inplace=True)
         df.replace('Do not wish to declare', np.NaN, inplace=True)
         df.replace('Do not wish to answer', np.NaN, inplace=True)
@@ -185,7 +183,6 @@ class CleaningData(CleaningConfig):
                 try:
                     input_dict[code].setdefault('survey_q', []).append(col)
                 except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
-
                     pass
                     # if code == 'OTHER_RAW':
                     #     input_dict['OTHER_RAW'] = dict()
@@ -199,21 +196,6 @@ class CleaningData(CleaningConfig):
 
         return input_dict
 
-    @staticmethod
-    def get_root_code(string):
-        """
-        """
-        def return_until_digit(string):
-            """
-            """
-            for x in string:
-                if x.isalpha():
-                    yield x
-                else:
-                    break
-
-        return ''.join([x for x in return_until_digit(string)])
-
     def transform_for_notebook(self, input_dict):
         """
         Function to parse the created dictionary 'self.survey_structure' to create
@@ -225,26 +207,110 @@ class CleaningData(CleaningConfig):
         data and the information stored in the csv file in the `self.question_file`.
 
         :return: the transformed dictionary with the following structure:
-            {Section int(): {root_code int(): {q_code int(): {'original_question': str(),
-                                                              'type_question': str(),
-                                                              'file_answer': str(),
-                                                              'answer_format': str(),
-                                                              'survey_q': list()}}}}}
+            {Section int(): {group str(): [{'original_question': list(),
+                                            'type_question': list(),
+                                            'file_answer': str(),
+                                            'answer_format': str(),
+                                            'survey_q': list()]
+                                            }}}}}
         """
-        output_dict = dict()
-        for q in input_dict:
-            try:
-                input_dict[q]['survey_q']
+        def get_root_code(string):
+            """
+            """
+            def return_until_digit(string):
+                """
+                """
+                for x in string:
+                    if x.isalpha():
+                        yield x
+                    else:
+                        break
 
-                section = input_dict[q]['section']
-                question = {q: input_dict[q]}
-                root_code = self.get_root_code(q)
-                del question[q]['section']
-                output_dict.setdefault(section, {}).setdefault(root_code, {}).update(question)
-            except KeyError:
-                pass
+            return ''.join([x for x in return_until_digit(string)])
 
-        return OrderedDict(sorted(output_dict.items()))
+        def grouping_likert_yn(group_question):
+            """
+            The questions Y-N and the likert questions can be grouped
+            together to have one plot for each.
+            The likert questions need to be checked on their answer_format
+            for not mixing different type of likert scale
+
+            :params: group_question dict(): group of questions
+
+            :return: gen() the original_question list(), type_question str(), file_answer str()
+                               answer_format str(), survey_q list()
+            """
+            group_survey_q, group_original_question = list(), list()
+            previous_answer_format = None
+            previous_file_answer = None
+            file_answer = None
+            # print(group_question)
+            for q in group_question:
+                current_answer_format = group_question[q]['answer_format'].lower()
+                survey_q = group_question[q]['survey_q']
+                original_q = group_question[q]['original_question']
+                file_answer = group_question[q]['file_answer']
+
+                if previous_answer_format in ['y/n/na', 'likert'] or current_answer_format in ['y/n/na', 'likert']:
+                    if current_answer_format == previous_answer_format or previous_answer_format is None:
+                        if previous_answer_format == 'likert' and current_answer_format == 'likert':
+                            if previous_file_answer != file_answer:
+                                yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                                group_survey_q, group_original_question = list(), list()
+                        group_survey_q.extend(survey_q)
+                        group_original_question.append(original_q)
+                    else:
+                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                        group_survey_q, group_original_question = list(), list()
+                        group_survey_q.extend(survey_q)
+                        group_original_question.append(original_q)
+                else:
+                    if len(group_survey_q) > 0:
+                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                    group_survey_q, group_original_question = list(), list()
+                    group_survey_q.extend(survey_q)
+                    group_original_question.append(original_q)
+
+                previous_answer_format = current_answer_format
+                previous_file_answer = file_answer
+
+            yield group_survey_q, group_original_question, previous_answer_format, file_answer
+
+        def dictionary_by_section(input_dict):
+            output_dict = dict()
+            for q in input_dict:
+                try:
+                    input_dict[q]['survey_q']
+
+                    section = input_dict[q]['section']
+                    question = {q: input_dict[q]}
+                    root_code = get_root_code(q)
+                    del question[q]['section']
+                    output_dict.setdefault(section, {}).setdefault(root_code, {}).update(question)
+                except KeyError:
+                    pass
+            return output_dict
+
+        def grouping_question(input_dict):
+            for section in input_dict:
+                for group in input_dict[section]:
+                    group_to_parse = input_dict[section][group]
+                    input_dict[section][group] = list()
+                    for q in grouping_likert_yn(group_to_parse):
+                        q_dict = dict()
+                        q_dict['survey_q'] = q[0]
+                        q_dict['original_question'] = q[1]
+                        q_dict['answer_format'] = q[2]
+                        q_dict['file_answer'] = q[3]
+                        input_dict[section][group].append(q_dict)
+            return input_dict
+
+        def ordering_dict(input_dict):
+            return OrderedDict(sorted(input_dict.items()))
+
+        dict_by_section = dictionary_by_section(input_dict)
+        dict_by_section = grouping_question(dict_by_section)
+        return ordering_dict(dict_by_section)
 
     def duplicating_other(self, df):
         """
