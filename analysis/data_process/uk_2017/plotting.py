@@ -5,20 +5,14 @@ import pandas as pd
 import numpy as np
 import matplotlib
 # # When using Ipython within vim
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 
 # When using within jupyter
 # get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
 
 import matplotlib.pyplot as plt
 
-from likertScalePlot import likert_scale, get_colors, add_labels
-
-
-def create_bars(df, type_plot, stacked, colors):
-    """
-    """
-    return df.plot(kind=type_plot, stacked=stacked, color=colors)
+from likertScalePlot import likert_scale, get_colors
 
 
 def plot_bar_char(df, sort_order=False, stacked=False,
@@ -30,10 +24,18 @@ def plot_bar_char(df, sort_order=False, stacked=False,
         created with crosstab
         :colname str(): string that have the column header to select the right column
     """
+    def create_bars(df, type_plot, stacked, colors):
+        """
+        """
+        return df.plot(kind=type_plot, stacked=stacked, color=colors)
+
+    def _setup_legend():
+        """
+        Setting up the legend
+        """
+        pass
+
     # Create the figure object
-    fig = plt.figure(figsize=(10, 8))
-    # Create an axes object in the figure
-    # ax = fig.add_subplot(111)
     colors = get_colors(df, plt.cm.tab20, axis=0)
 
     if dropna is True:
@@ -44,7 +46,7 @@ def plot_bar_char(df, sort_order=False, stacked=False,
     if horizontal is True:
         type_plot='barh'
 
-    bars = create_bars(df, type_plot, stacked, colors)
+    create_bars(df, type_plot, stacked, colors)
 
     # Modifying the whitespaces between the bars and the graph
     plt.margins(0.02, 0.02)
@@ -56,16 +58,17 @@ def plot_bar_char(df, sort_order=False, stacked=False,
             type_plot='barh'
         else:
             nbr_col = 1
-        plt.legend(bbox_to_anchor=(1.04,0.5), loc="center left", ncol=nbr_col)
+        plt.legend(bbox_to_anchor=(1.04, 0.5), loc="center left", ncol=nbr_col)
     else:
         plt.legend().set_visible(False)
     return plt
+
 
 def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
     """
     """
     df = df.transpose()
-    ## Set up a bigger size
+    # Set up a bigger size
     if len(df.columns) > 10:
         matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
     plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
@@ -117,7 +120,7 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     index = np.arange(len(df))
     colors = plt.cm.tab20
     bar_width = 0.9
-    opacity = 0.7
+    # opacity = 0.7
 
     # To set up the label on x or y axis
     label_txt = df.index
@@ -199,7 +202,7 @@ def get_plot(df, type_question):
         elif type_question.lower() == 'multiple choices':
             if len(df.index) == 1:
                 return plot_unique_var(df, stacked=False, horizontal=False,
-                                      sort_order=False)
+                                       sort_order=False)
             return plot_multiple_var(df, stacked=False, horizontal=False)
 
         elif type_question.lower() == 'ranking':
@@ -250,7 +253,7 @@ def main():
                                            type_question=answer_format,
                                            file_answer=file_answer)
                     try:
-                        plot = get_plot(v_to_count, answer_format)
+                        get_plot(v_to_count, answer_format)
                     except ValueError:
                         print('list_questions')
                 except KeyError:
