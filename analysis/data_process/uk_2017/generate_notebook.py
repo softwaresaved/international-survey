@@ -23,9 +23,14 @@ class GenerateNotebook(NotebookConfig):
         self.outfilename = notebook_filename
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()
+        # Get all the import from NotebookConfig
         self._import()
+        # Set up some display options for pandas to extend
+        # the limit of the row and columns that are displayed
         self._setup_display()
+        # Setup matplotlib magic and size of figures
         self._setup_matplotlib()
+        # Load the dataset
         self._load_dataset()
         # Processor to run the notebook
         self.processor = ExecutePreprocessor(timeout=600,
@@ -86,6 +91,11 @@ class GenerateNotebook(NotebookConfig):
                                                 "{}",
                                                 "{}")""".format(*args)
         self._add_code(count_count)
+
+    def add_percentage(self, *args):
+        """
+        """
+        pass
 
     def add_display(self):
         """
