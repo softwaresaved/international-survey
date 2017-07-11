@@ -32,6 +32,7 @@ class CleaningData(CleaningConfig):
         """
         Launch the different steps needed to clean the df
         """
+        self.df = self.dropping_dead_participant(self.df)
         self.df = self.dropping_lime_useless(self.df)
         self.df = self.cleaning_columns_white_space(self.df)
         self.df = self.cleaning_missing_na(self.df)
@@ -41,12 +42,6 @@ class CleaningData(CleaningConfig):
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
 
         return self.df
-
-    def compare_question(self):
-        """
-        Compare the question from the question file
-        """
-        pass
 
     def get_survey_structure(self):
         """
@@ -90,6 +85,21 @@ class CleaningData(CleaningConfig):
                 answer_item_dict[file_key] = [i[0] for i in reader]
 
         return answer_item_dict
+
+    def dropping_dead_participant(self, df):
+        """
+        Use the option set up in config file `section_nbr_to_keep_after` to
+        know which section is considered as the prove that the participant
+        dropped and did not reply. It uses the label `Last page` to know which last
+        page the participant reached
+        A good way to see it is to run the following code on the df:
+            nb_answer = pd.DataFrame(df['Last page'] \\
+                          .value_counts()) \\
+                          .sort_index(ascending=True)
+            nb_answer['cumfreq'] = nb_answer.cumsum()
+            nb_answer.plot(kind='bar')
+        """
+        return self.df.loc[self.df['lastpage. Last page']> self.section_nbr_to_keep_after]
 
     def dropping_lime_useless(self, df):
         """
@@ -162,8 +172,7 @@ class CleaningData(CleaningConfig):
                 the code is stored on the second element of the format (ie `likerttime1[perfCheck1]`)
                 in that case, if it is 1, it return the second element
             """
-            # Follow the structure given by
-            # limesurvey
+            # Follow the structure given by limesurvey
             splitted_col = column_name.split('.')
             if element_to_return == 0:
                 code = splitted_col[0].split('[')[0]
@@ -184,15 +193,6 @@ class CleaningData(CleaningConfig):
                     input_dict[code].setdefault('survey_q', []).append(col)
                 except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
                     pass
-                    # if code == 'OTHER_RAW':
-                    #     input_dict['OTHER_RAW'] = dict()
-                    #     input_dict['OTHER_RAW'].setdefault('survey_q', [].append(col))
-                    # elif code == 'SQ001' or code == 'SQ002':
-                    #     input_dict['satisGen'] = dict()
-                    #     input_dict['satisGen'].setdefault('survey_q', [].append(col))
-                    # else:
-                    #     print(code)
-                    #     print(col)
 
         return input_dict
 
@@ -357,31 +357,7 @@ class CleaningData(CleaningConfig):
 def main():
     """
     """
-    import matplotlib
-    # from include import plotting
-    # When using Ipython within vim
-    matplotlib.use('TkAgg')
-    import matplotlib.pyplot as plt
-
-    #  When using this script with ipython and vim
-    plt.ion()
-    plt.show()
-    pd.set_option('display.max_rows', 300)
-
-    # Load dataset
     df = pd.read_csv(CleaningConfig.raw_data)
-
-    # # SPECIFIC UK
-    # # Overall, as soon as the participants passed the first page, they reached the last page.
-    # # In consequence, if a participant passed the first page, (s)he is kept.
-    # # # The last page is the last page the participants reached. To
-    # # # do a compromise between keeping some and getting rid of the participants that haven't complete
-    # # # enough answers
-    # nb_answer = pd.DataFrame(df['Last page'].value_counts()).sort_index(ascending=True)
-    # nb_answer['cumfreq'] = nb_answer.cumsum()
-    # nb_answer.plot(kind='bar')
-    # df = df.loc[df['Last page']> 1]
-
     cleaning_process = CleaningData(df)
     cleaning_process.cleaning()
     cleaning_process.write_df()
