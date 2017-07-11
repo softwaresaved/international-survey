@@ -15,8 +15,10 @@ class CleaningConfig:
     # Location for the json file of all questions
     json_to_plot_location = './to_plot.json'
     cleaned_df_location = './dataset/cleaned_data.csv'
+    section_nbr_to_keep_after = 1
     count_na = True
     normalise = False
+
 
 class PlottingConfig(CleaningConfig):
 
@@ -25,6 +27,7 @@ class PlottingConfig(CleaningConfig):
     # Different than normalise, add a freq_table with percentage
     # in addition of the table with counts
     show_percent = True
+
 
 class NotebookConfig(PlottingConfig):
 
