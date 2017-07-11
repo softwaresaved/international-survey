@@ -6,7 +6,6 @@ import numpy as np
 
 from config import CleaningConfig, NotebookConfig
 from cleaning import CleaningData
-from action_file import grouping_likert_yn
 from plotting import get_plot
 
 
@@ -52,7 +51,7 @@ def count_choice(df, colnames, rename_columns=True,
         df_sub.columns = ['Count']
 
     # Transpose the column to row to be able to plot a stacked bar chart
-    df_sub = df_sub.transpose()
+    # df_sub = df_sub.transpose()
     return df_sub
 
 
@@ -103,6 +102,11 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     return df_sub.transpose()
 
 
+def get_percentage(df):
+    """
+    Normalise results to be plotted
+    """
+    pass
 
 
 def get_count(df, questions, type_question, file_answer):
@@ -122,9 +126,8 @@ def get_count(df, questions, type_question, file_answer):
             multiple = False
         else:
             multiple = True
-        return count_yn(df, questions, multiple=multiple,
-                        dropna=False)
-
+        count = count_yn(df, questions, multiple=multiple, dropna=False)
+        return count
 
     elif type_question.lower() == 'one choice':
         return count_choice(df, questions, multiple_choice=False)
@@ -133,10 +136,8 @@ def get_count(df, questions, type_question, file_answer):
         return count_choice(df, questions, multiple_choice=True)
 
     elif type_question.lower() == 'likert':
-        try:
-            likert_answer = get_answer(file_answer)
-        except FileNotFoundError:
-            likert_answer = None
+        likert_answer = get_answer(file_answer)
+        likert_answer = None
         if len(questions) == 1:
             rename_columns = False
         else:
@@ -176,7 +177,6 @@ def main():
     plt.ion()
     plt.show()
 
-
     # Load dataset
     df = pd.read_csv(CleaningConfig.raw_data)
     print(df['open3can[SQ001]. How often do you associate your software with a Digital Object Identifier (DOI)? []'])
@@ -196,7 +196,6 @@ def main():
                 answer_format = question[2]
                 file_answer = question[3]
                 if answer_format == 'multiple choices':
-                    print(answer_format)
                     try:
                         v_to_count = get_count(df, list_questions, answer_format, file_answer)
                         get_plot(v_to_count, answer_format)
