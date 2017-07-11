@@ -18,12 +18,13 @@ class CleaningConfig:
     count_na = True
     normalise = False
 
-
 class PlottingConfig(CleaningConfig):
 
     plot_na = False
     normalise = True
-
+    # Different than normalise, add a freq_table with percentage
+    # in addition of the table with counts
+    show_percent = True
 
 class NotebookConfig(PlottingConfig):
 
