@@ -48,7 +48,6 @@ def count_choice(df, colnames, rename_columns=True,
         df_sub.columns = ['Count']
         colnames = 'Count'
 
-
     # Sorting with nan at the end, the in-built function is not working do not know why
     df_sub.sort_values(by=colnames, axis=0, ascending=False, inplace=True, na_position='last')
     # So implemented this dirty hack. If someone wants to fix, please do
@@ -63,18 +62,6 @@ def count_choice(df, colnames, rename_columns=True,
         index_wo_nan.append(np.nan)
 
     df_sub = df_sub.reindex(index=index_wo_nan)
-    # na_position='last' should put na at the end of the df but it does not work
-    # small hack to do it with columns
-    # print([type(x) for x in df_sub.columns])
-    # cols = [x for x in df_sub.columns if x != 'NaN']
-    # print(cols)
-    # print(df.columns)
-    # # if 'NaN' in df_sub.columns:
-    # #     cols.append('NaN')
-    # df_sub = df_sub[cols]
-    # Transpose the column to row to be able to plot a stacked bar chart
-    # df_sub = df_sub.transpose()
-    print(df_sub)
     return df_sub
 
 
