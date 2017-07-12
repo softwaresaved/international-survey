@@ -41,8 +41,8 @@ def plot_bar_char(df, sort_order=False, stacked=False,
     if dropna is True:
         df.drop(np.nan, 0, inplace=True, errors='ignore')
     type_plot = 'bar'
-    if sort_order:
-        df = df.sort_values(by=df.columns, ascending=False)
+    # if sort_order:
+    #     df = df.sort_values(by=df.columns, ascending=False)
     if horizontal is True:
         type_plot='barh'
 
@@ -67,9 +67,9 @@ def plot_bar_char(df, sort_order=False, stacked=False,
 def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
     """
     """
-    df = df.transpose()
+    # df = df.transpose()
     # Set up a bigger size
-    if len(df.columns) > 10:
+    if len(df.index) > 10:
         matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
     plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
@@ -80,7 +80,7 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
 def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
     """
     """
-    df = df.transpose()
+    # df = df.transpose()
     plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
@@ -126,9 +126,9 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     label_txt = df.index
     label_ticks = range(len(df.index))
 
-    # Sorting the df with the Yes values
-    if sort_order.lower() == 'yes':
-        df.sort_values(by='Yes', inplace=True, ascending=False)
+    # # Sorting the df with the Yes values
+    # if sort_order.lower() == 'yes':
+    #     df.sort_values(by='Yes', inplace=True, ascending=False)
 
     if horizontal is True:
         # Reverse the list otherwise the bars are build in the reverse
@@ -178,6 +178,7 @@ def plot_y_n_single(df, dropna=True):
 
 
 def plot_likert(df):
+
     return likert_scale(df)
 
 
@@ -191,6 +192,7 @@ def get_plot(df, type_question):
 
         elif type_question.lower() == 'likert':
             if len(df.index) == 1:
+                df = df.transpose()
                 return plot_unique_var(df)
             return plot_likert(df)
 
@@ -247,7 +249,6 @@ def main():
                 original_question = question[1]
                 answer_format = question[2]
                 file_answer = question[3]
-                # if answer_format in ['y/n/na', 'likert']:
                 try:
                     v_to_count = get_count(df, questions=list_questions,
                                            type_question=answer_format,

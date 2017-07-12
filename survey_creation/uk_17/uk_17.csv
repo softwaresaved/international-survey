@@ -36,7 +36,7 @@ section,code,question,answer_format,answer_file,order_question,conditional,sourc
 4,conf1can,Have you ever presented your software work at a conference or workshop?,Y/N/NA,,,,,,,,
 4,conf2can,Which conference(s)/workshop(s),FREETEXT,,,conf2_can,,,,,
 4,proj1can,How many software projects are you currently involved in?,FREENUMERIC,,,,,,,,
-4,stability1,What is the bus factor of your most important software project?,ONE CHOICE,bus_factor,TRUE,,,,,,
+4,stability1,What is the bus factor of your most important software project?,LIKERT,bus_factor,TRUE,,,,,,
 4,stability2,Is there a technical hand-over plan for your most important software project?,Y/N/NA,,,,,,,,
 4,proj4can,"In general, what sort of testing do you conduct on your software? (check all that apply) ",MULTIPLE CHOICES,testing,FALSE,,,,,,
 4,open01can,Have you ever released your software under an open-source licence? ,Y/N/NA,,,,,,,,

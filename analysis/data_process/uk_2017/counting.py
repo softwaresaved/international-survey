@@ -4,7 +4,7 @@
 import pandas as pd
 import numpy as np
 
-from config import CleaningConfig, NotebookConfig
+from config import CleaningConfig
 from cleaning import CleaningData
 from plotting import get_plot
 
@@ -40,18 +40,41 @@ def count_choice(df, colnames, rename_columns=True,
     else:
         df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
 
-    # FIXME NEED TO CLEAN ALL THIS MESS
     if multiple_choice is True:
         df_sub.fillna(value=0, inplace=True)
         df_sub = df_sub.astype(int)
         df_sub = df_sub.ix['Yes']
         df_sub = df_sub.to_frame()
-
-        df_sub.sort_values(by='Yes', ascending=False, inplace=True, na_position='last')
         df_sub.columns = ['Count']
+        colnames = 'Count'
 
+
+    # Sorting with nan at the end, the in-built function is not working do not know why
+    df_sub.sort_values(by=colnames, axis=0, ascending=False, inplace=True, na_position='last')
+    # So implemented this dirty hack. If someone wants to fix, please do
+    index_wo_nan = list()
+    nan_value = False
+    for x in df_sub.index:
+        if pd.isnull(x):
+            nan_value = True
+        else:
+            index_wo_nan.append(x)
+    if nan_value:
+        index_wo_nan.append(np.nan)
+
+    df_sub = df_sub.reindex(index=index_wo_nan)
+    # na_position='last' should put na at the end of the df but it does not work
+    # small hack to do it with columns
+    # print([type(x) for x in df_sub.columns])
+    # cols = [x for x in df_sub.columns if x != 'NaN']
+    # print(cols)
+    # print(df.columns)
+    # # if 'NaN' in df_sub.columns:
+    # #     cols.append('NaN')
+    # df_sub = df_sub[cols]
     # Transpose the column to row to be able to plot a stacked bar chart
     # df_sub = df_sub.transpose()
+    print(df_sub)
     return df_sub
 
 
@@ -63,18 +86,22 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_v
     else:
         df_sub = df[colnames].to_frame(name=colnames)
 
-
     df_sub = df_sub.apply(pd.Series.value_counts,
                           dropna=dropna,
                           normalize=normalize)
     if sort_values is True:
-        df_sub.sort_values(ascending=True, inplace=True)
+        df_sub.sort_values(ascending=True, inplace=True, na_position='last')
+
     # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
     if dropna is True:
         df_sub = df_sub[['Yes', 'No']]
     else:
-        df_sub = df_sub[['Yes', 'No', np.nan]]
+        try:
+            df_sub = df_sub[['Yes', 'No', np.nan]]
+        except KeyError:
+            df_sub[np.nan] = 0
+            df_sub = df_sub[['Yes', 'No']]
     return df_sub
 
 
@@ -95,10 +122,10 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-    # Transpose the column to row to be able to plot a stacked bar chart
     if likert_answer:
         likert_answer = [x for x in likert_answer if x in df_sub.index]
         df_sub = df_sub.reindex(index=likert_answer)
+    # Transpose the column to row to be able to plot a stacked bar chart
     return df_sub.transpose()
 
 
@@ -137,7 +164,6 @@ def get_count(df, questions, type_question, file_answer):
 
     elif type_question.lower() == 'likert':
         likert_answer = get_answer(file_answer)
-        likert_answer = None
         if len(questions) == 1:
             rename_columns = False
         else:
@@ -172,15 +198,12 @@ def main():
     # When using within jupyter
 
     import matplotlib.pyplot as plt
-    import time
     #  When using this script with ipython and vim
     plt.ion()
     plt.show()
 
     # Load dataset
     df = pd.read_csv(CleaningConfig.raw_data)
-    print(df['open3can[SQ001]. How often do you associate your software with a Digital Object Identifier (DOI)? []'])
-    raise
 
     # Cleaning_process
     cleaning_process = CleaningData(df)
@@ -190,9 +213,9 @@ def main():
     for s in cleaning_process.structure_by_section:
         section = cleaning_process.structure_by_section[s]
         for group in section:
-            for question in grouping_likert_yn(section[group]):
+            for question in section[group]:
                 list_questions = question[0]
-                original_question = question[1]
+                # original_question = question[1]
                 answer_format = question[2]
                 file_answer = question[3]
                 if answer_format == 'multiple choices':
