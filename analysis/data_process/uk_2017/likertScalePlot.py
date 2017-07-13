@@ -133,24 +133,24 @@ def get_total_mid_answers(df):
 
 
 # TODO Simplify this function
-def compute_percentage(df, by_row=True, by_col=False):
+def compute_percentage(df, by_row=False, by_col=False):
     """
     Transform every cell into a percentage
     """
-    def compute_percentage(row, total=None):
+    def compute_perc(row, total=None):
         if total is None:
             total = np.sum(row)
         return [np.round(((x /total) *100), 2) for x in row]
 
     if by_row is True and by_col is False:
-        return np.array(df.apply(compute_percentage, axis=1))
+        return np.array(df.apply(compute_perc, axis=1))
 
     elif by_col is True and by_row is False:
-        return np.array(df.apply(compute_percentage, axis=0))
+        return np.array(df.apply(compute_perc, axis=0))
 
     elif by_row is True and by_col is True:
         total = df.values.sum()
-        return np.array(df.apply(compute_percentage, total=total))
+        return np.array(df.apply(compute_perc, total=total))
 
 
 def normalise_per_row(df):

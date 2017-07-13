@@ -44,7 +44,7 @@ def main():
                     notebook.add_question_title(txt)
                 if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
                     notebook.add_count(list_questions, answer_format, file_answer)
-                    if NotebookConfig.show_percent is True:
+                    if NotebookConfig.show_percent is True and answer_format != 'likert':
                         notebook.add_percentage()
                         notebook.add_display_all()
                     else:

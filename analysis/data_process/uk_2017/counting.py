@@ -121,10 +121,24 @@ def get_percentage(df):
     """
     Normalise results to be plotted
     """
-    value = compute_percentage(df, by_col=True)
-    percent = pd.DataFrame(value, columns=df.columns)
-    percent.index = df.index
+    if len(df.columns) > 1 and len(df.index) > 1:
+        value = compute_percentage(df, by_row=True, by_col=False)
+    elif len(df.columns) > 1 and len(df.index) = 1:
+        value = compute_percentage(df, by_row=False, by_col=True)
+    else:
+        value = compute_percentage(df, by_row=True, by_col=True)
+
+    # Add [Percent] to the end of the column name to distinc the two datasets
+    index_df = df.index
+    name_df = df.columns
+    if len(name_df) == 1:
+        name_df = ["{} [PERCENTAGE]".format(x) for x in name_df]
+    if len(index_df) == 1:
+        index_df = ["{} [PERCENTAGE]".format(x) for x in index_df]
+    percent = pd.DataFrame(value, columns=name_df)
+    percent.index = index_df
     return percent
+
 
 def get_count(df, questions, type_question, file_answer):
     """
