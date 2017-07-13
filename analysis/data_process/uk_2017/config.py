@@ -36,6 +36,7 @@ class NotebookConfig(PlottingConfig):
     allow_errors = True
     to_import = ['import pandas as pd',
                  'import numpy as np',
+                 'import matplotlib',
                  'import matplotlib.pyplot as plt',
                  'from IPython.display import display',
                  'from config import CleaningConfig, PlottingConfig, NotebookConfig',
