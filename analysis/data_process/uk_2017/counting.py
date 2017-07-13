@@ -7,6 +7,7 @@ import numpy as np
 from config import CleaningConfig
 from cleaning import CleaningData
 from plotting import get_plot
+from likertScalePlot import compute_percentage
 
 
 def get_answer(file_answer):
@@ -120,8 +121,10 @@ def get_percentage(df):
     """
     Normalise results to be plotted
     """
-    pass
-
+    value = compute_percentage(df, by_col=True)
+    percent = pd.DataFrame(value, columns=df.columns)
+    percent.index = df.index
+    return percent
 
 def get_count(df, questions, type_question, file_answer):
     """

@@ -44,10 +44,11 @@ def main():
                     notebook.add_question_title(txt)
                 if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
                     notebook.add_count(list_questions, answer_format, file_answer)
-                    notebook.add_display_count()
                     if NotebookConfig.show_percent is True:
                         notebook.add_percentage()
-                        notebook.add_display_percentage()
+                        notebook.add_display_all()
+                    else:
+                        notebook.add_display_count()
                 notebook.add_plot(answer_format)
 
     print('Running notebook')

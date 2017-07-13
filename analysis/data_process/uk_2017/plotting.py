@@ -12,6 +12,7 @@ import matplotlib
 
 import matplotlib.pyplot as plt
 
+from IPython.display import display_html
 from likertScalePlot import likert_scale, get_colors
 
 
@@ -223,6 +224,16 @@ def get_plot(df, type_question):
             pass
     except TypeError:  # In Case an empty v_count is passed
         return None
+
+
+def display_side_by_side(*args):
+    """
+    https://stackoverflow.com/a/44923103
+    """
+    html_str=''
+    for df in args:
+        html_str+=df.to_html()
+    display_html(html_str.replace('table', 'table style="display:inline"'), raw=True)
 
 
 def main():
