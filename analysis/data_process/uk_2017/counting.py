@@ -123,8 +123,8 @@ def get_percentage(df):
     """
     if len(df.columns) > 1 and len(df.index) > 1:
         value = compute_percentage(df, by_row=True, by_col=False)
-    elif len(df.columns) > 1 and len(df.index) = 1:
-        value = compute_percentage(df, by_row=False, by_col=True)
+    # elif len(df.columns) > 1 and len(df.index) == 1:
+    #     value = compute_percentage(df, by_row=False, by_col=True)
     else:
         value = compute_percentage(df, by_row=True, by_col=True)
 

@@ -133,7 +133,7 @@ def get_total_mid_answers(df):
 
 
 # TODO Simplify this function
-def compute_percentage(df, by_row=False, by_col=False):
+def compute_percentage(df, by_row=True, by_col=False):
     """
     Transform every cell into a percentage
     """
