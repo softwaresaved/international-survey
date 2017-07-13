@@ -17,7 +17,6 @@ __licence__ = 'BSD 3-clause'
 import math
 import pandas as pd
 import numpy as np
-import matplotlib
 
 # When using Ipython within vim
 # matplotlib.use('TkAgg')
@@ -275,8 +274,7 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
 
         return fig
     except Exception:
-        print(df)
-        return df
+        raise
 
 
 def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
@@ -312,7 +310,6 @@ def main():
     # dummy = pd.DataFrame([[1], [2], [3]],
     #                      columns=['TEST'],
     #                      index=['Key1', 'Key2', 'Key3'])
-
 
     likert_scale(dummy)
 
