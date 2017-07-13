@@ -36,11 +36,10 @@ class NotebookConfig(PlottingConfig):
     allow_errors = True
     to_import = ['import pandas as pd',
                  'import numpy as np',
-                 'import matplotlib',
                  'import matplotlib.pyplot as plt',
+                 'from IPython.display import display',
                  'from config import CleaningConfig, PlottingConfig, NotebookConfig',
                  'from counting import get_count, get_percentage',
-                 'from plotting import get_plot',
-                 'from IPython.display import display',
+                 'from plotting import get_plot, display_side_by_side',
                  'from likertScalePlot import likert_scale']
     processing_options = {'metadata': {'path': './'}}

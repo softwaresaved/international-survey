@@ -59,6 +59,7 @@ class GenerateNotebook(NotebookConfig):
         Set up matplotlib for Jupyter
         """
         magic_inline = """get_ipython().magic('matplotlib inline')  # Activate that line to use in Jupyter """
+        # svg_output = """%config InlineBackend.figure_format = 'svg'"""
         size_figures = """matplotlib.rcParams['figure.figsize'] = (15.0, 8.0)"""
         self._add_code('\n'.join([magic_inline, size_figures]))
 
@@ -87,42 +88,67 @@ class GenerateNotebook(NotebookConfig):
     def add_count(self, *args):
         """
         """
+        self.count = True
         count_count = """v_to_count  = get_count(df, {},
                                                 "{}",
                                                 "{}")""".format(*args)
         self._add_code(count_count)
 
-    def add_percentage(self, *args):
+    def add_percentage(self):
         """
         """
-        percentage = """ percentage ="""
+        self.percent = True
+        percentage_count = """perc_to_count = get_percentage(v_to_count)"""
+        self._add_code(percentage_count)
 
     def add_display_percentage(self):
-        pass
+        """
+        """
+        display = """display(perc_to_count) """
+        self.percent = True
+        self._add_code(display)
 
     def add_display_count(self):
         """
         """
         display = """display(v_to_count) """
+        self.count = False
+        self._add_code(display)
+
+    def add_display_all(self):
+        """
+        """
+        args = list()
+        if self.percent is True:
+            args.append("perc_to_count")
+        if self.count is True:
+            args.append('v_to_count')
+        self.percent, self.count = False, False
+        display = """ display_side_by_side({})""".format(','.join(args))
         self._add_code(display)
 
     def add_plot(self, *args):
         """
         """
-        plot = """_ = get_plot(v_to_count, "{}")""".format(*args)
+        if self.show_percent is True and args[0] != 'likert':
+            plot = """_ = get_plot(perc_to_count, "{}")""".format(','.join(args))
+        else:
+            plot = """_ = get_plot(v_to_count, "{}")""".format(','.join(args))
         self._add_code(plot)
 
-    def _add_text(self, text_to_add):
+    def _add_text(self, *args):
         """
         """
-        formatting_text = nbf.v4.new_markdown_cell(text_to_add)
-        self._append_notebook(formatting_text)
+        for text_to_add in args:
+            formatting_text = nbf.v4.new_markdown_cell(text_to_add)
+            self._append_notebook(formatting_text)
 
-    def _add_code(self, code_to_add):
+    def _add_code(self, *args):
         """
         """
-        formatting_code = nbf.v4.new_code_cell(code_to_add)
-        self._append_notebook(formatting_code)
+        for code_to_add in args:
+            formatting_code = nbf.v4.new_code_cell(code_to_add)
+            self._append_notebook(formatting_code)
 
     def _append_notebook(self, cell_to_add):
         """
