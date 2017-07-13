@@ -39,7 +39,7 @@ class NotebookConfig(PlottingConfig):
                  'import matplotlib',
                  'import matplotlib.pyplot as plt',
                  'from config import CleaningConfig, PlottingConfig, NotebookConfig',
-                 'from counting import get_count',
+                 'from counting import get_count, get_percentage',
                  'from plotting import get_plot',
                  'from IPython.display import display',
                  'from likertScalePlot import likert_scale']
