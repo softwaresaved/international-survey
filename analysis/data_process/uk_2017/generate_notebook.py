@@ -119,10 +119,10 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         args = list()
-        if self.percent is True:
-            args.append("perc_to_count")
         if self.count is True:
             args.append('v_to_count')
+        if self.percent is True:
+            args.append("perc_to_count")
         self.percent, self.count = False, False
         display = """ display_side_by_side({})""".format(','.join(args))
         self._add_code(display)
