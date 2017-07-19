@@ -1,7 +1,17 @@
 \[THIS IS FOR DEMO PURPOSE ONLY -- PLEASE DO NOT SHARE\] {this-is-for-demo-purpose-only----please-do-not-share}
 ========================================================
 
+**Diese Umfrage soll Informationen über Personen, die in der Wissenschaft Software entwickeln, sammeln. Im Englischen werden diese Personen *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers) genannt, im Deutschen würde man vielleicht 'Akademische Softwareentwickler' sagen. Wir sprechen mit dieser Umfrage jedoch auch Postdoktoranden oder Wissenschaftliche Mitarbeiter an. Beim Übertragen der Fragen aus dem Englischen wurde bewusst eine freundschaftler Ausdruck gewählt (daher das 'Du'in der Ansprache).
+
 **The purpose of this survey is to collect information about people who develop software that is used in research. We call these people *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers), but they use many different job titles (including postdoctoral researcher and research assistant).**
+
+Warum habe ich diese Einladung Erhalten?
+----------------------------------------
+
+Du hast diese Einladung erhalten, weil Du entweder de-RSE.org oder der UK RSE Association als jemand bekannt bist, der in der Wissenschaft Software entwickelt. Zur Zeit wissen wir recht wenig über die Gemeinschaft der akademischen Softwareentwickler, also haben wir uns entschlossen diese Umfrage zu tätigen, um Finanzierern und anderen Wissenschaftsorganisationen zu helfen, Richt- und Leitlinien zu entwickeln.
+Diese Umfrage gibt Dir die Gelegenheit, Dich über deine Arbeit zu äussern und uns Informationen zu Deinem Karriereweg mitzuteilen.
+
+Bitte beachte, dass diese Umfrage nicht verpflichtend ist und du jederzeit deine Teilnahme abbrechen kannst.
 
 Why did I receive this invitation?
 ----------------------------------
@@ -12,10 +22,21 @@ This questionnaire gives you the opportunity to express your views about your cu
 
 Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.
 
+Wie lang ist Umfrage?
+---------------------
+
+Es gibt maximal 64 Fragen, die 10-15 Minuten Antwortzeit erfordern.
+
+
 How long will it take?
 ----------------------
 
 There is a maximum of 64 questions in this survey. It takes about 10 to 15 minutes to complete.
+
+Wer ist für diese Umfrage verantwortlich?
+------------------------------------------
+
+
 
 Who is responsible for this survey?
 -----------------------------------
