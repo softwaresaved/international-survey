@@ -1,3 +1,16 @@
+README
+======
+
+Stephan's notes from 2017-07-19
+-------------------------------
+
+I started translating. I did choose the german 'Du'. 
+
+
+older notes
+-----------
+
+
 careful translation to include as much people as possible
   not put engineering part into foreground
 
