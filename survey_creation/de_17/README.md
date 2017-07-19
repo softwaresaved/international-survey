@@ -4,8 +4,9 @@ README
 Stephan's notes from 2017-07-19
 -------------------------------
 
-I started translating. I did choose the german 'Du'. 
+I started translating. I did choose the german 'Du'. I used [https://github.com/jakob/TableTool] which quoted everything. Issue about this raised: [https://github.com/softwaresaved/international-survey/issues/59]
 
+The welcome message stands still side by side for comparison. 
 
 older notes
 -----------
