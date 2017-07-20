@@ -2,4 +2,4 @@ venv/*
 notebooks/.ipynb_checkpoints/
 raw_*.csv
 __pycache__/
-
+to_plot.json
