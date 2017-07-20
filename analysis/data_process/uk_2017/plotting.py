@@ -1,46 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import json
 import pandas as pd
 import numpy as np
 import matplotlib
-# from include import plotting
-# When using Ipython within vim
-matplotlib.use('TkAgg')
+# # When using Ipython within vim
+# matplotlib.use('TkAgg')
 
 # When using within jupyter
 # get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
 
 import matplotlib.pyplot as plt
 
-
-def get_type_question(input_location):
-    """
-    """
-    with open(input_location, 'r') as f:
-        return json.load(f)
+from IPython.display import display_html
+from likertScalePlot import likert_scale, get_colors
 
 
-def freq_table(df, colnames=False, columns='count', add_ratio=False, sort_order=False):
-    """
-    """
-    if colnames:
-        df_to_freq = df[colnames]
-    else:
-        df_to_freq = df
-    if add_ratio:
-        output = pd.concat([pd.crosstab(df_to_freq, columns='count', normalize=False),
-                            pd.crosstab(df_to_freq, columns='ratio', normalize=True)],
-                           axis=1)
-    else:
-        output = pd.crosstab(df_to_freq, colnames=[''], columns=columns)
-    if sort_order:
-        output = output.sort_values(by='count')
-    return output
-
-
-def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizontal=False):
+def plot_bar_char(df, sort_order=False, stacked=False,
+                  horizontal=False, dropna=True, legend=False):
     """
     Plot the others variables
     :params:
@@ -48,138 +25,67 @@ def freq_plotting(df, colnames='count', sort_order=False, stacked=False, horizon
         created with crosstab
         :colname str(): string that have the column header to select the right column
     """
+    def create_bars(df, type_plot, stacked, colors):
+        """
+        """
+        return df.plot(kind=type_plot, stacked=stacked, color=colors)
+
+    def _setup_legend():
+        """
+        Setting up the legend
+        """
+        pass
+
+    # Create the figure object
+    colors = get_colors(df, plt.cm.tab20, axis=0)
+
+    if dropna is True:
+        df.drop(np.nan, 0, inplace=True, errors='ignore')
     type_plot = 'bar'
-    # Call the freq_table function to create the count to plot
-    # d = freq_table(df, colnames, columns)
-    if sort_order:
-        df = df.sort_values(by=colnames, ascending=False)
+    # if sort_order:
+    #     df = df.sort_values(by=df.columns, ascending=False)
     if horizontal is True:
         type_plot='barh'
 
-    df[colnames].plot(kind=type_plot, stacked=stacked)
-#
-#
-# def save_freq_plotting(df, columns, colnames=False, sort_order=False, stacked=False, horizontal=False):
-#     """
-#     Plot the others variables
-#     :params:
-#         :df pd.df(): dataframe containing the data
-#         :colname str(): string that have the column header to select the right column
-#     """
-#     type_plot = 'bar'
-#     if colnames is False:
-#         colnames = columns
-#     # Call the freq_table function to create the count to plot
-#     d = freq_table(df, colnames, columns)
-#     if sort_order:
-#         d = d.sort_values(by=colnames, ascending=False)
-#     if horizontal is True:
-#         type_plot='barh'
-#
-#     d.plot(kind=type_plot, stacked=stacked)
-#     return d
+    create_bars(df, type_plot, stacked, colors)
 
-
-def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
-    """
-    Count the values of different columns and transpose the count
-    :params:
-        :df pd.df(): dataframe containing the data
-        :colnames list(): list of strings corresponding to the column header to select the right column
-    :return:
-        :result_df pd.df(): dataframe with the count of each answer for each columns
-    """
-    # Subset the columns
-    colnames = [i for j in colnames for i in j]
-    df_sub = df[colnames]
-
-    if rename_columns is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
-
-    # Calculate the counts for them
-    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-    # Transpose the column to row to be able to plot a stacked bar chart
-    return df_sub.transpose()
-
-
-def plot_likert():
-    """
-    """
-    pass
-
-
-def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
-    """
-    Function to automatically gets a colormap for all the values passed in,
-    Have the option to normalise the colormap.
-    :params:
-        values list(): list of int() or str() that have all the values that need a color to be map
-        to. In case of a list() of str(), the try/except use the range(len()) to map a colour
-        colormap cm(): type of colormap that need to be used. All can be found here:
-            https://matplotlib.org/examples/color/colormaps_reference.html
-        vmin, vmax int(): Number to normalise the return of the colourmap if needed a Normalised colourmap
-
-    :return:
-        colormap cm.colormap(): An array of RGBA values
-
-    Original version found on stackerOverflow (w/o the try/except) but cannot find it back
-    """
-    values = df.columns
-    norm = plt.Normalize(vmin, vmax)
-    try:
-        return colormap(norm(values))
-    except (AttributeError, TypeError):  # May happen when gives a list of categorical values
-        return colormap(norm(range(len(values))))
-
-
-def create_bars(df, ax, y_pos, colors, left_gap=False):
-    """
-    Loop through the columns and create an horizontal bar for each.
-    First it creates all the left bars, for all the columns, then the
-    one on the right. Each time, it add the distance from the previous bar.
-    If 'left_invisible_bar' is passed, it will create a empty gap on the left
-    before the first bar to centred the plot in the middle
-
-    :params:
-        df df(): The dataframe containing the information
-        ax plt(): The subplot to draw on
-        y_pos np.array(): an array of the number of bars (likert items)
-        colors np.array(): an array containing the colors for the different answers
-        left_gap np.array(): the empty left gap needed to
-            centre the stacked bar
-
-    :return:
-        patch_handles list(): A list containing the drawn horizontal stacked bars
-    """
-    patch_handles = []
-    for i, c in enumerate(df.columns):
-        d = np.array(df[c])
-        if left_gap:
-            new_bar = ax.barh(y_pos, d, color=colors[i], align='center', left=left_gap)
-            # accumulate the left-hand offsets
-            left_gap += d
+    # Modifying the whitespaces between the bars and the graph
+    plt.margins(0.02, 0.02)
+    if legend:
+        if len(df.columns) >= 6:
+            nbr_col = 2
+        elif len(df.columns) >=10:
+            nbr_col = 10
+            type_plot='barh'
         else:
-            new_bar = ax.barh(y_pos, d, color=colors[i], align='center', left=left_gap)
-        patch_handles.append(new_bar)
-    return patch_handles
+            nbr_col = 1
+        plt.legend(bbox_to_anchor=(1.04, 0.5), loc="center left", ncol=nbr_col)
+    else:
+        plt.legend().set_visible(False)
+    return plt
 
 
-def plot_y_n(df, colnames='count', sort_order=False, stacked=False, horizontal=False, set_label=False):
+def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
     """
-    Plot the others variables
-    :params:
-        :df pd.df(): dataframe containing the data, should be a df of frequencies
-        created with crosstab
-        :colname str(): string that have the column header to select the right column
     """
-    df = df[['Yes', 'No']]
-    fig, ax = plt.subplots()
-    index = np.arange(len(df))
-    bar_width = 0.35
-    opacity = 0.7
-    yes_bar = plt.bar(index, df['Yes'], width=bar_width, bottom=None, color='blue', label='Yes')
-    no_bar = plt.bar(index, df['No'], width=bar_width, bottom=df['Yes'], color='red', label='No')
-    return fig
+    # df = df.transpose()
+    # Set up a bigger size
+    if len(df.index) > 10:
+        matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
+    # plt.set_xticklabels(df.columns, rotation=0)
+    plt.suptitle(df.columns[0])
+    return plt
+
+
+def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
+    """
+    """
+    # df = df.transpose()
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
+    # plt.set_xticklabels(df.columns, rotation=0)
+    plt.suptitle(df.columns[0])
+    return plt
 
 
 def plot_discrete():
@@ -193,52 +99,178 @@ def plot_discrete():
     pass
 
 
-def process_question(df, q, type_chart):
+def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
+                      legend=True, set_label=False):
     """
+    Plotting Y-N values as stacked bars when passed several questions at the same time.
+    If want to plot single question Y-N see plot_single_y_n()
+    :params:
+        :df pd.df(): dataframe containing the data, should be a df of frequencies
+        created with crosstab
+        :sort_order bool(): to order the value by the number of yes
+        :horizontal bool(): to plot the bar horizontal rather than vertical (Default behaviour)
+        :legend bool(): to show the legend or not
+        :set_labels bool(): to add labels on the individuals bars
+        :set_n bool(): to show the total n for each items
+
+    :return:
+        :fig matplotlib.plt.plot(): Return the plot itself
     """
-    if any(isinstance(el, list) for el in q):
-        return count_unique_value(df, q)
+    df = df[['Yes', 'No']]
+    fig, ax = plt.subplots()
+    index = np.arange(len(df))
+    colors = plt.cm.tab20
+    bar_width = 0.9
+    # opacity = 0.7
+
+    # To set up the label on x or y axis
+    label_txt = df.index
+    label_ticks = range(len(df.index))
+
+    # # Sorting the df with the Yes values
+    # if sort_order.lower() == 'yes':
+    #     df.sort_values(by='Yes', inplace=True, ascending=False)
+
+    if horizontal is True:
+        # Reverse the list otherwise the bars are build in the reverse
+        # order than the dataframe
+        # Not WORKING
+        # df = df.reindex(index=df.index[::-1])
+        for i, d in enumerate(df.index):
+            yes_bar = ax.barh(index[i], width=df['Yes'][i], height=bar_width, color=colors(0), label='Yes')
+            no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(3), label='No')
     else:
-        data_to_plot = df[q]
-    if type_chart == 'barchart':
-        result = freq_table(data_to_plot)
-        return result
+        yes_bar = ax.bar(index, df['Yes'], width=bar_width, bottom=None, color=colors(0), label='Yes')
+        no_bar = ax.bar(index, df['No'], width=bar_width, bottom=df['Yes'], color=colors(3), label='No')
+
+    if set_label is True:
+        pass
+
+    # Add the legend
+    ax.legend((yes_bar, no_bar), ('Yes', 'No'))
+
+    # Add the x-labels
+    if horizontal is True:
+        plt.yticks(label_ticks, label_txt)
+    else:
+        # This set the xlimits to center the xtick with the bin
+        # Explanation found here:
+        # https://stackoverflow.com/a/27084005/3193951
+        plt.xlim([-1, len(df.index)])
+        plt.xticks(label_ticks, label_txt, rotation=90)
+
+    # Modifying the whitespaces between the bars and the graph
+    plt.margins(0.02, 0.02)
+
+    return fig
+
+
+def plot_y_n_single(df, dropna=True):
+    """
+    """
+    if dropna is True:
+        df.drop(np.nan, 1, inplace=True, errors='ignore')
+    colormap = plt.cm.tab20
+    df.sort_values(by='Yes', inplace=True, ascending=False)
+    df = df.transpose()
+    ax = df.plot(kind='bar', stacked=False, color=[colormap(0), colormap(3)],
+                 title=df.columns[0], legend=None)
+    return ax
+
+
+def plot_likert(df):
+
+    return likert_scale(df)
+
+
+def get_plot(df, type_question):
+
+    try:
+        if type_question.lower() == 'y/n/na':
+            if len(df.index) == 1:
+                return plot_y_n_single(df)
+            return plot_y_n_multiple(df, sort_order='name')
+
+        elif type_question.lower() == 'likert':
+            if len(df.index) == 1:
+                df = df.transpose()
+                return plot_unique_var(df)
+            return plot_likert(df)
+
+        elif type_question.lower() == 'one choice':
+            if len(df.index) == 1:
+                return plot_unique_var(df, stacked=False, horizontal=False)
+            return plot_multiple_var(df, stacked=False, horizontal=False)
+
+        elif type_question.lower() == 'multiple choices':
+            if len(df.index) == 1:
+                return plot_unique_var(df, stacked=False, horizontal=False,
+                                       sort_order=False)
+            return plot_multiple_var(df, stacked=False, horizontal=False)
+
+        elif type_question.lower() == 'ranking':
+            pass
+
+        elif type_question.lower() == 'freetext':
+            pass
+
+        elif type_question.lower() == 'freenumeric':
+            pass
+
+        elif type_question.lower() == 'datetime':
+            pass
+
+        else:
+            pass
+    except TypeError:  # In Case an empty v_count is passed
+        return None
+
+
+def display_side_by_side(*args):
+    """
+    https://stackoverflow.com/a/44923103
+    """
+    html_str=''
+    for df in args:
+        html_str+=df.to_html()
+    display_html(html_str.replace('table', 'table style="display:inline"'), raw=True)
 
 
 def main():
-
-    #  When using this script with ipython and vim
-    plt.ion()
-    plt.show()
+    from counting import get_count
+    from action_file import grouping_likert_yn
+    from cleaning import CleaningData
+    from config import CleaningConfig
     pd.set_option('display.max_rows', 300)
 
-    # load the dataframe
-    df = pd.read_csv('./dataset/cleaned_data.csv')
-    location_type_q = './to_plot.json'
-    type_questions = get_type_question(location_type_q)
+    # Load dataset
+    df = pd.read_csv(CleaningConfig.raw_data)
 
-    data_to_plot = count_unique_value(df, type_questions['single_questions']['yes_no'], dropna=True)
-    data_to_plot.sort_values(by='Yes').plot(kind='barh', stacked=True)
+    # Cleaning_process
+    cleaning_process = CleaningData(df)
+    df = cleaning_process.cleaning()
+    cleaning_process.write_df()
+    cleaning_process.write_config_file()
 
+    for s in cleaning_process.structure_by_section:
+        section = cleaning_process.structure_by_section[s]
+        for group in section:
+            for question in grouping_likert_yn(section[group]):
+                list_questions = question[0]
+                original_question = question[1]
+                answer_format = question[2]
+                file_answer = question[3]
+                try:
+                    v_to_count = get_count(df, questions=list_questions,
+                                           type_question=answer_format,
+                                           file_answer=file_answer)
+                    try:
+                        get_plot(v_to_count, answer_format)
+                    except ValueError:
+                        print('list_questions')
+                except KeyError:
+                    print('Error for the question: {}'.format(original_question))
 
-    for group in type_questions['grouped_questions']:
-        pass
-
-    for group in type_questions['single_questions']:
-        if group == 'yes_no':  # aggregate in case of grouped_questions
-            for q in type_questions['single_questions'][group]:
-                process_question(df, q, 'yes_no')
-
-        elif q == 'decision_job':  # ranking
-            pass
-        elif q.startswith('likert'):  # likert
-            pass
-        elif q == 'messy_data':  # wordcounts
-            pass
-        elif q == 'single_item':  # passing
-            pass
-        else:  # Should be easily plotted in bar chart for all other cases
-            pass
 
 if __name__ == "__main__":
     main()
