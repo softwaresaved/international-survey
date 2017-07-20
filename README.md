@@ -61,6 +61,8 @@ We now provide some more detail about the columns in the questions csv file. You
    
 * **answer_file**: This column gives the name of the csv file located in `listAnswers` folder, where the appropriate answers options are stored
 
+* **order_question**: Boolean column to know if the order of the answer should be following the answers given in the answer_file of should be orderd according to the question numbers.
+
 * **conditional**: This indicates whether a question only appears if an specific answer was given to a previous question.
 
 * **source**: If a specic resource (e.g. a list on Wikipedia, a government policy doc, etc.) was used to generate a list of potential answers, please reference it here.
