@@ -35,7 +35,7 @@ Where to put translated text:
 
 1. Translated questions should be added to the "questions_<country>_<year>.csv" under one or more of the columns "Trans lang 1", "Trans lang 2", "Trans lang 3" (contact us if you have more than three national languages).
 1. Translated welcome and end text should replace the English-language version in the appropriate files in the Text directory.
-1. Tranlsated lists of answers should replace the English-language versions in the csv files held in the listAnswers directory
+1. Tranlsated lists of answers should replace the English-language versions in the csv files held in the listAnswers directory. If multiple languages are to be contained in the file, please separate translated answers with semi-colons.
 
 ## Explanation of the columns in questions csv
 
@@ -59,7 +59,7 @@ We now provide some more detail about the columns in the questions csv file. You
    * `MULTIPLE CHOICE`: A list of answers the participant can choose from. (S)He can choose as many as (s)he wants.
    * `LIKERT`: any type of likert scale.
    
-* **answer_file**: This column gives the name of the csv file located in `listAnswers` folder, where the appropriate answers options are stored
+* **answer_file**: This column gives the name of the csv file located in `listAnswers` folder, where the appropriate answers options are stored.
 
 * **order_question**: Boolean column to know if the order of the answer should be following the answers given in the answer_file of should be orderd according to the question numbers.
 
