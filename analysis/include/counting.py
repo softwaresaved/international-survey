@@ -29,14 +29,11 @@ def count_choice(df, colnames, rename_columns=True,
 
     if rename_columns is True and multiple_choice is True:
         df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
-        title = [s.split('[')[1] for s in colnames]
 
-    # Calculate the counts for them
     if multiple_choice is True:
-        df_sub.fillna(value='No', inplace=True)
-        df_sub = df_sub[df_sub == 'Yes'].apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-    else:
-        df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+        df_sub = df_sub.fillna(value='No')
+
+    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
 
     if multiple_choice is True:
         df_sub.fillna(value=0, inplace=True)
@@ -44,10 +41,9 @@ def count_choice(df, colnames, rename_columns=True,
         df_sub = df_sub.ix['Yes']
         df_sub = df_sub.to_frame()
         df_sub.columns = ['Count']
-        colnames = 'Count'
 
     # Sorting with nan at the end, the in-built function is not working do not know why
-    df_sub.sort_values(by=colnames, axis=0, ascending=False, inplace=True, na_position='last')
+    df_sub.sort_values(by=df_sub.columns[0], axis=0, ascending=False, inplace=True, na_position='last')
     # So implemented this dirty hack. If someone wants to fix, please do
     index_wo_nan = list()
     nan_value = False
@@ -120,8 +116,6 @@ def get_percentage(df):
     """
     if len(df.columns) > 1 and len(df.index) > 1:
         value = compute_percentage(df, by_row=True, by_col=False)
-    # elif len(df.columns) > 1 and len(df.index) == 1:
-    #     value = compute_percentage(df, by_row=False, by_col=True)
     else:
         value = compute_percentage(df, by_row=True, by_col=True)
 
@@ -129,9 +123,9 @@ def get_percentage(df):
     index_df = df.index
     name_df = df.columns
     if len(name_df) == 1:
-        name_df = ["{} [PERCENTAGE]".format(x) for x in name_df]
+        name_df = ["{} [PERCENTAGE]".format(x) for x in df.columns]
     if len(index_df) == 1:
-        index_df = ["{} [PERCENTAGE]".format(x) for x in index_df]
+        index_df = ["{} [PERCENTAGE]".format(x) for x in df.index]
     percent = pd.DataFrame(value, columns=name_df)
     percent.index = index_df
     return percent
@@ -185,58 +179,3 @@ def get_count(df, questions, type_question, file_answer):
 
     else:
         pass
-
-
-def main():
-    """
-    """
-
-    from config import CleaningConfig
-    from cleaning import CleaningData
-    from plotting import get_plot
-    pd.set_option('display.max_rows', 300)
-    import matplotlib
-
-    # When using Ipython within vim
-    matplotlib.use('TkAgg')
-
-    # When using within jupyter
-
-    import matplotlib.pyplot as plt
-    #  When using this script with ipython and vim
-    plt.ion()
-    plt.show()
-
-    # Load dataset
-    df = pd.read_csv(CleaningConfig.raw_data)
-
-    # Cleaning_process
-    cleaning_process = CleaningData(df)
-    df = cleaning_process.cleaning()
-    cleaning_process.write_df()
-    cleaning_process.write_config_file()
-    for s in cleaning_process.structure_by_section:
-        section = cleaning_process.structure_by_section[s]
-        for group in section:
-            for question in section[group]:
-                list_questions = question[0]
-                # original_question = question[1]
-                answer_format = question[2]
-                file_answer = question[3]
-                if answer_format == 'multiple choices':
-                    try:
-                        v_to_count = get_count(df, list_questions, answer_format, file_answer)
-                        get_plot(v_to_count, answer_format)
-                    except ValueError:
-                        raise
-                # if v_to_count is not None:
-                #     print(v_to_count)
-
-                # notebook.add_freq_table(list_questions, answer_format)
-                # notebook.add_plot(counted_value, answer_format, file_answer)
-            # except KeyError:
-            #     print('Error for the question: {}'.format(original_question))
-
-
-if __name__ == "__main__":
-    main()
