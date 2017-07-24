@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
-from config import CleaningConfig, NotebookConfig
-from cleaning import CleaningData
-from generate_notebook import GenerateNotebook
+from include.config import CleaningConfig, NotebookConfig
+from include.cleaning import CleaningData
+from include.generate_notebook import GenerateNotebook
 
 """
 Action file that holds all the different configuration for a
@@ -28,7 +28,9 @@ def main():
     cleaning_process.write_config_file()
 
     # Notebook writing
-    notebook = GenerateNotebook(NotebookConfig.notebook_filename)
+    notebook_location = '{}{}'.format(NotebookConfig.notebook_folder,
+                                      NotebookConfig.notebook_filename)
+    notebook = GenerateNotebook(notebook_location)
 
     for s in cleaning_process.structure_by_section:
         section = cleaning_process.structure_by_section[s]
