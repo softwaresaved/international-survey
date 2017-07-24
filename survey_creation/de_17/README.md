@@ -1,6 +1,17 @@
 README
 ======
 
+missing
+-------
+
+ - list of Uni
+ - list of FHs
+ - list of HGF (Helmhotz)
+ - list of Fraunhofer
+ - list of MPGs
+ - list of Leibnitz centers
+ 
+ 
 Stephan's notes from 2017-07-19
 -------------------------------
 
