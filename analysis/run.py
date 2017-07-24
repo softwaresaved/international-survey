@@ -58,7 +58,6 @@ def main():
 
     print('Running notebook')
     notebook.run_notebook()
-    # Catching error before saving
     print('Saving notebook')
     notebook.save_notebook()
 

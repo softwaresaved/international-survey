@@ -32,7 +32,7 @@ class PlottingConfig(CleaningConfig):
 class NotebookConfig(PlottingConfig):
 
     notebook_folder = './uk_2017/output/'
-    notebook_filename = 'uk_17.ipynb'
+    notebook_filename = 'notebook.ipynb'
     allow_errors = True
     to_import = ['import pandas as pd',
                  'import numpy as np',
