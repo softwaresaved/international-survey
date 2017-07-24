@@ -46,6 +46,9 @@ def main():
                     notebook.add_question_title(txt)
                 if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
                     notebook.add_count(list_questions, answer_format, file_answer)
+                    # Need to specify != likert because if likert item ==1 it use the barchart
+                    # and will then plot the percentages when it will make no sense for the likert
+                    # scale
                     if NotebookConfig.show_percent is True and answer_format != 'likert':
                         notebook.add_percentage()
                         notebook.add_display_all()
