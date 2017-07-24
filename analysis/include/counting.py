@@ -29,14 +29,12 @@ def count_choice(df, colnames, rename_columns=True,
 
     if rename_columns is True and multiple_choice is True:
         df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
-        title = [s.split('[')[1] for s in colnames]
+    #     title = [s.split('[')[1] for s in colnames]
 
     # Calculate the counts for them
     if multiple_choice is True:
-        df_sub.fillna(value='No', inplace=True)
-        df_sub = df_sub[df_sub == 'Yes'].apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-    else:
-        df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+        df_sub = df_sub.fillna(value='No')
+    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
 
     if multiple_choice is True:
         df_sub.fillna(value=0, inplace=True)
@@ -120,8 +118,6 @@ def get_percentage(df):
     """
     if len(df.columns) > 1 and len(df.index) > 1:
         value = compute_percentage(df, by_row=True, by_col=False)
-    # elif len(df.columns) > 1 and len(df.index) == 1:
-    #     value = compute_percentage(df, by_row=False, by_col=True)
     else:
         value = compute_percentage(df, by_row=True, by_col=True)
 
@@ -129,9 +125,9 @@ def get_percentage(df):
     index_df = df.index
     name_df = df.columns
     if len(name_df) == 1:
-        name_df = ["{} [PERCENTAGE]".format(x) for x in name_df]
+        name_df = ["{} [PERCENTAGE]".format(x) for x in df.columns]
     if len(index_df) == 1:
-        index_df = ["{} [PERCENTAGE]".format(x) for x in index_df]
+        index_df = ["{} [PERCENTAGE]".format(x) for x in df.index]
     percent = pd.DataFrame(value, columns=name_df)
     percent.index = index_df
     return percent
