@@ -31,7 +31,7 @@ class PlottingConfig(CleaningConfig):
 
 class NotebookConfig(PlottingConfig):
 
-    notebook_folder = './uk_2017/output/'
+    notebook_folder = './uk_2017/'
     notebook_filename = 'notebook.ipynb'
     allow_errors = True
     to_import = ['import pandas as pd',
@@ -39,8 +39,8 @@ class NotebookConfig(PlottingConfig):
                  'import matplotlib',
                  'import matplotlib.pyplot as plt',
                  'from IPython.display import display',
-                 'from config import CleaningConfig, PlottingConfig, NotebookConfig',
-                 'from counting import get_count, get_percentage',
-                 'from plotting import get_plot, display_side_by_side',
-                 'from likertScalePlot import likert_scale']
+                 'from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
+                 'from include.counting import get_count, get_percentage',
+                 'from include.plotting import get_plot, display_side_by_side',
+                 'from include.likertScalePlot import likert_scale']
     processing_options = {'metadata': {'path': './'}}
