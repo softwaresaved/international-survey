@@ -4,16 +4,10 @@
 import pandas as pd
 import numpy as np
 import matplotlib
-# # When using Ipython within vim
-# matplotlib.use('TkAgg')
-
-# When using within jupyter
-# get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
-
 import matplotlib.pyplot as plt
 
 from IPython.display import display_html
-from likertScalePlot import likert_scale, get_colors
+from include.likertScalePlot import likert_scale, get_colors
 
 
 def plot_bar_char(df, sort_order=False, stacked=False,
