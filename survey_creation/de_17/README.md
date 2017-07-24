@@ -1,5 +1,16 @@
 README
 ======
+How to distribute the survey in Germany?
+----------------------------------------
+
+  - de-RSE mailing list
+  - wiss-software@listserv
+  - via Allianzinitiative?
+  - contacts within research organisations
+    - HGF, Martin
+    - MPG, Stephan
+ 
+
 
 Stephan's notes from 2017-07-19
 -------------------------------
