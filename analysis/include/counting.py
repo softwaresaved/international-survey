@@ -4,10 +4,7 @@
 import pandas as pd
 import numpy as np
 
-from config import CleaningConfig
-from cleaning import CleaningData
-from plotting import get_plot
-from likertScalePlot import compute_percentage
+from include.likertScalePlot import compute_percentage
 
 
 def get_answer(file_answer):
@@ -193,6 +190,10 @@ def get_count(df, questions, type_question, file_answer):
 def main():
     """
     """
+
+    from config import CleaningConfig
+    from cleaning import CleaningData
+    from plotting import get_plot
     pd.set_option('display.max_rows', 300)
     import matplotlib
 
