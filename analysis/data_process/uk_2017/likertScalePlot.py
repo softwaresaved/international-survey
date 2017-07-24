@@ -1,5 +1,5 @@
-# coding: utf-8
-# /usr/bin/python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """
 Plotting function to draw a likert scale.
@@ -17,13 +17,13 @@ __licence__ = 'BSD 3-clause'
 import math
 import pandas as pd
 import numpy as np
-import matplotlib
 
 # When using Ipython within vim
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 
 # When using within jupyter
 # get_ipython().magic('matplotlib inline')  # Activat that line to use in Jupyter
+
 
 import matplotlib.pyplot as plt
 #  When using this script with ipython and vim
@@ -31,7 +31,7 @@ plt.ion()
 plt.show()
 
 
-def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
+def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None, axis=1):
     """
     Function to automatically gets a colormap for all the values passed in,
     Have the option to normalise the colormap.
@@ -47,7 +47,10 @@ def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None):
 
     Original version found on stackerOverflow (w/o the try/except) but cannot find it back
     """
-    values = df.columns
+    if axis == 0:
+        values = df.index
+    elif axis == 1:
+        values = df.columns
     norm = plt.Normalize(vmin, vmax)
     try:
         return colormap(norm(values))
@@ -134,20 +137,20 @@ def compute_percentage(df, by_row=True, by_col=False):
     """
     Transform every cell into a percentage
     """
-    def compute_percentage(row, total=None):
+    def compute_perc(row, total=None):
         if total is None:
             total = np.sum(row)
         return [np.round(((x /total) *100), 2) for x in row]
 
     if by_row is True and by_col is False:
-        return np.array(df.apply(compute_percentage, axis=1))
+        return np.array(df.apply(compute_perc, axis=1))
 
     elif by_col is True and by_row is False:
-        return np.array(df.apply(compute_percentage, axis=0))
+        return np.array(df.apply(compute_perc, axis=0))
 
     elif by_row is True and by_col is True:
         total = df.values.sum()
-        return np.array(df.apply(compute_percentage, total=total))
+        return np.array(df.apply(compute_perc, total=total))
 
 
 def normalise_per_row(df):
@@ -166,7 +169,37 @@ def add_labels(df, ax, bars, rotation=0):
             bl = bar.get_xy()
             x = 0.5 *bar.get_width() +bl[0]
             y = 0.5 *bar.get_height() +bl[1]
-            ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
+            # Avoid labels when percentage is under 5 (the bar is too small)
+            if percentages[i, j] > 5:
+                ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
+
+
+def draw_middle_line(normalise, longest_middle):
+    """
+    """
+    # Draw a dashed line on the middle to visualise it
+    if normalise:
+        z = plt.axvline(100, linestyle='--', color='black', alpha=.5)
+    else:
+        z = plt.axvline(longest_middle, linestyle='--', color='black', alpha=.5)
+    # Plot the line behind the barchart
+    z.set_zorder(-1)
+
+
+def drawing_x_labels(normalise, complete_longest, longest_middle):
+    """
+    """
+    # Create the values with the same length as the xlim
+    if normalise:
+        xvalues = range(0, 210, 10)
+        xlabels = [str(math.floor(abs(x - 100))) for x in xvalues]
+    else:
+        print('NOT normalised')
+        xvalues = [math.floor(i - (longest_middle %5))
+                   for i in range(0, int(complete_longest),
+                                  int(int(longest_middle)/ 5))]
+        xlabels = [str(math.floor(abs(x - longest_middle))) for x in xvalues]
+    plt.xticks(xvalues, xlabels)
 
 
 def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True, rotation=0):
@@ -175,84 +208,73 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
     :params:
     :return:
     """
-    # Create the figure object
-    fig = plt.figure(figsize=(10, 8))
-    # Create an axes object in the figure
-    ax = fig.add_subplot(111)
+    try:
+        # Create the figure object
+        fig = plt.figure(figsize=(10, 8))
+        # Create an axes object in the figure
+        ax = fig.add_subplot(111)
 
-    # Generate an array of colors based on different colormap. The default value
-    # Use a divergent colormap.
-    colors = get_colors(df)
+        # Generate an array of colors based on different colormap. The default value
+        # Use a divergent colormap.
+        colors = get_colors(df)
 
-    # Get the position of each bar for all the items
-    y_pos = np.arange(len(df.index))
+        # Get the position of each bar for all the items
+        y_pos = np.arange(len(df.index))
 
-    if normalise:
-        df = normalise_per_row(df)
+        if normalise:
+            df = normalise_per_row(df)
 
-    # Compute the middle of the possible answers. Assuming the answers are columns
-    # Get the sum of the middles +.5 if middle value and without .5 if splitted in 2
-    # equal divides
-    middles = get_total_mid_answers(df)
+        # Compute the middle of the possible answers. Assuming the answers are columns
+        # Get the sum of the middles +.5 if middle value and without .5 if splitted in 2
+        # equal divides
+        middles = get_total_mid_answers(df)
 
-    # Calculate the longest middle bar to set up the middle of the x-axis for the x-lables
-    # and plot the middle line
-    longest_middle = middles.max()
-    print('LONGEST MIDDLE: {}'.format(longest_middle))
+        # Calculate the longest middle bar to set up the middle of the x-axis for the x-lables
+        # and plot the middle line
+        if normalise:
+            longest_middle = 100
+        else:
+            longest_middle = middles.max()
 
-    # Create the left bar to centre the barchart in the middle
-    left_invisible_bar = np.array((middles - longest_middle).abs())
+        # Create the left bar to centre the barchart in the middle
+        left_invisible_bar = np.array((middles - longest_middle).abs())
 
-    # Calculate the longest bar with the left gap in it to plot the x_value at the end
-    # Calculate the total of the longest bar to have the appropriate width +
-    # the invisible bar in case it is used to center everything
-    complete_longest = (df.sum(axis=1) + left_invisible_bar).max()
+        # Calculate the longest bar with the left gap in it to plot the x_value at the end
+        # Calculate the total of the longest bar to have the appropriate width +
+        # the invisible bar in case it is used to center everything
+        complete_longest = (df.sum(axis=1) + left_invisible_bar).max()
 
-    # Create the horizontal bars
-    bars = create_bars(df, ax, y_pos, colors, left_invisible_bar)
+        # Create the horizontal bars
+        bars = create_bars(df, ax, y_pos, colors, left_invisible_bar)
 
-    # Add labels to each box
-    if labels:
-        add_labels(df, ax, bars, rotation)
+        # Set up the limit from 0 to the longest total barchart
+        # Keeping this drawing before drawing_x_labels or it will failed to draw
+        # all the labels on the right side
+        ax.set_xlim([-0.5, complete_longest + 0.5])
 
-    # Create a line on the middle
-    if middle_line:
-        # Draw a dashed line on the middle to visualise it
-        z = plt.axvline(longest_middle, linestyle='--', color='black', alpha=.5)
-        # Plot the line behind the barchart
-        z.set_zorder(-1)
+        # Drawing x_labels
+        drawing_x_labels(normalise, complete_longest, longest_middle)
+        ax.set_xlabel('Percentages')
 
-    # Add legend
-    if legend:
-        ax.legend(bars, df.columns)
+        # Setting up the y-axis
+        ax.set_yticks(y_pos)
+        ax.set_yticklabels(df.index)
 
-    # Set up the limit from 0 to the longest total barchart
-    ax.set_xlim([0, complete_longest + .5])
+        # Add labels to each box
+        if labels:
+            add_labels(df, ax, bars, rotation)
 
+        # Create a line on the middle
+        if middle_line:
+            draw_middle_line(normalise, longest_middle)
 
-    # Create the values with the same length as the xlim
-    # xvalues = range(0, int(complete_longest), int((int(longest_middle)%5)))
+        # Add legend
+        if legend:
+            ax.legend(bars, df.columns)
 
-    if normalise:
-        xvalues = range(0, 100, 20)
-    else:
-        xvalues = [math.floor(i - (longest_middle%5))
-                for i in range(0, int(complete_longest),
-                                int(int(longest_middle)/5))]
-
-    print('Value for the range: length: {}  -- step: {}'.format(int(complete_longest),
-                                                                int((int(longest_middle/5)))))
-    print('COMPLETE LONGEST: {}'.format(complete_longest))
-    print('XVALUES')
-    print(xvalues)
-    # Create label by using the absolute value of the
-    xlabels = [str(math.floor(abs(x - longest_middle))) for x in xvalues]
-    print('XLABELS')
-    print(xlabels)
-    plt.xticks(xvalues, xlabels)
-    ax.set_yticks(y_pos)
-    ax.set_yticklabels(df.index)
-    ax.set_xlabel('Distance')
+        return fig
+    except Exception:
+        raise
 
 
 def count_unique_value(df, colnames, rename_columns=False, dropna=False, normalize=False):
@@ -268,39 +290,27 @@ def count_unique_value(df, colnames, rename_columns=False, dropna=False, normali
     df_sub = df[colnames]
 
     if rename_columns is True:
-        df_sub.columns = [s.split('[', 1)[1].split(']')[0] for s in colnames]
+        df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     # Transpose the column to row to be able to plot a stacked bar chart
     return df_sub.transpose()
 
+
 def main():
     """
     """
-    def get_likert_score():
 
-        # #### Generating the dataset for testing
-        # Load dataset
-        df = pd.read_csv('./canarie_17/dataset/2017 Cdn Research Software Developer Survey - Public data.csv')
-
-
-        open_code_YN = ['When you release code, how often do you use an open source license?',
-                        'When you release code or data, how often do you assign a Digital Object Identifier (DOI) to it?']
-
-        count_open = df[open_code_YN].apply(pd.Series.value_counts, dropna=True).transpose()
-        count_open = count_unique_value(df, open_code_YN, dropna=True)
-        # Only likert values without the 'Prefer not to answer'
-        likert_value = count_open.ix[:, count_open.columns != 'Prefer not to answer']
-        return likert_value
-
-    # Overload the data with a df type
-    df = get_likert_score()
-    likert_scale(df)
-
+    # df = pd.DataFrame(np.random.randint(0,100,size=(100, 3)), columns=list('XYZ'))
     dummy = pd.DataFrame([[1, 2, 3, 4, 5, 2], [5, 6, 7, 8, 5, 2], [10, 4, 2, 10, 5, 2]],
                          columns=["SD", "D", "N", "A", "SA", 'TEST'],
                          index=["Key 1", "Key B", "Key III"])
+    #
+    # dummy = pd.DataFrame([[1], [2], [3]],
+    #                      columns=['TEST'],
+    #                      index=['Key1', 'Key2', 'Key3'])
+
     likert_scale(dummy)
 
 
