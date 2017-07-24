@@ -8,13 +8,13 @@
 class CleaningConfig:
 
     # Unprocessed dataset
-    raw_data = './dataset/raw_results-survey245554.csv'
+    raw_data = './uk_2017/data/raw_results-survey245554.csv'
     # load the different answers to questions to classify questions based on that
-    question_file = '../../../survey_creation/uk_17/uk_17.csv'
-    answer_folder = '../../../survey_creation/uk_17/listAnswers'
+    question_file = './../survey_creation/uk_17/uk_17.csv'
+    answer_folder = './../survey_creation/uk_17/listAnswers'
     # Location for the json file of all questions
-    json_to_plot_location = './to_plot.json'
-    cleaned_df_location = './dataset/cleaned_data.csv'
+    json_to_plot_location = './uk_2017/data/to_plot.json'
+    cleaned_df_location = './uk_2017/data/cleaned_data.csv'
     section_nbr_to_keep_after = 1
     count_na = True
     normalise = False
@@ -31,7 +31,7 @@ class PlottingConfig(CleaningConfig):
 
 class NotebookConfig(PlottingConfig):
 
-    notebook_folder = './'
+    notebook_folder = './uk_2017/output/'
     notebook_filename = 'uk_17.ipynb'
     allow_errors = True
     to_import = ['import pandas as pd',
