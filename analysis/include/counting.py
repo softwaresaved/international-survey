@@ -29,11 +29,10 @@ def count_choice(df, colnames, rename_columns=True,
 
     if rename_columns is True and multiple_choice is True:
         df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
-    #     title = [s.split('[')[1] for s in colnames]
 
-    # Calculate the counts for them
     if multiple_choice is True:
         df_sub = df_sub.fillna(value='No')
+
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
 
     if multiple_choice is True:
@@ -42,10 +41,9 @@ def count_choice(df, colnames, rename_columns=True,
         df_sub = df_sub.ix['Yes']
         df_sub = df_sub.to_frame()
         df_sub.columns = ['Count']
-        colnames = 'Count'
 
     # Sorting with nan at the end, the in-built function is not working do not know why
-    df_sub.sort_values(by=colnames, axis=0, ascending=False, inplace=True, na_position='last')
+    df_sub.sort_values(by=df_sub.columns[0], axis=0, ascending=False, inplace=True, na_position='last')
     # So implemented this dirty hack. If someone wants to fix, please do
     index_wo_nan = list()
     nan_value = False
