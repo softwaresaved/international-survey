@@ -3,7 +3,7 @@
 
 import pandas as pd
 from include.config import CleaningConfig, NotebookConfig
-from include.cleaning import CleaningData
+from include.preprocessing import CleaningData
 from include.generate_notebook import GenerateNotebook
 
 """
