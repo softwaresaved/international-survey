@@ -3,7 +3,7 @@
 
 import nbformat as nbf
 from nbconvert.preprocessors import ExecutePreprocessor
-from config import NotebookConfig
+from include.config import NotebookConfig
 
 __author__: 'Olivier PHILIPPE'
 __licence__: 'BSD3-clause'
