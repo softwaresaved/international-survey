@@ -3,7 +3,7 @@
 
 import nbformat as nbf
 from nbconvert.preprocessors import ExecutePreprocessor
-from config import NotebookConfig
+from include.config import NotebookConfig
 
 __author__: 'Olivier PHILIPPE'
 __licence__: 'BSD3-clause'
@@ -124,7 +124,7 @@ class GenerateNotebook(NotebookConfig):
         if self.percent is True:
             args.append("perc_to_count")
         self.percent, self.count = False, False
-        display = """ display_side_by_side({})""".format(','.join(args))
+        display = """display_side_by_side({})""".format(','.join(args))
         self._add_code(display)
 
     def add_plot(self, *args):

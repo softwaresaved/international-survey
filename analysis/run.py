@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
-from config import CleaningConfig, NotebookConfig
-from cleaning import CleaningData
-from generate_notebook import GenerateNotebook
+from include.config import CleaningConfig, NotebookConfig
+from include.preprocessing import CleaningData
+from include.generate_notebook import GenerateNotebook
 
 """
 Action file that holds all the different configuration for a
@@ -28,7 +28,9 @@ def main():
     cleaning_process.write_config_file()
 
     # Notebook writing
-    notebook = GenerateNotebook(NotebookConfig.notebook_filename)
+    notebook_location = '{}{}'.format(NotebookConfig.notebook_folder,
+                                      NotebookConfig.notebook_filename)
+    notebook = GenerateNotebook(notebook_location)
 
     for s in cleaning_process.structure_by_section:
         section = cleaning_process.structure_by_section[s]
@@ -44,6 +46,9 @@ def main():
                     notebook.add_question_title(txt)
                 if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
                     notebook.add_count(list_questions, answer_format, file_answer)
+                    # Need to specify != likert because if likert item ==1 it use the barchart
+                    # and will then plot the percentages when it will make no sense for the likert
+                    # scale
                     if NotebookConfig.show_percent is True and answer_format != 'likert':
                         notebook.add_percentage()
                         notebook.add_display_all()
@@ -53,7 +58,6 @@ def main():
 
     print('Running notebook')
     notebook.run_notebook()
-    # Catching error before saving
     print('Saving notebook')
     notebook.save_notebook()
 

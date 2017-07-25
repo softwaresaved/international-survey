@@ -11,7 +11,7 @@ import numpy as np
 from collections import OrderedDict
 
 
-from config import CleaningConfig
+from include.config import CleaningConfig
 
 
 class CleaningData(CleaningConfig):
