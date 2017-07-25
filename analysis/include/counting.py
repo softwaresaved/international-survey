@@ -110,16 +110,23 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     return df_sub.transpose()
 
 
-def get_percentage(df):
+def get_percentage(df, dropna):
     """
     Normalise results to be plotted
     """
     if len(df.columns) > 1 and len(df.index) > 1:
-        value = compute_percentage(df, by_row=True, by_col=False)
+        by_row, by_col = True, False
     else:
-        value = compute_percentage(df, by_row=True, by_col=True)
+        by_row, by_col = True, True
 
-    # Add [Percent] to the end of the column name to distinc the two datasets
+    if dropna is True:
+        # get nan Percentage
+        # 'Percentage NaN'
+        percent_na = df.iloc[-1,: ]
+        # / df.sum(axis=1)
+        df = df.drop(np.nan, errors='ignore')
+    value = compute_percentage(df, by_row, by_col)
+
     index_df = df.index
     name_df = df.columns
     if len(name_df) == 1:
@@ -128,6 +135,10 @@ def get_percentage(df):
         index_df = ["{} [PERCENTAGE]".format(x) for x in df.index]
     percent = pd.DataFrame(value, columns=name_df)
     percent.index = index_df
+    if dropna is True:
+        percent.loc['Proportion of NaN in total'] = percent_na
+        # percent.loc['Proportion of NaN in total'] = percent_na
+        # percent.append(percent_na.rename('Proportion of NaN to the total'))
     return percent
 
 

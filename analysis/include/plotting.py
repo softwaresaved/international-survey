@@ -220,6 +220,7 @@ def get_plot(df, type_question):
         return None
 
 
+# Currently unused but keep it because may be usefull in the future.
 def display_side_by_side(*args):
     """
     https://stackoverflow.com/a/44923103
