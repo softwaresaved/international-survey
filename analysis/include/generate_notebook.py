@@ -89,29 +89,27 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         self.count = True
-        count_count = """v_to_count  = get_count(df, {},
-                                                "{}",
-                                                "{}")""".format(*args)
+        count_count = """v_to_count, v_na  = get_count(df, {}, "{}", "{}")""".format(*args)
         self._add_code(count_count)
 
     def add_percentage(self):
         """
         """
         self.percent = True
-        percentage_count = """perc_to_count = get_percentage(v_to_count)"""
+        percentage_count = """perc_to_count, perc_na = get_percentage(v_to_count, v_na dropna=True)"""
         self._add_code(percentage_count)
 
     def add_display_percentage(self):
         """
         """
-        display = """display(perc_to_count) """
+        display = """display(perc_to_count, perc_na) """
         self.percent = True
         self._add_code(display)
 
     def add_display_count(self):
         """
         """
-        display = """display(v_to_count) """
+        display = """display(v_to_count, v_na) """
         self.count = False
         self._add_code(display)
 
@@ -119,13 +117,18 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         args = list()
+        args_na = list()
         if self.count is True:
             args.append('v_to_count')
+            args_na.append('v_na')
         if self.percent is True:
             args.append("perc_to_count")
+            args_na.append('perc_na')
         self.percent, self.count = False, False
         display = """display_side_by_side({})""".format(','.join(args))
+        display_na = """display_side_by_side({})""".format(','.join(args_na))
         self._add_code(display)
+        self._add_code(display_na)
 
     def add_plot(self, *args):
         """
