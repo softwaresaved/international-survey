@@ -9,19 +9,12 @@ How to distribute the survey in Germany?
   - contacts within research organisations
     - HGF, Martin
     - MPG, Stephan
- 
 
 
-missing
--------
+Stephan's notes from 2017-07-25
+-------------------------------
 
- - list of Uni
- - list of FHs
- - list of HGF (Helmhotz)
- - list of Fraunhofer
- - list of MPGs
- - list of Leibnitz centers
- 
+The lists of institutions are fetched from wikidata. A Knime workflow creates the corresponding files. https://github.com/softwaresaved/international-survey/blob/master/survey_creation/de_17/de_17_resources.knwf
  
 Stephan's notes from 2017-07-19
 -------------------------------
