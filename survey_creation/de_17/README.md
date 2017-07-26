@@ -62,4 +62,14 @@ Fragen
  DL: David Laehnemann
  SJ: Stephan Janosch
  
+ * Hast Du Software in Publikationen veröffentlicht? Wie, d.h. extra Softwarepublikation oder innerhalb einer größeren Pub?
+* Veröffentlichst Du Software vor einer Publikation, z.B. ala GitHub/Zenodo?
+* Welche Plattformen benutzt Du für Veröffentlichung?
+* Wird Deine Software zitiert auch ohne Veröffentlichung? Wie registrierst Du dies?
+* Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? Downloads, Stars auf GitHub etc.?
+* Trägt eine Softwarezitierung anstatt einer Publikationszitierung zu Deiner Karriere bei?
+
+Viele Grüße,
+Andreas Leimbach 
+ 
   
