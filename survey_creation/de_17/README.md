@@ -57,7 +57,7 @@ Fragen
   - SJ: Gibt es Richtlinien wie mit Quellcode umgegangen werden soll?
   - SJ: Arbeitest du allein oder im Team?
   - SJ: Kann dein Chef programmieren?
-  
+  - SJ: Kollaborierst du mit Deiner Bibliothek beim Veröffentlichen/Archivieren von Software?
  
  DL: David Laehnemann
  SJ: Stephan Janosch
