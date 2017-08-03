@@ -18,7 +18,17 @@ All information about the TSV file structure can be retrieved here:
 import csv
 import sys
 import os
-import logging
+from include.logger import logger
+
+RUNNING = 'dev'
+
+if RUNNING == 'dev':
+    DEBUGGING='DEBUG'
+elif RUNNING == 'prod':
+    DEBUGGING='INFO'
+
+
+logger = logger(name='creating survey', stream_level=DEBUGGING)
 
 
 
@@ -27,5 +37,8 @@ def main():
     folder = sys.argv[1]
     question_file = os.path.join(folder, folder + '.' + 'csv')
     with open(question_file, 'r') as f:
-        print(f)
+        logger.debug(f)
 
+
+if __name__ == "__main__":
+    main()
