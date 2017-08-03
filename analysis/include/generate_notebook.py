@@ -136,6 +136,12 @@ class GenerateNotebook(NotebookConfig):
             plot = """_ = get_plot(v_to_count, "{}")""".format(','.join(args))
         self._add_code(plot)
 
+    def add_wordcloud(self, column):
+        """
+        """
+        word_cloud = """ _ = wordcloud(df[{}])""".format(column)
+        self._add_code(word_cloud)
+
     def _add_text(self, *args):
         """
         """
