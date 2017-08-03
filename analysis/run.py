@@ -54,6 +54,8 @@ def main():
                         notebook.add_display_all()
                     else:
                         notebook.add_display_count()
+                elif answer_format == 'freetext':
+                    notebook.add_wordcloud(list_questions)
                 notebook.add_plot(answer_format)
 
     print('Running notebook')
