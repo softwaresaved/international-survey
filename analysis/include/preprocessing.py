@@ -127,8 +127,6 @@ class CleaningData(CleaningConfig):
         string = string.replace('\u00a0', ' ')
         # Some columns have a tabular instead of a space
         string = string.replace('\t', ' ')
-        # Some columns have double space instead of one
-        string = string.replace('  ', ' ')
         # FIXME compile the regex into the __init__()
         string = re.sub('(?<=\s) +|^ +(?=\s)| (?= +[\n\0])', ' ', string)
         # Replace all ending white space
