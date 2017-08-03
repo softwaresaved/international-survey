@@ -45,8 +45,10 @@ Fragen
 
   - Wünschst du dir eine Konferenz in D zu dem Thema?
   - Wie bist du vernetzt in deiner Institution?
-  - DL: Ermöglicht es dir dein Arbeitgeber (finanziell) an Fortbildungen zum Thema Softwareentwicklung/Programmierung teilzunehmen? 
+  - DL: Ermöglicht es dir dein Arbeitgeber (finanziell) zu Fortbildungen zum Thema Softwareentwicklung/Programmierung zu reisen? 
   - DL: Hast du das bereits wahrgenommen?
+  - KL: Gibt es vor Ort Fortbildungsangebote?
+  - KL: Hast du diese bereits wahrgenommen?
   - DL: Bist du bei deinem Arbeitgeber mit anderen Softwareentwickler_innen / Programmierer_innen vernetzt? Wenn ja, wie?
   - DL: Steht dir vor Ort Infrastruktur zur Softwareentwicklung zur Verfügung (z.B. eigene Instanzen von Plattformen zur Kommunikation, zum Projektmanagement, zur Versionskontrolle, zum automatisierten Testing/Building, etc.)?
   - SJ: Hast du einen "ORCID identifier"
@@ -57,9 +59,19 @@ Fragen
   - SJ: Gibt es Richtlinien wie mit Quellcode umgegangen werden soll?
   - SJ: Arbeitest du allein oder im Team?
   - SJ: Kann dein Chef programmieren?
-  
+  - SJ: Kollaborierst du mit Deiner Bibliothek beim Veröffentlichen/Archivieren von Software?
  
  DL: David Laehnemann
  SJ: Stephan Janosch
+ 
+ * Hast Du Software in Publikationen veröffentlicht? Wie, d.h. extra Softwarepublikation oder innerhalb einer größeren Pub?
+* Veröffentlichst Du Software vor einer Publikation, z.B. ala GitHub/Zenodo?
+* Welche Plattformen benutzt Du für Veröffentlichung?
+* Wird Deine Software zitiert auch ohne Veröffentlichung? Wie registrierst Du dies?
+* Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? Downloads, Stars auf GitHub etc.?
+* Trägt eine Softwarezitierung anstatt einer Publikationszitierung zu Deiner Karriere bei?
+
+Viele Grüße,
+Andreas Leimbach 
  
   
