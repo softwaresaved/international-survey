@@ -42,5 +42,6 @@ class NotebookConfig(PlottingConfig):
                  'from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
                  'from include.counting import get_count, get_percentage',
                  'from include.plotting import get_plot, display_side_by_side',
-                 'from include.likertScalePlot import likert_scale']
+                 'from include.likertScalePlot import likert_scale',
+                 'from include.textCleaning import wordcloud']
     processing_options = {'metadata': {'path': './'}}
