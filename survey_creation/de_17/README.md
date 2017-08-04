@@ -56,9 +56,21 @@ Aim to release the German survey by mid or end of August and close it by end of 
   - Make use of RSE17 publicity to spread invitation for survey
 
 
-Fragen
+neue Fragen
+-----------
 
-  - Wünschst du dir eine Konferenz in D zu dem Thema?
+  - SJ: Bist Du auf der de-RSE Mailingliste eingeschrieben? (http://www.de-rse.org/de/join.html) (replaces q for uk rse ml)
+  - SJ: Kollaborierst du mit Deiner Bibliothek beim Veröffentlichen/Archivieren von Software?
+  - SJ: Hast du einen "ORCID identifier"
+  - SJ: Wüsstest Du eine bessere Bezeichnung als RSE? Wenn ja, welche? (Bedenke die Spannbreite)
+  - SJ: Arbeitest du allein oder im Team mit anderen RSEs?
+  - SJ: Wünschst du dir eine Konferenz in D zu dem Thema wissenschaftliche Softwareentwickling?
+  - AL: Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? Downloads, Stars auf GitHub etc.?
+
+
+weitere mögliche Fragen
+-----------------------
+
   - Wie bist du vernetzt in deiner Institution?
   - DL: Ermöglicht es dir dein Arbeitgeber (finanziell) zu Fortbildungen zum Thema Softwareentwicklung/Programmierung zu reisen? 
   - DL: Hast du das bereits wahrgenommen?
@@ -66,15 +78,11 @@ Fragen
   - KL: Hast du diese bereits wahrgenommen?
   - DL: Bist du bei deinem Arbeitgeber mit anderen Softwareentwickler_innen / Programmierer_innen vernetzt? Wenn ja, wie?
   - DL: Steht dir vor Ort Infrastruktur zur Softwareentwicklung zur Verfügung (z.B. eigene Instanzen von Plattformen zur Kommunikation, zum Projektmanagement, zur Versionskontrolle, zum automatisierten Testing/Building, etc.)?
-  - SJ: Hast du einen "ORCID identifier"
-  - SJ: In welcher WIssenschaftsorganisation arbeitest du?
   - SJ: Kennst du den Begriff RSE?
   - SJ: Hast du schon etwas vom SSI gehört?
   - SJ: Welchen Organisationen/Gruppen stehst du im Bezug auf deine Arbeit nahe?
   - SJ: Gibt es Richtlinien wie mit Quellcode umgegangen werden soll?
-  - SJ: Arbeitest du allein oder im Team?
   - SJ: Kann dein Chef programmieren?
-  - SJ: Kollaborierst du mit Deiner Bibliothek beim Veröffentlichen/Archivieren von Software?
  
  DL: David Laehnemann
  SJ: Stephan Janosch
@@ -83,7 +91,6 @@ Fragen
 * Veröffentlichst Du Software vor einer Publikation, z.B. ala GitHub/Zenodo?
 * Welche Plattformen benutzt Du für Veröffentlichung?
 * Wird Deine Software zitiert auch ohne Veröffentlichung? Wie registrierst Du dies?
-* Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? Downloads, Stars auf GitHub etc.?
 * Trägt eine Softwarezitierung anstatt einer Publikationszitierung zu Deiner Karriere bei?
 
 Viele Grüße,
