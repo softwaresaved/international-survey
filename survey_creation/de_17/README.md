@@ -10,6 +10,10 @@ How to distribute the survey in Germany?
     - HGF, Martin
     - MPG, Stephan
 
+to do - missing
+---------------
+
+translate the UK salaries in a clever way to german model. Maybe hint for Entgeldgruppen.
 
 Stephan's notes from 2017-07-25
 -------------------------------
