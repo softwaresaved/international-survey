@@ -75,8 +75,9 @@ Overall
 - Add other types of contract?
 - Integrate type_contract_de.csv in [de_17.csv](de_17.csv)
 
-[type_organisation.csv](listAnswers/type_organisation.csv)
+[type_organisation_de.csv](listAnswers/type_organisation_de.csv)
 - Double-check translation
+- Integrate type_organisation_de.csv in de_17.csv
 
 [ukrse_de.csv](listAnswers/ukrse_de.csv)
 - Add additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"
