@@ -42,7 +42,7 @@ Overall
 
 [decision_job.csv](listAnswers/decision_job.csv)
 - Double-check translations
-- Not used, ignore?
+- Add or match related question in [de_17.csv](de_17.csv)
 
 [education.csv](listAnswers/education.csv)
 - Needs clarification
@@ -60,6 +60,7 @@ Overall
 
 [reasons_leave_job.csv](listAnswers/reasons_leave_job.csv)
 - Double-check translations
+- Add or match related question in [de_17.csv](de_17.csv)
 
 [salaries.csv](listAnswers/salaries.csv)
 - Define equivalent classes in EUR and add the in EN in DE
