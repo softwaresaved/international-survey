@@ -6,9 +6,20 @@ How to distribute the survey in Germany?
   - de-RSE mailing list
   - wiss-software@listserv
   - via Allianzinitiative?
+  - AG open science
+  - orcid mailingliste?
   - contacts within research organisations
     - HGF, Martin
     - MPG, Stephan
+    
+People doing work here
+----------------------
+
+  * katrinleinweber
+  * mrtnhmtz
+  * StephanJanosch
+
+
 
 
 Stephan's notes from 2017-07-25
