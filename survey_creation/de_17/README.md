@@ -6,9 +6,20 @@ How to distribute the survey in Germany?
   - de-RSE mailing list
   - wiss-software@listserv
   - via Allianzinitiative?
+  - AG open science
+  - orcid mailingliste?
   - contacts within research organisations
     - HGF, Martin
     - MPG, Stephan
+    
+People doing work here
+----------------------
+
+  * katrinleinweber
+  * mrtnhmtz
+  * StephanJanosch
+
+
 
 to do - missing
 ---------------
@@ -49,8 +60,10 @@ Fragen
 
   - Wünschst du dir eine Konferenz in D zu dem Thema?
   - Wie bist du vernetzt in deiner Institution?
-  - DL: Ermöglicht es dir dein Arbeitgeber (finanziell) an Fortbildungen zum Thema Softwareentwicklung/Programmierung teilzunehmen? 
+  - DL: Ermöglicht es dir dein Arbeitgeber (finanziell) zu Fortbildungen zum Thema Softwareentwicklung/Programmierung zu reisen? 
   - DL: Hast du das bereits wahrgenommen?
+  - KL: Gibt es vor Ort Fortbildungsangebote?
+  - KL: Hast du diese bereits wahrgenommen?
   - DL: Bist du bei deinem Arbeitgeber mit anderen Softwareentwickler_innen / Programmierer_innen vernetzt? Wenn ja, wie?
   - DL: Steht dir vor Ort Infrastruktur zur Softwareentwicklung zur Verfügung (z.B. eigene Instanzen von Plattformen zur Kommunikation, zum Projektmanagement, zur Versionskontrolle, zum automatisierten Testing/Building, etc.)?
   - SJ: Hast du einen "ORCID identifier"
