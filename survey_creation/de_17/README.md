@@ -26,10 +26,11 @@ to do - missing
 
 Overall
 - Remove files not used
-- Add additional, Germany related, questions
 - When translation is finished and survey is set-up for testing ask others to conduct a test with a dry run participation
 
 international-survey/survey_creation/de_17/de_17.csv
+- Check question list of other national RSE groups to reuse missing questions
+- Prioritize and add additional, Germany related, questions
 - Double-check translations
 
 international-survey/survey_creation/de_17/listAnswers/academic_field.csv
