@@ -24,7 +24,67 @@ People doing work here
 to do - missing
 ---------------
 
-translate the UK salaries in a clever way to german model. Maybe hint for Entgeldgruppen.
+Overall
+- Remove files not used
+- Add additional, Germany related, questions
+- When translation is finished and survey is set-up for testing ask others to conduct a test with a dry run participation
+
+international-survey/survey_creation/de_17/de_17.csv
+- Double-check translations
+
+international-survey/survey_creation/de_17/listAnswers/academic_field.csv
+- Clarify if classes are equivalent in Germany or need changes
+- Translate
+
+international-survey/survey_creation/de_17/listAnswers/countries.csv
+- Translate
+
+international-survey/survey_creation/de_17/listAnswers/decision_job.csv
+- Double-check translations
+- Not used, ignore?
+
+international-survey/survey_creation/de_17/listAnswers/education.csv
+- Needs clarification
+
+international-survey/survey_creation/de_17/listAnswers/ethnicity.csv
+- Clarify if this question make sense for German survey
+- Clarify if translation makes sense or if equivalent or different classes for German survey should be used
+- Translate
+
+international-survey/survey_creation/de_17/listAnswers/funding.csv
+- Clarify, really we have to ;-)
+
+international-survey/survey_creation/de_17/listAnswers/previous_job.csv
+- Clarify
+
+international-survey/survey_creation/de_17/listAnswers/reasons_leave_job.csv
+- Double-check translations
+
+international-survey/survey_creation/de_17/listAnswers/salaries.csv
+- Define equivalent classes in EUR and add the in EN in DE
+- Add examples, e.g. TVöD classes ...
+- Translate (translate the UK salaries in a clever way to german model. Maybe hint for Entgeldgruppen.)
+- or is it salary.csv
+
+international-survey/survey_creation/de_17/listAnswers/testing.csv
+- Double-check translations
+
+international-survey/survey_creation/de_17/listAnswers/type_contract.csv
+- Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft" ?
+- Devide "Fixed term";"Befristeter Vertrag" into "Haushaltmittel" and "Drittmittel"?
+- Add other types of contract?
+
+international-survey/survey_creation/de_17/listAnswers/type_organisation.csv
+- Needs clarification for "Government" and "Private Company"
+
+international-survey/survey_creation/de_17/listAnswers/ukrse.csv
+- Double-check addition of new option "DE-RSE Community";"DE-RSE Community"
+- Double-check if URLs for RSE communities are useful
+- Clarify if additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"
+
+international-survey/survey_creation/de_17/listAnswers/work_researchers.csv
+- Not used, ignore?
+
 
 Stephan's notes from 2017-07-25
 -------------------------------
