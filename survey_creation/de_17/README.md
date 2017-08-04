@@ -132,7 +132,7 @@ neue Fragen
   	- if yes: ask for permissions to contact and ask for email in external google form
   - AL: Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? "Don't care", "I don't know" ,Downloads, Stars auf GitHub etc.?
   -  - think about the goal of the question
-  - can_17: How many software developers typically work on your projects?
+  - can_17: How many software developers typically work on your projects? (answer file: ?, get from canada notebook)
 
 weitere mögliche Fragen
 -----------------------
