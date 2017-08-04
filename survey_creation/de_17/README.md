@@ -46,6 +46,7 @@ Overall
 
 [education_de.csv](listAnswers/education_de.csv)
 - Double-check translations
+- Integrate education_de.csv in [de_17.csv](de_17.csv)
 
 [ethnicity.csv](listAnswers/ethnicity.csv)
 - Drop question and remove file
@@ -69,21 +70,21 @@ Overall
 [testing.csv](listAnswers/testing.csv)
 - Double-check translations
 
-[type_contract.csv](listAnswers/type_contract.csv)
+[type_contract_de.csv](listAnswers/type_contract_de.csv)
 - Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft" ?
-- Devide "Fixed term";"Befristeter Vertrag" into "Haushaltmittel" and "Drittmittel"?
 - Add other types of contract?
+- Integrate type_contract_de.csv in [de_17.csv](de_17.csv)
 
-[type_organisation.csv](listAnswers/type_organisation.csv)
-- Needs clarification for "Government" and "Private Company"
+[type_organisation_de.csv](listAnswers/type_organisation_de.csv)
+- Double-check translation
+- Integrate type_organisation_de.csv in de_17.csv
 
-[ukrse.csv](listAnswers/ukrse.csv)
-- Double-check addition of new option "DE-RSE Community";"DE-RSE Community"
-- Double-check if URLs for RSE communities are useful
-- Clarify if additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"
+[ukrse_de.csv](listAnswers/ukrse_de.csv)
+- Add additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"
+- Integrate ukrse_de.csv in [de_17.csv](de_17.csv)
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
-- Not used, ignore?
+- Translate
 
 
 Stephan's notes from 2017-07-25
