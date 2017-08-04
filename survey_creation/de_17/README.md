@@ -24,7 +24,68 @@ People doing work here
 to do - missing
 ---------------
 
-translate the UK salaries in a clever way to german model. Maybe hint for Entgeldgruppen.
+Overall
+- Remove files not used
+- When translation is finished and survey is set-up for testing ask others to conduct a test with a dry run participation
+
+[de_17.csv](de_17.csv)
+- Check question list of other national RSE groups to reuse missing questions
+- Prioritize and add additional, Germany related, questions
+- Double-check translations
+
+[academic_field.csv](listAnswers/academic_field.csv)
+- Clarify if classes are equivalent in Germany or need changes
+- Translate
+
+[countries.csv](listAnswers/countries.csv)
+- Translate
+
+[decision_job.csv](listAnswers/decision_job.csv)
+- Double-check translations
+- Add or match related question in [de_17.csv](de_17.csv)
+
+[education_de.csv](listAnswers/education_de.csv)
+- Double-check translations
+- Integrate education_de.csv in [de_17.csv](de_17.csv)
+
+[ethnicity.csv](listAnswers/ethnicity.csv)
+- Drop question and remove file
+
+[funding.csv](listAnswers/funding.csv)
+- Clarify, really we have to ;-)
+
+[previous_job.csv](listAnswers/previous_job.csv)
+- Double-check translation
+
+[reasons_leave_job.csv](listAnswers/reasons_leave_job.csv)
+- Double-check translations
+- Add or match related question in [de_17.csv](de_17.csv)
+
+[salaries.csv](listAnswers/salaries.csv)
+- Define equivalent classes in EUR and add the in EN in DE
+- Add examples, e.g. TVöD classes ...
+- Translate (translate the UK salaries in a clever way to german model. Maybe hint for Entgeldgruppen.)
+- or is it salary.csv
+
+[testing.csv](listAnswers/testing.csv)
+- Double-check translations
+
+[type_contract_de.csv](listAnswers/type_contract_de.csv)
+- Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft" ?
+- Add other types of contract?
+- Integrate type_contract_de.csv in [de_17.csv](de_17.csv)
+
+[type_organisation_de.csv](listAnswers/type_organisation_de.csv)
+- Double-check translation
+- Integrate type_organisation_de.csv in de_17.csv
+
+[ukrse_de.csv](listAnswers/ukrse_de.csv)
+- Add additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"
+- Integrate ukrse_de.csv in [de_17.csv](de_17.csv)
+
+[work_researchers.csv](listAnswers/work_researchers.csv)
+- Translate
+
 
 Stephan's notes from 2017-07-25
 -------------------------------
