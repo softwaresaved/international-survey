@@ -44,13 +44,11 @@ Overall
 - Double-check translations
 - Add or match related question in [de_17.csv](de_17.csv)
 
-[education.csv](listAnswers/education.csv)
-- Needs clarification
+[education_de.csv](listAnswers/education_de.csv)
+- Double-check translations
 
 [ethnicity.csv](listAnswers/ethnicity.csv)
-- Clarify if this question make sense for German survey
-- Clarify if translation makes sense or if equivalent or different classes for German survey should be used
-- Translate
+- Drop question and remove file
 
 [funding.csv](listAnswers/funding.csv)
 - Clarify, really we have to ;-)
