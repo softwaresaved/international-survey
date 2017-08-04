@@ -88,7 +88,7 @@
 "6","socio5","How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. ","Drop down list","ethnicity","","https://www.academia.edu/1112558/Comparative_study_on_the_collection_of_data_to_measure_the_extent_and_impact_of_discrimination_within_the_United_States_Canada_Australia_the_United_Kingdom_and_the_Netherlands","drop that?","","",""
 "6","disa1","Do you have a condition that is defined as a disability by the Equality Act 2010*","Y/N/NA","","","","drop that?","","",""
 "6","socio4","Please select the range of your salary","Drop down list","salary","","","Bitte wähle dein Gehaltsband aus","","",""
-"7","tool2","What Operating System do you prefer to use at work? ","Drop down list","os","","","done","Welches Betriebsystem bevorzugst Du auf Arbeit?","",""
+"7","tool2","What Operating System do you prefer to use at work? ","Drop down list","os","","","done","Welches Betriebssystem bevorzugst Du auf Arbeit?","",""
 "7","tool4can"," What programming languages do you use at work? (Select as many as apply) ","Multiple choices","programing_language","","","done","Welche Programmiersprachen nutzt Du auf Arbeit? (wähle alle zutreffenden)","",""
 "7","ukrse1","Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list)","Y/N/NA","","","","change to de-RSE?","","",""
 "7","ukrse2","How do you meet other RSEs? ","Multiple choices","ukrse","","","","Wie triffst Du andere akademische Softwareentwickler?","",""

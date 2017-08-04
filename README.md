@@ -35,7 +35,7 @@ Where to put translated text:
 
 1. Translated questions should be added to the "questions_<country>_<year>.csv" under one or more of the columns "Trans lang 1", "Trans lang 2", "Trans lang 3" (contact us if you have more than three national languages).
 1. Translated welcome and end text should replace the English-language version in the appropriate files in the Text directory.
-1. Tranlsated lists of answers should replace the English-language versions in the csv files held in the listAnswers directory. If multiple languages are to be contained in the file, please separate translated answers with semi-colons.
+1. Translated lists of answers should replace the English-language versions in the csv files held in the listAnswers directory. If multiple languages are to be contained in the file, please separate translated answers with semi-colons.
 
 ## Explanation of the columns in questions csv
 
@@ -65,7 +65,7 @@ We now provide some more detail about the columns in the questions csv file. You
 
 * **conditional**: This indicates whether a question only appears if an specific answer was given to a previous question.
 
-* **source**: If a specic resource (e.g. a list on Wikipedia, a government policy doc, etc.) was used to generate a list of potential answers, please reference it here.
+* **source**: If a specific resource (e.g. a list on Wikipedia, a government policy doc, etc.) was used to generate a list of potential answers, please reference it here.
 
 * **comment**: Any comments that you wish to make.
 
@@ -73,7 +73,7 @@ We now provide some more detail about the columns in the questions csv file. You
 
 # Organisation of the repository
 
-* analysis: a directory containing Juypter notebooks covering the results of the analysis from each country and year
+* analysis: a directory containing Jupyter notebooks covering the results of the analysis from each country and year
 * survey_creation: files and dirs used to create surveys for new countries or for new years
 
 # Technical solution
