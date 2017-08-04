@@ -37,53 +37,53 @@ Overall
 - Clarify if classes are equivalent in Germany or need changes
 - Translate
 
-international-survey/survey_creation/de_17/listAnswers/countries.csv
+[countries.csv](listAnswers/countries.csv)
 - Translate
 
-international-survey/survey_creation/de_17/listAnswers/decision_job.csv
+[decision_job.csv](listAnswers/decision_job.csv)
 - Double-check translations
 - Not used, ignore?
 
-international-survey/survey_creation/de_17/listAnswers/education.csv
+[education.csv](listAnswers/education.csv)
 - Needs clarification
 
-international-survey/survey_creation/de_17/listAnswers/ethnicity.csv
+[ethnicity.csv](listAnswers/ethnicity.csv)
 - Clarify if this question make sense for German survey
 - Clarify if translation makes sense or if equivalent or different classes for German survey should be used
 - Translate
 
-international-survey/survey_creation/de_17/listAnswers/funding.csv
+[funding.csv](listAnswers/funding.csv)
 - Clarify, really we have to ;-)
 
-international-survey/survey_creation/de_17/listAnswers/previous_job.csv
+[previous_job.csv](listAnswers/previous_job.csv)
 - Clarify
 
-international-survey/survey_creation/de_17/listAnswers/reasons_leave_job.csv
+[reasons_leave_job.csv](listAnswers/reasons_leave_job.csv)
 - Double-check translations
 
-international-survey/survey_creation/de_17/listAnswers/salaries.csv
+[salaries.csv](listAnswers/salaries.csv)
 - Define equivalent classes in EUR and add the in EN in DE
 - Add examples, e.g. TVöD classes ...
 - Translate (translate the UK salaries in a clever way to german model. Maybe hint for Entgeldgruppen.)
 - or is it salary.csv
 
-international-survey/survey_creation/de_17/listAnswers/testing.csv
+[testing.csv](listAnswers/testing.csv)
 - Double-check translations
 
-international-survey/survey_creation/de_17/listAnswers/type_contract.csv
+[type_contract.csv](listAnswers/type_contract.csv)
 - Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft" ?
 - Devide "Fixed term";"Befristeter Vertrag" into "Haushaltmittel" and "Drittmittel"?
 - Add other types of contract?
 
-international-survey/survey_creation/de_17/listAnswers/type_organisation.csv
+[type_organisation.csv](listAnswers/type_organisation.csv)
 - Needs clarification for "Government" and "Private Company"
 
-international-survey/survey_creation/de_17/listAnswers/ukrse.csv
+[ukrse.csv](listAnswers/ukrse.csv)
 - Double-check addition of new option "DE-RSE Community";"DE-RSE Community"
 - Double-check if URLs for RSE communities are useful
 - Clarify if additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"
 
-international-survey/survey_creation/de_17/listAnswers/work_researchers.csv
+[work_researchers.csv](listAnswers/work_researchers.csv)
 - Not used, ignore?
 
 
