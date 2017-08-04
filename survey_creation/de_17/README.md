@@ -83,7 +83,7 @@ Overall
 - Integrate ukrse_de.csv in [de_17.csv](de_17.csv)
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
-- Not used, ignore?
+- Translate
 
 
 Stephan's notes from 2017-07-25
