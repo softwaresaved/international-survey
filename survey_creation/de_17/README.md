@@ -28,7 +28,7 @@ Overall
 - Remove files not used
 - When translation is finished and survey is set-up for testing ask others to conduct a test with a dry run participation
 
-international-survey/survey_creation/de_17/de_17.csv
+(international-survey/survey_creation/de_17/de_17.csv)
 - Check question list of other national RSE groups to reuse missing questions
 - Prioritize and add additional, Germany related, questions
 - Double-check translations
