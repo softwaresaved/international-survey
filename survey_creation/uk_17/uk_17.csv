@@ -26,7 +26,7 @@ section,code,question,answer_format,answer_file,order_question,conditional,sourc
 2,currentEmp13,In which disciplines do you work (select as many as apply),MULTIPLE CHOICES,academic_field,FALSE,,Same source as for academic field,,,,
 3,prevEmp1,Where was your previous job based?,ONE CHOICE,type_organisation,FALSE,,,,,,
 3,prevEmp2,Rank the following factors dependent on how strongly they influenced your decision to accept your current position ,Ranking,reason_leave_job,FALSE,,"RSE interviews, review main features that people liked in their job",,,,
-4,currentWork1,"Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? ",ONE CHOICE,,FALSE,,,,,,
+4,currentWork1,"Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? ",ONE CHOICE,work_researchers,FALSE,,,,,,
 4,currentWork2,Do you work for a Research Software Group?,Y/N/NA,,,,,,,,
 4,paper1,Has your software contributed to research that has been published in a journal or at a conference?,Y/N/NA,,,,,,,,
 4,paper2,"In general, when your software contributes to a paper, are you acknowledged in that paper?",Y/N/NA,,,,,,,,
