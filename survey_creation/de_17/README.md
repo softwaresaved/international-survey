@@ -54,7 +54,7 @@ Overall
 - Clarify, really we have to ;-)
 
 [previous_job.csv](listAnswers/previous_job.csv)
-- Clarify
+- Double-check translation
 
 [reasons_leave_job.csv](listAnswers/reasons_leave_job.csv)
 - Double-check translations
