@@ -80,7 +80,6 @@ section,code,question,answer_format,answer_file,order_question,conditional,sourc
 5,satisgen1,"In general, how satisfied are you with [Your career]",LIKERT,likert_satisfied_10,,,,,,,
 6,socio2,Please select your gender,ONE CHOICE,gender,FALSE,,https://www.gov.uk/service-manual/user-centred-design/resources/patterns/gender-and-sex.html,,,,
 6,socio3,Please select your age,ONE CHOICE,age,TRUE,,,,,,
-6,disa1,Do you have a condition that is defined as a disability by the Equality Act 2010*,Y/N/NA,,,,,,,,
 6,socio4,Please select the range of your salary,ONE CHOICE,salary,TRUE,,,,,,
 7,tool2,What Operating System do you prefer to use at work? ,ONE CHOICE,os,FALSE,,,,,,
 7,tool4can, What programming languages do you use at work? (Select as many as apply) ,MULTIPLE CHOICES,programing_language,,,,,,,
