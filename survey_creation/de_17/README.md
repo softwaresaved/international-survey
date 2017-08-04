@@ -59,18 +59,24 @@ Aim to release the German survey by mid or end of August and close it by end of 
 neue Fragen
 -----------
 
-  - SJ: Bist Du auf der de-RSE Mailingliste eingeschrieben? (http://www.de-rse.org/de/join.html) (replaces q for uk rse ml)
-  - SJ: Kollaborierst du mit Deiner Bibliothek beim Veröffentlichen/Archivieren von Software?
+  - SJ: Bist Du auf der de-RSE Mailingliste eingeschrieben? http://www.de-rse.org/de/join.html
+
+  - DOI yes: (conditional)
+  -  - software directly or paper referencing
+  -  - what infrastructure tools (librariers, Zenodo)
+  		
   - SJ: Hast du einen "ORCID identifier"
   - SJ: Wüsstest Du eine bessere Bezeichnung als RSE? Wenn ja, welche? (Bedenke die Spannbreite)
-  - SJ: Arbeitest du allein oder im Team mit anderen RSEs?
   - SJ: Wünschst du dir eine Konferenz in D zu dem Thema wissenschaftliche Softwareentwickling?
-  - AL: Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? Downloads, Stars auf GitHub etc.?
-
+  	- if yes: ask for permissions to contact and ask for email in external google form
+  - AL: Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? "Don't care", "I don't know" ,Downloads, Stars auf GitHub etc.?
+  -  - think about the goal of the question
+  - can_17: How many software developers typically work on your projects?
 
 weitere mögliche Fragen
 -----------------------
 
+  - SJ: Arbeitest du allein oder im Team mit anderen RSEs?
   - Wie bist du vernetzt in deiner Institution?
   - DL: Ermöglicht es dir dein Arbeitgeber (finanziell) zu Fortbildungen zum Thema Softwareentwicklung/Programmierung zu reisen? 
   - DL: Hast du das bereits wahrgenommen?
