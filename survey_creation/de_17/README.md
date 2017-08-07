@@ -32,6 +32,7 @@ Overall
 - Check question list of other national RSE groups to reuse missing questions
 - Prioritize and add additional, Germany related, questions
 - Double-check translations
+- Double-check dropping of socio5, disa1
 - What's the difference between affRec2-4?
 - Is addiing question rse4de okay?
 
