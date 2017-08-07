@@ -32,6 +32,8 @@ Overall
 - Check question list of other national RSE groups to reuse missing questions
 - Prioritize and add additional, Germany related, questions
 - Double-check translations
+- What's the difference between affRec2-4?
+- Is addiing question rse4de okay?
 
 [academic_field.csv](listAnswers/academic_field.csv)
 - Clarify if classes are equivalent in Germany or need changes
