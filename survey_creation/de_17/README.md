@@ -32,6 +32,10 @@ Overall
 - Check question list of other national RSE groups to reuse missing questions
 - Prioritize and add additional, Germany related, questions
 - Double-check translations
+- Double-check dropping of socio5, disa1, ukrse1
+- What's the difference between affRec2-4?
+- Is addiing question rse4de okay?
+- Clarify use of "RSE" in questions, equivalent description and possibly information in the welcome text of the survey
 
 [academic_field.csv](listAnswers/academic_field.csv)
 - Clarify if classes are equivalent in Germany or need changes
