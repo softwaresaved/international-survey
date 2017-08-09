@@ -14,7 +14,7 @@ def get_answer(file_answer):
         return [x[:-1] for x in f.readlines()]
 
 
-def count_choice(df, colnames, rename_columns=True,
+def count_choice(df, colnames, rename_columns=False,
                  dropna=False, normalize=False,
                  multiple_choice=False, sort_values=False):
     """
@@ -27,8 +27,11 @@ def count_choice(df, colnames, rename_columns=True,
     """
     df_sub = df[colnames]
 
-    if rename_columns is True and multiple_choice is True:
-        df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+    if rename_columns is True:
+        try:
+            df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+        except IndexError:
+            pass
 
     if multiple_choice is True:
         df_sub = df_sub.fillna(value='No')
@@ -99,7 +102,10 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     df_sub = df[colnames]
 
     if rename_columns is True:
-        df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+        try:
+            df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+        except IndexError:
+            pass
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
@@ -163,10 +169,10 @@ def get_count(df, questions, type_question, file_answer):
         return count
 
     elif type_question.lower() == 'one choice':
-        return count_choice(df, questions, multiple_choice=False)
+        return count_choice(df, questions, multiple_choice=False, rename_columns=True)
 
     elif type_question.lower() == 'multiple choices':
-        return count_choice(df, questions, multiple_choice=True)
+        return count_choice(df, questions, multiple_choice=True, rename_columns=True)
 
     elif type_question.lower() == 'likert':
         likert_answer = get_answer(file_answer)
@@ -177,7 +183,7 @@ def get_count(df, questions, type_question, file_answer):
         return count_likert(df, questions, likert_answer, rename_columns)
 
     elif type_question.lower() == 'ranking':
-        pass
+        return count_choice(df, questions, multiple_choice=False, rename_columns=True)
 
     elif type_question.lower() == 'freetext':
         pass
