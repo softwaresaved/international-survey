@@ -66,6 +66,7 @@ def main():
 
                 if answer_format == 'ranking':
                     notebook.add_count(list_questions, answer_format, file_answer)
+                    notebook.add_percentage()
                     notebook.add_plot(answer_format)
 
     print('Running notebook')
