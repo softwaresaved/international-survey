@@ -177,6 +177,12 @@ def plot_likert(df):
     return likert_scale(df)
 
 
+def plot_numeric_var(df):
+    """
+    """
+    return df.hist()
+
+
 def get_plot(df, type_question):
 
     try:
@@ -209,7 +215,7 @@ def get_plot(df, type_question):
             pass
 
         elif type_question.lower() == 'freenumeric':
-            pass
+            return plot_numeric_var(df)
 
         elif type_question.lower() == 'datetime':
             pass

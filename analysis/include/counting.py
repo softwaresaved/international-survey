@@ -183,7 +183,7 @@ def get_count(df, questions, type_question, file_answer):
         pass
 
     elif type_question.lower() == 'freenumeric':
-        pass
+        return df[questions]
 
     elif type_question.lower() == 'datetime':
         pass

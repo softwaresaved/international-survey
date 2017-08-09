@@ -44,7 +44,8 @@ def main():
                 file_answer = question['file_answer']
                 for txt in original_question:
                     notebook.add_question_title(txt)
-                if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
+
+                if answer_format not in ['freetext', 'datetime', 'ranking']:
                     notebook.add_count(list_questions, answer_format, file_answer)
                     # Need to specify != likert because if likert item ==1 it use the barchart
                     # and will then plot the percentages when it will make no sense for the likert
@@ -58,6 +59,10 @@ def main():
 
                 elif answer_format == 'freetext':
                     notebook.add_wordcloud(list_questions)
+                if answer_format == 'freenumeric':
+                    print(answer_format)
+                    notebook.add_count(list_questions, answer_format, file_answer)
+                    notebook.add_plot(answer_format)
 
     print('Running notebook')
     notebook.run_notebook()
