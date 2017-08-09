@@ -89,27 +89,27 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         self.count = True
-        count_count = """v_to_count, v_na  = get_count(df, {}, "{}", "{}")""".format(*args)
+        count_count = """v_to_count  = get_count(df, {}, "{}", "{}")""".format(*args)
         self._add_code(count_count)
 
     def add_percentage(self):
         """
         """
         self.percent = True
-        percentage_count = """perc_to_count, perc_na = get_percentage(v_to_count, v_na dropna=True)"""
+        percentage_count = """perc_to_count = get_percentage(v_to_count, dropna=True)"""
         self._add_code(percentage_count)
 
     def add_display_percentage(self):
         """
         """
-        display = """display(perc_to_count, perc_na) """
+        display = """display(perc_to_count) """
         self.percent = True
         self._add_code(display)
 
     def add_display_count(self):
         """
         """
-        display = """display(v_to_count, v_na) """
+        display = """display(v_to_count) """
         self.count = False
         self._add_code(display)
 
@@ -126,9 +126,9 @@ class GenerateNotebook(NotebookConfig):
             args_na.append('perc_na')
         self.percent, self.count = False, False
         display = """display_side_by_side({})""".format(','.join(args))
-        display_na = """display_side_by_side({})""".format(','.join(args_na))
+        # display_na = """display_side_by_side({})""".format(','.join(args_na))
         self._add_code(display)
-        self._add_code(display_na)
+        # self._add_code(display_na)
 
     def add_plot(self, *args):
         """
@@ -142,8 +142,11 @@ class GenerateNotebook(NotebookConfig):
     def add_wordcloud(self, column):
         """
         """
-        word_cloud = """ _ = wordcloud(df[{}])""".format(column)
+        word_cloud = """ wc = wordcloud(df, {})""".format(column)
         self._add_code(word_cloud)
+        plot = """ plt.imshow(wc, interpolation='bilinear', cmap=plt.cm.gray)\n plt.axis("off")"""
+        # plot = """ plt.imshow(wc)\n plt.axis("off")"""
+        self._add_code(plot)
 
     def _add_text(self, *args):
         """

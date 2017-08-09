@@ -3,6 +3,7 @@
 
 # from nltk.corpus import stopwords
 import string
+import itertools
 import numpy as np
 from wordcloud import WordCloud, STOPWORDS
 
@@ -10,16 +11,18 @@ from wordcloud import WordCloud, STOPWORDS
 to_remove = set(string.punctuation) | STOPWORDS | set(['nan', np.NaN])
 
 
-def clean_txt(columns):
+def clean_txt(txt):
     """
     Return cleaned text after removing punctuation and stopwords
     """
-    return ' '.join([str(term) for term in columns if term not in to_remove])
+    return ' '.join([str(term) for term in txt if term not in to_remove])
 
 
-def wordcloud(txt):
+def wordcloud(df, column):
     """
     """
+    # TODO make a quicker way than that
+    txt = list(itertools.chain.from_iterable(df[column].values))
     cleaned_txt = clean_txt(txt)
     return WordCloud(background_color='white').generate(cleaned_txt)
 
