@@ -28,6 +28,8 @@ class GenerateNotebook(NotebookConfig):
         # Set up some display options for pandas to extend
         # the limit of the row and columns that are displayed
         self._setup_display()
+        # Hide the code when export in html
+        self._hide_code_for_html()
         # Setup matplotlib magic and size of figures
         self._setup_matplotlib()
         # Load the dataset
@@ -44,6 +46,15 @@ class GenerateNotebook(NotebookConfig):
         self.add_section('Importing modules')
         import_code = '\n'.join(self.to_import)
         self._add_code(import_code)
+
+    def _hide_code_for_html(self):
+        """
+        Hide the code cell when convert the notebook in
+        html
+        source:https://gist.github.com/masnick/d6a1af14812c0c4b3314
+        """
+        code = """di.display_html('<script>jQuery(function() {if (jQuery("body.notebook_app").length == 0) { jQuery(".input_area").toggle(); jQuery(".prompt").toggle();}});</script>', raw=True)"""
+        self._add_code(code)
 
     def _setup_display(self):
         """
