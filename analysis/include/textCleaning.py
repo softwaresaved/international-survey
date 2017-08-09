@@ -15,7 +15,7 @@ def clean_txt(txt):
     """
     Return cleaned text after removing punctuation and stopwords
     """
-    return ' '.join([str(term) for term in txt if term not in to_remove])
+    return ' '.join([str(term).replace(' ', '') for term in txt if term not in to_remove])
 
 
 def wordcloud(df, column):
@@ -24,6 +24,9 @@ def wordcloud(df, column):
     # TODO make a quicker way than that
     txt = list(itertools.chain.from_iterable(df[column].values))
     cleaned_txt = clean_txt(txt)
+    # The width and the height match the comfiguration in generate_notebook for the size
+    # of the plot width=15.0, height=8.0 inch with 100 DPI. be careful not changning these
+    # value without modifying the corresponding value in _setup_matplotlib() in generate_notebook.py
     return WordCloud(background_color='white', width=1500, height=800).generate(cleaned_txt)
 
 
