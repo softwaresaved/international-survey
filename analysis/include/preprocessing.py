@@ -101,6 +101,13 @@ class CleaningData(CleaningConfig):
         """
         return self.df.loc[self.df['lastpage. Last page']> self.section_nbr_to_keep_after]
 
+    def dropping_empty_question(self, df):
+        """
+        Some question may not have any answer. If the unique value of that question is array([nan])
+        the question is dropped
+        """
+        return self.df.dropna(axis=1, how='all')
+
     def dropping_lime_useless(self, df):
         """
         Dropping all the columns created by limesurvey and

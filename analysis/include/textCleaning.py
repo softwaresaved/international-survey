@@ -11,11 +11,18 @@ from wordcloud import WordCloud, STOPWORDS
 to_remove = set(string.punctuation) | STOPWORDS | set(['nan', np.NaN])
 
 
-def clean_txt(txt):
+def clean_txt(txt, clean_by_word=False):
     """
     Return cleaned text after removing punctuation and stopwords
     """
-    return ' '.join([str(term).replace(' ', '') for term in txt if term not in to_remove])
+    list_each_entry = ' '.join([str(term) for term in txt if term not in to_remove])
+    if clean_by_word:
+        list_by_word = list()
+        for entry in list_each_entry:
+            for word in entry.split():
+                list_by_word.append(word)
+        return list_by_word
+    return list_each_entry
 
 
 def wordcloud(df, column):
