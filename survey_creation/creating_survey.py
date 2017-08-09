@@ -37,7 +37,9 @@ def main():
     folder = sys.argv[1]
     question_file = os.path.join(folder, folder + '.' + 'csv')
     with open(question_file, 'r') as f:
-        logger.debug(f)
+        csv_f = csv.reader(f, delimiter=';', quotechar='"')
+        for row in csv_f:
+            print(row)
 
 
 if __name__ == "__main__":
