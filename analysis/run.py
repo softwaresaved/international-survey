@@ -5,6 +5,9 @@ import pandas as pd
 from include.config import CleaningConfig, NotebookConfig
 from include.preprocessing import CleaningData
 from include.generate_notebook import GenerateNotebook
+import nbformat
+from nbconvert import HTMLExporter
+import codecs
 
 """
 Action file that holds all the different configuration for a
@@ -74,6 +77,25 @@ def main():
     notebook.run_notebook()
     print('Saving notebook')
     notebook.save_notebook()
+
+# https://stackoverflow.com/questions/37657547/how-to-save-jupyter-notebook-to-html-by-code
+
+    print('Convert the notebook into an html file')
+    filepath = notebook_location
+    export_path = '{}/{}'.format(NotebookConfig.notebook_folder,
+                                 NotebookConfig.notebook_html)
+
+    with open(filepath) as fh:
+        nb = nbformat.reads(fh.read(), as_version=4)
+
+    exporter = HTMLExporter()
+
+    # source is a tuple of python source code
+    # meta contains metadata
+    source, meta = exporter.from_notebook_node(nb)
+    codecs.open(export_path, 'w', encoding='utf-8').write(source)
+    # with open(export_path, 'w+') as fh:
+    #     fh.writelines(source)
 
 
 if __name__ == "__main__":
