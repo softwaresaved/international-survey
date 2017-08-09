@@ -199,7 +199,7 @@ class CleaningData(CleaningConfig):
                 try:
                     input_dict[code].setdefault('survey_q', []).append(col)
                 except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
-                    pass
+                    print('Not being able to process this columns: {}'.format(col))
 
         return input_dict
 

@@ -66,17 +66,17 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     # Set up a bigger size
     if len(df.index) > 10:
         matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
-    plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=False, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
     return plt
 
 
-def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
+def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, legend=False):
     """
     """
     # df = df.transpose()
-    plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=horizontal, dropna=dropna, legend=legend)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
     return plt
@@ -180,7 +180,7 @@ def plot_likert(df):
 def plot_numeric_var(df):
     """
     """
-    return df.hist()
+    return df.boxplot()
 
 
 def get_plot(df, type_question):
@@ -208,14 +208,14 @@ def get_plot(df, type_question):
                                        sort_order=False)
             return plot_multiple_var(df, stacked=False, horizontal=False)
 
+        elif type_question.lower() == 'freenumeric':
+            return plot_numeric_var(df)
+
         elif type_question.lower() == 'ranking':
-            pass
+            return plot_multiple_var(df, stacked=True, horizontal=False, legend=True)
 
         elif type_question.lower() == 'freetext':
             pass
-
-        elif type_question.lower() == 'freenumeric':
-            return plot_numeric_var(df)
 
         elif type_question.lower() == 'datetime':
             pass

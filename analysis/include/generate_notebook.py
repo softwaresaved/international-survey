@@ -135,7 +135,7 @@ class GenerateNotebook(NotebookConfig):
     def add_plot(self, *args):
         """
         """
-        if self.show_percent is True and args[0] != 'likert' and args[0] != 'freenumeric':
+        if self.show_percent is True and args[0] != 'likert' and args[0] != 'freenumeric' and args[0] != 'ranking':
             plot = """_ = get_plot(perc_to_count, "{}")""".format(','.join(args))
         else:
             plot = """_ = get_plot(v_to_count, "{}")""".format(','.join(args))
