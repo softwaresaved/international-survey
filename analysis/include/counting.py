@@ -135,8 +135,8 @@ def get_percentage(df, dropna):
         index_df = ["{} [PERCENTAGE]".format(x) for x in df.index]
     percent = pd.DataFrame(value, columns=name_df)
     percent.index = index_df
-    if dropna is True:
-        percent.loc['Proportion of NaN in total'] = percent_na
+    # if dropna is True:
+        # percent.loc['Proportion of NaN in total'] = percent_na
         # percent.loc['Proportion of NaN in total'] = percent_na
         # percent.append(percent_na.rename('Proportion of NaN to the total'))
     return percent
