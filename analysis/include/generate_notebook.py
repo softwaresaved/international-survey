@@ -60,6 +60,8 @@ class GenerateNotebook(NotebookConfig):
         """
         magic_inline = """get_ipython().magic('matplotlib inline')  # Activate that line to use in Jupyter """
         # svg_output = """%config InlineBackend.figure_format = 'svg'"""
+        # Dependency of size of figure in the textCleaning.py. Carefull if changing these value
+        # it will impact the quality of the wordcloud generated in textCleaning.py (need to change the width and height)
         size_figures = """matplotlib.rcParams['figure.figsize'] = (15.0, 8.0)"""
         self._add_code('\n'.join([magic_inline, size_figures]))
 
@@ -144,8 +146,7 @@ class GenerateNotebook(NotebookConfig):
         """
         word_cloud = """ wc = wordcloud(df, {})""".format(column)
         self._add_code(word_cloud)
-        plot = """ plt.imshow(wc, interpolation='bilinear', cmap=plt.cm.gray)\n plt.axis("off")"""
-        # plot = """ plt.imshow(wc)\n plt.axis("off")"""
+        plot = """ plt.imshow(wc, interpolation='bilinear')\n plt.axis("off")"""
         self._add_code(plot)
 
     def _add_text(self, *args):
