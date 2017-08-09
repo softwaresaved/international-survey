@@ -192,14 +192,19 @@ class CleaningData(CleaningConfig):
 
         for col in df.columns:
             code = get_question_code(col, 0)
+            print(code)
             try:
                 input_dict[code].setdefault('survey_q', []).append(col)
             except KeyError:
-                code = get_question_code(col, 1)
+                multiple_code = get_question_code(col, 1)
                 try:
-                    input_dict[code].setdefault('survey_q', []).append(col)
-                except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
-                    print('Not being able to process this columns: {}'.format(col))
+                    input_dict[multiple_code].setdefault('survey_q', []).append(col)
+                except KeyError:  # Sometime the questions is stored as multiple choice in limesurvey but it is two specific question in the csv
+                    special_code = code[:-1] + multiple_code[-1]
+                    try:
+                        input_dict[special_code].setdefault('survey_q', []).append(col)
+                    except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
+                        print('Not being able to process this columns: {}'.format(col))
 
         return input_dict
 

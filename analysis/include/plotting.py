@@ -180,7 +180,7 @@ def plot_likert(df):
 def plot_numeric_var(df):
     """
     """
-    return df.boxplot()
+    return df.hist()
 
 
 def get_plot(df, type_question):
