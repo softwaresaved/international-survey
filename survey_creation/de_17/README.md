@@ -65,11 +65,11 @@ Overall
 - Double-check translations
 - Add or match related question in [de_17.csv](de_17.csv)
 
-[salaries.csv](listAnswers/salaries.csv)
-- Define equivalent classes in EUR and add the in EN in DE
+[salary.csv](listAnswers/salary.csv)
+- Define equivalent classes in EUR, Try to keep equivalent classes (oterhwise use salary_de.csv)
 - Add examples, e.g. TVöD classes ...
 - Translate (translate the UK salaries in a clever way to german model. Maybe hint for Entgeldgruppen.)
-- or is it salary.csv
+- ~~Delete salaries.csv~~ done
 
 [testing.csv](listAnswers/testing.csv)
 - Double-check translations
