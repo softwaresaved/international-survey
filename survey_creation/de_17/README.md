@@ -88,6 +88,7 @@ Overall
 - ~~Integrate ukrse_de.csv in de_17.csv~~ done
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
+- No related question found in [de_17.csv](de_17.csv) - shall we drop the file?
 - Translate
 
 
