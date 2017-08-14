@@ -66,9 +66,10 @@ Overall
 - Add or match related question in [de_17.csv](de_17.csv)
 
 [salary.csv](listAnswers/salary.csv)
-- Define equivalent classes in EUR, Try to keep equivalent classes (oterhwise use salary_de.csv)
-- Add examples, e.g. TVöD classes ...
-- Translate (translate the UK salaries in a clever way to german model. Maybe hint for Entgeldgruppen.)
+- ~~Define equivalent classes in EUR and translate, Try to keep equivalent classes~~ done
+- Add examples, e.g. TVöD classes (Maybe hint for Entgeldgruppen) ... is difficult since since several steps in a group might make a huge difference
+- Translate/Adapt the UK salaries in a clever way to german model (then use salary_de.csv) ?
+- Consider adding 1-2 additional questions asking for the type of tariff and then (conditionally) ask for the tariff group ?
 - ~~Delete salaries.csv~~ done
 
 [testing.csv](listAnswers/testing.csv)
