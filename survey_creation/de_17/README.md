@@ -50,10 +50,10 @@ Overall
 
 [education_de.csv](listAnswers/education_de.csv)
 - Double-check translations
-- Integrate education_de.csv in [de_17.csv](de_17.csv)
+- ~~Integrate education_de.csv in de_17.csv~~ done
 
 [ethnicity.csv](listAnswers/ethnicity.csv)
-- Drop question and remove file
+- ~~Drop question and remove file~~ done
 
 [funding.csv](listAnswers/funding.csv)
 - Clarify, really we have to ;-)
@@ -77,15 +77,15 @@ Overall
 [type_contract_de.csv](listAnswers/type_contract_de.csv)
 - ~~Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft"~~ done
 - Add other types of contract?
-- Integrate type_contract_de.csv in [de_17.csv](de_17.csv)
+- ~~Integrate type_contract_de.csv in de_17.csv~~ done
 
 [type_organisation_de.csv](listAnswers/type_organisation_de.csv)
 - Double-check translation
-- Integrate type_organisation_de.csv in de_17.csv
+- ~~Integrate type_organisation_de.csv in de_17.csv~~ done
 
 [ukrse_de.csv](listAnswers/ukrse_de.csv)
 - Add additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"
-- Integrate ukrse_de.csv in [de_17.csv](de_17.csv)
+- ~~Integrate ukrse_de.csv in de_17.csv~~ done
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
 - Translate
