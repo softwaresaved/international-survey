@@ -84,7 +84,7 @@ Overall
 - ~~Integrate type_organisation_de.csv in de_17.csv~~ done
 
 [ukrse_de.csv](listAnswers/ukrse_de.csv)
-- Add additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"
+- ~~Add additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"~~ done
 - ~~Integrate ukrse_de.csv in de_17.csv~~ done
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
