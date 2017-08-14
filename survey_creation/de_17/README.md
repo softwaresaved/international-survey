@@ -39,7 +39,7 @@ Overall
 
 [academic_field.csv](listAnswers/academic_field.csv)
 - Clarify if classes are equivalent in Germany or need changes
-- Translate
+- Double-check translation
 
 [countries.csv](listAnswers/countries.csv)
 - Translate
