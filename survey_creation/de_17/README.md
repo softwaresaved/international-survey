@@ -75,7 +75,7 @@ Overall
 - Double-check translations
 
 [type_contract_de.csv](listAnswers/type_contract_de.csv)
-- ~~Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft"~~
+- ~~Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft"~~ done
 - Add other types of contract?
 - Integrate type_contract_de.csv in [de_17.csv](de_17.csv)
 
