@@ -32,7 +32,7 @@ Overall
 - Check question list of other national RSE groups to reuse missing questions
 - Prioritize and add additional, Germany related, questions
 - Double-check translations
-- Double-check dropping of socio5, disa1, ukrse1
+- ~~Double-check dropping of socio5, disa1, ukrse1~~ done
 - What's the difference between affRec2-4?
 - Is addiing question rse4de okay?
 - Clarify use of "RSE" in questions, equivalent description and possibly information in the welcome text of the survey
@@ -42,7 +42,8 @@ Overall
 - Double-check translation
 
 [countries.csv](listAnswers/countries.csv)
-- Translate
+- Translate; will do this afternoon. Stephan
+
 
 [decision_job.csv](listAnswers/decision_job.csv)
 - Double-check translations
@@ -59,10 +60,10 @@ Overall
 - Clarify, really we have to ;-)
 
 [previous_job.csv](listAnswers/previous_job.csv)
-- Double-check translation
+- ~~Double-check translation~~ done
 
 [reasons_leave_job.csv](listAnswers/reasons_leave_job.csv)
-- Double-check translations
+- ~~Double-check translations~~ done
 - Add or match related question in [de_17.csv](de_17.csv)
 
 [salary.csv](listAnswers/salary.csv)
@@ -73,7 +74,7 @@ Overall
 - ~~Delete salaries.csv~~ done
 
 [testing.csv](listAnswers/testing.csv)
-- Double-check translations
+- ~~Double-check translations~~ done
 
 [type_contract_de.csv](listAnswers/type_contract_de.csv)
 - ~~Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft"~~ done
@@ -81,7 +82,7 @@ Overall
 - ~~Integrate type_contract_de.csv in de_17.csv~~ done
 
 [type_organisation_de.csv](listAnswers/type_organisation_de.csv)
-- Double-check translation
+- ~~Double-check translation~~ done
 - ~~Integrate type_organisation_de.csv in de_17.csv~~ done
 
 [ukrse_de.csv](listAnswers/ukrse_de.csv)
@@ -126,13 +127,13 @@ Aim to release the German survey by mid or end of August and close it by end of 
 neue Fragen
 -----------
 
-  - SJ: Bist Du auf der de-RSE Mailingliste eingeschrieben? http://www.de-rse.org/de/join.html
+  - ~~SJ: Bist Du auf der de-RSE Mailingliste eingeschrieben? http://www.de-rse.org/de/join.html~~ done
 
-  - DOI yes: (conditional)
-  -  - software directly or paper referencing
-  -  - what infrastructure tools (librariers, Zenodo)
+  - ~~DOI yes: (conditional)~~
+  --  ~~software directly or paper referencing~~
+  --  ~~what infrastructure tools (librariers, Zenodo)~~
   		
-  - SJ: Hast du einen "ORCID identifier"
+  - ~~SJ: Hast du einen "ORCID identifier"~~ done
   - SJ: Wüsstest Du eine bessere Bezeichnung als RSE? Wenn ja, welche? (Bedenke die Spannbreite)
   - SJ: Wünschst du dir eine Konferenz in D zu dem Thema wissenschaftliche Softwareentwickling?
   	- if yes: ask for permissions to contact and ask for email in external google form
