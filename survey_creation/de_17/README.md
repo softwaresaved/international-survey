@@ -56,10 +56,9 @@ Overall
 [salary.csv](listAnswers/salary.csv)
 - ~~Define equivalent classes in EUR and translate, Try to keep equivalent classes~~ done
 - The idea is to get information if RSEs are underpayed, so matching TVöD doesn't seem to be a good idea
-- TVöD classes (Maybe hint for Entgeldgruppen) is difficult since since several steps in a group might make a huge difference
-- Translate/Adapt the UK salaries in a clever way to german model (then use salary_de.csv) ?
+
+[salary_de.csv](listAnswers/salary_de.csv)
 - Consider adding 1-2 additional questions asking for the type of tariff and then (conditionally) ask for the tariff group ?
-- ~~Delete salaries.csv~~ done
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
 - No related question found in [de_17.csv](de_17.csv) - shall we drop the file?
