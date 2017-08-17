@@ -46,7 +46,7 @@ Overall
 
 
 [decision_job.csv](listAnswers/decision_job.csv)
-- Double-check translations
+- ~~Double-check translations~~ done
 - Add or match related question in [de_17.csv](de_17.csv)
 
 [education_de.csv](listAnswers/education_de.csv)
