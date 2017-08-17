@@ -28,16 +28,23 @@ Overall
 - Remove files not used
 - When translation is finished and survey is set-up for testing ask others to conduct a test with a dry run participation
 
+welcome_message_de.md(texts/welcome_message_de.md)
+- Translate
+- Clarify use of "RSE" in questions, equivalent description and possibly information in the welcome text of the survey
+
+end_message_de.md(texts/end_message_de.md)
+- Translate
+
 [de_17.csv](de_17.csv)
-- Check question list of other national RSE groups to reuse missing questions
-- Prioritize and add additional, Germany related, questions
+- ~~Check question list of other national RSE groups to reuse missing questions~~ done
+- ~~Prioritize and add additional, Germany related, questions~~ done, no furhter questions will be added
+- Add project2_can: How many software developers typically work on your projects?
 - Double-check translations
 - ~~Double-check dropping of socio5, disa1, ukrse1~~ done
 - What's the difference between affRec2-4?
   - These are idoms. We should try to find good translations that match the meaning of the idioms.
   - If no better translation is found we keep them as is.
 - ~~Is addiing question rse4de okay?~~ Done , is okay
-- Clarify use of "RSE" in questions, equivalent description and possibly information in the welcome text of the survey
 
 [academic_field.csv](listAnswers/academic_field.csv)
 - Clarify if classes are equivalent in Germany or need changes
