@@ -28,11 +28,11 @@ Overall
 - Remove files not used
 - When translation is finished and survey is set-up for testing ask others to conduct a test with a dry run participation
 
-welcome_message_de.md(texts/welcome_message_de.md)
+[welcome_message_de.md](texts/welcome_message_de.md)
 - Translate
 - Clarify use of "RSE" in questions, equivalent description and possibly information in the welcome text of the survey
 
-end_message_de.md(texts/end_message_de.md)
+[end_message_de.md](texts/end_message_de.md)
 - Translate
 
 [de_17.csv](de_17.csv)
