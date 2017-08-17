@@ -36,15 +36,9 @@ Overall
 - Translate
 
 [de_17.csv](de_17.csv)
-- ~~Check question list of other national RSE groups to reuse missing questions~~ done
-- ~~Prioritize and add additional, Germany related, questions~~ done, no furhter questions will be added
-- Add project2_can: How many software developers typically work on your projects?
-- Double-check translations
-- ~~Double-check dropping of socio5, disa1, ukrse1~~ done
 - What's the difference between affRec2-4?
   - These are idoms. We should try to find good translations that match the meaning of the idioms.
   - If no better translation is found we keep them as is.
-- ~~Is addiing question rse4de okay?~~ Done , is okay
 
 [academic_field.csv](listAnswers/academic_field.csv)
 - Clarify if classes are equivalent in Germany or need changes
@@ -54,18 +48,10 @@ Overall
 - Translate; will do this afternoon. Stephan
 
 [decision_job.csv](listAnswers/decision_job.csv)
-- ~~Double-check translations~~ done
 - Add or match related question in [de_17.csv](de_17.csv)
 
 [funding.csv](listAnswers/funding.csv)
 - Clarify, really we have to -> Wait for results from test run to check if it's really problematic
-
-[salary.csv](listAnswers/salary.csv)
-- ~~Define equivalent classes in EUR and translate, Try to keep equivalent classes~~ done
-- The idea is to get information if RSEs are underpayed, so matching TVöD doesn't seem to be a good idea
-
-[salary_de.csv](listAnswers/salary_de.csv)
-- Add additional question asking for the tariff group / Entgeltgruppe (single choice + other, Ex-Ez)
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
 - No related question found in [de_17.csv](de_17.csv) - shall we drop the file?
@@ -105,24 +91,13 @@ Aim to release the German survey by mid or end of August and close it by end of 
 neue Fragen
 -----------
 
-  - ~~SJ: Bist Du auf der de-RSE Mailingliste eingeschrieben? http://www.de-rse.org/de/join.html~~ done
-
-  - ~~DOI yes: (conditional)~~
-  --  ~~software directly or paper referencing~~
-  --  ~~what infrastructure tools (librariers, Zenodo)~~
-  		
-  - ~~SJ: Hast du einen "ORCID identifier"~~ done
-  - SJ: Wüsstest Du eine bessere Bezeichnung als RSE? Wenn ja, welche? (Bedenke die Spannbreite)
-  - SJ: Wünschst du dir eine Konferenz in D zu dem Thema wissenschaftliche Softwareentwickling?
-  	- if yes: ask for permissions to contact and ask for email in external google form
+ 		
   - AL: Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? "Don't care", "I don't know" ,Downloads, Stars auf GitHub etc.?
   -  - think about the goal of the question
-  - can_17: How many software developers typically work on your projects? (answer file: ?, get from canada notebook)
 
 weitere mögliche Fragen
 -----------------------
 
-  - SJ: Arbeitest du allein oder im Team mit anderen RSEs?
   - Wie bist du vernetzt in deiner Institution?
   - DL: Ermöglicht es dir dein Arbeitgeber (finanziell) zu Fortbildungen zum Thema Softwareentwicklung/Programmierung zu reisen? 
   - DL: Hast du das bereits wahrgenommen?
