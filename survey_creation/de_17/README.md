@@ -51,7 +51,7 @@ Overall
 - Add or match related question in [de_17.csv](de_17.csv)
 
 [funding.csv](listAnswers/funding.csv)
-- Clarify, really we have to ;-)
+- Clarify, really we have to -> Wait for results from test run to check if it's really problematic
 
 [salary.csv](listAnswers/salary.csv)
 - ~~Define equivalent classes in EUR and translate, Try to keep equivalent classes~~ done
