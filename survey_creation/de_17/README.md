@@ -58,7 +58,7 @@ Overall
 - The idea is to get information if RSEs are underpayed, so matching TVöD doesn't seem to be a good idea
 
 [salary_de.csv](listAnswers/salary_de.csv)
-- Consider adding 1-2 additional questions asking for the type of tariff and then (conditionally) ask for the tariff group ?
+- Add additional question asking for the tariff group / Entgeltgruppe (single choice + other, Ex-Ez)
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
 - No related question found in [de_17.csv](de_17.csv) - shall we drop the file?
