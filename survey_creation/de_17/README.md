@@ -34,6 +34,8 @@ Overall
 - Double-check translations
 - ~~Double-check dropping of socio5, disa1, ukrse1~~ done
 - What's the difference between affRec2-4?
+  - These are idoms. We should try to find good translations that match the meaning of the idioms.
+  - If no better translation is found we keep them as is.
 - Is addiing question rse4de okay?
 - Clarify use of "RSE" in questions, equivalent description and possibly information in the welcome text of the survey
 
