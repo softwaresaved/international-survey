@@ -36,7 +36,7 @@ Overall
 - What's the difference between affRec2-4?
   - These are idoms. We should try to find good translations that match the meaning of the idioms.
   - If no better translation is found we keep them as is.
-- Is addiing question rse4de okay?
+- ~~Is addiing question rse4de okay?~~ Done , is okay
 - Clarify use of "RSE" in questions, equivalent description and possibly information in the welcome text of the survey
 
 [academic_field.csv](listAnswers/academic_field.csv)
@@ -46,50 +46,20 @@ Overall
 [countries.csv](listAnswers/countries.csv)
 - Translate; will do this afternoon. Stephan
 
-
 [decision_job.csv](listAnswers/decision_job.csv)
 - ~~Double-check translations~~ done
 - Add or match related question in [de_17.csv](de_17.csv)
 
-[education_de.csv](listAnswers/education_de.csv)
-- Double-check translations
-- ~~Integrate education_de.csv in de_17.csv~~ done
-
-[ethnicity.csv](listAnswers/ethnicity.csv)
-- ~~Drop question and remove file~~ done
-
 [funding.csv](listAnswers/funding.csv)
 - Clarify, really we have to ;-)
 
-[previous_job.csv](listAnswers/previous_job.csv)
-- ~~Double-check translation~~ done
-
-[reasons_leave_job.csv](listAnswers/reasons_leave_job.csv)
-- ~~Double-check translations~~ done
-- Add or match related question in [de_17.csv](de_17.csv)
-
 [salary.csv](listAnswers/salary.csv)
 - ~~Define equivalent classes in EUR and translate, Try to keep equivalent classes~~ done
-- Add examples, e.g. TVöD classes (Maybe hint for Entgeldgruppen) ... is difficult since since several steps in a group might make a huge difference
+- The idea is to get information if RSEs are underpayed, so matching TVöD doesn't seem to be a good idea
+- TVöD classes (Maybe hint for Entgeldgruppen) is difficult since since several steps in a group might make a huge difference
 - Translate/Adapt the UK salaries in a clever way to german model (then use salary_de.csv) ?
 - Consider adding 1-2 additional questions asking for the type of tariff and then (conditionally) ask for the tariff group ?
 - ~~Delete salaries.csv~~ done
-
-[testing.csv](listAnswers/testing.csv)
-- ~~Double-check translations~~ done
-
-[type_contract_de.csv](listAnswers/type_contract_de.csv)
-- ~~Add "(Student) Research Assistant";"Wissenschaftliche/Studentische Hilfskraft"~~ done
-- Add other types of contract?
-- ~~Integrate type_contract_de.csv in de_17.csv~~ done
-
-[type_organisation_de.csv](listAnswers/type_organisation_de.csv)
-- ~~Double-check translation~~ done
-- ~~Integrate type_organisation_de.csv in de_17.csv~~ done
-
-[ukrse_de.csv](listAnswers/ukrse_de.csv)
-- ~~Add additional text field makes sense for option "Local RSE group/network";"Andere RSE Gruppen und RSE ähnliche Netzwerke"~~ done
-- ~~Integrate ukrse_de.csv in de_17.csv~~ done
 
 [work_researchers.csv](listAnswers/work_researchers.csv)
 - No related question found in [de_17.csv](de_17.csv) - shall we drop the file?
