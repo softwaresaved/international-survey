@@ -11,6 +11,7 @@ How to distribute the survey in Germany?
   - contacts within research organisations
     - HGF, Martin
     - MPG, Stephan
+  - twitter
     
 People doing work here
 ----------------------
@@ -20,32 +21,19 @@ People doing work here
   * StephanJanosch
 
 
-
 to do - missing
 ---------------
 
 Overall
 - Remove files not used
-- When translation is finished and survey is set-up for testing ask others to conduct a test with a dry run participation
+- set-up survey for testing ask others to conduct a test with a dry run participation
 
-[welcome_message_de.md](texts/welcome_message_de.md)
-- Translate
-- Clarify use of "RSE" in questions, equivalent description and possibly information in the welcome text of the survey
-
-[end_message_de.md](texts/end_message_de.md)
-- Translate
 
 [de_17.csv](de_17.csv)
 - What's the difference between affRec2-4?
   - These are idoms. We should try to find good translations that match the meaning of the idioms.
   - If no better translation is found we keep them as is.
 
-[academic_field.csv](listAnswers/academic_field.csv)
-- Clarify if classes are equivalent in Germany or need changes
-- Double-check translation
-
-[countries.csv](listAnswers/countries.csv)
-- Translate; will do this afternoon. Stephan
 
 [decision_job.csv](listAnswers/decision_job.csv)
 - Add or match related question in [de_17.csv](de_17.csv)
@@ -53,51 +41,11 @@ Overall
 [funding.csv](listAnswers/funding.csv)
 - Clarify, really we have to -> Wait for results from test run to check if it's really problematic
 
-[work_researchers.csv](listAnswers/work_researchers.csv)
-- No related question found in [de_17.csv](de_17.csv) - shall we drop the file?
-- Translate
 
+weitere mögliche Fragen für nächstes Jahr
+-----------------------------------------
 
-Stephan's notes from 2017-07-25
--------------------------------
-
-The lists of institutions are fetched from wikidata. A Knime workflow creates the corresponding files. https://github.com/softwaresaved/international-survey/blob/master/survey_creation/de_17/de_17_resources.knwf
- 
-Stephan's notes from 2017-07-19
--------------------------------
-
-I started translating. I did choose the german 'Du'. I used [https://github.com/jakob/TableTool] which quoted everything. Issue about this raised: [https://github.com/softwaresaved/international-survey/issues/59]
-
-The welcome message stands still side by side for comparison. 
-
-older notes
------------
-
-
-careful translation to include as much people as possible
-  not put engineering part into foreground
-
-add (or remove) questions if feasible
-
-member of association
-
-Record who has been contacted and when, when sending the invitation to fill the survey! It's important to understand the results finally.
-
-Aim to release the German survey by mid or end of August and close it by end of September.
-  - Consider time to set-up and test final LimeSurvey
-  - Make use of RSE17 publicity to spread invitation for survey
-
-
-neue Fragen
------------
-
- 		
-  - AL: Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? "Don't care", "I don't know" ,Downloads, Stars auf GitHub etc.?
-  -  - think about the goal of the question
-
-weitere mögliche Fragen
------------------------
-
+  
   - Wie bist du vernetzt in deiner Institution?
   - DL: Ermöglicht es dir dein Arbeitgeber (finanziell) zu Fortbildungen zum Thema Softwareentwicklung/Programmierung zu reisen? 
   - DL: Hast du das bereits wahrgenommen?
@@ -119,6 +67,7 @@ weitere mögliche Fragen
 * Welche Plattformen benutzt Du für Veröffentlichung?
 * Wird Deine Software zitiert auch ohne Veröffentlichung? Wie registrierst Du dies?
 * Trägt eine Softwarezitierung anstatt einer Publikationszitierung zu Deiner Karriere bei?
+- AL: Welche Metriken/Tools benutzt Du, um die "Beliebtheit" Deiner Software zu verfolgen? "Don't care", "I don't know" ,Downloads, Stars auf GitHub etc.?(think about the goal of the question)
 
 Viele Grüße,
 Andreas Leimbach 
