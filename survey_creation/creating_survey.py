@@ -34,10 +34,25 @@ logger = logger(name='creating survey', stream_level=DEBUGGING)
 
 def creating_dictionary():
     """
-    Create the dictionary to be used to translate csv file to tsv
+    Create an Ordered dictionary to be used to translate csv file to tsv
     """
-    return OrderedDict((k, None) for k in creationConfig.main_headers)
-# [OrderedDict((k, d[k](v)) for (k, v) in l.iteritems()) for l in L]
+    return OrderedDict((k, '') for k in creationConfig.main_headers)
+
+
+def init_outfile(folder):
+    """
+    Rewrite over the existing file to avoid issue of appending and
+    return the path to the file
+    """
+    outfile_name = folder + '_to_import.txt'
+    outfile = os.path.join(folder, outfile_name)
+    with open(outfile, 'w') as f:
+        w = csv.DictWriter(f, delimiter='\t',
+                           lineterminator='\n',
+                           quotechar='"',
+                           fieldnames=creationConfig.main_headers)
+        w.writeheader()
+    return outfile
 
 
 def read_survey_file(folder):
@@ -51,21 +66,22 @@ def read_survey_file(folder):
             yield row
 
 
-def write_row_in_file(input_file, row):
+## Insert the additional language if found one. Add it into the list
+
+def write_row_outfile(outfile, row):
     """
     """
-    with open(input_file, 'a') as f:
-        # f.write({k: v for
-        for key in creationConfig.main_headers:
-            pass
+    with open(outfile, 'a') as f:
+        f.write({k: v for k, v in row})
 
 
 def main():
+    folder = sys.argv[1]
+    outfile = init_outfile(folder)
     output_survey = creating_dictionary()
     for k in output_survey:
         print(k, output_survey[k])
     # print(output_survey)
-    folder = sys.argv[1]
     for line in read_survey_file(folder):
         pass
         # print(line)

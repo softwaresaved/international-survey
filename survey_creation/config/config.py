@@ -40,75 +40,67 @@ class creationConfig:
                     'time_limit_warning_style', 'use_dropdown', 'value_range_allows_missing']
 
     # List of parameters that needs to be added at the start of the survey. They are all under the value 'S' for the key 'class'
-    # This value needs to be added
-    sid = '421498'
-    admin_email = 'olivier.philippe@soton.ac.uk'
-    additional_languages =
 
-    global_parameters_S = [['sid', sid],
-                           ['owner_id', '1'],
-                           ['admin', 'Administrator'],
-                           ['active', 'Y'],
-                           ['adminemail', admin_email],
-                           ['anonymized', 'N'],
-                           ['format', 'G'],
-                           ['savetimings', 'Y'],
-                           ['template', 'ubuntu_orange'],
-                           ['language', 'en'],
-                           ['datestamp', 'Y'],
-                           ['usecookie', 'N'],
-                           ['allowregister', 'N'],
-                           ['allowsave', 'Y'],
-                           ['autonumber_start', '15'],
-                           ['autoredirect', 'N'],
-                           ['allowprev', 'N'],
-                           ['printanswers', 'Y'],
-                           ['ipaddr', 'Y'],
-                           ['refurl', 'Y'],
-                           ['datecreated', '2017-05-24'],
-                           ['publicstatistics', 'N'],
-                           ['publicgraphs', 'N'],
-                           ['listpublic', 'N'],
-                           ['htmlemail', 'N'],
-                           ['sendconfirmation', 'Y'],
-                           ['tokenanswerspersistence', 'N'],
-                           ['assessments', 'N'],
-                           ['usecaptcha', 'N'],
-                           ['usetokens', 'N'],
-                           ['bounce_email', admin_email],
-                           ['tokenlength', '15'],
-                           ['showxquestions', 'N'],
-                           ['showgroupinfo', 'B'],
-                           ['shownoanswer', 'Y'],
-                           ['showqnumcode', 'N'],
-                           ['bounceprocessing', 'N'],
-                           ['showwelcome', 'Y'],
-                           ['showprogress', 'Y'],
-                           ['questionindex', '0'],
-                           ['navigationdelay', '0'],
-                           ['nokeyboard', 'N'],
-                           ['alloweditaftercompletion', 'N'],
-                           ['googleanalyticsstyle', '0']]
-
+    global_parameters = [{'class': 'S', 'name': 'sid', 'text': '421498'},
+                         {'class': 'S', 'name': 'owner_id', 'text': '1'},
+                         {'class': 'S', 'name': 'admin', 'text': 'Administrator'},
+                         {'class': 'S', 'name': 'active', 'text': 'Y'},
+                         {'class': 'S', 'name': 'adminemail', 'text': 'olivier.philippe@gmail.com'},
+                         {'class': 'S', 'name': 'anonymized', 'text': 'N'},
+                         {'class': 'S', 'name': 'format', 'text': 'G'},
+                         {'class': 'S', 'name': 'savetimings', 'text': 'Y'},
+                         {'class': 'S', 'name': 'template', 'text': 'ubuntu_orange'},
+                         {'class': 'S', 'name': 'language', 'text': 'en'},
+                         {'class': 'S', 'name': 'datestamp', 'text': 'Y'},
+                         {'class': 'S', 'name': 'usecookie', 'text': 'N'},
+                         {'class': 'S', 'name': 'allowregister', 'text': 'N'},
+                         {'class': 'S', 'name': 'allowsave', 'text': 'Y'},
+                         {'class': 'S', 'name': 'autonumber_start', 'text': '15'},
+                         {'class': 'S', 'name': 'autoredirect', 'text': 'N'},
+                         {'class': 'S', 'name': 'allowprev', 'text': 'N'},
+                         {'class': 'S', 'name': 'printanswers', 'text': 'Y'},
+                         {'class': 'S', 'name': 'ipaddr', 'text': 'Y'},
+                         {'class': 'S', 'name': 'refurl', 'text': 'Y'},
+                         {'class': 'S', 'name': 'datecreated', 'text': '2017-05-24'},
+                         {'class': 'S', 'name': 'publicstatistics', 'text': 'N'},
+                         {'class': 'S', 'name': 'publicgraphs', 'text': 'N'},
+                         {'class': 'S', 'name': 'listpublic', 'text': 'N'},
+                         {'class': 'S', 'name': 'htmlemail', 'text': 'N'},
+                         {'class': 'S', 'name': 'sendconfirmation', 'text': 'Y'},
+                         {'class': 'S', 'name': 'tokenanswerspersistence', 'text': 'N'},
+                         {'class': 'S', 'name': 'assessments', 'text': 'N'},
+                         {'class': 'S', 'name': 'usecaptcha', 'text': 'N'},
+                         {'class': 'S', 'name': 'usetokens', 'text': 'N'},
+                         {'class': 'S', 'name': 'bounce_email', 'text': 'olivier.philippe@gmail.com'},
+                         {'class': 'S', 'name': 'tokenlength', 'text': '15'},
+                         {'class': 'S', 'name': 'showxquestions', 'text': 'N'},
+                         {'class': 'S', 'name': 'showgroupinfo', 'text': 'B'},
+                         {'class': 'S', 'name': 'shownoanswer', 'text': 'Y'},
+                         {'class': 'S', 'name': 'showqnumcode', 'text': 'N'},
+                         {'class': 'S', 'name': 'bounceprocessing', 'text': 'N'},
+                         {'class': 'S', 'name': 'showwelcome', 'text': 'Y'},
+                         {'class': 'S', 'name': 'showprogress', 'text': 'Y'},
+                         {'class': 'S', 'name': 'questionindex', 'text': '0'},
+                         {'class': 'S', 'name': 'navigationdelay', 'text': '0'},
+                         {'class': 'S', 'name': 'nokeyboard', 'text': 'N'},
+                         {'class': 'S', 'name': 'alloweditaftercompletion', 'text': 'N'},
+                         {'class': 'S', 'name': 'googleanalyticsstyle', 'text': '0'}]
 
     # List of parameters that comprise the survey title and the welcome text
+    global_description = [{'class': 'SL', 'name': 'surveyls_title', 'text': 'DEMO -- RSE Survey -- 2017 -- EN', 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_welcometext', 'text': None, 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_endtext', 'text': None, 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_email_invite_subj', 'text': 'Invitation to participate in a survey', 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_email_invite', 'text': """Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_email_remind_subj', 'text': """Reminder to participate in a survey""", 'language': 'en'},
 
-
-SL		surveyls_title		DEMO -- RSE Survey -- 2017 -- EN		en
-SL		surveyls_welcometext
-<h1 style="text-align: center;">[THIS IS FOR DEMO PURPOSE ONLY  -- PLEASE DO NOT SHARE]</h1>    <p> </p>    <p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We call these people<em> <a href="https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers">Research Software Engineers </a></em><a href="https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>    <h2>Why did I receive this invitation?</h2>    <p>You have received this link because you are a member of the UK RSE Association or you were identified as someone working in an RSE role. There is currently little reliable information about the RSE community, so we have been asked to collect this information to help funders and other research organisations develop policies that will support RSEs. This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>    <p>Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.</p>    <h2>How long will it take?</h2>    <p>There is a maximum of 64 questions in this survey. It takes about 10 to 15 minutes to complete.</p>    <h2>Who is responsible for this survey?</h2>    <p>This study is conducted by the University of Southampton on behalf of the<span style="line-height: 1.6em;"> </span><a href="http://software.ac.uk/" style="line-height: 1.6em;" target="_blank">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/25269).<span style="line-height: 1.6em;"> The investigators are </span><a href="mailto:s.hettrick@software.ac.uk" style="line-height: 1.6em;" target="_blank">Simon Hettrick</a><span style="line-height: 1.6em;"> and </span><a href="mailto:olivier.philippe@soton.ac.uk" style="line-height: 1.6em;" target="_blank">Olivier Philippe</a><span style="line-height: 1.6em;">. </span><span style="line-height: 1.6em;">The survey is hosted on Limesurvey servers in Germany and respects the provisions of the </span><a href="https://www.gov.uk/data-protection/the-data-protection-act" style="line-height: 1.6em;" target="_blank">Data Protection Act</a><span style="line-height: 1.6em;">. These records are anonymised and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a <a href="https://creativecommons.org/licenses/by-nc/2.5/scotland/">Creative Commons by attribution, non-commercial licence</a>.</span></p>    <p>If you would like more information about the research or about the data collection, please contact <a href="mailto:olivier.philippe@soton.ac.uk" target="_blank">Olivier Philippe</a>.</p>    <p>If you have a concern or would like to make a complaint, please contact <a href="mailto:s.hettrick@software.ac.uk" target="_blank">Simon Hettrick</a>.</p>  		en
-SL		surveyls_endtext		<p>Thank you for your participation. If you are interested in the outcomes of this survey, please keep an eye on the <a href="https://www.software.ac.uk">Software Sustainability Institute's website</a>. You can also get updates by joining the <a href="http://www.rse.ac.uk/join.html" target="_blank">UK RSE Association</a>.</p>    <p> </p>  		en
-SL		surveyls_email_invite_subj		Invitation to participate in a survey		en
-SL		surveyls_email_invite		Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}		en
-SL		surveyls_email_remind_subj		Reminder to participate in a survey		en
-SL		surveyls_email_remind		Dear {FIRSTNAME},  Recently we invited you to participate in a survey.  We note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}		en
-SL		surveyls_email_register_subj		Survey registration confirmation		en
-SL		surveyls_email_register		Dear {FIRSTNAME},  You, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.  To complete this survey, click on the following URL:  {SURVEYURL}  If you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.		en
-SL		surveyls_email_confirm_subj		Confirmation of your participation in our survey		en
-SL		surveyls_email_confirm		Dear {FIRSTNAME},  this email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.  If you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.  Sincerely,  {ADMINNAME}		en
-SL		surveyls_dateformat		2		en
-SL		email_admin_notification_subj		Response submission for survey {SURVEYNAME}		en
-SL		email_admin_notification		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}		en
-SL		email_admin_responses_subj		Response submission for survey {SURVEYNAME} with results		en
-SL		email_admin_responses		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}		en
-SL		surveyls_numberformat		0		en
+                          {'class': 'SL', 'name': 'surveyls_email_remind', 'text': """Dear {FIRSTNAME},  Recently we invited you to participate in a survey.  We note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_email_register', 'text': """Dear {FIRSTNAME},  You, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.  To complete this survey, click on the following URL:  {SURVEYURL}  If you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_email_confirm_subj', 'text': """Confirmation of your participation in our survey""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_email_confirm', 'text': """Dear {FIRSTNAME},  this email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.  If you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.  Sincerely,  {ADMINNAME}""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_dateformat', 'text': 2, 'language': 'en'},
+                          {'class': 'SL', 'name': 'email_admin_notification_subj', 'text': """Response submission for survey {SURVEYNAME}""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'email_admin_notification', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'email_admin_responses_subj', 'text': """Response submission for survey {SURVEYNAME} with results""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'email_admin_responses', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}""", 'language': 'en'},
+                          {'class': 'SL', 'name': 'surveyls_numberformat', 'text': 0, 'language': 'en'}]
