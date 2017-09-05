@@ -13,6 +13,15 @@ How to distribute the survey in Germany?
     - MPG, Stephan, it_all
   - twitter
   - neuBIAS
+
+timeline
+--------
+
+13th Olivier ready for test
+20th-22nd correction call Martin, Olivier and Stephan
+27th ethics done
+29th go live
+
     
 People doing work here
 ----------------------
@@ -20,6 +29,8 @@ People doing work here
   * katrinleinweber
   * mrtnhmtz
   * StephanJanosch
+
+
 
 
 to do - missing
