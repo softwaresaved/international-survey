@@ -1,0 +1,1 @@
+Danke für Deine Teilnahme an dieser Umfrage. Falls Du an den Ergebnissen dieser Umfrage interessiert bist, dann kannst Du die [de-RSE website](http://www.de-RSE.org) im Blick behalten. Alternativ kannst du auch der Mailingliste beitreten:  [Mitmachen](http://http://www.de-rse.org/de/join.html)
