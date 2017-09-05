@@ -10,8 +10,9 @@ How to distribute the survey in Germany?
   - orcid mailingliste?
   - contacts within research organisations
     - HGF, Martin
-    - MPG, Stephan
+    - MPG, Stephan, it_all
   - twitter
+  - neuBIAS
     
 People doing work here
 ----------------------
