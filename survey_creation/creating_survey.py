@@ -22,7 +22,7 @@ from collections import OrderedDict
 from include.logger import logger
 from config.config import creationConfig as main_config
 import importlib
-
+from markdown import markdown
 
 RUNNING = 'dev'
 
@@ -85,7 +85,7 @@ def write_row_outfile(outfile, row):
                            quotechar='"',
                            fieldnames=main_config.main_headers)
         w.writerow(row)
-        # f.write({k: row[k] for k in row})
+
 
 def to_modify(original_list, modified_list):
     """
@@ -94,7 +94,7 @@ def to_modify(original_list, modified_list):
     for element in original_list:
         replaced = False
         for e in modified_list:
-            if element['text'] == e['text']:
+            if element['name'] == e['name']:
                 return_list.append(e)
                 replaced = True
                 break
@@ -128,13 +128,52 @@ def add_from_list(outfile, list_to_copy):
         write_row_outfile(outfile, row)
 
 
+def get_text(folder, type_message, lang=None):
+    """
+    """
+    if lang:
+        filename = '{}_message_{}.md'.format(type_message, lang)
+    else:
+        filename = '{}_message.md'.format(type_message)
+
+    folder = os.path.join(folder, 'texts')
+    path = os.path.join(folder, filename)
+    with open(path, 'r') as f:
+            return markdown(f.read())
+
+
+def add_text_message(full_list, message, type_message):
+    """
+    """
+    return_list = list()
+    message_done = False
+    for element in full_list:
+        if message_done is False:
+            if element['name'] == 'surveyls_welcometext' and type_message == 'welcome':
+                message_done = True
+                element['text'] = message
+            elif element['name'] == 'surveyls_endtext' and type_message == 'welcome':
+                message_done = True
+                element['text'] = message
+        return_list.append(element)
+    return return_list
+
+def create_description(main_config, specific_config, welcome_message, end_message):
+    """
+    """
+    good_description = to_modify(main_config.global_description, specific_config.description_to_modify)
+    good_description = to_add(main_config.global_description, specific_config.description_to_add)
+    good_description = add_text_message(good_description, welcome_message, 'welcome')
+    good_description = add_text_message(good_description, end_message, 'end')
+    return good_description
+
+
 def main():
     # Get which survey
     folder = sys.argv[1]
 
     # Import specific config file
     specific_config = import_config(folder)
-    print(specific_config.header_to_modify)
 
     # Init an empty survey file
     outfile = init_outfile(folder)
@@ -145,16 +184,18 @@ def main():
     # Record the copy into the file
     add_from_list(outfile, config_header)
 
-    # Get the additional languages
-    add_lang = specific_config.additional_language
-
     # Get the welcome message
+    welcome_message = get_text(folder, 'welcome')
 
     # Get the end message
+    end_message = get_text(folder, 'end')
 
     # Create the description
+    config_description = create_description(main_config, specific_config,
+                                           welcome_message, end_message)
 
     # Copy the description to the header
+    add_from_list(outfile, config_description)
 
     # Open the survey file
 
