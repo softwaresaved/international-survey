@@ -41,7 +41,7 @@ class creationConfig:
 
     # List of parameters that needs to be added at the start of the survey. They are all under the value 'S' for the key 'class'
 
-    global_parameters = [{'class': 'S', 'name': 'sid', 'text': '421498'},
+    global_headers = [{'class': 'S', 'name': 'sid', 'text': '421498'},
                          {'class': 'S', 'name': 'owner_id', 'text': '1'},
                          {'class': 'S', 'name': 'admin', 'text': 'Administrator'},
                          {'class': 'S', 'name': 'active', 'text': 'Y'},
