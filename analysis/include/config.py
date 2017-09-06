@@ -16,6 +16,7 @@ class CleaningConfig:
     json_to_plot_location = './uk_2017/data/to_plot.json'
     cleaned_df_location = './uk_2017/data/cleaned_data.csv'
     section_nbr_to_keep_after = 1
+    country_to_keep = 'United Kingdom'
     count_na = True
     normalise = False
 
