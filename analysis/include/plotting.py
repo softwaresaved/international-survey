@@ -183,6 +183,14 @@ def plot_numeric_var(df):
     return df.hist()
 
 
+def plot_freetext(wc):
+    """
+    """
+    plot = plt.imshow(wc, interpolation='bilinear')
+    plot.axis("off")
+    return plot
+
+
 def get_plot(df, type_question):
 
     try:
@@ -226,7 +234,6 @@ def get_plot(df, type_question):
         return None
 
 
-# Currently unused but keep it because may be usefull in the future.
 def display_side_by_side(*args):
     """
     https://stackoverflow.com/a/44923103

@@ -50,9 +50,9 @@ def main():
 
                 if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
                     notebook.add_count(list_questions, answer_format, file_answer)
-                    # Need to specify != likert because if likert item ==1 it use the barchart
-                    # and will then plot the percentages when it will make no sense for the likert
-                    # scale
+                    # Need to specify != likert because if likert item == 1 it uses the barchart
+                    # and will plot the percentages even if it doesn't make sense to do that for
+                    # a likert scale
                     if NotebookConfig.show_percent is True and answer_format != 'likert':
                         notebook.add_percentage()
                         notebook.add_display_all()
@@ -78,8 +78,7 @@ def main():
     print('Saving notebook')
     notebook.save_notebook()
 
-# https://stackoverflow.com/questions/37657547/how-to-save-jupyter-notebook-to-html-by-code
-
+    # https://stackoverflow.com/questions/37657547/how-to-save-jupyter-notebook-to-html-by-code
     print('Convert the notebook into an html file')
     filepath = notebook_location
     export_path = '{}/{}'.format(NotebookConfig.notebook_folder,
@@ -94,8 +93,6 @@ def main():
     # meta contains metadata
     source, meta = exporter.from_notebook_node(nb)
     codecs.open(export_path, 'w', encoding='utf-8').write(source)
-    # with open(export_path, 'w+') as fh:
-    #     fh.writelines(source)
 
 
 if __name__ == "__main__":
