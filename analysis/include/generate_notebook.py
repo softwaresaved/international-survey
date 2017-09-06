@@ -53,6 +53,7 @@ class GenerateNotebook(NotebookConfig):
         html
         source:https://gist.github.com/masnick/d6a1af14812c0c4b3314
         """
+        self._add_txt('This text is used to hide the code cell when exported in html')
         code = """di.display_html('<script>jQuery(function() {if (jQuery("body.notebook_app").length == 0) { jQuery(".input_area").toggle(); jQuery(".prompt").toggle();}});</script>', raw=True)"""
         self._add_code(code)
 
@@ -157,6 +158,7 @@ class GenerateNotebook(NotebookConfig):
         """
         word_cloud = """ wc = wordcloud(df, {})""".format(column)
         self._add_code(word_cloud)
+        # plot = """_ = get_plot(v_to_count, "{}")""".format(','.join(args))
         plot = """ plt.imshow(wc, interpolation='bilinear')\n plt.axis("off")"""
         self._add_code(plot)
 
