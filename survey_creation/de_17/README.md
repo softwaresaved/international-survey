@@ -17,10 +17,10 @@ How to distribute the survey in Germany?
 timeline
 --------
 
-13th Olivier ready for test
-20th-22nd correction call Martin, Olivier and Stephan
-27th ethics done
-29th go live
+  * 13th Olivier ready for test
+  * 20th-22nd correction call Martin, Olivier and Stephan
+  * 27th ethics done
+  * 29th go live
 
     
 People doing work here
