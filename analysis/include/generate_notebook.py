@@ -53,7 +53,7 @@ class GenerateNotebook(NotebookConfig):
         html
         source:https://gist.github.com/masnick/d6a1af14812c0c4b3314
         """
-        self._add_txt('This text is used to hide the code cell when exported in html')
+        self._add_text('This text is used to hide the code cell when exported in html')
         code = """di.display_html('<script>jQuery(function() {if (jQuery("body.notebook_app").length == 0) { jQuery(".input_area").toggle(); jQuery(".prompt").toggle();}});</script>', raw=True)"""
         self._add_code(code)
 
