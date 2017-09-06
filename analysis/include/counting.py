@@ -131,6 +131,12 @@ def get_percentage(df, dropna):
         percent_na = df.iloc[-1,: ]
         # / df.sum(axis=1)
         df = df.drop(np.nan, errors='ignore')
+        # For Y/N/NAN the nan values are stored in the column nan
+        # drop it for them only
+        try:
+            df = df.drop(np.nan, axis=1)
+        except ValueError:
+            pass
     value = compute_percentage(df, by_row, by_col)
 
     index_df = df.index
