@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 
 from include.likertScalePlot import compute_percentage
+from include.textCleaning import wordcloud
 
 
 def get_answer(file_answer):
@@ -89,7 +90,7 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_v
     return df_sub
 
 
-def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, normalize=False):
+def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, normalize=False, reindex=False):
     """
     Count the values of different columns and transpose the count
     :params:
@@ -154,6 +155,17 @@ def get_percentage(df, dropna):
     return percent
 
 
+def get_words_count(df, column):
+    """
+    Get the count words using wordcloud
+    """
+    try:
+        return wordcloud(df, column)
+    except ZeroDivisionError:
+        return "This question does not have values"
+
+
+
 def get_count(df, questions, type_question, file_answer):
     """
     Choose which type of counting needs to be done
@@ -192,7 +204,8 @@ def get_count(df, questions, type_question, file_answer):
         return count_choice(df, questions, multiple_choice=False, rename_columns=True)
 
     elif type_question.lower() == 'freetext':
-        pass
+        return get_words_count(df, questions)
+        # pass
 
     elif type_question.lower() == 'freenumeric':
         return df[questions]
