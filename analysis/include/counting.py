@@ -12,7 +12,7 @@ def get_answer(file_answer):
     """
     """
     with open(file_answer, 'r') as f:
-        return [x[:-1] for x in f.readlines()]
+        return [x.split(';')[0].rstrip() for x in f.readlines()]
 
 
 def count_choice(df, colnames, rename_columns=False,
