@@ -36,14 +36,22 @@ class CleaningData(CleaningConfig):
         self.df = self.dropping_lime_useless(self.df)
         self.df = self.cleaning_columns_white_space(self.df)
         self.df = self.cleaning_missing_na(self.df)
-        self.df = self.fixing_satisQuestion(self.df)
+        # self.df = self.fixing_satisQuestion(self.df)
         self.df = self.duplicating_other(self.df)
         self.df = self.remove_not_right_country(self.df)
+        self.df = self.remove_empty_column(self.df)
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
 
         return self.df
+
+    def remove_empty_column(self, df):
+        """
+        If a column as no values at all (all nan), the column is removed
+        to avoid problem later in the analysis
+        """
+        return df.dropna(axis=1, how='all')
 
     def remove_not_right_country(self, df):
         """
@@ -83,11 +91,13 @@ class CleaningData(CleaningConfig):
                 answer_format = row[3]
                 type_question = row[4]
                 file_answer = '{}/{}.csv'.format(self.answer_folder, row[4])
+                order_question = row[5]
                 result_dict[code] = {'section': section,
                                      'original_question': question,
                                      'type_question': type_question,
                                      'answer_format': answer_format,
-                                     'file_answer': file_answer}
+                                     'file_answer': file_answer,
+                                     'order_question': order_question}
         return result_dict
 
     def get_answer_item(self, path_to_file):
@@ -281,6 +291,7 @@ class CleaningData(CleaningConfig):
             group_survey_q, group_original_question = list(), list()
             previous_answer_format = None
             previous_file_answer = None
+            previous_order_question = None
             file_answer = None
             # print(group_question)
             for q in group_question:
@@ -288,31 +299,33 @@ class CleaningData(CleaningConfig):
                 survey_q = group_question[q]['survey_q']
                 original_q = group_question[q]['original_question']
                 file_answer = group_question[q]['file_answer']
+                order_question = group_question[q]['order_question']
 
                 if previous_answer_format in ['y/n/na', 'likert'] or current_answer_format in ['y/n/na', 'likert']:
                     if current_answer_format == previous_answer_format or previous_answer_format is None:
                         if previous_answer_format == 'likert' and current_answer_format == 'likert':
                             if previous_file_answer != file_answer:
-                                yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                                yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                                 group_survey_q, group_original_question = list(), list()
                         group_survey_q.extend(survey_q)
                         group_original_question.append(original_q)
                     else:
-                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                         group_survey_q, group_original_question = list(), list()
                         group_survey_q.extend(survey_q)
                         group_original_question.append(original_q)
                 else:
                     if len(group_survey_q) > 0:
-                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                     group_survey_q, group_original_question = list(), list()
                     group_survey_q.extend(survey_q)
                     group_original_question.append(original_q)
 
                 previous_answer_format = current_answer_format
                 previous_file_answer = file_answer
+                previous_order_question = order_question
 
-            yield group_survey_q, group_original_question, previous_answer_format, file_answer
+            yield group_survey_q, group_original_question, previous_answer_format, file_answer, order_question
 
         def dictionary_by_section(input_dict):
             output_dict = dict()
@@ -339,6 +352,7 @@ class CleaningData(CleaningConfig):
                         q_dict['original_question'] = q[1]
                         q_dict['answer_format'] = q[2]
                         q_dict['file_answer'] = q[3]
+                        q_dict['order_question'] = q[4]
                         input_dict[section][group].append(q_dict)
             return input_dict
 

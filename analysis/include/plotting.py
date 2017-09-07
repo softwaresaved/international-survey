@@ -186,9 +186,16 @@ def plot_numeric_var(df):
 def plot_freetext(wc):
     """
     """
-    plot = plt.imshow(wc, interpolation='bilinear')
-    plot.axis("off")
-    return plot
+    # In case the column only has empty value, the wc returned from
+    # counting.get_words_count() is a string mentioning that. Therefore
+    # nothing to plot. It is needed otherwise the previous successful wc is plotted
+    if not isinstance(wc, str):
+        plt.figure()
+        ax = plt.imshow(wc, interpolation='bilinear')
+        ax = plt.axis('off')
+        return wc
+    else:
+        return None
 
 
 def get_plot(df, type_question):
@@ -223,7 +230,8 @@ def get_plot(df, type_question):
             return plot_multiple_var(df, stacked=True, horizontal=False, legend=True)
 
         elif type_question.lower() == 'freetext':
-            pass
+            # pass
+            return plot_freetext(df)
 
         elif type_question.lower() == 'datetime':
             pass

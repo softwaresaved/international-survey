@@ -34,7 +34,7 @@ def main():
     notebook_location = '{}{}'.format(NotebookConfig.notebook_folder,
                                       NotebookConfig.notebook_filename)
     notebook = GenerateNotebook(notebook_location)
-
+    notebook.output_total_participants()
     for s in cleaning_process.structure_by_section:
         section = cleaning_process.structure_by_section[s]
         notebook.add_section(s)
@@ -45,11 +45,12 @@ def main():
                 original_question = question['original_question']
                 answer_format = question['answer_format']
                 file_answer = question['file_answer']
+                order_question = question['order_question']
                 for txt in original_question:
                     notebook.add_question_title(txt)
 
                 if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
-                    notebook.add_count(list_questions, answer_format, file_answer)
+                    notebook.add_count(list_questions, answer_format, file_answer, order_question)
                     # Need to specify != likert because if likert item == 1 it uses the barchart
                     # and will plot the percentages even if it doesn't make sense to do that for
                     # a likert scale
@@ -62,13 +63,15 @@ def main():
 
                 if answer_format == 'freetext':
                     notebook.add_wordcloud(list_questions)
+                    # notebook.add_count(list_questions, answer_format, file_answer)
+                    # notebook.add_plot(answer_format)
 
                 if answer_format == 'freenumeric':
-                    notebook.add_count(list_questions, answer_format, file_answer)
+                    notebook.add_count(list_questions, answer_format, file_answer, order_question)
                     notebook.add_plot(answer_format)
 
                 if answer_format == 'ranking':
-                    notebook.add_count(list_questions, answer_format, file_answer)
+                    notebook.add_count(list_questions, answer_format, file_answer, order_question)
                     notebook.add_percentage()
                     notebook.add_display_percentage()
                     notebook.add_plot(answer_format)

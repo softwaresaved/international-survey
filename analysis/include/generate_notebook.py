@@ -84,6 +84,14 @@ class GenerateNotebook(NotebookConfig):
         loading = """df =  pd.read_csv('{}')""".format(self.cleaned_df_location)
         self._add_code(loading)
 
+    def output_total_participants(self):
+        """
+        Show the number of participant that have been filtered out
+        """
+        self._add_text('The total of participant after cleaning the dataset. Remove all participants that have not completed the survey passed the first pages and all participants who are not from the country')
+        self._add_code("""len(df)""")
+
+
     def add_section(self, text):
         """
         """
@@ -149,6 +157,8 @@ class GenerateNotebook(NotebookConfig):
         """
         if self.show_percent is True and args[0] != 'likert' and args[0] != 'freenumeric':
             plot = """_ = get_plot(perc_to_count, "{}")""".format(','.join(args))
+        # elif args[0] == 'freetext':
+        #     plot = """_ = get_plot(wc, "{}")""".format(','.join(args))
         else:
             plot = """_ = get_plot(v_to_count, "{}")""".format(','.join(args))
         self._add_code(plot)
