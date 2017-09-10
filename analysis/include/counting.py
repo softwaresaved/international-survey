@@ -174,8 +174,9 @@ def get_count(df, questions, type_question, file_answer):
         df dataframe(): dataframe containing all the data
         questions list(): list of the question strings to
         type_questions str(): type of questions that list_questions represent
-
+        file_answer str(): path to the file containing the question's answers
     :return:
+        df(): of the count value of the questions
     """
     if type_question.lower() == 'y/n/na':
         if len(questions) == 1:
