@@ -12,6 +12,6 @@ class config:
 
     # Add header and description. Tuple of a dictionary + the position where it is supposed
     # to be inserted
-    header_to_add = []
+    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'nl'}, 12)]
     # The index positions starts at 0
-    description_to_add = [({'class': 'SL', 'name': 'additional_languages', 'text': 'nl'}, 12)]
+    description_to_add = []
