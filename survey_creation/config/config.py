@@ -103,4 +103,15 @@ class creationConfig:
                           {'class': 'SL', 'name': 'email_admin_notification', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}""", 'language': 'en'},
                           {'class': 'SL', 'name': 'email_admin_responses_subj', 'text': """Response submission for survey {SURVEYNAME} with results""", 'language': 'en'},
                           {'class': 'SL', 'name': 'email_admin_responses', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_numberformat', 'text': 0, 'language': 'en'}]
+                          {'class': 'SL', 'name': 'surveyls_numberformat', 'text': '0', 'language': 'en'}]
+
+
+    # Standard layout for groups
+    group_format = {'class': 'G', 'type/scale': 'G+inc_number', 'name': 'Header', 'relevance': '1'}
+
+    # Standard layout for questions
+
+    one_choice_question = {'class': 'Q', 'type/scale': '!', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1', 'time_limit_action': 1}
+    one_choice_answer = {'class': 'A', 'type/scale': '0'}
+    ranking_question = {'class': 'Q', 'type/scale': 'R', 'relevance': '1', 'other': 'N', 'same_default': '1', 'max_subquestions': '8.0', 'samechoiceheight': '1.0', 'samelistheight': '1.0', 'showpopups': '1.0', 'statistics_showgraph': '1.0'}
+
