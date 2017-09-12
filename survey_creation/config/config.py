@@ -126,11 +126,10 @@ class creationConfig:
 
     freenumeric_question = {'class': 'Q', 'type/scale': 'N', 'allowed_filetypes': '1', 'statistics_showmap': '1', 'time_limit': '12'}
 
-    freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300.0', 'location_mapwidth': '500.0', 'location_mapzoom': '11.0500.0', 'statistics_showgraph': '1.0', 'statistics_showmap': '1.0', 'text_input_width': '12.0', 'time_limit_action': '1.0', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0', 'time_limit': '12.0', 'time_limit_countdown_message': '1.0'}
+    freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300.0', 'location_mapwidth': '500.0', 'location_mapzoom': '11.0500.0', 'statistics_showgraph': '1.0', 'statistics_showmap': '1.0', 'text_input_width': '12.0', 'time_limit_action': '1.0', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0'}
 
     likert_question = {'class': 'Q', 'type/scale': 'F', 'same_default': '1', 'statistics_showgraph': '1.0'}
 
     likert_answer = {'class': 'A', 'type/scale': '0'}
 
     y_n_question = {'class': 'Q', 'type/scale': 'Y', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1'}
-
