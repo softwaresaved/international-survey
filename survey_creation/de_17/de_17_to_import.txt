@@ -401,7 +401,9 @@ A	0	63		Town & Country Planning and Landscape Design		en
 A	0	64		Veterinary Medicine		en																																																																																																																																			
 A	0	65		Youth Work		en																																																																																																																																			
 A	0	66		Other		en																																																																																																																																			
-Q	N	soft1can		How many years of Software development experience do you have?		en	en		N	N		1																																																																																																							1				12																		
+Q	S	edu3	1	Enter your academic subject		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	S	edu4	1	Do you hold any other professional qualifications?		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	N	soft1can		How many years of Software development experience do you have?		en	en		N			1																																																																																																							1				12																		
 G	G1	Your current employment	1	Your current employment		en																																																																																																																																			
 Q	!	currentEmp1	1	What type of organisation do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
@@ -542,6 +544,7 @@ A	0	125		University of Lübeck		en
 A	0	126		University of Münster		en																																																																																																																																			
 A	0	127		Willy Brandt School of Public Policy		en																																																																																																																																			
 A	0	128		Other		en																																																																																																																																			
+Q	S	currentEmp3	1	Please enter the university		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	!	currentEmp20de	1	Which Fraunhofer institute do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		Fraunhofer Information Center for Planning and Building		en																																																																																																																																			
 A	0	2		Fraunhofer Institute for Algorithms and Scientific Computing		en																																																																																																																																			
@@ -903,6 +906,9 @@ A	0	110		Environment Campus Birkenfeld		en
 A	0	111		Westsächsische Hochschule Zwickau - University of Applied Sciences		en																																																																																																																																			
 A	0	112		Wildau Institute of Technology		en																																																																																																																																			
 A	0	113		Other		en																																																																																																																																			
+Q	S	currentEmp4	1	Which organisation do you work for?		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	S	currentEmp5	1	What is your official job title?		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	S	currentEmp6	1	Are you known in your group by a different job title? If so, please enter the job title you use		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	!	currentEmp12	1	Do you work full time or part time		en			Y		1																																																																																																							1						1																	
 A	0	1		Full Time		en																																																																																																																																			
 A	0	2		Part-time		en																																																																																																																																			
@@ -916,7 +922,7 @@ A	0	6		Agency staff		en
 A	0	7		Freelancer consultant contractor		en																																																																																																																																			
 A	0	8		Zero hours contract		en																																																																																																																																			
 A	0	9		Other/Not listed		en																																																																																																																																			
-Q	N	currentEmp11		What is the duration of your current contract?		en	en		N	N		1																																																																																																							1				12																		
+Q	N	currentEmp11		What is the duration of your current contract?		en	en		N			1																																																																																																							1				12																		
 Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Accounting & Finance		en																																																																																																																																			
 SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
@@ -1017,7 +1023,9 @@ G	G3	Your working practices	1	Your working practices		en
 Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en			Y		1																																																																																																							1						1																	
 A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		en																																																																																																																																			
 A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		en																																																																																																																																			
-Q	N	proj1can		How many software projects are you currently involved in?		en	en		N	N		1																																																																																																							1				12																		
+Q	S	conf1can	1	Have you ever presented your software work at a conference or workshop?		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	S	conf2can	1	Which conference(s)/workshop(s)		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	N	proj1can		How many software projects are you currently involved in?		en	en		N			1																																																																																																							1				12																		
 Q	!	proj2can	1	How many software developers typically work on your projects?		en			Y		1																																																																																																							1						1																	
 A	0	1		Just me		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
@@ -1039,7 +1047,9 @@ Q	!	open2de	1	Do you reference software directly or the papers describing the so
 A	0	1		specific version of the software		en																																																																																																																																			
 A	0	2		software itself (no specific version)		en																																																																																																																																			
 A	0	3		paper about software		en																																																																																																																																			
-Q	N	train2		On average, how many times a year do you take part in providing training? 		en	en		N	N		1																																																																																																							1				12																		
+Q	S	open3de	1	Which (infrastructure) tools do you use if assigning DOIs (e.g. local library, Zenodo)?		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	N	train2		On average, how many times a year do you take part in providing training? 		en	en		N			1																																																																																																							1				12																		
+Q	S	train3	1	What training programs are you involved with (comma separated list; for example, Software Carpentry, local university training, etc.) 		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Donation button		en																																																																																																																																			
@@ -1170,8 +1180,11 @@ SQ	0	32		TypeScript		en
 SQ	0	33		VB.NET		en																																																																																																																																			
 SQ	0	34		VBA		en																																																																																																																																			
 SQ	0	35		Visual Basic		en																																																																																																																																			
+Q	S	ukrse11de	1	Do you know a better job title/role than RSE which summerizes all kinds of activities realated to academic software creation? 		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	M	ukrse2	1	How do you meet other RSEs? 		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		UK RSE Association (http://rse.ac.uk/)		en																																																																																																																																			
 SQ	0	2		DE-RSE Community (http://de-rse.org)		en																																																																																																																																			
 SQ	0	3		Local RSE group/network		en																																																																																																																																			
 SQ	0	4		N/A		en																																																																																																																																			
+Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																

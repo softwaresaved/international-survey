@@ -139,7 +139,7 @@ def get_text(folder, type_message, lang=None):
     folder = os.path.join(folder, 'texts')
     path = os.path.join(folder, filename)
     with open(path, 'r') as f:
-            return markdown(f.read())
+        return markdown(f.read())
 
 
 def add_text_message(full_list, message, type_message):
@@ -367,11 +367,16 @@ def main():
                     question['language'] = 'en'
                     question['validation'] = 'en'
                     question['other'] = 'N'
-                    print(question)
                     write_row_outfile(outfile, question)
 
                 if row['answer_format'].lower() == 'freetext':
-                    pass
+                    question = main_config.freetext_question
+                    question['name'] = row['code']
+                    question['text'] = row['question']
+                    question['language'] = 'en'
+                    question['validation'] = 'en'
+                    question['other'] = 'N'
+                    write_row_outfile(outfile, question)
 
                 if row['answer_format'].lower() == 'likert':
                     pass
