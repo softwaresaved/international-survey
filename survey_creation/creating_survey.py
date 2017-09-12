@@ -361,7 +361,14 @@ def main():
                         n +=1
 
                 if row['answer_format'].lower() == 'freenumeric':
-                    pass
+                    print(row)
+                    question = main_config.multiple_choice_question
+                    question['name'] = row['code']
+                    question['text'] = row['question']
+                    question['language'] = 'en'
+                    question['validation'] = 'en'
+                    question['other'] = 'N'
+                    write_row_outfile(outfile, question)
 
                 if row['answer_format'].lower() == 'freetext':
                     pass
