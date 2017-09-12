@@ -71,7 +71,7 @@ def read_survey_file(folder):
     """
     question_file = os.path.join(folder, '.'.join([folder, 'csv']))
     with open(question_file, 'r') as f:
-        csv_f = csv.reader(f, delimiter=';', quotechar='"')
+        csv_f = csv.DictReader(f)
         for row in csv_f:
             yield row
 
@@ -158,6 +158,7 @@ def add_text_message(full_list, message, type_message):
         return_list.append(element)
     return return_list
 
+
 def create_description(main_config, specific_config, welcome_message, end_message):
     """
     """
@@ -166,6 +167,14 @@ def create_description(main_config, specific_config, welcome_message, end_messag
     good_description = add_text_message(good_description, welcome_message, 'welcome')
     good_description = add_text_message(good_description, end_message, 'end')
     return good_description
+
+
+def get_answer(folder, file_answer):
+    """
+    """
+    outfile = os.path.join(folder, 'listAnswers', '{}.csv'.format(file_answer))
+    with open(outfile, 'r') as f:
+        return [x[:-1] for x in f.readlines()]
 
 
 def main():
@@ -192,28 +201,91 @@ def main():
 
     # Create the description
     config_description = create_description(main_config, specific_config,
-                                           welcome_message, end_message)
+                                            welcome_message, end_message)
 
     # Copy the description to the header
+    for el in config_description:
+        print(el)
+    # print(config_description)
     add_from_list(outfile, config_description)
 
     # Open the survey file
+    nbr_section = 0
+    section = main_config.group_format
+    # type/scale are like 'G0', 'G1', etc.
+    section['type/scale'] = 'G' + str(nbr_section)  # need to recorded as a string in the output file
+    section['language'] = 'en'
+    write_row_outfile(outfile, section)
+    for row in read_survey_file(folder):
+        if int(row['section']) - 1 != nbr_section:
+            # -1 because the section numbers starts at 0 but
+            # in the csv survey_file it starts at 1
+            nbr_section = int(row['section']) - 1
+            section = main_config.group_format
+            # type/scale are like 'G0', 'G1', etc.
+            section['type/scale'] = 'G' + str(nbr_section)
+            section['language'] = 'en'
+            write_row_outfile(outfile, section)
 
-    # For each row
+        if row['answer_format'].lower() == 'one choice':
+            # Create the question
+            question = main_config.one_choice_question
+            question['name'] = row['code']
+            question['text'] = row['question']
+            question['language'] = 'en'
+            question['other'] = 'Y'
+            write_row_outfile(outfile, question)
+            # Add the answers
+            # Create an inc to add to the question code. They need unique label
+            n = 1
+            for text_answer in get_answer(folder, row['answer_file']):
+                answer_row = main_config.one_choice_answer
+                # answer_row['name'] = 'A' + str(n)
+                answer_row['name'] = str(n)
+                answer_row['text'] = text_answer.split(';')[0].strip('"')
+                answer_row['language'] = 'en'
+                write_row_outfile(outfile, answer_row)
+                n +=1
 
-    # Check the group
+        if row['answer_format'].lower() == 'ranking':
+            # Ranking questions work differently
+            # First a list of rank SQ class need to be created (max 8 here)
+            # Then only the questions are created
+            # As neither of them have specific value for database, they are
+            # created here and not pulled from the config file
+            question = main_config.ranking_question
+            question['name'] = row['code']
+            question['text'] = row['question']
+            question['language'] = 'en'
+            write_row_outfile(outfile, question)
+            # Create the Subquestion ranks
+            for i in range(1, 9):  # To get 8 ranked questions
+                init_row = {'class': 'SQ', 'type/scale': '0', 'name': str(i), 'relevance': '1',
+                       'text': 'Rank ' + str(i), 'language': 'en'}
+                write_row_outfile(outfile, init_row)
 
-    # If group is new -- create the group in the file
 
-    # Check the question
+            n = 1
+            for text_answer in get_answer(folder, row['answer_file']):
+                answer_row = main_config.ranking_answer
+                answer_row['name'] = str(n)
+                answer_row['text'] = text_answer.split(';')[0].strip('"')
+                answer_row['language'] = 'en'
+                write_row_outfile(outfile, answer_row)
+                n +=1
 
-    # Create the type of question
+        if row['answer_format'].lower() == 'likert':
+            pass
 
+        if row['answer_format'].lower() == 'freenumeric':
+            pass
+
+        if row['answer_format'].lower() == 'freetext':
+            pass
+
+        if row['answer_format'].lower() == 'multiple choice':
+            pass
     # Check for condition
-
-    # Check for type of answer
-
-    # Check for the answer file
 
     # Do everything for the new language
 
