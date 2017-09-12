@@ -235,7 +235,6 @@ def check_adding_section(row, nbr_section, default_row, language, writing_functi
         section['language'] = 'en'
         section.update(default_row[nbr_section][language])
         section['text'] = section['name']
-        print(section)
         write_row_outfile(outfile, section)
     return nbr_section
 
@@ -269,24 +268,31 @@ def main():
     # Copy the description to the header
     add_from_list(outfile, config_description)
 
-    # Open the survey file
+    # Add a first section
     nbr_section = -1
     nbr_section = check_adding_section({'section': 0}, nbr_section, specific_config.sections_txt,
-                                        'en', write_row_outfile, outfile)
+                                       'en', write_row_outfile, outfile)
 
-
+    # Open the csv file and read it through a dictionary (generator)
     question_to_transform = read_survey_file(folder)
+    # pass this generator into the function create_grouped_question() to group Y/N and lkert together
     for q in create_grouped_question(question_to_transform):
+        # If questions were grouped together, need to change how it is process
         if len(q) > 1:
-            # print(q)
             for row in q:
+                # Check if a new section needs to be added before processing the question
                 nbr_section = check_adding_section(row, nbr_section, specific_config.sections_txt,
                                                    'en', write_row_outfile, outfile)
+
+                if row['answer_format'].lower() == 'likert':
+                    pass
+                elif row['answer_format'].lower() == 'y/n/na':
+                    pass
         else:
             for row in q:
+                # Check if a new section needs to be added before processing the question
                 nbr_section = check_adding_section(row, nbr_section, specific_config.sections_txt,
                                                    'en', write_row_outfile, outfile)
-                # print(row['code'])
 
                 if row['answer_format'].lower() == 'one choice':
                     # Create the question
@@ -325,7 +331,6 @@ def main():
                                     'text': 'Rank ' + str(i), 'language': 'en'}
                         write_row_outfile(outfile, init_row)
 
-
                     n = 1
                     for text_answer in get_answer(folder, row['answer_file']):
                         answer_row = main_config.ranking_answer
@@ -335,9 +340,25 @@ def main():
                         write_row_outfile(outfile, answer_row)
                         n +=1
 
-                if row['answer_format'].lower() == 'likert':
-
-                    pass
+                if row['answer_format'].lower() == 'multiple choices':
+                    question = main_config.multiple_choice_question
+                    question['name'] = row['code']
+                    question['text'] = row['question']
+                    question['language'] = 'en'
+                    question['validation'] = 'en'
+                    question['other'] = 'N'
+                    write_row_outfile(outfile, question)
+                    # Add the answers
+                    # Create an inc to add to the question code. They need unique label
+                    n = 1
+                    for text_answer in get_answer(folder, row['answer_file']):
+                        answer_row = main_config.multiple_choice_answer
+                        # answer_row['name'] = 'A' + str(n)
+                        answer_row['name'] = str(n)
+                        answer_row['text'] = text_answer.split(';')[0].strip('"')
+                        answer_row['language'] = 'en'
+                        write_row_outfile(outfile, answer_row)
+                        n +=1
 
                 if row['answer_format'].lower() == 'freenumeric':
                     pass
@@ -345,7 +366,10 @@ def main():
                 if row['answer_format'].lower() == 'freetext':
                     pass
 
-                if row['answer_format'].lower() == 'multiple choice':
+                if row['answer_format'].lower() == 'likert':
+                    pass
+
+                elif row['answer_format'].lower() == 'y/n/na':
                     pass
     # Check for condition
 
