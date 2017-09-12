@@ -411,6 +411,7 @@ A	0	3		2		en
 A	0	4		3		en																																																																																																																																			
 A	0	5		4		en																																																																																																																																			
 A	0	6		5 - Mostly other people		en																																																																																																																																			
+Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en			N		1																																																																																																							1																							
 Q	N	soft1can		How many years of Software development experience do you have?		en	en		N			1																																																																																																							1				12																		
 G	G1	Your current employment	1	Your current employment		en																																																																																																																																			
 Q	!	currentEmp1	1	What type of organisation do you work for?		en			Y		1																																																																																																							1						1																	
@@ -1031,6 +1032,7 @@ G	G3	Your working practices	1	Your working practices		en
 Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en			Y		1																																																																																																							1						1																	
 A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		en																																																																																																																																			
 A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		en																																																																																																																																			
+Q	Y	paper3	1	Are you generally named as the main author of the paper?		en			N		1																																																																																																							1																							
 Q	S	conf1can	1	Have you ever presented your software work at a conference or workshop?		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	S	conf2can	1	Which conference(s)/workshop(s)		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	N	proj1can		How many software projects are you currently involved in?		en	en		N			1																																																																																																							1				12																		
@@ -1046,11 +1048,13 @@ A	0	2		2		en
 A	0	3		3		en																																																																																																																																			
 A	0	4		4		en																																																																																																																																			
 A	0	5		5+		en																																																																																																																																			
+Q	Y	stability2	1	Is there a technical hand-over plan for your most important software project?		en			N		1																																																																																																							1																							
 Q	!	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en			Y		1																																																																																																							1						1																	
 A	0	1		No formal testing		en																																																																																																																																			
 A	0	2		Developers conduct testing		en																																																																																																																																			
 A	0	3		Test engineers conduct testing		en																																																																																																																																			
 A	0	4		Users conduct testing		en																																																																																																																																			
+Q	Y	open01can	1	Have you ever released your software under an open-source licence? 		en			N		1																																																																																																							1																							
 Q	F	open1can		How often do you release the software projects you've worked on under an open-source licence?		en	en		N		1																																																																																																							1.0																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
@@ -1063,6 +1067,7 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
+Q	Y	open03an	1	Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en			N		1																																																																																																							1																							
 Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en	en		N		1																																																																																																							1.0																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
@@ -1082,6 +1087,7 @@ A	0	3		paper about software		en
 Q	S	open3de	1	Which (infrastructure) tools do you use if assigning DOIs (e.g. local library, Zenodo)?		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	N	train2		On average, how many times a year do you take part in providing training? 		en	en		N			1																																																																																																							1				12																		
 Q	S	train3	1	What training programs are you involved with (comma separated list; for example, Software Carpentry, local university training, etc.) 		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	Y	fund1	1	Do you know the source of the funding used to support you and your current, largest project? 		en			N		1																																																																																																							1																							
 Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Donation button		en																																																																																																																																			
@@ -1212,11 +1218,14 @@ SQ	0	32		TypeScript		en
 SQ	0	33		VB.NET		en																																																																																																																																			
 SQ	0	34		VBA		en																																																																																																																																			
 SQ	0	35		Visual Basic		en																																																																																																																																			
+Q	Y	ukrse10de	1	Are you a member of the de-RSE initiative? (Members are people who have signed up to the de-RSE mailing list, http://www.de-rse.org/en/join.html)		en			N		1																																																																																																							1																							
 Q	S	ukrse11de	1	Do you know a better job title/role than RSE which summerizes all kinds of activities realated to academic software creation? 		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	M	ukrse2	1	How do you meet other RSEs? 		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		UK RSE Association (http://rse.ac.uk/)		en																																																																																																																																			
 SQ	0	2		DE-RSE Community (http://de-rse.org)		en																																																																																																																																			
 SQ	0	3		Local RSE group/network		en																																																																																																																																			
 SQ	0	4		N/A		en																																																																																																																																			
+Q	Y	ukrse12de	1	Would you like to visit a conference about software development in academia in Germany?		en			N		1																																																																																																							1																							
+Q	Y	ukrse13de	1	Do you allow us to contact you for a conference announcement via email address you added into this form: https://survey.mpi-cbg.de/limesurvey/index.php/134431?newtest=Y&lang=en		en			N		1																																																																																																							1																							
 Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
