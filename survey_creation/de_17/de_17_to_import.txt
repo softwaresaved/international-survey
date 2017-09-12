@@ -401,6 +401,7 @@ A	0	63		Town & Country Planning and Landscape Design		en
 A	0	64		Veterinary Medicine		en																																																																																																																																			
 A	0	65		Youth Work		en																																																																																																																																			
 A	0	66		Other		en																																																																																																																																			
+Q	M	soft1can	1	How many years of Software development experience do you have?		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 G	G1	Your current employment	1	Your current employment		en																																																																																																																																			
 Q	!	currentEmp1	1	What type of organisation do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
@@ -915,6 +916,7 @@ A	0	6		Agency staff		en
 A	0	7		Freelancer consultant contractor		en																																																																																																																																			
 A	0	8		Zero hours contract		en																																																																																																																																			
 A	0	9		Other/Not listed		en																																																																																																																																			
+Q	M	currentEmp11	1	What is the duration of your current contract?		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Accounting & Finance		en																																																																																																																																			
 SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
@@ -1015,6 +1017,7 @@ G	G3	Your working practices	1	Your working practices		en
 Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en			Y		1																																																																																																							1						1																	
 A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		en																																																																																																																																			
 A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		en																																																																																																																																			
+Q	M	proj1can	1	How many software projects are you currently involved in?		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 Q	!	proj2can	1	How many software developers typically work on your projects?		en			Y		1																																																																																																							1						1																	
 A	0	1		Just me		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
@@ -1036,6 +1039,7 @@ Q	!	open2de	1	Do you reference software directly or the papers describing the so
 A	0	1		specific version of the software		en																																																																																																																																			
 A	0	2		software itself (no specific version)		en																																																																																																																																			
 A	0	3		paper about software		en																																																																																																																																			
+Q	M	train2	1	On average, how many times a year do you take part in providing training? 		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en	en		N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Donation button		en																																																																																																																																			
