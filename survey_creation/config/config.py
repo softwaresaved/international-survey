@@ -131,3 +131,6 @@ class creationConfig:
     likert_question = {'class': 'Q', 'type/scale': 'F', 'same_default': '1', 'statistics_showgraph': '1.0'}
 
     likert_answer = {'class': 'A', 'type/scale': '0'}
+
+    y_n_question = {'class': 'Q', 'type/scale': 'Y', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1'}
+

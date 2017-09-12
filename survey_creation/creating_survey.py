@@ -406,7 +406,12 @@ def main():
                         n +=1
 
                 elif row['answer_format'].lower() == 'y/n/na':
-                    pass
+                    question = main_config.y_n_question
+                    question['name'] = row['code']
+                    question['text'] = row['question']
+                    question['language'] = 'en'
+                    question['other'] = 'N'
+                    write_row_outfile(outfile, question)
 
 
 if __name__ == "__main__":
