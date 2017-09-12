@@ -379,13 +379,34 @@ def main():
                     write_row_outfile(outfile, question)
 
                 if row['answer_format'].lower() == 'likert':
-                    pass
+                    question = main_config.likert_question
+                    question['name'] = row['code']
+                    question['text'] = row['question']
+                    question['language'] = 'en'
+                    question['validation'] = 'en'
+                    question['other'] = 'N'
+                    write_row_outfile(outfile, question)
+                    # Need to create an  empty subquestion
+                    subquestion = {'class': 'SQ', 'type/scale': '0',
+                                   'name': 'SQ001'}
+                    subquestion['relevance'] = '1'
+                    subquestion['language'] = 'en'
+                    write_row_outfile(outfile, subquestion)
+
+                    # Add the answers
+                    # Create an inc to add to the question code. They need unique label
+                    n = 1
+                    for text_answer in get_answer(folder, row['answer_file']):
+                        answer_row = main_config.likert_answer
+                        # answer_row['name'] = 'A' + str(n)
+                        answer_row['name'] = str(n)
+                        answer_row['text'] = text_answer.split(';')[0].strip('"')
+                        answer_row['language'] = 'en'
+                        write_row_outfile(outfile, answer_row)
+                        n +=1
 
                 elif row['answer_format'].lower() == 'y/n/na':
                     pass
-    # Check for condition
-
-    # Do everything for the new language
 
 
 if __name__ == "__main__":

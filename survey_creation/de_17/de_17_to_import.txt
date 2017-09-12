@@ -403,6 +403,14 @@ A	0	65		Youth Work		en
 A	0	66		Other		en																																																																																																																																			
 Q	S	edu3	1	Enter your academic subject		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
 Q	S	edu4	1	Do you hold any other professional qualifications?		en	en		N		1	1																																											300.0	300.0	500.0	11.0500.0	11.0																																																							1.0	1.0	1.0		12.0	12.0	1.0	1.0																
+Q	F	rse3		Who uses the code that you write?		en	en		N		1																																																																																																							1.0																							
+SQ	0	SQ001	1			en																																																																																																																																			
+A	0	1		0 - Mostly me		en																																																																																																																																			
+A	0	2		1		en																																																																																																																																			
+A	0	3		2		en																																																																																																																																			
+A	0	4		3		en																																																																																																																																			
+A	0	5		4		en																																																																																																																																			
+A	0	6		5 - Mostly other people		en																																																																																																																																			
 Q	N	soft1can		How many years of Software development experience do you have?		en	en		N			1																																																																																																							1				12																		
 G	G1	Your current employment	1	Your current employment		en																																																																																																																																			
 Q	!	currentEmp1	1	What type of organisation do you work for?		en			Y		1																																																																																																							1						1																	
@@ -1043,6 +1051,30 @@ A	0	1		No formal testing		en
 A	0	2		Developers conduct testing		en																																																																																																																																			
 A	0	3		Test engineers conduct testing		en																																																																																																																																			
 A	0	4		Users conduct testing		en																																																																																																																																			
+Q	F	open1can		How often do you release the software projects you've worked on under an open-source licence?		en	en		N		1																																																																																																							1.0																							
+SQ	0	SQ001	1			en																																																																																																																																			
+A	0	1		﻿1 (None at all)		en																																																																																																																																			
+A	0	2		2		en																																																																																																																																			
+A	0	3		3		en																																																																																																																																			
+A	0	4		4		en																																																																																																																																			
+A	0	5		5		en																																																																																																																																			
+A	0	6		6		en																																																																																																																																			
+A	0	7		7		en																																																																																																																																			
+A	0	8		8		en																																																																																																																																			
+A	0	9		9		en																																																																																																																																			
+A	0	10		10 (All my time)		en																																																																																																																																			
+Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en	en		N		1																																																																																																							1.0																							
+SQ	0	SQ001	1			en																																																																																																																																			
+A	0	1		﻿1 (None at all)		en																																																																																																																																			
+A	0	2		2		en																																																																																																																																			
+A	0	3		3		en																																																																																																																																			
+A	0	4		4		en																																																																																																																																			
+A	0	5		5		en																																																																																																																																			
+A	0	6		6		en																																																																																																																																			
+A	0	7		7		en																																																																																																																																			
+A	0	8		8		en																																																																																																																																			
+A	0	9		9		en																																																																																																																																			
+A	0	10		10 (All my time)		en																																																																																																																																			
 Q	!	open2de	1	Do you reference software directly or the papers describing the software?		en			Y		1																																																																																																							1						1																	
 A	0	1		specific version of the software		en																																																																																																																																			
 A	0	2		software itself (no specific version)		en																																																																																																																																			
