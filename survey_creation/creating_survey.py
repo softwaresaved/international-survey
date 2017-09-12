@@ -223,6 +223,23 @@ def create_grouped_question(indict):
     yield group_survey_q
 
 
+def check_adding_section(row, nbr_section, default_row, language, writing_function, outfile):
+    write_row_outfile = writing_function
+    if int(row['section']) - 1 != nbr_section:
+        # -1 because the section numbers starts at 0 but
+        # in the csv survey_file it starts at 1
+        nbr_section = int(row['section']) - 1
+        section = main_config.group_format
+        # type/scale are like 'G0', 'G1', etc.
+        section['type/scale'] = 'G' + str(nbr_section)
+        section['language'] = 'en'
+        section.update(default_row[nbr_section][language])
+        section['text'] = section['name']
+        print(section)
+        write_row_outfile(outfile, section)
+    return nbr_section
+
+
 def main():
     # Get which survey
     folder = sys.argv[1]
@@ -253,27 +270,23 @@ def main():
     add_from_list(outfile, config_description)
 
     # Open the survey file
-    nbr_section = 0
-    section = main_config.group_format
-    # type/scale are like 'G0', 'G1', etc.
-    section['type/scale'] = 'G' + str(nbr_section)  # need to recorded as a string in the output file
-    section['language'] = 'en'
-    write_row_outfile(outfile, section)
+    nbr_section = -1
+    nbr_section = check_adding_section({'section': 0}, nbr_section, specific_config.sections_txt,
+                                        'en', write_row_outfile, outfile)
+
+
     question_to_transform = read_survey_file(folder)
     for q in create_grouped_question(question_to_transform):
         if len(q) > 1:
-            pass
+            # print(q)
+            for row in q:
+                nbr_section = check_adding_section(row, nbr_section, specific_config.sections_txt,
+                                                   'en', write_row_outfile, outfile)
         else:
             for row in q:
-                if int(row['section']) - 1 != nbr_section:
-                    # -1 because the section numbers starts at 0 but
-                    # in the csv survey_file it starts at 1
-                    nbr_section = int(row['section']) - 1
-                    section = main_config.group_format
-                    # type/scale are like 'G0', 'G1', etc.
-                    section['type/scale'] = 'G' + str(nbr_section)
-                    section['language'] = 'en'
-                    write_row_outfile(outfile, section)
+                nbr_section = check_adding_section(row, nbr_section, specific_config.sections_txt,
+                                                   'en', write_row_outfile, outfile)
+                # print(row['code'])
 
                 if row['answer_format'].lower() == 'one choice':
                     # Create the question
