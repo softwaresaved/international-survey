@@ -116,3 +116,10 @@ class creationConfig:
     ranking_question = {'class': 'Q', 'type/scale': 'R', 'relevance': '1', 'other': 'N', 'same_default': '1', 'max_subquestions': '8', 'samechoiceheight': '1', 'samelistheight': '1', 'showpopups': '1', 'statistics_showgraph': '1'}
 
     ranking_answer = {'class': 'A', 'type/scale': '0'}
+
+    multiple_choice_question = {'class': 'Q', 'type/scale': 'M', 'relevance': '1', 'same_default': '1',
+                                'assessment_value': '1', 'display_columns': '1', 'statistics_showgraph': '1',
+                                'validation': 'en', 'default': 'Y', 'allowed_filetypes': '1',
+                                'category_separator': '1', 'display_rows': '1', 'statistics_showmap': '1'}
+
+    multiple_choice_answer = {'class': 'SQ', 'type/scale': '0'}
