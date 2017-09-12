@@ -106,7 +106,7 @@ class creationConfig:
                           {'class': 'SL', 'name': 'surveyls_numberformat', 'text': '0', 'language': 'en'}]
 
     # Standard layout for groups
-    group_format = {'class': 'G', 'type/scale': 'G+inc_number', 'name': 'Header', 'relevance': '1'}
+    group_format = {'class': 'G', 'type/scale': 'G+inc_number', 'relevance': '1'}
 
     # Standard layout for questions
 
