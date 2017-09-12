@@ -345,7 +345,7 @@ def main():
                     question['name'] = row['code']
                     question['text'] = row['question']
                     question['language'] = 'en'
-                    question['validation'] = 'en'
+                    # question['validation'] = 'en'
                     question['other'] = 'N'
                     write_row_outfile(outfile, question)
                     # Add the answers
@@ -365,7 +365,7 @@ def main():
                     question['name'] = row['code']
                     question['text'] = row['question']
                     question['language'] = 'en'
-                    question['validation'] = 'en'
+                    # question['validation'] = 'en'
                     question['other'] = 'N'
                     write_row_outfile(outfile, question)
 
@@ -374,7 +374,7 @@ def main():
                     question['name'] = row['code']
                     question['text'] = row['question']
                     question['language'] = 'en'
-                    question['validation'] = 'en'
+                    # question['validation'] = 'en'
                     question['other'] = 'N'
                     write_row_outfile(outfile, question)
 
@@ -383,7 +383,7 @@ def main():
                     question['name'] = row['code']
                     question['text'] = row['question']
                     question['language'] = 'en'
-                    question['validation'] = 'en'
+                    # question['validation'] = 'en'
                     question['other'] = 'N'
                     write_row_outfile(outfile, question)
                     # Need to create an  empty subquestion

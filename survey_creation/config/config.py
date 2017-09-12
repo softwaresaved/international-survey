@@ -119,14 +119,14 @@ class creationConfig:
 
     multiple_choice_question = {'class': 'Q', 'type/scale': 'M', 'relevance': '1', 'same_default': '1',
                                 'assessment_value': '1', 'display_columns': '1', 'statistics_showgraph': '1',
-                                'validation': 'en', 'default': 'Y', 'allowed_filetypes': '1',
+                                'default': 'Y', 'allowed_filetypes': '1',
                                 'category_separator': '1', 'display_rows': '1', 'statistics_showmap': '1'}
 
     multiple_choice_answer = {'class': 'SQ', 'type/scale': '0'}
 
-    freenumeric_question = {'class': 'Q', 'type/scale': 'N', 'allowed_filetypes': '1', 'statistics_showmap': '1', 'time_limit': '12'}
+    freenumeric_question = {'class': 'Q', 'type/scale': 'N', 'allowed_filetypes': '1', 'statistics_showmap': '1'}
 
-    freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300.0', 'location_mapwidth': '500.0', 'location_mapzoom': '11.0500.0', 'statistics_showgraph': '1.0', 'statistics_showmap': '1.0', 'text_input_width': '12.0', 'time_limit_action': '1.0', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0'}
+    freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300', 'location_mapwidth': '500', 'location_mapzoom': '110500', 'statistics_showgraph': '1', 'statistics_showmap': '1', 'text_input_width': '12', 'time_limit_action': '1', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0'}
 
     likert_question = {'class': 'Q', 'type/scale': 'F', 'same_default': '1', 'statistics_showgraph': '1.0'}
 
