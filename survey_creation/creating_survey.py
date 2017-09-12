@@ -177,6 +177,52 @@ def get_answer(folder, file_answer):
         return [x[:-1] for x in f.readlines()]
 
 
+def create_grouped_question(indict):
+    """
+    Take the dictionary of all the questions and group them
+    into the same group if they have to be displayed together.
+    Only applicable for the type_question Y/N/NA and the likert ones
+    """
+    previous_answer_format = None
+    previous_file_answer = None
+    file_answer = None
+    group_survey_q = list()
+    for q in indict:
+        current_answer_format = q['answer_format'].lower()
+        file_answer = q['answer_file']
+        conditional = q['conditional']
+        if conditional != '':
+            if len(group_survey_q) > 0:
+                yield group_survey_q
+            group_survey_q = list()
+            group_survey_q.append(q)
+
+        else:
+            if previous_answer_format in ['y/n/na', 'likert'] or current_answer_format in ['y/n/na', 'likert']:
+                if current_answer_format == previous_answer_format or previous_answer_format is None:
+                    if previous_answer_format == 'likert' and current_answer_format == 'likert':
+                        if previous_file_answer != file_answer:
+                            yield group_survey_q
+                            group_survey_q = list()
+                    group_survey_q.append(q)
+                else:
+
+                    yield group_survey_q
+                    group_survey_q = list()
+                    group_survey_q.append(q)
+
+            else:
+                if len(group_survey_q) > 0:
+                    yield group_survey_q
+                group_survey_q = list()
+                group_survey_q.append(q)
+
+        previous_answer_format = current_answer_format
+        previous_file_answer = file_answer
+
+    yield group_survey_q
+
+
 def main():
     # Get which survey
     folder = sys.argv[1]
@@ -204,9 +250,6 @@ def main():
                                             welcome_message, end_message)
 
     # Copy the description to the header
-    for el in config_description:
-        print(el)
-    # print(config_description)
     add_from_list(outfile, config_description)
 
     # Open the survey file
@@ -216,75 +259,81 @@ def main():
     section['type/scale'] = 'G' + str(nbr_section)  # need to recorded as a string in the output file
     section['language'] = 'en'
     write_row_outfile(outfile, section)
-    for row in read_survey_file(folder):
-        if int(row['section']) - 1 != nbr_section:
-            # -1 because the section numbers starts at 0 but
-            # in the csv survey_file it starts at 1
-            nbr_section = int(row['section']) - 1
-            section = main_config.group_format
-            # type/scale are like 'G0', 'G1', etc.
-            section['type/scale'] = 'G' + str(nbr_section)
-            section['language'] = 'en'
-            write_row_outfile(outfile, section)
-
-        if row['answer_format'].lower() == 'one choice':
-            # Create the question
-            question = main_config.one_choice_question
-            question['name'] = row['code']
-            question['text'] = row['question']
-            question['language'] = 'en'
-            question['other'] = 'Y'
-            write_row_outfile(outfile, question)
-            # Add the answers
-            # Create an inc to add to the question code. They need unique label
-            n = 1
-            for text_answer in get_answer(folder, row['answer_file']):
-                answer_row = main_config.one_choice_answer
-                # answer_row['name'] = 'A' + str(n)
-                answer_row['name'] = str(n)
-                answer_row['text'] = text_answer.split(';')[0].strip('"')
-                answer_row['language'] = 'en'
-                write_row_outfile(outfile, answer_row)
-                n +=1
-
-        if row['answer_format'].lower() == 'ranking':
-            # Ranking questions work differently
-            # First a list of rank SQ class need to be created (max 8 here)
-            # Then only the questions are created
-            # As neither of them have specific value for database, they are
-            # created here and not pulled from the config file
-            question = main_config.ranking_question
-            question['name'] = row['code']
-            question['text'] = row['question']
-            question['language'] = 'en'
-            write_row_outfile(outfile, question)
-            # Create the Subquestion ranks
-            for i in range(1, 9):  # To get 8 ranked questions
-                init_row = {'class': 'SQ', 'type/scale': '0', 'name': str(i), 'relevance': '1',
-                       'text': 'Rank ' + str(i), 'language': 'en'}
-                write_row_outfile(outfile, init_row)
-
-
-            n = 1
-            for text_answer in get_answer(folder, row['answer_file']):
-                answer_row = main_config.ranking_answer
-                answer_row['name'] = str(n)
-                answer_row['text'] = text_answer.split(';')[0].strip('"')
-                answer_row['language'] = 'en'
-                write_row_outfile(outfile, answer_row)
-                n +=1
-
-        if row['answer_format'].lower() == 'likert':
+    question_to_transform = read_survey_file(folder)
+    for q in create_grouped_question(question_to_transform):
+        if len(q) > 1:
             pass
+        else:
+            for row in q:
+                if int(row['section']) - 1 != nbr_section:
+                    # -1 because the section numbers starts at 0 but
+                    # in the csv survey_file it starts at 1
+                    nbr_section = int(row['section']) - 1
+                    section = main_config.group_format
+                    # type/scale are like 'G0', 'G1', etc.
+                    section['type/scale'] = 'G' + str(nbr_section)
+                    section['language'] = 'en'
+                    write_row_outfile(outfile, section)
 
-        if row['answer_format'].lower() == 'freenumeric':
-            pass
+                if row['answer_format'].lower() == 'one choice':
+                    # Create the question
+                    question = main_config.one_choice_question
+                    question['name'] = row['code']
+                    question['text'] = row['question']
+                    question['language'] = 'en'
+                    question['other'] = 'Y'
+                    write_row_outfile(outfile, question)
+                    # Add the answers
+                    # Create an inc to add to the question code. They need unique label
+                    n = 1
+                    for text_answer in get_answer(folder, row['answer_file']):
+                        answer_row = main_config.one_choice_answer
+                        # answer_row['name'] = 'A' + str(n)
+                        answer_row['name'] = str(n)
+                        answer_row['text'] = text_answer.split(';')[0].strip('"')
+                        answer_row['language'] = 'en'
+                        write_row_outfile(outfile, answer_row)
+                        n +=1
 
-        if row['answer_format'].lower() == 'freetext':
-            pass
+                if row['answer_format'].lower() == 'ranking':
+                    # Ranking questions work differently
+                    # First a list of rank SQ class need to be created (max 8 here)
+                    # Then only the questions are created
+                    # As neither of them have specific value for database, they are
+                    # created here and not pulled from the config file
+                    question = main_config.ranking_question
+                    question['name'] = row['code']
+                    question['text'] = row['question']
+                    question['language'] = 'en'
+                    write_row_outfile(outfile, question)
+                    # Create the Subquestion ranks
+                    for i in range(1, 9):  # To get 8 ranked questions
+                        init_row = {'class': 'SQ', 'type/scale': '0', 'name': str(i), 'relevance': '1',
+                                    'text': 'Rank ' + str(i), 'language': 'en'}
+                        write_row_outfile(outfile, init_row)
 
-        if row['answer_format'].lower() == 'multiple choice':
-            pass
+
+                    n = 1
+                    for text_answer in get_answer(folder, row['answer_file']):
+                        answer_row = main_config.ranking_answer
+                        answer_row['name'] = str(n)
+                        answer_row['text'] = text_answer.split(';')[0].strip('"')
+                        answer_row['language'] = 'en'
+                        write_row_outfile(outfile, answer_row)
+                        n +=1
+
+                if row['answer_format'].lower() == 'likert':
+
+                    pass
+
+                if row['answer_format'].lower() == 'freenumeric':
+                    pass
+
+                if row['answer_format'].lower() == 'freetext':
+                    pass
+
+                if row['answer_format'].lower() == 'multiple choice':
+                    pass
     # Check for condition
 
     # Do everything for the new language
