@@ -124,5 +124,4 @@ class creationConfig:
 
     multiple_choice_answer = {'class': 'SQ', 'type/scale': '0'}
 
-
-    freenumeric_question = {'class': 'Q', 'type/scale': 'N', 'validation': 'en', 'default': 'N', 'allowed_filetypes': '1', 'statistics_showmap': '1', 'time_limit': '12'}
+    freenumeric_question = {'class': 'Q', 'type/scale': 'N', 'allowed_filetypes': '1', 'statistics_showmap': '1', 'time_limit': '12'}
