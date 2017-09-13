@@ -1067,8 +1067,8 @@ A	0	8		Ability to work across disciplines		en
 A	0	9		I want to learn new skills		en																																																																																																																																			
 G	G3	Your working practices	1			en																																																																																																																																			
 Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en			N		1																																																																																																							1						1																	
-A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		en																																																																																																																																			
-A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		en																																																																																																																																			
+A	0	1		Same researcher(s)		en																																																																																																																																			
+A	0	2		Regularly change researcher(s)		en																																																																																																																																			
 Q	Y	currentWork2	1	Do you work for a Research Software Group?		en			N		1																																																																																																							1																							
 Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en			N		1																																																																																																							1																							
 Q	S	conf1can	1	Have you ever presented your software work at a conference or workshop?		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
@@ -2283,8 +2283,8 @@ A	0	8		Möglichkeit disziplinenübergreifend zu arbeiten		de
 A	0	9		Möglichkeit neue Fähigkeiten zu lernen		de																																																																																																																																			
 G	G3	Your working practices	1			de																																																																																																																																			
 Q	!	currentWork1	1	Arbeitest Du regelmässig mit den selben Wissenschaftlern oder arbeitest Du oft mit bzw. für verschiedene Wissenschaftler?		de			N		1																																																																																																							1						1																	
-A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		de																																																																																																																																			
-A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		de																																																																																																																																			
+A	0	1		Die selben Wissenschaftler		de																																																																																																																																			
+A	0	2		Regelmäßig andere Wissenschaftler		de																																																																																																																																			
 Q	Y	currentWork2	1	Arbeitest Du in einer Gruppe, die Software entwickelt?		de			N		1																																																																																																							1																							
 Q	Y	paper5	1	Wirst Du normalerweise in den 'Acknowledgements' oder in anderen Textstellen einer Publikation genannt?		de			N		1																																																																																																							1																							
 Q	S	conf1can	1	Hast Du Deine software-bezogene Arbeit schon mal auf einer Konferenz oder einem Workshop vorgestellt?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
