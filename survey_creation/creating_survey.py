@@ -371,7 +371,10 @@ def main():
                         question['name'] = row['code']
                         question['text'] = row[txt_lang]
                         question['language'] = lang
-                        question['other'] = 'Y'
+                        if row['other'] == 'Y':
+                            question['other'] = 'Y'
+                        else:
+                            question['other'] = 'N'
                         write_row_outfile(outfile, question)
                         # add the answers
                         # create an inc to add to the question code. they need unique label
@@ -421,7 +424,10 @@ def main():
                         question['text'] = row[txt_lang]
                         question['language'] = lang
                         # question['validation'] = lang
-                        question['other'] = 'N'
+                        if row['other'] == 'Y':
+                            question['other'] = 'Y'
+                        else:
+                            question['other'] = 'N'
                         write_row_outfile(outfile, question)
                         # Add the answers
                         # Create an inc to add to the question code. They need unique label

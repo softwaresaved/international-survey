@@ -107,7 +107,7 @@ SL		email_admin_responses_subj		Response submission for survey {SURVEYNAME} with
 SL		email_admin_responses		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}		de																																																																																																																																			
 SL		surveyls_numberformat		0		de																																																																																																																																			
 G	G0	Questions about you	1			en																																																																																																																																			
-Q	!	socio1	1	In which country do you work?		en			Y		1																																																																																																							1						1																	
+Q	!	socio1	1	In which country do you work?		en			N		1																																																																																																							1						1																	
 A	0	1		Afghanistan		en																																																																																																																																			
 A	0	2		Åland Islands		en																																																																																																																																			
 A	0	3		Albania		en																																																																																																																																			
@@ -364,7 +364,6 @@ A	0	3		Undergraduate degree		en
 A	0	4		Master degree		en																																																																																																																																			
 A	0	5		Doctorate		en																																																																																																																																			
 A	0	6		None		en																																																																																																																																			
-A	0	7		Other		en																																																																																																																																			
 Q	!	edu2	1	In which subject is your highest academic qualification?		en			Y		1																																																																																																							1						1																	
 A	0	1		Accounting & Finance		en																																																																																																																																			
 A	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
@@ -431,7 +430,6 @@ A	0	62		Theology & Religious Studies		en
 A	0	63		Town & Country Planning and Landscape Design		en																																																																																																																																			
 A	0	64		Veterinary Medicine		en																																																																																																																																			
 A	0	65		Youth Work		en																																																																																																																																			
-A	0	66		Other		en																																																																																																																																			
 Q	S	edu3	1	Enter your academic subject		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	edu4	1	Do you hold any other professional qualifications?		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	Y	rse1	1	Do you write code as part of your job?		en			N		1																																																																																																							1																							
@@ -516,7 +514,6 @@ A	0	5		Fraunhofer Society		en
 A	0	6		Helmholtz Association of German Research Centres		en																																																																																																																																			
 A	0	7		Leibniz Association		en																																																																																																																																			
 A	0	8		Max Planck Society		en																																																																																																																																			
-A	0	9		Other		en																																																																																																																																			
 Q	!	currentEmp2	1	Which University do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		Abraham Geiger College		en																																																																																																																																			
 A	0	2		University of Freiburg		en																																																																																																																																			
@@ -708,7 +705,6 @@ A	0	57		Fraunhofer Institute for Wind Energy and Energy System Technology		en
 A	0	58		Fraunhofer Institute for Cell Therapy and Immunology		en																																																																																																																																			
 A	0	59		Fraunhofer Institute for Reliability and Microintegration		en																																																																																																																																			
 A	0	60		Fraunhofer Center for International Management and Knowledge Economics		en																																																																																																																																			
-A	0	61		Other		en																																																																																																																																			
 Q	!	currentEmp21de	1	Which Helmholtz institute do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		Alfred Wegener Institute for Polar and Marine Research		en																																																																																																																																			
 A	0	2		DESY		en																																																																																																																																			
@@ -728,7 +724,6 @@ A	0	15		Helmholtz Centre for Environmental Research		en
 A	0	16		Karlsruhe Institute of Technology		en																																																																																																																																			
 A	0	17		Max Delbrück Center for Molecular Medicine		en																																																																																																																																			
 A	0	18		Max Planck Institute of Plasma Physics		en																																																																																																																																			
-A	0	19		Other		en																																																																																																																																			
 Q	!	currentEmp22de	1	Which Leibniz institute do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		Academy for Spatial Research and Planning		en																																																																																																																																			
 A	0	2		Bernhard Nocht Institute for Tropical Medicine		en																																																																																																																																			
@@ -805,7 +800,6 @@ A	0	72		Weierstrass Institute		en
 A	0	73		Social Science Research Center Berlin		en																																																																																																																																			
 A	0	74		Zentrum für Europäische Wirtschaftsforschung		en																																																																																																																																			
 A	0	75		Centre for Contemporary History		en																																																																																																																																			
-A	0	76		Other		en																																																																																																																																			
 Q	!	currentEmp23de	1	Which Max-Planck institute do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		Bibliotheca Hertziana – Max Planck Institute of Art History		en																																																																																																																																			
 A	0	2		Fritz Haber Institute of the MPG		en																																																																																																																																			
@@ -893,7 +887,6 @@ A	0	83		Max Planck Institute for Terrestrial Microbiology		en
 A	0	84		Planck Institute on the Preconditions of Human Life in the Modern World		en																																																																																																																																			
 A	0	85		Max Planck Institute for the Study of Religious and Ethnic Diversity		en																																																																																																																																			
 A	0	86		Max Planck Institute for Research on Collective Goods		en																																																																																																																																			
-A	0	87		Other		en																																																																																																																																			
 Q	!	currentEmp24de	1	Which University of Applied Sciences?		en			Y		1																																																																																																							1						1																	
 A	0	1		University of Applied Sciences Appollon		en																																																																																																																																			
 A	0	2		Bard College Berlin		en																																																																																																																																			
@@ -1007,11 +1000,10 @@ A	0	109		Touro College Berlin		en
 A	0	110		Environment Campus Birkenfeld		en																																																																																																																																			
 A	0	111		Westsächsische Hochschule Zwickau - University of Applied Sciences		en																																																																																																																																			
 A	0	112		Wildau Institute of Technology		en																																																																																																																																			
-A	0	113		Other		en																																																																																																																																			
 Q	S	currentEmp4	1	Which organisation do you work for?		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	currentEmp5	1	What is your official job title?		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	currentEmp6	1	Are you known in your group by a different job title? If so, please enter the job title you use		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
-Q	!	currentEmp12	1	Do you work full time or part time		en			Y		1																																																																																																							1						1																	
+Q	!	currentEmp12	1	Do you work full time or part time		en			N		1																																																																																																							1						1																	
 A	0	1		Full Time		en																																																																																																																																			
 A	0	2		Part-time		en																																																																																																																																			
 Q	!	currentEmp10	1	What type of contract are you employed on?		en			Y		1																																																																																																							1						1																	
@@ -1023,9 +1015,8 @@ A	0	5		Research/Student Assistant		en
 A	0	6		Agency staff		en																																																																																																																																			
 A	0	7		Freelancer consultant contractor		en																																																																																																																																			
 A	0	8		Zero hours contract		en																																																																																																																																			
-A	0	9		Other/Not listed		en																																																																																																																																			
 Q	N	currentEmp11		What is the duration of your current contract?		en			N			1																																																																																																							1																						
-Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Accounting & Finance		en																																																																																																																																			
 SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
 SQ	0	3		Agriculture & Forestry		en																																																																																																																																			
@@ -1091,7 +1082,6 @@ SQ	0	62		Theology & Religious Studies		en
 SQ	0	63		Town & Country Planning and Landscape Design		en																																																																																																																																			
 SQ	0	64		Veterinary Medicine		en																																																																																																																																			
 SQ	0	65		Youth Work		en																																																																																																																																			
-SQ	0	66		Other		en																																																																																																																																			
 G	G2	Your employment history	1			en																																																																																																																																			
 Q	!	prevEmp1	1	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
@@ -1102,8 +1092,7 @@ A	0	5		Fraunhofer Society		en
 A	0	6		Helmholtz Association of German Research Centres		en																																																																																																																																			
 A	0	7		Leibniz Association		en																																																																																																																																			
 A	0	8		Max Planck Society		en																																																																																																																																			
-A	0	9		Other		en																																																																																																																																			
-Q	R	prevEmp2	1	Rank the following factors dependent on how strongly they influenced your decision to leave your previous position.		en			N		1																																																								8																									1	1						1															1																							
+Q	R	prevEmp2	1	Rank the following factors dependent on how strongly they influenced your decision to accept your current position		en			N		1																																																								8																									1	1						1															1																							
 SQ	0	1	1	Rank 1		en																																																																																																																																			
 SQ	0	2	1	Rank 2		en																																																																																																																																			
 SQ	0	3	1	Rank 3		en																																																																																																																																			
@@ -1112,17 +1101,17 @@ SQ	0	5	1	Rank 5		en
 SQ	0	6	1	Rank 6		en																																																																																																																																			
 SQ	0	7	1	Rank 7		en																																																																																																																																			
 SQ	0	8	1	Rank 8		en																																																																																																																																			
-A	0	1		Minimal wage growth		en																																																																																																																																			
-A	0	2		Lack of opportunity to advance		en																																																																																																																																			
-A	0	3		Excessive overtime hours		en																																																																																																																																			
-A	0	4		Loss of faith and confidence in corporate leaders		en																																																																																																																																			
-A	0	5		Lack of decision-making power		en																																																																																																																																			
-A	0	6		A work environment that does not encourage teamwork		en																																																																																																																																			
-A	0	7		Mismatch between description and promise during the interview and actual job		en																																																																																																																																			
-A	0	8		Management lacks people skills		en																																																																																																																																			
-A	0	9		Others		en																																																																																																																																			
+A	0	1		Freedom to choose own working practices		en																																																																																																																																			
+A	0	2		Desire to advance research		en																																																																																																																																			
+A	0	3		The salary		en																																																																																																																																			
+A	0	4		Opportunity to develop software		en																																																																																																																																			
+A	0	5		Flexible working hours		en																																																																																																																																			
+A	0	6		Desire to work in a research environment		en																																																																																																																																			
+A	0	7		Opportunity for career advancement		en																																																																																																																																			
+A	0	8		Ability to work across disciplines		en																																																																																																																																			
+A	0	9		I want to learn new skills		en																																																																																																																																			
 G	G3	Your working practices	1			en																																																																																																																																			
-Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en			Y		1																																																																																																							1						1																	
+Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en			N		1																																																																																																							1						1																	
 A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		en																																																																																																																																			
 A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		en																																																																																																																																			
 Q	Y	currentWork2	1	Do you work for a Research Software Group?		en			N		1																																																																																																							1																							
@@ -1134,20 +1123,20 @@ Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en	
 Q	S	conf1can	1	Have you ever presented your software work at a conference or workshop?		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	conf2can	1	Which conference(s)/workshop(s)		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	N	proj1can		How many software projects are you currently involved in?		en			N			1																																																																																																							1																						
-Q	!	proj2can	1	How many software developers typically work on your projects?		en			Y		1																																																																																																							1						1																	
+Q	!	proj2can	1	How many software developers typically work on your projects?		en			N		1																																																																																																							1						1																	
 A	0	1		Just me		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3-5		en																																																																																																																																			
 A	0	4		6-9		en																																																																																																																																			
 A	0	5		10+		en																																																																																																																																			
-Q	!	stability1	1	What is the bus factor of your most important software project?		en			Y		1																																																																																																							1						1																	
+Q	!	stability1	1	What is the bus factor of your most important software project?		en			N		1																																																																																																							1						1																	
 A	0	1		1		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
 A	0	4		4		en																																																																																																																																			
 A	0	5		5+		en																																																																																																																																			
 Q	Y	stability2	1	Is there a technical hand-over plan for your most important software project?		en			N		1																																																																																																							1																							
-Q	!	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en			Y		1																																																																																																							1						1																	
+Q	!	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en			N		1																																																																																																							1						1																	
 A	0	1		No formal testing		en																																																																																																																																			
 A	0	2		Developers conduct testing		en																																																																																																																																			
 A	0	3		Test engineers conduct testing		en																																																																																																																																			
@@ -1178,7 +1167,7 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
-Q	!	open2de	1	Do you reference software directly or the papers describing the software?		en			Y		1																																																																																																							1						1																	
+Q	!	open2de	1	Do you reference software directly or the papers describing the software?		en			N		1																																																																																																							1						1																	
 A	0	1		specific version of the software		en																																																																																																																																			
 A	0	2		software itself (no specific version)		en																																																																																																																																			
 A	0	3		paper about software		en																																																																																																																																			
@@ -1507,16 +1496,15 @@ G	G5	Demographic questions	1			en
 Q	!	socio2	1	Please select your gender		en			Y		1																																																																																																							1						1																	
 A	0	1		Female		en																																																																																																																																			
 A	0	2		Male		en																																																																																																																																			
-A	0	3		Other		en																																																																																																																																			
-A	0	4		Prefer not to say		en																																																																																																																																			
-Q	!	socio3	1	Please select your age		en			Y		1																																																																																																							1						1																	
+A	0	3		Prefer not to say		en																																																																																																																																			
+Q	!	socio3	1	Please select your age		en			N		1																																																																																																							1						1																	
 A	0	1		18 to 24 years		en																																																																																																																																			
 A	0	2		25 to 34 years		en																																																																																																																																			
 A	0	3		35 to 44 years		en																																																																																																																																			
 A	0	4		45 to 54 years		en																																																																																																																																			
 A	0	5		55 to 64 years		en																																																																																																																																			
 A	0	6		Age 65 or older		en																																																																																																																																			
-Q	!	socio4	1	Please select the range of your salary		en			Y		1																																																																																																							1						1																	
+Q	!	socio4	1	Please select the range of your salary		en			N		1																																																																																																							1						1																	
 A	0	1		Less than £24.999		en																																																																																																																																			
 A	0	2		Between £25.000 and £29.999		en																																																																																																																																			
 A	0	3		Between £30.000 and £34.999		en																																																																																																																																			
@@ -1538,13 +1526,11 @@ A	0	6		E12		en
 A	0	7		E13		en																																																																																																																																			
 A	0	8		E14		en																																																																																																																																			
 A	0	9		E15		en																																																																																																																																			
-A	0	10		other		en																																																																																																																																			
 G	G6	Final question about you	1			en																																																																																																																																			
 Q	!	tool2	1	What Operating System do you prefer to use at work? 		en			Y		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		en																																																																																																																																			
 A	0	2		OS X		en																																																																																																																																			
 A	0	3		Windows		en																																																																																																																																			
-A	0	4		Other		en																																																																																																																																			
 Q	M	tool4can	1	What programming languages do you use at work? (Select as many as apply) 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Assembly		en																																																																																																																																			
 SQ	0	2		C		en																																																																																																																																			
@@ -1583,7 +1569,7 @@ SQ	0	34		VBA		en
 SQ	0	35		Visual Basic		en																																																																																																																																			
 Q	Y	ukrse10de	1	Are you a member of the de-RSE initiative? (Members are people who have signed up to the de-RSE mailing list, http://www.de-rse.org/en/join.html)		en			N		1																																																																																																							1																							
 Q	S	ukrse11de	1	Do you know a better job title/role than RSE which summerizes all kinds of activities realated to academic software creation? 		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
-Q	M	ukrse2	1	How do you meet other RSEs? 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	ukrse2	1	How do you meet other RSEs? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		UK RSE Association (http://rse.ac.uk/)		en																																																																																																																																			
 SQ	0	2		DE-RSE Community (http://de-rse.org)		en																																																																																																																																			
 SQ	0	3		Local RSE group/network		en																																																																																																																																			
@@ -1593,7 +1579,7 @@ Q	Y	ukrse13de	1	Do you allow us to contact you for a conference announcement via
 Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 G	G0	Question about you	1			de																																																																																																																																			
-Q	!	socio1	1	In welchem Land arbeitest Du?		de			Y		1																																																																																																							1						1																	
+Q	!	socio1	1	In welchem Land arbeitest Du?		de			N		1																																																																																																							1						1																	
 A	0	1		Afghanistan		de																																																																																																																																			
 A	0	2		Åland		de																																																																																																																																			
 A	0	3		Albanien		de																																																																																																																																			
@@ -1850,7 +1836,6 @@ A	0	3		Bachelor		de
 A	0	4		Master, Diplom		de																																																																																																																																			
 A	0	5		Promotion (Doktor)		de																																																																																																																																			
 A	0	6		Keine		de																																																																																																																																			
-A	0	7		Andere		de																																																																																																																																			
 Q	!	edu2	1	In welchem Bereich hast Du diesen Bildungsabschluss erlangt?		de			Y		1																																																																																																							1						1																	
 A	0	1		Rechnungs- und Finanzwesen		de																																																																																																																																			
 A	0	2		Luftfahrt und Fertigungstechnik		de																																																																																																																																			
@@ -1917,7 +1902,6 @@ A	0	62		Theologie & Religionswissenschaft		de
 A	0	63		Stadt- und Landschaftsplanung und Landschaftsgestaltung		de																																																																																																																																			
 A	0	64		Tiermedizin		de																																																																																																																																			
 A	0	65		Jugendarbeit		de																																																																																																																																			
-A	0	66		Andere		de																																																																																																																																			
 Q	S	edu3	1	In welchem Fachbereich arbeitest Du?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	edu4	1	Besitzt Du weitere Abschlüsse? Wenn ja, welche?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	Y	rse1	1	Entwickelst Du in Deiner Arbeitszeit Software? Schreibst Du z.B. Quellcode oder Skripte?		de			N		1																																																																																																							1																							
@@ -2002,7 +1986,6 @@ A	0	5		Fraunhofer-Gesellschaft		de
 A	0	6		Helmholtz-Gemeinschaft Deutscher Forschungszentren		de																																																																																																																																			
 A	0	7		Leibniz-Gemeinschaft		de																																																																																																																																			
 A	0	8		Max-Planck-Gesellschaft 		de																																																																																																																																			
-A	0	9		Andere		de																																																																																																																																			
 Q	!	currentEmp2	1	An welcher Universität arbeitest Du?		de			Y		1																																																																																																							1						1																	
 A	0	1		Abraham-Geiger-Kolleg		de																																																																																																																																			
 A	0	2		Albert-Ludwigs-Universität Freiburg		de																																																																																																																																			
@@ -2194,7 +2177,6 @@ A	0	57		Fraunhofer-Institut für Windenergie und Energiesystemtechnik		de
 A	0	58		Fraunhofer-Institut für Zelltherapie und Immunologie		de																																																																																																																																			
 A	0	59		Fraunhofer-Institut für Zuverlässigkeit und Mikrointegration		de																																																																																																																																			
 A	0	60		Fraunhofer-Zentrum für Mittel- und Osteuropa		de																																																																																																																																			
-A	0	61		Andere		de																																																																																																																																			
 Q	!	currentEmp21de	1	An welchem Helmholtz-Institut arbeitest Du?		de			Y		1																																																																																																							1						1																	
 A	0	1		Alfred-Wegener-Institut		de																																																																																																																																			
 A	0	2		Deutsches Elektronen-Synchrotron		de																																																																																																																																			
@@ -2214,7 +2196,6 @@ A	0	15		Helmholtz-Zentrum für Umweltforschung – UFZ		de
 A	0	16		Karlsruher Institut für Technologie		de																																																																																																																																			
 A	0	17		Max-Delbrück-Centrum für Molekulare Medizin		de																																																																																																																																			
 A	0	18		Max-Planck-Institut für Plasmaphysik		de																																																																																																																																			
-A	0	19		Andere		de																																																																																																																																			
 Q	!	currentEmp22de	1	An welchem Leibniz-Institut arbeitest Du?		de			Y		1																																																																																																							1						1																	
 A	0	1		Akademie für Raumforschung und Landesplanung		de																																																																																																																																			
 A	0	2		Bernhard-Nocht-Institut für Tropenmedizin		de																																																																																																																																			
@@ -2291,7 +2272,6 @@ A	0	72		Weierstraß-Institut für Angewandte Analysis und Stochastik		de
 A	0	73		Wissenschaftszentrum Berlin für Sozialforschung		de																																																																																																																																			
 A	0	74		Zentrum für Europäische Wirtschaftsforschung		de																																																																																																																																			
 A	0	75		Zentrum für Zeithistorische Forschung		de																																																																																																																																			
-A	0	76		Andere		de																																																																																																																																			
 Q	!	currentEmp23de	1	An welchem Max-Planck-Institut arbeitest Du?		de			Y		1																																																																																																							1						1																	
 A	0	1		Bibliotheca Hertziana		de																																																																																																																																			
 A	0	2		Fritz-Haber-Institut der Max-Planck-Gesellschaft		de																																																																																																																																			
@@ -2379,7 +2359,6 @@ A	0	83		Max-Planck-Institut für terrestrische Mikrobiologie		de
 A	0	84		Max-Planck-Institut zur Erforschung der Lebensbedingungen der wissenschaftlich-technischen Welt		de																																																																																																																																			
 A	0	85		Max-Planck-Institut zur Erforschung multireligiöser und multiethnischer Gesellschaften		de																																																																																																																																			
 A	0	86		Max-Planck-Institut zur Erforschung von Gemeinschaftsgütern		de																																																																																																																																			
-A	0	87		Andere		de																																																																																																																																			
 Q	!	currentEmp24de	1	An welcher Fachhochschule arbeitest Du?		de			Y		1																																																																																																							1						1																	
 A	0	1		Apollon Hochschule der Gesundheitswirtschaft		de																																																																																																																																			
 A	0	2		Bard College Berlin		de																																																																																																																																			
@@ -2493,11 +2472,10 @@ A	0	109		Touro College Berlin		de
 A	0	110		Umwelt-Campus Birkenfeld		de																																																																																																																																			
 A	0	111		Westsächsische Hochschule Zwickau		de																																																																																																																																			
 A	0	112		Wildau Institute of Technology		de																																																																																																																																			
-A	0	113		Andere		de																																																																																																																																			
 Q	S	currentEmp4	1	Für welches Institut arbeitest Du?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	currentEmp5	1	Wie ist Deine offizielle Stellenbezeichnung (Job Title)?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	currentEmp6	1	Bist Du innerhalb Deiner Gruppe unter einer anderer Stellenbezeichung bekannt? Wenn ja, wie heißt diese?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
-Q	!	currentEmp12	1	Bist Du Vollzeit oder Teilzeit beschäftigt?		de			Y		1																																																																																																							1						1																	
+Q	!	currentEmp12	1	Bist Du Vollzeit oder Teilzeit beschäftigt?		de			N		1																																																																																																							1						1																	
 A	0	1		Vollzeit		de																																																																																																																																			
 A	0	2		Teilzeit		de																																																																																																																																			
 Q	!	currentEmp10	1	Auf welcher Art von Arbeitsvertrag bist Du beschäftigt?		de			Y		1																																																																																																							1						1																	
@@ -2509,9 +2487,8 @@ A	0	5		Wissenschaftliche/Studentische Hilfskraft		de
 A	0	6		Leiharbeiter/Fremdarbeiter		de																																																																																																																																			
 A	0	7		Selbständig/freischaffend		de																																																																																																																																			
 A	0	8		Arbeitsvertrag mit einer Mindestbeschäftigungszeit von null Stunden		de																																																																																																																																			
-A	0	9		Anderer/Nicht aufgeführt		de																																																																																																																																			
 Q	N	currentEmp11		Welche Dauer hat Dein jetziger Arbeitsvertrag?		de			N			1																																																																																																							1																						
-Q	M	currentEmp13	1	In welchen Bereichen arbeitest Du (alle zutreffenden ankreuzen)?		de			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	currentEmp13	1	In welchen Bereichen arbeitest Du (alle zutreffenden ankreuzen)?		de			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Rechnungs- und Finanzwesen		de																																																																																																																																			
 SQ	0	2		Luftfahrt und Fertigungstechnik		de																																																																																																																																			
 SQ	0	3		Land- und Forstwirtschaft		de																																																																																																																																			
@@ -2577,7 +2554,6 @@ SQ	0	62		Theologie & Religionswissenschaft		de
 SQ	0	63		Stadt- und Landschaftsplanung und Landschaftsgestaltung		de																																																																																																																																			
 SQ	0	64		Tiermedizin		de																																																																																																																																			
 SQ	0	65		Jugendarbeit		de																																																																																																																																			
-SQ	0	66		Andere		de																																																																																																																																			
 G	G2	Your employment history	1			de																																																																																																																																			
 Q	!	prevEmp1	1	Wo hast Du in Deinem vorherigem Job gearbeitet?		de			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de																																																																																																																																			
@@ -2588,7 +2564,6 @@ A	0	5		Fraunhofer-Gesellschaft		de
 A	0	6		Helmholtz-Gemeinschaft Deutscher Forschungszentren		de																																																																																																																																			
 A	0	7		Leibniz-Gemeinschaft		de																																																																																																																																			
 A	0	8		Max-Planck-Gesellschaft 		de																																																																																																																																			
-A	0	9		Andere		de																																																																																																																																			
 Q	R	prevEmp2	1	Ordne die folgenden Faktoren an, nach ihrem Einfluß auf Deinen Entschluß, Deine vorherige Arbeitsstelle zu verlassen.		de			N		1																																																								8																									1	1						1															1																							
 SQ	0	1	1	Rank 1		de																																																																																																																																			
 SQ	0	2	1	Rank 2		de																																																																																																																																			
@@ -2598,17 +2573,17 @@ SQ	0	5	1	Rank 5		de
 SQ	0	6	1	Rank 6		de																																																																																																																																			
 SQ	0	7	1	Rank 7		de																																																																																																																																			
 SQ	0	8	1	Rank 8		de																																																																																																																																			
-A	0	1		Unzureichende Lohnsteigerung		de																																																																																																																																			
-A	0	2		Mangel an Möglichkeiten, um sich weiterzuentwickeln und vorwärts zu kommen		de																																																																																																																																			
-A	0	3		Unverhältnismäßig viele Überstunden		de																																																																																																																																			
-A	0	4		Verlust des Glaubens und des Vertrauens in die Führungskräfte		de																																																																																																																																			
-A	0	5		Mangel an Entscheidungsbefugnissen		de																																																																																																																																			
-A	0	6		Ein Arbeitsumfeld, dass keine Teamarbeit fördert		de																																																																																																																																			
-A	0	7		Diskrepanz zwischen Stellenbeschreibung in Anzeige und Vorstellungsgespräch und der tatsächlichen Arbeit		de																																																																																																																																			
-A	0	8		Dem Management fehlt es an menschlichen Fähigkeiten / an Fähigkeiten im Umgang mit Menschen		de																																																																																																																																			
-A	0	9		Andere		de																																																																																																																																			
+A	0	1		Die Freiheit/Möglichkeit eigene Arbeitsmethoden/Herangehensweisen zu wählen/nutzen		de																																																																																																																																			
+A	0	2		Der Wunsch weiter zu forschen		de																																																																																																																																			
+A	0	3		Das Gehalt		de																																																																																																																																			
+A	0	4		Die Möglichkeit Software zu entwickeln		de																																																																																																																																			
+A	0	5		Flexible Arbeitszeiten		de																																																																																																																																			
+A	0	6		Der Wunsch in der Forschung tätig zu sein		de																																																																																																																																			
+A	0	7		Chance für beruflichen Aufstieg		de																																																																																																																																			
+A	0	8		Möglichkeit disziplinenübergreifend zu arbeiten		de																																																																																																																																			
+A	0	9		Möglichkeit neue Fähigkeiten zu lernen		de																																																																																																																																			
 G	G3	Your working practices	1			de																																																																																																																																			
-Q	!	currentWork1	1	Arbeitest Du regelmässig mit den selben Wissenschaftlern oder arbeitest Du oft mit bzw. für verschiedene Wissenschaftler?		de			Y		1																																																																																																							1						1																	
+Q	!	currentWork1	1	Arbeitest Du regelmässig mit den selben Wissenschaftlern oder arbeitest Du oft mit bzw. für verschiedene Wissenschaftler?		de			N		1																																																																																																							1						1																	
 A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		de																																																																																																																																			
 A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		de																																																																																																																																			
 Q	Y	currentWork2	1	Arbeitest Du in einer Gruppe, die Software entwickelt?		de			N		1																																																																																																							1																							
@@ -2620,20 +2595,20 @@ Q	Y	paper5	1	Wirst Du normalerweise in den 'Acknowledgements' oder in anderen Te
 Q	S	conf1can	1	Hast Du Deine software-bezogene Arbeit schon mal auf einer Konferenz oder einem Workshop vorgestellt?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	conf2can	1	Auf welcher Konferenz oder auf welchem Workshop hast Du Deine software-bezogene Arbeit vorgestellt?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	N	proj1can		In wie vielen Softwareprojekten bis Du derzeit direkt involviert?		de			N			1																																																																																																							1																						
-Q	!	proj2can	1	Wieviele Entwickler arbieten typischerweise an Deinen Softwareprojekten?		de			Y		1																																																																																																							1						1																	
+Q	!	proj2can	1	Wieviele Entwickler arbieten typischerweise an Deinen Softwareprojekten?		de			N		1																																																																																																							1						1																	
 A	0	1		Nur ich allein		de																																																																																																																																			
 A	0	2		2		de																																																																																																																																			
 A	0	3		3-5		de																																																																																																																																			
 A	0	4		6-9		de																																																																																																																																			
 A	0	5		10+		de																																																																																																																																			
-Q	!	stability1	1	Wie hoch ist der Busfaktor Deines wichtigsten Softwareprojektes? (Der Busfaktor gibt die Anzahl von Mitarbeitern oder Teammitgliedern an, die plötzlich in einem Projekt ausfallen können, ohne dass das Projekt aufgrund fehlender Knowhow-Träger und Schlüsselpersonen stehenbleibt bzw. stirbt.)		de			Y		1																																																																																																							1						1																	
+Q	!	stability1	1	Wie hoch ist der Busfaktor Deines wichtigsten Softwareprojektes? (Der Busfaktor gibt die Anzahl von Mitarbeitern oder Teammitgliedern an, die plötzlich in einem Projekt ausfallen können, ohne dass das Projekt aufgrund fehlender Knowhow-Träger und Schlüsselpersonen stehenbleibt bzw. stirbt.)		de			N		1																																																																																																							1						1																	
 A	0	1		1		de																																																																																																																																			
 A	0	2		2		de																																																																																																																																			
 A	0	3		3		de																																																																																																																																			
 A	0	4		4		de																																																																																																																																			
 A	0	5		5+		de																																																																																																																																			
 Q	Y	stability2	1	Gibt es einen technischen Übergabeplan für Dein wichtigstes Softwareprojekt?		de			N		1																																																																																																							1																							
-Q	!	proj4can	1	Welche Art von Tests wendest Du im allgemeinen auf Deine Software an? (wähle alle zutreffenden)		de			Y		1																																																																																																							1						1																	
+Q	!	proj4can	1	Welche Art von Tests wendest Du im allgemeinen auf Deine Software an? (wähle alle zutreffenden)		de			N		1																																																																																																							1						1																	
 A	0	1		Keine formalen Tests		de																																																																																																																																			
 A	0	2		Entwickler testen selber		de																																																																																																																																			
 A	0	3		Test Engineers führen Tests durch 		de																																																																																																																																			
@@ -2664,7 +2639,7 @@ A	0	7		7		de
 A	0	8		8		de																																																																																																																																			
 A	0	9		9		de																																																																																																																																			
 A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	!	open2de	1	Referenzierst Du die Software selbst oder das beschreibene Paper?		de			Y		1																																																																																																							1						1																	
+Q	!	open2de	1	Referenzierst Du die Software selbst oder das beschreibene Paper?		de			N		1																																																																																																							1						1																	
 A	0	1		spezifische Version der Software		de																																																																																																																																			
 A	0	2		Software selbst (keine spezielle Version)		de																																																																																																																																			
 A	0	3		Veröffentlichung über die Software		de																																																																																																																																			
@@ -2993,16 +2968,15 @@ G	G5	Demographic questions	1			de
 Q	!	socio2	1	Dein Geschlecht		de			Y		1																																																																																																							1						1																	
 A	0	1		Weiblich		de																																																																																																																																			
 A	0	2		Männlich		de																																																																																																																																			
-A	0	3		Anderes		de																																																																																																																																			
-A	0	4		keine Angabe		de																																																																																																																																			
-Q	!	socio3	1	Dein Alter		de			Y		1																																																																																																							1						1																	
+A	0	3		keine Angabe		de																																																																																																																																			
+Q	!	socio3	1	Dein Alter		de			N		1																																																																																																							1						1																	
 A	0	1		18 bis 24 Jahre		de																																																																																																																																			
 A	0	2		25 bis 34 Jahre		de																																																																																																																																			
 A	0	3		35 bis 44 Jahre		de																																																																																																																																			
 A	0	4		45 bis 54 Jahre		de																																																																																																																																			
 A	0	5		55 bis 64 Jahre		de																																																																																																																																			
 A	0	6		65 Jahre und älter		de																																																																																																																																			
-Q	!	socio4	1	Bitte wähle Dein Gehaltsband aus!		de			Y		1																																																																																																							1						1																	
+Q	!	socio4	1	Bitte wähle Dein Gehaltsband aus!		de			N		1																																																																																																							1						1																	
 A	0	1		Weniger als 27.499 EUR 		de																																																																																																																																			
 A	0	2		Zwischen 27.500 und 32.999 EUR		de																																																																																																																																			
 A	0	3		Zwischen 33.000 und 38.499 EUR		de																																																																																																																																			
@@ -3024,13 +2998,11 @@ A	0	6		E12		de
 A	0	7		E13		de																																																																																																																																			
 A	0	8		E14		de																																																																																																																																			
 A	0	9		E15		de																																																																																																																																			
-A	0	10		andere		de																																																																																																																																			
 G	G6	Final question about you	1			de																																																																																																																																			
 Q	!	tool2	1	Welches Betriebssystem bevorzugst Du auf Arbeit?		de			Y		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		de																																																																																																																																			
 A	0	2		OS X		de																																																																																																																																			
 A	0	3		Windows		de																																																																																																																																			
-A	0	4		Other		de																																																																																																																																			
 Q	M	tool4can	1	Welche Programmiersprachen nutzt Du auf Arbeit? (wähle alle zutreffenden)		de			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Assembly		de																																																																																																																																			
 SQ	0	2		C		de																																																																																																																																			
@@ -3069,7 +3041,7 @@ SQ	0	34		VBA		de
 SQ	0	35		Visual Basic		de																																																																																																																																			
 Q	Y	ukrse10de	1	Bist Du Teil der de-RSE Initiative? (Du bist automatisch dabei, wenn Du die de-RSE Mailingliste abonniert hast, http://www.de-rse.org/de/join.html)		de			N		1																																																																																																							1																							
 Q	S	ukrse11de	1	Kennst Du eine bessere Berufsbezeichnung/Rolle als RSE (research software engineer), die alle Aktvitiäten der akademischen Softwareentwicklung umfasst?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
-Q	M	ukrse2	1	Wie triffst Du andere, die Software im wissenschaftlichen Umfeld entwickeln, programmieren, skripten etc.)?		de			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	ukrse2	1	Wie triffst Du andere, die Software im wissenschaftlichen Umfeld entwickeln, programmieren, skripten etc.)?		de			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		UK RSE Association (http://rse.ac.uk/)		de																																																																																																																																			
 SQ	0	2		DE-RSE Community (http://de-rse.org)		de																																																																																																																																			
 SQ	0	3		Andere RSE Gruppen und RSE ähnliche Netzwerke		de																																																																																																																																			
