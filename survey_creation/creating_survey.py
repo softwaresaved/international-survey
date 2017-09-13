@@ -187,7 +187,7 @@ def get_answer(folder, file_answer):
         return [x[:-1] for x in f.readlines()]
 
 
-def create_grouped_question(indict):
+def group_likert(indict):
     """
     Take the dictionary of all the questions and group them
     into the same group if they have to be displayed together.
@@ -196,46 +196,48 @@ def create_grouped_question(indict):
     previous_answer_format = None
     previous_file_answer = None
     previous_code = None
-    file_answer = None
+    previous_file_answer = None
     group_survey_q = list()
     for q in indict:
-        yield [q]
-    #     current_answer_format = q['answer_format'].lower()
-    #     file_answer = q['answer_file']
-    #     conditional = q['conditional']
-    #     current_code = ''.join([i for i in q['code'] if not i.isdigit()])
-    #     print(current_code)
-    #     if conditional != '':
-    #         # if len(group_survey_q) > 0:
-    #         yield group_survey_q
-    #         group_survey_q = list()
-    #         group_survey_q.append(q)
-    #
-    #     else:
-    #         if previous_answer_format == 'likert' or current_answer_format == 'likert':
-    #             if current_answer_format == previous_answer_format or previous_answer_format is None:
-    #                 if previous_answer_format == 'likert' and current_answer_format == 'likert':
-    #                     if previous_file_answer != file_answer or current_code != previous_code:
-    #                         yield group_survey_q
-    #                         group_survey_q = list()
-    #                 group_survey_q.append(q)
-    #             else:
-    #
-    #                 yield group_survey_q
-    #                 group_survey_q = list()
-    #                 group_survey_q.append(q)
-    #
-    #         else:
-    #             # if len(group_survey_q) > 0:
-    #             yield group_survey_q
-    #             group_survey_q = list()
-    #             group_survey_q.append(q)
-    #
-    #     previous_answer_format = current_answer_format
-    #     previous_file_answer = file_answer
-    #     previous_code = current_code
-    #
-    # yield group_survey_q
+        current_answer_format = q['answer_format'].lower()
+        current_file_answer = q['answer_file']
+        current_code = ''.join([i for i in q['code'] if not i.isdigit()])
+
+        if current_answer_format == 'likert':
+            if len(group_survey_q) > 0:
+                if current_file_answer == previous_file_answer or previous_file_answer is None:
+                    if previous_answer_format == 'likert':
+                        pass
+                    else:
+                        yield group_survey_q
+                        group_survey_q = list()
+                else:
+                    yield group_survey_q
+                    group_survey_q = list()
+
+        elif current_answer_format == 'y/n/na':
+            if len(group_survey_q) > 0:
+                if current_code == previous_code or previous_code is None:
+                    if previous_answer_format == 'y/n/na':
+                        pass
+                    else:
+                        yield group_survey_q
+                        group_survey_q = list()
+                else:
+                    yield group_survey_q
+                    group_survey_q = list()
+
+        else:
+            if len(group_survey_q) > 0:
+                yield group_survey_q
+            group_survey_q = list()
+        group_survey_q.append(q)
+        previous_answer_format = current_answer_format
+        previous_file_answer = current_file_answer
+        previous_code = current_code
+
+    if len(group_survey_q) > 0:
+        yield group_survey_q
 
 
 def check_adding_section(row, nbr_section, default_row, lang, writing_function, outfile):
@@ -309,15 +311,14 @@ def main():
 
         # Open the csv file and read it through a dictionary (generator)
         question_to_transform = read_survey_file(folder)
-        # pass this generator into the function create_grouped_question() to group Y/N and likert together
-        for q in create_grouped_question(question_to_transform):
+        # pass this generator into the function group_likert() to group Y/N and likert together
+        for q in group_likert(question_to_transform):
             # If questions were grouped together, need to change how it is process
             if len(q) > 1:
                 for row in q:
-                    pass
-                #     print(row)
-                # print('\n')
-                # print('\n')
+                    print(row['code'], row['answer_format'], row['answer_file'])
+                print('\n')
+                print('\n')
                 # Check if a new section needs to be added before processing the question
                 nbr_section = check_adding_section(q[0], nbr_section, specific_config.sections_txt,
                                                 lang, write_row_outfile, outfile)
