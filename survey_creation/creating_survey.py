@@ -236,8 +236,7 @@ def group_likert(indict):
         previous_file_answer = current_file_answer
         previous_code = current_code
 
-    if len(group_survey_q) > 0:
-        yield group_survey_q
+    yield group_survey_q
 
 
 def check_adding_section(row, nbr_section, default_row, lang, writing_function, outfile):
@@ -315,10 +314,6 @@ def main():
         for q in group_likert(question_to_transform):
             # If questions were grouped together, need to change how it is process
             if len(q) > 1:
-                for row in q:
-                    print(row['code'], row['answer_format'], row['answer_file'])
-                print('\n')
-                print('\n')
                 # Check if a new section needs to be added before processing the question
                 nbr_section = check_adding_section(q[0], nbr_section, specific_config.sections_txt,
                                                 lang, write_row_outfile, outfile)
@@ -435,7 +430,6 @@ def main():
                         n = 1
                         for text_answer in get_answer(folder, row['answer_file']):
                             answer_row = main_config.multiple_choice_answer
-                            # answer_row['name'] = 'A' + str(n)
                             answer_row['name'] = str(n)
                             answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                             answer_row['language'] = lang
@@ -456,7 +450,6 @@ def main():
                         question['name'] = row['code']
                         question['text'] = row[txt_lang]
                         question['language'] = lang
-                        # question['validation'] = lang
                         question['other'] = 'N'
                         write_row_outfile(outfile, question)
 
@@ -465,7 +458,6 @@ def main():
                         question['name'] = row['code']
                         question['text'] = row[txt_lang]
                         question['language'] = lang
-                        # question['validation'] = lang
                         question['other'] = 'N'
                         write_row_outfile(outfile, question)
                         # Need to create an  empty subquestion
@@ -480,7 +472,6 @@ def main():
                         n = 1
                         for text_answer in get_answer(folder, row['answer_file']):
                             answer_row = main_config.likert_answer
-                            # answer_row['name'] = 'A' + str(n)
                             answer_row['name'] = str(n)
                             answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                             answer_row['language'] = lang
