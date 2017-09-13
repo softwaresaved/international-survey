@@ -359,7 +359,12 @@ def main():
 
 
                 elif q[0]['answer_format'].lower() == 'y/n/na':
-                    pass
+                    question = main_config.y_n_question
+                    question['name'] = row['code']
+                    question['text'] = row[txt_lang]
+                    question['language'] = lang
+                    question['other'] = 'N'
+                    write_row_outfile(outfile, question)
 
             else:
                 for row in q:
