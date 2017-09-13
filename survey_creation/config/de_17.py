@@ -10,24 +10,28 @@ class config:
                         {'class': 'S', 'name': 'admin_email', 'text': 'olivier.philippe@soton.ac.uk'}]
     # Same as header_to_modify
     description_to_modify = []
+    languages_to_add = 'de'
 
     # Add header and description. Tuple of a dictionary + the position where it is supposed
     # to be inserted
-    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'nl'}, 12)]
+    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'de'}, 12)]
     # The index positions starts at 0
-    description_to_add = []
+    # Adding the survey title to the global description. The index position is at 0 and the structure of the dictionary is as follow:
+    # {'class': 'SL', 'name': 'surveyls_title', 'text': 'DEMO -- RSE Survey -- 2017 -- EN', 'language': 'en'}
+    survey_title = {'en': 'RSE study for Germany',
+                    'de': 'RSE study for Germany'}
 
     sections_txt = {0: {'en': {'name': 'Questions about you', 'text': ''},
-                        'nl': {'name': 'Question about you', 'text': ''}},
+                        'de': {'name': 'Question about you', 'text': ''}},
                     1: {'en': {'name': 'Your current employment', 'text': ''},
-                        'nl': {'name': 'Your current employment', 'text': ''}},
+                        'de': {'name': 'Your current employment', 'text': ''}},
                     2: {'en': {'name': 'Your employment history', 'text': ''},
-                        'nl': {'name': 'Your employment history', 'text': ''}},
+                        'de': {'name': 'Your employment history', 'text': ''}},
                     3: {'en': {'name': 'Your working practices', 'text': ''},
-                        'nl': {'name': 'Your working practices', 'text': ''}},
+                        'de': {'name': 'Your working practices', 'text': ''}},
                     4: {'en': {'name': 'Your perception of your current position', 'text': ''},
-                        'nl': {'name': 'Your perception of your current position', 'text': ''}},
+                        'de': {'name': 'Your perception of your current position', 'text': ''}},
                     5: {'en': {'name': 'Demographic questions', 'text': ''},
-                        'nl': {'name': 'Demographic questions', 'text': ''}},
+                        'de': {'name': 'Demographic questions', 'text': ''}},
                     6: {'en': {'name': 'Final question about you', 'text': ''},
-                        'nl': {'name': 'Final question about you', 'text': ''}}}
+                        'de': {'name': 'Final question about you', 'text': ''}}}

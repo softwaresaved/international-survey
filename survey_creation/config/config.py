@@ -5,6 +5,8 @@ Config file for the script to create automated surveys
 
 class creationConfig:
 
+    # default_language
+    languages = ['en']
     # This headers are the ones created for the tsv file.
     main_headers = ['class', 'type/scale', 'name', 'relevance', 'text', 'help', 'language', 'validation',
                     'mandatory', 'other', 'default', 'same_default', 'allowed_filetypes', 'alphasort',
@@ -87,8 +89,7 @@ class creationConfig:
                       {'class': 'S', 'name': 'googleanalyticsstyle', 'text': '0'}]
 
     # List of parameters that comprise the survey title and the welcome text
-    global_description = [{'class': 'SL', 'name': 'surveyls_title', 'text': 'DEMO -- RSE Survey -- 2017 -- EN', 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_welcometext', 'text': None, 'language': 'en'},
+    global_description = [{'class': 'SL', 'name': 'surveyls_welcometext', 'text': None, 'language': 'en'},
                           {'class': 'SL', 'name': 'surveyls_endtext', 'text': None, 'language': 'en'},
                           {'class': 'SL', 'name': 'surveyls_email_invite_subj', 'text': 'Invitation to participate in a survey', 'language': 'en'},
                           {'class': 'SL', 'name': 'surveyls_email_invite', 'text': """Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}""", 'language': 'en'},
@@ -128,8 +129,10 @@ class creationConfig:
 
     freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300', 'location_mapwidth': '500', 'location_mapzoom': '110500', 'statistics_showgraph': '1', 'statistics_showmap': '1', 'text_input_width': '12', 'time_limit_action': '1', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0'}
 
-    likert_question = {'class': 'Q', 'type/scale': 'F', 'same_default': '1', 'statistics_showgraph': '1.0'}
+    likert_question = {'class': 'Q', 'type/scale': 'F', 'same_default': '1', 'statistics_showgraph': '1'}
 
     likert_answer = {'class': 'A', 'type/scale': '0'}
 
     y_n_question = {'class': 'Q', 'type/scale': 'Y', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1'}
+
+    likert_subquestion = {'class': 'SQ', 'type/scale': '0'}
