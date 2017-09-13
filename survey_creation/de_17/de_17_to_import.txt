@@ -444,56 +444,12 @@ A	0	5		4		en
 A	0	6		5 - Mostly other people		en																																																																																																																																			
 Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en			N		1																																																																																																							1																							
 Q	N	soft1can		How many years of Software development experience do you have?		en			N			1																																																																																																							1																						
-Q	F	time1can		In an average month, how much time do you spend on software development		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	time2can		In an average month, how much time do you spend on Research		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	time3can		In an average month, how much time do you spend on Management		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	time4can		In an average month, how much time do you spend on Teaching		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	time5can		In an average month, how much time do you spend on Other activities		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
+Q	F	likert0		Who uses the code that you write?		en			N		1																																																																																																							1																							
+SQ	0	time1can	1	In an average month, how much time do you spend on software development		en																																																																																																																																			
+SQ	0	time2can	1	In an average month, how much time do you spend on Research		en																																																																																																																																			
+SQ	0	time3can	1	In an average month, how much time do you spend on Management		en																																																																																																																																			
+SQ	0	time4can	1	In an average month, how much time do you spend on Teaching		en																																																																																																																																			
+SQ	0	time5can	1	In an average month, how much time do you spend on Other activities		en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
@@ -1115,11 +1071,6 @@ Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you reg
 A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		en																																																																																																																																			
 A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		en																																																																																																																																			
 Q	Y	currentWork2	1	Do you work for a Research Software Group?		en			N		1																																																																																																							1																							
-Q	Y	paper1	1	Has your software contributed to research that has been published in a journal or at a conference?		en			N		1																																																																																																							1																							
-Q	Y	paper2	1	In general, when your software contributes to a paper, are you acknowledged in that paper?		en			N		1																																																																																																							1																							
-Q	Y	paper3	1	Are you generally named as the main author of the paper?		en			N		1																																																																																																							1																							
-Q	Y	paper4	1	Are you generally named as a co-author of the paper?		en			N		1																																																																																																							1																							
-Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en			N		1																																																																																																							1																							
 Q	S	conf1can	1	Have you ever presented your software work at a conference or workshop?		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	conf2can	1	Which conference(s)/workshop(s)		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	N	proj1can		How many software projects are you currently involved in?		en			N			1																																																																																																							1																						
@@ -1229,8 +1180,18 @@ SQ	0	14		Foundations & consortiums		en
 SQ	0	15		Venture capital		en																																																																																																																																			
 SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 G	G4	Your perception of your current position	1			en																																																																																																																																			
-Q	F	perfCheck1		Do you receive sufficient information on the results of your work?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
+Q	F	likert1		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
+SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
+SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck3	1	In your work, do you have access to sufficient data and information?		en																																																																																																																																			
+SQ	0	perfCheck4	1	Do you receive sufficient information on the purpose of your work?		en																																																																																																																																			
+SQ	0	perfCheck5	1	Does your work provide you with direct feedback on how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck6	1	Does your supervisor/line manager inform you about how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck7	1	Do your colleagues inform you about how well you are doing your work?		en																																																																																																																																			
+SQ	0	turnOver1	1	How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?		en																																																																																																																																			
+SQ	0	turnOver2	1	How often do you look forward to another day at work?		en																																																																																																																																			
+SQ	0	turnOver3	1	How often do you consider leaving your job?		en																																																																																																																																			
+SQ	0	turnOver4	1	How often do dream about getting another job that will better suit your needs?		en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
@@ -1241,246 +1202,30 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	perfCheck2		Does your work give you the opportunity to check on how well you are doing your work?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	perfCheck3		In your work, do you have access to sufficient data and information?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	perfCheck4		Do you receive sufficient information on the purpose of your work?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	perfCheck5		Does your work provide you with direct feedback on how well you are doing your work?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	perfCheck6		Does your supervisor/line manager inform you about how well you are doing your work?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	perfCheck7		Do your colleagues inform you about how well you are doing your work?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	turnOver1		How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	turnOver2		How often do you look forward to another day at work?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	turnOver3		How often do you consider leaving your job?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	turnOver4		How often do dream about getting another job that will better suit your needs?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿1 (None at all)		en																																																																																																																																			
-A	0	2		2		en																																																																																																																																			
-A	0	3		3		en																																																																																																																																			
-A	0	4		4		en																																																																																																																																			
-A	0	5		5		en																																																																																																																																			
-A	0	6		6		en																																																																																																																																			
-A	0	7		7		en																																																																																																																																			
-A	0	8		8		en																																																																																																																																			
-A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	turnOver5		My current job satisfies my personal needs		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
+Q	F	likert2		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
+SQ	0	turnOver5	1	My current job satisfies my personal needs		en																																																																																																																																			
+SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
+SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
+SQ	0	affRec2	1	I am satisfied with a word of thanks from my supervisor/line manager		en																																																																																																																																			
+SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
+SQ	0	affRec4	1	I am satisfied with the compliments from my supervisor/line manager concerning my work		en																																																																																																																																			
+SQ	0	affRec5	1	I am satisfied with the encouragement from my supervisor/line manager while doing my job		en																																																																																																																																			
+SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organisation		en																																																																																																																																			
+SQ	0	percEmp2	1	I can think of a number of organisations that would probably offer me a job		en																																																																																																																																			
+SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
+SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
+SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
+SQ	0	affSat2	1	Most days I am enthusiastic about my job		en																																																																																																																																			
+SQ	0	affSat3	1	I feel fairly well satisfied with my job		en																																																																																																																																			
+SQ	0	affSat4	1	I like my job better than the average person		en																																																																																																																																			
 A	0	1		Strongly disagree		en																																																																																																																																			
 A	0	2		Disagree		en																																																																																																																																			
 A	0	3		Neither agree or disagree		en																																																																																																																																			
 A	0	4		Agree		en																																																																																																																																			
 A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	turnOver6		I would accept another job at the same compensation level if I was offered it		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affRec1		I am satisfied with my supervisor/line manager's confidence in me		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affRec2		I am satisfied with a word of thanks from my supervisor/line manager		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affRec3		I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affRec4		I am satisfied with the compliments from my supervisor/line manager concerning my work		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affRec5		I am satisfied with the encouragement from my supervisor/line manager while doing my job		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	percEmp1		It would not be very difficult for me to get an equivalent job in a different organisation		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	percEmp2		I can think of a number of organisations that would probably offer me a job		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	percEmp3		My experience is in demand on the labour market		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	percEmp4		Given my qualifications and experience, getting a new job would not be very hard at all		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affSat1		I find real enjoyment in my job		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affSat2		Most days I am enthusiastic about my job		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affSat3		I feel fairly well satisfied with my job		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	affSat4		I like my job better than the average person		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		Strongly disagree		en																																																																																																																																			
-A	0	2		Disagree		en																																																																																																																																			
-A	0	3		Neither agree or disagree		en																																																																																																																																			
-A	0	4		Agree		en																																																																																																																																			
-A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	satisgen1		In general, how satisfied are you with Your current position		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		﻿0 - Not at all satisfied		en																																																																																																																																			
-A	0	2		1		en																																																																																																																																			
-A	0	3		2		en																																																																																																																																			
-A	0	4		3		en																																																																																																																																			
-A	0	5		4		en																																																																																																																																			
-A	0	6		5		en																																																																																																																																			
-A	0	7		6		en																																																																																																																																			
-A	0	8		7		en																																																																																																																																			
-A	0	9		8		en																																																																																																																																			
-A	0	10		9		en																																																																																																																																			
-A	0	11		10 - Completely satisfied		en																																																																																																																																			
-Q	F	satisgen2		In general, how satisfied are you with Your career		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
+Q	F	likert3		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
+SQ	0	satisgen1	1	In general, how satisfied are you with Your current position		en																																																																																																																																			
+SQ	0	satisgen2	1	In general, how satisfied are you with Your career		en																																																																																																																																			
 A	0	1		﻿0 - Not at all satisfied		en																																																																																																																																			
 A	0	2		1		en																																																																																																																																			
 A	0	3		2		en																																																																																																																																			
@@ -1574,8 +1319,6 @@ SQ	0	1		UK RSE Association (http://rse.ac.uk/)		en
 SQ	0	2		DE-RSE Community (http://de-rse.org)		en																																																																																																																																			
 SQ	0	3		Local RSE group/network		en																																																																																																																																			
 SQ	0	4		N/A		en																																																																																																																																			
-Q	Y	ukrse12de	1	Would you like to visit a conference about software development in academia in Germany?		en			N		1																																																																																																							1																							
-Q	Y	ukrse13de	1	Do you allow us to contact you for a conference announcement via email address you added into this form: https://survey.mpi-cbg.de/limesurvey/index.php/134431?newtest=Y&lang=en		en			N		1																																																																																																							1																							
 Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 G	G0	Question about you	1			de																																																																																																																																			
@@ -1916,56 +1659,12 @@ A	0	5		4		de
 A	0	6		5 - meistens andere		de																																																																																																																																			
 Q	Y	soft2can	1	Würdest Du Dich als professionellen Softwareentwickler bezeichnen?		de			N		1																																																																																																							1																							
 Q	N	soft1can		Wieviel Jahre Erfahrung hast Du bei der Entwicklung von Software?		de			N			1																																																																																																							1																						
-Q	F	time1can		Wieviel Zeit verbringst Du im Durchschnitt monatlich mit der Entwicklung von Software? (Bitte wähle zwischen 1 und 10, 1 = gar nicht, 10 = jederzeit, immer)		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	time2can		Wieviel Zeit verbringst Du im Durchschnitt monatlich mit Forschung?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	time3can		Wieviel Zeit verbringst Du im Durchschnitt monatlich mit Management?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	time4can		Wieviel Zeit verbringst Du im Durchschnitt monatlich mit Lehre?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	time5can		Wieviel Zeit verbringst Du im Durchschnitt monatlich mit anderen Aktivitäten?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
+Q	F	likert0		Wer nutzt den von Dir geschrieben Code?		de			N		1																																																																																																							1																							
+SQ	0	time1can	1	Wieviel Zeit verbringst Du im Durchschnitt monatlich mit der Entwicklung von Software? (Bitte wähle zwischen 1 und 10, 1 = gar nicht, 10 = jederzeit, immer)		de																																																																																																																																			
+SQ	0	time2can	1	Wieviel Zeit verbringst Du im Durchschnitt monatlich mit Forschung?		de																																																																																																																																			
+SQ	0	time3can	1	Wieviel Zeit verbringst Du im Durchschnitt monatlich mit Management?		de																																																																																																																																			
+SQ	0	time4can	1	Wieviel Zeit verbringst Du im Durchschnitt monatlich mit Lehre?		de																																																																																																																																			
+SQ	0	time5can	1	Wieviel Zeit verbringst Du im Durchschnitt monatlich mit anderen Aktivitäten?		de																																																																																																																																			
 A	0	1		1 (gar nicht)		de																																																																																																																																			
 A	0	2		2		de																																																																																																																																			
 A	0	3		3		de																																																																																																																																			
@@ -2587,11 +2286,6 @@ Q	!	currentWork1	1	Arbeitest Du regelmässig mit den selben Wissenschaftlern ode
 A	0	1		"Same researcher(s)"",""Die selben Wissenschaftler"		de																																																																																																																																			
 A	0	2		"Regularly change researcher(s)"",""Regelmäßig andere Wissenschaftler"		de																																																																																																																																			
 Q	Y	currentWork2	1	Arbeitest Du in einer Gruppe, die Software entwickelt?		de			N		1																																																																																																							1																							
-Q	Y	paper1	1	Hat Deine Software zu einer Arbeit bzw. einem Forschungsergebnis beigetragen, das in einem Journal oder auf einer Konferenz vorgestellt wurde?		de			N		1																																																																																																							1																							
-Q	Y	paper2	1	Wenn deine Software zu einer Publikation beigeträgst, wirst Du dafür normalerweise namentlich in der Publikation erwähnt bzw. zitiert?		de			N		1																																																																																																							1																							
-Q	Y	paper3	1	Wirst Du normalerweise als Hauptautor einer Publikation genannt?		de			N		1																																																																																																							1																							
-Q	Y	paper4	1	Wirst Du normalerweise als Co-Autor einer Publikation genannt?		de			N		1																																																																																																							1																							
-Q	Y	paper5	1	Wirst Du normalerweise in den 'Acknowledgements' oder in anderen Textstellen einer Publikation genannt?		de			N		1																																																																																																							1																							
 Q	S	conf1can	1	Hast Du Deine software-bezogene Arbeit schon mal auf einer Konferenz oder einem Workshop vorgestellt?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	conf2can	1	Auf welcher Konferenz oder auf welchem Workshop hast Du Deine software-bezogene Arbeit vorgestellt?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	N	proj1can		In wie vielen Softwareprojekten bis Du derzeit direkt involviert?		de			N			1																																																																																																							1																						
@@ -2701,8 +2395,18 @@ SQ	0	14		Stiftungen und Konsortien		de
 SQ	0	15		Risikokapital		de																																																																																																																																			
 SQ	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
 G	G4	Your perception of your current position	1			de																																																																																																																																			
-Q	F	perfCheck1		Erhälst Du genügend Information über die Ergebnisse Deiner Arbeit?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
+Q	F	likert1		Wie oft weist Du Deiner Software DOIs (Digital Object Identifier) zu?		de			N		1																																																																																																							1																							
+SQ	0	perfCheck1	1	Erhälst Du genügend Information über die Ergebnisse Deiner Arbeit?		de																																																																																																																																			
+SQ	0	perfCheck2	1	Hast Du die Möglichkeit auf Arbeit zu erfahren, wie gut Du arbeitest?		de																																																																																																																																			
+SQ	0	perfCheck3	1	Hast Du für Deine Arbeit ausreichend Zugriff auf Daten und Informationen?		de																																																																																																																																			
+SQ	0	perfCheck4	1	Erhälst Du ausreichend Informationen über den Zweck Deiner Arbeit?		de																																																																																																																																			
+SQ	0	perfCheck5	1	Bekommst Du direktes Feedback, wie gut Du Deine Arbeit machst? 		de																																																																																																																																			
+SQ	0	perfCheck6	1	Informiert Dich Dein Vorgesetzter darüber, wie gut Du Deine Arbeit machst?		de																																																																																																																																			
+SQ	0	perfCheck7	1	Informieren Dich Deine Kollegen darüber, wie gut Du Deine Arbeit machst?		de																																																																																																																																			
+SQ	0	turnOver1	1	Wie oft bist Du frustriert, wenn Dir nicht die Möglichkeit gegeben wird, Deine persönlichen arbeitsbezogenen Ziele zu erreichen?		de																																																																																																																																			
+SQ	0	turnOver2	1	Wie oft freust du dich auf den nächsten Tag auf der Arbeit?		de																																																																																																																																			
+SQ	0	turnOver3	1	Wie oft denkst Du daran, Deinen Job an den Nagel zu hängen?		de																																																																																																																																			
+SQ	0	turnOver4	1	Wie oft träumst Du davon, einen anderen Job anzutreten, der Deinen Ansprüchen mehr gerecht wird?		de																																																																																																																																			
 A	0	1		1 (gar nicht)		de																																																																																																																																			
 A	0	2		2		de																																																																																																																																			
 A	0	3		3		de																																																																																																																																			
@@ -2713,246 +2417,30 @@ A	0	7		7		de
 A	0	8		8		de																																																																																																																																			
 A	0	9		9		de																																																																																																																																			
 A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	perfCheck2		Hast Du die Möglichkeit auf Arbeit zu erfahren, wie gut Du arbeitest?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	perfCheck3		Hast Du für Deine Arbeit ausreichend Zugriff auf Daten und Informationen?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	perfCheck4		Erhälst Du ausreichend Informationen über den Zweck Deiner Arbeit?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	perfCheck5		Bekommst Du direktes Feedback, wie gut Du Deine Arbeit machst? 		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	perfCheck6		Informiert Dich Dein Vorgesetzter darüber, wie gut Du Deine Arbeit machst?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	perfCheck7		Informieren Dich Deine Kollegen darüber, wie gut Du Deine Arbeit machst?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	turnOver1		Wie oft bist Du frustriert, wenn Dir nicht die Möglichkeit gegeben wird, Deine persönlichen arbeitsbezogenen Ziele zu erreichen?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	turnOver2		Wie oft freust du dich auf den nächsten Tag auf der Arbeit?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	turnOver3		Wie oft denkst Du daran, Deinen Job an den Nagel zu hängen?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	turnOver4		Wie oft träumst Du davon, einen anderen Job anzutreten, der Deinen Ansprüchen mehr gerecht wird?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		1 (gar nicht)		de																																																																																																																																			
-A	0	2		2		de																																																																																																																																			
-A	0	3		3		de																																																																																																																																			
-A	0	4		4		de																																																																																																																																			
-A	0	5		5		de																																																																																																																																			
-A	0	6		6		de																																																																																																																																			
-A	0	7		7		de																																																																																																																																			
-A	0	8		8		de																																																																																																																																			
-A	0	9		9		de																																																																																																																																			
-A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	turnOver5		Mein aktueller Job befriedigt meine persönlichen Ansprüche. 		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
+Q	F	likert2		Wie oft weist Du Deiner Software DOIs (Digital Object Identifier) zu?		de			N		1																																																																																																							1																							
+SQ	0	turnOver5	1	Mein aktueller Job befriedigt meine persönlichen Ansprüche. 		de																																																																																																																																			
+SQ	0	turnOver6	1	Ich würde einen anderen Job mit der selben Bezahlung annehmen, wenn ich ein solches Angebot bekommen würde.		de																																																																																																																																			
+SQ	0	affRec1	1	Ich bin zufrieden mit dem Vertrauen, das mein Vorgesetzter in mich setzt.		de																																																																																																																																			
+SQ	0	affRec2	1	Ich bin zufrieden mit dem Dank, den meine Vorgesetzter an mich richtet.		de																																																																																																																																			
+SQ	0	affRec3	1	Ich bin zufrieden mit der Anerkennung, die ich von meinem Vorgesetzten für meine Arbeit bekomme.		de																																																																																																																																			
+SQ	0	affRec4	1	Ich bin zufrieden mit dem Lob, die ich von meinem Vorgesetzten für meine Arbeit bekomme.		de																																																																																																																																			
+SQ	0	affRec5	1	Ich bin zufrieden mit der Ermunterung/Unterstützung, die ich von meinem Vorgesetzten während der Arbeit bekomme.		de																																																																																																																																			
+SQ	0	percEmp1	1	Es wäre nicht schwer für mich, einen ähnlichen Job woanders zu bekommen.		de																																																																																																																																			
+SQ	0	percEmp2	1	Ich kenne mehrere Organisationen, die mir einen Job anbieten würden.		de																																																																																																																																			
+SQ	0	percEmp3	1	Meine Erfahrung ist auf dem Arbeitsmarkt gefragt.		de																																																																																																																																			
+SQ	0	percEmp4	1	Es ist nicht schwer, einen neuen Job mit meinen Qualifikationen und Erfahrungen zu bekommen.		de																																																																																																																																			
+SQ	0	affSat1	1	Ich genieße meine Arbeit.		de																																																																																																																																			
+SQ	0	affSat2	1	An den meisten Tagen gehe ich entusiastisch an die Arbeit.		de																																																																																																																																			
+SQ	0	affSat3	1	Ich fühle mich zufrieden mit meiner Arbeit.		de																																																																																																																																			
+SQ	0	affSat4	1	Ich mag meine Arbeit mehr als andere.		de																																																																																																																																			
 A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
 A	0	2		Stimme nicht zu		de																																																																																																																																			
 A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
 A	0	4		Stimme zu		de																																																																																																																																			
 A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	turnOver6		Ich würde einen anderen Job mit der selben Bezahlung annehmen, wenn ich ein solches Angebot bekommen würde.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affRec1		Ich bin zufrieden mit dem Vertrauen, das mein Vorgesetzter in mich setzt.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affRec2		Ich bin zufrieden mit dem Dank, den meine Vorgesetzter an mich richtet.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affRec3		Ich bin zufrieden mit der Anerkennung, die ich von meinem Vorgesetzten für meine Arbeit bekomme.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affRec4		Ich bin zufrieden mit dem Lob, die ich von meinem Vorgesetzten für meine Arbeit bekomme.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affRec5		Ich bin zufrieden mit der Ermunterung/Unterstützung, die ich von meinem Vorgesetzten während der Arbeit bekomme.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	percEmp1		Es wäre nicht schwer für mich, einen ähnlichen Job woanders zu bekommen.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	percEmp2		Ich kenne mehrere Organisationen, die mir einen Job anbieten würden.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	percEmp3		Meine Erfahrung ist auf dem Arbeitsmarkt gefragt.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	percEmp4		Es ist nicht schwer, einen neuen Job mit meinen Qualifikationen und Erfahrungen zu bekommen.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affSat1		Ich genieße meine Arbeit.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affSat2		An den meisten Tagen gehe ich entusiastisch an die Arbeit.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affSat3		Ich fühle mich zufrieden mit meiner Arbeit.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	affSat4		Ich mag meine Arbeit mehr als andere.		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
-A	0	2		Stimme nicht zu		de																																																																																																																																			
-A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
-A	0	4		Stimme zu		de																																																																																																																																			
-A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	satisgen1		Wie bist Du mit Deiner Position insgesamt zufrieden?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
-A	0	1		0 - Überhaupt nicht zufrieden		de																																																																																																																																			
-A	0	2		1		de																																																																																																																																			
-A	0	3		2		de																																																																																																																																			
-A	0	4		3		de																																																																																																																																			
-A	0	5		4		de																																																																																																																																			
-A	0	6		5		de																																																																																																																																			
-A	0	7		6		de																																																																																																																																			
-A	0	8		7		de																																																																																																																																			
-A	0	9		8		de																																																																																																																																			
-A	0	10		9		de																																																																																																																																			
-A	0	11		10 - Vollends zufrieden		de																																																																																																																																			
-Q	F	satisgen2		Wie bist Du insgesamt mit Deiner Karriere zufrieden?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
+Q	F	likert3		Wie oft weist Du Deiner Software DOIs (Digital Object Identifier) zu?		de			N		1																																																																																																							1																							
+SQ	0	satisgen1	1	Wie bist Du mit Deiner Position insgesamt zufrieden?		de																																																																																																																																			
+SQ	0	satisgen2	1	Wie bist Du insgesamt mit Deiner Karriere zufrieden?		de																																																																																																																																			
 A	0	1		0 - Überhaupt nicht zufrieden		de																																																																																																																																			
 A	0	2		1		de																																																																																																																																			
 A	0	3		2		de																																																																																																																																			
@@ -3046,7 +2534,5 @@ SQ	0	1		UK RSE Association (http://rse.ac.uk/)		de
 SQ	0	2		DE-RSE Community (http://de-rse.org)		de																																																																																																																																			
 SQ	0	3		Andere RSE Gruppen und RSE ähnliche Netzwerke		de																																																																																																																																			
 SQ	0	4		nicht zutreffend / keine Angabe		de																																																																																																																																			
-Q	Y	ukrse12de	1	Würdest Du gern eine Konferenz über Softwareentwicklung in der Wissenschaft in Deutschland besuchen?		de			N		1																																																																																																							1																							
-Q	Y	ukrse13de	1	Erlaubst Du uns Dich via Email für eine Konferenzankündigung zu benachrichtigen? Emailaddesse bitte hinterlegen: https://survey.mpi-cbg.de/limesurvey/index.php/134431?newtest=Y&lang=de-informal		de			N		1																																																																																																							1																							
 Q	S	skill2	1	Welche drei Fähigkeiten, die Dir bei der Arbeit in Bezug auf Sofwareentwicklung hilfreich sind, würdest Du gern erwerben oder vertiefen? Dies können technische oder nicht-technische Fähigkeiten sein.		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	ukrse3	1	Wie hast Du Dir die Fähigkeiten angeeignet bzw. wie bist Du zu den Fähigkeiten gekommen, um Software im wissenschaftlichen Umfeld zu entwickeln?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	

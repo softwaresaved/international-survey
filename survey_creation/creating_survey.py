@@ -314,6 +314,9 @@ def main():
         for q in group_likert(question_to_transform):
             # If questions were grouped together, need to change how it is process
             if len(q) > 1:
+                for row in q:
+                    print(row['code'], row['answer_format'], row['answer_file'])
+                print('\n')
                 # Check if a new section needs to be added before processing the question
                 nbr_section = check_adding_section(q[0], nbr_section, specific_config.sections_txt,
                                                 lang, write_row_outfile, outfile)
@@ -340,23 +343,28 @@ def main():
                         subquestion['relevance'] = '1'
                         subquestion['language'] = lang
                         subquestion['name'] = row['code']
-                        question['text'] = row[txt_lang]
+                        subquestion['text'] = row[txt_lang]
                         write_row_outfile(outfile, subquestion)
 
-                    # add the answers
-                    # create an inc to add to the question code. they need unique label
+                    # Add the answers
+                    # Create an inc to add to the question code. They need unique label
                     n = 1
                     for text_answer in get_answer(folder, q[0]['answer_file']):
-                        answer_row = main_config.one_choice_answer
+                        answer_row = main_config.likert_answer
                         answer_row['name'] = str(n)
-                        answer_row['text'] = text_answer.split(';')[0].strip('"')
+                        answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                         answer_row['language'] = lang
+                        write_row_outfile(outfile, answer_row)
+                        n +=1
+
 
                 elif q[0]['answer_format'].lower() == 'y/n/na':
                     pass
 
             else:
                 for row in q:
+                    # print(row['code'], row['answer_format'], row['answer_file'])
+                    # print('\n')
                     # Check if a new section needs to be added before processing the question
                     nbr_section = check_adding_section(row, nbr_section, specific_config.sections_txt,
                                                        lang, write_row_outfile, outfile)
@@ -462,7 +470,7 @@ def main():
                         write_row_outfile(outfile, question)
                         # Need to create an  empty subquestion
                         subquestion = {'class': 'SQ', 'type/scale': '0',
-                                    'name': 'SQ001'}
+                                       'name': 'SQ001'}
                         subquestion['relevance'] = '1'
                         subquestion['language'] = lang
                         write_row_outfile(outfile, subquestion)
