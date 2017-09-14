@@ -53,9 +53,6 @@ class surveyCreation:
         """
         self.project = project
         self.specific_config = self.import_config()
-        self.outfile = self.init_outfile()
-        self.create_header()
-        self.languages = _get_language()
 
     def import_config(self):
         """
@@ -168,10 +165,52 @@ class surveyCreation:
         self._record_list(good_parameters)
 
     def get_languages(self)
-        # Get the languages
+        """
+        Add any languages to the list that are addition to english
+        :return:
+            :languages list(): all languages represented by their code
+                the language 'en' is always the first element to the list
+        """
         languages = main_config.languages
         languages.append(specific_config.languages_to_add)
         return languages
+
+
+    def create_survey_settings(self):
+        """
+        """
+        def get_text(type_message, lang=None):
+            """
+            """
+            if lang and lang != 'en':
+                filename = '{}_message_{}.md'.format(type_message, lang)
+            else:
+                filename = '{}_message.md'.format(type_message)
+
+            folder = os.path.join(self.project, 'texts')
+            path = os.path.join(folder, filename)
+            with open(path, 'r') as f:
+                return markdown(f.read())
+
+        for lang in languages:
+            # Get the welcome message
+            welcome_message = get_text(folder, 'welcome', lang)
+
+            # Get the end message
+            end_message = get_text(folder, 'end', lang)
+            # Create the description
+            config_description = create_description(main_config, specific_config,
+                                                    welcome_message, end_message, lang)
+
+
+    def run(self):
+        """
+        Run the survey creation
+        """
+        self.outfile = self.init_outfile()
+        self.create_header()
+        self.languages = _get_language()
+        self.create_survey_settings()
 
 
 def read_survey_file(folder):
@@ -193,18 +232,6 @@ def read_survey_file(folder):
 
 
 
-def get_text(folder, type_message, lang=None):
-    """
-    """
-    if lang and lang != 'en':
-        filename = '{}_message_{}.md'.format(type_message, lang)
-    else:
-        filename = '{}_message.md'.format(type_message)
-
-    folder = os.path.join(folder, 'texts')
-    path = os.path.join(folder, filename)
-    with open(path, 'r') as f:
-        return markdown(f.read())
 
 
 def add_text_message(full_list, message, type_message):
@@ -351,7 +378,7 @@ def main():
         # Add a first section
         nbr_section = -1
         nbr_section = check_adding_section({'section': 0}, nbr_section, specific_config.sections_txt,
-                                        lang, _write_row, outfile)
+                                            lang, _write_row, outfile)
 
         # Need this variable to inc each time a new multiple questions is created to ensure they are unique
         # only used in the case of likert and y/n/na merged together
@@ -368,7 +395,7 @@ def main():
                 print('\n')
                 # Check if a new section needs to be added before processing the question
                 nbr_section = check_adding_section(q[0], nbr_section, specific_config.sections_txt,
-                                                lang, _write_row, outfile)
+                                                   lang, _write_row, outfile)
                 # Check if the list of items need to be randomize
                 # if it is the case, just use shuffle to shuffle the list in-place
                 if q[0]['random'] == 'Y':
