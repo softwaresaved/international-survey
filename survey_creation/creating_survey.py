@@ -381,7 +381,7 @@ def main():
 
                     question = main_config.likert_question
                     question['name'] = 'likert' + str(code_to_multiple_question)
-                    # question['text'] = ''
+                    question['text'] = ''
                     question['language'] = lang
                     question['other'] = 'N'
                     code_to_multiple_question +=1
