@@ -44,7 +44,7 @@ S		navigationdelay		0
 S		nokeyboard		N																																																																																																																																					
 S		alloweditaftercompletion		N																																																																																																																																					
 S		googleanalyticsstyle		0																																																																																																																																					
-SL		surveyls_title		RSE study for Germany		en																																																																																																																																			
+SL		surveyls_title		Study about people writing scientic software for Germany		en																																																																																																																																			
 SL		surveyls_welcometext		"<h1>[THIS IS FOR DEMO PURPOSE ONLY -- PLEASE DO NOT SHARE] {this-is-for-demo-purpose-only----please-do-not-share}</h1>
 <p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
 <h2>Why did I receive this invitation?</h2>
@@ -75,8 +75,8 @@ SL		email_admin_notification		Hello,  A new response was submitted for your surv
 SL		email_admin_responses_subj		Response submission for survey {SURVEYNAME} with results		en																																																																																																																																			
 SL		email_admin_responses		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}		en																																																																																																																																			
 SL		surveyls_numberformat		0		en																																																																																																																																			
-SL		surveyls_title		RSE study for Germany		de																																																																																																																																			
-SL		surveyls_title		RSE study for Germany		de																																																																																																																																			
+SL		surveyls_title		Umfrage zur Softwareentwicklung in der deutschen Wissenschaft		de																																																																																																																																			
+SL		surveyls_title		Study about people writing scientic software for Germany		de																																																																																																																																			
 SL		surveyls_welcometext		"<h1>[THIS IS FOR DEMO PURPOSE ONLY -- PLEASE DO NOT SHARE] {this-is-for-demo-purpose-only----please-do-not-share}</h1>
 <p><em><em>Diese Umfrage soll Informationen über Personen, die in der Wissenschaft Software entwickeln, sammeln. Im Englischen werden diese Personen unter anderem </em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">(RSEs)</a> genannt, im Deutschen würde man vielleicht 'Akademische Softwareentwickler' sagen. Wir sprechen mit dieser Umfrage jedoch auch Postdoktoranden oder Wissenschaftliche Mitarbeiter an. Beim Übertragen der Fragen aus dem Englischen wurde bewusst eine freundschaftler Ausdruck gewählt (daher das 'Du'in der Ansprache).</p>
 <h2>Warum habe ich diese Einladung Erhalten?</h2>
@@ -444,7 +444,7 @@ A	0	5		4		en
 A	0	6		5 - Mostly other people		en																																																																																																																																			
 Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en			N		1																																																																																																							1																							
 Q	N	soft1can		How many years of Software development experience do you have?		en			N			1																																																																																																							1																						
-Q	F	likert0		Who uses the code that you write?		en			N		1																																																																																																							1																							
+Q	F	likert0				en			N		1																																																																																																							1																							
 SQ	0	time1can	1	In an average month, how much time do you spend on software development		en																																																																																																																																			
 SQ	0	time2can	1	In an average month, how much time do you spend on Research		en																																																																																																																																			
 SQ	0	time3can	1	In an average month, how much time do you spend on Management		en																																																																																																																																			
@@ -970,7 +970,7 @@ A	0	5		Research/Student Assistant		en
 A	0	6		Agency staff		en																																																																																																																																			
 A	0	7		Freelancer consultant contractor		en																																																																																																																																			
 A	0	8		Zero hours contract		en																																																																																																																																			
-Q	N	currentEmp11		What is the duration of your current contract?		en			N			1																																																																																																							1																						
+Q	N	currentEmp11		What is the duration (in years) of your current contract?		en			N			1																																																																																																							1																						
 Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Accounting & Finance		en																																																																																																																																			
 SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
@@ -1071,7 +1071,7 @@ A	0	1		Same researcher(s)		en
 A	0	2		Regularly change researcher(s)		en																																																																																																																																			
 Q	Y	currentWork2	1	Do you work for a Research Software Group?		en			N		1																																																																																																							1																							
 Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en			N		1																																																																																																							1																							
-Q	S	conf1can	1	Have you ever presented your software work at a conference or workshop?		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
+Q	Y	conf1can	1	Have you ever presented your software work at a conference or workshop?		en			N		1																																																																																																							1																							
 Q	S	conf2can	1	Which conference(s)/workshop(s)		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	N	proj1can		How many software projects are you currently involved in?		en			N			1																																																																																																							1																						
 Q	!	proj2can	1	How many software developers typically work on your projects?		en			N		1																																																																																																							1						1																	
@@ -1180,7 +1180,7 @@ SQ	0	14		Foundations & consortiums		en
 SQ	0	15		Venture capital		en																																																																																																																																			
 SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 G	G4	Your perception of your current position	1			en																																																																																																																																			
-Q	F	likert1		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
+Q	F	likert1				en			N		1																																																																																																							1																							
 SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
 SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
 SQ	0	perfCheck3	1	In your work, do you have access to sufficient data and information?		en																																																																																																																																			
@@ -1202,7 +1202,7 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	likert2		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
+Q	F	likert2				en			N		1																																																																																																							1																							
 SQ	0	turnOver5	1	My current job satisfies my personal needs		en																																																																																																																																			
 SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
 SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
@@ -1223,7 +1223,7 @@ A	0	2		Disagree		en
 A	0	3		Neither agree or disagree		en																																																																																																																																			
 A	0	4		Agree		en																																																																																																																																			
 A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	likert3		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
+Q	F	likert3				en			N		1																																																																																																							1																							
 SQ	0	satisgen1	1	In general, how satisfied are you with Your current position		en																																																																																																																																			
 SQ	0	satisgen2	1	In general, how satisfied are you with Your career		en																																																																																																																																			
 A	0	1		﻿0 - Not at all satisfied		en																																																																																																																																			
@@ -1271,7 +1271,7 @@ A	0	6		E12		en
 A	0	7		E13		en																																																																																																																																			
 A	0	8		E14		en																																																																																																																																			
 A	0	9		E15		en																																																																																																																																			
-G	G6	Final question about you	1			en																																																																																																																																			
+G	G6	Final questions about you	1			en																																																																																																																																			
 Q	!	tool2	1	What Operating System do you prefer to use at work? 		en			Y		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		en																																																																																																																																			
 A	0	2		OS X		en																																																																																																																																			
@@ -1319,10 +1319,10 @@ SQ	0	1		UK RSE Association (http://rse.ac.uk/)		en
 SQ	0	2		DE-RSE Community (http://de-rse.org)		en																																																																																																																																			
 SQ	0	3		Local RSE group/network		en																																																																																																																																			
 SQ	0	4		N/A		en																																																																																																																																			
-Q	Y	ukrse13de	1	Do you allow us to contact you for a conference announcement via email address you added into this form: https://survey.mpi-cbg.de/limesurvey/index.php/134431?newtest=Y&lang=en		en			N		1																																																																																																							1																							
+Q	Y	ukrse13de	1	Do you allow us to contact you for a possible conference announcement via email address you added into this form: https://survey.mpi-cbg.de/limesurvey/index.php/134431?newtest=Y&lang=en		en			N		1																																																																																																							1																							
 Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
-G	G0	Question about you	1			de																																																																																																																																			
+G	G0	Fragen zu Deiner Person	1			de																																																																																																																																			
 Q	!	socio1	1	In welchem Land arbeitest Du?		de			N		1																																																																																																							1						1																	
 A	0	1		Afghanistan		de																																																																																																																																			
 A	0	2		Åland		de																																																																																																																																			
@@ -1646,7 +1646,7 @@ A	0	62		Theologie & Religionswissenschaft		de
 A	0	63		Stadt- und Landschaftsplanung und Landschaftsgestaltung		de																																																																																																																																			
 A	0	64		Tiermedizin		de																																																																																																																																			
 A	0	65		Jugendarbeit		de																																																																																																																																			
-Q	S	edu3	1	In welchem Fachbereich arbeitest Du?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
+Q	S	edu3	1	Gib den Bereich an!		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	edu4	1	Besitzt Du weitere Abschlüsse? Wenn ja, welche?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	Y	rse1	1	Entwickelst Du in Deiner Arbeitszeit Software? Schreibst Du z.B. Quellcode oder Skripte?		de			N		1																																																																																																							1																							
 Q	Y	rse4de	1	Bist Du in Deiner Arbeitszeit in Softwareprojekten involviert und für diese komplett oder in Teilen verantwortlich ohne Quellcode zu schreiben? Bist Du beispielsweise nicht-programmierend als Project Lead, Software Architekt, UI Designer, Tester, Autor der Dokumentation o.ä. beteiligt?		de			N		1																																																																																																							1																							
@@ -1660,7 +1660,7 @@ A	0	5		4		de
 A	0	6		5 - meistens andere		de																																																																																																																																			
 Q	Y	soft2can	1	Würdest Du Dich als professionellen Softwareentwickler bezeichnen?		de			N		1																																																																																																							1																							
 Q	N	soft1can		Wieviel Jahre Erfahrung hast Du bei der Entwicklung von Software?		de			N			1																																																																																																							1																						
-Q	F	likert0		Wer nutzt den von Dir geschrieben Code?		de			N		1																																																																																																							1																							
+Q	F	likert0				de			N		1																																																																																																							1																							
 SQ	0	time1can	1	Wieviel Zeit verbringst Du im Durchschnitt monatlich mit der Entwicklung von Software? (Bitte wähle zwischen 1 und 10, 1 = gar nicht, 10 = jederzeit, immer)		de																																																																																																																																			
 SQ	0	time2can	1	Wieviel Zeit verbringst Du im Durchschnitt monatlich mit Forschung?		de																																																																																																																																			
 SQ	0	time3can	1	Wieviel Zeit verbringst Du im Durchschnitt monatlich mit Management?		de																																																																																																																																			
@@ -1676,7 +1676,7 @@ A	0	7		7		de
 A	0	8		8		de																																																																																																																																			
 A	0	9		9		de																																																																																																																																			
 A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-G	G1	Your current employment	1			de																																																																																																																																			
+G	G1	Fragen zu Deiner jetzigen Anstellung	1			de																																																																																																																																			
 Q	!	currentEmp1	1	Wo arbeitest Du?		de			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de																																																																																																																																			
 A	0	2		Fachhochschule		de																																																																																																																																			
@@ -2186,7 +2186,7 @@ A	0	5		Wissenschaftliche/Studentische Hilfskraft		de
 A	0	6		Leiharbeiter/Fremdarbeiter		de																																																																																																																																			
 A	0	7		Selbständig/freischaffend		de																																																																																																																																			
 A	0	8		Arbeitsvertrag mit einer Mindestbeschäftigungszeit von null Stunden		de																																																																																																																																			
-Q	N	currentEmp11		Welche Dauer hat Dein jetziger Arbeitsvertrag?		de			N			1																																																																																																							1																						
+Q	N	currentEmp11		Welche Dauer (in Jahren) hat Dein jetziger Arbeitsvertrag?		de			N			1																																																																																																							1																						
 Q	M	currentEmp13	1	In welchen Bereichen arbeitest Du (alle zutreffenden ankreuzen)?		de			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Rechnungs- und Finanzwesen		de																																																																																																																																			
 SQ	0	2		Luftfahrt und Fertigungstechnik		de																																																																																																																																			
@@ -2253,7 +2253,7 @@ SQ	0	62		Theologie & Religionswissenschaft		de
 SQ	0	63		Stadt- und Landschaftsplanung und Landschaftsgestaltung		de																																																																																																																																			
 SQ	0	64		Tiermedizin		de																																																																																																																																			
 SQ	0	65		Jugendarbeit		de																																																																																																																																			
-G	G2	Your employment history	1			de																																																																																																																																			
+G	G2	Fragen zu Deinen bisherigen Anstellung(en)	1			de																																																																																																																																			
 Q	!	prevEmp1	1	Wo hast Du in Deinem vorherigem Job gearbeitet?		de			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de																																																																																																																																			
 A	0	2		Fachhochschule		de																																																																																																																																			
@@ -2281,13 +2281,13 @@ A	0	6		Der Wunsch in der Forschung tätig zu sein		de
 A	0	7		Chance für beruflichen Aufstieg		de																																																																																																																																			
 A	0	8		Möglichkeit disziplinenübergreifend zu arbeiten		de																																																																																																																																			
 A	0	9		Möglichkeit neue Fähigkeiten zu lernen		de																																																																																																																																			
-G	G3	Your working practices	1			de																																																																																																																																			
+G	G3	Fragen zu Deinen Arbeitsgewohnheiten	1			de																																																																																																																																			
 Q	!	currentWork1	1	Arbeitest Du regelmässig mit den selben Wissenschaftlern oder arbeitest Du oft mit bzw. für verschiedene Wissenschaftler?		de			N		1																																																																																																							1						1																	
 A	0	1		Die selben Wissenschaftler		de																																																																																																																																			
 A	0	2		Regelmäßig andere Wissenschaftler		de																																																																																																																																			
 Q	Y	currentWork2	1	Arbeitest Du in einer Gruppe, die Software entwickelt?		de			N		1																																																																																																							1																							
 Q	Y	paper5	1	Wirst Du normalerweise in den 'Acknowledgements' oder in anderen Textstellen einer Publikation genannt?		de			N		1																																																																																																							1																							
-Q	S	conf1can	1	Hast Du Deine software-bezogene Arbeit schon mal auf einer Konferenz oder einem Workshop vorgestellt?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
+Q	Y	conf1can	1	Hast Du Deine software-bezogene Arbeit schon mal auf einer Konferenz oder einem Workshop vorgestellt?		de			N		1																																																																																																							1																							
 Q	S	conf2can	1	Auf welcher Konferenz oder auf welchem Workshop hast Du Deine software-bezogene Arbeit vorgestellt?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	N	proj1can		In wie vielen Softwareprojekten bis Du derzeit direkt involviert?		de			N			1																																																																																																							1																						
 Q	!	proj2can	1	Wieviele Entwickler arbieten typischerweise an Deinen Softwareprojekten?		de			N		1																																																																																																							1						1																	
@@ -2340,10 +2340,10 @@ A	0	2		Software selbst (keine spezielle Version)		de
 A	0	3		Veröffentlichung über die Software		de																																																																																																																																			
 Q	S	open3de	1	Welche Werkzeuge nutzt Du, um DOIs zuzuweisen (z. Bsp. Bibliothek vor Ort, Zenodo)?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	Y	open1de	1	Hast Du eine ORCID ID?		de			N		1																																																																																																							1																							
-Q	Y	train1	1	"Hast Du schon einmal Wissenschaftlern beigebracht, rechnergestützte Methoden für ihre Arbeit zu nutzen?"""		de			N		1																																																																																																							1																							
+Q	Y	train1	1	Hast Du schon einmal Wissenschaftlern beigebracht, rechnergestützte Methoden für ihre Arbeit zu nutzen?		de			N		1																																																																																																							1																							
 Q	N	train2		Wie oft im Jahr gestaltest Du Workshops oder andere Weiterbildungen als Lehrender / Instructor?		de			N			1																																																																																																							1																						
 Q	S	train3	1	In welchen Workshops, Weiterbildungsprogrammen o.ä. bist Du involviert? (Gib Deine Antworten bitte als Komma separierte Liste ein; z.B., Software Carpentry, Lehrgang an Universitäten, etc.) 		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
-Q	Y	fund1	1	Kennst Du den Fördungseinrichtung oder das Förderprogramm, die Dich und Dein aktuell größtes Projekt finanzieren?		de			N		1																																																																																																							1																							
+Q	Y	fund1	1	Kennst Du die Fördungseinrichtung oder das Förderprogramm, die Dich und Dein aktuell größtes Projekt finanzieren?		de			N		1																																																																																																							1																							
 Q	M	fund2	1	Welche der folgenden Quellen finanzieren Deine Arbeit als Software entwickelnden Mitarbeiter?		de			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Ich nutze meine eigene Zeit freiwillig/unentgeltlich/ehrenamtlich		de																																																																																																																																			
 SQ	0	2		Spenden/Donation Button		de																																																																																																																																			
@@ -2353,7 +2353,7 @@ SQ	0	5		Bücher und Vermarktung/Merchandising		de
 SQ	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
 SQ	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
 SQ	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
-SQ	0	9		Funding by government and research councils is meant (translate)		de																																																																																																																																			
+SQ	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
 SQ	0	10		SaaS		de																																																																																																																																			
 SQ	0	11		Mitgliedschaften		de																																																																																																																																			
 SQ	0	12		Dual licensing		de																																																																																																																																			
@@ -2370,7 +2370,7 @@ SQ	0	5		Bücher und Vermarktung/Merchandising		de
 SQ	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
 SQ	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
 SQ	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
-SQ	0	9		Funding by government and research councils is meant (translate)		de																																																																																																																																			
+SQ	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
 SQ	0	10		SaaS		de																																																																																																																																			
 SQ	0	11		Mitgliedschaften		de																																																																																																																																			
 SQ	0	12		Dual licensing		de																																																																																																																																			
@@ -2387,7 +2387,7 @@ SQ	0	5		Bücher und Vermarktung/Merchandising		de
 SQ	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
 SQ	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
 SQ	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
-SQ	0	9		Funding by government and research councils is meant (translate)		de																																																																																																																																			
+SQ	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
 SQ	0	10		SaaS		de																																																																																																																																			
 SQ	0	11		Mitgliedschaften		de																																																																																																																																			
 SQ	0	12		Dual licensing		de																																																																																																																																			
@@ -2395,8 +2395,8 @@ SQ	0	13		Open core (Vermarktung proprietäre Softwareversionen oder Add-ons für
 SQ	0	14		Stiftungen und Konsortien		de																																																																																																																																			
 SQ	0	15		Risikokapital		de																																																																																																																																			
 SQ	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
-G	G4	Your perception of your current position	1			de																																																																																																																																			
-Q	F	likert1		Wie oft weist Du Deiner Software DOIs (Digital Object Identifier) zu?		de			N		1																																																																																																							1																							
+G	G4	Deine Wahrnehmung Deiner aktuellen Position	1			de																																																																																																																																			
+Q	F	likert1				de			N		1																																																																																																							1																							
 SQ	0	perfCheck1	1	Erhälst Du genügend Information über die Ergebnisse Deiner Arbeit?		de																																																																																																																																			
 SQ	0	perfCheck2	1	Hast Du die Möglichkeit auf Arbeit zu erfahren, wie gut Du arbeitest?		de																																																																																																																																			
 SQ	0	perfCheck3	1	Hast Du für Deine Arbeit ausreichend Zugriff auf Daten und Informationen?		de																																																																																																																																			
@@ -2418,7 +2418,7 @@ A	0	7		7		de
 A	0	8		8		de																																																																																																																																			
 A	0	9		9		de																																																																																																																																			
 A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
-Q	F	likert2		Wie oft weist Du Deiner Software DOIs (Digital Object Identifier) zu?		de			N		1																																																																																																							1																							
+Q	F	likert2				de			N		1																																																																																																							1																							
 SQ	0	turnOver5	1	Mein aktueller Job befriedigt meine persönlichen Ansprüche. 		de																																																																																																																																			
 SQ	0	turnOver6	1	Ich würde einen anderen Job mit der selben Bezahlung annehmen, wenn ich ein solches Angebot bekommen würde.		de																																																																																																																																			
 SQ	0	affRec1	1	Ich bin zufrieden mit dem Vertrauen, das mein Vorgesetzter in mich setzt.		de																																																																																																																																			
@@ -2439,7 +2439,7 @@ A	0	2		Stimme nicht zu		de
 A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
 A	0	4		Stimme zu		de																																																																																																																																			
 A	0	5		Stimme voll zu		de																																																																																																																																			
-Q	F	likert3		Wie oft weist Du Deiner Software DOIs (Digital Object Identifier) zu?		de			N		1																																																																																																							1																							
+Q	F	likert3				de			N		1																																																																																																							1																							
 SQ	0	satisgen1	1	Wie bist Du mit Deiner Position insgesamt zufrieden?		de																																																																																																																																			
 SQ	0	satisgen2	1	Wie bist Du insgesamt mit Deiner Karriere zufrieden?		de																																																																																																																																			
 A	0	1		0 - Überhaupt nicht zufrieden		de																																																																																																																																			
@@ -2453,7 +2453,7 @@ A	0	8		7		de
 A	0	9		8		de																																																																																																																																			
 A	0	10		9		de																																																																																																																																			
 A	0	11		10 - Vollends zufrieden		de																																																																																																																																			
-G	G5	Demographic questions	1			de																																																																																																																																			
+G	G5	Demographische Fragen	1			de																																																																																																																																			
 Q	!	socio2	1	Dein Geschlecht		de			Y		1																																																																																																							1						1																	
 A	0	1		Weiblich		de																																																																																																																																			
 A	0	2		Männlich		de																																																																																																																																			
@@ -2487,7 +2487,7 @@ A	0	6		E12		de
 A	0	7		E13		de																																																																																																																																			
 A	0	8		E14		de																																																																																																																																			
 A	0	9		E15		de																																																																																																																																			
-G	G6	Final question about you	1			de																																																																																																																																			
+G	G6	Die letzen Fragen über Dich	1			de																																																																																																																																			
 Q	!	tool2	1	Welches Betriebssystem bevorzugst Du auf Arbeit?		de			Y		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		de																																																																																																																																			
 A	0	2		OS X		de																																																																																																																																			
@@ -2529,12 +2529,12 @@ SQ	0	33		VB.NET		de
 SQ	0	34		VBA		de																																																																																																																																			
 SQ	0	35		Visual Basic		de																																																																																																																																			
 Q	Y	ukrse10de	1	Bist Du Teil der de-RSE Initiative? (Du bist automatisch dabei, wenn Du die de-RSE Mailingliste abonniert hast, http://www.de-rse.org/de/join.html)		de			N		1																																																																																																							1																							
-Q	S	ukrse11de	1	Kennst Du eine bessere Berufsbezeichnung/Rolle als RSE (research software engineer), die alle Aktvitiäten der akademischen Softwareentwicklung umfasst?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
+Q	S	ukrse11de	1	Kennst Du eine bessere Berufsbezeichnung/Rolle als RSE (research software engineer), die alle Aktvitiäten der akademischen Softwareentwicklung umfasst? Notiere sie bitte!		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	M	ukrse2	1	Wie triffst Du andere, die Software im wissenschaftlichen Umfeld entwickeln, programmieren, skripten etc.)?		de			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		UK RSE Association (http://rse.ac.uk/)		de																																																																																																																																			
 SQ	0	2		DE-RSE Community (http://de-rse.org)		de																																																																																																																																			
 SQ	0	3		Andere RSE Gruppen und RSE ähnliche Netzwerke		de																																																																																																																																			
 SQ	0	4		nicht zutreffend / keine Angabe		de																																																																																																																																			
-Q	Y	ukrse13de	1	Erlaubst Du uns Dich via Email für eine Konferenzankündigung zu benachrichtigen? Emailaddesse bitte hinterlegen: https://survey.mpi-cbg.de/limesurvey/index.php/134431?newtest=Y&lang=de-informal		de			N		1																																																																																																							1																							
+Q	Y	ukrse13de	1	Erlaubst Du uns Dich via Email für eine etwaige Konferenzankündigung zu benachrichtigen? Emailaddesse bitte hinterlegen: https://survey.mpi-cbg.de/limesurvey/index.php/134431?newtest=Y&lang=de-informal		de			N		1																																																																																																							1																							
 Q	S	skill2	1	Welche drei Fähigkeiten, die Dir bei der Arbeit in Bezug auf Sofwareentwicklung hilfreich sind, würdest Du gern erwerben oder vertiefen? Dies können technische oder nicht-technische Fähigkeiten sein.		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	ukrse3	1	Wie hast Du Dir die Fähigkeiten angeeignet bzw. wie bist Du zu den Fähigkeiten gekommen, um Software im wissenschaftlichen Umfeld zu entwickeln?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
