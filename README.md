@@ -39,7 +39,7 @@ Where to put translated text:
 
 ## Explanation of the columns in questions csv
 
-We now provide some more detail about the columns in the questions csv file. You will not need most of this information, but we want to provide it for comprehensiveness. 
+We now provide some more detail about the columns in the questions csv file. You will not need most of this information, but we want to provide it for comprehensiveness.
 
 * **section**: The survey is split into sections (6 usually) each of which contains a number of questions.
 
@@ -55,15 +55,20 @@ We now provide some more detail about the columns in the questions csv file. You
    * `FREETEXT`: An open text based answer added by the participant
    * `FREENUMERIC`: A field where participant can encode any number
    * `DATETIME`: A field that only date can be chosen
-   * `DROP DOWN LIST`: A list of answers the participant can choose from
+   * `ONE CHOICE`: A list of answers the participant can choose from
    * `MULTIPLE CHOICE`: A list of answers the participant can choose from. (S)He can choose as many as (s)he wants.
    * `LIKERT`: any type of likert scale.
-   
+   * `RANKING`: A list of answers the participants need to rank in order
+
 * **answer_file**: This column gives the name of the csv file located in `listAnswers` folder, where the appropriate answers options are stored.
 
 * **order_question**: Boolean column to know if the order of the answer should be following the answers given in the answer_file of should be orderd according to the question numbers.
 
 * **conditional**: This indicates whether a question only appears if an specific answer was given to a previous question.
+
+* **other**: Indicates when a field 'other' needs to be added to the answers. Works only for the some type of questions ('one choice', 'multiple choice'). The only value it can takes is 'Y'. There is no need to specify anything when 'other' is not wanted.
+
+* **random**: Indicate that the questions need to be randomised. Works only when several questions sharing the same `answer_file` AND the same `code` (without including the number) AND if the questions is 'Y/N/NA' or 'Likert. The only value it can takes is 'Y'. There is no need to specify anything when 'other' is not wanted.
 
 * **source**: If a specific resource (e.g. a list on Wikipedia, a government policy doc, etc.) was used to generate a list of potential answers, please reference it here.
 
