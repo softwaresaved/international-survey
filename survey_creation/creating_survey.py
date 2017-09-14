@@ -35,35 +35,67 @@ elif RUNNING == 'prod':
 logger = logger(name='creating survey', stream_level=DEBUGGING)
 
 
-def import_config(folder):
+class surveyCreation:
     """
-    Import the config file associated with the folder name
+    Creating a text file for limesurvey that can be imported, using the
+    resources in the csv files and in the different folders for each
+    country's project
     """
-    module = 'config.{}'.format(folder)
-    return importlib.import_module(module).config()
 
+    def __init__(self, project):
+        """
+        Get the project name (folder).
+        Import the associated config file
+        Create the outfile path
+        :params:
+            :project str(): the name of which folder/project the information
+                is stored
+        """
+        self.project = project
+        self.specific_config = self._import_config()
+        self.outfile = self.init_outfile()
 
-def create_empty_row():
-    """
-    Create an Ordered dictionary to be used to translate csv file to tsv
-    """
-    return OrderedDict((k, '') for k in main_config.main_headers)
+    def _import_config(self):
+        """
+        Import the config file associated with the folder name
+        """
+        module = 'config.{}'.format(self.project)
+        return importlib.import_module(module).config()
 
+    def init_outfile(self):
+        """
+        Rewrite over the existing file to avoid issue of appending and
+        return the path to the file
+        """
+        outfile_name = self.project + '_to_import.txt'
+        outfile = os.path.join(folder, outfile_name)
+        with open(outfile, 'w') as f:
+            w = csv.DictWriter(f, delimiter='\t',
+                            lineterminator='\n',
+                            quotechar='"',
+                            fieldnames=main_config.main_headers)
+            w.writeheader()
+        return outfile
 
-def init_outfile(folder):
-    """
-    Rewrite over the existing file to avoid issue of appending and
-    return the path to the file
-    """
-    outfile_name = folder + '_to_import.txt'
-    outfile = os.path.join(folder, outfile_name)
-    with open(outfile, 'w') as f:
-        w = csv.DictWriter(f, delimiter='\t',
-                           lineterminator='\n',
-                           quotechar='"',
-                           fieldnames=main_config.main_headers)
-        w.writeheader()
-    return outfile
+    def write_row_outfile(self, row):
+        """
+        Append a dictionary (a row) to the outfile.
+        The dictionary as to respected the keys structure
+        found in the main_config.main_headers
+        As the format accepted by limesurvey is tsv, the
+        separator as setup to be tabulation ('\t')
+        :params:
+            :row dict(): containing the information to record
+                in the file
+
+        :return: None, record into the self.outfile
+        """
+        with open(self.outfile, 'a') as f:
+            w = csv.DictWriter(f, delimiter='\t',
+                            lineterminator='\n',
+                            quotechar='"',
+                            fieldnames=main_config.main_headers)
+            w.writerow(row)
 
 
 def read_survey_file(folder):
@@ -77,15 +109,6 @@ def read_survey_file(folder):
             yield row
 
 
-def write_row_outfile(outfile, row):
-    """
-    """
-    with open(outfile, 'a') as f:
-        w = csv.DictWriter(f, delimiter='\t',
-                           lineterminator='\n',
-                           quotechar='"',
-                           fieldnames=main_config.main_headers)
-        w.writerow(row)
 
 
 def to_modify(original_list, modified_list):
@@ -123,10 +146,15 @@ def create_header(main_config, specific_config):
 def add_from_list(outfile, list_to_copy):
     """
     """
+    def create_empty_row():
+        """
+        Create an Ordered dictionary to be used to translate csv file to tsv
+        """
+        return OrderedDict((k, '') for k in main_config.main_headers)
     for element in list_to_copy:
         row = create_empty_row()
         row.update(element)
-        write_row_outfile(outfile, row)
+        write_row_outfile(row)
 
 
 def get_text(folder, type_message, lang=None):
@@ -250,7 +278,7 @@ def check_adding_section(row, nbr_section, default_row, lang, writing_function, 
         section['type/scale'] = 'G' + str(nbr_section)
         section['language'] = lang
         section.update(default_row[nbr_section][lang])
-        write_row_outfile(outfile, section)
+        write_row_outfile(section)
     return nbr_section
 
 
@@ -336,7 +364,7 @@ def main():
                     question['language'] = lang
                     question['other'] = 'N'
                     code_to_multiple_question +=1
-                    write_row_outfile(outfile, question)
+                    write_row_outfile(question)
 
                     for row in q:
                         subquestion = main_config.likert_subquestion
@@ -344,7 +372,7 @@ def main():
                         subquestion['language'] = lang
                         subquestion['name'] = row['code']
                         subquestion['text'] = row[txt_lang]
-                        write_row_outfile(outfile, subquestion)
+                        write_row_outfile(subquestion)
 
                     # Add the answers
                     # Create an inc to add to the question code. They need unique label
@@ -354,7 +382,7 @@ def main():
                         answer_row['name'] = str(n)
                         answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                         answer_row['language'] = lang
-                        write_row_outfile(outfile, answer_row)
+                        write_row_outfile(answer_row)
                         n +=1
 
 
@@ -364,7 +392,7 @@ def main():
                     question['text'] = row[txt_lang]
                     question['language'] = lang
                     question['other'] = 'N'
-                    write_row_outfile(outfile, question)
+                    write_row_outfile(question)
 
             else:
                 for row in q:
@@ -384,7 +412,7 @@ def main():
                             question['other'] = 'Y'
                         else:
                             question['other'] = 'N'
-                        write_row_outfile(outfile, question)
+                        write_row_outfile(question)
                         # add the answers
                         # create an inc to add to the question code. they need unique label
                         n = 1
@@ -398,7 +426,7 @@ def main():
                                 print(row['code'])
                                 answer_row['text'] = text_answer.split(';')[0].strip('"')
                             answer_row['language'] = lang
-                            write_row_outfile(outfile, answer_row)
+                            write_row_outfile(answer_row)
                             n +=1
 
                     if row['answer_format'].lower() == 'ranking':
@@ -411,12 +439,12 @@ def main():
                         question['name'] = row['code']
                         question['text'] = row[txt_lang]
                         question['language'] = lang
-                        write_row_outfile(outfile, question)
+                        write_row_outfile(question)
                         # Create the Subquestion ranks
                         for i in range(1, 9):  # To get 8 ranked questions
                             init_row = {'class': 'SQ', 'type/scale': '0', 'name': str(i), 'relevance': '1',
                                         'text': 'Rank ' + str(i), 'language': lang}
-                            write_row_outfile(outfile, init_row)
+                            write_row_outfile(init_row)
 
                         n = 1
                         for text_answer in get_answer(folder, row['answer_file']):
@@ -424,7 +452,7 @@ def main():
                             answer_row['name'] = str(n)
                             answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                             answer_row['language'] = lang
-                            write_row_outfile(outfile, answer_row)
+                            write_row_outfile(answer_row)
                             n +=1
 
                     if row['answer_format'].lower() == 'multiple choices':
@@ -437,7 +465,7 @@ def main():
                             question['other'] = 'Y'
                         else:
                             question['other'] = 'N'
-                        write_row_outfile(outfile, question)
+                        write_row_outfile(question)
                         # Add the answers
                         # Create an inc to add to the question code. They need unique label
                         n = 1
@@ -446,7 +474,7 @@ def main():
                             answer_row['name'] = str(n)
                             answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                             answer_row['language'] = lang
-                            write_row_outfile(outfile, answer_row)
+                            write_row_outfile(answer_row)
                             n +=1
 
                     if row['answer_format'].lower() == 'freenumeric':
@@ -456,7 +484,7 @@ def main():
                         question['language'] = lang
                         # question['validation'] = lang
                         question['other'] = 'N'
-                        write_row_outfile(outfile, question)
+                        write_row_outfile(question)
 
                     if row['answer_format'].lower() == 'freetext':
                         question = main_config.freetext_question
@@ -464,7 +492,7 @@ def main():
                         question['text'] = row[txt_lang]
                         question['language'] = lang
                         question['other'] = 'N'
-                        write_row_outfile(outfile, question)
+                        write_row_outfile(question)
 
                     if row['answer_format'].lower() == 'likert':
                         question = main_config.likert_question
@@ -472,13 +500,13 @@ def main():
                         question['text'] = row[txt_lang]
                         question['language'] = lang
                         question['other'] = 'N'
-                        write_row_outfile(outfile, question)
+                        write_row_outfile(question)
                         # Need to create an  empty subquestion
                         subquestion = {'class': 'SQ', 'type/scale': '0',
                                        'name': 'SQ001'}
                         subquestion['relevance'] = '1'
                         subquestion['language'] = lang
-                        write_row_outfile(outfile, subquestion)
+                        write_row_outfile(subquestion)
 
                         # Add the answers
                         # Create an inc to add to the question code. They need unique label
@@ -488,7 +516,7 @@ def main():
                             answer_row['name'] = str(n)
                             answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                             answer_row['language'] = lang
-                            write_row_outfile(outfile, answer_row)
+                            write_row_outfile(answer_row)
                             n +=1
 
                     elif row['answer_format'].lower() == 'y/n/na':
@@ -497,7 +525,7 @@ def main():
                         question['text'] = row[txt_lang]
                         question['language'] = lang
                         question['other'] = 'N'
-                        write_row_outfile(outfile, question)
+                        write_row_outfile(question)
 
 
 if __name__ == "__main__":
