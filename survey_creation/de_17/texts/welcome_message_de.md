@@ -1,6 +1,3 @@
-\[THIS IS FOR DEMO PURPOSE ONLY -- PLEASE DO NOT SHARE\] {this-is-for-demo-purpose-only----please-do-not-share}
-========================================================
-
 **Diese Umfrage soll Informationen über Personen, die in der Wissenschaft Software entwickeln, sammeln. Im Englischen werden diese Personen unter anderem *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers) genannt, im Deutschen würde man vielleicht 'Akademische Softwareentwickler' sagen. Wir sprechen mit dieser Umfrage jedoch auch Postdoktoranden oder Wissenschaftliche Mitarbeiter an. Beim Übertragen der Fragen aus dem Englischen wurde bewusst eine freundschaftler Ausdruck gewählt (daher das 'Du'in der Ansprache).
 
 
