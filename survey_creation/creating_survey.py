@@ -52,10 +52,12 @@ class surveyCreation:
                 is stored
         """
         self.project = project
-        self.specific_config = self._import_config()
+        self.specific_config = self.import_config()
         self.outfile = self.init_outfile()
+        self.create_header()
+        self.languages = _get_language()
 
-    def _import_config(self):
+    def import_config(self):
         """
         Import the config file associated with the folder name
         """
@@ -77,7 +79,31 @@ class surveyCreation:
             w.writeheader()
         return outfile
 
-    def write_row_outfile(self, row):
+    @staticmethod
+    def _to_modify(original_list, modified_list):
+        """
+        """
+        return_list = list()
+        for element in original_list:
+            replaced = False
+            for e in modified_list:
+                if element['name'] == e['name']:
+                    return_list.append(e)
+                    replaced = True
+                    break
+            if replaced is False:
+                return_list.append(element)
+        return return_list
+
+    @staticmethod
+    def _to_add(original_list, list_to_add):
+        """
+        """
+        for obj in list_to_add:
+            original_list.insert(obj[1], obj[0])
+        return original_list
+
+    def _write_row(self, row):
         """
         Append a dictionary (a row) to the outfile.
         The dictionary as to respected the keys structure
@@ -97,6 +123,56 @@ class surveyCreation:
                             fieldnames=main_config.main_headers)
             w.writerow(row)
 
+    def _record_list(self, list_to_copy):
+        """
+        Get a list of dictionary to add into the outfile.
+        Get each dictionary and update the empty dictionary created
+        by create_empty_row() to be sure all the headers and element are
+        set up (with '' if empty)
+        :params:
+            :list_to_copy list(): List of dictionary to record
+
+        :return:
+            :None: record each dict from the list into the self.outfile
+        """
+        def create_empty_row():
+            """
+            Create an Ordered dictionary to be used to translate csv file to tsv
+            """
+            return OrderedDict((k, '') for k in main_config.main_headers)
+        for element in list_to_copy:
+            row = create_empty_row()
+            row.update(element)
+            self._write_row(row)
+
+    def create_header(self):
+        """
+        Create the headers for the outfile. The
+        headers are recorded in the main_config file.
+        The specific_config file can also contain specific parameters
+        to either modify or add to the headers dictionary before recording
+        it into  the outfile.
+        These headers needs to be added at the top of the outfile.
+        The header needs to be recorded only once and does not change with
+        the added translation in the case they are some
+        :params:
+            None
+        :return: None, writes the header into the outfile
+        """
+        # Create a copy the header to the empty file
+        # Check if some parameters needs to be modify from the specific_config
+        good_parameters = self._to_modify(main_config.global_headers, self.specific_config.header_to_modify)
+        # Check if some parameters needs to be added.
+        good_parameters = self._to_add(main_config.global_headers, self.specific_config.header_to_add)
+        # Record the copy into the file
+        self._record_list(good_parameters)
+
+    def get_languages(self)
+        # Get the languages
+        languages = main_config.languages
+        languages.append(specific_config.languages_to_add)
+        return languages
+
 
 def read_survey_file(folder):
     """
@@ -111,50 +187,10 @@ def read_survey_file(folder):
 
 
 
-def to_modify(original_list, modified_list):
-    """
-    """
-    return_list = list()
-    for element in original_list:
-        replaced = False
-        for e in modified_list:
-            if element['name'] == e['name']:
-                return_list.append(e)
-                replaced = True
-                break
-        if replaced is False:
-            return_list.append(element)
-    return return_list
 
 
-def to_add(original_list, list_to_add):
-    """
-    """
-    for obj in list_to_add:
-        original_list.insert(obj[1], obj[0])
-    return original_list
 
 
-def create_header(main_config, specific_config):
-    """
-    """
-    good_parameters = to_modify(main_config.global_headers, specific_config.header_to_modify)
-    good_parameters = to_add(main_config.global_headers, specific_config.header_to_add)
-    return good_parameters
-
-
-def add_from_list(outfile, list_to_copy):
-    """
-    """
-    def create_empty_row():
-        """
-        Create an Ordered dictionary to be used to translate csv file to tsv
-        """
-        return OrderedDict((k, '') for k in main_config.main_headers)
-    for element in list_to_copy:
-        row = create_empty_row()
-        row.update(element)
-        write_row_outfile(row)
 
 
 def get_text(folder, type_message, lang=None):
@@ -268,7 +304,7 @@ def group_likert(indict):
 
 
 def check_adding_section(row, nbr_section, default_row, lang, writing_function, outfile):
-    write_row_outfile = writing_function
+    _write_row = writing_function
     if int(row['section']) - 1 != nbr_section:
         # -1 because the section numbers starts at 0 but
         # in the csv survey_file it starts at 1
@@ -278,7 +314,7 @@ def check_adding_section(row, nbr_section, default_row, lang, writing_function, 
         section['type/scale'] = 'G' + str(nbr_section)
         section['language'] = lang
         section.update(default_row[nbr_section][lang])
-        write_row_outfile(section)
+        _write_row(section)
     return nbr_section
 
 
@@ -286,21 +322,6 @@ def main():
     # Get which survey
     folder = sys.argv[1]
 
-    # Import specific config file
-    specific_config = import_config(folder)
-
-    # Init an empty survey file
-    outfile = init_outfile(folder)
-
-    # Create a copy the header to the empty file
-    config_header = create_header(main_config, specific_config)
-
-    # Record the copy into the file
-    add_from_list(outfile, config_header)
-
-    # Get the languages
-    languages = main_config.languages
-    languages.append(specific_config.languages_to_add)
 
 
 
@@ -330,7 +351,7 @@ def main():
         # Add a first section
         nbr_section = -1
         nbr_section = check_adding_section({'section': 0}, nbr_section, specific_config.sections_txt,
-                                        lang, write_row_outfile, outfile)
+                                        lang, _write_row, outfile)
 
         # Need this variable to inc each time a new multiple questions is created to ensure they are unique
         # only used in the case of likert and y/n/na merged together
@@ -347,7 +368,7 @@ def main():
                 print('\n')
                 # Check if a new section needs to be added before processing the question
                 nbr_section = check_adding_section(q[0], nbr_section, specific_config.sections_txt,
-                                                lang, write_row_outfile, outfile)
+                                                lang, _write_row, outfile)
                 # Check if the list of items need to be randomize
                 # if it is the case, just use shuffle to shuffle the list in-place
                 if q[0]['random'] == 'Y':
@@ -364,7 +385,7 @@ def main():
                     question['language'] = lang
                     question['other'] = 'N'
                     code_to_multiple_question +=1
-                    write_row_outfile(question)
+                    _write_row(question)
 
                     for row in q:
                         subquestion = main_config.likert_subquestion
@@ -372,7 +393,7 @@ def main():
                         subquestion['language'] = lang
                         subquestion['name'] = row['code']
                         subquestion['text'] = row[txt_lang]
-                        write_row_outfile(subquestion)
+                        _write_row(subquestion)
 
                     # Add the answers
                     # Create an inc to add to the question code. They need unique label
@@ -382,7 +403,7 @@ def main():
                         answer_row['name'] = str(n)
                         answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                         answer_row['language'] = lang
-                        write_row_outfile(answer_row)
+                        _write_row(answer_row)
                         n +=1
 
 
@@ -392,7 +413,7 @@ def main():
                     question['text'] = row[txt_lang]
                     question['language'] = lang
                     question['other'] = 'N'
-                    write_row_outfile(question)
+                    _write_row(question)
 
             else:
                 for row in q:
@@ -400,7 +421,7 @@ def main():
                     # print('\n')
                     # Check if a new section needs to be added before processing the question
                     nbr_section = check_adding_section(row, nbr_section, specific_config.sections_txt,
-                                                       lang, write_row_outfile, outfile)
+                                                       lang, _write_row, outfile)
 
                     if row['answer_format'].lower() == 'one choice':
                         # Create the question
@@ -412,7 +433,7 @@ def main():
                             question['other'] = 'Y'
                         else:
                             question['other'] = 'N'
-                        write_row_outfile(question)
+                        _write_row(question)
                         # add the answers
                         # create an inc to add to the question code. they need unique label
                         n = 1
@@ -426,7 +447,7 @@ def main():
                                 print(row['code'])
                                 answer_row['text'] = text_answer.split(';')[0].strip('"')
                             answer_row['language'] = lang
-                            write_row_outfile(answer_row)
+                            _write_row(answer_row)
                             n +=1
 
                     if row['answer_format'].lower() == 'ranking':
@@ -439,12 +460,12 @@ def main():
                         question['name'] = row['code']
                         question['text'] = row[txt_lang]
                         question['language'] = lang
-                        write_row_outfile(question)
+                        _write_row(question)
                         # Create the Subquestion ranks
                         for i in range(1, 9):  # To get 8 ranked questions
                             init_row = {'class': 'SQ', 'type/scale': '0', 'name': str(i), 'relevance': '1',
                                         'text': 'Rank ' + str(i), 'language': lang}
-                            write_row_outfile(init_row)
+                            _write_row(init_row)
 
                         n = 1
                         for text_answer in get_answer(folder, row['answer_file']):
@@ -452,7 +473,7 @@ def main():
                             answer_row['name'] = str(n)
                             answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                             answer_row['language'] = lang
-                            write_row_outfile(answer_row)
+                            _write_row(answer_row)
                             n +=1
 
                     if row['answer_format'].lower() == 'multiple choices':
@@ -465,7 +486,7 @@ def main():
                             question['other'] = 'Y'
                         else:
                             question['other'] = 'N'
-                        write_row_outfile(question)
+                        _write_row(question)
                         # Add the answers
                         # Create an inc to add to the question code. They need unique label
                         n = 1
@@ -474,7 +495,7 @@ def main():
                             answer_row['name'] = str(n)
                             answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                             answer_row['language'] = lang
-                            write_row_outfile(answer_row)
+                            _write_row(answer_row)
                             n +=1
 
                     if row['answer_format'].lower() == 'freenumeric':
@@ -484,7 +505,7 @@ def main():
                         question['language'] = lang
                         # question['validation'] = lang
                         question['other'] = 'N'
-                        write_row_outfile(question)
+                        _write_row(question)
 
                     if row['answer_format'].lower() == 'freetext':
                         question = main_config.freetext_question
@@ -492,7 +513,7 @@ def main():
                         question['text'] = row[txt_lang]
                         question['language'] = lang
                         question['other'] = 'N'
-                        write_row_outfile(question)
+                        _write_row(question)
 
                     if row['answer_format'].lower() == 'likert':
                         question = main_config.likert_question
@@ -500,13 +521,13 @@ def main():
                         question['text'] = row[txt_lang]
                         question['language'] = lang
                         question['other'] = 'N'
-                        write_row_outfile(question)
+                        _write_row(question)
                         # Need to create an  empty subquestion
                         subquestion = {'class': 'SQ', 'type/scale': '0',
                                        'name': 'SQ001'}
                         subquestion['relevance'] = '1'
                         subquestion['language'] = lang
-                        write_row_outfile(subquestion)
+                        _write_row(subquestion)
 
                         # Add the answers
                         # Create an inc to add to the question code. They need unique label
@@ -516,7 +537,7 @@ def main():
                             answer_row['name'] = str(n)
                             answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
                             answer_row['language'] = lang
-                            write_row_outfile(answer_row)
+                            _write_row(answer_row)
                             n +=1
 
                     elif row['answer_format'].lower() == 'y/n/na':
@@ -525,7 +546,7 @@ def main():
                         question['text'] = row[txt_lang]
                         question['language'] = lang
                         question['other'] = 'N'
-                        write_row_outfile(question)
+                        _write_row(question)
 
 
 if __name__ == "__main__":
