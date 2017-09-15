@@ -106,6 +106,7 @@ class creationConfig:
                           {'class': 'SL', 'name': 'email_admin_responses', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}""", 'language': 'en'},
                           {'class': 'SL', 'name': 'surveyls_numberformat', 'text': '0', 'language': 'en'}]
 
+
     # Standard layout for groups
     group_format = {'class': 'G', 'type/scale': 'G+inc_number', 'relevance': '1'}
 
