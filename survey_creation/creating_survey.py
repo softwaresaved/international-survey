@@ -161,9 +161,6 @@ class surveyCreation:
         good_parameters = self._to_add(good_parameters, self.specific_config.header_to_add)
         # Record the copy into the file
         self._record_list(good_parameters)
-        # for l in good_parameters:
-        #     print(l)
-        #     print('\n')
 
     def _get_languages(self):
         """
@@ -228,9 +225,6 @@ class surveyCreation:
             for d in survey_settings:
                 d['language'] = lang
                 setting_with_lang.append(d)
-            for l in setting_with_lang:
-                print(l)
-                print('\n')
             self._record_list(setting_with_lang)
 
     def run(self):
