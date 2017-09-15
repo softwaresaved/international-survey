@@ -235,6 +235,162 @@ class surveyCreation:
 
             self._record_list(setting_with_lang)
 
+    def check_adding_section(self, row, nbr_section, default_row, lang):
+        if int(row['section']) - 1 != nbr_section:
+            # -1 because the section numbers starts at 0 but
+            # in the csv survey_file it starts at 1
+            nbr_section = int(row['section']) - 1
+            section = main_config.group_format
+            # type/scale are like 'G0', 'G1', etc.
+            section['type/scale'] = 'G' + str(nbr_section)
+            section['language'] = lang
+            section.update(default_row[nbr_section][lang])
+            self._write_row(section)
+        return nbr_section
+
+    @staticmethod
+    def read_survey_file(folder):
+        """
+        Read the survey csv file and yield each line as a dictionary
+        """
+        question_file = os.path.join(folder, '.'.join([folder, 'csv']))
+        with open(question_file, 'r') as f:
+            csv_f = csv.DictReader(f)
+            for row in csv_f:
+                yield row
+
+    @staticmethod
+    def group_likert(indict):
+        """
+        Take the dictionary of all the questions and group them
+        into the same group if they have to be displayed together.
+        Only applicable for the type_question Y/N/NA and the likert ones
+        """
+        previous_answer_format = None
+        previous_file_answer = None
+        previous_code = None
+        previous_file_answer = None
+        group_survey_q = list()
+        for q in indict:
+            current_answer_format = q['answer_format'].lower()
+            current_file_answer = q['answer_file']
+            current_code = ''.join([i for i in q['code'] if not i.isdigit()])
+
+            if current_answer_format == 'likert':
+                if len(group_survey_q) > 0:
+                    if current_file_answer == previous_file_answer or previous_file_answer is None:
+                        if previous_answer_format == 'likert':
+                            pass
+                        else:
+                            yield group_survey_q
+                            group_survey_q = list()
+                    else:
+                        yield group_survey_q
+                        group_survey_q = list()
+
+            elif current_answer_format == 'y/n/na':
+                if len(group_survey_q) > 0:
+                    if current_code == previous_code or previous_code is None:
+                        if previous_answer_format == 'y/n/na':
+                            pass
+                        else:
+                            yield group_survey_q
+                            group_survey_q = list()
+                    else:
+                        yield group_survey_q
+                        group_survey_q = list()
+
+            else:
+                if len(group_survey_q) > 0:
+                    yield group_survey_q
+                group_survey_q = list()
+            group_survey_q.append(q)
+            previous_answer_format = current_answer_format
+            previous_file_answer = current_file_answer
+            previous_code = current_code
+
+        yield group_survey_q
+
+
+    def create_survey_questions(self):
+        """
+        """
+        # Create the questions for each languages, everything has to be done each time
+        # the enumerate helps for finding the right answer and the right lang_trans
+        # in case of more than one translation
+        for index_lang, lang in enumerate(self.languages):
+            # Speficify where to find the text for the question
+            if lang != 'en':
+                txt_lang = 'lang_trans' + str(index_lang)
+            else:
+                txt_lang = 'question'
+            # Add a first section
+            nbr_section = -1
+            nbr_section = self.check_adding_section({'section': 0}, nbr_section, self.specific_config.sections_txt,
+                                                    lang)
+
+            # Need this variable to inc each time a new multiple questions is created to ensure they are unique
+            # only used in the case of likert and y/n/na merged together
+            code_to_multiple_question = 0
+
+            # Open the csv file and read it through a dictionary (generator)
+            question_to_transform = self.read_survey_file(self.project)
+            # pass this generator into the function group_likert() to group Y/N and likert together
+            for q in self.group_likert(question_to_transform):
+                # If questions were grouped together, need to change how it is process
+                if len(q) > 1:
+                    for row in q:
+                        print(row['code'], row['answer_format'], row['answer_file'])
+                    print('\n')
+                    # Check if a new section needs to be added before processing the question
+                    nbr_section = self.check_adding_section(q[0], nbr_section, self.specific_config.sections_txt,
+                                                    lang)
+                    # Check if the list of items need to be randomize
+                    # if it is the case, just use shuffle to shuffle the list in-place
+                    if q[0]['random'] == 'Y':
+                        pass
+                        # shuffle(q)
+
+                    if q[0]['answer_format'].lower() == 'likert':
+                        # Create the question header that needs to be created once for all the
+                        # following question
+
+                        question = main_config.likert_question
+                        question['name'] = 'likert' + str(code_to_multiple_question)
+                        question['text'] = ''
+                        question['language'] = lang
+                        question['other'] = 'N'
+                        code_to_multiple_question +=1
+                        self._write_row(question)
+
+                        for row in q:
+                            subquestion = main_config.likert_subquestion
+                            subquestion['relevance'] = '1'
+                            subquestion['language'] = lang
+                            subquestion['name'] = row['code']
+                            subquestion['text'] = row[txt_lang]
+                            self._write_row(subquestion)
+
+                        # Add the answers
+                        # Create an inc to add to the question code. They need unique label
+                        n = 1
+                        for text_answer in get_answer(self.project, q[0]['answer_file']):
+                            answer_row = main_config.likert_answer
+                            answer_row['name'] = str(n)
+                            answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
+                            answer_row['language'] = lang
+                            self._write_row(answer_row)
+                            n +=1
+
+                    elif q[0]['answer_format'].lower() == 'y/n/na':
+                        question = main_config.y_n_question
+                        question['name'] = row['code']
+                        question['text'] = row[txt_lang]
+                        question['language'] = lang
+                        question['other'] = 'N'
+                        self._write_row(question)
+
+
     def run(self):
         """
         Run the survey creation
@@ -243,17 +399,9 @@ class surveyCreation:
         self.create_header()
         self.languages = self._get_languages()
         self.create_survey_settings()
+        self.create_survey_questions()
 
 
-def read_survey_file(folder):
-    """
-    Read the survey csv file and yield each line as a dictionary
-    """
-    question_file = os.path.join(folder, '.'.join([folder, 'csv']))
-    with open(question_file, 'r') as f:
-        csv_f = csv.DictReader(f)
-        for row in csv_f:
-            yield row
 
 
 
@@ -320,19 +468,6 @@ def group_likert(indict):
     yield group_survey_q
 
 
-def check_adding_section(row, nbr_section, default_row, lang, writing_function, outfile):
-    _write_row = writing_function
-    if int(row['section']) - 1 != nbr_section:
-        # -1 because the section numbers starts at 0 but
-        # in the csv survey_file it starts at 1
-        nbr_section = int(row['section']) - 1
-        section = main_config.group_format
-        # type/scale are like 'G0', 'G1', etc.
-        section['type/scale'] = 'G' + str(nbr_section)
-        section['language'] = lang
-        section.update(default_row[nbr_section][lang])
-        _write_row(section)
-    return nbr_section
 
 
 def main():
