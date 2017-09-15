@@ -82,14 +82,13 @@ class surveyCreation:
         """
         return_list = list()
         for element in original_list:
-            replaced = False
+            to_replace = False
             for e in modified_list:
                 if element['name'] == e['name']:
-                    print(element)
                     return_list.append(e)
-                    replaced = True
+                    to_replace = True
                     break
-            if replaced is False:
+            if to_replace is False:
                 return_list.append(element)
         return return_list
 
@@ -153,15 +152,13 @@ class surveyCreation:
         These headers needs to be added at the top of the outfile.
         The header needs to be recorded only once and does not change with
         the added translation in the case they are some
-        :params:
-            None
         :return: None, writes the header into the outfile
         """
         # Create a copy the header to the empty file
         # Check if some parameters needs to be modify from the specific_config
         good_parameters = self._to_modify(main_config.global_headers, self.specific_config.header_to_modify)
         # Check if some parameters needs to be added.
-        good_parameters = self._to_add(main_config.global_headers, self.specific_config.header_to_add)
+        good_parameters = self._to_add(good_parameters, self.specific_config.header_to_add)
         # Record the copy into the file
         self._record_list(good_parameters)
         # for l in good_parameters:
@@ -231,9 +228,9 @@ class surveyCreation:
             for d in survey_settings:
                 d['language'] = lang
                 setting_with_lang.append(d)
-            # for l in setting_with_lang:
-            #     print(l)
-            #     print('\n')
+            for l in setting_with_lang:
+                print(l)
+                print('\n')
             self._record_list(setting_with_lang)
 
     def run(self):
