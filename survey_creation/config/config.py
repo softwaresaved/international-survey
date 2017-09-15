@@ -89,7 +89,7 @@ class creationConfig:
                       {'class': 'S', 'name': 'googleanalyticsstyle', 'text': '0'}]
 
     # List of parameters that comprise the survey title and the welcome text
-    global_description = [{'class': 'SL', 'name': 'surveyls_welcometext', 'text': None, 'language': 'en'},
+    global_settings = [{'class': 'SL', 'name': 'surveyls_welcometext', 'text': None, 'language': 'en'},
                           {'class': 'SL', 'name': 'surveyls_endtext', 'text': None, 'language': 'en'},
                           {'class': 'SL', 'name': 'surveyls_email_invite_subj', 'text': 'Invitation to participate in a survey', 'language': 'en'},
                           {'class': 'SL', 'name': 'surveyls_email_invite', 'text': """Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}""", 'language': 'en'},
