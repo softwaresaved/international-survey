@@ -14,13 +14,12 @@ class config:
     header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'de'}, 12)]
 
     # Same as header_to_modify
-    description_to_modify = []
-    description_to_add = []
+    settings_to_modify = []
+    settings_to_add = []
     languages_to_add = 'de'
 
     # The index positions starts at 0
     # Adding the survey title to the global description. The index position is at 0 and the structure of the dictionary is as follow:
-    # {'class': 'SL', 'name': 'surveyls_title', 'text': 'DEMO -- RSE Survey -- 2017 -- EN', 'language': 'en'}
     survey_title = {'en': 'Study about people writing scientic software for Germany',
                     'de': 'Umfrage zur Softwareentwicklung in der deutschen Wissenschaft'}
 
