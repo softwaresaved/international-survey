@@ -16,7 +16,7 @@ S		allowregister		N
 S		allowsave		Y																																																																																																																																					
 S		autonumber_start		15																																																																																																																																					
 S		autoredirect		N																																																																																																																																					
-S		allowprev		N																																																																																																																																					
+S		allowprev		Y																																																																																																																																					
 S		printanswers		Y																																																																																																																																					
 S		ipaddr		Y																																																																																																																																					
 S		refurl		Y																																																																																																																																					
