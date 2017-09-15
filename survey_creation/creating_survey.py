@@ -181,10 +181,7 @@ class surveyCreation:
         message_done = False
         for element in full_list:
             if message_done is False:
-                if element['name'] == 'surveyls_welcometext' and type_message == 'welcome':
-                    message_done = True
-                    element['text'] = message
-                elif element['name'] == 'surveyls_endtext' and type_message == 'end':
+                if element['name'] == 'surveyls_{}text'.format(type_message):
                     message_done = True
                     element['text'] = message
             return_list.append(element)
@@ -207,16 +204,26 @@ class surveyCreation:
                 return markdown(f.read())
 
         for lang in self.languages:
+            print(lang)
+            # All these None are a workaround to fix the bug that add
+            # two titles for the second language. No idea why
+            survey_settings = None
+            setting_with_lang = None
+            survey_title = None
+            survey_title_row = None
             # Get the welcome message
             welcome_message = get_text('welcome', lang)
             # Get the end message
             end_message = get_text('end', lang)
+            survey_settings = self._to_modify(main_config.global_settings,
+                                              self.specific_config.settings_to_modify)
+            survey_settings = self._to_add(survey_settings,
+                                           self.specific_config.settings_to_add)
 
-            survey_settings = self._to_modify(main_config.global_settings, self.specific_config.settings_to_modify)
-            survey_settings = self._to_add(main_config.global_settings, self.specific_config.settings_to_modify)
             survey_title = self.specific_config.survey_title[lang]
             survey_title_row = {'class': 'SL', 'name': 'surveyls_title', 'text': survey_title}
             survey_settings.insert(0, survey_title_row)
+            # print(survey_settings)
             survey_settings = self._add_text_message(survey_settings, welcome_message, 'welcome')
             survey_settings = self._add_text_message(survey_settings, end_message, 'end')
 
@@ -225,6 +232,7 @@ class surveyCreation:
             for d in survey_settings:
                 d['language'] = lang
                 setting_with_lang.append(d)
+
             self._record_list(setting_with_lang)
 
     def run(self):
