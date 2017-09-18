@@ -1,11 +1,11 @@
-**Diese Umfrage soll Informationen über Personen, die in der Wissenschaft Software entwickeln, sammeln. Im Englischen werden diese Personen unter anderem *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers) genannt, im Deutschen würde man vielleicht 'Akademische Softwareentwickler' sagen. Wir sprechen mit dieser Umfrage jedoch auch Postdoktoranden oder Wissenschaftliche Mitarbeiter an. Beim Übertragen der Fragen aus dem Englischen wurde bewusst eine freundschaftler Ausdruck gewählt (daher das 'Du'in der Ansprache).
+**Diese Umfrage soll Informationen über Personen sammeln, die in der Wissenschaft Software entwickeln. Im Englischen werden diese Personen unter anderem *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers) genannt, im Deutschen würde man vielleicht 'Akademische Softwareentwickler' sagen. Wir sprechen mit dieser Umfrage jedoch auch Postdoktoranden oder Wissenschaftliche Mitarbeiter an. Beim Übertragen der Fragen aus dem Englischen wurde bewusst eine freundschaftlicher Ausdruck gewählt (daher das 'Du' in der Ansprache).
 
 
 Warum habe ich diese Einladung Erhalten?
 ----------------------------------------
 
-Du hast diese Einladung erhalten, weil Du entweder de-RSE.org oder der UK RSE Association als jemand bekannt bist, der in der Wissenschaft Software entwickelt. Zur Zeit wissen wir recht wenig über die Gemeinschaft der akademischen Softwareentwickler, also haben wir uns entschlossen diese Umfrage zu tätigen, um Finanzierern und anderen Wissenschaftsorganisationen zu helfen, Richt- und Leitlinien zu entwickeln.
-Diese Umfrage gibt Dir die Gelegenheit, Dich über deine Arbeit zu äussern und uns Informationen zu Deinem Karriereweg mitzuteilen.
+Du hast diese Einladung erhalten, weil Du entweder de-RSE.org oder der UK RSE Association als jemand bekannt bist, der in der Wissenschaft Software entwickelt. Zur Zeit wissen wir recht wenig über die Gemeinschaft der akademischen Softwareentwickler, also haben wir uns entschlossen diese Umfrage zu tätigen, um Finanzierern und Wissenschaftsorganisationen zu helfen, Richt- und Leitlinien zu entwickeln.
+Diese Umfrage gibt Dir die Gelegenheit, Dich über deine Arbeit zu äußern und uns Informationen zu Deinem Karriereweg mitzuteilen.
 
 Bitte beachte, dass diese Umfrage nicht verpflichtend ist und du jederzeit deine Teilnahme abbrechen kannst.
 
