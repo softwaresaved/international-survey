@@ -1044,14 +1044,14 @@ A	0	6		Helmholtz Association of German Research Centres		en
 A	0	7		Leibniz Association		en																																																																																																																																			
 A	0	8		Max Planck Society		en																																																																																																																																			
 Q	R	prevEmp2	1	Rank the following factors dependent on how strongly they influenced your decision to accept your current position		en			N		1																																																								8																									1	1						1															1																							
-SQ	0	1	1	Rank 1		en																																																																																																																																			
-SQ	0	2	1	Rank 2		en																																																																																																																																			
-SQ	0	3	1	Rank 3		en																																																																																																																																			
-SQ	0	4	1	Rank 4		en																																																																																																																																			
-SQ	0	5	1	Rank 5		en																																																																																																																																			
-SQ	0	6	1	Rank 6		en																																																																																																																																			
-SQ	0	7	1	Rank 7		en																																																																																																																																			
-SQ	0	8	1	Rank 8		en																																																																																																																																			
+SQ	0	1	1	Rank1		en																																																																																																																																			
+SQ	0	2	1	Rank2		en																																																																																																																																			
+SQ	0	3	1	Rank3		en																																																																																																																																			
+SQ	0	4	1	Rank4		en																																																																																																																																			
+SQ	0	5	1	Rank5		en																																																																																																																																			
+SQ	0	6	1	Rank6		en																																																																																																																																			
+SQ	0	7	1	Rank7		en																																																																																																																																			
+SQ	0	8	1	Rank8		en																																																																																																																																			
 A	0	1		Freedom to choose own working practices		en																																																																																																																																			
 A	0	2		Desire to advance research		en																																																																																																																																			
 A	0	3		The salary		en																																																																																																																																			
@@ -1090,7 +1090,7 @@ A	0	3		Test engineers conduct testing		en
 A	0	4		Users conduct testing		en																																																																																																																																			
 Q	Y	open01can	1	Have you ever released your software under an open-source licence? 		en			N		1																																																																																																							1																							
 Q	F	open1can		How often do you release the software projects you've worked on under an open-source licence?		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
+SQ	0	SQ001	1	Rank8		en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
@@ -1103,7 +1103,7 @@ A	0	9		9		en
 A	0	10		10 (All my time)		en																																																																																																																																			
 Q	Y	open03an	1	Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en			N		1																																																																																																							1																							
 Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
-SQ	0	SQ001	1			en																																																																																																																																			
+SQ	0	SQ001	1	Rank8		en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
@@ -1647,7 +1647,7 @@ Q	S	edu4	1	Besitzt Du weitere Abschlüsse? Wenn ja, welche?		de			N		1	1								
 Q	Y	rse1	1	Entwickelst Du in Deiner Arbeitszeit Software? Schreibst Du z.B. Quellcode oder Skripte?		de			N		1																																																																																																							1																							
 Q	Y	rse4de	1	Bist Du in Deiner Arbeitszeit in Softwareprojekten involviert und für diese komplett oder in Teilen verantwortlich ohne Quellcode zu schreiben? Bist Du beispielsweise nicht-programmierend als Project Lead, Software Architekt, UI Designer, Tester, Autor der Dokumentation o.ä. beteiligt?		de			N		1																																																																																																							1																							
 Q	F	rse3		Wer nutzt den von Dir geschrieben Code?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
+SQ	0	SQ001	1	In general, how satisfied are you with Your career		de																																																																																																																																			
 A	0	1		0 - meistens ich		de																																																																																																																																			
 A	0	2		1		de																																																																																																																																			
 A	0	3		2		de																																																																																																																																			
@@ -2259,14 +2259,14 @@ A	0	6		Helmholtz-Gemeinschaft Deutscher Forschungszentren		de
 A	0	7		Leibniz-Gemeinschaft		de																																																																																																																																			
 A	0	8		Max-Planck-Gesellschaft 		de																																																																																																																																			
 Q	R	prevEmp2	1	Ordne die folgenden Faktoren dem Einfluß nach an, den sie auf Deinen Entschluß, Deine jetzige Position anzutreten, hatten.		de			N		1																																																								8																									1	1						1															1																							
-SQ	0	1	1	Rank 1		de																																																																																																																																			
-SQ	0	2	1	Rank 2		de																																																																																																																																			
-SQ	0	3	1	Rank 3		de																																																																																																																																			
-SQ	0	4	1	Rank 4		de																																																																																																																																			
-SQ	0	5	1	Rank 5		de																																																																																																																																			
-SQ	0	6	1	Rank 6		de																																																																																																																																			
-SQ	0	7	1	Rank 7		de																																																																																																																																			
-SQ	0	8	1	Rank 8		de																																																																																																																																			
+SQ	0	1	1	Rank1		de																																																																																																																																			
+SQ	0	2	1	Rank2		de																																																																																																																																			
+SQ	0	3	1	Rank3		de																																																																																																																																			
+SQ	0	4	1	Rank4		de																																																																																																																																			
+SQ	0	5	1	Rank5		de																																																																																																																																			
+SQ	0	6	1	Rank6		de																																																																																																																																			
+SQ	0	7	1	Rank7		de																																																																																																																																			
+SQ	0	8	1	Rank8		de																																																																																																																																			
 A	0	1		Die Freiheit/Möglichkeit eigene Arbeitsmethoden/Herangehensweisen zu wählen/nutzen		de																																																																																																																																			
 A	0	2		Der Wunsch weiter zu forschen		de																																																																																																																																			
 A	0	3		Das Gehalt		de																																																																																																																																			
@@ -2305,7 +2305,7 @@ A	0	3		Test Engineers führen Tests durch 		de
 A	0	4		Nutzer testen		de																																																																																																																																			
 Q	Y	open01can	1	Hast Du jemals Software unter einer Open-Source-Lizenz veröffentlicht?		de			N		1																																																																																																							1																							
 Q	F	open1can		Wie oft veröffentlichst Du Softwareprojekte, an denen Du mitgearbeitet hast, unter einer Open-Source-Lizenz?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
+SQ	0	SQ001	1	Rank8		de																																																																																																																																			
 A	0	1		1 (gar nicht)		de																																																																																																																																			
 A	0	2		2		de																																																																																																																																			
 A	0	3		3		de																																																																																																																																			
@@ -2318,7 +2318,7 @@ A	0	9		9		de
 A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
 Q	Y	open03an	1	Hast Du schon einmal eine DOI (Digital Object Identifier) zur Identifizierung Deiner Software genutzt?		de			N		1																																																																																																							1																							
 Q	F	open3can		Wie oft weist Du Deiner Software DOIs (Digital Object Identifier) zu?		de			N		1																																																																																																							1																							
-SQ	0	SQ001	1			de																																																																																																																																			
+SQ	0	SQ001	1	Rank8		de																																																																																																																																			
 A	0	1		1 (gar nicht)		de																																																																																																																																			
 A	0	2		2		de																																																																																																																																			
 A	0	3		3		de																																																																																																																																			

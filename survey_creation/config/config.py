@@ -136,4 +136,4 @@ class creationConfig:
 
     y_n_question = {'class': 'Q', 'type/scale': 'Y', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1'}
 
-    likert_subquestion = {'class': 'SQ', 'type/scale': '0'}
+    subquestion = {'class': 'SQ', 'type/scale': '0'}

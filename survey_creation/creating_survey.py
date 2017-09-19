@@ -152,7 +152,9 @@ class surveyCreation:
         These headers needs to be added at the top of the outfile.
         The header needs to be recorded only once and does not change with
         the added translation in the case they are some
-        :return: None, writes the header into the outfile
+
+        :return:
+            :None: writes the header into the outfile
         """
         # Create a copy the header to the empty file
         # Check if some parameters needs to be modify from the specific_config
@@ -204,7 +206,6 @@ class surveyCreation:
                 return markdown(f.read())
 
         for lang in self.languages:
-            print(lang)
             # All these None are a workaround to fix the bug that add
             # two titles for the second language. No idea why
             survey_settings = None
@@ -367,18 +368,55 @@ class surveyCreation:
 
         self._write_row(question)
 
+    def setup_subquestion(self, type_question, lang, list_likert=None, txt_lang=None):
+        """
+        """
+
+        if type_question == 'multi_likert':
+            for row in list_likert:
+                subquestion = main_config.subquestion
+                subquestion['relevance'] = '1'
+                subquestion['language'] = lang
+                subquestion['name'] = row['code']
+                subquestion['text'] = row[txt_lang]
+                self._write_row(subquestion)
+
+        if type_question == 'ranking':
+            # Create the Subquestion ranks
+            for i in range(1, 9):  # To get 8 ranked questions
+                subquestion = main_config.subquestion
+                subquestion['name'] = str(i)
+                subquestion['text'] = 'Rank' + str(i)
+                subquestion['language'] = lang
+                subquestion['relevance'] = '1'
+                self._write_row(subquestion)
+
+        if type_question == 'likert':
+            # Need to create an  empty subquestion
+            subquestion = main_config.subquestion
+            subquestion['name'] = 'SQ001'
+            subquestion['relevance'] = '1'
+            subquestion['language'] = lang
+            self._write_row(subquestion)
+
     def setup_answer(self, row, index_lang, lang):
         """
         Create the answer itself
         """
         n = 1
         for text_answer in self.get_answer(self.project, row['answer_file']):
-            answer_row = main_config.one_choice_answer
+            if type_question == 'one choice':
+                answer_row = main_config.one_choice_answer
+            elif type_question == 'multi choice':
+                answer_row = main_config.multiple_choice_answer
+            elif type_question == 'likert':
+                answer_row = main_config.likert_answer
+            elif type_question == 'ranking':
+                answer_row = main_config.ranking_answer
             # answer_row['name'] = 'A' + str(n)
             answer_row['name'] = str(n)
             # to get the translation  of the answers. If there is None, it takes the first
             # element (the english one). Needed because sometimes, the answers are not translated
-
             try:
                 answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
             except IndexError:
@@ -387,6 +425,25 @@ class surveyCreation:
             self._write_row(answer_row)
             n +=1
 
+    def get_txt_lang(self, lang, index_lang):
+        """
+        Return the right txt key when a translation is pickup
+        if it is in English, the key is only 'question', but in
+        case of translation it is 'lang_trans'.format(int) for all
+        the language the survey has. The order of the languages in the
+        main csv file needs to be the same order as in the config file
+        params:
+            :lang str(): the code of the language used
+            :index_lang int(): the number to know which translation it is
+        return:
+            :str(): the key used later to access the text of the question
+        """
+        # Speficify where to find the text for the question
+        if lang != 'en':
+            return 'lang_trans' + str(index_lang)
+        else:
+            return 'question'
+
     def create_survey_questions(self):
         """
         """
@@ -394,11 +451,7 @@ class surveyCreation:
         # the enumerate helps for finding the right answer and the right lang_trans
         # in case of more than one translation
         for index_lang, lang in enumerate(self.languages):
-            # Speficify where to find the text for the question
-            if lang != 'en':
-                txt_lang = 'lang_trans' + str(index_lang)
-            else:
-                txt_lang = 'question'
+            txt_lang = self.get_txt_lang(lang, index_lang)
             # Add a first section
             nbr_section = -1
             nbr_section = self.check_adding_section({'section': 0}, nbr_section, self.specific_config.sections_txt,
@@ -431,15 +484,7 @@ class surveyCreation:
                         # Create the question header that needs to be created once for all the
                         # following question
                         self.setup_question('multi_likert', q[0], txt_lang, lang)
-
-                        for row in q:
-                            subquestion = main_config.likert_subquestion
-                            subquestion['relevance'] = '1'
-                            subquestion['language'] = lang
-                            subquestion['name'] = row['code']
-                            subquestion['text'] = row[txt_lang]
-                            self._write_row(subquestion)
-
+                        self.setup_subquestion('multi_likert', lang, q, txt_lang)
                         self.setup_answer(q[0], index_lang, lang)
 
                     elif q[0]['answer_format'].lower() == 'y/n/na':
@@ -462,13 +507,8 @@ class surveyCreation:
                             # As neither of them have specific value for database, they are
                             # created here and not pulled from the config file
                             self.setup_question('ranking', row, txt_lang, lang)
-
                             # Create the Subquestion ranks
-                            for i in range(1, 9):  # To get 8 ranked questions
-                                init_row = {'class': 'SQ', 'type/scale': '0', 'name': str(i), 'relevance': '1',
-                                            'text': 'Rank ' + str(i), 'language': lang}
-                                self._write_row(init_row)
-
+                            self.setup_subquestion('ranking', lang)
                             self.setup_answer(row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'multiple choices':
@@ -485,11 +525,7 @@ class surveyCreation:
                         if row['answer_format'].lower() == 'likert':
                             self.setup_question('likert', row, txt_lang, lang)
                             # Need to create an  empty subquestion
-                            subquestion = {'class': 'SQ', 'type/scale': '0', 'name': 'SQ001'}
-                            subquestion['relevance'] = '1'
-                            subquestion['language'] = lang
-                            self._write_row(subquestion)
-
+                            self.setup_subquestion('likert', lang)
                             self.setup_answer(row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'y/n/na':
