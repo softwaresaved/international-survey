@@ -399,7 +399,7 @@ class surveyCreation:
             subquestion['language'] = lang
             self._write_row(subquestion)
 
-    def setup_answer(self, row, index_lang, lang):
+    def setup_answer(self, type_question, row, index_lang, lang):
         """
         Create the answer itself
         """
@@ -485,7 +485,7 @@ class surveyCreation:
                         # following question
                         self.setup_question('multi_likert', q[0], txt_lang, lang)
                         self.setup_subquestion('multi_likert', lang, q, txt_lang)
-                        self.setup_answer(q[0], index_lang, lang)
+                        self.setup_answer('likert', q[0], index_lang, lang)
 
                     elif q[0]['answer_format'].lower() == 'y/n/na':
                         self.setup_question('y/n/na', q[0], txt_lang, lang)
@@ -498,7 +498,7 @@ class surveyCreation:
 
                         if row['answer_format'].lower() == 'one choice':
                             self.setup_question('one choice', row, txt_lang, lang)
-                            self.setup_answer(row, index_lang, lang)
+                            self.setup_answer('one choice', row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'ranking':
                             # Ranking questions work differently
@@ -509,12 +509,12 @@ class surveyCreation:
                             self.setup_question('ranking', row, txt_lang, lang)
                             # Create the Subquestion ranks
                             self.setup_subquestion('ranking', lang)
-                            self.setup_answer(row, index_lang, lang)
+                            self.setup_answer('ranking', row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'multiple choices':
                             self.setup_question('multiple choice', row, txt_lang, lang)
 
-                            self.setup_answer(row, index_lang, lang)
+                            self.setup_answer('multi choice', row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'freenumeric':
                             self.setup_question('freenumeric', row, txt_lang, lang)
@@ -526,7 +526,7 @@ class surveyCreation:
                             self.setup_question('likert', row, txt_lang, lang)
                             # Need to create an  empty subquestion
                             self.setup_subquestion('likert', lang)
-                            self.setup_answer(row, index_lang, lang)
+                            self.setup_answer('likert', row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'y/n/na':
                             self.setup_question('y/n/na', row, txt_lang, lang)

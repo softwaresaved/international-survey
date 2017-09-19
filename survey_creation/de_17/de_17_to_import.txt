@@ -968,71 +968,71 @@ A	0	7		Freelancer consultant contractor		en
 A	0	8		Zero hours contract		en																																																																																																																																			
 Q	N	currentEmp11		What is the duration (in years) of your current contract?		en			N			1																																																																																																							1																						
 Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		Accounting & Finance		en																																																																																																																																			
-A	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
-A	0	3		Agriculture & Forestry		en																																																																																																																																			
-A	0	4		American Studies		en																																																																																																																																			
-A	0	5		Anatomy & Physiology		en																																																																																																																																			
-A	0	6		Anthropology		en																																																																																																																																			
-A	0	7		Architecture		en																																																																																																																																			
-A	0	8		Art & Design		en																																																																																																																																			
-A	0	9		Biological Sciences		en																																																																																																																																			
-A	0	10		Business & Management Studies		en																																																																																																																																			
-A	0	11		Chemical Engineering		en																																																																																																																																			
-A	0	12		Chemistry		en																																																																																																																																			
-A	0	13		Civil Engineering		en																																																																																																																																			
-A	0	14		Classics & Ancient History		en																																																																																																																																			
-A	0	15		Communication & Media Studies		en																																																																																																																																			
-A	0	16		Complementary Medicine		en																																																																																																																																			
-A	0	17		Computer Science		en																																																																																																																																			
-A	0	18		Counselling		en																																																																																																																																			
-A	0	19		Criminology		en																																																																																																																																			
-A	0	20		Dentistry		en																																																																																																																																			
-A	0	21		East & South Asian Studies		en																																																																																																																																			
-A	0	22		Economics		en																																																																																																																																			
-A	0	23		Education		en																																																																																																																																			
-A	0	24		Electrical & Electronic Engineering		en																																																																																																																																			
-A	0	25		English		en																																																																																																																																			
-A	0	26		Fashion		en																																																																																																																																			
-A	0	27		Food Science		en																																																																																																																																			
-A	0	28		French		en																																																																																																																																			
-A	0	29		Geography & Environmental Sciences		en																																																																																																																																			
-A	0	30		Geology		en																																																																																																																																			
-A	0	31		General Engineering		en																																																																																																																																			
-A	0	32		German		en																																																																																																																																			
-A	0	33		History		en																																																																																																																																			
-A	0	34		History of Art, Architecture & Design		en																																																																																																																																			
-A	0	35		Hospitality, Leisure, Recreation & Tourism		en																																																																																																																																			
-A	0	36		Iberian Languages/Hispanic Studies		en																																																																																																																																			
-A	0	37		Land & Property Management		en																																																																																																																																			
-A	0	38		Law		en																																																																																																																																			
-A	0	39		Librarianship & Information Management		en																																																																																																																																			
-A	0	40		Linguistics		en																																																																																																																																			
-A	0	41		Marketing		en																																																																																																																																			
-A	0	42		Materials Technology		en																																																																																																																																			
-A	0	43		Mathematics		en																																																																																																																																			
-A	0	44		Mechanical Engineering		en																																																																																																																																			
-A	0	45		Medicine		en																																																																																																																																			
-A	0	46		Middle Eastern and African Studies		en																																																																																																																																			
-A	0	47		Music		en																																																																																																																																			
-A	0	48		Nursing		en																																																																																																																																			
-A	0	49		Ophthalmics		en																																																																																																																																			
-A	0	50		Pharmacology & Pharmacy		en																																																																																																																																			
-A	0	51		Philosophy		en																																																																																																																																			
-A	0	52		Physics and Astronomy		en																																																																																																																																			
-A	0	53		Physiotherapy		en																																																																																																																																			
-A	0	54		Politics		en																																																																																																																																			
-A	0	55		Psychology		en																																																																																																																																			
-A	0	56		Robotics		en																																																																																																																																			
-A	0	57		Russian & East European Languages		en																																																																																																																																			
-A	0	58		Social Policy		en																																																																																																																																			
-A	0	59		Social Work		en																																																																																																																																			
-A	0	60		Sociology		en																																																																																																																																			
-A	0	61		Sports Science		en																																																																																																																																			
-A	0	62		Theology & Religious Studies		en																																																																																																																																			
-A	0	63		Town & Country Planning and Landscape Design		en																																																																																																																																			
-A	0	64		Veterinary Medicine		en																																																																																																																																			
-A	0	65		Youth Work		en																																																																																																																																			
+SQ	0	1		Accounting & Finance		en																																																																																																																																			
+SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
+SQ	0	3		Agriculture & Forestry		en																																																																																																																																			
+SQ	0	4		American Studies		en																																																																																																																																			
+SQ	0	5		Anatomy & Physiology		en																																																																																																																																			
+SQ	0	6		Anthropology		en																																																																																																																																			
+SQ	0	7		Architecture		en																																																																																																																																			
+SQ	0	8		Art & Design		en																																																																																																																																			
+SQ	0	9		Biological Sciences		en																																																																																																																																			
+SQ	0	10		Business & Management Studies		en																																																																																																																																			
+SQ	0	11		Chemical Engineering		en																																																																																																																																			
+SQ	0	12		Chemistry		en																																																																																																																																			
+SQ	0	13		Civil Engineering		en																																																																																																																																			
+SQ	0	14		Classics & Ancient History		en																																																																																																																																			
+SQ	0	15		Communication & Media Studies		en																																																																																																																																			
+SQ	0	16		Complementary Medicine		en																																																																																																																																			
+SQ	0	17		Computer Science		en																																																																																																																																			
+SQ	0	18		Counselling		en																																																																																																																																			
+SQ	0	19		Criminology		en																																																																																																																																			
+SQ	0	20		Dentistry		en																																																																																																																																			
+SQ	0	21		East & South Asian Studies		en																																																																																																																																			
+SQ	0	22		Economics		en																																																																																																																																			
+SQ	0	23		Education		en																																																																																																																																			
+SQ	0	24		Electrical & Electronic Engineering		en																																																																																																																																			
+SQ	0	25		English		en																																																																																																																																			
+SQ	0	26		Fashion		en																																																																																																																																			
+SQ	0	27		Food Science		en																																																																																																																																			
+SQ	0	28		French		en																																																																																																																																			
+SQ	0	29		Geography & Environmental Sciences		en																																																																																																																																			
+SQ	0	30		Geology		en																																																																																																																																			
+SQ	0	31		General Engineering		en																																																																																																																																			
+SQ	0	32		German		en																																																																																																																																			
+SQ	0	33		History		en																																																																																																																																			
+SQ	0	34		History of Art, Architecture & Design		en																																																																																																																																			
+SQ	0	35		Hospitality, Leisure, Recreation & Tourism		en																																																																																																																																			
+SQ	0	36		Iberian Languages/Hispanic Studies		en																																																																																																																																			
+SQ	0	37		Land & Property Management		en																																																																																																																																			
+SQ	0	38		Law		en																																																																																																																																			
+SQ	0	39		Librarianship & Information Management		en																																																																																																																																			
+SQ	0	40		Linguistics		en																																																																																																																																			
+SQ	0	41		Marketing		en																																																																																																																																			
+SQ	0	42		Materials Technology		en																																																																																																																																			
+SQ	0	43		Mathematics		en																																																																																																																																			
+SQ	0	44		Mechanical Engineering		en																																																																																																																																			
+SQ	0	45		Medicine		en																																																																																																																																			
+SQ	0	46		Middle Eastern and African Studies		en																																																																																																																																			
+SQ	0	47		Music		en																																																																																																																																			
+SQ	0	48		Nursing		en																																																																																																																																			
+SQ	0	49		Ophthalmics		en																																																																																																																																			
+SQ	0	50		Pharmacology & Pharmacy		en																																																																																																																																			
+SQ	0	51		Philosophy		en																																																																																																																																			
+SQ	0	52		Physics and Astronomy		en																																																																																																																																			
+SQ	0	53		Physiotherapy		en																																																																																																																																			
+SQ	0	54		Politics		en																																																																																																																																			
+SQ	0	55		Psychology		en																																																																																																																																			
+SQ	0	56		Robotics		en																																																																																																																																			
+SQ	0	57		Russian & East European Languages		en																																																																																																																																			
+SQ	0	58		Social Policy		en																																																																																																																																			
+SQ	0	59		Social Work		en																																																																																																																																			
+SQ	0	60		Sociology		en																																																																																																																																			
+SQ	0	61		Sports Science		en																																																																																																																																			
+SQ	0	62		Theology & Religious Studies		en																																																																																																																																			
+SQ	0	63		Town & Country Planning and Landscape Design		en																																																																																																																																			
+SQ	0	64		Veterinary Medicine		en																																																																																																																																			
+SQ	0	65		Youth Work		en																																																																																																																																			
 G	G2	Your employment history	1			en																																																																																																																																			
 Q	!	prevEmp1	1	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
@@ -1125,56 +1125,56 @@ Q	N	train2		On average, how many times a year do you take part in providing trai
 Q	S	train3	1	What training programs are you involved with (comma separated list; for example, Software Carpentry, local university training, etc.) 		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	Y	fund1	1	Do you know the source of the funding used to support you and your current, largest project? 		en			N		1																																																																																																							1																							
 Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		I volunteer my time		en																																																																																																																																			
-A	0	2		Donation button		en																																																																																																																																			
-A	0	3		Crowdfunding (one-time)		en																																																																																																																																			
-A	0	4		Crowdfunding (recurring)		en																																																																																																																																			
-A	0	5		Books & merchandise		en																																																																																																																																			
-A	0	6		Advertising & sponsorships		en																																																																																																																																			
-A	0	7		Industry support		en																																																																																																																																			
-A	0	8		Consulting & services		en																																																																																																																																			
-A	0	9		Grants		en																																																																																																																																			
-A	0	10		SaaS		en																																																																																																																																			
-A	0	11		Membership		en																																																																																																																																			
-A	0	12		Dual license		en																																																																																																																																			
-A	0	13		Open core		en																																																																																																																																			
-A	0	14		Foundations & consortiums		en																																																																																																																																			
-A	0	15		Venture capital		en																																																																																																																																			
-A	0	16		Trademark licensing & franchising		en																																																																																																																																			
+SQ	0	1		I volunteer my time		en																																																																																																																																			
+SQ	0	2		Donation button		en																																																																																																																																			
+SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
+SQ	0	4		Crowdfunding (recurring)		en																																																																																																																																			
+SQ	0	5		Books & merchandise		en																																																																																																																																			
+SQ	0	6		Advertising & sponsorships		en																																																																																																																																			
+SQ	0	7		Industry support		en																																																																																																																																			
+SQ	0	8		Consulting & services		en																																																																																																																																			
+SQ	0	9		Grants		en																																																																																																																																			
+SQ	0	10		SaaS		en																																																																																																																																			
+SQ	0	11		Membership		en																																																																																																																																			
+SQ	0	12		Dual license		en																																																																																																																																			
+SQ	0	13		Open core		en																																																																																																																																			
+SQ	0	14		Foundations & consortiums		en																																																																																																																																			
+SQ	0	15		Venture capital		en																																																																																																																																			
+SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 Q	M	fund3	1	Which of the following sources are used to fund your current, largest project? 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		I volunteer my time		en																																																																																																																																			
-A	0	2		Donation button		en																																																																																																																																			
-A	0	3		Crowdfunding (one-time)		en																																																																																																																																			
-A	0	4		Crowdfunding (recurring)		en																																																																																																																																			
-A	0	5		Books & merchandise		en																																																																																																																																			
-A	0	6		Advertising & sponsorships		en																																																																																																																																			
-A	0	7		Industry support		en																																																																																																																																			
-A	0	8		Consulting & services		en																																																																																																																																			
-A	0	9		Grants		en																																																																																																																																			
-A	0	10		SaaS		en																																																																																																																																			
-A	0	11		Membership		en																																																																																																																																			
-A	0	12		Dual license		en																																																																																																																																			
-A	0	13		Open core		en																																																																																																																																			
-A	0	14		Foundations & consortiums		en																																																																																																																																			
-A	0	15		Venture capital		en																																																																																																																																			
-A	0	16		Trademark licensing & franchising		en																																																																																																																																			
+SQ	0	1		I volunteer my time		en																																																																																																																																			
+SQ	0	2		Donation button		en																																																																																																																																			
+SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
+SQ	0	4		Crowdfunding (recurring)		en																																																																																																																																			
+SQ	0	5		Books & merchandise		en																																																																																																																																			
+SQ	0	6		Advertising & sponsorships		en																																																																																																																																			
+SQ	0	7		Industry support		en																																																																																																																																			
+SQ	0	8		Consulting & services		en																																																																																																																																			
+SQ	0	9		Grants		en																																																																																																																																			
+SQ	0	10		SaaS		en																																																																																																																																			
+SQ	0	11		Membership		en																																																																																																																																			
+SQ	0	12		Dual license		en																																																																																																																																			
+SQ	0	13		Open core		en																																																																																																																																			
+SQ	0	14		Foundations & consortiums		en																																																																																																																																			
+SQ	0	15		Venture capital		en																																																																																																																																			
+SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 Q	M	fund4	1	Which of the following sources were used to fund your current, largest project three years ago? 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		I volunteer my time		en																																																																																																																																			
-A	0	2		Donation button		en																																																																																																																																			
-A	0	3		Crowdfunding (one-time)		en																																																																																																																																			
-A	0	4		Crowdfunding (recurring)		en																																																																																																																																			
-A	0	5		Books & merchandise		en																																																																																																																																			
-A	0	6		Advertising & sponsorships		en																																																																																																																																			
-A	0	7		Industry support		en																																																																																																																																			
-A	0	8		Consulting & services		en																																																																																																																																			
-A	0	9		Grants		en																																																																																																																																			
-A	0	10		SaaS		en																																																																																																																																			
-A	0	11		Membership		en																																																																																																																																			
-A	0	12		Dual license		en																																																																																																																																			
-A	0	13		Open core		en																																																																																																																																			
-A	0	14		Foundations & consortiums		en																																																																																																																																			
-A	0	15		Venture capital		en																																																																																																																																			
-A	0	16		Trademark licensing & franchising		en																																																																																																																																			
+SQ	0	1		I volunteer my time		en																																																																																																																																			
+SQ	0	2		Donation button		en																																																																																																																																			
+SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
+SQ	0	4		Crowdfunding (recurring)		en																																																																																																																																			
+SQ	0	5		Books & merchandise		en																																																																																																																																			
+SQ	0	6		Advertising & sponsorships		en																																																																																																																																			
+SQ	0	7		Industry support		en																																																																																																																																			
+SQ	0	8		Consulting & services		en																																																																																																																																			
+SQ	0	9		Grants		en																																																																																																																																			
+SQ	0	10		SaaS		en																																																																																																																																			
+SQ	0	11		Membership		en																																																																																																																																			
+SQ	0	12		Dual license		en																																																																																																																																			
+SQ	0	13		Open core		en																																																																																																																																			
+SQ	0	14		Foundations & consortiums		en																																																																																																																																			
+SQ	0	15		Venture capital		en																																																																																																																																			
+SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 G	G4	Your perception of your current position	1			en																																																																																																																																			
 Q	F	likert1				en			N		1																																																																																																							1																							
 SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
@@ -1273,48 +1273,48 @@ A	0	1		GNU/Linux		en
 A	0	2		OS X		en																																																																																																																																			
 A	0	3		Windows		en																																																																																																																																			
 Q	M	tool4can	1	What programming languages do you use at work? (Select as many as apply) 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		Assembly		en																																																																																																																																			
-A	0	2		C		en																																																																																																																																			
-A	0	3		C#		en																																																																																																																																			
-A	0	4		C++		en																																																																																																																																			
-A	0	5		Clojure		en																																																																																																																																			
-A	0	6		CoffeeScript		en																																																																																																																																			
-A	0	7		Common Lisp		en																																																																																																																																			
-A	0	8		Dart		en																																																																																																																																			
-A	0	9		Elixir		en																																																																																																																																			
-A	0	10		Erlang		en																																																																																																																																			
-A	0	11		F#		en																																																																																																																																			
-A	0	12		Go		en																																																																																																																																			
-A	0	13		Groovy		en																																																																																																																																			
-A	0	14		Hack		en																																																																																																																																			
-A	0	15		Haskell		en																																																																																																																																			
-A	0	16		Java		en																																																																																																																																			
-A	0	17		JavaScript		en																																																																																																																																			
-A	0	18		Julia		en																																																																																																																																			
-A	0	19		Lua		en																																																																																																																																			
-A	0	20		Matlab		en																																																																																																																																			
-A	0	21		Objective-C		en																																																																																																																																			
-A	0	22		Perl		en																																																																																																																																			
-A	0	23		PHP		en																																																																																																																																			
-A	0	24		Python		en																																																																																																																																			
-A	0	25		R		en																																																																																																																																			
-A	0	26		Ruby		en																																																																																																																																			
-A	0	27		Rust		en																																																																																																																																			
-A	0	28		Scala		en																																																																																																																																			
-A	0	29		Smalltalk		en																																																																																																																																			
-A	0	30		SQL		en																																																																																																																																			
-A	0	31		Swift		en																																																																																																																																			
-A	0	32		TypeScript		en																																																																																																																																			
-A	0	33		VB.NET		en																																																																																																																																			
-A	0	34		VBA		en																																																																																																																																			
-A	0	35		Visual Basic		en																																																																																																																																			
+SQ	0	1		Assembly		en																																																																																																																																			
+SQ	0	2		C		en																																																																																																																																			
+SQ	0	3		C#		en																																																																																																																																			
+SQ	0	4		C++		en																																																																																																																																			
+SQ	0	5		Clojure		en																																																																																																																																			
+SQ	0	6		CoffeeScript		en																																																																																																																																			
+SQ	0	7		Common Lisp		en																																																																																																																																			
+SQ	0	8		Dart		en																																																																																																																																			
+SQ	0	9		Elixir		en																																																																																																																																			
+SQ	0	10		Erlang		en																																																																																																																																			
+SQ	0	11		F#		en																																																																																																																																			
+SQ	0	12		Go		en																																																																																																																																			
+SQ	0	13		Groovy		en																																																																																																																																			
+SQ	0	14		Hack		en																																																																																																																																			
+SQ	0	15		Haskell		en																																																																																																																																			
+SQ	0	16		Java		en																																																																																																																																			
+SQ	0	17		JavaScript		en																																																																																																																																			
+SQ	0	18		Julia		en																																																																																																																																			
+SQ	0	19		Lua		en																																																																																																																																			
+SQ	0	20		Matlab		en																																																																																																																																			
+SQ	0	21		Objective-C		en																																																																																																																																			
+SQ	0	22		Perl		en																																																																																																																																			
+SQ	0	23		PHP		en																																																																																																																																			
+SQ	0	24		Python		en																																																																																																																																			
+SQ	0	25		R		en																																																																																																																																			
+SQ	0	26		Ruby		en																																																																																																																																			
+SQ	0	27		Rust		en																																																																																																																																			
+SQ	0	28		Scala		en																																																																																																																																			
+SQ	0	29		Smalltalk		en																																																																																																																																			
+SQ	0	30		SQL		en																																																																																																																																			
+SQ	0	31		Swift		en																																																																																																																																			
+SQ	0	32		TypeScript		en																																																																																																																																			
+SQ	0	33		VB.NET		en																																																																																																																																			
+SQ	0	34		VBA		en																																																																																																																																			
+SQ	0	35		Visual Basic		en																																																																																																																																			
 Q	Y	ukrse10de	1	Are you a member of the de-RSE initiative? (Members are people who have signed up to the de-RSE mailing list, http://www.de-rse.org/en/join.html)		en			N		1																																																																																																							1																							
 Q	S	ukrse11de	1	Do you know a better job title/role than RSE which summerizes all kinds of activities realated to academic software creation? 		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	M	ukrse2	1	How do you meet other RSEs? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		UK RSE Association (http://rse.ac.uk/)		en																																																																																																																																			
-A	0	2		DE-RSE Community (http://de-rse.org)		en																																																																																																																																			
-A	0	3		Local RSE group/network		en																																																																																																																																			
-A	0	4		N/A		en																																																																																																																																			
+SQ	0	1		UK RSE Association (http://rse.ac.uk/)		en																																																																																																																																			
+SQ	0	2		DE-RSE Community (http://de-rse.org)		en																																																																																																																																			
+SQ	0	3		Local RSE group/network		en																																																																																																																																			
+SQ	0	4		N/A		en																																																																																																																																			
 Q	Y	ukrse12de	1	Would you like to visit a conference about software development in academia in Germany?		en			N		1																																																																																																							1																							
 Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
@@ -2183,71 +2183,71 @@ A	0	7		Selbständig/freischaffend		de
 A	0	8		Arbeitsvertrag mit einer Mindestbeschäftigungszeit von null Stunden		de																																																																																																																																			
 Q	N	currentEmp11		Welche Dauer (in Jahren) hat Dein jetziger Arbeitsvertrag?		de			N			1																																																																																																							1																						
 Q	M	currentEmp13	1	In welchen Bereichen arbeitest Du (alle zutreffenden ankreuzen)?		de			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		Rechnungs- und Finanzwesen		de																																																																																																																																			
-A	0	2		Luftfahrt und Fertigungstechnik		de																																																																																																																																			
-A	0	3		Land- und Forstwirtschaft		de																																																																																																																																			
-A	0	4		Amerikanistik		de																																																																																																																																			
-A	0	5		Anatomie und Physiologie		de																																																																																																																																			
-A	0	6		Anthropologie		de																																																																																																																																			
-A	0	7		Architektur		de																																																																																																																																			
-A	0	8		Kunst & Design		de																																																																																																																																			
-A	0	9		Biowissenschaften		de																																																																																																																																			
-A	0	10		Betriebswirtschaft und Unternehmensführung		de																																																																																																																																			
-A	0	11		Chemieingenieurwesen		de																																																																																																																																			
-A	0	12		Chemie		de																																																																																																																																			
-A	0	13		Bauingenieurwesen		de																																																																																																																																			
-A	0	14		Altphilologie & Alte Geschichte		de																																																																																																																																			
-A	0	15		Kommunikations- und Medienwissenschaften		de																																																																																																																																			
-A	0	16		Komplementärmedizin		de																																																																																																																																			
-A	0	17		Computerwissenschaften		de																																																																																																																																			
-A	0	18		Seelsorge		de																																																																																																																																			
-A	0	19		Kriminologie		de																																																																																																																																			
-A	0	20		Zahnheilkunde		de																																																																																																																																			
-A	0	21		Ost- und Südasienstudien		de																																																																																																																																			
-A	0	22		Ökonomie, Volkswirtschaftslehre		de																																																																																																																																			
-A	0	23		Bildung		de																																																																																																																																			
-A	0	24		Elektrotechnik und Elektronik		de																																																																																																																																			
-A	0	25		Englisch / Anglistik		de																																																																																																																																			
-A	0	26		Mode		de																																																																																																																																			
-A	0	27		Ernährungswissenschaften		de																																																																																																																																			
-A	0	28		Französisch		de																																																																																																																																			
-A	0	29		Geographie & Umweltwissenschaften		de																																																																																																																																			
-A	0	30		Geologie		de																																																																																																																																			
-A	0	31		General Engineering		de																																																																																																																																			
-A	0	32		Deutsch / Germanistik		de																																																																																																																																			
-A	0	33		Geschichte		de																																																																																																																																			
-A	0	34		Geschichte der Kunst, der Architektur und des Designs		de																																																																																																																																			
-A	0	35		Bewirtung, Freizeit, Erholung und Tourismus		de																																																																																																																																			
-A	0	36		Iberische / Hispanische Sprachwissenschaften		de																																																																																																																																			
-A	0	37		Land- und Immobilienwesen		de																																																																																																																																			
-A	0	38		Recht		de																																																																																																																																			
-A	0	39		Bibliothekswesen und Informationsmanagement		de																																																																																																																																			
-A	0	40		Linguistik		de																																																																																																																																			
-A	0	41		Marketing		de																																																																																																																																			
-A	0	42		Werkstofftechnik		de																																																																																																																																			
-A	0	43		Mathematik		de																																																																																																																																			
-A	0	44		Maschinenbau		de																																																																																																																																			
-A	0	45		Medizin		de																																																																																																																																			
-A	0	46		Nahöstliche und Afrikanische Wissenschaften		de																																																																																																																																			
-A	0	47		Musik		de																																																																																																																																			
-A	0	48		Pflege		de																																																																																																																																			
-A	0	49		Augenheilkunde		de																																																																																																																																			
-A	0	50		Pharmakologie und Pharmazie		de																																																																																																																																			
-A	0	51		Philosophie		de																																																																																																																																			
-A	0	52		Physik und Astronomie		de																																																																																																																																			
-A	0	53		Physiotherapie		de																																																																																																																																			
-A	0	54		Politik		de																																																																																																																																			
-A	0	55		Psychologie		de																																																																																																																																			
-A	0	56		Robotik		de																																																																																																																																			
-A	0	57		Russische und Osteuropäische Sprachwissenschaften		de																																																																																																																																			
-A	0	58		Sozialpolitik		de																																																																																																																																			
-A	0	59		Sozialarbeit		de																																																																																																																																			
-A	0	60		Soziologie		de																																																																																																																																			
-A	0	61		Sportwissenschaften		de																																																																																																																																			
-A	0	62		Theologie & Religionswissenschaft		de																																																																																																																																			
-A	0	63		Stadt- und Landschaftsplanung und Landschaftsgestaltung		de																																																																																																																																			
-A	0	64		Tiermedizin		de																																																																																																																																			
-A	0	65		Jugendarbeit		de																																																																																																																																			
+SQ	0	1		Rechnungs- und Finanzwesen		de																																																																																																																																			
+SQ	0	2		Luftfahrt und Fertigungstechnik		de																																																																																																																																			
+SQ	0	3		Land- und Forstwirtschaft		de																																																																																																																																			
+SQ	0	4		Amerikanistik		de																																																																																																																																			
+SQ	0	5		Anatomie und Physiologie		de																																																																																																																																			
+SQ	0	6		Anthropologie		de																																																																																																																																			
+SQ	0	7		Architektur		de																																																																																																																																			
+SQ	0	8		Kunst & Design		de																																																																																																																																			
+SQ	0	9		Biowissenschaften		de																																																																																																																																			
+SQ	0	10		Betriebswirtschaft und Unternehmensführung		de																																																																																																																																			
+SQ	0	11		Chemieingenieurwesen		de																																																																																																																																			
+SQ	0	12		Chemie		de																																																																																																																																			
+SQ	0	13		Bauingenieurwesen		de																																																																																																																																			
+SQ	0	14		Altphilologie & Alte Geschichte		de																																																																																																																																			
+SQ	0	15		Kommunikations- und Medienwissenschaften		de																																																																																																																																			
+SQ	0	16		Komplementärmedizin		de																																																																																																																																			
+SQ	0	17		Computerwissenschaften		de																																																																																																																																			
+SQ	0	18		Seelsorge		de																																																																																																																																			
+SQ	0	19		Kriminologie		de																																																																																																																																			
+SQ	0	20		Zahnheilkunde		de																																																																																																																																			
+SQ	0	21		Ost- und Südasienstudien		de																																																																																																																																			
+SQ	0	22		Ökonomie, Volkswirtschaftslehre		de																																																																																																																																			
+SQ	0	23		Bildung		de																																																																																																																																			
+SQ	0	24		Elektrotechnik und Elektronik		de																																																																																																																																			
+SQ	0	25		Englisch / Anglistik		de																																																																																																																																			
+SQ	0	26		Mode		de																																																																																																																																			
+SQ	0	27		Ernährungswissenschaften		de																																																																																																																																			
+SQ	0	28		Französisch		de																																																																																																																																			
+SQ	0	29		Geographie & Umweltwissenschaften		de																																																																																																																																			
+SQ	0	30		Geologie		de																																																																																																																																			
+SQ	0	31		General Engineering		de																																																																																																																																			
+SQ	0	32		Deutsch / Germanistik		de																																																																																																																																			
+SQ	0	33		Geschichte		de																																																																																																																																			
+SQ	0	34		Geschichte der Kunst, der Architektur und des Designs		de																																																																																																																																			
+SQ	0	35		Bewirtung, Freizeit, Erholung und Tourismus		de																																																																																																																																			
+SQ	0	36		Iberische / Hispanische Sprachwissenschaften		de																																																																																																																																			
+SQ	0	37		Land- und Immobilienwesen		de																																																																																																																																			
+SQ	0	38		Recht		de																																																																																																																																			
+SQ	0	39		Bibliothekswesen und Informationsmanagement		de																																																																																																																																			
+SQ	0	40		Linguistik		de																																																																																																																																			
+SQ	0	41		Marketing		de																																																																																																																																			
+SQ	0	42		Werkstofftechnik		de																																																																																																																																			
+SQ	0	43		Mathematik		de																																																																																																																																			
+SQ	0	44		Maschinenbau		de																																																																																																																																			
+SQ	0	45		Medizin		de																																																																																																																																			
+SQ	0	46		Nahöstliche und Afrikanische Wissenschaften		de																																																																																																																																			
+SQ	0	47		Musik		de																																																																																																																																			
+SQ	0	48		Pflege		de																																																																																																																																			
+SQ	0	49		Augenheilkunde		de																																																																																																																																			
+SQ	0	50		Pharmakologie und Pharmazie		de																																																																																																																																			
+SQ	0	51		Philosophie		de																																																																																																																																			
+SQ	0	52		Physik und Astronomie		de																																																																																																																																			
+SQ	0	53		Physiotherapie		de																																																																																																																																			
+SQ	0	54		Politik		de																																																																																																																																			
+SQ	0	55		Psychologie		de																																																																																																																																			
+SQ	0	56		Robotik		de																																																																																																																																			
+SQ	0	57		Russische und Osteuropäische Sprachwissenschaften		de																																																																																																																																			
+SQ	0	58		Sozialpolitik		de																																																																																																																																			
+SQ	0	59		Sozialarbeit		de																																																																																																																																			
+SQ	0	60		Soziologie		de																																																																																																																																			
+SQ	0	61		Sportwissenschaften		de																																																																																																																																			
+SQ	0	62		Theologie & Religionswissenschaft		de																																																																																																																																			
+SQ	0	63		Stadt- und Landschaftsplanung und Landschaftsgestaltung		de																																																																																																																																			
+SQ	0	64		Tiermedizin		de																																																																																																																																			
+SQ	0	65		Jugendarbeit		de																																																																																																																																			
 G	G2	Fragen zu Deinen bisherigen Anstellung(en)	1			de																																																																																																																																			
 Q	!	prevEmp1	1	Wo hast Du in Deinem vorherigem Job gearbeitet?		de			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de																																																																																																																																			
@@ -2340,56 +2340,56 @@ Q	N	train2		Wie oft im Jahr gestaltest Du Workshops oder andere Weiterbildungen 
 Q	S	train3	1	In welchen Workshops, Weiterbildungsprogrammen o.ä. bist Du involviert? (Gib Deine Antworten bitte als Komma separierte Liste ein; z.B., Software Carpentry, Lehrgang an Universitäten, etc.) 		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	Y	fund1	1	Kennst Du die Fördungseinrichtung oder das Förderprogramm, die Dich und Dein aktuell größtes Projekt finanzieren?		de			N		1																																																																																																							1																							
 Q	M	fund2	1	Welche der folgenden Quellen finanzieren Deine Arbeit als Software entwickelnden Mitarbeiter?		de			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		Ich nutze meine eigene Zeit freiwillig/unentgeltlich/ehrenamtlich		de																																																																																																																																			
-A	0	2		Spenden/Donation Button		de																																																																																																																																			
-A	0	3		Crowdfunding (einmalig)		de																																																																																																																																			
-A	0	4		Crowdfunding (mehrmalig)		de																																																																																																																																			
-A	0	5		Bücher und Vermarktung/Merchandising		de																																																																																																																																			
-A	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
-A	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
-A	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
-A	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
-A	0	10		SaaS		de																																																																																																																																			
-A	0	11		Mitgliedschaften		de																																																																																																																																			
-A	0	12		Dual licensing		de																																																																																																																																			
-A	0	13		Open core (Vermarktung proprietäre Softwareversionen oder Add-ons für eine minimale Version oder einen Kern einer Free and Open Source Software)		de																																																																																																																																			
-A	0	14		Stiftungen und Konsortien		de																																																																																																																																			
-A	0	15		Risikokapital		de																																																																																																																																			
-A	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
+SQ	0	1		Ich nutze meine eigene Zeit freiwillig/unentgeltlich/ehrenamtlich		de																																																																																																																																			
+SQ	0	2		Spenden/Donation Button		de																																																																																																																																			
+SQ	0	3		Crowdfunding (einmalig)		de																																																																																																																																			
+SQ	0	4		Crowdfunding (mehrmalig)		de																																																																																																																																			
+SQ	0	5		Bücher und Vermarktung/Merchandising		de																																																																																																																																			
+SQ	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
+SQ	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
+SQ	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
+SQ	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
+SQ	0	10		SaaS		de																																																																																																																																			
+SQ	0	11		Mitgliedschaften		de																																																																																																																																			
+SQ	0	12		Dual licensing		de																																																																																																																																			
+SQ	0	13		Open core (Vermarktung proprietäre Softwareversionen oder Add-ons für eine minimale Version oder einen Kern einer Free and Open Source Software)		de																																																																																																																																			
+SQ	0	14		Stiftungen und Konsortien		de																																																																																																																																			
+SQ	0	15		Risikokapital		de																																																																																																																																			
+SQ	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
 Q	M	fund3	1	Aus welchen der folgenden Quellen wird Dein aktuell größtes Projekt finanziert?		de			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		Ich nutze meine eigene Zeit freiwillig/unentgeltlich/ehrenamtlich		de																																																																																																																																			
-A	0	2		Spenden/Donation Button		de																																																																																																																																			
-A	0	3		Crowdfunding (einmalig)		de																																																																																																																																			
-A	0	4		Crowdfunding (mehrmalig)		de																																																																																																																																			
-A	0	5		Bücher und Vermarktung/Merchandising		de																																																																																																																																			
-A	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
-A	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
-A	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
-A	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
-A	0	10		SaaS		de																																																																																																																																			
-A	0	11		Mitgliedschaften		de																																																																																																																																			
-A	0	12		Dual licensing		de																																																																																																																																			
-A	0	13		Open core (Vermarktung proprietäre Softwareversionen oder Add-ons für eine minimale Version oder einen Kern einer Free and Open Source Software)		de																																																																																																																																			
-A	0	14		Stiftungen und Konsortien		de																																																																																																																																			
-A	0	15		Risikokapital		de																																																																																																																																			
-A	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
+SQ	0	1		Ich nutze meine eigene Zeit freiwillig/unentgeltlich/ehrenamtlich		de																																																																																																																																			
+SQ	0	2		Spenden/Donation Button		de																																																																																																																																			
+SQ	0	3		Crowdfunding (einmalig)		de																																																																																																																																			
+SQ	0	4		Crowdfunding (mehrmalig)		de																																																																																																																																			
+SQ	0	5		Bücher und Vermarktung/Merchandising		de																																																																																																																																			
+SQ	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
+SQ	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
+SQ	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
+SQ	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
+SQ	0	10		SaaS		de																																																																																																																																			
+SQ	0	11		Mitgliedschaften		de																																																																																																																																			
+SQ	0	12		Dual licensing		de																																																																																																																																			
+SQ	0	13		Open core (Vermarktung proprietäre Softwareversionen oder Add-ons für eine minimale Version oder einen Kern einer Free and Open Source Software)		de																																																																																																																																			
+SQ	0	14		Stiftungen und Konsortien		de																																																																																																																																			
+SQ	0	15		Risikokapital		de																																																																																																																																			
+SQ	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
 Q	M	fund4	1	Aus welchen der folgenden Quellen wurde Dein aktuell größtes Projekt vor drei Jahren finanziert?		de			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		Ich nutze meine eigene Zeit freiwillig/unentgeltlich/ehrenamtlich		de																																																																																																																																			
-A	0	2		Spenden/Donation Button		de																																																																																																																																			
-A	0	3		Crowdfunding (einmalig)		de																																																																																																																																			
-A	0	4		Crowdfunding (mehrmalig)		de																																																																																																																																			
-A	0	5		Bücher und Vermarktung/Merchandising		de																																																																																																																																			
-A	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
-A	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
-A	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
-A	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
-A	0	10		SaaS		de																																																																																																																																			
-A	0	11		Mitgliedschaften		de																																																																																																																																			
-A	0	12		Dual licensing		de																																																																																																																																			
-A	0	13		Open core (Vermarktung proprietäre Softwareversionen oder Add-ons für eine minimale Version oder einen Kern einer Free and Open Source Software)		de																																																																																																																																			
-A	0	14		Stiftungen und Konsortien		de																																																																																																																																			
-A	0	15		Risikokapital		de																																																																																																																																			
-A	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
+SQ	0	1		Ich nutze meine eigene Zeit freiwillig/unentgeltlich/ehrenamtlich		de																																																																																																																																			
+SQ	0	2		Spenden/Donation Button		de																																																																																																																																			
+SQ	0	3		Crowdfunding (einmalig)		de																																																																																																																																			
+SQ	0	4		Crowdfunding (mehrmalig)		de																																																																																																																																			
+SQ	0	5		Bücher und Vermarktung/Merchandising		de																																																																																																																																			
+SQ	0	6		Werbung und Sponsoring/finanzielle Förderung		de																																																																																																																																			
+SQ	0	7		Unterstützung aus Wirtschaft und Industrie		de																																																																																																																																			
+SQ	0	8		Beratung und Dienstleistungen		de																																																																																																																																			
+SQ	0	9		Stellenmittel oder Forschungsbeihilfe		de																																																																																																																																			
+SQ	0	10		SaaS		de																																																																																																																																			
+SQ	0	11		Mitgliedschaften		de																																																																																																																																			
+SQ	0	12		Dual licensing		de																																																																																																																																			
+SQ	0	13		Open core (Vermarktung proprietäre Softwareversionen oder Add-ons für eine minimale Version oder einen Kern einer Free and Open Source Software)		de																																																																																																																																			
+SQ	0	14		Stiftungen und Konsortien		de																																																																																																																																			
+SQ	0	15		Risikokapital		de																																																																																																																																			
+SQ	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
 G	G4	Deine Wahrnehmung Deiner aktuellen Position	1			de																																																																																																																																			
 Q	F	likert1				de			N		1																																																																																																							1																							
 SQ	0	perfCheck1	1	Erhälst Du genügend Information über die Ergebnisse Deiner Arbeit?		de																																																																																																																																			
@@ -2488,48 +2488,48 @@ A	0	1		GNU/Linux		de
 A	0	2		OS X		de																																																																																																																																			
 A	0	3		Windows		de																																																																																																																																			
 Q	M	tool4can	1	Welche Programmiersprachen nutzt Du auf Arbeit? (wähle alle zutreffenden)		de			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		Assembly		de																																																																																																																																			
-A	0	2		C		de																																																																																																																																			
-A	0	3		C#		de																																																																																																																																			
-A	0	4		C++		de																																																																																																																																			
-A	0	5		Clojure		de																																																																																																																																			
-A	0	6		CoffeeScript		de																																																																																																																																			
-A	0	7		Common Lisp		de																																																																																																																																			
-A	0	8		Dart		de																																																																																																																																			
-A	0	9		Elixir		de																																																																																																																																			
-A	0	10		Erlang		de																																																																																																																																			
-A	0	11		F#		de																																																																																																																																			
-A	0	12		Go		de																																																																																																																																			
-A	0	13		Groovy		de																																																																																																																																			
-A	0	14		Hack		de																																																																																																																																			
-A	0	15		Haskell		de																																																																																																																																			
-A	0	16		Java		de																																																																																																																																			
-A	0	17		JavaScript		de																																																																																																																																			
-A	0	18		Julia		de																																																																																																																																			
-A	0	19		Lua		de																																																																																																																																			
-A	0	20		Matlab		de																																																																																																																																			
-A	0	21		Objective-C		de																																																																																																																																			
-A	0	22		Perl		de																																																																																																																																			
-A	0	23		PHP		de																																																																																																																																			
-A	0	24		Python		de																																																																																																																																			
-A	0	25		R		de																																																																																																																																			
-A	0	26		Ruby		de																																																																																																																																			
-A	0	27		Rust		de																																																																																																																																			
-A	0	28		Scala		de																																																																																																																																			
-A	0	29		Smalltalk		de																																																																																																																																			
-A	0	30		SQL		de																																																																																																																																			
-A	0	31		Swift		de																																																																																																																																			
-A	0	32		TypeScript		de																																																																																																																																			
-A	0	33		VB.NET		de																																																																																																																																			
-A	0	34		VBA		de																																																																																																																																			
-A	0	35		Visual Basic		de																																																																																																																																			
+SQ	0	1		Assembly		de																																																																																																																																			
+SQ	0	2		C		de																																																																																																																																			
+SQ	0	3		C#		de																																																																																																																																			
+SQ	0	4		C++		de																																																																																																																																			
+SQ	0	5		Clojure		de																																																																																																																																			
+SQ	0	6		CoffeeScript		de																																																																																																																																			
+SQ	0	7		Common Lisp		de																																																																																																																																			
+SQ	0	8		Dart		de																																																																																																																																			
+SQ	0	9		Elixir		de																																																																																																																																			
+SQ	0	10		Erlang		de																																																																																																																																			
+SQ	0	11		F#		de																																																																																																																																			
+SQ	0	12		Go		de																																																																																																																																			
+SQ	0	13		Groovy		de																																																																																																																																			
+SQ	0	14		Hack		de																																																																																																																																			
+SQ	0	15		Haskell		de																																																																																																																																			
+SQ	0	16		Java		de																																																																																																																																			
+SQ	0	17		JavaScript		de																																																																																																																																			
+SQ	0	18		Julia		de																																																																																																																																			
+SQ	0	19		Lua		de																																																																																																																																			
+SQ	0	20		Matlab		de																																																																																																																																			
+SQ	0	21		Objective-C		de																																																																																																																																			
+SQ	0	22		Perl		de																																																																																																																																			
+SQ	0	23		PHP		de																																																																																																																																			
+SQ	0	24		Python		de																																																																																																																																			
+SQ	0	25		R		de																																																																																																																																			
+SQ	0	26		Ruby		de																																																																																																																																			
+SQ	0	27		Rust		de																																																																																																																																			
+SQ	0	28		Scala		de																																																																																																																																			
+SQ	0	29		Smalltalk		de																																																																																																																																			
+SQ	0	30		SQL		de																																																																																																																																			
+SQ	0	31		Swift		de																																																																																																																																			
+SQ	0	32		TypeScript		de																																																																																																																																			
+SQ	0	33		VB.NET		de																																																																																																																																			
+SQ	0	34		VBA		de																																																																																																																																			
+SQ	0	35		Visual Basic		de																																																																																																																																			
 Q	Y	ukrse10de	1	Bist Du Teil der de-RSE Initiative? (Du bist automatisch dabei, wenn Du die de-RSE Mailingliste abonniert hast, http://www.de-rse.org/de/join.html)		de			N		1																																																																																																							1																							
 Q	S	ukrse11de	1	Kennst Du eine bessere Berufsbezeichnung/Rolle als RSE (research software engineer), die alle Aktvitiäten der akademischen Softwareentwicklung umfasst? Notiere sie bitte!		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	M	ukrse2	1	Wie triffst Du andere, die Software im wissenschaftlichen Umfeld entwickeln, programmieren, skripten etc.)?		de			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
-A	0	1		UK RSE Association (http://rse.ac.uk/)		de																																																																																																																																			
-A	0	2		DE-RSE Community (http://de-rse.org)		de																																																																																																																																			
-A	0	3		Andere RSE Gruppen und RSE ähnliche Netzwerke		de																																																																																																																																			
-A	0	4		nicht zutreffend / keine Angabe		de																																																																																																																																			
+SQ	0	1		UK RSE Association (http://rse.ac.uk/)		de																																																																																																																																			
+SQ	0	2		DE-RSE Community (http://de-rse.org)		de																																																																																																																																			
+SQ	0	3		Andere RSE Gruppen und RSE ähnliche Netzwerke		de																																																																																																																																			
+SQ	0	4		nicht zutreffend / keine Angabe		de																																																																																																																																			
 Q	Y	ukrse12de	1	Würdest Du gern eine Konferenz über Softwareentwicklung in der Wissenschaft in Deutschland besuchen?		de			N		1																																																																																																							1																							
 Q	S	skill2	1	Welche drei Fähigkeiten, die Dir bei der Arbeit in Bezug auf Sofwareentwicklung hilfreich sind, würdest Du gern erwerben oder vertiefen? Dies können technische oder nicht-technische Fähigkeiten sein.		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
 Q	S	ukrse3	1	Wie hast Du Dir die Fähigkeiten angeeignet bzw. wie bist Du zu den Fähigkeiten gekommen, um Software im wissenschaftlichen Umfeld zu entwickeln?		de			N		1	1																																											300	300.0	500	110500	11.0																																																							1	1	1.0		12		1																	
