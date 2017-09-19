@@ -469,13 +469,14 @@ class surveyCreation:
 
                 # If questions were grouped together, need to change how it is process
                 if len(q) > 1:
-
+                    print([i['code'] for i in q])
                     # Check if a new section needs to be added before processing the question
                     nbr_section = self.check_adding_section(q[0], nbr_section, self.specific_config.sections_txt, lang)
 
                     # Check if the list of items need to be randomize
                     # if it is the case, just use shuffle to shuffle the list in-place
                     if q[0]['random'] == 'Y':
+                        self.randomise(q)
                         pass
                         # shuffle(q)
 
