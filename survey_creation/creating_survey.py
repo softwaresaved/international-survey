@@ -319,77 +319,77 @@ class surveyCreation:
         with open(outfile, 'r') as f:
             return [x[:-1] for x in f.readlines()]
 
+    def setup_question(self, type_question, row, txt_lang, lang):
+        """
+        Return a formatted dictionary with the shared information
+        accross all questions
+        """
+        if type_question == 'multi_likert':
+            question = main_config.likert_question
+        elif type_question == 'one choice':
+            question = main_config.one_choice_question
+        elif type_question == 'ranking':
+            question = main_config.ranking_question
+        elif type_question == 'multiple choice':
+            question = main_config.multiple_choice_question
+        elif type_question == 'freenumeric':
+            question = main_config.freenumeric_question
+        elif type_question == 'freetext':
+            question = main_config.freetext_question
+        elif type_question == 'likert':
+            question = main_config.likert_question
+        elif type_question == 'y/n/na':
+            question = main_config.y_n_question
+        else:
+            print(type_question)
+            raise
+
+        if type_question == 'multi_likert':
+            # If multi likert it means the questions are presented in an array
+            # where the header is the header for the arrays and all questions
+            # are created during the subquestion process. In consequences
+            # The questions here cannot have the row['text'] as for the other
+            # type of questions but rather an unique id that is ensure
+            # by incrementing the self.code_to_multiple_question.
+            question['name'] = 'likert' + str(self.code_to_multiple_question)
+            self.code_to_multiple_question +=1
+            question['text'] = ''
+        else:
+            question['name'] = row['code']
+            question['text'] = row[txt_lang]
+
+        question['language'] = lang
+
+        if row['other'] == 'Y':
+            question['other'] = 'Y'
+        else:
+            question['other'] = 'N'
+
+        self._write_row(question)
+
+    def setup_answer(self, row, index_lang, lang):
+        """
+        Create the answer itself
+        """
+        n = 1
+        for text_answer in self.get_answer(self.project, row['answer_file']):
+            answer_row = main_config.one_choice_answer
+            # answer_row['name'] = 'A' + str(n)
+            answer_row['name'] = str(n)
+            # to get the translation  of the answers. If there is None, it takes the first
+            # element (the english one). Needed because sometimes, the answers are not translated
+
+            try:
+                answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
+            except IndexError:
+                answer_row['text'] = text_answer.split(';')[0].strip('"')
+            answer_row['language'] = lang
+            self._write_row(answer_row)
+            n +=1
+
     def create_survey_questions(self):
         """
         """
-        def setup_question(type_question, row, txt_lang, lang):
-            """
-            Return a formatted dictionary with the shared information
-            accross all questions
-            """
-            if type_question == 'multi_likert':
-                # If multi likert it means the questions are presented in an array
-                # where the header is the header for the arrays and all questions
-                # are created during the subquestion process. In consequences
-                # The questions here cannot have the row['text'] as for the other
-                # type of questions but rather an unique id that is ensure
-                # by incrementing the self.code_to_multiple_question.
-                question = main_config.likert_question
-                question['name'] = 'likert' + str(self.code_to_multiple_question)
-                self.code_to_multiple_question +=1
-                question['text'] = ''
-
-            elif type_question == 'one choice':
-                question = main_config.one_choice_question
-
-            elif type_question == 'ranking':
-                question = main_config.ranking_question
-                question['name'] = row['code']
-                question['text'] = row[txt_lang]
-
-            elif type_question == 'multiple choice':
-                question = main_config.multiple_choice_question
-                question['name'] = row['code']
-                question['text'] = row[txt_lang]
-
-            elif type_question == 'freenumeric':
-                question = main_config.freenumeric_question
-                question['name'] = row['code']
-                question['text'] = row[txt_lang]
-
-            elif type_question == 'freetext':
-                question = main_config.freetext_question
-                question['name'] = row['code']
-                question['text'] = row[txt_lang]
-
-            elif type_question == 'likert':
-                question = main_config.likert_question
-                question['name'] = row['code']
-                question['text'] = row[txt_lang]
-
-            elif type_question == 'y/n/na':
-                question = main_config.y_n_question
-                question['name'] = row['code']
-                question['text'] = row[txt_lang]
-            else:
-                print(type_question)
-                raise
-
-            # the multi likert already have a name and a text
-            # but none of the others have at this point
-            if type_question != 'multi_likert':
-                question['name'] = row['code']
-                question['text'] = row[txt_lang]
-
-            question['language'] = lang
-
-            if row['other'] == 'Y':
-                question['other'] = 'Y'
-            else:
-                question['other'] = 'N'
-
-            self._write_row(question)
-
         # Create the questions for each languages, everything has to be done each time
         # the enumerate helps for finding the right answer and the right lang_trans
         # in case of more than one translation
@@ -410,13 +410,16 @@ class surveyCreation:
 
             # Open the csv file and read it through a dictionary (generator)
             question_to_transform = self.read_survey_file(self.project)
-            # pass this generator into the function group_likert() to group Y/N and likert together
 
+            # pass this generator into the function group_likert() to group Y/N and likert together
             for q in self.group_likert(question_to_transform):
+
                 # If questions were grouped together, need to change how it is process
                 if len(q) > 1:
+
                     # Check if a new section needs to be added before processing the question
                     nbr_section = self.check_adding_section(q[0], nbr_section, self.specific_config.sections_txt, lang)
+
                     # Check if the list of items need to be randomize
                     # if it is the case, just use shuffle to shuffle the list in-place
                     if q[0]['random'] == 'Y':
@@ -424,9 +427,10 @@ class surveyCreation:
                         # shuffle(q)
 
                     if q[0]['answer_format'].lower() == 'likert':
+
                         # Create the question header that needs to be created once for all the
                         # following question
-                        setup_question('multi_likert', q[0], txt_lang, lang)
+                        self.setup_question('multi_likert', q[0], txt_lang, lang)
 
                         for row in q:
                             subquestion = main_config.likert_subquestion
@@ -436,19 +440,10 @@ class surveyCreation:
                             subquestion['text'] = row[txt_lang]
                             self._write_row(subquestion)
 
-                        # Add the answers
-                        # Create an inc to add to the question code. They need unique label
-                        n = 1
-                        for text_answer in self.get_answer(self.project, q[0]['answer_file']):
-                            answer_row = main_config.likert_answer
-                            answer_row['name'] = str(n)
-                            answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
-                            answer_row['language'] = lang
-                            self._write_row(answer_row)
-                            n +=1
+                        self.setup_answer(q[0], index_lang, lang)
 
                     elif q[0]['answer_format'].lower() == 'y/n/na':
-                        setup_question('y/n/na', q[0], txt_lang, lang)
+                        self.setup_question('y/n/na', q[0], txt_lang, lang)
 
                 else:
                     for row in q:
@@ -457,22 +452,8 @@ class surveyCreation:
                                                                 lang)
 
                         if row['answer_format'].lower() == 'one choice':
-                            setup_question('one choice', row, txt_lang, lang)
-                            # add the answers
-                            # create an inc to add to the question code. they need unique label
-                            n = 1
-                            for text_answer in self.get_answer(self.project, row['answer_file']):
-                                answer_row = main_config.one_choice_answer
-                                # answer_row['name'] = 'A' + str(n)
-                                answer_row['name'] = str(n)
-                                try:
-                                    answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
-                                except IndexError:
-                                    print(row['code'])
-                                    answer_row['text'] = text_answer.split(';')[0].strip('"')
-                                answer_row['language'] = lang
-                                self._write_row(answer_row)
-                                n +=1
+                            self.setup_question('one choice', row, txt_lang, lang)
+                            self.setup_answer(row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'ranking':
                             # Ranking questions work differently
@@ -480,7 +461,7 @@ class surveyCreation:
                             # Then only the questions are created
                             # As neither of them have specific value for database, they are
                             # created here and not pulled from the config file
-                            setup_question('ranking', row, txt_lang, lang)
+                            self.setup_question('ranking', row, txt_lang, lang)
 
                             # Create the Subquestion ranks
                             for i in range(1, 9):  # To get 8 ranked questions
@@ -488,56 +469,31 @@ class surveyCreation:
                                             'text': 'Rank ' + str(i), 'language': lang}
                                 self._write_row(init_row)
 
-                            n = 1
-                            for text_answer in self.get_answer(self.project, row['answer_file']):
-                                answer_row = main_config.ranking_answer
-                                answer_row['name'] = str(n)
-                                answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
-                                answer_row['language'] = lang
-                                self._write_row(answer_row)
-                                n +=1
+                            self.setup_answer(row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'multiple choices':
-                            setup_question('multiple choice', row, txt_lang, lang)
+                            self.setup_question('multiple choice', row, txt_lang, lang)
 
-                            # Add the answers
-                            # Create an inc to add to the question code. They need unique label
-                            n = 1
-                            for text_answer in self.get_answer(self.project, row['answer_file']):
-                                answer_row = main_config.multiple_choice_answer
-                                answer_row['name'] = str(n)
-                                answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
-                                answer_row['language'] = lang
-                                self._write_row(answer_row)
-                                n +=1
+                            self.setup_answer(row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'freenumeric':
-                            setup_question('freenumeric', row, txt_lang, lang)
+                            self.setup_question('freenumeric', row, txt_lang, lang)
 
                         if row['answer_format'].lower() == 'freetext':
-                            setup_question('freetext', row, txt_lang, lang)
+                            self.setup_question('freetext', row, txt_lang, lang)
 
                         if row['answer_format'].lower() == 'likert':
-                            setup_question('likert', row, txt_lang, lang)
+                            self.setup_question('likert', row, txt_lang, lang)
                             # Need to create an  empty subquestion
                             subquestion = {'class': 'SQ', 'type/scale': '0', 'name': 'SQ001'}
                             subquestion['relevance'] = '1'
                             subquestion['language'] = lang
                             self._write_row(subquestion)
 
-                            # Add the answers
-                            # Create an inc to add to the question code. They need unique label
-                            n = 1
-                            for text_answer in self.get_answer(self.project, row['answer_file']):
-                                answer_row = main_config.likert_answer
-                                answer_row['name'] = str(n)
-                                answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
-                                answer_row['language'] = lang
-                                self._write_row(answer_row)
-                                n +=1
+                            self.setup_answer(row, index_lang, lang)
 
                         if row['answer_format'].lower() == 'y/n/na':
-                            setup_question('y/n/na', row, txt_lang, lang)
+                            self.setup_question('y/n/na', row, txt_lang, lang)
 
     def run(self):
         """
