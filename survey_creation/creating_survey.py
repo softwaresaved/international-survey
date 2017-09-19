@@ -266,18 +266,27 @@ class surveyCreation:
         Take the dictionary of all the questions and group them
         into the same group if they have to be displayed together.
         Only applicable for the type_question Y/N/NA and the likert ones
+        It also perform a check to see if a condition as been setup with
+        the key 'condition'.
+        In that case it does not group the questions
         """
         previous_answer_format = None
         previous_file_answer = None
         previous_code = None
         previous_file_answer = None
+        previous_condition = None
         group_survey_q = list()
         for q in indict:
             current_answer_format = q['answer_format'].lower()
             current_file_answer = q['answer_file']
             current_code = ''.join([i for i in q['code'] if not i.isdigit()])
+            # Checking if there is a condition. When not, it is an empty string ''
+            if q['condition'] != '':
+                current_condition = True
+            else:
+                current_condition = False
 
-            if current_answer_format == 'likert':
+            if current_answer_format == 'likert' and current_condition is False:
                 if len(group_survey_q) > 0:
                     if current_file_answer == previous_file_answer or previous_file_answer is None:
                         if previous_answer_format == 'likert':
@@ -289,7 +298,7 @@ class surveyCreation:
                         yield group_survey_q
                         group_survey_q = list()
 
-            elif current_answer_format == 'y/n/na':
+            elif current_answer_format == 'y/n/na' and current_condition is False:
                 if len(group_survey_q) > 0:
                     if current_code == previous_code or previous_code is None:
                         if previous_answer_format == 'y/n/na':
