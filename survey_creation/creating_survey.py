@@ -444,6 +444,42 @@ class surveyCreation:
         else:
             return 'question'
 
+    def setup_condition(self, condition):
+        """
+        """
+        def split_list(inlist, logical_element):
+            return [i.strip() for i in list_to_compare.lower().split(logical_element.lower())]
+
+        def remove_unused_word(word):
+            return word.replace('in', '').strip()
+
+        # First check if there is a list in the field
+        if '[' in condition:
+            element_to_compare = condition.split('[')[0]
+            list_to_compare = condition.split('[')[1].replace(']', '')
+            if 'OR' in list_to_compare:
+                logical_element = 'or'
+            if 'AND' in list_to_compare:
+                logical_element = 'and'
+            list_to_compare = split_list(list_to_compare, logical_element)
+            element_to_compare = remove_unused_word(element_to_compare)
+            # print(element_to_compare)
+            # print(list_to_compare)
+        else:  # no list, only several element or several conditions
+            pass
+            # Check if there is Or or AND
+            # if 'or' in condition.lower():
+            # elif 'AND' in condition:
+                # print(condition)
+        if condition != '':
+            print(condition)
+        # and_list = condition.split('AND')
+        # print('And list')
+        # print(and_list)
+        # or_list = condition.split('OR')
+        # print('OR list')
+        # print(or_list)
+
     def create_survey_questions(self):
         """
         """
@@ -469,16 +505,13 @@ class surveyCreation:
 
                 # If questions were grouped together, need to change how it is process
                 if len(q) > 1:
-                    print([i['code'] for i in q])
                     # Check if a new section needs to be added before processing the question
                     nbr_section = self.check_adding_section(q[0], nbr_section, self.specific_config.sections_txt, lang)
 
                     # Check if the list of items need to be randomize
-                    # if it is the case, just use shuffle to shuffle the list in-place
+                    # if it is the case, just use shuffle() to shuffle the list in-place
                     if q[0]['random'] == 'Y':
-                        self.randomise(q)
-                        pass
-                        # shuffle(q)
+                        shuffle(q)
 
                     if q[0]['answer_format'].lower() == 'likert':
 
@@ -496,6 +529,8 @@ class surveyCreation:
                         # Check if a new section needs to be added before processing the question
                         nbr_section = self.check_adding_section(row, nbr_section, self.specific_config.sections_txt,
                                                                 lang)
+
+                        self.setup_condition(row['condition'])
 
                         if row['answer_format'].lower() == 'one choice':
                             self.setup_question('one choice', row, txt_lang, lang)
