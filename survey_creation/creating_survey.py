@@ -274,7 +274,6 @@ class surveyCreation:
         previous_file_answer = None
         previous_code = None
         previous_file_answer = None
-        previous_condition = None
         group_survey_q = list()
         for q in indict:
             current_answer_format = q['answer_format'].lower()
@@ -350,9 +349,8 @@ class surveyCreation:
             question = main_config.likert_question
         elif type_question == 'y/n/na':
             question = main_config.y_n_question
-        else:
-            print(type_question)
-            raise
+        elif type_question == 'datetime':
+            question = main_config.datetime_question
 
         if type_question == 'multi_likert':
             # If multi likert it means the questions are presented in an array
@@ -374,6 +372,9 @@ class surveyCreation:
             question['other'] = 'Y'
         else:
             question['other'] = 'N'
+
+        if row['mandatory'] == 'Y':
+            question['mandatory'] = 'Y'
 
         self._write_row(question)
 
@@ -462,32 +463,30 @@ class surveyCreation:
         def remove_unused_word(word):
             return word.replace('in', '').strip()
 
+        # If condition is empty it wil be an empty string
+        if condition == '':
+            return
+        if 'OR' in condition:
+            logical_element = 'or'
+        elif 'AND' in condition:
+            logical_element = 'and'
+        else:
+            logical_element = None
         # First check if there is a list in the field
         if '[' in condition:
             element_to_compare = condition.split('[')[0]
             list_to_compare = condition.split('[')[1].replace(']', '')
-            if 'OR' in list_to_compare:
-                logical_element = 'or'
-            if 'AND' in list_to_compare:
-                logical_element = 'and'
             list_to_compare = split_list(list_to_compare, logical_element)
             element_to_compare = remove_unused_word(element_to_compare)
-            # print(element_to_compare)
-            # print(list_to_compare)
+
         else:  # no list, only several element or several conditions
-            pass
-            # Check if there is Or or AND
-            # if 'or' in condition.lower():
-            # elif 'AND' in condition:
-                # print(condition)
-        if condition != '':
-            print(condition)
-        # and_list = condition.split('AND')
-        # print('And list')
-        # print(and_list)
-        # or_list = condition.split('OR')
-        # print('OR list')
-        # print(or_list)
+            # First split with AND and OR:
+            if logical_element:
+                list_conditions = condition.lower().split(logical_element)
+            else:
+                # Transform it into a list for later operation to be consistent
+                list_conditions = [condition.lower()]
+            print(list_conditions)
 
     def create_survey_questions(self):
         """
@@ -575,6 +574,9 @@ class surveyCreation:
 
                         if row['answer_format'].lower() == 'y/n/na':
                             self.setup_question('y/n/na', row, txt_lang, lang)
+
+                        if row['answer_format'].lower() == 'datetime':
+                            self.setup_question('datetime', row, txt_lang, lang)
 
     def run(self):
         """
