@@ -114,7 +114,7 @@ class creationConfig:
     one_choice_question = {'class': 'Q', 'type/scale': '!', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1', 'time_limit_action': 1}
     one_choice_answer = {'class': 'A', 'type/scale': '0'}
 
-    ranking_question = {'class': 'Q', 'type/scale': 'R', 'relevance': '1', 'other': 'N', 'same_default': '1', 'max_subquestions': '8', 'samechoiceheight': '1', 'samelistheight': '1', 'showpopups': '1', 'statistics_showgraph': '1'}
+    ranking_question = {'class': 'Q', 'type/scale': 'R', 'relevance': '1', 'other': 'N', 'same_default': '1', 'max_subquestions': '5', 'samechoiceheight': '1', 'samelistheight': '1', 'showpopups': '1', 'statistics_showgraph': '1'}
 
     ranking_answer = {'class': 'A', 'type/scale': '0'}
 
