@@ -398,6 +398,7 @@ class surveyCreation:
             subquestion['name'] = 'SQ001'
             subquestion['relevance'] = '1'
             subquestion['language'] = lang
+            subquestion['text'] = ''
             self._write_row(subquestion)
 
     def setup_answer(self, type_question, row, index_lang, lang):
