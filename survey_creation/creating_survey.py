@@ -362,6 +362,7 @@ class surveyCreation:
             question['other'] = 'N'
 
         if row['mandatory'] == 'Y':
+            print(row['code'])
             question['mandatory'] = 'Y'
         else:
             question['mandatory'] = ''
@@ -502,9 +503,7 @@ class surveyCreation:
 
                 # If questions were grouped together, need to change how it is process
                 if len(q) > 1:
-                    print([row['code'] for row in q])
-                    # for row in q:
-                    #     print('Several items: {}'.format(row['code']))
+                    # print([row['code'] for row in q])
 
                     # Check if a new section needs to be added before processing the question
                     nbr_section = self.check_adding_section(q[0], nbr_section, self.specific_config.sections_txt, lang)
@@ -522,7 +521,7 @@ class surveyCreation:
 
                 else:
                     for row in q:
-                        print(row['code'])
+                        # print(row['code'])
                         # Check if a new section needs to be added before processing the question
                         nbr_section = self.check_adding_section(row, nbr_section, self.specific_config.sections_txt,
                                                                 lang)
