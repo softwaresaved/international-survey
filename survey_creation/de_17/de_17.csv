@@ -3,7 +3,7 @@ section,code,question,answer_format,answer_file,other,random,mandatory,condition
 1,edu1,What is the highest qualification you have obtained?,ONE CHOICE,education_de,Y,,Y,,,,"Was ist Dein höchster, an einer Bildungseinrichtung erworbener Abschluss?",,
 1,edu2,In which subject is your highest academic qualification?,ONE CHOICE,academic_field,Y,,Y,,http://www.thecompleteuniversityguide.co.uk/courses,,In welchem Bereich hast Du diesen Bildungsabschluss erlangt?,,
 1,edu3,Enter your academic subject,FREETEXT,,,,Y,'other’ in edu2,,,Gib den Bereich an!,,
-1,edu4,Do you hold any other professional qualifications?,FREETEXT,,,,Y,,,,"Besitzt Du weitere Abschlüsse? Wenn ja, welche?",,
+1,edu4,Do you hold any other professional qualifications?,FREETEXT,,,,,,,,"Besitzt Du weitere Abschlüsse? Wenn ja, welche?",,
 1,rse1,Do you write code as part of your job?,Y/N/NA,,,,Y,,,,Entwickelst Du in Deiner Arbeitszeit Software? Schreibst Du z.B. Quellcode oder Skripte?,,
 1,rse4de,"Are you involved and responsible for software projects with non-coding activities as part of your job, e.g. do you lead a software projects, design software architectures or UIs, testing, write documentation?",Y/N/NA,,,,Y,,,,"Bist Du in Deiner Arbeitszeit in Softwareprojekten involviert und für diese komplett oder in Teilen verantwortlich ohne Quellcode zu schreiben? Bist Du beispielsweise nicht-programmierend als Project Lead, Software Architekt, UI Designer, Tester, Autor der Dokumentation o.ä. beteiligt?",,
 1,rse3,Who uses the code that you write?,LIKERT,likert_usage_5,,,Y,,,done,Wer nutzt den von Dir geschrieben Code?,,

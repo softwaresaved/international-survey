@@ -265,7 +265,7 @@ class surveyCreation:
         """
         Take the dictionary of all the questions and group them
         into the same group if they have to be displayed together.
-        Only applicable for the type_question Y/N/NA and the likert ones
+        Only applicable for the type_question likert
         It also perform a check to see if a condition as been setup with
         the key 'condition'.
         In that case it does not group the questions
@@ -289,18 +289,6 @@ class surveyCreation:
                 if len(group_survey_q) > 0:
                     if current_file_answer == previous_file_answer or previous_file_answer is None:
                         if previous_answer_format == 'likert':
-                            pass
-                        else:
-                            yield group_survey_q
-                            group_survey_q = list()
-                    else:
-                        yield group_survey_q
-                        group_survey_q = list()
-
-            elif current_answer_format == 'y/n/na' and current_condition is False:
-                if len(group_survey_q) > 0:
-                    if current_code == previous_code or previous_code is None:
-                        if previous_answer_format == 'y/n/na':
                             pass
                         else:
                             yield group_survey_q
@@ -375,6 +363,8 @@ class surveyCreation:
 
         if row['mandatory'] == 'Y':
             question['mandatory'] = 'Y'
+        else:
+            question['mandatory'] = ''
 
         self._write_row(question)
 
@@ -486,7 +476,6 @@ class surveyCreation:
             else:
                 # Transform it into a list for later operation to be consistent
                 list_conditions = [condition.lower()]
-            print(list_conditions)
 
     def create_survey_questions(self):
         """
@@ -513,6 +502,10 @@ class surveyCreation:
 
                 # If questions were grouped together, need to change how it is process
                 if len(q) > 1:
+                    print([row['code'] for row in q])
+                    # for row in q:
+                    #     print('Several items: {}'.format(row['code']))
+
                     # Check if a new section needs to be added before processing the question
                     nbr_section = self.check_adding_section(q[0], nbr_section, self.specific_config.sections_txt, lang)
 
@@ -521,19 +514,15 @@ class surveyCreation:
                     if q[0]['random'] == 'Y':
                         shuffle(q)
 
-                    if q[0]['answer_format'].lower() == 'likert':
-
-                        # Create the question header that needs to be created once for all the
-                        # following question
-                        self.setup_question('multi_likert', q[0], txt_lang, lang)
-                        self.setup_subquestion('multi_likert', lang, q, txt_lang)
-                        self.setup_answer('likert', q[0], index_lang, lang)
-
-                    elif q[0]['answer_format'].lower() == 'y/n/na':
-                        self.setup_question('y/n/na', q[0], txt_lang, lang)
+                    # Create the question header that needs to be created once for all the
+                    # following question
+                    self.setup_question('multi_likert', q[0], txt_lang, lang)
+                    self.setup_subquestion('multi_likert', lang, q, txt_lang)
+                    self.setup_answer('likert', q[0], index_lang, lang)
 
                 else:
                     for row in q:
+                        print(row['code'])
                         # Check if a new section needs to be added before processing the question
                         nbr_section = self.check_adding_section(row, nbr_section, self.specific_config.sections_txt,
                                                                 lang)
