@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 
+from textwrap import wrap
 from IPython.display import display_html
 from include.likertScalePlot import likert_scale, get_colors
 
