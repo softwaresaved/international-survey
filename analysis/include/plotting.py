@@ -6,9 +6,34 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 
-from textwrap import wrap
 from IPython.display import display_html
 from include.likertScalePlot import likert_scale, get_colors
+
+
+def wrap_labels(labels, max_size=20):
+    """
+    Function to automatically wrap labels if they are too long
+    Split only if whitespace
+    params:
+        :labels list(): of strings that contains the labels
+        :max_size int(): 20 by Default, the size of the string
+        before being wrapped
+    :return:
+        :list() of wrapped labels according to the max size
+    """
+    def split_at_whitespace(label):
+        label_to_return = list()
+        n = 0
+        for letter in label:
+            n +=1
+            if n >= max_size:
+                if letter == ' ':
+                    letter = '\n'
+                    n = 0
+            label_to_return.append(letter)
+        return ''.join(label_to_return)
+
+    return [split_at_whitespace(label) for label in labels]
 
 
 def plot_bar_char(df, sort_order=False, stacked=False,
@@ -57,6 +82,21 @@ def plot_bar_char(df, sort_order=False, stacked=False,
         plt.legend(bbox_to_anchor=(1.04, 0.5), loc="center left", ncol=nbr_col)
     else:
         plt.legend().set_visible(False)
+
+    # Add the labels
+
+    # To set up the label on x or y axis
+    label_txt = wrap_labels(df.index)
+    label_ticks = range(len(df.index))
+    if horizontal is True:
+        plt.yticks(label_ticks, label_txt)
+    else:
+        # This set the xlimits to center the xtick with the bin
+        # Explanation found here:
+        # https://stackoverflow.com/a/27084005/3193951
+        plt.xlim([-1, len(df.index)])
+        plt.xticks(label_ticks, label_txt, rotation=90)
+
     return plt
 
 
@@ -118,10 +158,6 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     bar_width = 0.9
     # opacity = 0.7
 
-    # To set up the label on x or y axis
-    label_txt = df.index
-    label_ticks = range(len(df.index))
-
     # # Sorting the df with the Yes values
     # if sort_order.lower() == 'yes':
     #     df.sort_values(by='Yes', inplace=True, ascending=False)
@@ -145,6 +181,9 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     ax.legend((yes_bar, no_bar), ('Yes', 'No'))
 
     # Add the x-labels
+    # To set up the label on x or y axis
+    label_txt = wrap_labels(df.index)
+    label_ticks = range(len(df.index))
     if horizontal is True:
         plt.yticks(label_ticks, label_txt)
     else:
