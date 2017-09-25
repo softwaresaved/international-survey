@@ -15,6 +15,67 @@ def get_answer(file_answer):
         return [x.split(';')[0].rstrip() for x in f.readlines()]
 
 
+def order_answers(df, mode_reorder=None, nan_reorder='end', list_order=None):
+    """
+    Function to reindex the df according to
+    the argument passed. It can either leave at it is
+    or ordering by taking the order from  the answer file
+    or ordering according to the count. The default behaviour
+    is to re-order with the count
+
+    It also decide if the NA is pushed at the end of the
+    reorder or order with the number of count. The default is
+    to put the np.NaN at the end.
+
+    :params:
+        :df pd.dataFrame(): The input df to sort
+        :mode_reorder str(): The type or reordering
+            None: Nothing is done
+            count: reorder according to the count
+            file_order: reorder according to the file_answer
+        :nan_reorder:
+            None: Nothing is done
+            end: put the np.Nan at the end
+            count: order the np.Nan according to the count
+        :list_order list(): list of order that is required if option
+            file_order is chosen
+
+    :return:
+        df pd.dataFrame(): The sorted df
+    """
+
+    def reorder_nan(df, nan_reorder):
+        """
+        """
+        if nan_reorder == 'end':
+            # Sorting with nan at the end, the in-built function is not working do not know why
+            df.sort_values(by=df.columns[0], axis=0, ascending=False, inplace=True, na_position='last')
+            # So implemented this dirty hack. If someone wants to fix, please do
+            index_wo_nan = list()
+            nan_value = False
+            for x in df.index:
+                if pd.isnull(x):
+                    nan_value = True
+                else:
+                    index_wo_nan.append(x)
+            if nan_value:
+                index_wo_nan.append(np.nan)
+
+            df = df.reindex(index=index_wo_nan)
+        elif nan_reorder == 'count':
+            raise NotImplementedError
+        elif nan_reorder is None:
+            pass
+        else:
+            raise
+
+        return df
+
+    df = reorder_nan(df, nan_reorder)
+
+    return df
+
+
 def count_choice(df, colnames, rename_columns=False,
                  dropna=False, normalize=False,
                  multiple_choice=False, sort_values=False):
@@ -46,24 +107,11 @@ def count_choice(df, colnames, rename_columns=False,
         df_sub = df_sub.to_frame()
         df_sub.columns = ['Count']
 
-    # Sorting with nan at the end, the in-built function is not working do not know why
-    df_sub.sort_values(by=df_sub.columns[0], axis=0, ascending=False, inplace=True, na_position='last')
-    # So implemented this dirty hack. If someone wants to fix, please do
-    index_wo_nan = list()
-    nan_value = False
-    for x in df_sub.index:
-        if pd.isnull(x):
-            nan_value = True
-        else:
-            index_wo_nan.append(x)
-    if nan_value:
-        index_wo_nan.append(np.nan)
-
-    df_sub = df_sub.reindex(index=index_wo_nan)
+    df_sub = order_answers(df_sub, nan_reorder='end')
     return df_sub
 
 
-def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_values=False):
+def count_yn(df, colnames, multiple=False, normalize=False, dropna=False):
     """
     """
     if multiple is True:
@@ -74,8 +122,6 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_v
     df_sub = df_sub.apply(pd.Series.value_counts,
                           dropna=dropna,
                           normalize=normalize)
-    if sort_values is True:
-        df_sub.sort_values(ascending=True, inplace=True, na_position='last')
 
     # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
