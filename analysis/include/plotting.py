@@ -10,6 +10,32 @@ from IPython.display import display_html
 from include.likertScalePlot import likert_scale, get_colors
 
 
+def wrap_labels(labels, max_size=20):
+    """
+    Function to automatically wrap labels if they are too long
+    Split only if whitespace
+    params:
+        :labels list(): of strings that contains the labels
+        :max_size int(): 20 by Default, the size of the string
+        before being wrapped
+    :return:
+        :list() of wrapped labels according to the max size
+    """
+    def split_at_whitespace(label):
+        label_to_return = list()
+        n = 0
+        for letter in label:
+            n +=1
+            if n >= max_size:
+                if letter == ' ':
+                    letter = '\n'
+                    n = 0
+            label_to_return.append(letter)
+        return ''.join(label_to_return)
+
+    return [split_at_whitespace(label) for label in labels]
+
+
 def plot_bar_char(df, sort_order=False, stacked=False,
                   horizontal=False, dropna=True, legend=False):
     """
@@ -56,6 +82,21 @@ def plot_bar_char(df, sort_order=False, stacked=False,
         plt.legend(bbox_to_anchor=(1.04, 0.5), loc="center left", ncol=nbr_col)
     else:
         plt.legend().set_visible(False)
+
+    # Add the labels
+
+    # To set up the label on x or y axis
+    label_txt = wrap_labels(df.index)
+    label_ticks = range(len(df.index))
+    if horizontal is True:
+        plt.yticks(label_ticks, label_txt)
+    else:
+        # This set the xlimits to center the xtick with the bin
+        # Explanation found here:
+        # https://stackoverflow.com/a/27084005/3193951
+        plt.xlim([-1, len(df.index)])
+        plt.xticks(label_ticks, label_txt, rotation=90)
+
     return plt
 
 
@@ -66,17 +107,17 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     # Set up a bigger size
     if len(df.index) > 10:
         matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
-    plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=False, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
     return plt
 
 
-def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
+def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, legend=False):
     """
     """
     # df = df.transpose()
-    plt = plot_bar_char(df, sort_order=sort_order, stacked=False, horizontal=False, dropna=dropna)
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=horizontal, dropna=dropna, legend=legend)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
     return plt
@@ -117,10 +158,6 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     bar_width = 0.9
     # opacity = 0.7
 
-    # To set up the label on x or y axis
-    label_txt = df.index
-    label_ticks = range(len(df.index))
-
     # # Sorting the df with the Yes values
     # if sort_order.lower() == 'yes':
     #     df.sort_values(by='Yes', inplace=True, ascending=False)
@@ -144,6 +181,9 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     ax.legend((yes_bar, no_bar), ('Yes', 'No'))
 
     # Add the x-labels
+    # To set up the label on x or y axis
+    label_txt = wrap_labels(df.index)
+    label_ticks = range(len(df.index))
     if horizontal is True:
         plt.yticks(label_ticks, label_txt)
     else:
@@ -177,6 +217,27 @@ def plot_likert(df):
     return likert_scale(df)
 
 
+def plot_numeric_var(df):
+    """
+    """
+    return df.hist()
+
+
+def plot_freetext(wc):
+    """
+    """
+    # In case the column only has empty value, the wc returned from
+    # counting.get_words_count() is a string mentioning that. Therefore
+    # nothing to plot. It is needed otherwise the previous successful wc is plotted
+    if not isinstance(wc, str):
+        plt.figure()
+        ax = plt.imshow(wc, interpolation='bilinear')
+        ax = plt.axis('off')
+        return wc
+    else:
+        return None
+
+
 def get_plot(df, type_question):
 
     try:
@@ -202,14 +263,15 @@ def get_plot(df, type_question):
                                        sort_order=False)
             return plot_multiple_var(df, stacked=False, horizontal=False)
 
+        elif type_question.lower() == 'freenumeric':
+            return plot_numeric_var(df)
+
         elif type_question.lower() == 'ranking':
-            pass
+            return plot_multiple_var(df, stacked=True, horizontal=False, legend=True)
 
         elif type_question.lower() == 'freetext':
-            pass
-
-        elif type_question.lower() == 'freenumeric':
-            pass
+            # pass
+            return plot_freetext(df)
 
         elif type_question.lower() == 'datetime':
             pass
@@ -220,7 +282,6 @@ def get_plot(df, type_question):
         return None
 
 
-# Currently unused but keep it because may be usefull in the future.
 def display_side_by_side(*args):
     """
     https://stackoverflow.com/a/44923103
