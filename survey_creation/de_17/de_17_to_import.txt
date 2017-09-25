@@ -47,14 +47,14 @@ S		googleanalyticsstyle		0
 SL		surveyls_title		Study about people writing scientic software for Germany		en																																																																																																																																			
 SL		surveyls_welcometext		"<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We also call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
 <h2>Why did I receive this invitation?</h2>
-<p>You have received this link because you are a member of the UK RSE Association or somehow known to de-RSE.org or you were identified as someone creating scientific software.
+<p>You have received this link because you are a member of the UK RSE Association or somehow known to the German chapter de-RSE or you were identified as someone creating scientific software.
 There is currently little reliable information about the community of people creating research related software, so we have decided to collect this information to help funders and other research organisations develop policies.
 This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>
 <p>Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.</p>
 <h2>How long will it take?</h2>
-<p>There are ca. 81 questions in this survey. It takes about 15 to 20 minutes to complete.</p>
+<p>There are ca. 80 questions in this survey. It takes about 15 to 20 minutes to complete.</p>
 <h2>Who is responsible for this survey?</h2>
-<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/25269).
+<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"">Software Sustainability Institute</a> (SSI) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/25269).
 The investigators are <a href=""mailto:s.hettrick@software.ac.uk"">Simon Hettrick</a> and <a href=""mailto:olivier.philippe@soton.ac.uk"">Olivier Philippe</a>.
 The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"">Data Protection Act</a>. 
 These records are anonymised and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"">Creative Commons by attribution, non-commercial licence</a>.</p>
@@ -75,20 +75,20 @@ SL		email_admin_responses_subj		Response submission for survey {SURVEYNAME} with
 SL		email_admin_responses		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}		en																																																																																																																																			
 SL		surveyls_numberformat		0		en																																																																																																																																			
 SL		surveyls_title		Umfrage zur Softwareentwicklung in der deutschen Wissenschaft		de																																																																																																																																			
-SL		surveyls_welcometext		"<p><em><em>Diese Umfrage soll Informationen über Personen sammeln, die in der Wissenschaft Software entwickeln. Im Englischen werden diese Personen unter anderem </em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">(RSEs)</a> genannt, im Deutschen würde man vielleicht 'Akademische Softwareentwickler' sagen. Wir sprechen mit dieser Umfrage jedoch auch Postdoktoranden oder Wissenschaftliche Mitarbeiter an. Beim Übertragen der Fragen aus dem Englischen wurde bewusst eine freundschaftlicher Ausdruck gewählt (daher das 'Du' in der Ansprache).</p>
+SL		surveyls_welcometext		"<p><em><em>Die Umfrage adressiert Personen, die wissenschaftliche Software bzw. Forschungssoftware in Deutschland entwickeln. Andernorts in Europa und in der Welt werden diese Personen  bereits als </em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"">(RSEs)</a> bezeichnet und unabhängig von ihrer Stellenbezeichnung und ihrem Abschluss unter diesem Begriff zusammengefasst. RSE ist ein Sammelbegriff für in der Forschung und in den Wissenschaften tätige Personen, die Software entwickeln und anderweitig in die Softwareentwicklung involviert sind, unabhängig von der Art und dem Umfang ihrer Tätigkeit. Wir sprechen mit dieser Umfrage gleichermaßen Software entwickelnde Wissenschaftlerinnen und Wissenschaftler, in der Forschung tätige Informatikerinnen und Informatiker und andere aus den Computerwissenschaften stammende Personen, skriptende Administratorinnen und Administratoren, (Post-)Doktorandinnen und (Post-)Doktoranden, in der Forschung tätige Studentinnen und Studenten, Softwareprojektmanagerinnen und -projektmanager sowie all jene, die einen Beitrag zur Softwareentwicklung in Wissenschaft und Forschung leisten, an. Die Umfrage wurde im Englischen verfasst. Beim Übertragen der Fragen aus dem Englischen wurde bewusst eine freundschaftliche Ansprache, wie dies unter Entwicklern üblich ist, gewählt (daher das 'Du' in der Ansprache).</p>
 <h2>Warum habe ich diese Einladung Erhalten?</h2>
-<p>Du hast diese Einladung erhalten, weil Du entweder de-RSE.org oder der UK RSE Association als jemand bekannt bist, der in der Wissenschaft Software entwickelt. Zur Zeit wissen wir recht wenig über die Gemeinschaft der akademischen Softwareentwickler, also haben wir uns entschlossen diese Umfrage zu tätigen, um Finanzierern und Wissenschaftsorganisationen zu helfen, Richt- und Leitlinien zu entwickeln.
-Diese Umfrage gibt Dir die Gelegenheit, Dich über deine Arbeit zu äußern und uns Informationen zu Deinem Karriereweg mitzuteilen.</p>
+<p>Du hast diese Einladung erhalten, weil Du der UK RSE Association, dem deutschen Ableger de-RSE oder anderweitig als Software entwickelnde Person in der deutschen Wissenschaft und Forschung bekannt bist. Es gibt derzeit wenige zuverlässige Informationen über die Gemeinschaft der Software entwickelnden Personen in Forschung und Wissenschaft. Deshalb haben wir uns entschlossen, diese Umfrage durchzuführen, um Förderorganisationen und Wissenschaftseinrichtungen bei der Entwicklung von Strategien und Förderprogrammen sowie von Leit- und Richtlinien mit den Ergebnissen dieser Umfrage zu unterstützen.
+Die Umfrage gibt Dir eine Möglichkeit daran teilzuhaben und Deine Sicht und Erfahrungen einfließen zu lassen sowie Informationen zu Deinem Karriereweg mitzuteilen.</p>
 <p>Bitte beachte, dass diese Umfrage nicht verpflichtend ist und du jederzeit deine Teilnahme abbrechen kannst.</p>
 <h2>Wie lang ist Umfrage?</h2>
-<p>Es gibt ungefähr 81 Fragen, die 15-20 Minuten Antwortzeit erfordern.</p>
+<p>Es gibt ungefähr 80 Fragen, die 15-20 Minuten Antwortzeit erfordern.</p>
 <h2>Wer ist für diese Umfrage verantwortlich?</h2>
-<p>Diese Studie wird von der University of Southampton im Namen des <a href=""http://software.ac.uk/"">Software Sustainability Institutes</a> durchgeführt und entspricht den ethischen Richtlinien der University of Southampton (reference no.: ERGO/FPSE/25269).
-Die Untersuchenden sind <a href=""mailto:s.hettrick@software.ac.uk"">Simon Hettrick</a> und <a href=""mailto:olivier.philippe@soton.ac.uk"">Olivier Philippe</a>.
+<p>Diese Studie wird von der University of Southampton im Namen des <a href=""http://software.ac.uk/"">Software Sustainability Institutes</a> (SSI) durchgeführt und entspricht den ethischen Richtlinien der University of Southampton (reference no.: ERGO/FPSE/25269).
+Die Verantwortlichen sind <a href=""mailto:s.hettrick@software.ac.uk"">Simon Hettrick</a> und <a href=""mailto:olivier.philippe@soton.ac.uk"">Olivier Philippe</a>.
 Die Umfrage wird auf den Servern von Limesurvey in Deutschland gehostet und entspricht den Anforderungen des <a href=""https://www.gov.uk/data-protection/the-data-protection-act"">Data Protection Act</a>. 
-Die Ergebnisse sind anonymisiert und der Zugriff ist beschränkt auf die Untersuchenden. Die Umfrageergebnisse werden veröffentlicht, nachdem sichergestellt wurde, dass einzelne Teilnehmer nicht nachträglich identifiziert werden können. Die Ergebnisse werden verbreitet unter einer <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"">Creative Commons by attribution, non-commercial licence</a>.</p>
-<p>Falls Du mehr Informationen über die Untersuchung oder die Datensammlung brauchst, kontaktiere bitte <a href=""mailto:martin.hammitzsch@gfz-potsdam.de"">Martin Hammitzsch</a> oder <a href=""mailto:janosch@mpi-cbg.de&gt;"">Stephan Janosch</a>.</p>
-<p>Falls Du Zweifel hast oder eine Beschwerde einreichen willst, kontaktiere bitte <a href=""mailto:s.hettrick@software.ac.uk"">Simon Hettrick</a>.</p>"		de																																																																																																																																			
+Die Antworten werden anonymisiert erfasst und der Zugriff ist beschränkt auf die Verantwortlichen. Die Umfrageergebnisse werden veröffentlicht, nachdem sichergestellt wurde, dass einzelne Teilnehmer nicht nachträglich identifiziert werden können. Die Ergebnisse werden unter einer <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"">Creative Commons by attribution, non-commercial licence</a> veröffentlicht.</p>
+<p>Falls Du mehr Informationen zur Umfrage oder die Datensammlung benötigst, kontaktiere bitte <a href=""mailto:martin.hammitzsch@gfz-potsdam.de"">Martin Hammitzsch</a> oder <a href=""mailto:janosch@mpi-cbg.de&gt;"">Stephan Janosch</a>.</p>
+<p>Falls Du Zweifel hast oder eine Beschwerde einreichen möchtest, kontaktiere bitte <a href=""mailto:s.hettrick@software.ac.uk"">Simon Hettrick</a>.</p>"		de																																																																																																																																			
 SL		surveyls_endtext		"<p>Danke für Deine Teilnahme an dieser Umfrage. Falls Du an den Ergebnissen dieser Umfrage interessiert bist, dann kannst Du die <a href=""http://www.de-RSE.org"">de-RSE website</a> im Blick behalten. Alternativ kannst du auch der Mailingliste beitreten:  <a href=""http://http://www.de-rse.org/de/join.html"">Mitmachen</a></p>"		de																																																																																																																																			
 SL		surveyls_email_invite_subj		Invitation to participate in a survey		de																																																																																																																																			
 SL		surveyls_email_invite		"Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: ""{SURVEYNAME}""  ""{SURVEYDESCRIPTION}""  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}"		de																																																																																																																																			
@@ -106,10 +106,10 @@ SL		surveyls_numberformat		0		de
 G	G0	Questions about you	1			en																																																																																																																																			
 Q	!	socio1	1	In which country do you work?		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Afghanistan		en																																																																																																																																			
-A	0	2		Åland Islands		en																																																																																																																																			
-A	0	3		Albania		en																																																																																																																																			
-A	0	4		Algeria		en																																																																																																																																			
-A	0	5		American Samoa		en																																																																																																																																			
+A	0	2		Albania		en																																																																																																																																			
+A	0	3		Algeria		en																																																																																																																																			
+A	0	4		American Samoa		en																																																																																																																																			
+A	0	5		Virgin Islands, U.S.		en																																																																																																																																			
 A	0	6		Andorra		en																																																																																																																																			
 A	0	7		Angola		en																																																																																																																																			
 A	0	8		Anguilla		en																																																																																																																																			
@@ -118,242 +118,242 @@ A	0	10		Antigua and Barbuda		en
 A	0	11		Argentina		en																																																																																																																																			
 A	0	12		Armenia		en																																																																																																																																			
 A	0	13		Aruba		en																																																																																																																																			
-A	0	14		Australia		en																																																																																																																																			
-A	0	15		Austria		en																																																																																																																																			
-A	0	16		Azerbaijan		en																																																																																																																																			
-A	0	17		Bahamas		en																																																																																																																																			
-A	0	18		Bahrain		en																																																																																																																																			
-A	0	19		Bangladesh		en																																																																																																																																			
-A	0	20		Barbados		en																																																																																																																																			
-A	0	21		Belarus		en																																																																																																																																			
-A	0	22		Belgium		en																																																																																																																																			
-A	0	23		Belize		en																																																																																																																																			
-A	0	24		Benin		en																																																																																																																																			
-A	0	25		Bermuda		en																																																																																																																																			
-A	0	26		Bhutan		en																																																																																																																																			
-A	0	27		Bolivia, Plurinational State of		en																																																																																																																																			
-A	0	28		Bonaire, Sint Eustatius and Saba		en																																																																																																																																			
-A	0	29		Bosnia and Herzegovina		en																																																																																																																																			
-A	0	30		Botswana		en																																																																																																																																			
-A	0	31		Bouvet Island		en																																																																																																																																			
-A	0	32		Brazil		en																																																																																																																																			
+A	0	14		Azerbaijan		en																																																																																																																																			
+A	0	15		Australia		en																																																																																																																																			
+A	0	16		Bahamas		en																																																																																																																																			
+A	0	17		Bahrain		en																																																																																																																																			
+A	0	18		Bangladesh		en																																																																																																																																			
+A	0	19		Barbados		en																																																																																																																																			
+A	0	20		Belarus		en																																																																																																																																			
+A	0	21		Belgium		en																																																																																																																																			
+A	0	22		Belize		en																																																																																																																																			
+A	0	23		Benin		en																																																																																																																																			
+A	0	24		Bermuda		en																																																																																																																																			
+A	0	25		Bhutan		en																																																																																																																																			
+A	0	26		Bolivia, Plurinational State of		en																																																																																																																																			
+A	0	27		Bonaire, Sint Eustatius and Saba		en																																																																																																																																			
+A	0	28		Bosnia and Herzegovina		en																																																																																																																																			
+A	0	29		Botswana		en																																																																																																																																			
+A	0	30		Bouvet Island		en																																																																																																																																			
+A	0	31		Brazil		en																																																																																																																																			
+A	0	32		Virgin Islands, British		en																																																																																																																																			
 A	0	33		British Indian Ocean Territory		en																																																																																																																																			
 A	0	34		Brunei Darussalam		en																																																																																																																																			
 A	0	35		Bulgaria		en																																																																																																																																			
 A	0	36		Burkina Faso		en																																																																																																																																			
 A	0	37		Burundi		en																																																																																																																																			
-A	0	38		Cape Verde		en																																																																																																																																			
-A	0	39		Cambodia		en																																																																																																																																			
-A	0	40		Cameroon		en																																																																																																																																			
-A	0	41		Canada		en																																																																																																																																			
-A	0	42		Cayman Islands		en																																																																																																																																			
-A	0	43		Central African Republic		en																																																																																																																																			
-A	0	44		Chad		en																																																																																																																																			
-A	0	45		Chile		en																																																																																																																																			
-A	0	46		China		en																																																																																																																																			
-A	0	47		Christmas Island		en																																																																																																																																			
-A	0	48		Cocos (Keeling) Islands		en																																																																																																																																			
-A	0	49		Colombia		en																																																																																																																																			
-A	0	50		Comoros		en																																																																																																																																			
-A	0	51		Congo		en																																																																																																																																			
-A	0	52		Congo, the Democratic Republic of the		en																																																																																																																																			
-A	0	53		Cook Islands		en																																																																																																																																			
-A	0	54		Costa Rica		en																																																																																																																																			
-A	0	55		Côte d'Ivoire		en																																																																																																																																			
-A	0	56		Croatia		en																																																																																																																																			
-A	0	57		Cuba		en																																																																																																																																			
-A	0	58		Curaçao		en																																																																																																																																			
-A	0	59		Cyprus		en																																																																																																																																			
-A	0	60		Czech Republic		en																																																																																																																																			
-A	0	61		Denmark		en																																																																																																																																			
-A	0	62		Djibouti		en																																																																																																																																			
-A	0	63		Dominica		en																																																																																																																																			
-A	0	64		Dominican Republic		en																																																																																																																																			
-A	0	65		Ecuador		en																																																																																																																																			
-A	0	66		Egypt		en																																																																																																																																			
-A	0	67		El Salvador		en																																																																																																																																			
-A	0	68		Equatorial Guinea		en																																																																																																																																			
-A	0	69		Eritrea		en																																																																																																																																			
-A	0	70		Estonia		en																																																																																																																																			
-A	0	71		Ethiopia		en																																																																																																																																			
-A	0	72		Falkland Islands (Malvinas)		en																																																																																																																																			
-A	0	73		Faroe Islands		en																																																																																																																																			
-A	0	74		Fiji		en																																																																																																																																			
-A	0	75		Finland		en																																																																																																																																			
-A	0	76		France		en																																																																																																																																			
-A	0	77		French Guiana		en																																																																																																																																			
-A	0	78		French Polynesia		en																																																																																																																																			
-A	0	79		French Southern Territories		en																																																																																																																																			
-A	0	80		Gabon		en																																																																																																																																			
-A	0	81		Gambia		en																																																																																																																																			
-A	0	82		Georgia		en																																																																																																																																			
-A	0	83		Germany		en																																																																																																																																			
-A	0	84		Ghana		en																																																																																																																																			
-A	0	85		Gibraltar		en																																																																																																																																			
-A	0	86		Greece		en																																																																																																																																			
-A	0	87		Greenland		en																																																																																																																																			
-A	0	88		Grenada		en																																																																																																																																			
-A	0	89		Guadeloupe		en																																																																																																																																			
-A	0	90		Guam		en																																																																																																																																			
-A	0	91		Guatemala		en																																																																																																																																			
-A	0	92		Guernsey		en																																																																																																																																			
-A	0	93		Guinea		en																																																																																																																																			
-A	0	94		Guinea-Bissau		en																																																																																																																																			
-A	0	95		Guyana		en																																																																																																																																			
-A	0	96		Haiti		en																																																																																																																																			
-A	0	97		Heard Island and McDonald Islands		en																																																																																																																																			
-A	0	98		Holy See (Vatican City State)		en																																																																																																																																			
-A	0	99		Honduras		en																																																																																																																																			
-A	0	100		Hong Kong		en																																																																																																																																			
-A	0	101		Hungary		en																																																																																																																																			
-A	0	102		Iceland		en																																																																																																																																			
-A	0	103		India		en																																																																																																																																			
-A	0	104		Indonesia		en																																																																																																																																			
-A	0	105		Iran, Islamic Republic of		en																																																																																																																																			
-A	0	106		Iraq		en																																																																																																																																			
-A	0	107		Ireland		en																																																																																																																																			
-A	0	108		Isle of Man		en																																																																																																																																			
-A	0	109		Israel		en																																																																																																																																			
-A	0	110		Italy		en																																																																																																																																			
-A	0	111		Jamaica		en																																																																																																																																			
-A	0	112		Japan		en																																																																																																																																			
-A	0	113		Jersey		en																																																																																																																																			
-A	0	114		Jordan		en																																																																																																																																			
-A	0	115		Kazakhstan		en																																																																																																																																			
-A	0	116		Kenya		en																																																																																																																																			
-A	0	117		Kiribati		en																																																																																																																																			
-A	0	118		Korea, Democratic People's Republic of		en																																																																																																																																			
-A	0	119		Korea, Republic of		en																																																																																																																																			
-A	0	120		Kuwait		en																																																																																																																																			
-A	0	121		Kyrgyzstan		en																																																																																																																																			
-A	0	122		Lao People's Democratic Republic		en																																																																																																																																			
-A	0	123		Latvia		en																																																																																																																																			
-A	0	124		Lebanon		en																																																																																																																																			
-A	0	125		Lesotho		en																																																																																																																																			
-A	0	126		Liberia		en																																																																																																																																			
-A	0	127		Libya		en																																																																																																																																			
-A	0	128		Liechtenstein		en																																																																																																																																			
-A	0	129		Lithuania		en																																																																																																																																			
-A	0	130		Luxembourg		en																																																																																																																																			
-A	0	131		Macao		en																																																																																																																																			
-A	0	132		Macedonia, the Former Yugoslav Republic of		en																																																																																																																																			
-A	0	133		Madagascar		en																																																																																																																																			
-A	0	134		Malawi		en																																																																																																																																			
-A	0	135		Malaysia		en																																																																																																																																			
-A	0	136		Maldives		en																																																																																																																																			
-A	0	137		Mali		en																																																																																																																																			
-A	0	138		Malta		en																																																																																																																																			
-A	0	139		Marshall Islands		en																																																																																																																																			
-A	0	140		Martinique		en																																																																																																																																			
-A	0	141		Mauritania		en																																																																																																																																			
-A	0	142		Mauritius		en																																																																																																																																			
-A	0	143		Mayotte		en																																																																																																																																			
-A	0	144		Mexico		en																																																																																																																																			
-A	0	145		Micronesia, Federated States of		en																																																																																																																																			
-A	0	146		Moldova, Republic of		en																																																																																																																																			
-A	0	147		Monaco		en																																																																																																																																			
-A	0	148		Mongolia		en																																																																																																																																			
-A	0	149		Montenegro		en																																																																																																																																			
-A	0	150		Montserrat		en																																																																																																																																			
-A	0	151		Morocco		en																																																																																																																																			
-A	0	152		Mozambique		en																																																																																																																																			
-A	0	153		Myanmar		en																																																																																																																																			
-A	0	154		Namibia		en																																																																																																																																			
-A	0	155		Nauru		en																																																																																																																																			
-A	0	156		Nepal		en																																																																																																																																			
-A	0	157		Netherlands		en																																																																																																																																			
-A	0	158		New Caledonia		en																																																																																																																																			
-A	0	159		New Zealand		en																																																																																																																																			
-A	0	160		Nicaragua		en																																																																																																																																			
-A	0	161		Niger		en																																																																																																																																			
-A	0	162		Nigeria		en																																																																																																																																			
-A	0	163		Niue		en																																																																																																																																			
-A	0	164		Norfolk Island		en																																																																																																																																			
-A	0	165		Northern Mariana Islands		en																																																																																																																																			
-A	0	166		Norway		en																																																																																																																																			
-A	0	167		Oman		en																																																																																																																																			
-A	0	168		Pakistan		en																																																																																																																																			
-A	0	169		Palau		en																																																																																																																																			
-A	0	170		Palestine, State of		en																																																																																																																																			
-A	0	171		Panama		en																																																																																																																																			
-A	0	172		Papua New Guinea		en																																																																																																																																			
-A	0	173		Paraguay		en																																																																																																																																			
-A	0	174		Peru		en																																																																																																																																			
-A	0	175		Philippines		en																																																																																																																																			
-A	0	176		Pitcairn		en																																																																																																																																			
-A	0	177		Poland		en																																																																																																																																			
-A	0	178		Portugal		en																																																																																																																																			
-A	0	179		Puerto Rico		en																																																																																																																																			
-A	0	180		Qatar		en																																																																																																																																			
-A	0	181		Réunion		en																																																																																																																																			
-A	0	182		Romania		en																																																																																																																																			
-A	0	183		Russian Federation		en																																																																																																																																			
-A	0	184		Rwanda		en																																																																																																																																			
-A	0	185		Saint Barthélemy		en																																																																																																																																			
-A	0	186		Saint Helena, Ascension and Tristan da Cunha		en																																																																																																																																			
-A	0	187		Saint Kitts and Nevis		en																																																																																																																																			
-A	0	188		Saint Lucia		en																																																																																																																																			
-A	0	189		Saint Martin (French part)		en																																																																																																																																			
-A	0	190		Saint Pierre and Miquelon		en																																																																																																																																			
-A	0	191		Saint Vincent and the Grenadines		en																																																																																																																																			
-A	0	192		Samoa		en																																																																																																																																			
-A	0	193		San Marino		en																																																																																																																																			
-A	0	194		Sao Tome and Principe		en																																																																																																																																			
-A	0	195		Saudi Arabia		en																																																																																																																																			
-A	0	196		Senegal		en																																																																																																																																			
-A	0	197		Serbia		en																																																																																																																																			
-A	0	198		Seychelles		en																																																																																																																																			
-A	0	199		Sierra Leone		en																																																																																																																																			
-A	0	200		Singapore		en																																																																																																																																			
-A	0	201		Sint Maarten (Dutch part)		en																																																																																																																																			
-A	0	202		Slovakia		en																																																																																																																																			
-A	0	203		Slovenia		en																																																																																																																																			
-A	0	204		Solomon Islands		en																																																																																																																																			
-A	0	205		Somalia		en																																																																																																																																			
-A	0	206		South Africa		en																																																																																																																																			
-A	0	207		South Georgia and the South Sandwich Islands		en																																																																																																																																			
-A	0	208		South Sudan		en																																																																																																																																			
-A	0	209		Spain		en																																																																																																																																			
-A	0	210		Sri Lanka		en																																																																																																																																			
-A	0	211		Sudan		en																																																																																																																																			
-A	0	212		Suriname		en																																																																																																																																			
-A	0	213		Svalbard and Jan Mayen		en																																																																																																																																			
-A	0	214		Swaziland		en																																																																																																																																			
-A	0	215		Sweden		en																																																																																																																																			
-A	0	216		Switzerland		en																																																																																																																																			
-A	0	217		Syrian Arab Republic		en																																																																																																																																			
-A	0	218		Taiwan, Province of China		en																																																																																																																																			
-A	0	219		Tajikistan		en																																																																																																																																			
-A	0	220		Tanzania, United Republic of		en																																																																																																																																			
-A	0	221		Thailand		en																																																																																																																																			
-A	0	222		Timor-Leste		en																																																																																																																																			
-A	0	223		Togo		en																																																																																																																																			
-A	0	224		Tokelau		en																																																																																																																																			
-A	0	225		Tonga		en																																																																																																																																			
-A	0	226		Trinidad and Tobago		en																																																																																																																																			
-A	0	227		Tunisia		en																																																																																																																																			
-A	0	228		Turkey		en																																																																																																																																			
-A	0	229		Turkmenistan		en																																																																																																																																			
-A	0	230		Turks and Caicos Islands		en																																																																																																																																			
-A	0	231		Tuvalu		en																																																																																																																																			
-A	0	232		Uganda		en																																																																																																																																			
-A	0	233		Ukraine		en																																																																																																																																			
-A	0	234		United Arab Emirates		en																																																																																																																																			
-A	0	235		United Kingdom of Great Britain and Northern Ireland		en																																																																																																																																			
-A	0	236		United States of America		en																																																																																																																																			
-A	0	237		United States Minor Outlying Islands		en																																																																																																																																			
-A	0	238		Uruguay		en																																																																																																																																			
-A	0	239		Uzbekistan		en																																																																																																																																			
-A	0	240		Vanuatu		en																																																																																																																																			
-A	0	241		Venezuela, Bolivarian Republic of		en																																																																																																																																			
-A	0	242		Viet Nam		en																																																																																																																																			
-A	0	243		Virgin Islands, British		en																																																																																																																																			
-A	0	244		Virgin Islands, U.S.		en																																																																																																																																			
-A	0	245		Wallis and Futuna		en																																																																																																																																			
-A	0	246		Western Sahara		en																																																																																																																																			
-A	0	247		Yemen		en																																																																																																																																			
-A	0	248		Zambia		en																																																																																																																																			
-A	0	249		Zimbabwe		en																																																																																																																																			
+A	0	38		Chile		en																																																																																																																																			
+A	0	39		China		en																																																																																																																																			
+A	0	40		Cook Islands		en																																																																																																																																			
+A	0	41		Costa Rica		en																																																																																																																																			
+A	0	42		Curaçao		en																																																																																																																																			
+A	0	43		Côte d'Ivoire		en																																																																																																																																			
+A	0	44		Germany		en																																																																																																																																			
+A	0	45		Dominica		en																																																																																																																																			
+A	0	46		Dominican Republic		en																																																																																																																																			
+A	0	47		Djibouti		en																																																																																																																																			
+A	0	48		Denmark		en																																																																																																																																			
+A	0	49		Ecuador		en																																																																																																																																			
+A	0	50		El Salvador		en																																																																																																																																			
+A	0	51		Eritrea		en																																																																																																																																			
+A	0	52		Estonia		en																																																																																																																																			
+A	0	53		Falkland Islands (Malvinas)		en																																																																																																																																			
+A	0	54		Fiji		en																																																																																																																																			
+A	0	55		Finland		en																																																																																																																																			
+A	0	56		France		en																																																																																																																																			
+A	0	57		French Guiana		en																																																																																																																																			
+A	0	58		French Polynesia		en																																																																																																																																			
+A	0	59		French Southern Territories		en																																																																																																																																			
+A	0	60		Faroe Islands		en																																																																																																																																			
+A	0	61		Gabon		en																																																																																																																																			
+A	0	62		Gambia		en																																																																																																																																			
+A	0	63		Georgia		en																																																																																																																																			
+A	0	64		Ghana		en																																																																																																																																			
+A	0	65		Gibraltar		en																																																																																																																																			
+A	0	66		Grenada		en																																																																																																																																			
+A	0	67		Greece		en																																																																																																																																			
+A	0	68		Greenland		en																																																																																																																																			
+A	0	69		Guadeloupe		en																																																																																																																																			
+A	0	70		Guam		en																																																																																																																																			
+A	0	71		Guatemala		en																																																																																																																																			
+A	0	72		Guernsey		en																																																																																																																																			
+A	0	73		Guinea		en																																																																																																																																			
+A	0	74		Guinea-Bissau		en																																																																																																																																			
+A	0	75		Guyana		en																																																																																																																																			
+A	0	76		Haiti		en																																																																																																																																			
+A	0	77		Heard Island and McDonald Islands		en																																																																																																																																			
+A	0	78		Honduras		en																																																																																																																																			
+A	0	79		Hong Kong		en																																																																																																																																			
+A	0	80		India		en																																																																																																																																			
+A	0	81		Indonesia		en																																																																																																																																			
+A	0	82		Isle of Man		en																																																																																																																																			
+A	0	83		Iraq		en																																																																																																																																			
+A	0	84		Iran, Islamic Republic of		en																																																																																																																																			
+A	0	85		Ireland		en																																																																																																																																			
+A	0	86		Iceland		en																																																																																																																																			
+A	0	87		Israel		en																																																																																																																																			
+A	0	88		Italy		en																																																																																																																																			
+A	0	89		Jamaica		en																																																																																																																																			
+A	0	90		Japan		en																																																																																																																																			
+A	0	91		Yemen		en																																																																																																																																			
+A	0	92		Jersey		en																																																																																																																																			
+A	0	93		Jordan		en																																																																																																																																			
+A	0	94		Cayman Islands		en																																																																																																																																			
+A	0	95		Cambodia		en																																																																																																																																			
+A	0	96		Cameroon		en																																																																																																																																			
+A	0	97		Canada		en																																																																																																																																			
+A	0	98		Cape Verde		en																																																																																																																																			
+A	0	99		Kazakhstan		en																																																																																																																																			
+A	0	100		Qatar		en																																																																																																																																			
+A	0	101		Kenya		en																																																																																																																																			
+A	0	102		Kyrgyzstan		en																																																																																																																																			
+A	0	103		Kiribati		en																																																																																																																																			
+A	0	104		Cocos (Keeling) Islands		en																																																																																																																																			
+A	0	105		Colombia		en																																																																																																																																			
+A	0	106		Comoros		en																																																																																																																																			
+A	0	107		Congo, the Democratic Republic of the		en																																																																																																																																			
+A	0	108		Congo		en																																																																																																																																			
+A	0	109		Korea, Democratic People's Republic of		en																																																																																																																																			
+A	0	110		Korea, Republic of		en																																																																																																																																			
+A	0	111		Croatia		en																																																																																																																																			
+A	0	112		Cuba		en																																																																																																																																			
+A	0	113		Kuwait		en																																																																																																																																			
+A	0	114		Lao People's Democratic Republic		en																																																																																																																																			
+A	0	115		Lesotho		en																																																																																																																																			
+A	0	116		Latvia		en																																																																																																																																			
+A	0	117		Lebanon		en																																																																																																																																			
+A	0	118		Liberia		en																																																																																																																																			
+A	0	119		Libya		en																																																																																																																																			
+A	0	120		Liechtenstein		en																																																																																																																																			
+A	0	121		Lithuania		en																																																																																																																																			
+A	0	122		Luxembourg		en																																																																																																																																			
+A	0	123		Macao		en																																																																																																																																			
+A	0	124		Madagascar		en																																																																																																																																			
+A	0	125		Malawi		en																																																																																																																																			
+A	0	126		Malaysia		en																																																																																																																																			
+A	0	127		Maldives		en																																																																																																																																			
+A	0	128		Mali		en																																																																																																																																			
+A	0	129		Malta		en																																																																																																																																			
+A	0	130		Morocco		en																																																																																																																																			
+A	0	131		Marshall Islands		en																																																																																																																																			
+A	0	132		Martinique		en																																																																																																																																			
+A	0	133		Mauritania		en																																																																																																																																			
+A	0	134		Mauritius		en																																																																																																																																			
+A	0	135		Mayotte		en																																																																																																																																			
+A	0	136		Macedonia, the Former Yugoslav Republic of		en																																																																																																																																			
+A	0	137		Mexico		en																																																																																																																																			
+A	0	138		Micronesia, Federated States of		en																																																																																																																																			
+A	0	139		Moldova, Republic of		en																																																																																																																																			
+A	0	140		Monaco		en																																																																																																																																			
+A	0	141		Mongolia		en																																																																																																																																			
+A	0	142		Montenegro		en																																																																																																																																			
+A	0	143		Montserrat		en																																																																																																																																			
+A	0	144		Mozambique		en																																																																																																																																			
+A	0	145		Myanmar		en																																																																																																																																			
+A	0	146		Namibia		en																																																																																																																																			
+A	0	147		Nauru		en																																																																																																																																			
+A	0	148		Nepal		en																																																																																																																																			
+A	0	149		New Caledonia		en																																																																																																																																			
+A	0	150		New Zealand		en																																																																																																																																			
+A	0	151		Nicaragua		en																																																																																																																																			
+A	0	152		Netherlands		en																																																																																																																																			
+A	0	153		Niger		en																																																																																																																																			
+A	0	154		Nigeria		en																																																																																																																																			
+A	0	155		Niue		en																																																																																																																																			
+A	0	156		Norfolk Island		en																																																																																																																																			
+A	0	157		Norway		en																																																																																																																																			
+A	0	158		Northern Mariana Islands		en																																																																																																																																			
+A	0	159		Oman		en																																																																																																																																			
+A	0	160		Timor-Leste		en																																																																																																																																			
+A	0	161		Pakistan		en																																																																																																																																			
+A	0	162		Palau		en																																																																																																																																			
+A	0	163		Panama		en																																																																																																																																			
+A	0	164		Papua New Guinea		en																																																																																																																																			
+A	0	165		Paraguay		en																																																																																																																																			
+A	0	166		Peru		en																																																																																																																																			
+A	0	167		Philippines		en																																																																																																																																			
+A	0	168		Pitcairn		en																																																																																																																																			
+A	0	169		Poland		en																																																																																																																																			
+A	0	170		Portugal		en																																																																																																																																			
+A	0	171		Puerto Rico		en																																																																																																																																			
+A	0	172		Taiwan, Province of China		en																																																																																																																																			
+A	0	173		Rwanda		en																																																																																																																																			
+A	0	174		Romania		en																																																																																																																																			
+A	0	175		Russian Federation		en																																																																																																																																			
+A	0	176		Réunion		en																																																																																																																																			
+A	0	177		Saint Barthélemy		en																																																																																																																																			
+A	0	178		Saint Martin (French part)		en																																																																																																																																			
+A	0	179		Saint Pierre and Miquelon		en																																																																																																																																			
+A	0	180		Solomon Islands		en																																																																																																																																			
+A	0	181		Zambia		en																																																																																																																																			
+A	0	182		Samoa		en																																																																																																																																			
+A	0	183		San Marino		en																																																																																																																																			
+A	0	184		Saudi Arabia		en																																																																																																																																			
+A	0	185		Sweden		en																																																																																																																																			
+A	0	186		Switzerland		en																																																																																																																																			
+A	0	187		Senegal		en																																																																																																																																			
+A	0	188		Serbia		en																																																																																																																																			
+A	0	189		Seychelles		en																																																																																																																																			
+A	0	190		Sierra Leone		en																																																																																																																																			
+A	0	191		Zimbabwe		en																																																																																																																																			
+A	0	192		Singapore		en																																																																																																																																			
+A	0	193		Sint Maarten (Dutch part)		en																																																																																																																																			
+A	0	194		Slovakia		en																																																																																																																																			
+A	0	195		Slovenia		en																																																																																																																																			
+A	0	196		Somalia		en																																																																																																																																			
+A	0	197		Spain		en																																																																																																																																			
+A	0	198		Sri Lanka		en																																																																																																																																			
+A	0	199		Saint Helena, Ascension and Tristan da Cunha		en																																																																																																																																			
+A	0	200		Saint Kitts and Nevis		en																																																																																																																																			
+A	0	201		Saint Lucia		en																																																																																																																																			
+A	0	202		Saint Vincent and the Grenadines		en																																																																																																																																			
+A	0	203		Palestine, State of		en																																																																																																																																			
+A	0	204		Sudan		en																																																																																																																																			
+A	0	205		Suriname		en																																																																																																																																			
+A	0	206		Svalbard and Jan Mayen		en																																																																																																																																			
+A	0	207		Swaziland		en																																																																																																																																			
+A	0	208		Syrian Arab Republic		en																																																																																																																																			
+A	0	209		Sao Tome and Principe		en																																																																																																																																			
+A	0	210		South Africa		en																																																																																																																																			
+A	0	211		South Georgia and the South Sandwich Islands		en																																																																																																																																			
+A	0	212		South Sudan		en																																																																																																																																			
+A	0	213		Tajikistan		en																																																																																																																																			
+A	0	214		Tanzania, United Republic of		en																																																																																																																																			
+A	0	215		Thailand		en																																																																																																																																			
+A	0	216		Togo		en																																																																																																																																			
+A	0	217		Tokelau		en																																																																																																																																			
+A	0	218		Tonga		en																																																																																																																																			
+A	0	219		Trinidad and Tobago		en																																																																																																																																			
+A	0	220		Chad		en																																																																																																																																			
+A	0	221		Czech Republic		en																																																																																																																																			
+A	0	222		Tunisia		en																																																																																																																																			
+A	0	223		Turkmenistan		en																																																																																																																																			
+A	0	224		Turks and Caicos Islands		en																																																																																																																																			
+A	0	225		Tuvalu		en																																																																																																																																			
+A	0	226		Turkey		en																																																																																																																																			
+A	0	227		Uganda		en																																																																																																																																			
+A	0	228		Ukraine		en																																																																																																																																			
+A	0	229		Hungary		en																																																																																																																																			
+A	0	230		United States Minor Outlying Islands		en																																																																																																																																			
+A	0	231		Uruguay		en																																																																																																																																			
+A	0	232		Uzbekistan		en																																																																																																																																			
+A	0	233		Vanuatu		en																																																																																																																																			
+A	0	234		Holy See (Vatican City State)		en																																																																																																																																			
+A	0	235		Venezuela, Bolivarian Republic of		en																																																																																																																																			
+A	0	236		United Arab Emirates		en																																																																																																																																			
+A	0	237		United States of America		en																																																																																																																																			
+A	0	238		United Kingdom of Great Britain and Northern Ireland		en																																																																																																																																			
+A	0	239		Viet Nam		en																																																																																																																																			
+A	0	240		Wallis and Futuna		en																																																																																																																																			
+A	0	241		Christmas Island		en																																																																																																																																			
+A	0	242		Western Sahara		en																																																																																																																																			
+A	0	243		Central African Republic		en																																																																																																																																			
+A	0	244		Cyprus		en																																																																																																																																			
+A	0	245		Egypt		en																																																																																																																																			
+A	0	246		Equatorial Guinea		en																																																																																																																																			
+A	0	247		Ethiopia		en																																																																																																																																			
+A	0	248		Åland Islands		en																																																																																																																																			
+A	0	249		Austria		en																																																																																																																																			
 Q	!	edu1	1	What is the highest qualification you have obtained?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		GSCEs		en																																																																																																																																			
 A	0	2		Final secondary-school examinations, general qualification for university entrance		en																																																																																																																																			
@@ -1180,17 +1180,17 @@ SQ	0	15		Venture capital		en
 SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 G	G4	Your perception of your current position	1			en																																																																																																																																			
 Q	F	likert1				en		Y	N		1																																																																																																							1																							
-SQ	0	turnOver3	1	How often do you consider leaving your job?		en																																																																																																																																			
-SQ	0	turnOver4	1	How often do dream about getting another job that will better suit your needs?		en																																																																																																																																			
 SQ	0	perfCheck3	1	In your work, do you have access to sufficient data and information?		en																																																																																																																																			
-SQ	0	perfCheck5	1	Does your work provide you with direct feedback on how well you are doing your work?		en																																																																																																																																			
-SQ	0	turnOver2	1	How often do you look forward to another day at work?		en																																																																																																																																			
-SQ	0	perfCheck7	1	Do your colleagues inform you about how well you are doing your work?		en																																																																																																																																			
-SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
-SQ	0	turnOver1	1	How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?		en																																																																																																																																			
-SQ	0	perfCheck6	1	Does your supervisor/line manager inform you about how well you are doing your work?		en																																																																																																																																			
 SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
 SQ	0	perfCheck4	1	Do you receive sufficient information on the purpose of your work?		en																																																																																																																																			
+SQ	0	turnOver4	1	How often do dream about getting another job that will better suit your needs?		en																																																																																																																																			
+SQ	0	perfCheck7	1	Do your colleagues inform you about how well you are doing your work?		en																																																																																																																																			
+SQ	0	turnOver1	1	How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?		en																																																																																																																																			
+SQ	0	turnOver2	1	How often do you look forward to another day at work?		en																																																																																																																																			
+SQ	0	turnOver3	1	How often do you consider leaving your job?		en																																																																																																																																			
+SQ	0	perfCheck6	1	Does your supervisor/line manager inform you about how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
+SQ	0	perfCheck5	1	Does your work provide you with direct feedback on how well you are doing your work?		en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
@@ -1202,21 +1202,21 @@ A	0	8		8		en
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
 Q	F	likert2				en		Y	N		1																																																																																																							1																							
-SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
-SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organisation		en																																																																																																																																			
-SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
-SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
-SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
 SQ	0	percEmp2	1	I can think of a number of organisations that would probably offer me a job		en																																																																																																																																			
 SQ	0	turnOver5	1	My current job satisfies my personal needs		en																																																																																																																																			
-SQ	0	affRec4	1	I am satisfied with the compliments from my supervisor/line manager concerning my work		en																																																																																																																																			
 SQ	0	affRec2	1	I am satisfied with a word of thanks from my supervisor/line manager		en																																																																																																																																			
+SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organisation		en																																																																																																																																			
 SQ	0	affSat2	1	Most days I am enthusiastic about my job		en																																																																																																																																			
-SQ	0	affRec5	1	I am satisfied with the encouragement from my supervisor/line manager while doing my job		en																																																																																																																																			
-SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
+SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
+SQ	0	affRec4	1	I am satisfied with the compliments from my supervisor/line manager concerning my work		en																																																																																																																																			
 SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
-SQ	0	affSat3	1	I feel fairly well satisfied with my job		en																																																																																																																																			
+SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
 SQ	0	affSat4	1	I like my job better than the average person		en																																																																																																																																			
+SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
+SQ	0	affSat3	1	I feel fairly well satisfied with my job		en																																																																																																																																			
+SQ	0	affRec5	1	I am satisfied with the encouragement from my supervisor/line manager while doing my job		en																																																																																																																																			
+SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
+SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
 A	0	1		Strongly disagree		en																																																																																																																																			
 A	0	2		Disagree		en																																																																																																																																			
 A	0	3		Neither agree or disagree		en																																																																																																																																			
@@ -1326,10 +1326,10 @@ Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en			N		1
 G	G0	Fragen zu Deiner Person	1			de																																																																																																																																			
 Q	!	socio1	1	In welchem Land arbeitest Du?		de		Y	N		1																																																																																																							1						1																	
 A	0	1		Afghanistan		de																																																																																																																																			
-A	0	2		Åland		de																																																																																																																																			
-A	0	3		Albanien		de																																																																																																																																			
-A	0	4		Algerien		de																																																																																																																																			
-A	0	5		Amerikanisch-Samoa		de																																																																																																																																			
+A	0	2		Albanien		de																																																																																																																																			
+A	0	3		Algerien		de																																																																																																																																			
+A	0	4		Amerikanisch-Samoa		de																																																																																																																																			
+A	0	5		Amerikanische Jungferninseln		de																																																																																																																																			
 A	0	6		Andorra		de																																																																																																																																			
 A	0	7		Angola		de																																																																																																																																			
 A	0	8		Anguilla		de																																																																																																																																			
@@ -1338,242 +1338,242 @@ A	0	10		Antigua und Barbuda		de
 A	0	11		Argentinien		de																																																																																																																																			
 A	0	12		Armenien		de																																																																																																																																			
 A	0	13		Aruba		de																																																																																																																																			
-A	0	14		Australien		de																																																																																																																																			
-A	0	15		Österreich		de																																																																																																																																			
-A	0	16		Aserbaidschan		de																																																																																																																																			
-A	0	17		Bahamas		de																																																																																																																																			
-A	0	18		Bahrain		de																																																																																																																																			
-A	0	19		Bangladesch		de																																																																																																																																			
-A	0	20		Barbados		de																																																																																																																																			
-A	0	21		Belarus (Weißrussland)		de																																																																																																																																			
-A	0	22		Belgien		de																																																																																																																																			
-A	0	23		Belize		de																																																																																																																																			
-A	0	24		Benin		de																																																																																																																																			
-A	0	25		Bermuda		de																																																																																																																																			
-A	0	26		Bhutan		de																																																																																																																																			
-A	0	27		Bolivien		de																																																																																																																																			
-A	0	28		Bonaire, Sint Eustatius und Saba (Niederlande)		de																																																																																																																																			
-A	0	29		Bosnien und Herzegowina		de																																																																																																																																			
-A	0	30		Botswana		de																																																																																																																																			
-A	0	31		Bouvetinsel		de																																																																																																																																			
-A	0	32		Brasilien		de																																																																																																																																			
+A	0	14		Aserbaidschan		de																																																																																																																																			
+A	0	15		Australien		de																																																																																																																																			
+A	0	16		Bahamas		de																																																																																																																																			
+A	0	17		Bahrain		de																																																																																																																																			
+A	0	18		Bangladesch		de																																																																																																																																			
+A	0	19		Barbados		de																																																																																																																																			
+A	0	20		Belarus (Weißrussland)		de																																																																																																																																			
+A	0	21		Belgien		de																																																																																																																																			
+A	0	22		Belize		de																																																																																																																																			
+A	0	23		Benin		de																																																																																																																																			
+A	0	24		Bermuda		de																																																																																																																																			
+A	0	25		Bhutan		de																																																																																																																																			
+A	0	26		Bolivien		de																																																																																																																																			
+A	0	27		Bonaire, Sint Eustatius und Saba (Niederlande)		de																																																																																																																																			
+A	0	28		Bosnien und Herzegowina		de																																																																																																																																			
+A	0	29		Botswana		de																																																																																																																																			
+A	0	30		Bouvetinsel		de																																																																																																																																			
+A	0	31		Brasilien		de																																																																																																																																			
+A	0	32		Britische Jungferninseln		de																																																																																																																																			
 A	0	33		Britisches Territorium im Indischen Ozean		de																																																																																																																																			
 A	0	34		Brunei Darussalam		de																																																																																																																																			
 A	0	35		Bulgarien		de																																																																																																																																			
 A	0	36		Burkina Faso		de																																																																																																																																			
 A	0	37		Burundi		de																																																																																																																																			
-A	0	38		Kap Verde		de																																																																																																																																			
-A	0	39		Kambodscha		de																																																																																																																																			
-A	0	40		Kamerun		de																																																																																																																																			
-A	0	41		Kanada		de																																																																																																																																			
-A	0	42		Kaimaninseln		de																																																																																																																																			
-A	0	43		Zentralafrikanische Republik		de																																																																																																																																			
-A	0	44		Tschad		de																																																																																																																																			
-A	0	45		Chile		de																																																																																																																																			
-A	0	46		China, Volksrepublik		de																																																																																																																																			
-A	0	47		Weihnachtsinsel		de																																																																																																																																			
-A	0	48		Kokosinseln		de																																																																																																																																			
-A	0	49		Kolumbien		de																																																																																																																																			
-A	0	50		Komoren		de																																																																																																																																			
-A	0	51		Kongo, Republik (ehem. K.-Brazzaville)		de																																																																																																																																			
-A	0	52		Kongo, Demokratische Republik (ehem. Zaire)		de																																																																																																																																			
-A	0	53		Cookinseln		de																																																																																																																																			
-A	0	54		Costa Rica		de																																																																																																																																			
-A	0	55		Côte d’Ivoire (Elfenbeinküste)		de																																																																																																																																			
-A	0	56		Kroatien		de																																																																																																																																			
-A	0	57		Kuba		de																																																																																																																																			
-A	0	58		Curaçao		de																																																																																																																																			
-A	0	59		Zypern		de																																																																																																																																			
-A	0	60		Tschechien		de																																																																																																																																			
-A	0	61		Dänemark		de																																																																																																																																			
-A	0	62		Dschibuti		de																																																																																																																																			
-A	0	63		Dominica		de																																																																																																																																			
-A	0	64		Dominikanische Republik		de																																																																																																																																			
-A	0	65		Ecuador		de																																																																																																																																			
-A	0	66		Ägypten		de																																																																																																																																			
-A	0	67		El Salvador		de																																																																																																																																			
-A	0	68		Äquatorialguinea		de																																																																																																																																			
-A	0	69		Eritrea		de																																																																																																																																			
-A	0	70		Estland		de																																																																																																																																			
-A	0	71		Äthiopien		de																																																																																																																																			
-A	0	72		Falklandinseln		de																																																																																																																																			
-A	0	73		Färöer		de																																																																																																																																			
-A	0	74		Fidschi		de																																																																																																																																			
-A	0	75		Finnland		de																																																																																																																																			
-A	0	76		Frankreich		de																																																																																																																																			
-A	0	77		Französisch-Guayana		de																																																																																																																																			
-A	0	78		Französisch-Polynesien		de																																																																																																																																			
-A	0	79		Französische Süd- und Antarktisgebiete		de																																																																																																																																			
-A	0	80		Gabun		de																																																																																																																																			
-A	0	81		Gambia		de																																																																																																																																			
-A	0	82		Georgien		de																																																																																																																																			
-A	0	83		Deutschland		de																																																																																																																																			
-A	0	84		Ghana		de																																																																																																																																			
-A	0	85		Gibraltar		de																																																																																																																																			
-A	0	86		Griechenland		de																																																																																																																																			
-A	0	87		Grönland		de																																																																																																																																			
-A	0	88		Grenada		de																																																																																																																																			
-A	0	89		Guadeloupe		de																																																																																																																																			
-A	0	90		Guam		de																																																																																																																																			
-A	0	91		Guatemala		de																																																																																																																																			
-A	0	92		Guernsey (Kanalinsel)		de																																																																																																																																			
-A	0	93		Guinea		de																																																																																																																																			
-A	0	94		Guinea-Bissau		de																																																																																																																																			
-A	0	95		Guyana		de																																																																																																																																			
-A	0	96		Haiti		de																																																																																																																																			
-A	0	97		Heard und McDonaldinseln		de																																																																																																																																			
-A	0	98		Vatikanstadt		de																																																																																																																																			
-A	0	99		Honduras		de																																																																																																																																			
-A	0	100		Hongkong		de																																																																																																																																			
-A	0	101		Ungarn		de																																																																																																																																			
-A	0	102		Island		de																																																																																																																																			
-A	0	103		Indien		de																																																																																																																																			
-A	0	104		Indonesien		de																																																																																																																																			
-A	0	105		Iran, Islamische Republik		de																																																																																																																																			
-A	0	106		Irak		de																																																																																																																																			
-A	0	107		Irland		de																																																																																																																																			
-A	0	108		Insel Man		de																																																																																																																																			
-A	0	109		Israel		de																																																																																																																																			
-A	0	110		Italien		de																																																																																																																																			
-A	0	111		Jamaika		de																																																																																																																																			
-A	0	112		Japan		de																																																																																																																																			
-A	0	113		Jersey (Kanalinsel)		de																																																																																																																																			
-A	0	114		Jordanien		de																																																																																																																																			
-A	0	115		Kasachstan		de																																																																																																																																			
-A	0	116		Kenia		de																																																																																																																																			
-A	0	117		Kiribati		de																																																																																																																																			
-A	0	118		Korea, Demokratische Volksrepublik (Nordkorea)		de																																																																																																																																			
-A	0	119		Korea, Republik (Südkorea)		de																																																																																																																																			
-A	0	120		Kuwait		de																																																																																																																																			
-A	0	121		Kirgisistan		de																																																																																																																																			
-A	0	122		Laos, Demokratische Volksrepublik		de																																																																																																																																			
-A	0	123		Lettland		de																																																																																																																																			
-A	0	124		Libanon		de																																																																																																																																			
-A	0	125		Lesotho		de																																																																																																																																			
-A	0	126		Liberia		de																																																																																																																																			
-A	0	127		Libyen		de																																																																																																																																			
-A	0	128		Liechtenstein		de																																																																																																																																			
-A	0	129		Litauen		de																																																																																																																																			
-A	0	130		Luxemburg		de																																																																																																																																			
-A	0	131		Macau		de																																																																																																																																			
-A	0	132		Mazedonien		de																																																																																																																																			
-A	0	133		Madagaskar		de																																																																																																																																			
-A	0	134		Malawi		de																																																																																																																																			
-A	0	135		Malaysia		de																																																																																																																																			
-A	0	136		Malediven		de																																																																																																																																			
-A	0	137		Mali		de																																																																																																																																			
-A	0	138		Malta		de																																																																																																																																			
-A	0	139		Marshallinseln		de																																																																																																																																			
-A	0	140		Martinique		de																																																																																																																																			
-A	0	141		Mauretanien		de																																																																																																																																			
-A	0	142		Mauritius		de																																																																																																																																			
-A	0	143		Mayotte		de																																																																																																																																			
-A	0	144		Mexiko		de																																																																																																																																			
-A	0	145		Mikronesien		de																																																																																																																																			
-A	0	146		Moldawien (Republik Moldau)		de																																																																																																																																			
-A	0	147		Monaco		de																																																																																																																																			
-A	0	148		Mongolei		de																																																																																																																																			
-A	0	149		Montenegro		de																																																																																																																																			
-A	0	150		Montserrat		de																																																																																																																																			
-A	0	151		Marokko		de																																																																																																																																			
-A	0	152		Mosambik		de																																																																																																																																			
-A	0	153		Myanmar (Burma)		de																																																																																																																																			
-A	0	154		Namibia		de																																																																																																																																			
-A	0	155		Nauru		de																																																																																																																																			
-A	0	156		Nepal		de																																																																																																																																			
-A	0	157		Niederlande		de																																																																																																																																			
-A	0	158		Neukaledonien		de																																																																																																																																			
-A	0	159		Neuseeland		de																																																																																																																																			
-A	0	160		Nicaragua		de																																																																																																																																			
-A	0	161		Niger		de																																																																																																																																			
-A	0	162		Nigeria		de																																																																																																																																			
-A	0	163		Niue		de																																																																																																																																			
-A	0	164		Norfolkinsel		de																																																																																																																																			
-A	0	165		Nördliche Marianen		de																																																																																																																																			
-A	0	166		Norwegen		de																																																																																																																																			
-A	0	167		Oman		de																																																																																																																																			
-A	0	168		Pakistan		de																																																																																																																																			
-A	0	169		Palau		de																																																																																																																																			
-A	0	170		Staat Palästina		de																																																																																																																																			
-A	0	171		Panama		de																																																																																																																																			
-A	0	172		Papua-Neuguinea		de																																																																																																																																			
-A	0	173		Paraguay		de																																																																																																																																			
-A	0	174		Peru		de																																																																																																																																			
-A	0	175		Philippinen		de																																																																																																																																			
-A	0	176		Pitcairninseln		de																																																																																																																																			
-A	0	177		Polen		de																																																																																																																																			
-A	0	178		Portugal		de																																																																																																																																			
-A	0	179		Puerto Rico		de																																																																																																																																			
-A	0	180		Katar		de																																																																																																																																			
-A	0	181		Réunion		de																																																																																																																																			
-A	0	182		Rumänien		de																																																																																																																																			
-A	0	183		Russische Föderation		de																																																																																																																																			
-A	0	184		Ruanda		de																																																																																																																																			
-A	0	185		Saint-Barthélemy		de																																																																																																																																			
-A	0	186		St. Helena		de																																																																																																																																			
-A	0	187		St. Kitts und Nevis		de																																																																																																																																			
-A	0	188		St. Lucia		de																																																																																																																																			
-A	0	189		Saint-Martin (franz. Teil)		de																																																																																																																																			
-A	0	190		Saint-Pierre und Miquelon		de																																																																																																																																			
-A	0	191		St. Vincent und die Grenadinen		de																																																																																																																																			
-A	0	192		Samoa		de																																																																																																																																			
-A	0	193		San Marino		de																																																																																																																																			
-A	0	194		São Tomé und Príncipe		de																																																																																																																																			
-A	0	195		Saudi-Arabien		de																																																																																																																																			
-A	0	196		Senegal		de																																																																																																																																			
-A	0	197		Serbien		de																																																																																																																																			
-A	0	198		Seychellen		de																																																																																																																																			
-A	0	199		Sierra Leone		de																																																																																																																																			
-A	0	200		Singapur		de																																																																																																																																			
-A	0	201		Sint Maarten (niederl. Teil)		de																																																																																																																																			
-A	0	202		Slowakei		de																																																																																																																																			
-A	0	203		Slowenien		de																																																																																																																																			
-A	0	204		Salomonen		de																																																																																																																																			
-A	0	205		Somalia		de																																																																																																																																			
-A	0	206		Südafrika		de																																																																																																																																			
-A	0	207		Südgeorgien und die Südlichen Sandwichinseln		de																																																																																																																																			
-A	0	208		Südsudan		de																																																																																																																																			
-A	0	209		Spanien		de																																																																																																																																			
-A	0	210		Sri Lanka		de																																																																																																																																			
-A	0	211		Sudan		de																																																																																																																																			
-A	0	212		Suriname		de																																																																																																																																			
-A	0	213		Svalbard und Jan Mayen		de																																																																																																																																			
-A	0	214		Swasiland		de																																																																																																																																			
-A	0	215		Schweden		de																																																																																																																																			
-A	0	216		Schweiz (Confoederatio Helvetica)		de																																																																																																																																			
-A	0	217		Syrien, Arabische Republik		de																																																																																																																																			
-A	0	218		Republik China (Taiwan)		de																																																																																																																																			
-A	0	219		Tadschikistan		de																																																																																																																																			
-A	0	220		Tansania, Vereinigte Republik		de																																																																																																																																			
-A	0	221		Thailand		de																																																																																																																																			
-A	0	222		Osttimor (Timor-Leste)		de																																																																																																																																			
-A	0	223		Togo		de																																																																																																																																			
-A	0	224		Tokelau		de																																																																																																																																			
-A	0	225		Tonga		de																																																																																																																																			
-A	0	226		Trinidad und Tobago		de																																																																																																																																			
-A	0	227		Tunesien		de																																																																																																																																			
-A	0	228		Türkei		de																																																																																																																																			
-A	0	229		Turkmenistan		de																																																																																																																																			
-A	0	230		Turks- und Caicosinseln		de																																																																																																																																			
-A	0	231		Tuvalu		de																																																																																																																																			
-A	0	232		Uganda		de																																																																																																																																			
-A	0	233		Ukraine		de																																																																																																																																			
-A	0	234		Vereinigte Arabische Emirate		de																																																																																																																																			
-A	0	235		Vereinigtes Königreich Großbritannien und Nordirland		de																																																																																																																																			
-A	0	236		Vereinigte Staaten von Amerika		de																																																																																																																																			
-A	0	237		United States Minor Outlying Islands		de																																																																																																																																			
-A	0	238		Uruguay		de																																																																																																																																			
-A	0	239		Usbekistan		de																																																																																																																																			
-A	0	240		Vanuatu		de																																																																																																																																			
-A	0	241		Venezuela		de																																																																																																																																			
-A	0	242		Vietnam		de																																																																																																																																			
-A	0	243		Britische Jungferninseln		de																																																																																																																																			
-A	0	244		Amerikanische Jungferninseln		de																																																																																																																																			
-A	0	245		Wallis und Futuna		de																																																																																																																																			
-A	0	246		Westsahara		de																																																																																																																																			
-A	0	247		Jemen		de																																																																																																																																			
-A	0	248		Sambia		de																																																																																																																																			
-A	0	249		Simbabwe		de																																																																																																																																			
+A	0	38		Chile		de																																																																																																																																			
+A	0	39		China, Volksrepublik		de																																																																																																																																			
+A	0	40		Cookinseln		de																																																																																																																																			
+A	0	41		Costa Rica		de																																																																																																																																			
+A	0	42		Curaçao		de																																																																																																																																			
+A	0	43		Côte d’Ivoire (Elfenbeinküste)		de																																																																																																																																			
+A	0	44		Deutschland		de																																																																																																																																			
+A	0	45		Dominica		de																																																																																																																																			
+A	0	46		Dominikanische Republik		de																																																																																																																																			
+A	0	47		Dschibuti		de																																																																																																																																			
+A	0	48		Dänemark		de																																																																																																																																			
+A	0	49		Ecuador		de																																																																																																																																			
+A	0	50		El Salvador		de																																																																																																																																			
+A	0	51		Eritrea		de																																																																																																																																			
+A	0	52		Estland		de																																																																																																																																			
+A	0	53		Falklandinseln		de																																																																																																																																			
+A	0	54		Fidschi		de																																																																																																																																			
+A	0	55		Finnland		de																																																																																																																																			
+A	0	56		Frankreich		de																																																																																																																																			
+A	0	57		Französisch-Guayana		de																																																																																																																																			
+A	0	58		Französisch-Polynesien		de																																																																																																																																			
+A	0	59		Französische Süd- und Antarktisgebiete		de																																																																																																																																			
+A	0	60		Färöer		de																																																																																																																																			
+A	0	61		Gabun		de																																																																																																																																			
+A	0	62		Gambia		de																																																																																																																																			
+A	0	63		Georgien		de																																																																																																																																			
+A	0	64		Ghana		de																																																																																																																																			
+A	0	65		Gibraltar		de																																																																																																																																			
+A	0	66		Grenada		de																																																																																																																																			
+A	0	67		Griechenland		de																																																																																																																																			
+A	0	68		Grönland		de																																																																																																																																			
+A	0	69		Guadeloupe		de																																																																																																																																			
+A	0	70		Guam		de																																																																																																																																			
+A	0	71		Guatemala		de																																																																																																																																			
+A	0	72		Guernsey (Kanalinsel)		de																																																																																																																																			
+A	0	73		Guinea		de																																																																																																																																			
+A	0	74		Guinea-Bissau		de																																																																																																																																			
+A	0	75		Guyana		de																																																																																																																																			
+A	0	76		Haiti		de																																																																																																																																			
+A	0	77		Heard und McDonaldinseln		de																																																																																																																																			
+A	0	78		Honduras		de																																																																																																																																			
+A	0	79		Hongkong		de																																																																																																																																			
+A	0	80		Indien		de																																																																																																																																			
+A	0	81		Indonesien		de																																																																																																																																			
+A	0	82		Insel Man		de																																																																																																																																			
+A	0	83		Irak		de																																																																																																																																			
+A	0	84		Iran, Islamische Republik		de																																																																																																																																			
+A	0	85		Irland		de																																																																																																																																			
+A	0	86		Island		de																																																																																																																																			
+A	0	87		Israel		de																																																																																																																																			
+A	0	88		Italien		de																																																																																																																																			
+A	0	89		Jamaika		de																																																																																																																																			
+A	0	90		Japan		de																																																																																																																																			
+A	0	91		Jemen		de																																																																																																																																			
+A	0	92		Jersey (Kanalinsel)		de																																																																																																																																			
+A	0	93		Jordanien		de																																																																																																																																			
+A	0	94		Kaimaninseln		de																																																																																																																																			
+A	0	95		Kambodscha		de																																																																																																																																			
+A	0	96		Kamerun		de																																																																																																																																			
+A	0	97		Kanada		de																																																																																																																																			
+A	0	98		Kap Verde		de																																																																																																																																			
+A	0	99		Kasachstan		de																																																																																																																																			
+A	0	100		Katar		de																																																																																																																																			
+A	0	101		Kenia		de																																																																																																																																			
+A	0	102		Kirgisistan		de																																																																																																																																			
+A	0	103		Kiribati		de																																																																																																																																			
+A	0	104		Kokosinseln		de																																																																																																																																			
+A	0	105		Kolumbien		de																																																																																																																																			
+A	0	106		Komoren		de																																																																																																																																			
+A	0	107		Kongo, Demokratische Republik (ehem. Zaire)		de																																																																																																																																			
+A	0	108		Kongo, Republik (ehem. K.-Brazzaville)		de																																																																																																																																			
+A	0	109		Korea, Demokratische Volksrepublik (Nordkorea)		de																																																																																																																																			
+A	0	110		Korea, Republik (Südkorea)		de																																																																																																																																			
+A	0	111		Kroatien		de																																																																																																																																			
+A	0	112		Kuba		de																																																																																																																																			
+A	0	113		Kuwait		de																																																																																																																																			
+A	0	114		Laos, Demokratische Volksrepublik		de																																																																																																																																			
+A	0	115		Lesotho		de																																																																																																																																			
+A	0	116		Lettland		de																																																																																																																																			
+A	0	117		Libanon		de																																																																																																																																			
+A	0	118		Liberia		de																																																																																																																																			
+A	0	119		Libyen		de																																																																																																																																			
+A	0	120		Liechtenstein		de																																																																																																																																			
+A	0	121		Litauen		de																																																																																																																																			
+A	0	122		Luxemburg		de																																																																																																																																			
+A	0	123		Macau		de																																																																																																																																			
+A	0	124		Madagaskar		de																																																																																																																																			
+A	0	125		Malawi		de																																																																																																																																			
+A	0	126		Malaysia		de																																																																																																																																			
+A	0	127		Malediven		de																																																																																																																																			
+A	0	128		Mali		de																																																																																																																																			
+A	0	129		Malta		de																																																																																																																																			
+A	0	130		Marokko		de																																																																																																																																			
+A	0	131		Marshallinseln		de																																																																																																																																			
+A	0	132		Martinique		de																																																																																																																																			
+A	0	133		Mauretanien		de																																																																																																																																			
+A	0	134		Mauritius		de																																																																																																																																			
+A	0	135		Mayotte		de																																																																																																																																			
+A	0	136		Mazedonien		de																																																																																																																																			
+A	0	137		Mexiko		de																																																																																																																																			
+A	0	138		Mikronesien		de																																																																																																																																			
+A	0	139		Moldawien (Republik Moldau)		de																																																																																																																																			
+A	0	140		Monaco		de																																																																																																																																			
+A	0	141		Mongolei		de																																																																																																																																			
+A	0	142		Montenegro		de																																																																																																																																			
+A	0	143		Montserrat		de																																																																																																																																			
+A	0	144		Mosambik		de																																																																																																																																			
+A	0	145		Myanmar (Burma)		de																																																																																																																																			
+A	0	146		Namibia		de																																																																																																																																			
+A	0	147		Nauru		de																																																																																																																																			
+A	0	148		Nepal		de																																																																																																																																			
+A	0	149		Neukaledonien		de																																																																																																																																			
+A	0	150		Neuseeland		de																																																																																																																																			
+A	0	151		Nicaragua		de																																																																																																																																			
+A	0	152		Niederlande		de																																																																																																																																			
+A	0	153		Niger		de																																																																																																																																			
+A	0	154		Nigeria		de																																																																																																																																			
+A	0	155		Niue		de																																																																																																																																			
+A	0	156		Norfolkinsel		de																																																																																																																																			
+A	0	157		Norwegen		de																																																																																																																																			
+A	0	158		Nördliche Marianen		de																																																																																																																																			
+A	0	159		Oman		de																																																																																																																																			
+A	0	160		Osttimor (Timor-Leste)		de																																																																																																																																			
+A	0	161		Pakistan		de																																																																																																																																			
+A	0	162		Palau		de																																																																																																																																			
+A	0	163		Panama		de																																																																																																																																			
+A	0	164		Papua-Neuguinea		de																																																																																																																																			
+A	0	165		Paraguay		de																																																																																																																																			
+A	0	166		Peru		de																																																																																																																																			
+A	0	167		Philippinen		de																																																																																																																																			
+A	0	168		Pitcairninseln		de																																																																																																																																			
+A	0	169		Polen		de																																																																																																																																			
+A	0	170		Portugal		de																																																																																																																																			
+A	0	171		Puerto Rico		de																																																																																																																																			
+A	0	172		Republik China (Taiwan)		de																																																																																																																																			
+A	0	173		Ruanda		de																																																																																																																																			
+A	0	174		Rumänien		de																																																																																																																																			
+A	0	175		Russische Föderation		de																																																																																																																																			
+A	0	176		Réunion		de																																																																																																																																			
+A	0	177		Saint-Barthélemy		de																																																																																																																																			
+A	0	178		Saint-Martin (franz. Teil)		de																																																																																																																																			
+A	0	179		Saint-Pierre und Miquelon		de																																																																																																																																			
+A	0	180		Salomonen		de																																																																																																																																			
+A	0	181		Sambia		de																																																																																																																																			
+A	0	182		Samoa		de																																																																																																																																			
+A	0	183		San Marino		de																																																																																																																																			
+A	0	184		Saudi-Arabien		de																																																																																																																																			
+A	0	185		Schweden		de																																																																																																																																			
+A	0	186		Schweiz (Confoederatio Helvetica)		de																																																																																																																																			
+A	0	187		Senegal		de																																																																																																																																			
+A	0	188		Serbien		de																																																																																																																																			
+A	0	189		Seychellen		de																																																																																																																																			
+A	0	190		Sierra Leone		de																																																																																																																																			
+A	0	191		Simbabwe		de																																																																																																																																			
+A	0	192		Singapur		de																																																																																																																																			
+A	0	193		Sint Maarten (niederl. Teil)		de																																																																																																																																			
+A	0	194		Slowakei		de																																																																																																																																			
+A	0	195		Slowenien		de																																																																																																																																			
+A	0	196		Somalia		de																																																																																																																																			
+A	0	197		Spanien		de																																																																																																																																			
+A	0	198		Sri Lanka		de																																																																																																																																			
+A	0	199		St. Helena		de																																																																																																																																			
+A	0	200		St. Kitts und Nevis		de																																																																																																																																			
+A	0	201		St. Lucia		de																																																																																																																																			
+A	0	202		St. Vincent und die Grenadinen		de																																																																																																																																			
+A	0	203		Staat Palästina		de																																																																																																																																			
+A	0	204		Sudan		de																																																																																																																																			
+A	0	205		Suriname		de																																																																																																																																			
+A	0	206		Svalbard und Jan Mayen		de																																																																																																																																			
+A	0	207		Swasiland		de																																																																																																																																			
+A	0	208		Syrien, Arabische Republik		de																																																																																																																																			
+A	0	209		São Tomé und Príncipe		de																																																																																																																																			
+A	0	210		Südafrika		de																																																																																																																																			
+A	0	211		Südgeorgien und die Südlichen Sandwichinseln		de																																																																																																																																			
+A	0	212		Südsudan		de																																																																																																																																			
+A	0	213		Tadschikistan		de																																																																																																																																			
+A	0	214		Tansania, Vereinigte Republik		de																																																																																																																																			
+A	0	215		Thailand		de																																																																																																																																			
+A	0	216		Togo		de																																																																																																																																			
+A	0	217		Tokelau		de																																																																																																																																			
+A	0	218		Tonga		de																																																																																																																																			
+A	0	219		Trinidad und Tobago		de																																																																																																																																			
+A	0	220		Tschad		de																																																																																																																																			
+A	0	221		Tschechien		de																																																																																																																																			
+A	0	222		Tunesien		de																																																																																																																																			
+A	0	223		Turkmenistan		de																																																																																																																																			
+A	0	224		Turks- und Caicosinseln		de																																																																																																																																			
+A	0	225		Tuvalu		de																																																																																																																																			
+A	0	226		Türkei		de																																																																																																																																			
+A	0	227		Uganda		de																																																																																																																																			
+A	0	228		Ukraine		de																																																																																																																																			
+A	0	229		Ungarn		de																																																																																																																																			
+A	0	230		United States Minor Outlying Islands		de																																																																																																																																			
+A	0	231		Uruguay		de																																																																																																																																			
+A	0	232		Usbekistan		de																																																																																																																																			
+A	0	233		Vanuatu		de																																																																																																																																			
+A	0	234		Vatikanstadt		de																																																																																																																																			
+A	0	235		Venezuela		de																																																																																																																																			
+A	0	236		Vereinigte Arabische Emirate		de																																																																																																																																			
+A	0	237		Vereinigte Staaten von Amerika		de																																																																																																																																			
+A	0	238		Vereinigtes Königreich Großbritannien und Nordirland		de																																																																																																																																			
+A	0	239		Vietnam		de																																																																																																																																			
+A	0	240		Wallis und Futuna		de																																																																																																																																			
+A	0	241		Weihnachtsinsel		de																																																																																																																																			
+A	0	242		Westsahara		de																																																																																																																																			
+A	0	243		Zentralafrikanische Republik		de																																																																																																																																			
+A	0	244		Zypern		de																																																																																																																																			
+A	0	245		Ägypten		de																																																																																																																																			
+A	0	246		Äquatorialguinea		de																																																																																																																																			
+A	0	247		Äthiopien		de																																																																																																																																			
+A	0	248		Åland		de																																																																																																																																			
+A	0	249		Österreich		de																																																																																																																																			
 Q	!	edu1	1	Was ist Dein höchster, an einer Bildungseinrichtung erworbener Abschluss?		de		Y	Y		1																																																																																																							1						1																	
 A	0	1		Mittlerer Schulabschluss, Mittlere Reife, Sekundarabschluss I, Realschulabschluss		de																																																																																																																																			
 A	0	2		Allgemeine Hochschulreife, Abitur		de																																																																																																																																			
@@ -2400,17 +2400,17 @@ SQ	0	15		Risikokapital		de
 SQ	0	16		Lizenzierung einer Marke und Franchising		de																																																																																																																																			
 G	G4	Deine Wahrnehmung Deiner aktuellen Position	1			de																																																																																																																																			
 Q	F	likert1				de		Y	N		1																																																																																																							1																							
-SQ	0	perfCheck4	1	Erhälst Du ausreichend Informationen über den Zweck Deiner Arbeit?		de																																																																																																																																			
-SQ	0	turnOver3	1	Wie oft denkst Du daran, Deinen Job an den Nagel zu hängen?		de																																																																																																																																			
-SQ	0	perfCheck3	1	Hast Du für Deine Arbeit ausreichend Zugriff auf Daten und Informationen?		de																																																																																																																																			
-SQ	0	perfCheck7	1	Informieren Dich Deine Kollegen darüber, wie gut Du Deine Arbeit machst?		de																																																																																																																																			
-SQ	0	turnOver4	1	Wie oft träumst Du davon, einen anderen Job anzutreten, der Deinen Ansprüchen mehr gerecht wird?		de																																																																																																																																			
-SQ	0	perfCheck2	1	Hast Du die Möglichkeit auf Arbeit zu erfahren, wie gut Du arbeitest?		de																																																																																																																																			
-SQ	0	turnOver1	1	Wie oft bist Du frustriert, wenn Dir nicht die Möglichkeit gegeben wird, Deine persönlichen arbeitsbezogenen Ziele zu erreichen?		de																																																																																																																																			
 SQ	0	perfCheck1	1	Erhälst Du genügend Information über die Ergebnisse Deiner Arbeit?		de																																																																																																																																			
-SQ	0	turnOver2	1	Wie oft freust du dich auf den nächsten Tag auf der Arbeit?		de																																																																																																																																			
+SQ	0	turnOver3	1	Wie oft denkst Du daran, Deinen Job an den Nagel zu hängen?		de																																																																																																																																			
 SQ	0	perfCheck6	1	Informiert Dich Dein Vorgesetzter darüber, wie gut Du Deine Arbeit machst?		de																																																																																																																																			
+SQ	0	perfCheck4	1	Erhälst Du ausreichend Informationen über den Zweck Deiner Arbeit?		de																																																																																																																																			
+SQ	0	turnOver4	1	Wie oft träumst Du davon, einen anderen Job anzutreten, der Deinen Ansprüchen mehr gerecht wird?		de																																																																																																																																			
+SQ	0	turnOver1	1	Wie oft bist Du frustriert, wenn Dir nicht die Möglichkeit gegeben wird, Deine persönlichen arbeitsbezogenen Ziele zu erreichen?		de																																																																																																																																			
+SQ	0	perfCheck7	1	Informieren Dich Deine Kollegen darüber, wie gut Du Deine Arbeit machst?		de																																																																																																																																			
+SQ	0	turnOver2	1	Wie oft freust du dich auf den nächsten Tag auf der Arbeit?		de																																																																																																																																			
 SQ	0	perfCheck5	1	Bekommst Du direktes Feedback, wie gut Du Deine Arbeit machst? 		de																																																																																																																																			
+SQ	0	perfCheck3	1	Hast Du für Deine Arbeit ausreichend Zugriff auf Daten und Informationen?		de																																																																																																																																			
+SQ	0	perfCheck2	1	Hast Du die Möglichkeit auf Arbeit zu erfahren, wie gut Du arbeitest?		de																																																																																																																																			
 A	0	1		1 (gar nicht)		de																																																																																																																																			
 A	0	2		2		de																																																																																																																																			
 A	0	3		3		de																																																																																																																																			
@@ -2422,21 +2422,21 @@ A	0	8		8		de
 A	0	9		9		de																																																																																																																																			
 A	0	10		10 (jederzeit, immer)		de																																																																																																																																			
 Q	F	likert2				de		Y	N		1																																																																																																							1																							
-SQ	0	percEmp3	1	Meine Erfahrung ist auf dem Arbeitsmarkt gefragt.		de																																																																																																																																			
-SQ	0	affSat2	1	An den meisten Tagen gehe ich entusiastisch an die Arbeit.		de																																																																																																																																			
+SQ	0	affSat4	1	Ich mag meine Arbeit mehr als andere Personen.		de																																																																																																																																			
 SQ	0	affRec5	1	Ich bin zufrieden mit der Ermunterung/Unterstützung, die ich von meinem Vorgesetzten während der Arbeit bekomme.		de																																																																																																																																			
-SQ	0	turnOver5	1	Mein aktueller Job befriedigt meine persönlichen Ansprüche. 		de																																																																																																																																			
+SQ	0	affSat3	1	Ich fühle mich zufrieden mit meiner Arbeit.		de																																																																																																																																			
+SQ	0	percEmp1	1	Es wäre nicht schwer für mich, einen ähnlichen Job woanders zu bekommen.		de																																																																																																																																			
+SQ	0	turnOver6	1	Ich würde einen anderen Job mit der selben Bezahlung annehmen, wenn ich ein solches Angebot bekommen würde.		de																																																																																																																																			
+SQ	0	affRec2	1	Ich bin zufrieden mit dem Dank, den meine Vorgesetzter an mich richtet.		de																																																																																																																																			
 SQ	0	percEmp2	1	Ich kenne mehrere Organisationen, die mir einen Job anbieten würden.		de																																																																																																																																			
 SQ	0	affRec4	1	Ich bin zufrieden mit dem Lob, die ich von meinem Vorgesetzten für meine Arbeit bekomme.		de																																																																																																																																			
-SQ	0	percEmp1	1	Es wäre nicht schwer für mich, einen ähnlichen Job woanders zu bekommen.		de																																																																																																																																			
 SQ	0	affRec3	1	Ich bin zufrieden mit der Anerkennung, die ich von meinem Vorgesetzten für meine Arbeit bekomme.		de																																																																																																																																			
-SQ	0	affRec2	1	Ich bin zufrieden mit dem Dank, den meine Vorgesetzter an mich richtet.		de																																																																																																																																			
-SQ	0	affSat4	1	Ich mag meine Arbeit mehr als andere Personen.		de																																																																																																																																			
-SQ	0	affSat3	1	Ich fühle mich zufrieden mit meiner Arbeit.		de																																																																																																																																			
-SQ	0	affRec1	1	Ich bin zufrieden mit dem Vertrauen, das mein Vorgesetzter in mich setzt.		de																																																																																																																																			
-SQ	0	percEmp4	1	Es ist nicht schwer, einen neuen Job mit meinen Qualifikationen und Erfahrungen zu bekommen.		de																																																																																																																																			
 SQ	0	affSat1	1	Ich genieße meine Arbeit.		de																																																																																																																																			
-SQ	0	turnOver6	1	Ich würde einen anderen Job mit der selben Bezahlung annehmen, wenn ich ein solches Angebot bekommen würde.		de																																																																																																																																			
+SQ	0	affRec1	1	Ich bin zufrieden mit dem Vertrauen, das mein Vorgesetzter in mich setzt.		de																																																																																																																																			
+SQ	0	affSat2	1	An den meisten Tagen gehe ich entusiastisch an die Arbeit.		de																																																																																																																																			
+SQ	0	percEmp4	1	Es ist nicht schwer, einen neuen Job mit meinen Qualifikationen und Erfahrungen zu bekommen.		de																																																																																																																																			
+SQ	0	turnOver5	1	Mein aktueller Job befriedigt meine persönlichen Ansprüche. 		de																																																																																																																																			
+SQ	0	percEmp3	1	Meine Erfahrung ist auf dem Arbeitsmarkt gefragt.		de																																																																																																																																			
 A	0	1		Stimme überhaubt nicht zu		de																																																																																																																																			
 A	0	2		Stimme nicht zu		de																																																																																																																																			
 A	0	3		Weder Zustimmung noch Ablehnung		de																																																																																																																																			
