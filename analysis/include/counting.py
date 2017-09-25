@@ -5,16 +5,17 @@ import pandas as pd
 import numpy as np
 
 from include.likertScalePlot import compute_percentage
+from include.textCleaning import wordcloud
 
 
 def get_answer(file_answer):
     """
     """
     with open(file_answer, 'r') as f:
-        return [x[:-1] for x in f.readlines()]
+        return [x.split(';')[0].rstrip() for x in f.readlines()]
 
 
-def count_choice(df, colnames, rename_columns=True,
+def count_choice(df, colnames, rename_columns=False,
                  dropna=False, normalize=False,
                  multiple_choice=False, sort_values=False):
     """
@@ -27,8 +28,11 @@ def count_choice(df, colnames, rename_columns=True,
     """
     df_sub = df[colnames]
 
-    if rename_columns is True and multiple_choice is True:
-        df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+    if rename_columns is True:
+        try:
+            df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+        except IndexError:
+            pass
 
     if multiple_choice is True:
         df_sub = df_sub.fillna(value='No')
@@ -86,7 +90,7 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False, sort_v
     return df_sub
 
 
-def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, normalize=False):
+def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, normalize=False, reindex=False):
     """
     Count the values of different columns and transpose the count
     :params:
@@ -99,7 +103,10 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     df_sub = df[colnames]
 
     if rename_columns is True:
-        df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+        try:
+            df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
+        except IndexError:
+            pass
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
@@ -125,6 +132,12 @@ def get_percentage(df, dropna):
         percent_na = df.iloc[-1,: ]
         # / df.sum(axis=1)
         df = df.drop(np.nan, errors='ignore')
+        # For Y/N/NAN the nan values are stored in the column nan
+        # drop it for them only
+        try:
+            df = df.drop(np.nan, axis=1)
+        except ValueError:
+            pass
     value = compute_percentage(df, by_row, by_col)
 
     index_df = df.index
@@ -135,11 +148,22 @@ def get_percentage(df, dropna):
         index_df = ["{} [PERCENTAGE]".format(x) for x in df.index]
     percent = pd.DataFrame(value, columns=name_df)
     percent.index = index_df
-    if dropna is True:
-        percent.loc['Proportion of NaN in total'] = percent_na
+    # if dropna is True:
+        # percent.loc['Proportion of NaN in total'] = percent_na
         # percent.loc['Proportion of NaN in total'] = percent_na
         # percent.append(percent_na.rename('Proportion of NaN to the total'))
     return percent
+
+
+def get_words_count(df, column):
+    """
+    Get the count words using wordcloud
+    """
+    try:
+        return wordcloud(df, column)
+    except ZeroDivisionError:
+        return "This question does not have values"
+
 
 
 def get_count(df, questions, type_question, file_answer):
@@ -150,8 +174,9 @@ def get_count(df, questions, type_question, file_answer):
         df dataframe(): dataframe containing all the data
         questions list(): list of the question strings to
         type_questions str(): type of questions that list_questions represent
-
+        file_answer str(): path to the file containing the question's answers
     :return:
+        df(): of the count value of the questions
     """
     if type_question.lower() == 'y/n/na':
         if len(questions) == 1:
@@ -163,10 +188,10 @@ def get_count(df, questions, type_question, file_answer):
         return count
 
     elif type_question.lower() == 'one choice':
-        return count_choice(df, questions, multiple_choice=False)
+        return count_choice(df, questions, multiple_choice=False, rename_columns=True)
 
     elif type_question.lower() == 'multiple choices':
-        return count_choice(df, questions, multiple_choice=True)
+        return count_choice(df, questions, multiple_choice=True, rename_columns=True)
 
     elif type_question.lower() == 'likert':
         likert_answer = get_answer(file_answer)
@@ -177,13 +202,14 @@ def get_count(df, questions, type_question, file_answer):
         return count_likert(df, questions, likert_answer, rename_columns)
 
     elif type_question.lower() == 'ranking':
-        pass
+        return count_choice(df, questions, multiple_choice=False, rename_columns=True)
 
     elif type_question.lower() == 'freetext':
-        pass
+        return get_words_count(df, questions)
+        # pass
 
     elif type_question.lower() == 'freenumeric':
-        pass
+        return df[questions]
 
     elif type_question.lower() == 'datetime':
         pass

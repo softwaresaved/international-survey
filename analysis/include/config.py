@@ -16,6 +16,7 @@ class CleaningConfig:
     json_to_plot_location = './uk_2017/data/to_plot.json'
     cleaned_df_location = './uk_2017/data/cleaned_data.csv'
     section_nbr_to_keep_after = 1
+    country_to_keep = 'United Kingdom'
     count_na = True
     normalise = False
 
@@ -33,12 +34,14 @@ class NotebookConfig(PlottingConfig):
 
     notebook_folder = './uk_2017/'
     notebook_filename = 'notebook.ipynb'
+    notebook_html = 'notebook.html'
     allow_errors = True
     to_import = ['import pandas as pd',
                  'import numpy as np',
                  'import matplotlib',
                  'import matplotlib.pyplot as plt',
                  'from IPython.display import display',
+                 'import IPython.core.display as di',
                  'from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
                  'from include.counting import get_count, get_percentage',
                  'from include.plotting import get_plot, display_side_by_side',
