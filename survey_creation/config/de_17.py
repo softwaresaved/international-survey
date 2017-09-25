@@ -21,7 +21,7 @@ class config:
     # The index positions starts at 0
     # Adding the survey title to the global description. The index position is at 0 and the structure of the dictionary is as follow:
     survey_title = {'en': 'Study about people writing scientic software for Germany',
-                    'de': 'Umfrage zur Softwareentwicklung in der deutschen Wissenschaft'}
+                    'de': 'Umfrage für Personen, die wissenschaftliche Software bzw. Forschungssoftware in der deutschen Wissenschaft und Forschung entwickeln'}
 
     sections_txt = {0: {'en': {'name': 'Questions about you', 'text': ''},
                         'de': {'name': 'Fragen zu Deiner Person', 'text': ''}},
