@@ -36,12 +36,46 @@ class CleaningData(CleaningConfig):
         self.df = self.dropping_lime_useless(self.df)
         self.df = self.cleaning_columns_white_space(self.df)
         self.df = self.cleaning_missing_na(self.df)
+        # self.df = self.fixing_satisQuestion(self.df)
         self.df = self.duplicating_other(self.df)
+        self.df = self.remove_not_right_country(self.df)
+        self.df = self.remove_empty_column(self.df)
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
 
         return self.df
+
+    def remove_empty_column(self, df):
+        """
+        If a column as no values at all (all nan), the column is removed
+        to avoid problem later in the analysis
+        """
+        return df.dropna(axis=1, how='all')
+
+    def remove_not_right_country(self, df):
+        """
+        Remove rows that are not the appropriate country
+        """
+        return df[df['socio1. In which country do you work?'] == self.country_to_keep]
+
+
+    def fixing_satisQuestion(self, df):
+        """
+        For the ul 2017, a mistake on how to display the question
+        satisGen1 and satisGen2 has been made. These questions were
+        merge into one table but the questions text was split between
+        the overal text and the items. It appears like this:
+        "In general, how satisfied are you with: [Your current position]"
+        "In general, how satisfied are you with: [Your career]"
+        For the script to match these questions with the csv file that
+        helps to the construction, it should have been like that:
+        "Please answer the following: [In general, how satisfied are you with Your current position]"
+        "Please answer the following: [In general, how satisfied are you with Your career]"
+        This function just replace the text within the bracket to match the ideal case
+        """
+        return df
+
 
     def get_survey_structure(self):
         """
@@ -57,11 +91,13 @@ class CleaningData(CleaningConfig):
                 answer_format = row[3]
                 type_question = row[4]
                 file_answer = '{}/{}.csv'.format(self.answer_folder, row[4])
+                order_question = row[5]
                 result_dict[code] = {'section': section,
                                      'original_question': question,
                                      'type_question': type_question,
                                      'answer_format': answer_format,
-                                     'file_answer': file_answer}
+                                     'file_answer': file_answer,
+                                     'order_question': order_question}
         return result_dict
 
     def get_answer_item(self, path_to_file):
@@ -100,6 +136,13 @@ class CleaningData(CleaningConfig):
             nb_answer.plot(kind='bar')
         """
         return self.df.loc[self.df['lastpage. Last page']> self.section_nbr_to_keep_after]
+
+    def dropping_empty_question(self, df):
+        """
+        Some question may not have any answer. If the unique value of that question is array([nan])
+        the question is dropped
+        """
+        return self.df.dropna(axis=1, how='all')
 
     def dropping_lime_useless(self, df):
         """
@@ -187,14 +230,19 @@ class CleaningData(CleaningConfig):
 
         for col in df.columns:
             code = get_question_code(col, 0)
+            print(code)
             try:
                 input_dict[code].setdefault('survey_q', []).append(col)
             except KeyError:
-                code = get_question_code(col, 1)
+                multiple_code = get_question_code(col, 1)
                 try:
-                    input_dict[code].setdefault('survey_q', []).append(col)
-                except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
-                    pass
+                    input_dict[multiple_code].setdefault('survey_q', []).append(col)
+                except KeyError:  # Sometime the questions is stored as multiple choice in limesurvey but it is two specific question in the csv
+                    special_code = code[:-1] + multiple_code[-1]
+                    try:
+                        input_dict[special_code].setdefault('survey_q', []).append(col)
+                    except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
+                        print('Not being able to process this columns: {}'.format(col))
 
         return input_dict
 
@@ -245,6 +293,7 @@ class CleaningData(CleaningConfig):
             group_survey_q, group_original_question = list(), list()
             previous_answer_format = None
             previous_file_answer = None
+            previous_order_question = None
             file_answer = None
             # print(group_question)
             for q in group_question:
@@ -252,31 +301,33 @@ class CleaningData(CleaningConfig):
                 survey_q = group_question[q]['survey_q']
                 original_q = group_question[q]['original_question']
                 file_answer = group_question[q]['file_answer']
+                order_question = group_question[q]['order_question']
 
                 if previous_answer_format in ['y/n/na', 'likert'] or current_answer_format in ['y/n/na', 'likert']:
                     if current_answer_format == previous_answer_format or previous_answer_format is None:
                         if previous_answer_format == 'likert' and current_answer_format == 'likert':
                             if previous_file_answer != file_answer:
-                                yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                                yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                                 group_survey_q, group_original_question = list(), list()
                         group_survey_q.extend(survey_q)
                         group_original_question.append(original_q)
                     else:
-                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                         group_survey_q, group_original_question = list(), list()
                         group_survey_q.extend(survey_q)
                         group_original_question.append(original_q)
                 else:
                     if len(group_survey_q) > 0:
-                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                     group_survey_q, group_original_question = list(), list()
                     group_survey_q.extend(survey_q)
                     group_original_question.append(original_q)
 
                 previous_answer_format = current_answer_format
                 previous_file_answer = file_answer
+                previous_order_question = order_question
 
-            yield group_survey_q, group_original_question, previous_answer_format, file_answer
+            yield group_survey_q, group_original_question, previous_answer_format, file_answer, order_question
 
         def dictionary_by_section(input_dict):
             output_dict = dict()
@@ -303,6 +354,7 @@ class CleaningData(CleaningConfig):
                         q_dict['original_question'] = q[1]
                         q_dict['answer_format'] = q[2]
                         q_dict['file_answer'] = q[3]
+                        q_dict['order_question'] = q[4]
                         input_dict[section][group].append(q_dict)
             return input_dict
 

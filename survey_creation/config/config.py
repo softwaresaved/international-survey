@@ -90,22 +90,21 @@ class creationConfig:
 
     # List of parameters that comprise the survey title and the welcome text
     global_settings = [{'class': 'SL', 'name': 'surveyls_welcometext', 'text': None, 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_endtext', 'text': None, 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_email_invite_subj', 'text': 'Invitation to participate in a survey', 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_email_invite', 'text': """Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_email_remind_subj', 'text': """Reminder to participate in a survey""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_endtext', 'text': None, 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_email_invite_subj', 'text': 'Invitation to participate in a survey', 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_email_invite', 'text': """Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_email_remind_subj', 'text': """Reminder to participate in a survey""", 'language': 'en'},
 
-                          {'class': 'SL', 'name': 'surveyls_email_remind', 'text': """Dear {FIRSTNAME},  Recently we invited you to participate in a survey.  We note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_email_register', 'text': """Dear {FIRSTNAME},  You, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.  To complete this survey, click on the following URL:  {SURVEYURL}  If you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_email_confirm_subj', 'text': """Confirmation of your participation in our survey""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_email_confirm', 'text': """Dear {FIRSTNAME},  this email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.  If you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.  Sincerely,  {ADMINNAME}""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_dateformat', 'text': '2', 'language': 'en'},
-                          {'class': 'SL', 'name': 'email_admin_notification_subj', 'text': """Response submission for survey {SURVEYNAME}""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'email_admin_notification', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'email_admin_responses_subj', 'text': """Response submission for survey {SURVEYNAME} with results""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'email_admin_responses', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}""", 'language': 'en'},
-                          {'class': 'SL', 'name': 'surveyls_numberformat', 'text': '0', 'language': 'en'}]
-
+                       {'class': 'SL', 'name': 'surveyls_email_remind', 'text': """Dear {FIRSTNAME},  Recently we invited you to participate in a survey.  We note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.  The survey is titled: "{SURVEYNAME}"  "{SURVEYDESCRIPTION}"  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_email_register', 'text': """Dear {FIRSTNAME},  You, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.  To complete this survey, click on the following URL:  {SURVEYURL}  If you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_email_confirm_subj', 'text': """Confirmation of your participation in our survey""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_email_confirm', 'text': """Dear {FIRSTNAME},  this email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.  If you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.  Sincerely,  {ADMINNAME}""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_dateformat', 'text': '2', 'language': 'en'},
+                       {'class': 'SL', 'name': 'email_admin_notification_subj', 'text': """Response submission for survey {SURVEYNAME}""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'email_admin_notification', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'email_admin_responses_subj', 'text': """Response submission for survey {SURVEYNAME} with results""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'email_admin_responses', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}""", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_numberformat', 'text': '0', 'language': 'en'}]
 
     # Standard layout for groups
     group_format = {'class': 'G', 'type/scale': 'G+inc_number', 'relevance': '1'}
@@ -115,7 +114,7 @@ class creationConfig:
     one_choice_question = {'class': 'Q', 'type/scale': '!', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1', 'time_limit_action': 1}
     one_choice_answer = {'class': 'A', 'type/scale': '0'}
 
-    ranking_question = {'class': 'Q', 'type/scale': 'R', 'relevance': '1', 'other': 'N', 'same_default': '1', 'max_subquestions': '8', 'samechoiceheight': '1', 'samelistheight': '1', 'showpopups': '1', 'statistics_showgraph': '1'}
+    ranking_question = {'class': 'Q', 'type/scale': 'R', 'relevance': '1', 'other': 'N', 'same_default': '1', 'max_subquestions': '5', 'samechoiceheight': '1', 'samelistheight': '1', 'showpopups': '1', 'statistics_showgraph': '1'}
 
     ranking_answer = {'class': 'A', 'type/scale': '0'}
 
@@ -136,4 +135,6 @@ class creationConfig:
 
     y_n_question = {'class': 'Q', 'type/scale': 'Y', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1'}
 
-    likert_subquestion = {'class': 'SQ', 'type/scale': '0'}
+    datetime_question = {'class': 'Q', 'type/scale': 'D', 'same_default': '1', 'dropdown_dates_minute_step': '1',
+                         'statistics_showgraph': '1'}
+    subquestion = {'class': 'SQ', 'type/scale': '0'}
