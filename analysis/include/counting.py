@@ -129,9 +129,7 @@ def get_percentage(df, dropna):
     if dropna is True:
         # get nan Percentage
         # 'Percentage NaN'
-        percent_na = df.iloc[-1,: ]
-        # / df.sum(axis=1)
-        df = df.drop(np.nan, errors='ignore')
+        # df = df.drop(np.nan, errors='ignore')
         # For Y/N/NAN the nan values are stored in the column nan
         # drop it for them only
         try:
