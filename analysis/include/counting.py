@@ -117,7 +117,7 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     return df_sub.transpose()
 
 
-def get_percentage(df, dropna):
+def get_percentage(df, dropna=True):
     """
     Normalise results to be plotted
     """
