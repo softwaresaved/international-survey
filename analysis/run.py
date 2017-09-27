@@ -46,8 +46,12 @@ def main():
                 answer_format = question['answer_format']
                 file_answer = question['file_answer']
                 order_question = question['order_question']
-                for txt in original_question:
-                    notebook.add_question_title(txt)
+                # To avoid having each questions written in a new line
+                # it joins them together before writing it
+                question_to_write = '; '.join(original_question)
+                notebook.add_question_title(question_to_write)
+                # for txt in original_question:
+                #     # notebook.add_question_title(txt)
 
                 if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
                     notebook.add_count(list_questions, answer_format, file_answer, order_question)
