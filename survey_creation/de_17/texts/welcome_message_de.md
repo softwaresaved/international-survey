@@ -10,8 +10,8 @@ Die Umfrage gibt Dir eine Möglichkeit daran teilzuhaben und Deine Sicht und Erf
 Bitte beachte, dass diese Umfrage nicht verpflichtend ist und du jederzeit deine Teilnahme abbrechen kannst.
 
 
-Wie lang ist Umfrage?
----------------------
+Wie lang ist die Umfrage?
+-------------------------
 
 Es gibt ungefähr 80 Fragen, die 15-20 Minuten Antwortzeit erfordern.
 
