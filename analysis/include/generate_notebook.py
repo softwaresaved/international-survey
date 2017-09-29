@@ -111,14 +111,14 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         self.count = True
-        count_count = """v_to_count  = get_count(df, {}, "{}", "{}")""".format(*args)
+        count_count = """v_to_count  = get_count(df, {}, "{}", "{}", "{}")""".format(*args)
         self._add_code(count_count)
 
     def add_percentage(self):
         """
         """
         self.percent = True
-        percentage_count = """perc_to_count = get_percentage(v_to_count, dropna=True)"""
+        percentage_count = """perc_to_count = get_percentage(v_to_count)"""
         self._add_code(percentage_count)
 
     def add_display_percentage(self):
