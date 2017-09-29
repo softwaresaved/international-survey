@@ -62,7 +62,7 @@ class CleaningData(CleaningConfig):
 
     def fixing_satisQuestion(self, df):
         """
-        For the ul 2017, a mistake on how to display the question
+        For the uk 2017, a mistake on how to display the question
         satisGen1 and satisGen2 has been made. These questions were
         merge into one table but the questions text was split between
         the overal text and the items. It appears like this:
@@ -302,6 +302,10 @@ class CleaningData(CleaningConfig):
                 original_q = group_question[q]['original_question']
                 file_answer = group_question[q]['file_answer']
                 order_question = group_question[q]['order_question']
+                if order_question == 'TRUE':
+                    order_question = True
+                else:
+                    order_question = False
 
                 if previous_answer_format in ['y/n/na', 'likert'] or current_answer_format in ['y/n/na', 'likert']:
                     if current_answer_format == previous_answer_format or previous_answer_format is None:
@@ -327,7 +331,7 @@ class CleaningData(CleaningConfig):
                 previous_file_answer = file_answer
                 previous_order_question = order_question
 
-            yield group_survey_q, group_original_question, previous_answer_format, file_answer, order_question
+            yield group_survey_q, group_original_question, previous_answer_format, file_answer, previous_order_question
 
         def dictionary_by_section(input_dict):
             output_dict = dict()
