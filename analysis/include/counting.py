@@ -15,24 +15,13 @@ def get_answer(file_answer):
         return [x.split(';')[0].rstrip() for x in f.readlines()]
 
 
-def order_answers(df, mode_reorder=None, nan_reorder='end', list_order=None):
+def reorder_nan(df, nan_reorder):
     """
-    Function to reindex the df according to
-    the argument passed. It can either leave at it is
-    or ordering by taking the order from  the answer file
-    or ordering according to the count. The default behaviour
-    is to re-order with the count
-
-    It also decide if the NA is pushed at the end of the
+    Decide if the NA is pushed at the end of the
     reorder or order with the number of count. The default is
     to put the np.NaN at the end.
-
     :params:
-        :df pd.dataFrame(): The input df to sort
-        :mode_reorder str(): The type or reordering
-            None: Nothing is done
-            count: reorder according to the count
-            file_order: reorder according to the file_answer
+        :df pd.dataFrame():
         :nan_reorder:
             None: Nothing is done
             end: put the np.Nan at the end
@@ -43,42 +32,83 @@ def order_answers(df, mode_reorder=None, nan_reorder='end', list_order=None):
     :return:
         df pd.dataFrame(): The sorted df
     """
+    if nan_reorder == 'end':
+        # Sorting with nan at the end, the in-built function is not working do not know why
+        df.sort_values(by=df.columns[0], axis=0, ascending=False, inplace=True, na_position='last')
+        # So implemented this dirty hack. If someone wants to fix, please do
+        index_wo_nan = list()
+        nan_value = False
+        for x in df.index:
+            if pd.isnull(x):
+                nan_value = True
+            else:
+                index_wo_nan.append(x)
+        if nan_value:
+            index_wo_nan.append(np.nan)
 
-    def reorder_nan(df, nan_reorder):
-        """
-        """
-        if nan_reorder == 'end':
-            # Sorting with nan at the end, the in-built function is not working do not know why
-            df.sort_values(by=df.columns[0], axis=0, ascending=False, inplace=True, na_position='last')
-            # So implemented this dirty hack. If someone wants to fix, please do
-            index_wo_nan = list()
-            nan_value = False
-            for x in df.index:
-                if pd.isnull(x):
-                    nan_value = True
-                else:
-                    index_wo_nan.append(x)
-            if nan_value:
-                index_wo_nan.append(np.nan)
-
-            df = df.reindex(index=index_wo_nan)
-        elif nan_reorder == 'count':
-            raise NotImplementedError
-        elif nan_reorder is None:
-            pass
-        else:
-            raise
-
-        return df
-
-    df = reorder_nan(df, nan_reorder)
+        df = df.reindex(index=index_wo_nan)
+    elif nan_reorder == 'count':
+        raise NotImplementedError
 
     return df
 
 
-def count_choice(df, colnames, rename_columns=False,
-                 dropna=False, normalize=False,
-                 multiple_choice=False, sort_values=False):
+def reorder_answer(df, list_order):
+    """
+    Function to reindex the df according to
+    the argument passed. It can either leave at it is
+    or ordering by taking the order from  the answer file
+    or ordering according to the count. The default behaviour
+    is to re-order with the count
+    :params:
+        :df pd.dataFrame(): The input df to sort
+        : list_order list(): Containing the list of answers as found
+        in the file answer
+    """
+    existing_answer = [x for x in list_order if x in df.index]
+    df = df.reindex(index=existing_answer)
+    return df
+
+
+def apply_rename_columns(df, colnames, rename):
+    """
+    Sometime the question itself is the third part of the column
+    names. IN that case, to extract the appropriate text it need
+    to be splitted based on the [
+    """
+    if rename is True:
+        try:
+            df.columns = [s.split('[')[2][:-1] for s in colnames]
+        except IndexError:
+            pass
+    return df
+
+
+def count_multi_choice(df, colnames, rename_columns=False, dropna=False, normalize=False):
+    """
+    """
+    #Subset the dataframe
+    df_sub = df[colnames]
+    # Rename the column or not
+    df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
+    # As the No can be considered as absence of Yes, fill the value 'No' with na to keep Yes only
+    df_sub = df_sub.fillna(value='No')
+    # Calculate the count for the column
+    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+
+    # Replace all the 0 with NA
+    df_sub.fillna(value=0, inplace=True)
+    df_sub = df_sub.astype(int)
+    df_sub = df_sub.ix['Yes']
+    df_sub = df_sub.to_frame()
+    df_sub.columns = ['Count']
+
+    df_sub = reorder_nan(df_sub, nan_reorder='end')
+    return df_sub
+
+
+def count_one_choice(df, colnames, file_answer, order_question, rename_columns=False,
+                     dropna=False, normalize=False):
     """
     Count the values of different columns and transpose the count
     :params:
@@ -87,27 +117,28 @@ def count_choice(df, colnames, rename_columns=False,
     :return:
         :result_df pd.df(): dataframe with the count of each answer for each columns
     """
+
     df_sub = df[colnames]
-
-    if rename_columns is True:
-        try:
-            df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
-        except IndexError:
-            pass
-
-    if multiple_choice is True:
-        df_sub = df_sub.fillna(value='No')
-
+    df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    if order_question == 'True':
+        new_question_index = [x.strip('"') for x in get_answer(file_answer)]
+        existing_answer = [x for x in new_question_index if x in df_sub.index]
+        # add back the element from the answer that would not be found in the list of answer
+        # such as Nan and other
+        existing_answer.extend([x for x in df_sub.index.values if x not in new_question_index])
+        # for x in existing_answer:
+        #     print(x, type(x))
+        #     try:
+        #         print(x[0])
+        #     except Exception:
+        #         print('Cannot take the first element')
+        # print([type(x) for x in existing_answer])
+        df_sub.index = existing_answer
 
-    if multiple_choice is True:
-        df_sub.fillna(value=0, inplace=True)
-        df_sub = df_sub.astype(int)
-        df_sub = df_sub.ix['Yes']
-        df_sub = df_sub.to_frame()
-        df_sub.columns = ['Count']
-
-    df_sub = order_answers(df_sub, nan_reorder='end')
+        # df_sub = df_sub.reset_index()
+        # df_sub = reorder_answer(df_sub, new_question_index)
+    df_sub = reorder_nan(df_sub, nan_reorder='end')
     return df_sub
 
 
@@ -148,14 +179,11 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     # Subset the columns
     df_sub = df[colnames]
 
-    if rename_columns is True:
-        try:
-            df_sub.columns = [s.split('[')[2][:-1] for s in colnames]
-        except IndexError:
-            pass
+    df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    # Reorder according to the answers order found in the folder
     if likert_answer:
         likert_answer = [x for x in likert_answer if x in df_sub.index]
         df_sub = df_sub.reindex(index=likert_answer)
@@ -209,8 +237,7 @@ def get_words_count(df, column):
         return "This question does not have values"
 
 
-
-def get_count(df, questions, type_question, file_answer):
+def get_count(df, questions, type_question, file_answer, order_question):
     """
     Choose which type of counting needs to be done
 
@@ -222,6 +249,7 @@ def get_count(df, questions, type_question, file_answer):
     :return:
         df(): of the count value of the questions
     """
+
     if type_question.lower() == 'y/n/na':
         if len(questions) == 1:
             questions = questions[0]
@@ -232,10 +260,10 @@ def get_count(df, questions, type_question, file_answer):
         return count
 
     elif type_question.lower() == 'one choice':
-        return count_choice(df, questions, multiple_choice=False, rename_columns=True)
+        return count_one_choice(df, questions, file_answer, order_question, rename_columns=True)
 
     elif type_question.lower() == 'multiple choices':
-        return count_choice(df, questions, multiple_choice=True, rename_columns=True)
+        return count_multi_choice(df, questions, rename_columns=True)
 
     elif type_question.lower() == 'likert':
         likert_answer = get_answer(file_answer)
@@ -246,17 +274,13 @@ def get_count(df, questions, type_question, file_answer):
         return count_likert(df, questions, likert_answer, rename_columns)
 
     elif type_question.lower() == 'ranking':
-        return count_choice(df, questions, multiple_choice=False, rename_columns=True)
+        return count_one_choice(df, questions, file_answer, order_question, rename_columns=True)
 
     elif type_question.lower() == 'freetext':
         return get_words_count(df, questions)
-        # pass
 
     elif type_question.lower() == 'freenumeric':
         return df[questions]
 
     elif type_question.lower() == 'datetime':
-        pass
-
-    else:
         pass
