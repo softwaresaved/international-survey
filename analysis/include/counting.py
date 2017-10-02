@@ -109,7 +109,7 @@ def remove_code_from_column(df, colnames):
 def count_multi_choice(df, colnames, rename_columns=False, dropna=False, normalize=False):
     """
     """
-    #Subset the dataframe
+    # Subset the dataframe
     df_sub = df[colnames]
     # Rename the column or not
     df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
@@ -243,9 +243,9 @@ def get_percentage(df, dropna=True):
     percent = pd.DataFrame(value, columns=name_df)
     percent.index = index_df
     # if dropna is True:
-        # percent.loc['Proportion of NaN in total'] = percent_na
-        # percent.loc['Proportion of NaN in total'] = percent_na
-        # percent.append(percent_na.rename('Proportion of NaN to the total'))
+    # percent.loc['Proportion of NaN in total'] = percent_na
+    # percent.loc['Proportion of NaN in total'] = percent_na
+    # percent.append(percent_na.rename('Proportion of NaN to the total'))
     return percent
 
 
@@ -259,7 +259,7 @@ def get_words_count(df, column):
         return "This question does not have values"
 
 
-def get_count(df, questions, type_question, file_answer, order_question):
+def get_count(df, questions, type_question, file_answer, order_question, path_to_record=None):
     """
     Choose which type of counting needs to be done
 
@@ -272,7 +272,12 @@ def get_count(df, questions, type_question, file_answer, order_question):
         df(): of the count value of the questions
     """
 
-    df, questions = remove_code_from_column(df, questions)
+    # Only apply the remove_code for the question with one columns
+    # When several columns, the rename_columns is True and get broken
+    # With it. Moreover, as the title doesn't appears anywhere on the plots and
+    # tables, it is not needed.
+    if len(questions) == 1:
+        df, questions = remove_code_from_column(df, questions)
 
     if type_question.lower() == 'y/n/na':
         if len(questions) == 1:
