@@ -84,6 +84,28 @@ def apply_rename_columns(df, colnames, rename):
     return df
 
 
+def remove_code_from_column(df, colnames):
+    """
+    Function to remove the code from the columns.
+    Limesurvey adds the code at the begenning of the string.
+    following this patternd "code1. STRING"
+    Get the dataframe and remove the code to all the columns then
+    return the same dataframe.
+    It also returns a transformed list of colnames as it is needed for
+    later operation
+    :params:
+        :df DataFrame(): Input dataframe
+        :colnames list(): all the columns to be modified
+    :return:
+        :df DataFrame(): The same df with the rename columns
+        :new_col list(): the colnames w/o the code
+    """
+
+    new_col = [s.split('. ')[1:][0] for s in colnames]
+    df.rename(columns=dict(zip(colnames, new_col)), inplace=True)
+    return df, new_col
+
+
 def count_multi_choice(df, colnames, rename_columns=False, dropna=False, normalize=False):
     """
     """
@@ -250,20 +272,21 @@ def get_count(df, questions, type_question, file_answer, order_question):
         df(): of the count value of the questions
     """
 
+    df, questions = remove_code_from_column(df, questions)
+
     if type_question.lower() == 'y/n/na':
         if len(questions) == 1:
             questions = questions[0]
             multiple = False
         else:
             multiple = True
-        count = count_yn(df, questions, multiple=multiple, dropna=False)
-        return count
+        counted_df = count_yn(df, questions, multiple=multiple, dropna=False)
 
     elif type_question.lower() == 'one choice':
-        return count_one_choice(df, questions, file_answer, order_question, rename_columns=True)
+        counted_df = count_one_choice(df, questions, file_answer, order_question, rename_columns=True)
 
     elif type_question.lower() == 'multiple choices':
-        return count_multi_choice(df, questions, rename_columns=True)
+        counted_df = count_multi_choice(df, questions, rename_columns=True)
 
     elif type_question.lower() == 'likert':
         likert_answer = get_answer(file_answer)
@@ -271,16 +294,18 @@ def get_count(df, questions, type_question, file_answer, order_question):
             rename_columns = False
         else:
             rename_columns = True
-        return count_likert(df, questions, likert_answer, rename_columns)
+        counted_df = count_likert(df, questions, likert_answer, rename_columns)
 
     elif type_question.lower() == 'ranking':
-        return count_one_choice(df, questions, file_answer, order_question, rename_columns=True)
+        counted_df = count_one_choice(df, questions, file_answer, order_question, rename_columns=True)
 
     elif type_question.lower() == 'freetext':
-        return get_words_count(df, questions)
+        counted_df = get_words_count(df, questions)
 
     elif type_question.lower() == 'freenumeric':
-        return df[questions]
+        counted_df = df[questions]
 
     elif type_question.lower() == 'datetime':
         pass
+
+    return counted_df
