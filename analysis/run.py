@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
-from include.config import CleaningConfig, NotebookConfig
+from include.config import CleaningConfig, CountingConfig, NotebookConfig
 from include.preprocessing import CleaningData
 from include.generate_notebook import GenerateNotebook
 import nbformat
@@ -30,6 +30,8 @@ def main():
     cleaning_process.write_df()
     cleaning_process.write_config_file()
 
+    # Get the folder to record df
+    folder_df = CountingConfig.folder_df
     # Notebook writing
     notebook_location = '{}{}'.format(NotebookConfig.notebook_folder,
                                       NotebookConfig.notebook_filename)
@@ -54,7 +56,8 @@ def main():
                 #     # notebook.add_question_title(txt)
 
                 if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
-                    notebook.add_count(list_questions, answer_format, file_answer, order_question)
+                    notebook.add_count(list_questions, answer_format, file_answer, order_question,
+                                       folder_df)
                     # Need to specify != likert because if likert item == 1 it uses the barchart
                     # and will plot the percentages even if it doesn't make sense to do that for
                     # a likert scale
@@ -71,11 +74,13 @@ def main():
                     # notebook.add_plot(answer_format)
 
                 if answer_format == 'freenumeric':
-                    notebook.add_count(list_questions, answer_format, file_answer, order_question)
+                    notebook.add_count(list_questions, answer_format, file_answer, order_question,
+                                       folder_df)
                     notebook.add_plot(answer_format)
 
                 if answer_format == 'ranking':
-                    notebook.add_count(list_questions, answer_format, file_answer, order_question)
+                    notebook.add_count(list_questions, answer_format, file_answer, order_question,
+                                       folder_df)
                     notebook.add_percentage()
                     notebook.add_display_percentage()
                     notebook.add_plot(answer_format)
