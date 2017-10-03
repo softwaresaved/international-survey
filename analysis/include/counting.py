@@ -106,6 +106,24 @@ def remove_code_from_column(df, colnames):
     return df, new_col
 
 
+def record_df(df, colnames, path_to_record):
+    """
+    """
+    # if path_to_record:
+    # Create a filename for the file to be saved based on the code of the question
+    unique_code = set(s.split('. ')[0] for s in colnames)
+
+    # code_wo_digit = set(''.join(i for i in s if not i.isdigit()) for s in unique_code)
+    # Some table such as the likert scales regroup several element. If it is the case
+    # it takes the different element within the bracket
+    if '[' in unique_code:
+        bracket_values = set(s.split('[')[1][:-1] for s in unique_code)
+        bracket_wo_digit = set(''.join(i for i in s if not i.isdigit()) for s in bracket_values)
+        filename_path = unique_code + bracket_wo_digit
+    else:
+        filename_path = unique_code
+    print(filename_path)
+
 def count_multi_choice(df, colnames, rename_columns=False, dropna=False, normalize=False):
     """
     """
@@ -276,6 +294,7 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
     # When several columns, the rename_columns is True and get broken
     # With it. Moreover, as the title doesn't appears anywhere on the plots and
     # tables, it is not needed.
+    questions_tokeep_for_writing = questions
     if len(questions) == 1:
         df, questions = remove_code_from_column(df, questions)
 
@@ -313,4 +332,5 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
     elif type_question.lower() == 'datetime':
         pass
 
+    record_df(counted_df, questions_tokeep_for_writing, path_to_record)
     return counted_df
