@@ -91,7 +91,6 @@ class GenerateNotebook(NotebookConfig):
         self._add_text('The total of participant after cleaning the dataset. Remove all participants that have not completed the survey passed the first pages and all participants who are not from the country')
         self._add_code("""len(df)""")
 
-
     def add_section(self, text):
         """
         """
@@ -111,14 +110,14 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         self.count = True
-        count_count = """v_to_count  = get_count(df, {}, "{}", "{}", "{}")""".format(*args)
+        count_count = """v_to_count, filename  = get_count(df, {}, "{}", "{}", "{}", "{}")""".format(*args)
         self._add_code(count_count)
 
     def add_percentage(self):
         """
         """
         self.percent = True
-        percentage_count = """perc_to_count = get_percentage(v_to_count)"""
+        percentage_count = """perc_to_count = get_percentage(v_to_count, filename)"""
         self._add_code(percentage_count)
 
     def add_display_percentage(self):

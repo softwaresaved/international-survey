@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 import pandas as pd
 import numpy as np
 
 from include.likertScalePlot import compute_percentage
 from include.textCleaning import wordcloud
+import itertools as it
 
 
 def get_answer(file_answer):
@@ -106,23 +108,81 @@ def remove_code_from_column(df, colnames):
     return df, new_col
 
 
-def record_df(df, colnames, path_to_record):
+def record_df(df, colnames, path_to_record, percentage=False):
     """
+    Record the produced df into a csv file.
+    It creates an unique filename based on which question the df contains
+    and add all the different questions in the filename in case of
+    multiple question.
+    In the case of percentage == True, it add [perc] at the end of the filename
+    :params:
+        :df DataFrame(): the df containing the data
+        :path_to_record str(): the folder_name where the data will be stored
+        :percentage boo(): if the df contains percentage or not
+    :return:
+        :filename str(): the full filename to pass to percentage_count() later
+        as that function does not have access to the code after cleaning the headers
     """
-    # if path_to_record:
-    # Create a filename for the file to be saved based on the code of the question
-    unique_code = set(s.split('. ')[0] for s in colnames)
+    def get_common_root(input_set):
 
-    # code_wo_digit = set(''.join(i for i in s if not i.isdigit()) for s in unique_code)
-    # Some table such as the likert scales regroup several element. If it is the case
-    # it takes the different element within the bracket
-    if '[' in unique_code:
-        bracket_values = set(s.split('[')[1][:-1] for s in unique_code)
-        bracket_wo_digit = set(''.join(i for i in s if not i.isdigit()) for s in bracket_values)
-        filename_path = unique_code + bracket_wo_digit
-    else:
-        filename_path = unique_code
-    print(filename_path)
+        def extract_common_substring(string1, string2):
+            """
+            To get the common substring between two strings
+            solution found: https://stackoverflow.com/a/18716089
+            """
+            return ''.join(el[0] for el in it.takewhile(lambda t: t[0] == t[1], zip(string1, string2)))
+
+        def extract_unique_substring(string1, string2, common_string):
+            """
+            return both of unique element
+            """
+            return string1.replace(common_string, ''), string2.replace(common_string, '')
+
+        unique_element = list()
+        iter_set = iter(input_set)
+
+        previous_element = next(iter_set)
+        element = next(iter_set)
+        common_substring = extract_common_substring(previous_element, element)
+        unique_substring = extract_unique_substring(element, previous_element, common_substring)
+        for unique in unique_substring:
+            if unique not in unique_element:
+                unique_element.append(unique)
+        previous_element = element
+        for element in input_set:
+            common_substring = extract_common_substring(previous_element, element)
+            unique_substring = extract_unique_substring(element, previous_element, common_substring)
+            for unique in unique_substring:
+                if unique not in unique_element:
+                    unique_element.append(unique)
+            previous_element = element
+        all_unique_element = '_'.join(sorted(unique_element))
+        return common_substring + all_unique_element
+
+    if path_to_record:
+        # Create a filename for the file to be saved based on the code of the question
+        unique_code = set(s.split('. ')[0] for s in colnames)
+        if len(unique_code) > 1:
+            # Some table such as the likert scales regroup several element. If it is the case
+            # it takes the different element within the bracket
+            if any('[' in s for s in unique_code):
+                bracket_values = set(s.split('[')[1][:-1] for s in unique_code)
+                multiple_code = set(s.split('[')[0] for s in unique_code)
+                if any('likert' in s for s in multiple_code):
+                    all_unique_brackets = get_common_root(bracket_values)
+                    filename_path = all_unique_brackets
+                else:
+                    filename_path = '_'.join(multiple_code)
+                    filename_path = list(unique_code)[0].split('[')[0]  # to remove anything btw brackets for some q
+            else:
+                filename_path = get_common_root(unique_code)
+        else:
+            filename_path = list(unique_code)[0].split('[')[0]  # to remove anything btw brackets for some q
+        filename = os.path.join(path_to_record, '{}.{}'.format(filename_path, 'csv'))
+
+        df.to_csv(filename, index=True, encoding='utf-8')
+        return filename
+
 
 def count_multi_choice(df, colnames, rename_columns=False, dropna=False, normalize=False):
     """
@@ -157,7 +217,6 @@ def count_one_choice(df, colnames, file_answer, order_question, rename_columns=F
     :return:
         :result_df pd.df(): dataframe with the count of each answer for each columns
     """
-
     df_sub = df[colnames]
     df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
@@ -231,7 +290,7 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
     return df_sub.transpose()
 
 
-def get_percentage(df, dropna=True):
+def get_percentage(df, filename=None, dropna=True):
     """
     Normalise results to be plotted
     """
@@ -243,7 +302,7 @@ def get_percentage(df, dropna=True):
     if dropna is True:
         # get nan Percentage
         # 'Percentage NaN'
-        # df = df.drop(np.nan, errors='ignore')
+        df = df.drop(np.nan, errors='ignore')
         # For Y/N/NAN the nan values are stored in the column nan
         # drop it for them only
         try:
@@ -260,10 +319,9 @@ def get_percentage(df, dropna=True):
         index_df = ["{} [PERCENTAGE]".format(x) for x in df.index]
     percent = pd.DataFrame(value, columns=name_df)
     percent.index = index_df
-    # if dropna is True:
-    # percent.loc['Proportion of NaN in total'] = percent_na
-    # percent.loc['Proportion of NaN in total'] = percent_na
-    # percent.append(percent_na.rename('Proportion of NaN to the total'))
+    if filename:
+        filename = filename[:-4] + '[PERC]' + '.csv'
+        percent.to_csv(filename, index=True, encoding='utf-8')
     return percent
 
 
@@ -332,5 +390,8 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
     elif type_question.lower() == 'datetime':
         pass
 
-    record_df(counted_df, questions_tokeep_for_writing, path_to_record)
-    return counted_df
+    if path_to_record:
+        file_path = record_df(counted_df, questions_tokeep_for_writing, path_to_record)
+        return counted_df, file_path
+    else:
+        return counted_df, None

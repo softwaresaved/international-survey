@@ -21,7 +21,12 @@ class CleaningConfig:
     normalise = False
 
 
-class PlottingConfig(CleaningConfig):
+class CountingConfig(CleaningConfig):
+    # Folder where to store the dataframe in a csv format
+    folder_df = './uk_2017/output/'
+
+
+class PlottingConfig(CountingConfig):
 
     plot_na = False
     normalise = True
