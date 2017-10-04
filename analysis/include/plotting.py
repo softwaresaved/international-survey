@@ -125,6 +125,11 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=False, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
+
+    y_label = 'Percentages'
+    plt.ylabel(y_label)
+    plt.yticks(np.arange(0, 100, 10))
+
     return plt
 
 
@@ -135,6 +140,8 @@ def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dro
     plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=horizontal, dropna=dropna, legend=legend)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
+    y_label = 'Count'
+    plt.ylabel(y_label)
     return plt
 
 
@@ -208,6 +215,9 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
         # https://stackoverflow.com/a/27084005/3193951
         plt.xlim([-1, len(df.index)])
         plt.xticks(label_ticks, label_txt, rotation=90)
+        y_label = 'Percentages'
+        ax.set_ylabel(y_label)
+        plt.yticks(np.arrange(0, 100, 10))
 
     # Modifying the whitespaces between the bars and the graph
     plt.margins(0.02, 0.02)
@@ -218,6 +228,9 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
 def plot_y_n_single(df, dropna=True):
     """
     """
+
+    y_label = 'Percentages'
+
     if dropna is True:
         df.drop(np.nan, 1, inplace=True, errors='ignore')
     colormap = plt.cm.tab20
@@ -225,6 +238,9 @@ def plot_y_n_single(df, dropna=True):
     df = df.transpose()
     ax = df.plot(kind='bar', stacked=False, color=[colormap(0), colormap(3)],
                  title=df.columns[0], legend=None)
+    ax.set_ylabel(y_label)
+    plt.yticks(np.arange(0, 100, 10))
+
     return ax
 
 
