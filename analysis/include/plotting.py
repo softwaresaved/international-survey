@@ -133,14 +133,19 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     return plt
 
 
-def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, legend=False):
+def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, legend=False, ranking=False):
     """
     """
     # df = df.transpose()
     plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=horizontal, dropna=dropna, legend=legend)
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
-    y_label = 'Count'
+    if ranking is False:
+        y_label = 'Count'
+    else:
+        y_label = 'Percentages'
+        plt.yticks(np.arange(0, 100, 10))
+
     plt.ylabel(y_label)
     return plt
 
@@ -217,7 +222,7 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
         plt.xticks(label_ticks, label_txt, rotation=90)
         y_label = 'Percentages'
         ax.set_ylabel(y_label)
-        plt.yticks(np.arrange(0, 100, 10))
+        plt.yticks(np.arange(0, 100, 10))
 
     # Modifying the whitespaces between the bars and the graph
     plt.margins(0.02, 0.02)
@@ -315,7 +320,7 @@ def get_plot(df, type_question):
             return plot_numeric_var(df)
 
         elif type_question.lower() == 'ranking':
-            return plot_multiple_var(df, stacked=True, horizontal=False, legend=True)
+            return plot_multiple_var(df, stacked=True, horizontal=False, legend=True, ranking=True)
 
         elif type_question.lower() == 'freetext':
             # pass
