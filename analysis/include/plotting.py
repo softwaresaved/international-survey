@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import math
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -34,6 +35,20 @@ def wrap_labels(labels, max_size=20):
         return ''.join(label_to_return)
 
     return [split_at_whitespace(label) for label in labels]
+
+
+def remove_to_right_line(ax):
+    """
+    Remove the top and the right axis
+    """
+    # Ensure that the axis ticks only show up on the bottom and left of the plot.
+    # Ticks on the right and top of the plot are generally unnecessary chartjunk.
+    # Hide the right and top spines
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.get_xaxis().tick_bottom()
+    ax.get_yaxis().tick_left()
+    return ax
 
 
 def plot_bar_char(df, sort_order=False, stacked=False,
@@ -153,6 +168,7 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
     """
     df = df[['Yes', 'No']]
     fig, ax = plt.subplots()
+    ax = remove_to_right_line(ax)
     index = np.arange(len(df))
     colors = plt.cm.tab20
     bar_width = 0.9
@@ -220,7 +236,23 @@ def plot_likert(df):
 def plot_numeric_var(df):
     """
     """
-    return df.hist()
+    print(df.describe())
+    n_bins = 40
+    y_label = 'Frequencies'
+    x_label = 'Values'
+
+    fig, ax = plt.subplots()
+    ax = remove_to_right_line(ax)
+    ax.set_ylabel(y_label)
+    ax.set_xlabel(x_label)
+    ax.hist(df.dropna().values, n_bins, normed=False, edgecolor='grey', linewidth=1)
+    min_value = int(math.floor(min(df.dropna().values)))
+    max_value = int(math.ceil(max(df.dropna().values)))
+    step = int(math.ceil((max_value - min_value) / n_bins))
+    plt.xticks(np.arange(min_value, max_value +1, step))
+    # ax.boxplot(df.dropna().values)
+
+    return fig
 
 
 def plot_freetext(wc):
