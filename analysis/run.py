@@ -67,11 +67,11 @@ def main():
                     else:
                         notebook.add_display_count()
                     notebook.add_plot(answer_format)
-                #
-                # if answer_format == 'freetext':
-                #     notebook.add_wordcloud(list_questions)
-                #     # notebook.add_count(list_questions, answer_format, file_answer)
-                #     # notebook.add_plot(answer_format)
+
+                if answer_format == 'freetext':
+                    notebook.add_wordcloud(list_questions)
+                    # notebook.add_count(list_questions, answer_format, file_answer)
+                    # notebook.add_plot(answer_format)
                 #
                 # if answer_format == 'freenumeric':
                 #     notebook.add_count(list_questions, answer_format, file_answer, order_question,

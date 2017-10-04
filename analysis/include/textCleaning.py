@@ -34,7 +34,9 @@ def wordcloud(df, column):
     # The width and the height match the comfiguration in generate_notebook for the size
     # of the plot width=15.0, height=8.0 inch with 100 DPI. be careful not changning these
     # value without modifying the corresponding value in _setup_matplotlib() in generate_notebook.py
-    return WordCloud(background_color='white', width=1500, height=800).generate(cleaned_txt)
+    all_words = WordCloud(background_color='white', width=1500, height=800).generate(cleaned_txt)
+    print(all_words)
+    return all_words
 
 
 if __name__ == "__main__":
