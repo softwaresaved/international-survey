@@ -149,7 +149,7 @@ def plot_discrete():
     pass
 
 
-def plot_y_n_multiple(df, sort_order='Yes', horizontal=True,
+def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
                       legend=True, set_label=False):
     """
     Plotting Y-N values as stacked bars when passed several questions at the same time.
