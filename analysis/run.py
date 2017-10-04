@@ -55,7 +55,7 @@ def main():
                 # for txt in original_question:
                 #     # notebook.add_question_title(txt)
 
-                if answer_format not in ['freetext', 'freenumeric', 'datetime', 'ranking']:
+                if answer_format not in ['freetext', 'datetime']:
                     notebook.add_count(list_questions, answer_format, file_answer, order_question,
                                        folder_df)
                     # Need to specify != likert because if likert item == 1 it uses the barchart
@@ -67,23 +67,23 @@ def main():
                     else:
                         notebook.add_display_count()
                     notebook.add_plot(answer_format)
-
-                if answer_format == 'freetext':
-                    notebook.add_wordcloud(list_questions)
-                    # notebook.add_count(list_questions, answer_format, file_answer)
-                    # notebook.add_plot(answer_format)
-
-                if answer_format == 'freenumeric':
-                    notebook.add_count(list_questions, answer_format, file_answer, order_question,
-                                       folder_df)
-                    notebook.add_plot(answer_format)
-
-                if answer_format == 'ranking':
-                    notebook.add_count(list_questions, answer_format, file_answer, order_question,
-                                       folder_df)
-                    notebook.add_percentage()
-                    notebook.add_display_percentage()
-                    notebook.add_plot(answer_format)
+                #
+                # if answer_format == 'freetext':
+                #     notebook.add_wordcloud(list_questions)
+                #     # notebook.add_count(list_questions, answer_format, file_answer)
+                #     # notebook.add_plot(answer_format)
+                #
+                # if answer_format == 'freenumeric':
+                #     notebook.add_count(list_questions, answer_format, file_answer, order_question,
+                #                        folder_df)
+                #     notebook.add_plot(answer_format)
+                #
+                # if answer_format == 'ranking':
+                #     notebook.add_count(list_questions, answer_format, file_answer, order_question,
+                #                        folder_df)
+                #     notebook.add_percentage()
+                #     notebook.add_display_percentage()
+                #     notebook.add_plot(answer_format)
 
     print('Running notebook')
     notebook.run_notebook()
