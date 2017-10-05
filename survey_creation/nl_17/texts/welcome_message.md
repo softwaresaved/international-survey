@@ -1,13 +1,17 @@
-\[THIS IS FOR DEMO PURPOSE ONLY -- PLEASE DO NOT SHARE\] {this-is-for-demo-purpose-only----please-do-not-share}
-========================================================
+NL-RSE Survey
+=============
 
-**The purpose of this survey is to collect information about people who develop software that is used in research. We call these people *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers), but they use many different job titles (including postdoctoral researcher and research assistant).**
+**The purpose of this survey is to collect information about people who develop software that is used in research. We call these people *[Research Software 
+Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* 
+[(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers), but they use many different job titles (including postdoctoral researcher and research 
+assistant).**
 
 Why did I receive this invitation?
 ----------------------------------
 
-You have received this link because you are a member of the UK RSE Association or you were identified as someone working in an RSE role.
-There is currently little reliable information about the RSE community, so we have been asked to collect this information to help funders and other research organisations develop policies that will support RSEs.
+You have received this link because you are working at an organisation in the Netherlands that may employ people who could identify as Research Software Engineer.
+There is currently very little reliable information about the RSE community in the Netherlands,
+so we have been asked to collect this information to help funders and other research organisations develop policies that will support RSEs.
 This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.
 
 Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.
