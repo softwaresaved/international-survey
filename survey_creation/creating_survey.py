@@ -172,7 +172,10 @@ class surveyCreation:
                 the language 'en' is always the first element to the list
         """
         languages = main_config.languages
-        languages.append(self.specific_config.languages_to_add)
+        try:  # Only add language if the option is in the config file
+            languages.append(self.specific_config.languages_to_add)
+        except AttributeError:
+            pass
         return languages
 
     @staticmethod
