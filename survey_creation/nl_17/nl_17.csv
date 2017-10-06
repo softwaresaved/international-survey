@@ -1,4 +1,4 @@
-section,code,question,answer_format,answer_file,order_question,conditional,source,comment,lang_trans1,lang_trans2,lang_trans3,Other
+section,code,question,answer_format,answer_file,order_question,condition,source,comment,lang_trans1,lang_trans2,lang_trans3,Other
 1,socio1,In which country do you work?,ONE CHOICE,countries,FALSE,,https://github.com/datasets/country-list,,,,,
 1,edu1,What is the highest qualification you have obtained?,ONE CHOICE,education_nl,TRUE,,,,,,,
 1,edu2,In which subject is your highest academic qualification?,ONE CHOICE,academic_field,FALSE,if qualification,http://www.thecompleteuniversityguide.co.uk/courses,,,,,
