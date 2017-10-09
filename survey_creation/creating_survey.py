@@ -172,7 +172,10 @@ class surveyCreation:
                 the language 'en' is always the first element to the list
         """
         languages = main_config.languages
-        languages.append(self.specific_config.languages_to_add)
+        try:  # Only add language if the option is in the config file
+            languages.append(self.specific_config.languages_to_add)
+        except AttributeError:
+            pass
         return languages
 
     @staticmethod
@@ -362,7 +365,6 @@ class surveyCreation:
             question['other'] = 'N'
 
         if row['mandatory'] == 'Y':
-            print(row['code'])
             question['mandatory'] = 'Y'
         else:
             question['mandatory'] = ''
@@ -406,6 +408,7 @@ class surveyCreation:
         Create the answer itself
         """
         n = 1
+        print(row['code'])
         for text_answer in self.get_answer(self.project, row['answer_file']):
             if type_question == 'one choice':
                 answer_row = main_config.one_choice_answer
