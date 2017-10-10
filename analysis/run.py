@@ -3,7 +3,7 @@
 import sys
 import getopt
 import pandas as pd
-from include.config import CleaningConfig, CountingConfig, NotebookConfig
+from include.config import CountingConfig, NotebookConfig
 from include.preprocessing import CleaningData
 from include.generate_notebook import GenerateNotebook
 import nbformat
@@ -38,7 +38,8 @@ def get_arguments(argv):
         elif opt in ('-y', '--year'):
             year = arg
     if country and year:
-        return country, year
+        folder_path = os.path.join(year, country)
+        return folder_path
     else:
         print('Need a country and a year. Please use the following command:\n' +
               '\trun.py -c <country> -y <year>')
@@ -49,20 +50,7 @@ def main():
     pd.set_option('display.max_rows', 300)
 
     # Get which country and which year to create the analysis
-    country, year = get_arguments(sys.argv[1:])
-
-    # Getting the different location files from the config file and
-    folder = '{}_{}'.format(year, country)
-
-
-    # Load dataset
-    df = pd.read_csv(CleaningConfig.raw_data)
-
-    # Cleaning_process
-    cleaning_process = CleaningData(df)
-    df = cleaning_process.cleaning()
-    cleaning_process.write_df()
-    cleaning_process.write_config_file()
+    folder = get_arguments(sys.argv[1:])
 
     # Get the folder to record df
     folder_df = CountingConfig.folder_df
