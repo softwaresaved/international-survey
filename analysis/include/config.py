@@ -6,6 +6,9 @@
 
 
 class CleaningConfig:
+    def __init__(self, country, year):
+        self.country = country
+        self.year = year
 
     # Unprocessed dataset
     raw_data = './uk_2017/data/raw_results-survey245554.csv'
@@ -36,7 +39,6 @@ class PlottingConfig(CountingConfig):
 
 
 class NotebookConfig(PlottingConfig):
-
     notebook_folder = './uk_2017/'
     notebook_filename = 'notebook.ipynb'
     notebook_html = 'notebook.html'
