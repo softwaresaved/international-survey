@@ -1,7 +1,7 @@
 \[THIS IS FOR DEMO PURPOSE ONLY -- PLEASE DO NOT SHARE\] {this-is-for-demo-purpose-only----please-do-not-share}
 ========================================================
 
-**The purpose of this survey is to collect information about people who develop software that is used in research. We call these people *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers), but they use many different job titles (including research programmer, facilitator, postdoctoral researcher and research assistant).**
+**The purpose of this survey is to collect information about people who develop software that is used in research. We call these people *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers), but they use many different job titles (including research programmer, facilitator, postdoctoral researcher, and research assistant).**
 
 Why did I receive this invitation?
 ----------------------------------
