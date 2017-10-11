@@ -24,7 +24,7 @@ section,code,question,answer_format,answer_file,other,conditional,mandatory,rand
 2,currentEmp9,When did you start your current contract,DATETIME,,,,,,,,,,,
 2,currentEmp11,What is the duration of your current contract?,FREENUMERIC,,,,,,,,,,,
 2,currentEmp13,In which disciplines do you work (select as many as apply),MULTIPLE CHOICES,academic_field,,,,,FALSE,Same source as for academic field,,,,
-3,prevEmp1,Where was your previous job based?,ONE CHOICE,type_organisation,,,,,FALSE,,,,,
+3,prevEmp1,Where was your previous job based?,ONE CHOICE,previous_job,,,,,FALSE,,,,,
 3,prevEmp2,Rank the following factors dependent on how strongly they influenced your decision to accept your current position ,Ranking,reason_leave_job,,,,,FALSE,"RSE interviews, review main features that people liked in their job",,,,
 4,currentWork1,"Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? ",ONE CHOICE,work_researchers,,,,,FALSE,,,,,
 4,currentWork2,Do you work for a Research Software Group?,Y/N/NA,,,,,,,,,,,
