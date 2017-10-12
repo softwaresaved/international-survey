@@ -82,7 +82,7 @@
 "5","affSat1","I find real enjoyment in my job","LIKERT","likert_agree","","Y","Y","","","done","Ich genieße meine Arbeit.","",""
 "5","affSat2","Most days I am enthusiastic about my job","LIKERT","likert_agree","","Y","Y","","","done","An den meisten Tagen gehe ich entusiastisch an die Arbeit.","",""
 "5","affSat3","I feel fairly well satisfied with my job","LIKERT","likert_agree","","Y","Y","","","done","Ich fühle mich zufrieden mit meiner Arbeit.","",""
-"5","affSat4","I like my job better than the average person","LIKERT","likert_agree","","Y","Y","","","done","Ich mag meine Arbeit mehr als andere Personen.","",""
+"5","affSat4","I like my job better than the average person","LIKERT","likert_agree","","Y","Y","","","done","Ich mag meine Arbeit mehr als andere Personen ihre Arbeit mögen.","",""
 "5","satisgen1","In general, how satisfied are you with Your current position","LIKERT","likert_satisfied_10","","","Y","","","done","Wie bist Du mit Deiner Position insgesamt zufrieden?","",""
 "5","satisgen2","In general, how satisfied are you with Your career","LIKERT","likert_satisfied_10","","","Y","","","done","Wie bist Du insgesamt mit Deiner Karriere zufrieden?","",""
 "6","socio2","Please select your gender","ONE CHOICE","gender","Y","","","","https://www.gov.uk/service-manual/user-centred-design/resources/patterns/gender-and-sex.html","done","Dein Geschlecht","",""
