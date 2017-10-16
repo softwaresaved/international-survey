@@ -6,6 +6,6 @@ While all answers in the survey (on previous pages) have been anonymous, please 
 
 If you are interested in joining a US RSE organization (or at least getting some occasional mail about or from such an organization), please send an email to [majordomo@ncsa.illinois.edu](mailto:majordomo@ncsa.illinois.edu) with content "subscribe us-rse"
 
-If you are interested in organizing a potential US RSE group, please go [here](https://goo.gl/forms/n8sZUtLTFinL4xsu1)
+If you are interested in organizing a potential US RSE group, please go [here](https://goo.gl/forms/n8sZUtLTFinL4xsu1).
 
 
