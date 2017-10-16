@@ -24,6 +24,7 @@ from config.config import creationConfig as main_config
 import importlib
 from random import shuffle
 from markdown import markdown
+from bs4 import BeautifulSoup
 
 RUNNING = 'dev'
 
@@ -206,7 +207,14 @@ class surveyCreation:
             folder = os.path.join(self.project, 'texts')
             path = os.path.join(folder, filename)
             with open(path, 'r') as f:
-                return markdown(f.read())
+                html_file = markdown(f.read())
+
+            # Need to add target="_blank" to the link for opening in new tab in limesurvey
+            soup = BeautifulSoup(html_file, 'html.parser')
+            links = soup.find_all('a')
+            for link in links:
+                link['target'] = '_blank'
+            return soup
 
         for lang in self.languages:
             # All these None are a workaround to fix the bug that add
