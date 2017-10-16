@@ -19,3 +19,27 @@ Martin Hammitzsch und Stephan Janosch
 
 [1] http://www.de-rse.org/de/join.html
 [2] http://www.de-rse.org/de/blog.html
+
+-------------------------------------------------------------
+
+Survey about research software in Germany and people involved
+
+Hello,
+
+Do you develop research software or you are involved in the scientific software creation process? Than we would be glad if you could do this years survey: https://softwaresaved.limequery.com/000000?lang=en
+
+Right now we don't have much knowledge about the community of software developing people in research and science. This survey should help to gather insights in order to support research funders and other institutions to develop strategies and funding programs as well as policies.
+
+This survey gives you the opportunity to include your view and thus be part of the development.
+
+In case you know others who develop software in research then feel free to forward this invitation. If you forward this mail to a mailing list, then please be so kind and put Martin or Stephan into CC.
+
+The survey results will be published under CC BY-NC licence and published at the de-RSE mailing list [3] as well as on the de-RSE blog [4]. Right now similar surveys are done as well in UK, Canada, Australia, Norway, The Netherlands, USA and South Africa. For better comparison this survey was closely coordinated with the others.
+
+It would be nice if you could take part in the survey!
+
+ Many thanks,
+ Martin Hammitzsch and Stephan Janosch
+
+ [3] http://www.de-rse.org/en/join.html
+ [4] http://www.de-rse.org/en/blog.html
