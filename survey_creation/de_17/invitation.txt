@@ -10,7 +10,7 @@ Die Umfrage gibt Dir die Möglichkeit, Deine Sicht und Erfahrung mit einfließen
 
 Du kennst Andere, die Software im Umfeld von Forschung und Wissenschaft entwickeln? Dann informiere sie bitte über diese Umfrage! Nur eine rege Teilnahme und Antworten, die von überall aus Deutschland kommen und die unterschiedlichsten Bereiche repräsentieren, gewährleisten einen umfassenden Einblick zu diesem Thema. Sollte diese E-Mail von Dir an Mailinglisten weitergeleitet werden, dann nehmt uns, Stephan (*E-Mail-Adresse hier einfügen!*) und Martin (*E-Mail-Adresse hier einfügen!*), bitte ins Cc, damit wir dies bei der Auswertung der Umfrage berücksichtigen können.
 
-Die Ergebnisse werden unter einer CC-BY-NC Lizenz (*welche Version?*) veröffentlicht und zusätzlich auf der de-RSE Mailingliste [1] und dem de-RSE Blog [2] angekündigt und ausgewertet. Darüber hinaus werden ähnliche Umfragen in Großbritannien, Kanada, Australien, Norwegen, den USA, Südafrika und den Niederlanden durchgeführt. Um eine gute Vergleichbarkeit gewährleisten zu können wurde die Gestaltung der deutschen Umfrage in enger Abstimmung mit diesen Umfragen durchgeführt.
+Die Ergebnisse werden unter einer CC-BY-NC Lizenz veröffentlicht und zusätzlich auf der de-RSE Mailingliste [1] und dem de-RSE Blog [2] angekündigt und ausgewertet. Darüber hinaus werden ähnliche Umfragen in Großbritannien, Kanada, Australien, Norwegen, den USA, Südafrika und den Niederlanden durchgeführt. Um eine gute Vergleichbarkeit gewährleisten zu können wurde die Gestaltung der deutschen Umfrage in enger Abstimmung mit diesen Umfragen durchgeführt.
 
 Wir freuen uns über Eure Teilnahme!
 
@@ -34,7 +34,7 @@ This survey gives you the opportunity to make your point of view and experiences
 
 In case you know others who develop software in research, please feel free to forward this invitation. If you forward this mail to a mailing list, please be so kind and copy in Martin (*email address here!*) and Stephan (*email address here!*).
 
-The survey results will be published under a CC-BY-NC license (*which one?*), and announced and evaluated via the de-RSE mailing list [3] and the de-RSE blog [4]. Simultaneously, similar surveys are conducted in the UK, Canada, Australia, Norway, the Netherlands, the USA and South Africa. For reasons of comparability, this survey was closely coordinated with the others.
+The survey results will be published under a CC-BY-NC license , and announced and evaluated via the de-RSE mailing list [3] and the de-RSE blog [4]. Simultaneously, similar surveys are conducted in the UK, Canada, Australia, Norway, the Netherlands, the USA and South Africa. For reasons of comparability, this survey was closely coordinated with the others.
 
 We look forward to your participation in the survey!
 
