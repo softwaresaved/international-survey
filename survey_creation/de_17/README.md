@@ -21,6 +21,10 @@ timeline
   * 20th-22nd correction call Martin, Olivier and Stephan
   * 27th ethics done
   * 29th go live
+  
+  October 2017
+  
+  * 17 go live
 
     
 People doing work here
