@@ -1,7 +1,5 @@
 import pandas as pd
 import csv
-import os
-import glob
 import numpy as np
 
 
@@ -9,16 +7,33 @@ def get_answer_item(path_to_file):
     """
     """
     filename = '{}{}'.format(path_to_file, '.csv')
-    print(filename)
     with open(filename) as f:
         # Set the delimiter as : to avoid taking
         # the comma as delimiter
         reader = csv.reader(f, delimiter=';')
         return [i[0] for i in reader]
 
+def writing_new_dict(new_dict, root_file_answer):
+    filename = root_file_answer + 'questions.csv'
+    keys = list(new_dict[0].keys())
+    with open(filename, 'w') as output_file:
+        dict_writer = csv.DictWriter(output_file, keys)
+        dict_writer.writeheader()
+        dict_writer.writerows(new_dict)
 
 
-root_file_answer = '../../survey_creation/2016/uk/listAnswers/'
+def write_new_answer(difference, root_file_answer, code):
+    filename = root_file_answer + code + '.csv'
+    print(difference)
+    with open(filename, 'w') as f:
+        for i in difference:
+            f.write(i)
+            f.write('\n')
+
+
+
+root_file = '../../survey_creation/2016/uk/'
+root_file_answer = root_file + 'listAnswers/'
 
 # Create a dictionary containing the data about the questions
 complete_dict = list()
@@ -39,18 +54,30 @@ for row in complete_dict:
 
 new_df = df[subsetting_list]
 # Subsetting the data to only have the data that contains information.
+new_list_question = list()
 for col in new_df:
     for row in complete_dict:
         if '{}. {}'.format(row['code'], row['questions']) == col:
-            # print(col, row['file_17'])
             if row['answer_format'].lower() == 'one choice':
-
                 answers = get_answer_item('{}{}'.format(root_file_answer, row['file_17']))
-                difference = set(new_df[col].unique()).difference(set(answers))
-                difference.remove(np.NaN)
-                if len(difference) > 0:
-
+                new_answer = new_df[col].unique().remove(np.NaN)
+                print(new_answer)
+                try:
+                    difference = new_answer.difference(set(answers))
                     print(difference)
+                except AttributeError:
+                    difference = []
+                    pass
+                if len(difference) > 0:
+                    write_new_answer(new_answer, root_file_answer, row['code'])
+                    row['file_answer'] = row['code']
+                else:
+                    row['file_answer'] = row['file_17']
+            else:
+                row['file_answer'] = row['file_17']
+        new_list_question.append(row)
 
-                # print(col, row['file_17'])
+
+
+writing_new_dict(new_list_question, root_file)
 
