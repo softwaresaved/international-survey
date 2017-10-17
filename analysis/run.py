@@ -4,8 +4,8 @@ import sys
 import getopt
 import pandas as pd
 from include.config import CountingConfig, NotebookConfig
-from include.preprocessing import CleaningData
 from include.generate_notebook import GenerateNotebook
+from include.get_arguments import get_arguments
 import nbformat
 from nbconvert import HTMLExporter
 import codecs
@@ -19,31 +19,6 @@ in the same folder
 """
 
 
-def get_arguments(argv):
-    """
-    """
-    country = None
-    year = None
-    try:
-        opts, args = getopt.getopt(argv, 'hc:y:', ['country=', 'year='])
-    except getopt.GetoptError:
-        print('run.py -c <country> -y <year>')
-        sys.exit(2)
-    for opt, arg in opts:
-        if opt == '-h':
-            print('run.py -c <country> -y <year>')
-            sys.exit()
-        elif opt in ('-c', '--country'):
-            country = arg
-        elif opt in ('-y', '--year'):
-            year = arg
-    if country and year:
-        folder_path = os.path.join(year, country)
-        return folder_path
-    else:
-        print('Need a country and a year. Please use the following command:\n' +
-              '\trun.py -c <country> -y <year>')
-        sys.exit(2)
 
 def main():
 

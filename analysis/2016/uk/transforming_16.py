@@ -27,7 +27,7 @@ def write_new_answer(difference, root_file_answer, code):
     print(difference)
     with open(filename, 'w') as f:
         for i in difference:
-            f.write(i)
+            f.write(str(i))
             f.write('\n')
 
 
@@ -60,11 +60,14 @@ for col in new_df:
         if '{}. {}'.format(row['code'], row['questions']) == col:
             if row['answer_format'].lower() == 'one choice':
                 answers = get_answer_item('{}{}'.format(root_file_answer, row['file_17']))
-                new_answer = new_df[col].unique().remove(np.NaN)
-                print(new_answer)
+                new_answer = set(new_df[col].unique())
+                try:
+                    new_answer.remove(np.NaN)
+                except KeyError:
+                    pass
                 try:
                     difference = new_answer.difference(set(answers))
-                    print(difference)
+                    # print(difference)
                 except AttributeError:
                     difference = []
                     pass
