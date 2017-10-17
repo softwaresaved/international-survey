@@ -6,52 +6,61 @@
 
 
 class CleaningConfig:
-    def __init__(self, country, year):
+
+    def __init__(self, year, country):
         self.country = country
         self.year = year
 
-    # Unprocessed dataset
-    raw_data = './uk_2017/data/raw_results-survey245554.csv'
-    # load the different answers to questions to classify questions based on that
-    question_file = './../survey_creation/uk_17/uk_17.csv'
-    answer_folder = './../survey_creation/uk_17/listAnswers'
-    # Location for the json file of all questions
-    json_to_plot_location = './uk_2017/data/to_plot.json'
-    cleaned_df_location = './uk_2017/data/cleaned_data.csv'
-    section_nbr_to_keep_after = 1
-    country_to_keep = 'United Kingdom'
-    count_na = True
-    normalise = False
+        # Unprocessed dataset
+        self.raw_data = './{}/{}/data/raw_data.csv'.format(self.year, self.country)
+        # load the different answers to questions to classify questions based on that
+        self.question_file = './../survey_creation/{}/{}/questions.csv'.format(self.year, self.country)
+        self.answer_folder = './../survey_creation/{}/{}/listAnswers'.format(self.year, self.country)
+        # Location for the json file of all questions
+        self.json_to_plot_location = './{}/{}/data/to_plot.json'.format(self.year, self.country)
+        self.cleaned_df_location = './{}/{}/data/cleaned_data.csv'.format(self.year, self.country)
+        self.section_nbr_to_keep_after = 1
+        self.country_to_keep = 'United Kingdom'
+        self.count_na = True
+        self.normalise = False
 
 
 class CountingConfig(CleaningConfig):
-    # Folder where to store the dataframe in a csv format
-    folder_df = './uk_2017/output/'
+
+    def __init__(self):
+        super().__init__()
+
+        # Folder where to store the dataframe in a csv format
+        self.folder_df = './{}/{}/output/'.format(self.year, self.country)
 
 
 class PlottingConfig(CountingConfig):
 
-    plot_na = False
-    normalise = True
-    # Different than normalise, add a freq_table with percentage
-    # in addition of the table with counts
-    show_percent = True
+    def __init__(self):
+        super().__init__()
+        self.plot_na = False
+        self.normalise = True
+        # Different than normalise, add a freq_table with percentage
+        # in addition of the table with counts
+        self.show_percent = True
 
 
 class NotebookConfig(PlottingConfig):
-    notebook_folder = './uk_2017/'
-    notebook_filename = 'notebook.ipynb'
-    notebook_html = 'notebook.html'
-    allow_errors = True
-    to_import = ['import pandas as pd',
-                 'import numpy as np',
-                 'import matplotlib',
-                 'import matplotlib.pyplot as plt',
-                 'from IPython.display import display',
-                 'import IPython.core.display as di',
-                 'from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
-                 'from include.counting import get_count, get_percentage',
-                 'from include.plotting import get_plot, display_side_by_side',
-                 'from include.likertScalePlot import likert_scale',
-                 'from include.textCleaning import wordcloud']
-    processing_options = {'metadata': {'path': './'}}
+
+    def __init__(self):
+        super().__init__()
+        self.notebook_filename = '{}_{}.ipynb'.format(self.country, self.year)
+        self.notebook_html = '{}_{}.html'.format(self.country, self.year)
+        self.allow_errors = True
+        self.to_import = ['import pandas as pd',
+                          'import numpy as np',
+                          'import matplotlib',
+                          'import matplotlib.pyplot as plt',
+                          'from IPython.display import display',
+                          'import IPython.core.display as di',
+                          'from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
+                          'from include.counting import get_count, get_percentage',
+                          'from include.plotting import get_plot, display_side_by_side',
+                          'from include.likertScalePlot import likert_scale',
+                          'from include.textCleaning import wordcloud']
+        self.processing_options = {'metadata': {'path': './'}}
