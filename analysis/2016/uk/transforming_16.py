@@ -32,12 +32,12 @@ def write_new_answer(difference, root_file_answer, code):
 
 
 
-root_file = '../../survey_creation/2016/uk/'
+root_file = '../../../survey_creation/2016/uk/'
 root_file_answer = root_file + 'listAnswers/'
 
 # Create a dictionary containing the data about the questions
 complete_dict = list()
-with open("../../survey_creation/2016/uk/question_2.csv") as f:
+with open("../../../survey_creation/2016/uk/question_2.csv") as f:
     complete_file = csv.DictReader(f)
     for row in complete_file:
         complete_dict.append(row)
@@ -53,6 +53,7 @@ for row in complete_dict:
     df.rename(columns={row['Original title']: new_col_name}, inplace=True)
 
 new_df = df[subsetting_list]
+new_df.to_csv('./data/cleaned_data.csv')
 # Subsetting the data to only have the data that contains information.
 new_list_question = list()
 for col in new_df:

@@ -21,10 +21,10 @@ class CleaningData(CleaningConfig):
     that take all the questions headers from limesurvey data and match them
     with the question file to enable automatic process during the plotting
     """
-    def __init__(self, df):
+    def __init__(self, year, country, df):
         """
         """
-        super().__init__()
+        super().__init__(year, country)
         self.df = df
         self.answers_item_dict = self.get_answer_item(self.answer_folder)
 
@@ -32,13 +32,22 @@ class CleaningData(CleaningConfig):
         """
         Launch the different steps needed to clean the df
         """
-        self.df = self.dropping_dead_participant(self.df)
-        self.df = self.dropping_lime_useless(self.df)
+        try:
+            self.df = self.dropping_dead_participant(self.df)
+        except KeyError:
+            pass
+        try:
+            self.df = self.dropping_lime_useless(self.df)
+        except ValueError:
+            pass
         self.df = self.cleaning_columns_white_space(self.df)
         self.df = self.cleaning_missing_na(self.df)
         # self.df = self.fixing_satisQuestion(self.df)
         self.df = self.duplicating_other(self.df)
-        self.df = self.remove_not_right_country(self.df)
+        try:
+            self.df = self.remove_not_right_country(self.df)
+        except KeyError:
+            pass
         self.df = self.remove_empty_column(self.df)
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
@@ -59,7 +68,6 @@ class CleaningData(CleaningConfig):
         """
         return df[df['socio1. In which country do you work?'] == self.country_to_keep]
 
-
     def fixing_satisQuestion(self, df):
         """
         For the uk 2017, a mistake on how to display the question
@@ -75,7 +83,6 @@ class CleaningData(CleaningConfig):
         This function just replace the text within the bracket to match the ideal case
         """
         return df
-
 
     def get_survey_structure(self):
         """
@@ -230,7 +237,6 @@ class CleaningData(CleaningConfig):
 
         for col in df.columns:
             code = get_question_code(col, 0)
-            print(code)
             try:
                 input_dict[code].setdefault('survey_q', []).append(col)
             except KeyError:
@@ -334,6 +340,8 @@ class CleaningData(CleaningConfig):
             yield group_survey_q, group_original_question, previous_answer_format, file_answer, previous_order_question
 
         def dictionary_by_section(input_dict):
+            for k in input_dict:
+                print(k, input_dict[k])
             output_dict = dict()
             for q in input_dict:
                 try:
@@ -345,6 +353,7 @@ class CleaningData(CleaningConfig):
                     output_dict.setdefault(section, {}).setdefault(root_code, {}).update(question)
                 except KeyError:
                     pass
+            print(output_dict)
             return output_dict
 
         def grouping_question(input_dict):
@@ -402,7 +411,7 @@ class CleaningData(CleaningConfig):
     def write_config_file(self):
         """
         """
-        dict_to_write = self.survey_structure
+        dict_to_write = self.structure_by_question
         with open(self.json_to_plot_location, 'w') as f:
             json.dump(dict_to_write, f)
 

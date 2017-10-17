@@ -22,7 +22,7 @@ def main():
 
     cleaning_config = CleaningConfig(year, country)
     df = pd.read_csv(cleaning_config.raw_data)
-    cleaning_process = CleaningData(df)
+    cleaning_process = CleaningData(year, country, df)
     df = cleaning_process.cleaning()
     cleaning_process.write_df()
     cleaning_process.write_config_file()
