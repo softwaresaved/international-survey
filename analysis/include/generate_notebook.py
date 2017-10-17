@@ -17,9 +17,10 @@ Use the code from: https://gist.github.com/fperez/9716279
 class GenerateNotebook(NotebookConfig):
     """
     """
-    def __init__(self, notebook_filename):
+    def __init__(self, year, country, notebook_filename):
         """
         """
+        super().__init__(year, country)
         self.outfilename = notebook_filename
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()

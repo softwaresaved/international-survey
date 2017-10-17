@@ -27,8 +27,8 @@ class CleaningConfig:
 
 class CountingConfig(CleaningConfig):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, year, country):
+        super().__init__(year, country)
 
         # Folder where to store the dataframe in a csv format
         self.folder_df = './{}/{}/output/'.format(self.year, self.country)
@@ -36,8 +36,8 @@ class CountingConfig(CleaningConfig):
 
 class PlottingConfig(CountingConfig):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, year, country):
+        super().__init__(year, country)
         self.plot_na = False
         self.normalise = True
         # Different than normalise, add a freq_table with percentage
@@ -47,8 +47,8 @@ class PlottingConfig(CountingConfig):
 
 class NotebookConfig(PlottingConfig):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, year, country):
+        super().__init__(year, country)
         self.notebook_filename = '{}_{}.ipynb'.format(self.country, self.year)
         self.notebook_html = '{}_{}.html'.format(self.country, self.year)
         self.allow_errors = True
