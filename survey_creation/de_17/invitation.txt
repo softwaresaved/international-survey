@@ -2,17 +2,17 @@ Umfrage zu Forschungssoftware / wissenschaftlicher Software in Deutschland und d
 
 Hallo,
 
-Du entwickelst Software in Forschung und Wissenschaft oder bist anderweitig in die wissenschaftliche Softwareentwicklung eingebunden. Dann würden wir uns freuen, wenn Du an folgender Umfrage teilnimmst: https://softwaresaved.limequery.com/000000?lang=de
+Du entwickelst Software in Forschung und Wissenschaft, oder bist anderweitig in die wissenschaftliche Softwareentwicklung eingebunden? Dann würden wir uns freuen, wenn Du an folgender Umfrage teilnimmst: https://softwaresaved.limequery.com/000000?lang=de!
 
-Derzeit gibt es kaum zuverlässige Informationen über die Gemeinschaft der Software entwickelnden Personen in Forschung und Wissenschaft. Diese Umfrage soll helfen, Informationen zu erhalten und Förderorganisationen und Wissenschaftseinrichtungen bei der Entwicklung von Strategien und Förderprogrammen sowie von Leit- und Richtlinien mit den Ergebnissen dieser Umfrage zu unterstützen.
+Derzeit gibt es kaum zuverlässige Informationen über die Gemeinschaft der Software entwickelnden Personen in Forschung und Wissenschaft. Die Umfrage soll dabei helfen, Einblicke in und Informationen über diese Gemeinschaft zu gewinnen, um mit diesen Ergebnissen Förderorganisationen und Wissenschaftseinrichtungen bei der Entwicklung von Strategien und Förderprogrammen sowie von Leit- und Richtlinien unterstützen zu können.
 
-Die Umfrage gibt Dir die Möglichkeit Deine Sicht und Erfahrungen einfließen zu lassen und damit an der zukünftigen Gestaltung teilzuhaben.
+Die Umfrage gibt Dir die Möglichkeit, Deine Sicht und Erfahrung mit einfließen zu lassen und damit an der zukünftigen Gestaltung der Community teilzuhaben.
 
-Du kennst Andere, die Software im Umfeld von Forschung und Wissenschaft entwickeln. Dann lass sie bitte von dieser Umfrage wissen. Nur die rege Teilnahme und Antworten, die quer aus Deutschland und den unterschiedlichsten Bereichen kommen, gewährleisten einen umfassenden Eindruck zum Thema. Sollte diese E-Mail von Dir an Mailinglisten weitergeleitet werden, dann nehmt uns, Stephan und Martin, bitte ins CC, damit wir dies bei der Auswertung der Umfrage berücksichtigen können.
+Du kennst Andere, die Software im Umfeld von Forschung und Wissenschaft entwickeln? Dann informiere sie bitte über diese Umfrage! Nur eine rege Teilnahme und Antworten, die von überall aus Deutschland kommen und die unterschiedlichsten Bereiche repräsentieren, gewährleisten einen umfassenden Einblick zu diesem Thema. Sollte diese E-Mail von Dir an Mailinglisten weitergeleitet werden, dann nehmt uns, Stephan (*E-Mail-Adresse hier einfügen!*) und Martin (*E-Mail-Adresse hier einfügen!*), bitte ins Cc, damit wir dies bei der Auswertung der Umfrage berücksichtigen können.
 
-Die Ergebnisse werden unter einer CC BY-NC Lizenz veröffentlicht und zusätzlich auf der de-RSE Mailingliste [1] und dem de-RSE Blog [2] angekündigt und ausgewertet. Darüber hinaus werden ähnliche Umfragen in Großbritannien, Kanada, Australien, Norwegen, USA, Südafrika und Niederlande durchgeführt. Für einen besseren Vergleich, wurde die Gestaltung der deutschen Umfrage in enger Abstimmung zu diesen Umfragen durchgeführt.
+Die Ergebnisse werden unter einer CC-BY-NC Lizenz (*welche Version?*) veröffentlicht und zusätzlich auf der de-RSE Mailingliste [1] und dem de-RSE Blog [2] angekündigt und ausgewertet. Darüber hinaus werden ähnliche Umfragen in Großbritannien, Kanada, Australien, Norwegen, den USA, Südafrika und den Niederlanden durchgeführt. Um eine gute Vergleichbarkeit gewährleisten zu können wurde die Gestaltung der deutschen Umfrage in enger Abstimmung mit diesen Umfragen durchgeführt.
 
-Wir freuen uns über Eure Teilnahme.
+Wir freuen uns über Eure Teilnahme!
 
 Vielen Dank,
 Martin Hammitzsch und Stephan Janosch
@@ -22,24 +22,24 @@ Martin Hammitzsch und Stephan Janosch
 
 -------------------------------------------------------------
 
-Survey about research software in Germany and people involved
+Survey about research software in Germany, and the people involved in it
 
 Hello,
 
-Do you develop research software or you are involved in the scientific software creation process? Than we would be glad if you could participate in this year's survey: https://softwaresaved.limequery.com/000000?lang=en
+Do you develop research software, or are you involved in the scientific software creation process? Then we would very much like you to participate in the following survey: https://softwaresaved.limequery.com/000000?lang=en.
 
-Right now we don't have much knowledge about the community of software developing people in research and science. This survey should help to gather insights in order to support research funders and other institutions to develop strategies and funding programs as well as policies.
+As of now there is not much knowledge about the community of those in research and science who develop software. This survey aims to gain valuable insights into this community in order to support research funders and other institutions to develop strategies and funding programs as well as policies.
 
-This survey gives you the opportunity to include your view and thus to be part of the development.
+This survey gives you the opportunity to make your point of view and experiences be heard, and thus be part of the development of this community.
 
-In case you know others who develop software in research then feel free to forward this invitation. If you forward this mail to a mailing list, then please be so kind and put Martin or Stephan into CC.
+In case you know others who develop software in research, please feel free to forward this invitation. If you forward this mail to a mailing list, please be so kind and copy in Martin (*email address here!*) and Stephan (*email address here!*).
 
-The survey results will be published under CC BY-NC licence and published at the de-RSE mailing list [3] as well as on the de-RSE blog [4]. Right now similar surveys are done as well in UK, Canada, Australia, Norway, The Netherlands, USA and South Africa. For better comparison this survey was closely coordinated with the others.
+The survey results will be published under a CC-BY-NC license (*which one?*), and announced and evaluated via the de-RSE mailing list [3] and the de-RSE blog [4]. Simultaneously, similar surveys are conducted in the UK, Canada, Australia, Norway, the Netherlands, the USA and South Africa. For reasons of comparability, this survey was closely coordinated with the others.
 
-It would be nice if you could take part in the survey!
+We look forward to your participation in the survey!
 
- Many thanks,
- Martin Hammitzsch and Stephan Janosch
+Many thanks,
+Martin Hammitzsch and Stephan Janosch
 
  [3] http://www.de-rse.org/en/join.html
  [4] http://www.de-rse.org/en/blog.html
