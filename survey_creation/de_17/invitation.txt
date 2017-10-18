@@ -32,7 +32,7 @@ As of now there is not much knowledge about the community of those in research a
 
 This survey gives you the opportunity to make your point of view and experiences be heard, and thus be part of the development of this community.
 
-In case you know others who develop software in research, please feel free to forward this invitation. If you forward this mail to a mailing list, please be so kind and copy in Martin (janosch@mpi-cbg.de) and Stephan (martin.hammitzsch@gfz-potsdam.de).
+In case you know others who develop software in research, please feel free to forward this invitation. If you forward this mail to a mailing list, please be so kind and copy in Stephan (janosch@mpi-cbg.de) and Martin (martin.hammitzsch@gfz-potsdam.de).
 
 The survey results will be published under a CC BY-NC license, and will be announced and evaluated via the de-RSE mailing list [3] and the de-RSE blog [4]. Simultaneously, similar surveys are conducted in the UK, Canada, Australia, Norway, the Netherlands, the USA and South Africa. For reasons of comparability, this survey was closely coordinated with the others.
 
@@ -41,5 +41,5 @@ We look forward to your participation in the survey!
 Many thanks,
 Martin Hammitzsch and Stephan Janosch
 
- [3] http://www.de-rse.org/en/join.html
- [4] http://www.de-rse.org/en/blog.html
+[3] http://www.de-rse.org/en/join.html
+[4] http://www.de-rse.org/en/blog.html
