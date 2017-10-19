@@ -12,12 +12,12 @@ section,code,questions,answer_format,file_17,other,random,mandatory,condition,Or
 2,currentEmp2,Which university?,ONE CHOICE,universities,,,,,Which university? --  -- ,,currentEmp2
 2,currentEmp4,Which organisation do you work for?,ONE CHOICE,type_organisation,,,,, --  -- Which organisation do you work for? --  --  --  -- ,,currentEmp4
 2,currentEmp5,What is your official job title (i.e. the job title on your contract of employment)?,FREETEXT,,,,,, --  --  --  --  --  -- What is your official job title (i.e. the job title on your contract of employment)? --  -- ,,
-2,currentEmp6,In what year did you start your current position?,FREETEXT,,,,,, --  -- In what year did you start your current position? --  --  --  -- ,,
+2,currentEmp16a,In what year did you start your current position?,FREETEXT,,,,,, --  -- In what year did you start your current position? --  --  --  -- ,,
 2,currentEmp10,What type of contract are you employed on?,ONE CHOICE,type_contract,,,,,What type of contract are you employed on? --  -- ,,
 2,currentEmp11,What is the duration of your current contract?,FREETEXT,,,,,,What is the duration of your current contract? --  -- ,,
 2,currentEmp12,Do you work full time or part time?,ONE CHOICE,type_hours,,,,,Do you work full time or part time? --  -- ,,currentEmp12
-2,currentEmp16a,Is this your first job?,Y/N/NA,,,,,,Is this your first job? --  -- ,,
-2,prevEmp16a,Have you previously worked in the private sector?,Y/N/NA,,,,,,Have you previously worked in the private sector? --  -- ,,
+2,currentEmp16b,Is this your first job?,Y/N/NA,,,,,,Is this your first job? --  -- ,,
+2,prevEmp16b,Have you previously worked in the private sector?,Y/N/NA,,,,,,Have you previously worked in the private sector? --  -- ,,
 2,prevEmp16b,Why did you leave the private sector?,ONE CHOICE,reasons_leave_job,,,,,Why did you leave the private sector? --  -- ,,reasons_leave_job
 2,prevEmp16c,What was the official job title of your previous job (i.e. the job title stated on your contact of employment)?,FREETEXT,,,,,,What was the official job title of your previous job (i.e. the job title stated on your contact of employment)? --  -- ,,
 2,prevEmp16d,What was the type of your contract?,ONE CHOICE,type_contract,,,,, --  --  --  --  --  -- What was the type of your contract? --  -- ,,prevEmp16d
