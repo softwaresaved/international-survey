@@ -69,7 +69,7 @@ def main():
                 question_to_write = '; '.join(original_question)
                 notebook.add_question_title(question_to_write)
                 # for txt in original_question:
-                #     # notebook.add_question_title(txt)
+                    # notebook.add_question_title(txt)
 
                 if answer_format not in ['freetext', 'datetime', 'freenumeric']:
                     notebook.add_count(list_questions, answer_format, file_answer, order_question,
@@ -100,27 +100,27 @@ def main():
                 #     notebook.add_percentage()
                 #     notebook.add_display_percentage()
                 #     notebook.add_plot(answer_format)
-
+    #
     print('Running notebook')
     notebook.run_notebook()
     print('Saving notebook')
     notebook.save_notebook()
 
-    # https://stackoverflow.com/questions/37657547/how-to-save-jupyter-notebook-to-html-by-code
-    print('Convert the notebook into an html file')
-    filepath = notebook_config.notebook_filename
-    # export_path = '{}/{}'.format(NotebookConfig.notebook_folder,
-    #                              NotebookConfig.notebook_html)
-
-    with open(filepath) as fh:
-        nb = nbformat.reads(fh.read(), as_version=4)
-
-    exporter = HTMLExporter()
-
-    # source is a tuple of python source code
-    # meta contains metadata
-    source, meta = exporter.from_notebook_node(nb)
-    codecs.open(filepath, 'w', encoding='utf-8').write(source)
+    # # https://stackoverflow.com/questions/37657547/how-to-save-jupyter-notebook-to-html-by-code
+    # print('Convert the notebook into an html file')
+    # filepath = notebook_config.notebook_filename
+    # # export_path = '{}/{}'.format(NotebookConfig.notebook_folder,
+    # #                              NotebookConfig.notebook_html)
+    #
+    # with open(filepath) as fh:
+    #     nb = nbformat.reads(fh.read(), as_version=4)
+    #
+    # exporter = HTMLExporter()
+    #
+    # # source is a tuple of python source code
+    # # meta contains metadata
+    # source, meta = exporter.from_notebook_node(nb)
+    # codecs.open(filepath, 'w', encoding='utf-8').write(source)
 
 
 if __name__ == "__main__":
