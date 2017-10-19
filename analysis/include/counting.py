@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import errno
 import pandas as pd
 import numpy as np
 
@@ -123,6 +124,18 @@ def record_df(df, colnames, path_to_record, percentage=False):
         :filename str(): the full filename to pass to percentage_count() later
         as that function does not have access to the code after cleaning the headers
     """
+    def check_directory(path):
+        """
+        Try to create a directory. If the directory
+        exists, it ignore the error. If the error is something else
+        it raises an exception
+        """
+        try:
+            os.makedirs(path)
+        except OSError as exception:
+            if exception.errno != errno.EEXIST:
+                raise
+
     def get_common_root(input_set):
 
         def extract_common_substring(string1, string2):
@@ -160,6 +173,7 @@ def record_df(df, colnames, path_to_record, percentage=False):
         return common_substring + all_unique_element
 
     if path_to_record:
+        check_directory(path_to_record)
         # Create a filename for the file to be saved based on the code of the question
         unique_code = set(s.split('. ')[0] for s in colnames)
         if len(unique_code) > 1:
