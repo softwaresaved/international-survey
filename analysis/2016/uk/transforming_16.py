@@ -42,7 +42,7 @@ with open("../../../survey_creation/2016/uk/question_2.csv") as f:
     for row in complete_file:
         complete_dict.append(row)
 # Load dataset
-df = pd.read_csv('./data/raw_data.csv')
+df = pd.read_csv('./data/original_data.csv')
 
 # Subsetting the data by creating a subset list
 subsetting_list = list()
@@ -53,7 +53,7 @@ for row in complete_dict:
     df.rename(columns={row['Original title']: new_col_name}, inplace=True)
 
 new_df = df[subsetting_list]
-new_df.to_csv('./data/cleaned_data.csv')
+new_df.to_csv('./data/raw_data.csv')
 # Subsetting the data to only have the data that contains information.
 new_list_question = list()
 for col in new_df:
