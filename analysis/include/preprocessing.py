@@ -340,8 +340,8 @@ class CleaningData(CleaningConfig):
             yield group_survey_q, group_original_question, previous_answer_format, file_answer, previous_order_question
 
         def dictionary_by_section(input_dict):
-            for k in input_dict:
-                print(k, input_dict[k])
+            # for k in input_dict:
+            #     print(k, input_dict[k])
             output_dict = dict()
             for q in input_dict:
                 try:
@@ -411,7 +411,7 @@ class CleaningData(CleaningConfig):
     def write_config_file(self):
         """
         """
-        dict_to_write = self.structure_by_question
+        dict_to_write = self.structure_by_section
         with open(self.json_to_plot_location, 'w') as f:
             json.dump(dict_to_write, f)
 
