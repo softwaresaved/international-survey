@@ -208,6 +208,8 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
     :params:
     :return:
     """
+    # Replace the Nan value by 0 for plotting
+    df = df.fillna(0)
     try:
         # Create the figure object
         fig = plt.figure(figsize=(10, 8))
