@@ -147,15 +147,19 @@ def main():
     # Create a dictionary containing the data about the questions
     complete_info = get_information(information_file)
 
-    # load the different [other] columns
-    other_education = "Enter your academic subject --  -- "
     # Load dataset
     df = pd.read_csv(original_data)
+
+    # Dropping incomplete data
+    df = df[df['Date Finished'] != 'Did not finish']
 
     # Subsetting the data by creating a subset list
     sub_df = subsetting_df(df, complete_info)
 
-    # Clean the years:
+    # Dropping Non-UK
+    sub_df = sub_df[sub_df['socio1. In which country do you live?'] == 'United Kingdom']
+
+    # Clean the years
     sub_df = clean_year(sub_df)
     # Clean salary
     sub_df = clean_salary(sub_df)
