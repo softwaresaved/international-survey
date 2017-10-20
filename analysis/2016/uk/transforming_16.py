@@ -93,6 +93,16 @@ def clean_likert(root_file_answer, row, df, col):
     return col_to_return, row
 
 
+def clean_numeric(df, col):
+    """
+    """
+    print(col)
+    print(df[col].unique())
+    df.loc[col] = pd.to_numeric(df[col], errors='coerce')
+    print(df[col].unique())
+    return df
+
+
 def main():
     """
     """
@@ -122,7 +132,7 @@ def main():
                 elif 'likert' in row['answer_format'].lower():
                     sub_df[col], row = clean_likert(root_file_answer, row, sub_df, col)
                 elif row['answer_format'].lower() == 'freenumeric':
-                    sub_df.loc[col] = pd.to_numeric(sub_df[col], errors='coerce')
+                    sub_df[col] = clean_numeric(sub_df, col)
                 else:
                     row['file_answer'] = row['file_17']
                 new_list_question.append(row)
