@@ -55,6 +55,30 @@ def write_new_answer(difference, root_file_answer, code):
             f.write('\n')
 
 
+def clean_education(df):
+    """
+    Clean the education ['other'] and add it to the right column
+    """
+    pass
+
+
+def clean_salary(df):
+    """
+    """
+    df['socio4. Please select the range of your salary'] = df['socio4. Please select the range of your salary'].str.replace('&pound;', '£')
+    return df
+
+
+def clean_year(df):
+    """
+    """
+    replacing_dict = {"2006 (Seconded in 2014)": "2006",
+                      "3": "2013",
+                      'INF': np.NaN}
+    df['currentEmp16a. In what year did you start your current position?'].replace(replacing_dict, inplace=True)
+    return df
+
+
 def clean_one_choice(root_file_answer, row, df, col):
     """
     """
@@ -119,6 +143,9 @@ def main():
     # Subsetting the data by creating a subset list
     sub_df = subsetting_df(df, complete_info)
 
+    # Clean the years:
+    sub_df = clean_year(sub_df)
+    sub_df = clean_salary(sub_df)
     # Subsetting the data to only have the data that contains information
     new_list_question = list()
     for col in sub_df:
