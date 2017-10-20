@@ -321,7 +321,6 @@ class CleaningData(CleaningConfig):
             previous_file_answer = None
             previous_order_question = None
             file_answer = None
-            # print(group_question)
             for q in group_question:
                 current_answer_format = group_question[q]['answer_format'].lower()
                 survey_q = group_question[q]['survey_q']
