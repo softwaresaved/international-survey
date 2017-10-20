@@ -96,11 +96,8 @@ def clean_likert(root_file_answer, row, df, col):
 def clean_numeric(df, col):
     """
     """
-    print(col)
-    print(df[col].unique())
-    df.loc[col] = pd.to_numeric(df[col], errors='coerce')
-    print(df[col].unique())
-    return df
+    df[col] = pd.to_numeric(df[col], errors='coerce')
+    return df[col]
 
 
 def main():
