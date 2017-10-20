@@ -73,9 +73,9 @@ def clean_year(df):
     """
     """
     replacing_dict = {"2006 (Seconded in 2014)": "2006",
-                      "3": "2013",
-                      'INF': np.NaN}
+                      "3": "2013"}
     df['currentEmp16a. In what year did you start your current position?'].replace(replacing_dict, inplace=True)
+    df['currentEmp16a. In what year did you start your current position?'].replace({np.inf: np.nan}, inplace=True)
     return df
 
 
