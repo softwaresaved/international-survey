@@ -79,13 +79,20 @@ def clean_salary(df):
     return df
 
 
+def clean_contract(df):
+    """
+    """
+    replacing_dict = {'2018': 36}
+    df['currentEmp11. What is the duration of your current contract?'].replace(replacing_dict, inplace=True)
+    return df
+
+
 def clean_year(df):
     """
     """
     replacing_dict = {"2006 (Seconded in 2014)": "2006",
                       "3": "2013"}
     df['currentEmp16a. In what year did you start your current position?'].replace(replacing_dict, inplace=True)
-    df['currentEmp16a. In what year did you start your current position?'].replace({np.inf: np.nan}, inplace=True)
     return df
 
 
@@ -102,6 +109,7 @@ def clean_one_choice(root_file_answer, row, df, col):
         difference = new_answer.difference(set(answers))
     except AttributeError:
         difference = []
+
     if len(difference) > 0:
         write_new_answer(new_answer, root_file_answer, row['code'])
         row['file_answer'] = row['code']
@@ -131,6 +139,8 @@ def clean_numeric(df, col):
     """
     """
     df[col] = pd.to_numeric(df[col], errors='coerce')
+
+    df[col].replace((np.inf, -np.inf), np.nan, inplace=True)
     return df[col]
 
 
@@ -165,6 +175,9 @@ def main():
     sub_df = clean_salary(sub_df)
     # Complete eduction
     sub_df = clean_education(sub_df)
+
+    # Clean duration contract
+    sub_df = clean_contract(sub_df)
     # Subsetting the data to only have the data that contains information
     new_list_question = list()
     for col in sub_df:
