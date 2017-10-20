@@ -21,6 +21,10 @@ timeline
   * 20th-22nd correction call Martin, Olivier and Stephan
   * 27th ethics done
   * 29th go live
+  
+  October 2017
+  
+  * 17 go live
 
     
 People doing work here
@@ -84,4 +88,16 @@ weitere mögliche Fragen für nächstes Jahr
 Viele Grüße,
 Andreas Leimbach 
  
+ ### Borst Timo 
+ 
+* Nutzen Sie kommerzielle Programme/OS/Datenbanksysteme/Entwicklungsumgebungen etc., oder ausschließlich Open Source? 
+* Unter welcher (offenen) Lizenz haben Sie den von Ihnen erstellten Quellcode veröffentlicht? 
+* Ist die Veröffentlichung von Quellcode bei Ihnen arbeitsvertraglich geregelt? 
+* Was verstehen Sie unter „Forschungssoftware“ – Fachanwendungen und/oder auch Infrastrukturlösungen (bis hin zu Storage-/Rechnerkapazitäten)? 
+* Wie intensiv arbeiten Sie bei der Entwicklung Ihrer Lösungen mit FachwissenschaftlerInnen zusammen (Skala von 1 bis 5)? 
+* Wer / Wie viele nutzt / nutzen die von Ihnen entwickelte Software? 
+* Wie wird die von Ihnen entwickelte Forschungssoftware in den Regelbetrieb übernommen? 
+* Wer ist verantwortlich für den Applikationsbetrieb der von Ihnen entwickelten Anwendungen? 
+* Wie würden Sie den Anteil an echter Neuentwicklung gegenüber Maintenance-Arbeiten (Patches/Updates) einschätzen? 
+* Nach welchem Vorgehensmodell arbeiten Sie (Wasserfall/RUP/Agil etc.)?
   
