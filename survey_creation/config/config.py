@@ -127,7 +127,8 @@ class creationConfig:
 
     freenumeric_question = {'class': 'Q', 'type/scale': 'N', 'allowed_filetypes': '1', 'statistics_showmap': '1'}
 
-    freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300', 'location_mapwidth': '500', 'location_mapzoom': '110500', 'statistics_showgraph': '1', 'statistics_showmap': '1', 'text_input_width': '12', 'time_limit_action': '1', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0'}
+    # freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300', 'location_mapwidth': '500', 'location_mapzoom': '110500', 'statistics_showgraph': '1', 'statistics_showmap': '1', 'text_input_width': '12', 'time_limit_action': '1', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0'}
+    freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1'}
 
     likert_question = {'class': 'Q', 'type/scale': 'F', 'same_default': '1', 'statistics_showgraph': '1'}
 
