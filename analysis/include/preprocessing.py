@@ -9,6 +9,7 @@ import glob
 import pandas as pd
 import numpy as np
 from collections import OrderedDict
+import pycountry
 
 
 from include.config import CleaningConfig
@@ -86,7 +87,17 @@ class CleaningData(CleaningConfig):
         """
         Remove rows that are not the appropriate country
         """
-        return df[df['socio1. In which country do you work?'] == self.country_to_keep]
+        # Use the package pycountry to get the language from the country code
+        if len(self.country) == 2:
+            country = pycountry.countries.get(alpha_2=self.country_to_keep)
+        elif len(self.country) == 3:
+            country = pycountry.countries.get(alpha_3=self.country_to_keep)
+        elif len(self.country) == 4:
+            country = pycountry.countries.get(alpha_4=self.country_to_keep)
+        else:
+            raise
+
+        return df[df['socio1. In which country do you work?'] == country]
 
     def fixing_satisQuestion(self, df):
         """
