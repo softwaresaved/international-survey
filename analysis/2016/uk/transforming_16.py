@@ -79,17 +79,17 @@ def clean_one_choice(root_file_answer, row, df, col):
 def clean_likert(root_file_answer, row, df, col):
     """
     """
-    col_to_return = None
     row['file_answer'] = row['file_17']
     if row['file_17'] == 'likert_agree':
-        print(df[col].unique())
         replacing_dict = {'1 (Strongly disagree)': 'Strongly disagree',
                           '2': 'Disagree', '3': 'Neither agree or disagree',
                           '4': 'Agree', '5 (Strongly Agree)': 'Strongly Agree'}
         col_to_return = df[col].replace(replacing_dict)
-    if row['file_17'] == 'likert_time_5':
-        replacing_dict = {'Sometime ': 'Sometimes'}
+    elif row['file_17'] == 'likert_time_5':
+        replacing_dict = {'Sometime ': 'Sometimes', 'Sometime': 'Sometimes'}
         col_to_return = df[col].replace(replacing_dict)
+    else:
+        col_to_return = df[col]
     return col_to_return, row
 
 
@@ -112,28 +112,25 @@ def main():
     # Subsetting the data by creating a subset list
     sub_df = subsetting_df(df, complete_info)
 
-    # record the subsetted dataset
-    sub_df.to_csv(raw_data)
-
     # Subsetting the data to only have the data that contains information
     new_list_question = list()
     for col in sub_df:
         for row in complete_info:
             if '{}. {}'.format(row['code'], row['questions']) == col:
                 if row['answer_format'].lower() == 'one choice':
-                    row = clean_one_choice(root_file_answer, row, df, col)
+                    row = clean_one_choice(root_file_answer, row, sub_df, col)
                 elif 'likert' in row['answer_format'].lower():
-                    col_to_replace, row = clean_likert(root_file_answer, row, df, col)
-                    sub_df[col] = col_to_replace
-                    print(sub_df[col].unique())
+                    sub_df[col], row = clean_likert(root_file_answer, row, sub_df, col)
                 elif row['answer_format'].lower() == 'freenumeric':
-                    sub_df[col] = pd.to_numeric(sub_df[col], errors='coerce')
-                    print(sub_df[col].unique())
+                    sub_df.loc[col] = pd.to_numeric(sub_df[col], errors='coerce')
                 else:
                     row['file_answer'] = row['file_17']
                 new_list_question.append(row)
 
     writing_new_dict(new_list_question, root_file)
+
+    # record the subsetted dataset
+    sub_df.to_csv(raw_data)
 
 
 if __name__ == "__main__":
