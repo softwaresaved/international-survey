@@ -47,10 +47,10 @@ class CleaningData(CleaningConfig):
         self.df = self.cleaning_missing_na(self.df)
         # self.df = self.fixing_satisQuestion(self.df)
         self.df = self.duplicating_other(self.df)
-        try:
-            self.df = self.remove_not_right_country(self.df)
-        except KeyError:
-            pass
+        # try:
+        self.df = self.remove_not_right_country(self.df)
+        # except KeyError:
+            # pass
         self.df = self.remove_empty_column(self.df)
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
@@ -89,15 +89,15 @@ class CleaningData(CleaningConfig):
         """
         # Use the package pycountry to get the language from the country code
         if len(self.country) == 2:
-            country = pycountry.countries.get(alpha_2=self.country_to_keep)
+            country = pycountry.countries.get(alpha_2=self.country.upper())
         elif len(self.country) == 3:
-            country = pycountry.countries.get(alpha_3=self.country_to_keep)
+            country = pycountry.countries.get(alpha_3=self.country.upper())
         elif len(self.country) == 4:
-            country = pycountry.countries.get(alpha_4=self.country_to_keep)
+            country = pycountry.countries.get(alpha_4=self.country.upper())
         else:
             raise
-
-        return df[df['socio1. In which country do you work?'] == country]
+        print(country.name)
+        return df[df['socio1. In which country do you work?'] == country.name]
 
     def fixing_satisQuestion(self, df):
         """
