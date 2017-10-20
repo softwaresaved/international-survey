@@ -59,7 +59,17 @@ def clean_education(df):
     """
     Clean the education ['other'] and add it to the right column
     """
-    pass
+    replace_education = {"Software Engineering": "Computer Sciences",
+                         "Computer Science & Physics": "Computer Sciences",
+                         "Geography": "Social studies",
+                         "Economics": "Social studies",
+                         "Psychology": "Subjects allied to Medicine"}
+    list_to_get = ['Social studies', 'Computer Sciences', 'Subjects allied to Medicine']
+    df['edu3. Enter your academic subject'].replace(replace_education, inplace=True)
+    df['edu2. What was your academic subject?'] = np.where(df['edu3. Enter your academic subject'].isin(list_to_get),
+                                                           df['edu3. Enter your academic subject'],
+                                                           df['edu2. What was your academic subject?'])
+    return df
 
 
 def clean_salary(df):
@@ -137,6 +147,8 @@ def main():
     # Create a dictionary containing the data about the questions
     complete_info = get_information(information_file)
 
+    # load the different [other] columns
+    other_education = "Enter your academic subject --  -- "
     # Load dataset
     df = pd.read_csv(original_data)
 
@@ -145,7 +157,10 @@ def main():
 
     # Clean the years:
     sub_df = clean_year(sub_df)
+    # Clean salary
     sub_df = clean_salary(sub_df)
+    # Complete eduction
+    sub_df = clean_education(sub_df)
     # Subsetting the data to only have the data that contains information
     new_list_question = list()
     for col in sub_df:
