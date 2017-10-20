@@ -27,6 +27,8 @@ class CleaningData(CleaningConfig):
         super().__init__(year, country)
         self.df = df
         self.answers_item_dict = self.get_answer_item(self.answer_folder)
+        # Some likert items need to be reverted -- need a list
+        self.likert_item_to_revert = ['turnOver2', 'turnOver3']
 
     def cleaning(self):
         """
@@ -52,6 +54,24 @@ class CleaningData(CleaningConfig):
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
+        self.df = self.revert_inverted_likert(self.likert_item_to_revert)
+
+        return self.df
+
+    def revert_inverted_likert(self, item_to_revert):
+        """
+        Some items need to be inverted as the question is a negative form
+        :params:
+            :item_to_revert list(): of code contained in the column name
+        :return:
+            : self.df(): with the reverted items
+        """
+        for item in item_to_revert:
+            type_question = self.structure_by_question[item]['type_question']
+            answer = self.answers_item_dict[type_question]
+            replacing_value = dict(zip(answer, answer[::-1]))
+            col_to_revert = [col for col in self.df.columns if item in col]
+            self.df[col_to_revert] = self.df[col_to_revert].replace(replacing_value)
 
         return self.df
 
@@ -353,7 +373,6 @@ class CleaningData(CleaningConfig):
                     output_dict.setdefault(section, {}).setdefault(root_code, {}).update(question)
                 except KeyError:
                     pass
-            print(output_dict)
             return output_dict
 
         def grouping_question(input_dict):
