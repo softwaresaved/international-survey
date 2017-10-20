@@ -79,20 +79,18 @@ def clean_one_choice(root_file_answer, row, df, col):
 def clean_likert(root_file_answer, row, df, col):
     """
     """
-    print(df[col].unique())
+    col_to_return = None
     row['file_answer'] = row['file_17']
-
-    try:
-        # answers = get_answer_item('{}{}'.format(root_file_answer, row['file_17']))
-        if row['file_17'] == 'likert_agree':
-            replacing_dict = {'5 (Strongly Agree)': 5, '1 (Strongly disagree)': 4}
-            df[col].replace(replacing_dict, inplace=True)
-        if row['file_17'] == 'likert_time':
-            replacing_dict = {'Sometime': 'Sometimes'}
-            df[col].replace(replacing_dict, inplace=True)
-    except FileNotFoundError:  # Bus factor is considered as likert but don't have a file in file_17
-        pass
-    return df, row
+    if row['file_17'] == 'likert_agree':
+        print(df[col].unique())
+        replacing_dict = {'1 (Strongly disagree)': 'Strongly disagree',
+                          '2': 'Disagree', '3': 'Neither agree or disagree',
+                          '4': 'Agree', '5 (Strongly Agree)': 'Strongly Agree'}
+        col_to_return = df[col].replace(replacing_dict)
+    if row['file_17'] == 'likert_time_5':
+        replacing_dict = {'Sometime ': 'Sometimes'}
+        col_to_return = df[col].replace(replacing_dict)
+    return col_to_return, row
 
 
 def main():
@@ -117,7 +115,7 @@ def main():
     # record the subsetted dataset
     sub_df.to_csv(raw_data)
 
-    # Subsetting the data to only have the data that contains information.
+    # Subsetting the data to only have the data that contains information
     new_list_question = list()
     for col in sub_df:
         for row in complete_info:
@@ -125,7 +123,12 @@ def main():
                 if row['answer_format'].lower() == 'one choice':
                     row = clean_one_choice(root_file_answer, row, df, col)
                 elif 'likert' in row['answer_format'].lower():
-                    sub_df, row = clean_likert(root_file_answer, row, df, col)
+                    col_to_replace, row = clean_likert(root_file_answer, row, df, col)
+                    sub_df[col] = col_to_replace
+                    print(sub_df[col].unique())
+                elif row['answer_format'].lower() == 'freenumeric':
+                    sub_df[col] = pd.to_numeric(sub_df[col], errors='coerce')
+                    print(sub_df[col].unique())
                 else:
                     row['file_answer'] = row['file_17']
                 new_list_question.append(row)
