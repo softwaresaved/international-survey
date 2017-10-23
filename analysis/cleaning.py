@@ -6,10 +6,7 @@
 Script to preprocess the raw dataset prior to any analysis. This script is launched only on
 the researchers computer as (s)he is the only one to have access to the raw dataset
 """
-
-import os
 import sys
-import getopt
 import pandas as pd
 from include.preprocessing import CleaningData
 from include.config import CleaningConfig
