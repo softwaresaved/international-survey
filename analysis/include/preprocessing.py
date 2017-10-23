@@ -56,8 +56,30 @@ class CleaningData(CleaningConfig):
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
         self.df = self.revert_inverted_likert(self.likert_item_to_revert)
-
+        self.df, self.structure_by_section = self.create_language_section(self.df, self.structure_by_section)
         return self.df
+
+    def create_language_section(self, df, structure_by_section):
+        """
+        Get the language column and create a new k for it in the structure_by_section
+        while creating a file_answer to be able to be plot later in analysis
+        """
+        path_to_language = os.path.join('../survey_creation',  self.year, self.country, 'listAnswers', 'languages.csv')
+        list_of_languages = self.df['startlanguage. Start language'].unique()
+        if len(list_of_languages) > 1:
+            with open(path_to_language, 'w+') as f:
+                for language in list_of_languages:
+                    f.write(language)
+                    f.write('\n')
+            dict_to_add = {0:{'language': [{'survey_q': ['startlanguage. Start language'],
+                                            'original_question': ['startlanguage. Start language'],
+                                            'answer_format': 'one choice',
+                                            'file_answer': path_to_language,
+                                            'order_question': False}]}}
+
+            structure_by_section.update(dict_to_add)
+            structure_by_section.move_to_end(0, last=False)
+        return self.df, structure_by_section
 
     def revert_inverted_likert(self, item_to_revert):
         """
@@ -96,7 +118,6 @@ class CleaningData(CleaningConfig):
             country = pycountry.countries.get(alpha_4=self.country.upper())
         else:
             raise
-        print(country.name)
         return df[df['socio1. In which country do you work?'] == country.name]
 
     def fixing_satisQuestion(self, df):
@@ -187,8 +208,10 @@ class CleaningData(CleaningConfig):
         Dropping all the columns created by limesurvey and
         not needed for later analysis
         """
+        # columns_to_drop = ['id. Response ID', 'submitdate. Date submitted', 'startdate. Date started',
+                           # 'datestamp. Date last action', 'refurl. Referrer URL', 'startlanguage. Start language']
         columns_to_drop = ['id. Response ID', 'submitdate. Date submitted', 'startdate. Date started',
-                           'datestamp. Date last action', 'refurl. Referrer URL', 'startlanguage. Start language']
+                           'datestamp. Date last action', 'refurl. Referrer URL']
         df = df.drop(columns_to_drop, axis=1)
 
         # Drop the columns about the time for each questions if present (from limesurvey)
