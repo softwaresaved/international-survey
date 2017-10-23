@@ -20,6 +20,7 @@ import sys
 import os
 from collections import OrderedDict
 from include.logger import logger
+from include.get_arguments import get_arguments
 from config.config import creationConfig as main_config
 import importlib
 from random import shuffle
@@ -43,7 +44,7 @@ class surveyCreation:
     country's project
     """
 
-    def __init__(self, project):
+    def __init__(self, country, year):
         """
         Get the project name (folder).
         Import the associated config file
@@ -52,23 +53,27 @@ class surveyCreation:
             :project str(): the name of which folder/project the information
                 is stored
         """
-        self.project = project
+        self.country = country
+        self.year = year
+        # self.project = project
         self.specific_config = self.import_config()
 
     def import_config(self):
         """
         Import the config file associated with the folder name
         """
-        module = 'config.{}'.format(self.project)
-        return importlib.import_module(module).config()
+        # module = 'config.{}'.format(self.project)
+        module = '.{}.{}'.format(self.year, self.country)
+        print(module)
+        return importlib.import_module(module, package='config').config()
 
     def init_outfile(self):
         """
         Rewrite over the existing file to avoid issue of appending and
         return the path to the file
         """
-        outfile_name = self.project + '_to_import.txt'
-        outfile = os.path.join(self.project, outfile_name)
+        outfile_name = 'questions_to_import.txt'
+        outfile = os.path.join(self.year, self.country, outfile_name)
         with open(outfile, 'w') as f:
             w = csv.DictWriter(f, delimiter='\t',
                                lineterminator='\n',
@@ -204,7 +209,8 @@ class surveyCreation:
             else:
                 filename = '{}_message.md'.format(type_message)
 
-            folder = os.path.join(self.project, 'texts')
+            # folder = os.path.join(self.project, 'texts')
+            folder = os.path.join(self.year, self.country, 'texts')
             path = os.path.join(folder, filename)
             with open(path, 'r') as f:
                 html_file = markdown(f.read())
@@ -261,11 +267,12 @@ class surveyCreation:
         return nbr_section
 
     @staticmethod
-    def read_survey_file(folder):
+    def read_survey_file(year, country):
         """
         Read the survey csv file and yield each line as a dictionary
         """
-        question_file = os.path.join(folder, '.'.join([folder, 'csv']))
+        # question_file = os.path.join(year, country, '.'.join([folder, 'csv']))
+        question_file = os.path.join(year, country, 'questions.csv')
         with open(question_file, 'r') as f:
             csv_f = csv.DictReader(f)
             for row in csv_f:
@@ -320,10 +327,10 @@ class surveyCreation:
         yield group_survey_q
 
     @staticmethod
-    def get_answer(folder, file_answer):
+    def get_answer(year, country, file_answer):
         """
         """
-        outfile = os.path.join(folder, 'listAnswers', '{}.csv'.format(file_answer))
+        outfile = os.path.join(year, country, 'listAnswers', '{}.csv'.format(file_answer))
         with open(outfile, 'r') as f:
             return [x[:-1] for x in f.readlines()]
 
@@ -417,7 +424,7 @@ class surveyCreation:
         """
         n = 1
         print(row['code'])
-        for text_answer in self.get_answer(self.project, row['answer_file']):
+        for text_answer in self.get_answer(self.year, self.country, row['answer_file']):
             if type_question == 'one choice':
                 answer_row = main_config.one_choice_answer
             elif type_question == 'multi choice':
@@ -508,7 +515,7 @@ class surveyCreation:
             self.code_to_multiple_question = 0
 
             # Open the csv file and read it through a dictionary (generator)
-            question_to_transform = self.read_survey_file(self.project)
+            question_to_transform = self.read_survey_file(self.year, self.country)
 
             # pass this generator into the function group_likert() to group Y/N and likert together
             for q in self.group_likert(question_to_transform):
@@ -590,9 +597,9 @@ class surveyCreation:
 
 
 def main():
-    # Get which survey
-    folder = sys.argv[1]
-    create_survey = surveyCreation(folder)
+    # Get which country and which year to create the analysis
+    year, country = get_arguments(sys.argv[1:])
+    create_survey = surveyCreation(country, year)
     create_survey.run()
 
 
