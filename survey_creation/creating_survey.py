@@ -64,7 +64,6 @@ class surveyCreation:
         """
         # module = 'config.{}'.format(self.project)
         module = '.{}.{}'.format(self.year, self.country)
-        print(module)
         return importlib.import_module(module, package='config').config()
 
     def init_outfile(self):
