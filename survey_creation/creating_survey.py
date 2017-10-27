@@ -384,7 +384,7 @@ class surveyCreation:
             question['mandatory'] = ''
 
         if row['public'] == 'N':
-            question['help'] = self.config.private_data[lang]
+            question['help'] = self.specific_config.private_data[lang]
         self._write_row(question)
 
     def setup_subquestion(self, type_question, lang, list_likert=None, txt_lang=None):
