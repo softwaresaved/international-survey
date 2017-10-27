@@ -25,7 +25,7 @@ Please note that this research is not compulsory and even if you decide to parti
 How long will it take?
 ----------------------
 
-There is a maximum of 64 questions in this survey. It takes about 10 to 15 minutes to complete.
+There is a maximum of 45 questions in this survey. It takes about 10 minutes to complete.
 
 Who is responsible for this survey?
 -----------------------------------
