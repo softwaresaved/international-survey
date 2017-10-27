@@ -42,6 +42,10 @@ Comments and improvements from particpants are collected here so that feedback c
 * TB: Wie würden Sie den Anteil an echter Neuentwicklung gegenüber Maintenance-Arbeiten (Patches/Updates) einschätzen? 
 * TB: Nach welchem Vorgehensmodell arbeiten Sie (Wasserfall/RUP/Agil etc.)?
   
+  https://twitter.com/anwagnerdreas/status/923829708768317441
+  1. Faktor d. Entscheidung für akt. Pos.: "Vertragslaufzeit"; 
+  2. Progr.-Spr.: SPARQL, XQuery, XSLT; 3. Feedback-Mögl.
+  
 
  DL: David Laehnemann
  SJ: Stephan Janosch
