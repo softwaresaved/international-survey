@@ -37,3 +37,6 @@ class config:
                         'de-informal': {'name': 'Demographische Fragen', 'text': ''}},
                     6: {'en': {'name': 'Final questions about you', 'text': ''},
                         'de-informal': {'name': 'Die letzen Fragen über Dich', 'text': ''}}}
+
+    private_data = {'en': 'IMPORTANT: This information will not be made publicly available',
+                    'de-informal': 'IMPORTANT: This information will not be made publicly available [DE-INFORMAL]'}
