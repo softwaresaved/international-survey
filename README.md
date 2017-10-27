@@ -70,6 +70,8 @@ We now provide some more detail about the columns in the questions csv file. You
 
 * **random**: Indicate that the questions need to be randomised. Works only when several questions sharing the same `answer_file` AND the same `code` (without including the number) AND if the questions is 'Y/N/NA' or 'Likert. The only value it can takes is 'Y'. There is no need to specify anything when 'other' is not wanted.
 
+* **public*: Indicate if the data on this question will be made publicly available. This option has no impact on the analysis perfomed after the survey is done, and only impact the shared dataset. The only value it can takes is a 'N'.
+
 * **source**: If a specific resource (e.g. a list on Wikipedia, a government policy doc, etc.) was used to generate a list of potential answers, please reference it here.
 
 * **comment**: Any comments that you wish to make.
