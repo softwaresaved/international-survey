@@ -28,3 +28,5 @@ class config:
                     4: {'en': {'name': 'Your perception of your current position', 'text': ''}},
                     5: {'en': {'name': 'Demographic questions', 'text': ''}},
                     6: {'en': {'name': 'Final questions about you', 'text': ''}}}
+
+    private_data = {'en': 'IMPORTANT: This information will not be made publicly available'}
