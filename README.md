@@ -1,15 +1,13 @@
 # International collaboration for survey
 
 ## Current status:
-|country|contacts|translation|adaptation|draft survey|Finalised|ethic|Survey started|Survey finished|analysis|publication|
-|Germany||done|done|done|done|done|17/10/17|||
 
-
-Netherlands,,N/A,done,done,,Pending (2),,,,
-USA,,N/A,done,done,,done,,,,
-South Africa,,N/A,,,,,,,,
-UK,,N/A,doe,done,done,done,07/04/17,07/05/17,done,done
-
+|country     |translation|adaptation|draft survey|Finalised|ethic|Survey started|Survey finished|analysis|publication|
+|  :-:       |  :-:   |  :-:   |  :-:   |  :-:   |  :-:   |  :-:   |  :-:     |  :-:   |  :-:   |
+|Germany     |  done  |  done  |  done  |  done  |  done  |  done  | 17/10/17 |        |        |
+|Netherlands | N/A    |  done  |  done  |Pending |        |  done  |          |        |        |
+|South Africa| N/A  	 |  done  |   	    |   	    |   	    |        |          |        |        |
+|USA 	       | N/A  	 |  done  |  done	 |  done  | done   |  done  |(15/11/17)|        |        |
 
 In 2016 the Software Sustainability Institute ran the first survey of Research Software Engineers (RSEs) - the people who write code in academia. This produced the first insight into the demographics, job satisfaction, and practices of RSEs. To support and broaden this work, the Institute will run the UK survey every year and - it is hoped - will expand the survey so that insight and comparison can be made across different countries. Ultimately, we hope that these results, the anonymised version of which will all be open licensed, will act as a valuable resource to understand and improve the working conditions for RSEs.
 
