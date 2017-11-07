@@ -49,7 +49,7 @@ section,code,question,answer_format,answer_file,other,conditional,mandatory,rand
 4,fund1,"Do you know the source of the funding used to support you and your current, largest project? ",Y/N/NA,,,,,,,,,,,
 4,fund2,Which of the following sources are used to pay for your effort as an RSE/equivalent? ,MULTIPLE CHOICES,funding,,,,,,,,,,
 4,fund3,"Which of the following sources are used to fund your current, largest project? ",MULTIPLE CHOICES,funding,,,,,,,,,,
-4,fund4,"Which of the following sources were used to fund your current, largest project three years ago? ",MULTIPLE CHOICES,funding,,,,,,,,,,
+4,fund4,"If your current project has been running for more than 3 years, how was it funded 3 years ago? ",MULTIPLE CHOICES,funding,,,,,,,,,,
 5,perfCheck1,Do you receive sufficient information on the results of your work?,LIKERT,likert_time_5,,,,,,,,,,
 5,perfCheck2,Does your work give you the opportunity to check on how well you are doing your work?,LIKERT,likert_time_5,,,,,,,,,,
 5,perfCheck3,"In your work, do you have access to sufficient data and information?",LIKERT,likert_time_5,,,,,,,,,,
