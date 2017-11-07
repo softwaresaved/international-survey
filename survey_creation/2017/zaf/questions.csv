@@ -91,6 +91,8 @@ section,code,question,answer_format,answer_file,other,conditional,mandatory,rand
 7,tool2,What Operating System do you prefer to use at work? ,ONE CHOICE,os,,,,,FALSE,,,,,
 7,tool4can, What programming languages do you use at work? (Select as many as apply) ,MULTIPLE CHOICES,programing_language,,,,,,,,,,
 7,ukrse1,Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list),Y/N/NA,,,,,,,,,,,
+7,org1can,Would you be interested in joining such an organisation if one was formed in South Africa?,Y/N/NA,,,,,,,,,,,
+7,org2can,What would you hope to get out of such an organisation (check all that apply)?,MULTIPLE CHOICES,rse_benefits,,if yes to org1can,,,,,,,,
 7,ukrse2,How do you meet other RSEs? ,MULTIPLE CHOICES,ukrse,,,,,,,,,,
 7,skill2,What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.,FREETEXT,,,,,,,,,,,
 7,ukrse3,How did you learn the skills you need to become an RSE? ,FREETEXT,,,,,,,,,,,
