@@ -48,6 +48,7 @@ section,code,question,answer_format,answer_file,other,conditional,mandatory,rand
 4,open1can,How often do you release the software projects you've worked on under an open-source licence?,LIKERT,likert_time_10,,if YES to open01can,,,,,,,,
 4,open03can,Have you ever used a Digital Object Identifier (DOI) to identify your software? ,Y/N/NA,,,,,,,,,,,
 4,open3can,How often do you associate your software with a Digital Object Identifier (DOI)? ,LIKERT,likert_time_10,,if YES to open03can,,,,,,,,
+4,tool1zaf,"What are your three (3) favourite tools to manage project deliverables, keep track of progress, communicate with your project group(s)?",FREETEXT,,,,,,,,,,
 4,train1,Have you ever trained researchers in computational techniques? ,Y/N/NA,,,,,,,,,,,
 4,train2,"On average, how many times a year do you take part in providing training? ",FREENUMERIC,,,if YES to train1,,,,,,,,
 4,train3,"What training programs are you involved with (comma separated list)  (For example, Software Carpentry, local university training, etc.) ",FREETEXT,,,if YES to train1,,,,,,,,
