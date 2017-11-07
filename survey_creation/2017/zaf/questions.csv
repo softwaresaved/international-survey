@@ -8,7 +8,7 @@ section,code,question,answer_format,answer_file,other,conditional,mandatory,rand
 1,rse3,Who uses the code that you write?,LIKERT,likert_usage_5,,,,,,,,,,
 1,soft2can,Do you consider yourself a professional software developer?,Y/N/NA,,,,,,,,,,,
 1,soft1can,How many years of Software development experience do you have?,FREENUMERIC,,,,,,,,,,,
-1,time1can,"In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)",LIKERT,likert_time_10,,,,,,,,,,
+1,time1can,"In an average month, how much time do you spend on writing computer programmes (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)",LIKERT,likert_time_10,,,,,,,,,,
 1,time2can,"In an average month, how much time do you spend on Research",LIKERT,likert_time_10,,,,,,,,,,
 1,time3can,"In an average month, how much time do you spend on Management",LIKERT,likert_time_10,,,,,,,,,,
 1,time4can,"In an average month, how much time do you spend on Teaching",LIKERT,likert_time_10,,,,,,,,,,
