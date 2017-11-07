@@ -44,19 +44,18 @@ S		nokeyboard		N
 S		alloweditaftercompletion		N																																																																																																																																					
 S		googleanalyticsstyle		0																																																																																																																																					
 SL		surveyls_title		Study about people writing scientic software for The United States of America		en																																																																																																																																			
-SL		surveyls_welcometext		"<h1>[THIS IS FOR DEMO PURPOSE ONLY -- PLEASE DO NOT SHARE] {this-is-for-demo-purpose-only----please-do-not-share}</h1>
-<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including research programmer, facilitator, postdoctoral researcher, and research assistant).</strong></p>
+SL		surveyls_welcometext		"<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including research programmer, facilitator, postdoctoral researcher, and research assistant).</strong></p>
 <h2>Why did I receive this invitation?</h2>
 <p>You have received this link either because you were identified as someone who may be working in an RSE role, or because someone forwarded it a list that includes people who work as RSEs, or because you found it on social media.
 There is currently little reliable information about the RSE community, particularly in the US, so are collecting this information to help funders and other research organizations develop policies that will support RSEs, and potentially to start an organization of US RSEs.</p>
 <p>This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>
 <p>Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.</p>
 <h2>How long will it take?</h2>
-<p>There are at most 64 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
+<p>There are at most 59 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
 <h2>Who is responsible for this survey?</h2>
-<p>This study is conducted by the University of Southampton on behalf of the <a href=""https://www.software.ac.uk"" target=""_blank"">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/25269).
+<p>This study is conducted by the University of Southampton on behalf of the <a href=""https://www.software.ac.uk"" target=""_blank"">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/30755).
 The investigators are <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a> and <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>.
-The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">UK Data Protection Act</a>. 
+The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">UK Data Protection Act</a>.
 These records are anonymized and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"" target=""_blank"">Creative Commons by attribution, non-commercial license</a>.</p>
 <p>If you would like more information about the research or about the data collection, please contact <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>.</p>
 <p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.</p>"		en																																																																																																																																			
@@ -79,7 +78,7 @@ SL		email_admin_responses_subj		Response submission for survey {SURVEYNAME} with
 SL		email_admin_responses		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}		en																																																																																																																																			
 SL		surveyls_numberformat		0		en																																																																																																																																			
 G	G0	Questions about you	1			en																																																																																																																																			
-Q	!	socio1	1	In which country do you work?		en			N		1																																																																																																							1						1																	
+Q	!	socio1	1	In which country do you work?		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Afghanistan		en																																																																																																																																			
 A	0	2		Åland Islands		en																																																																																																																																			
 A	0	3		Albania		en																																																																																																																																			
@@ -329,14 +328,14 @@ A	0	246		Western Sahara		en
 A	0	247		Yemen		en																																																																																																																																			
 A	0	248		Zambia		en																																																																																																																																			
 A	0	249		Zimbabwe		en																																																																																																																																			
-Q	!	edu1	1	What is the highest degree/qualification you have obtained?		en			Y		1																																																																																																							1						1																	
+Q	!	edu1	1	What is the highest degree/qualification you have obtained?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		High school graduate or GED		en																																																																																																																																			
 A	0	2		Associate degree		en																																																																																																																																			
 A	0	3		Undergraduate degree		en																																																																																																																																			
 A	0	4		Master degree		en																																																																																																																																			
 A	0	5		Doctorate		en																																																																																																																																			
 A	0	6		None		en																																																																																																																																			
-Q	!	edu2	1	In which subject is your highest academic degree/qualification?		en			Y		1																																																																																																							1						1																	
+Q	!	edu2	1	In which subject is your highest academic degree/qualification?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Accounting & Finance		en																																																																																																																																			
 A	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
 A	0	3		Agriculture & Forestry		en																																																																																																																																			
@@ -402,10 +401,10 @@ A	0	62		Theology & Religious Studies		en
 A	0	63		Town & Country Planning and Landscape Design,,		en																																																																																																																																			
 A	0	64		Veterinary Medicine,,		en																																																																																																																																			
 A	0	65		Youth Work,,		en																																																																																																																																			
-Q	S	edu3	1	Enter your academic subject		en			N																																																																																																																																
-Q	S	edu4	1	Do you hold any other professional degrees/qualifications? (Please enter each of them separated by a semicolon)		en			N																																																																																																																																
-Q	Y	rse1	1	Do you write code as part of your job?		en			N		1																																																																																																							1																							
-Q	F	rse3		Who uses the code that you write?		en			N		1																																																																																																							1																							
+Q	S	edu3	1	Enter your academic subject		en		Y	N																																																																																																																																
+Q	S	edu4	1	Do you hold any other professional degrees/qualifications? (Please enter each of them separated by a semicolon)		en		Y	N																																																																																																																																
+Q	Y	rse1	1	Do you write code as part of your job?		en		Y	N		1																																																																																																							1																							
+Q	F	rse3		Who uses the code that you write?		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		0 - Mostly me		en																																																																																																																																			
 A	0	2		1		en																																																																																																																																			
@@ -413,9 +412,9 @@ A	0	3		2		en
 A	0	4		3		en																																																																																																																																			
 A	0	5		4		en																																																																																																																																			
 A	0	6		5 - Mostly other people		en																																																																																																																																			
-Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en			N		1																																																																																																							1																							
-Q	N	soft1can		How many years of Software development experience do you have?		en			N			1																																																																																																							1																						
-Q	F	likert0				en			N		1																																																																																																							1																							
+Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en		Y	N		1																																																																																																							1																							
+Q	N	soft1can		How many years of Software development experience do you have?		en		Y	N			1																																																																																																							1																						
+Q	F	likert0				en		Y	N		1																																																																																																							1																							
 SQ	0	time1can	1	In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)		en																																																																																																																																			
 SQ	0	time2can	1	In an average month, how much time do you spend on Research		en																																																																																																																																			
 SQ	0	time3can	1	In an average month, how much time do you spend on Management		en																																																																																																																																			
@@ -432,14 +431,14 @@ A	0	8		8		en
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
 G	G1	Your current employment	1			en																																																																																																																																			
-Q	!	currentEmp1	1	What type of organization do you work for?		en			Y		1																																																																																																							1						1																	
+Q	!	currentEmp1	1	What type of organization do you work for?	IMPORTANT: This information will not be made publicly available	en		Y	Y		1																																																																																																							1						1																	
 A	0	1		College, including community colleges (offering undergraduate programs)		en																																																																																																																																			
 A	0	2		University (offering both undergraduate and graduate programs)		en																																																																																																																																			
 A	0	3		Private company		en																																																																																																																																			
 A	0	4		National laboratory		en																																																																																																																																			
 A	0	5		Other government agency		en																																																																																																																																			
 A	0	6		Other non-profit		en																																																																																																																																			
-Q	!	currentEmp2	1	Which University?		en			Y		1																																																																																																							1						1																	
+Q	!	currentEmp2	1	Which University?	IMPORTANT: This information will not be made publicly available	en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Abilene Christian University 		en																																																																																																																																			
 A	0	2		Adelphi University 		en																																																																																																																																			
 A	0	3		Agnes Scott College 		en																																																																																																																																			
@@ -1528,20 +1527,20 @@ A	0	1085		Yale University 		en
 A	0	1086		Yeshiva University 		en																																																																																																																																			
 A	0	1087		York College of Pennsylvania 		en																																																																																																																																			
 A	0	1088		Youngstown State University 		en																																																																																																																																			
-Q	S	currentEmp4	1	Which organization do you work for? 		en			N																																																																																																																																
-Q	S	currentEmp5	1	What is your official job title?		en			N																																																																																																																																
-Q	S	currentEmp6	1	Are you known by a different job title? If so, please enter the job title you use		en			N																																																																																																																																
-Q	!	currentEmp12	1	Do you work full time or part time		en			N		1																																																																																																							1						1																	
+Q	S	currentEmp4	1	Which organization do you work for? 	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	S	currentEmp5	1	What is your official job title?	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	S	currentEmp6	1	Are you known by a different job title? If so, please enter the job title you use	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	!	currentEmp12	1	Do you work full time or part time	IMPORTANT: This information will not be made publicly available	en		Y	N		1																																																																																																							1						1																	
 A	0	1		Full Time		en																																																																																																																																			
 A	0	2		Part-time		en																																																																																																																																			
-Q	!	currentEmp10	1	What type of employment do you have?		en			Y		1																																																																																																							1						1																	
+Q	!	currentEmp10	1	What type of employment do you have?	IMPORTANT: This information will not be made publicly available	en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Permanent -- funded by institutional core funding		en																																																																																																																																			
 A	0	2		Permanent -- as long as funding is available		en																																																																																																																																			
 A	0	3		Fixed term		en																																																																																																																																			
 A	0	4		Freelance		en																																																																																																																																			
 A	0	5		Other/Not listed		en																																																																																																																																			
-Q	N	currentEmp11		What is the total duration of your current employment (in years)?		en			N			1																																																																																																							1																						
-Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	N	currentEmp11		What is the total duration of your current employment (in years)?		en		Y	N			1																																																																																																							1																						
+Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Accounting & Finance		en																																																																																																																																			
 SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
 SQ	0	3		Agriculture & Forestry		en																																																																																																																																			
@@ -1608,14 +1607,14 @@ SQ	0	63		Town & Country Planning and Landscape Design,,		en
 SQ	0	64		Veterinary Medicine,,		en																																																																																																																																			
 SQ	0	65		Youth Work,,		en																																																																																																																																			
 G	G2	Your employment history	1			en																																																																																																																																			
-Q	!	prevEmp1	1	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1	1	Where was your previous job based?	IMPORTANT: This information will not be made publicly available	en		Y	N		1																																																																																																							1						1																	
 A	0	1		This is my first job		en																																																																																																																																			
 A	0	2		University		en																																																																																																																																			
 A	0	3		Private company		en																																																																																																																																			
 A	0	4		National laboratory		en																																																																																																																																			
 A	0	5		Other government agency		en																																																																																																																																			
 A	0	6		Other non-profit		en																																																																																																																																			
-Q	R	prevEmp2	1	Rank the following factors dependent on how strongly they influenced your decision to accept your current position 		en			N		1																																																								5																									1	1						1															1																							
+Q	R	prevEmp2	1	Rank the following factors dependent on how strongly they influenced your decision to accept your current position 		en		Y	N		1																																																								5																									1	1						1															1																							
 SQ	0	1	1	Rank1		en																																																																																																																																			
 SQ	0	2	1	Rank2		en																																																																																																																																			
 SQ	0	3	1	Rank3		en																																																																																																																																			
@@ -1635,33 +1634,33 @@ A	0	8		Ability to work across disciplines		en
 A	0	9		I want to learn new skills		en																																																																																																																																			
 A	0	10		Long-term prospects for continued employment		en																																																																																																																																			
 G	G3	Your working practices	1			en																																																																																																																																			
-Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en			N		1																																																																																																							1						1																	
+Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 	IMPORTANT: This information will not be made publicly available	en		Y	N		1																																																																																																							1						1																	
 A	0	1		Same researcher(s)		en																																																																																																																																			
 A	0	2		Regularly change researcher(s)		en																																																																																																																																			
-Q	Y	currentWork2	1	Do you work for a Research Software Group?		en			N		1																																																																																																							1																							
-Q	Y	paper1	1	Has your software contributed to research that has been published in a journal or at a conference?		en			N		1																																																																																																							1																							
-Q	Y	paper2	1	In general, when your software contributes to a paper, are you acknowledged in that paper?		en			N		1																																																																																																							1																							
-Q	Y	paper3	1	Are you generally named as the main author of the paper?		en			N		1																																																																																																							1																							
-Q	Y	paper4	1	Are you generally named as a co-author of the paper?		en			N		1																																																																																																							1																							
-Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en			N		1																																																																																																							1																							
-Q	Y	conf1can	1	Have you ever presented your software work at a conference or workshop?		en			N		1																																																																																																							1																							
-Q	S	conf2can	1	Which conference(s)/workshop(s) (comma separated list with FULLNAME (ACRONYM)		en			N																																																																																																																																
-Q	N	proj1can		How many software projects are you currently involved in?		en			N			1																																																																																																							1																						
-Q	F	stability1		What is the bus factor of your most important software project? (the bus factor is the number of team members who, if run over by a bus, would put the project in jeopardy, so 1 means the project is dependent on a single person)		en			N		1																																																																																																							1																							
+Q	Y	currentWork2	1	Do you work for a Research Software Group?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper1	1	Has your software contributed to research that has been published in a journal or at a conference?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper2	1	In general, when your software contributes to a paper, are you acknowledged in that paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper3	1	Are you generally named as the main author of the paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper4	1	Are you generally named as a co-author of the paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en		Y	N		1																																																																																																							1																							
+Q	Y	conf1can	1	Have you ever presented your software work at a conference or workshop?		en		Y	N		1																																																																																																							1																							
+Q	S	conf2can	1	Which conference(s)/workshop(s) (comma separated list with FULLNAME (ACRONYM)	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	N	proj1can		How many software projects are you currently involved in?		en		Y	N			1																																																																																																							1																						
+Q	F	stability1		What is the bus factor of your most important software project? (the bus factor is the number of team members who, if run over by a bus, would put the project in jeopardy, so 1 means the project is dependent on a single person)		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		1		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
 A	0	4		4		en																																																																																																																																			
 A	0	5		5+		en																																																																																																																																			
-Q	Y	stability2	1	Is there a technical hand-over plan for your most important software project?		en			N		1																																																																																																							1																							
-Q	M	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	Y	stability2	1	Is there a technical hand-over plan for your most important software project?		en		Y	N		1																																																																																																							1																							
+Q	M	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en		Y	N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		No formal testing		en																																																																																																																																			
 SQ	0	2		Developers conduct testing		en																																																																																																																																			
 SQ	0	3		Test engineers conduct testing		en																																																																																																																																			
 SQ	0	4		Users conduct testing		en																																																																																																																																			
-Q	Y	open01can	1	Have you ever released your software under an open-source license? 		en			N		1																																																																																																							1																							
-Q	F	open1can		How often do you release the software projects you've worked on under an open-source license?		en			N		1																																																																																																							1																							
+Q	Y	open01can	1	Have you ever released your software under an open-source license? 		en		Y	N		1																																																																																																							1																							
+Q	F	open1can		How often do you release the software projects you've worked on under an open-source license?		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
@@ -1673,8 +1672,8 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
-Q	Y	open03can	1	Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en			N		1																																																																																																							1																							
-Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
+Q	Y	open03can	1	Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en		Y	N		1																																																																																																							1																							
+Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
@@ -1686,11 +1685,11 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
-Q	Y	train1	1	Have you ever trained researchers in computational techniques? 		en			N		1																																																																																																							1																							
-Q	N	train2		On average, how many times a year do you take part in providing training? 		en			N			1																																																																																																							1																						
-Q	S	train3	1	What training programs are you involved with (comma separated list)  (For example, Software Carpentry, local university training, etc.)		en			N																																																																																																																																
-Q	Y	fund1	1	Do you know the source of the funding used to support you and your current, largest project? 		en			N		1																																																																																																							1																							
-Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	Y	train1	1	Have you ever trained researchers in computational techniques? 		en		Y	N		1																																																																																																							1																							
+Q	N	train2		On average, how many times a year do you take part in providing training? 		en		Y	N			1																																																																																																							1																						
+Q	S	train3	1	What training programs are you involved with (comma separated list)  (For example, Software Carpentry, local university training, etc.)	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	Y	fund1	1	Do you know the source of the funding used to support you and your current, largest project? 		en		Y	N		1																																																																																																							1																							
+Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Funding by institution		en																																																																																																																																			
 SQ	0	3		Grants		en																																																																																																																																			
@@ -1709,7 +1708,7 @@ SQ	0	15		Open core		en
 SQ	0	16		Foundations & consortiums		en																																																																																																																																			
 SQ	0	17		Venture capital		en																																																																																																																																			
 SQ	0	18		Trademark licensing & franchising		en																																																																																																																																			
-Q	M	fund3	1	Which of the following sources are used to fund your current, largest project? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	fund3	1	Which of the following sources are used to fund your current, largest project? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Funding by institution		en																																																																																																																																			
 SQ	0	3		Grants		en																																																																																																																																			
@@ -1728,7 +1727,7 @@ SQ	0	15		Open core		en
 SQ	0	16		Foundations & consortiums		en																																																																																																																																			
 SQ	0	17		Venture capital		en																																																																																																																																			
 SQ	0	18		Trademark licensing & franchising		en																																																																																																																																			
-Q	M	fund4	1	Which of the following sources were used to fund your current, largest project three years ago? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	fund4	1	Which of the following sources were used to fund your current, largest project three years ago? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Funding by institution		en																																																																																																																																			
 SQ	0	3		Grants		en																																																																																																																																			
@@ -1748,50 +1747,50 @@ SQ	0	16		Foundations & consortiums		en
 SQ	0	17		Venture capital		en																																																																																																																																			
 SQ	0	18		Trademark licensing & franchising		en																																																																																																																																			
 G	G4	Your perception of your current position	1			en																																																																																																																																			
-Q	F	likert1				en			N		1																																																																																																							1																							
-SQ	0	turnOver2	1	How often do you look forward to another day at work?		en																																																																																																																																			
-SQ	0	turnOver1	1	How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?		en																																																																																																																																			
-SQ	0	perfCheck6	1	Does your supervisor/line manager inform you about how well you are doing your work?		en																																																																																																																																			
+Q	F	likert1				en		Y	N		1																																																																																																							1																							
+SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
 SQ	0	turnOver3	1	How often do you consider leaving your job?		en																																																																																																																																			
-SQ	0	perfCheck4	1	Do you receive sufficient information on the purpose of your work?		en																																																																																																																																			
+SQ	0	perfCheck7	1	Do your colleagues inform you about how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck3	1	In your work, do you have access to sufficient data and information?		en																																																																																																																																			
+SQ	0	perfCheck6	1	Does your supervisor/line manager inform you about how well you are doing your work?		en																																																																																																																																			
+SQ	0	turnOver1	1	How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?		en																																																																																																																																			
 SQ	0	turnOver4	1	How often do dream about getting another job that will better suit your needs?		en																																																																																																																																			
 SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
+SQ	0	perfCheck4	1	Do you receive sufficient information on the purpose of your work?		en																																																																																																																																			
 SQ	0	perfCheck5	1	Does your work provide you with direct feedback on how well you are doing your work?		en																																																																																																																																			
-SQ	0	perfCheck7	1	Do your colleagues inform you about how well you are doing your work?		en																																																																																																																																			
-SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
-SQ	0	perfCheck3	1	In your work, do you have access to sufficient data and information?		en																																																																																																																																			
+SQ	0	turnOver2	1	How often do you look forward to another day at work?		en																																																																																																																																			
 A	0	1		Never		en																																																																																																																																			
 A	0	2		Sometimes		en																																																																																																																																			
 A	0	3		Often		en																																																																																																																																			
 A	0	4		Very Often		en																																																																																																																																			
 A	0	5		Always		en																																																																																																																																			
-Q	F	likert2				en			N		1																																																																																																							1																							
-SQ	0	affRec4	1	I am satisfied with the compliments from my supervisor/line manager concerning my work		en																																																																																																																																			
-SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
-SQ	0	affRec5	1	I am satisfied with the encouragement from my supervisor/line manager while doing my job		en																																																																																																																																			
-SQ	0	progRSE5	1	It is likely that my next position will be an RSE role		en																																																																																																																																			
-SQ	0	progRSE3	1	There are many opportunities within my chosen career plan		en																																																																																																																																			
-SQ	0	progRSE4	1	My current position is an integral part of my career plan		en																																																																																																																																			
-SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
-SQ	0	affRec2	1	I am satisfied with a word of thanks from my supervisor/line manager		en																																																																																																																																			
-SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organization		en																																																																																																																																			
-SQ	0	percEmp2	1	I can think of a number of organizations that would probably offer me a job		en																																																																																																																																			
-SQ	0	progRSE2	1	The process I have to complete to gain a promotion is clear and understandable		en																																																																																																																																			
-SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
+Q	F	likert2				en		Y	N		1																																																																																																							1																							
 SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
-SQ	0	turnOver5	1	My current job satisfies my personal needs		en																																																																																																																																			
-SQ	0	affSat2	1	Most days I am enthusiastic about my job		en																																																																																																																																			
-SQ	0	affSat3	1	I feel fairly well satisfied with my job		en																																																																																																																																			
-SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
-SQ	0	affSat4	1	I like my job better than the average person		en																																																																																																																																			
 SQ	0	progRSE1	1	It is likely that I will gain a promotion within my current group 		en																																																																																																																																			
+SQ	0	affSat4	1	I like my job better than the average person		en																																																																																																																																			
+SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
+SQ	0	progRSE5	1	It is likely that my next position will be an RSE role		en																																																																																																																																			
+SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
+SQ	0	percEmp2	1	I can think of a number of organizations that would probably offer me a job		en																																																																																																																																			
+SQ	0	turnOver5	1	My current job satisfies my personal needs		en																																																																																																																																			
+SQ	0	progRSE3	1	There are many opportunities within my chosen career plan		en																																																																																																																																			
+SQ	0	progRSE2	1	The process I have to complete to gain a promotion is clear and understandable		en																																																																																																																																			
+SQ	0	affRec2	1	I am satisfied with a word of thanks from my supervisor/line manager		en																																																																																																																																			
+SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
+SQ	0	affRec4	1	I am satisfied with the compliments from my supervisor/line manager concerning my work		en																																																																																																																																			
 SQ	0	percEmp3	1	My experience is in demand on the labor market		en																																																																																																																																			
+SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organization		en																																																																																																																																			
+SQ	0	affRec5	1	I am satisfied with the encouragement from my supervisor/line manager while doing my job		en																																																																																																																																			
+SQ	0	affSat3	1	I feel fairly well satisfied with my job		en																																																																																																																																			
+SQ	0	affSat2	1	Most days I am enthusiastic about my job		en																																																																																																																																			
+SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
+SQ	0	progRSE4	1	My current position is an integral part of my career plan		en																																																																																																																																			
 A	0	1		Strongly disagree		en																																																																																																																																			
 A	0	2		Disagree		en																																																																																																																																			
 A	0	3		Neither agree or disagree		en																																																																																																																																			
 A	0	4		Agree		en																																																																																																																																			
 A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	likert3				en			N		1																																																																																																							1																							
+Q	F	likert3				en		Y	N		1																																																																																																							1																							
 SQ	0	satisgen1	1	In general, how satisfied are you with [Your current position]		en																																																																																																																																			
 SQ	0	satisgen2	1	In general, how satisfied are you with [Your career]		en																																																																																																																																			
 A	0	1		0 - Not at all satisfied		en																																																																																																																																			
@@ -1806,18 +1805,18 @@ A	0	9		8		en
 A	0	10		9		en																																																																																																																																			
 A	0	11		10 - Completely satisfied		en																																																																																																																																			
 G	G5	Demographic questions	1			en																																																																																																																																			
-Q	!	socio2	1	Please select your gender		en			Y		1																																																																																																							1						1																	
+Q	!	socio2	1	Please select your gender	IMPORTANT: This information will not be made publicly available	en			Y		1																																																																																																							1						1																	
 A	0	1		Female		en																																																																																																																																			
 A	0	2		Male		en																																																																																																																																			
 A	0	3		Prefer not to say		en																																																																																																																																			
-Q	!	socio3	1	Please select your age		en			N		1																																																																																																							1						1																	
+Q	!	socio3	1	Please select your age	IMPORTANT: This information will not be made publicly available	en			N		1																																																																																																							1						1																	
 A	0	1		18 to 24 years		en																																																																																																																																			
 A	0	2		25 to 34 years		en																																																																																																																																			
 A	0	3		35 to 44 years		en																																																																																																																																			
 A	0	4		45 to 54 years		en																																																																																																																																			
 A	0	5		55 to 64 years		en																																																																																																																																			
 A	0	6		Age 65 or older		en																																																																																																																																			
-Q	!	socio5	1	How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. 		en			Y		1																																																																																																							1						1																	
+Q	!	socio5	1	How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. 	IMPORTANT: This information will not be made publicly available	en			Y		1																																																																																																							1						1																	
 A	0	1		White		en																																																																																																																																			
 A	0	2		Black or African American		en																																																																																																																																			
 A	0	3		Hispanic, Latino, or Spanish origin		en																																																																																																																																			
@@ -1826,7 +1825,7 @@ A	0	5		Asian		en
 A	0	6		Native Hawaiian or Other Pacific Islander		en																																																																																																																																			
 A	0	7		Do not wish to declare		en																																																																																																																																			
 Q	Y	disa1	1	Do you have a condition that is defined as a disability by the Americans with Disabilities Act (ADA)?		en			N		1																																																																																																							1																							
-Q	!	socio4	1	Please select the range of your salary		en			N		1																																																																																																							1						1																	
+Q	!	socio4	1	Please select the range of your salary	IMPORTANT: This information will not be made publicly available	en			N		1																																																																																																							1						1																	
 A	0	1		Less than $30,000		en																																																																																																																																			
 A	0	2		From $30,000 to $49,999		en																																																																																																																																			
 A	0	3		From $50,000 to $69,999		en																																																																																																																																			
@@ -1837,7 +1836,7 @@ A	0	7		From $130,000 to $149,999		en
 A	0	8		More than $150,000		en																																																																																																																																			
 A	0	9		Prefer not to say		en																																																																																																																																			
 G	G6	Final questions about you	1			en																																																																																																																																			
-Q	!	tool2	1	What Operating System do you prefer to use at work? 		en			N		1																																																																																																							1						1																	
+Q	!	tool2	1	What Operating System do you prefer to use at work? 	IMPORTANT: This information will not be made publicly available	en			N		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		en																																																																																																																																			
 A	0	2		OS X		en																																																																																																																																			
 A	0	3		Windows		en																																																																																																																																			
@@ -1884,5 +1883,5 @@ Q	M	ukrse2	1	How do you meet other RSEs? 		en			Y	Y	1	1						1	1									1	1				
 SQ	0	1		UK RSE Association		en																																																																																																																																			
 SQ	0	2		Local RSE group/network		en																																																																																																																																			
 SQ	0	3		N/A		en																																																																																																																																			
-Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en			N																																																																																																																																
-Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en			N																																																																																																																																
+Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.	IMPORTANT: This information will not be made publicly available	en			N																																																																																																																																
+Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 	IMPORTANT: This information will not be made publicly available	en			N																																																																																																																																
