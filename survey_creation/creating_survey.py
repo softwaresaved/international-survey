@@ -385,6 +385,8 @@ class surveyCreation:
 
         if row['public'] == 'N':
             question['help'] = self.specific_config.private_data[lang]
+        else:
+            question['help'] = ''
         self._write_row(question)
 
     def setup_subquestion(self, type_question, lang, list_likert=None, txt_lang=None):
@@ -572,6 +574,7 @@ class surveyCreation:
                             self.setup_question('freenumeric', row, txt_lang, lang)
 
                         if row['answer_format'].lower() == 'freetext':
+                            print(row)
                             self.setup_question('freetext', row, txt_lang, lang)
 
                         if row['answer_format'].lower() == 'likert':
