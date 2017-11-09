@@ -4,7 +4,7 @@
 
 |country     |translation|adaptation|draft survey|Finalised|ethic|Survey started|Survey finished|analysis|publication|
 |  :-:       |  :-:   |  :-:   |  :-:   |  :-:   |  :-:   |  :-:     |  :-:     |  :-:   |  :-:   |
-|Germany     |  done  |  done  |  done  |  done  |  done  | 17/10/17 |(17/11/17)|        |        |
+|Germany     |  done  |  done  |  done  |  done  |  done  | 17/10/17 | 31/12/17 |        |        |
 |Netherlands | N/A    |  done  |  done  |Pending |  done  |  done    |          |        |        |
 |South Africa| N/A  	 |  done  |   	    |   	    |   	    |          |          |        |        |
 |USA 	       | N/A  	 |  done  |  done	 |  done  |  done  |(15/11/17)|          |        |        |
