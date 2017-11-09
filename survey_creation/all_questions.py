@@ -10,18 +10,19 @@ found in the different surveys
 import os
 from collections import OrderedDict
 import csv
-country_questions = dict()
+country_questions = OrderedDict()
 for root, dirs, files in os.walk('./2017'):
     for name in files:
         if name == 'questions.csv':
-            print(os.path.basename(root))
             with open(os.path.join(root, name), 'r') as f:
                 reader = csv.DictReader(f)
                 country_questions[os.path.basename(root)] = [row for row in reader]
 
 
-total_code = list()
+# alphabetical order
+country_questions = OrderedDict(sorted(country_questions.items(), key=lambda t: t[0]))
 
+total_code = list()
 for country in country_questions:
     index = 0
     for question in country_questions[country]:
@@ -36,12 +37,23 @@ for code_question in total_code:
     for country in country_questions:
         for question in country_questions[country]:
             if question['code'] == code_question:
-                ordered_all_questions[code_question] = {'question': question['question'],
-                                                        'answer_format': question['answer_format'],
-                                                        'answer_file': question['answer_file']}
-                break
+                try:
+                    ordered_all_questions[code_question][country] = ordered_all_questions[code_question].get(country, 'Y')
+                except KeyError:
+                    ordered_all_questions[code_question] = {'question': question['question'],
+                                                            'answer_format': question['answer_format'],
+                                                            'answer_file': question['answer_file'],
+                                                            country: 'Y'}
 
 fields = ['code', 'question', 'answer_format', 'answer_file']
+list_country = list(country_questions.keys())
+fields.extend(list_country)
+
+for k in ordered_all_questions:
+    for i in list_country:
+        if i not in ordered_all_questions[k].keys():
+            ordered_all_questions[k][i] = 'N'
+
 
 with open("./2017/summary_questions.csv", "w") as f:
     w = csv.DictWriter(f, fields)
