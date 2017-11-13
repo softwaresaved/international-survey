@@ -1,23 +1,23 @@
 ,Count
-Computer Science,96
-Physics and Astronomy,78
-Biological Sciences,73
-Geography & Environmental Sciences,56
-Mathematics,27
+Computer Science,102
+Physics and Astronomy,83
+Biological Sciences,77
+Geography & Environmental Sciences,59
+Mathematics,28
 Geology,21
-Chemistry,19
+Chemistry,20
 Librarianship & Information Management,18
-Education,15
+Education,16
+Medicine,12
 Electrical & Electronic Engineering,11
-Medicine,11
 Linguistics,10
 Classics & Ancient History,9
+Psychology,9
 History,9
 General Engineering,8
-Psychology,8
+Robotics,8
 Economics,7
 Mechanical Engineering,7
-Robotics,7
 Chemical Engineering,6
 Agriculture & Forestry,6
 Theology & Religious Studies,5
@@ -45,6 +45,7 @@ Architecture,1
 Middle Eastern and African Studies,1
 Materials Technology,1
 Iberian Languages/Hispanic Studies,1
+Counselling,1
 Marketing,1
 Russian & East European Languages,0
 Fashion,0
@@ -56,7 +57,6 @@ Social Work,0
 Social Policy,0
 Criminology,0
 Dentistry,0
-Counselling,0
 Physiotherapy,0
 "Hospitality, Leisure, Recreation & Tourism",0
 Land & Property Management,0
