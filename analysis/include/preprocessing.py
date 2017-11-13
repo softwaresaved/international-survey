@@ -211,7 +211,7 @@ class CleaningData(CleaningConfig):
         # columns_to_drop = ['id. Response ID', 'submitdate. Date submitted', 'startdate. Date started',
                            # 'datestamp. Date last action', 'refurl. Referrer URL', 'startlanguage. Start language']
         columns_to_drop = ['id. Response ID', 'submitdate. Date submitted', 'startdate. Date started',
-                           'datestamp. Date last action', 'refurl. Referrer URL']
+                           'datestamp. Date last action', 'refurl. Referrer URL', 'ipaddr. IP address']
         df = df.drop(columns_to_drop, axis=1)
 
         # Drop the columns about the time for each questions if present (from limesurvey)
