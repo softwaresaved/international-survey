@@ -16,7 +16,6 @@ section,code,question,answer_format,answer_file,other,condition,mandatory,random
 1,time7zaf,"In an average month, how much time would you like to spend on Research",LIKERT,likert_time_10,,,,,,,,,,,
 1,time8zaf,"In an average month, how much time would you like to spend on Management",LIKERT,likert_time_10,,,,,,,,,,,
 1,time9zaf,"In an average month, how much time would you like to spend on Teaching",LIKERT,likert_time_10,,,,,,,,,,,
-1,time10zaf,"In an average month, how much time do you spend on Other activities",LIKERT,likert_time_10,,,,,,,,,,,
 2,currentEmp1,What type of organisation do you work for?,ONE CHOICE,type_organisation,Y,,,,,FALSE,,,,,
 2,currentEmp2,Which University? Please please provide the full official name of the university or organisation e.g. University of Cape Town if your organisation is not listed,ONE CHOICE,universities,Y,If ‘University’ at currentEmp1,,,,FALSE,Lost source but modified to include different London Univ,,,,
 2,currentEmp4,Which organisation do you work for?,FREETEXT,,,If NOT ‘University’ at currentEmp1,,,,,,,,,
