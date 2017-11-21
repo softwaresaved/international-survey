@@ -1,24 +1,24 @@
 ,Count [PERCENTAGE]
-Python,18.13
-C++,10.29
-JavaScript,9.24
-C,8.07
-Java,7.37
-R,7.37
-SQL,7.13
-Matlab,6.78
-Fortran,6.67
-PHP,4.56
-Perl,3.16
-C#,1.52
-Ruby,1.52
-VBA,1.29
-Assembly,1.05
-Julia,0.94
-Lua,0.82
-Visual Basic,0.58
+Python,18.22
+C++,10.27
+JavaScript,9.11
+C,7.96
+Java,7.38
+R,7.38
+SQL,7.04
+Matlab,6.92
+Fortran,6.81
+PHP,4.5
+Perl,3.11
+C#,1.5
+Ruby,1.5
+VBA,1.27
+Assembly,1.04
+Lua,0.92
+Julia,0.92
+Visual Basic,0.69
 TypeScript,0.58
-Go,0.47
+Go,0.46
 Scala,0.35
 Haskell,0.35
 Groovy,0.35
