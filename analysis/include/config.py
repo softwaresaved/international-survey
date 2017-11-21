@@ -57,6 +57,7 @@ class NotebookConfig(PlottingConfig):
                           'import matplotlib.pyplot as plt',
                           'from IPython.display import display',
                           'import IPython.core.display as di',
+                          'from IPython.core.interactiveshell import InteractiveShell',
                           'from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
                           'from include.counting import get_count, get_percentage',
                           'from include.plotting import get_plot, display_side_by_side',
