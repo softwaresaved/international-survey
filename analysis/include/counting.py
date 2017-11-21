@@ -270,13 +270,26 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False):
     # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
     if dropna is True:
-        df_sub = df_sub[['Yes', 'No']]
+        try:
+            df_sub = df_sub[['Yes', 'No']]
+        except KeyError:
+            try:
+                df_sub = df_sub[['Yes']]
+            except KeyError:
+                df_sub = df_sub[['No']]
+
     else:
         try:
             df_sub = df_sub[['Yes', 'No', np.nan]]
         except KeyError:
             df_sub[np.nan] = 0
-            df_sub = df_sub[['Yes', 'No']]
+            try:
+                df_sub = df_sub[['Yes', 'No']]
+            except KeyError:
+                try:
+                    df_sub = df_sub[['Yes']]
+                except KeyError:
+                    df_sub = df_sub[['No']]
     return df_sub
 
 
