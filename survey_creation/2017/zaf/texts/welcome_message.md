@@ -28,6 +28,6 @@ These records are anonymised and access is strictly protected and granted to the
 
 If you would like more information about the research or about the data collection, please contact [Olivier Philippe](mailto:olivier.philippe@soton.ac.uk).
 
-If you would like to know more about RSEs in South Africa or would like to help establish a local community, please contact Anelda van der Walt(mailto:anelda.vdwalt@gmail.com) or sign up for the (South) [African Carpentries Google Group](https://groups.google.com/forum/#!forum/swc-za) for joint information about [Software](https://software-carpentry.org/)/[Data](http://www.datacarpentry.org/)/[Library Carpentry](http://librarycarpentry.github.io/) and Research Software Engineers.
+If you would like to know more about RSEs in South Africa or would like to help establish a local community, please contact Anelda van der Walt(mailto:anelda.vanderwalt@nwu.ac.za) or sign up for the (South) [African Carpentries Google Group](https://groups.google.com/forum/#!forum/swc-za) for joint information about [Software](https://software-carpentry.org/)/[Data](http://www.datacarpentry.org/)/[Library Carpentry](http://librarycarpentry.github.io/) and Research Software Engineers.
 
 If you have a concern or would like to make a complaint, please contact [Simon Hettrick](mailto:s.hettrick@software.ac.uk).
