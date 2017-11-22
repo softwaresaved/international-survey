@@ -65,7 +65,8 @@ class GenerateNotebook(NotebookConfig):
         """
         rows = """pd.set_option('display.max_rows', 1000)"""
         columns = """pd.set_option('display.max_columns', 1000) """
-        self._add_code('\n'.join([rows, columns]))
+        tables = """InteractiveShell.ast_node_interactivity = "all" """
+        self._add_code('\n'.join([rows, columns, tables]))
 
     def _setup_matplotlib(self):
         """
