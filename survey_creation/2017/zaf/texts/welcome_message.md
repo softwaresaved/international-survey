@@ -4,7 +4,7 @@ Why did I receive this invitation?
 ----------------------------------
 
 You have received this link because you are a member of the UK RSE Association or you were identified as someone working in an RSE role.
-The [North-West University](http://www.nwu.ac.za/) eResearch Initiative, under the guidance of [Anelda van der Walt](mailto:anelda.vdwalt@gmail.com) and Boeta Pretorius have informally been collaborating with the [Software Sustainability Institute](https://software.ac.uk)(SSI) and various RSE leaders in the UK since 2015. The community of RSEs and specifically the SSI have loads of [resources for research software developers](https://www.software.ac.uk/resources) and we hope that by running this survey, we would be able to create a broader awareness of the communities/resources that exist and help to establish a local RSE community.
+The [North-West University](http://www.nwu.ac.za/) eResearch Initiative have informally been collaborating with the [Software Sustainability Institute](https://software.ac.uk)(SSI) and various RSE leaders in the UK since 2015. The community of RSEs and specifically the SSI have loads of [resources for research software developers](https://www.software.ac.uk/resources) and we hope that by running this survey, we would be able to create a broader awareness of the communities and resources that exist and help to establish a local RSE community.
 There is currently little reliable information about the global RSE community, so the SSI have been asked to collect this information to help funders and other research organisations develop policies that will support RSEs.
 This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.
 
@@ -25,6 +25,6 @@ These records are anonymised and access is strictly protected and granted to the
 
 If you would like more information about the research or about the data collection, please contact [Olivier Philippe](mailto:olivier.philippe@soton.ac.uk).
 
-If you would like to know more about RSEs in South Africa or would like to help establish a local community, please contact Anelda van der Walt(mailto:anelda.vdwalt@gmail.com) or sign up for the (South) [African Carpentries Google Group](https://groups.google.com/forum/#!forum/swc-za) for joint information about [Software](https://software-carpentry.org/)/[Data](http://www.datacarpentry.org/)/[Library Carpentry](http://librarycarpentry.github.io/) and Research Software Engineers.
+If you would like to know more about RSEs in South Africa or would like to help establish a local community, please contact Anelda van der Walt(mailto:anelda.vanderwalt@nwu.ac.za) or sign up for the (South) [African Carpentries Google Group](https://groups.google.com/forum/#!forum/swc-za) for joint information about [Software](https://software-carpentry.org/)/[Data](http://www.datacarpentry.org/)/[Library Carpentry](http://librarycarpentry.github.io/) and Research Software Engineers.
 
 If you have a concern or would like to make a complaint, please contact [Simon Hettrick](mailto:s.hettrick@software.ac.uk).
