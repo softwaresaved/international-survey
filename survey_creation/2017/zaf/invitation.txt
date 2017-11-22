@@ -1,0 +1,24 @@
+Survey about research software in South Africa, and the people involved in it
+
+Good day,
+
+Do you develop research software, or are you involved in the scientific software creation process? Then we would very much like you to participate in the following survey: {ADD LINK HERE}
+
+As of now there is not much knowledge about the community of those in research and science who develop software. This survey aims to gain valuable insights into this community in order to support research funders and other institutions to develop strategies and funding programs as well as policies.
+
+The North-West University eResearch Initiative, have informally been collaborating with the Software Sustainability Institute(SSI) and various RSE leaders in the UK since 2015. The community of RSEs and specifically the SSI have loads of resources for research software developers and we hope that by running this survey, we would be able to create a broader awareness of the communities and resources that exist and help to establish a local RSE community. 
+
+This survey gives you the opportunity to make your point of view and experiences be heard, and thus be part of the development of this community.
+
+In case you know others who develop software in research, please feel free to forward this invitation. If you forward this mail to a mailing list, please be so kind and copy in Anelda (anelda.vanderwalt@nwu.ac.za).
+
+The survey results will be published under a CC BY-NC license, and will be announced and evaluated via the African Carpentries Google Group [1] and the SSI blog [2]. Simultaneously, similar surveys are conducted in the UK, Canada, Australia, Norway, the Netherlands, the USA and South Africa. For reasons of comparability, this survey was closely coordinated with the others.
+
+We look forward to your participation in the survey!
+
+Many thanks,
+Anelda van der Walt
+on behalf of the NWU eResearch Initiative
+
+[1] https://groups.google.com/forum/#!forum/swc-za
+[2] hhttps://software.ac.uk/blog
