@@ -4,7 +4,7 @@ We need your help with the SSI and zaf-RSE survey on research software and the p
 
 As of now there is not much knowledge about the community of those in research and science who develop software. This survey aims to gain valuable insights into this community in order to support research funders and other institutions to develop strategies and funding programs as well as policies.
 
-Last and this years’ UK surveys [1, 2] allowed to gain valuable insights. We would like to build on the momentum gained in the UK RSE community and help to create a voice for the South African RSE community.  Similar surveys will be conducted in Canada, Australia, Norway, the Netherlands, the USA and again in the UK. For reasons of comparability, this survey was closely coordinated with the others.
+Last and this years’ UK surveys [1, 2] allowed to gain valuable insights. We would like to build on the momentum gained in the UK RSE community and help to create a voice for the South African RSE community.  Similar surveys will be conducted in Canada, Australia, Norway, the Netherlands, the USA and again in the UK. For reasons of comparability, this survey was closely coordinated with the others. We thank Prof Ilani Loubser from the North-West University's Space Physics programme for working with the NWU eResearch Initiative to provide South African context to the survey.
 
 This survey gives South African researchers and scientist the opportunity to make their point of view and experiences be heard, and thus be part of the development of this community. It would be also very helpful if you could spread the word to others who develop software in the South African research landscape, or anyone who employs software experts in the South African academic landscape.
 
