@@ -3,7 +3,7 @@ S		sid		421498
 S		owner_id		1																																																																																																																																					
 S		admin		Administrator																																																																																																																																					
 S		active		Y																																																																																																																																					
-S		adminemail		olivier.philippe@gmail.com																																																																																																																																					
+S		adminemail		orp2c15@soton.ac.uk																																																																																																																																					
 S		anonymized		N																																																																																																																																					
 S		format		G																																																																																																																																					
 S		savetimings		Y																																																																																																																																					
@@ -29,7 +29,7 @@ S		tokenanswerspersistence		N
 S		assessments		N																																																																																																																																					
 S		usecaptcha		N																																																																																																																																					
 S		usetokens		N																																																																																																																																					
-S		bounce_email		olivier.philippe@gmail.com																																																																																																																																					
+S		bounce_email		orp2c15@soton.ac.uk																																																																																																																																					
 S		tokenlength		15																																																																																																																																					
 S		showxquestions		N																																																																																																																																					
 S		showgroupinfo		B																																																																																																																																					
@@ -44,21 +44,22 @@ S		nokeyboard		N
 S		alloweditaftercompletion		N																																																																																																																																					
 S		googleanalyticsstyle		0																																																																																																																																					
 SL		surveyls_title		Study about people in the South Africa writing research software		en																																																																																																																																			
-SL		surveyls_welcometext		"<h1>[THIS IS FOR DEMO PURPOSE ONLY -- PLEASE DO NOT SHARE] {this-is-for-demo-purpose-only----please-do-not-share}</h1>
-<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
+SL		surveyls_welcometext		"<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
 <h2>Why did I receive this invitation?</h2>
 <p>You have received this link because you are a member of the UK RSE Association or you were identified as someone working in an RSE role.
-There is currently little reliable information about the RSE community, so we have been asked to collect this information to help funders and other research organisations develop policies that will support RSEs.
+The <a href=""http://www.nwu.ac.za/"" target=""_blank"">North-West University</a> eResearch Initiative have informally been collaborating with the <a href=""https://software.ac.uk"" target=""_blank"">Software Sustainability Institute</a>(SSI) and various RSE leaders in the UK since 2015. The community of RSEs and specifically the SSI have loads of <a href=""https://www.software.ac.uk/resources"" target=""_blank"">resources for research software developers</a> and we hope that by running this survey, we would be able to create a broader awareness of the communities and resources that exist and help to establish a local RSE community.
+There is currently little reliable information about the global RSE community, so the SSI have been asked to collect this information to help funders and other research organisations develop policies that will support RSEs.
 This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>
 <p>Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.</p>
 <h2>How long will it take?</h2>
 <p>There is a maximum of 64 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
 <h2>Who is responsible for this survey?</h2>
-<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/25269).
+<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/31060).
 The investigators are <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a> and <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>.
 The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">Data Protection Act</a>. 
 These records are anonymised and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"" target=""_blank"">Creative Commons by attribution, non-commercial licence</a>.</p>
 <p>If you would like more information about the research or about the data collection, please contact <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>.</p>
+<p>If you would like to know more about RSEs in South Africa or would like to help establish a local community, please contact Anelda van der Walt(mailto:anelda.vanderwalt@nwu.ac.za) or sign up for the (South) <a href=""https://groups.google.com/forum/#!forum/swc-za"" target=""_blank"">African Carpentries Google Group</a> for joint information about <a href=""https://software-carpentry.org/"" target=""_blank"">Software</a>/<a href=""http://www.datacarpentry.org/"" target=""_blank"">Data</a>/<a href=""http://librarycarpentry.github.io/"" target=""_blank"">Library Carpentry</a> and Research Software Engineers.</p>
 <p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.</p>"		en																																																																																																																																			
 SL		surveyls_endtext		"<p>Thank you for your participation. If you are interested in the outcomes of this survey, please keep an eye on the <a href=""https://www.software.ac.uk"" target=""_blank"">Software Sustainability Institute's website</a>. You can also get updates by joining the <a href=""http://www.rse.ac.uk/join.html"" target=""_blank"">UK RSEAssociation</a>.</p>"		en																																																																																																																																			
 SL		surveyls_email_invite_subj		Invitation to participate in a survey		en																																																																																																																																			
@@ -75,7 +76,7 @@ SL		email_admin_responses_subj		Response submission for survey {SURVEYNAME} with
 SL		email_admin_responses		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}		en																																																																																																																																			
 SL		surveyls_numberformat		0		en																																																																																																																																			
 G	G0	Questions about you	1			en																																																																																																																																			
-Q	!	socio1	1	In which country do you work?		en			N		1																																																																																																							1						1																	
+Q	!	socio1	1	In which country do you work?		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Afghanistan		en																																																																																																																																			
 A	0	2		Åland Islands		en																																																																																																																																			
 A	0	3		Albania		en																																																																																																																																			
@@ -325,7 +326,7 @@ A	0	246		Western Sahara		en
 A	0	247		Yemen		en																																																																																																																																			
 A	0	248		Zambia		en																																																																																																																																			
 A	0	249		Zimbabwe		en																																																																																																																																			
-Q	!	edu1	1	What is the highest qualification you have obtained?		en			Y		1																																																																																																							1						1																	
+Q	!	edu1	1	What is the highest qualification you have obtained?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Grade 12 (National Senior Certificate) or National (vocational) Cert. level 4		en																																																																																																																																			
 A	0	2		Further Education (National Diploma, Advanced certificates, Higher Certificates, Advanced National (vocational) Certificate, ...)		en																																																																																																																																			
 A	0	3		Undergraduate degree		en																																																																																																																																			
@@ -333,7 +334,7 @@ A	0	4		Honours degree		en
 A	0	5		Master degree		en																																																																																																																																			
 A	0	6		Doctorate		en																																																																																																																																			
 A	0	7		None		en																																																																																																																																			
-Q	!	edu2	1	In which subject is your highest academic qualification?		en			Y		1																																																																																																							1						1																	
+Q	!	edu2	1	In which subject is your highest academic qualification?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Accounting & Finance		en																																																																																																																																			
 A	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
 A	0	3		African languages		en																																																																																																																																			
@@ -400,10 +401,9 @@ A	0	63		Theology & Religious Studies		en
 A	0	64		Town & Country Planning and Landscape Design		en																																																																																																																																			
 A	0	65		Veterinary Medicine		en																																																																																																																																			
 A	0	66		Youth Work		en																																																																																																																																			
-A	0	67		Other		en																																																																																																																																			
-Q	S	edu4	1	Do you hold any other professional degrees/qualifications? (Please enter each of them separated by a semicolon)		en			N																																																																																																																																
-Q	Y	rse1	1	Do you write code as part of your job?		en			N		1																																																																																																							1																							
-Q	F	rse3		Who uses the code that you write?		en			N		1																																																																																																							1																							
+Q	S	edu4	1	Do you hold any other professional degrees/qualifications? (Please enter each of them separated by a semicolon)		en		Y	N																																																																																																																																
+Q	Y	rse1	1	Do you write code as part of your job?		en		Y	N		1																																																																																																							1																							
+Q	F	rse3		Who uses the code that you write?		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		0 - Mostly me		en																																																																																																																																			
 A	0	2		1		en																																																																																																																																			
@@ -411,9 +411,9 @@ A	0	3		2		en
 A	0	4		3		en																																																																																																																																			
 A	0	5		4		en																																																																																																																																			
 A	0	6		5 - Mostly other people		en																																																																																																																																			
-Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en			N		1																																																																																																							1																							
-Q	N	soft1can		How many years of Software development experience do you have?		en			N			1																																																																																																							1																						
-Q	F	likert0				en			N		1																																																																																																							1																							
+Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en		Y	N		1																																																																																																							1																							
+Q	N	soft1can		How many years of Software development experience do you have?		en		Y	N			1																																																																																																							1																						
+Q	F	likert0				en		Y	N		1																																																																																																							1																							
 SQ	0	time1can	1	In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)		en																																																																																																																																			
 SQ	0	time2can	1	In an average month, how much time do you spend on Research		en																																																																																																																																			
 SQ	0	time3can	1	In an average month, how much time do you spend on Management		en																																																																																																																																			
@@ -423,8 +423,7 @@ SQ	0	time6zaf	1	In an average month, how much time would you like to spend on pr
 SQ	0	time7zaf	1	In an average month, how much time would you like to spend on Research		en																																																																																																																																			
 SQ	0	time8zaf	1	In an average month, how much time would you like to spend on Management		en																																																																																																																																			
 SQ	0	time9zaf	1	In an average month, how much time would you like to spend on Teaching		en																																																																																																																																			
-SQ	0	time10zaf	1	In an average month, how much time do you spend on Other activities		en																																																																																																																																			
-A	0	1		1 (None at all)		en																																																																																																																																			
+A	0	1		1 (Never)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
 A	0	4		4		en																																																																																																																																			
@@ -433,9 +432,9 @@ A	0	6		6		en
 A	0	7		7		en																																																																																																																																			
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
+A	0	10		10 (Always)		en																																																																																																																																			
 G	G1	Your current employment	1			en																																																																																																																																			
-Q	!	currentEmp1	1	What type of organisation do you work for?		en			Y		1																																																																																																							1						1																	
+Q	!	currentEmp1	1	What type of organisation do you work for?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Research Council		en																																																																																																																																			
 A	0	3		Research Organisation (e.g. SKA, HartRAO, SAEON, SANSA, ...)		en																																																																																																																																			
@@ -443,171 +442,47 @@ A	0	4		Private Company		en
 A	0	5		Start-up Company		en																																																																																																																																			
 A	0	6		Non-profit Organisation		en																																																																																																																																			
 A	0	7		Government		en																																																																																																																																			
-Q	!	currentEmp2	1	Which University? Please please provide the full official name of the university or organisation e.g. University of Cape Town if your organisation is not listed		en			Y		1																																																																																																							1						1																	
-A	0	1		University of Aberdeen		en																																																																																																																																			
-A	0	2		Abertay University		en																																																																																																																																			
-A	0	3		Aberystwyth University		en																																																																																																																																			
-A	0	4		Anglia Ruskin University, Cambridge		en																																																																																																																																			
-A	0	5		The Arts University Bournemouth		en																																																																																																																																			
-A	0	6		University of the Arts London		en																																																																																																																																			
-A	0	7		Aston University, Birmingham		en																																																																																																																																			
-A	0	8		Bangor University		en																																																																																																																																			
-A	0	9		University of Bath		en																																																																																																																																			
-A	0	10		Bath Spa University		en																																																																																																																																			
-A	0	11		University of Bedfordshire, Luton and Bedford		en																																																																																																																																			
-A	0	12		Birkbeck, University of London		en																																																																																																																																			
-A	0	13		University of Birmingham		en																																																																																																																																			
-A	0	14		Birmingham City University		en																																																																																																																																			
-A	0	15		University College Birmingham		en																																																																																																																																			
-A	0	16		Bishop Grosseteste University		en																																																																																																																																			
-A	0	17		University Centre at Blackburn College, Blackburn		en																																																																																																																																			
-A	0	18		University of Bolton		en																																																																																																																																			
-A	0	19		Bournemouth University		en																																																																																																																																			
-A	0	20		BPP University		en																																																																																																																																			
-A	0	21		University of Bradford		en																																																																																																																																			
-A	0	22		University of Brighton		en																																																																																																																																			
-A	0	23		University of Bristol		en																																																																																																																																			
-A	0	24		Brunel University, Uxbridge and London		en																																																																																																																																			
-A	0	25		University of Buckingham		en																																																																																																																																			
-A	0	26		Buckinghamshire New University, High Wycombe		en																																																																																																																																			
-A	0	27		University of Cambridge		en																																																																																																																																			
-A	0	28		Institute of Cancer Research		en																																																																																																																																			
-A	0	29		Canterbury Christ Church University, Canterbury, Thanet, Tunbridge Wells and Chatham		en																																																																																																																																			
-A	0	30		Cardiff University		en																																																																																																																																			
-A	0	31		Cardiff Metropolitan University (UWIC)		en																																																																																																																																			
-A	0	32		University of Central Lancashire, Preston and Burnley		en																																																																																																																																			
-A	0	33		University of Chester, Chester and Warrington		en																																																																																																																																			
-A	0	34		University of Chichester		en																																																																																																																																			
-A	0	35		City University London		en																																																																																																																																			
-A	0	36		Courtauld Institute of Art		en																																																																																																																																			
-A	0	37		Coventry University		en																																																																																																																																			
-A	0	38		Cranfield University, Cranfield, and Shrivenham		en																																																																																																																																			
-A	0	39		University for the Creative Arts, Canterbury, Epsom, Farnham, Maidstone and Rochester		en																																																																																																																																			
-A	0	40		University of Cumbria, Carlisle (main campus), London, Penrith and Ambleside		en																																																																																																																																			
-A	0	41		De Montfort University, Leicester		en																																																																																																																																			
-A	0	42		University of Derby		en																																																																																																																																			
-A	0	43		University of Dundee		en																																																																																																																																			
-A	0	44		Durham University, Durham and Stockton-on-Tees (Queen's Campus)		en																																																																																																																																			
-A	0	45		University of East Anglia, Norwich		en																																																																																																																																			
-A	0	46		University of East London		en																																																																																																																																			
-A	0	47		Edge Hill University, Ormskirk, Lancashire		en																																																																																																																																			
-A	0	48		University of Edinburgh		en																																																																																																																																			
-A	0	49		Edinburgh Napier University		en																																																																																																																																			
-A	0	50		University of Essex, Colchester and Southend-on-Sea		en																																																																																																																																			
-A	0	51		University of Exeter		en																																																																																																																																			
-A	0	52		Falmouth University		en																																																																																																																																			
-A	0	53		University of Glasgow		en																																																																																																																																			
-A	0	54		Glasgow Caledonian University		en																																																																																																																																			
-A	0	55		University of Gloucestershire, Cheltenham, Gloucester and London		en																																																																																																																																			
-A	0	56		Goldsmiths, University of London		en																																																																																																																																			
-A	0	57		University of Greenwich		en																																																																																																																																			
-A	0	58		Glyndŵr University, Wrexham		en																																																																																																																																			
-A	0	59		Harper Adams University, Newport, Shropshire		en																																																																																																																																			
-A	0	60		Heriot-Watt University, Edinburgh and Galashiels		en																																																																																																																																			
-A	0	61		University of Hertfordshire, Hatfield		en																																																																																																																																			
-A	0	62		Heythrop College		en																																																																																																																																			
-A	0	63		University of the Highlands & Islands, Inverness (main campus), Elgin, Perth & across north and western Scotland		en																																																																																																																																			
-A	0	64		University of Huddersfield, Huddersfield & Barnsley		en																																																																																																																																			
-A	0	65		University of Hull, Hull and Scarborough		en																																																																																																																																			
-A	0	66		Imperial College London		en																																																																																																																																			
-A	0	67		Keele University, Staffordshire		en																																																																																																																																			
-A	0	68		University of Kent, Canterbury and Medway		en																																																																																																																																			
-A	0	69		King's College London		en																																																																																																																																			
-A	0	70		Kingston University		en																																																																																																																																			
-A	0	71		Lancaster University		en																																																																																																																																			
-A	0	72		University of Law		en																																																																																																																																			
-A	0	73		University of Leeds		en																																																																																																																																			
-A	0	74		Leeds Beckett University		en																																																																																																																																			
-A	0	75		Leeds Trinity University		en																																																																																																																																			
-A	0	76		University of Leicester		en																																																																																																																																			
-A	0	77		University of Lincoln, Lincoln, Hull, Riseholme and Holbeach		en																																																																																																																																			
-A	0	78		University of Liverpool		en																																																																																																																																			
-A	0	79		Liverpool Hope University		en																																																																																																																																			
-A	0	80		Liverpool John Moores University		en																																																																																																																																			
-A	0	81		University College London (UCL)		en																																																																																																																																			
-A	0	82		London Business School		en																																																																																																																																			
-A	0	83		London School of Economics and Political Science (LSE)		en																																																																																																																																			
-A	0	84		London School of Hygiene and Tropical Medicine		en																																																																																																																																			
-A	0	85		University of London Institute in Paris		en																																																																																																																																			
-A	0	86		University of London International Programmes (Distance Learning)		en																																																																																																																																			
-A	0	87		London Metropolitan University		en																																																																																																																																			
-A	0	88		London South Bank University		en																																																																																																																																			
-A	0	89		Loughborough University		en																																																																																																																																			
-A	0	90		University of Manchester		en																																																																																																																																			
-A	0	91		Manchester Metropolitan University		en																																																																																																																																			
-A	0	92		University Marine Biological Station, Millport		en																																																																																																																																			
-A	0	93		Middlesex University, London		en																																																																																																																																			
-A	0	94		Newcastle University		en																																																																																																																																			
-A	0	95		Newman University, Birmingham		en																																																																																																																																			
-A	0	96		University of Northampton		en																																																																																																																																			
-A	0	97		Northumbria University, Newcastle upon Tyne		en																																																																																																																																			
-A	0	98		Norwich University of the Arts		en																																																																																																																																			
-A	0	99		University of Nottingham		en																																																																																																																																			
-A	0	100		Nottingham Trent University		en																																																																																																																																			
-A	0	101		The Open University, Milton Keynes		en																																																																																																																																			
-A	0	102		University of Oxford		en																																																																																																																																			
-A	0	103		Oxford Brookes University		en																																																																																																																																			
-A	0	104		University of Plymouth		en																																																																																																																																			
-A	0	105		University of Portsmouth		en																																																																																																																																			
-A	0	106		Queen's University Belfast		en																																																																																																																																			
-A	0	107		Queen Margaret University, Edinburgh		en																																																																																																																																			
-A	0	108		Queen Mary, University of London		en																																																																																																																																			
-A	0	109		University of Reading		en																																																																																																																																			
-A	0	110		Regent's University London		en																																																																																																																																			
-A	0	111		The Robert Gordon University, Aberdeen		en																																																																																																																																			
-A	0	112		Roehampton University, London		en																																																																																																																																			
-A	0	113		Royal Academy of Music		en																																																																																																																																			
-A	0	114		Royal Agricultural University, Cirencester		en																																																																																																																																			
-A	0	115		Royal Central School of Speech and Drama		en																																																																																																																																			
-A	0	116		Royal College of Art, London		en																																																																																																																																			
-A	0	117		Royal Holloway, University of London, Egham		en																																																																																																																																			
-A	0	118		Royal Veterinary College		en																																																																																																																																			
-A	0	119		University of St Andrews		en																																																																																																																																			
-A	0	120		St George's, University of London		en																																																																																																																																			
-A	0	121		University of St Mark & St John, Plymouth		en																																																																																																																																			
-A	0	122		St Mary's University, Twickenham		en																																																																																																																																			
-A	0	123		University of Salford		en																																																																																																																																			
-A	0	124		School of Advanced Study		en																																																																																																																																			
-A	0	125		School of Oriental and African Studies (SOAS)		en																																																																																																																																			
-A	0	126		University of Sheffield		en																																																																																																																																			
-A	0	127		Sheffield Hallam University		en																																																																																																																																			
-A	0	128		University of Southampton		en																																																																																																																																			
-A	0	129		Southampton Solent University		en																																																																																																																																			
-A	0	130		University of South Wales		en																																																																																																																																			
-A	0	131		Staffordshire University, Stoke-on-Trent, Stafford and Lichfield		en																																																																																																																																			
-A	0	132		University of Stirling, Bridge of Allan		en																																																																																																																																			
-A	0	133		University of Strathclyde		en																																																																																																																																			
-A	0	134		University of Strathclyde, Glasgow		en																																																																																																																																			
-A	0	135		University of Sunderland		en																																																																																																																																			
-A	0	136		University of Surrey, Guildford		en																																																																																																																																			
-A	0	137		University of Sussex, Falmer and Brighton		en																																																																																																																																			
-A	0	138		Swansea University		en																																																																																																																																			
-A	0	139		Teesside University, Middlesbrough and Darlington		en																																																																																																																																			
-A	0	140		Ulster University, Coleraine, Jordanstown, Magee and Belfast		en																																																																																																																																			
-A	0	141		University of Wales, Trinity Saint David		en																																																																																																																																			
-A	0	142		University of Warwick, Coventry		en																																																																																																																																			
-A	0	143		University of West London, Ealing and Brentford		en																																																																																																																																			
-A	0	144		University of Westminster, London		en																																																																																																																																			
-A	0	145		University of the West of England, Bristol		en																																																																																																																																			
-A	0	146		University of the West of Scotland, Paisley, Hamilton, Ayr & Dumfries		en																																																																																																																																			
-A	0	147		University of Winchester		en																																																																																																																																			
-A	0	148		University of Wolverhampton		en																																																																																																																																			
-A	0	149		University of Worcester		en																																																																																																																																			
-A	0	150		University of York		en																																																																																																																																			
-A	0	151		York St John University		en																																																																																																																																			
-Q	S	currentEmp4	1	Which organisation do you work for?		en			N																																																																																																																																
-Q	S	currentEmp5	1	What is your official job title?		en			N																																																																																																																																
-Q	S	currentEmp6	1	Are you known by a different job title? If so, please enter the job title you use		en			N																																																																																																																																
-Q	!	currentEmp12	1	Do you work full time or part time		en			N		1																																																																																																							1						1																	
+Q	!	currentEmp2	1	Which University? Please please provide the full official name of the university or organisation e.g. University of Cape Town if your organisation is not listed		en		Y	Y		1																																																																																																							1						1																	
+A	0	1		Cape Peninsula University of Technology		en																																																																																																																																			
+A	0	2		Central University of Technology		en																																																																																																																																			
+A	0	3		Durban University of Technology		en																																																																																																																																			
+A	0	4		Mangosuthu University of Technology		en																																																																																																																																			
+A	0	5		Nelson Mandela University		en																																																																																																																																			
+A	0	6		North-West University		en																																																																																																																																			
+A	0	7		Rhodes University		en																																																																																																																																			
+A	0	8		Sefako Makgatho Health Sciences University		en																																																																																																																																			
+A	0	9		Sol Plaatje University		en																																																																																																																																			
+A	0	10		Tshwane University of Technology		en																																																																																																																																			
+A	0	11		University of Cape Town		en																																																																																																																																			
+A	0	12		University of Fort Hare		en																																																																																																																																			
+A	0	13		University of Johannesburg		en																																																																																																																																			
+A	0	14		University of KwaZulu-Natal		en																																																																																																																																			
+A	0	15		University of Limpopo		en																																																																																																																																			
+A	0	16		University of Mpumalanga		en																																																																																																																																			
+A	0	17		University of Pretoria		en																																																																																																																																			
+A	0	18		University of South Africa		en																																																																																																																																			
+A	0	19		University of Stellenbosch		en																																																																																																																																			
+A	0	20		University of the Free State		en																																																																																																																																			
+A	0	21		University of the Western Cape		en																																																																																																																																			
+A	0	22		University of the Witwatersrand		en																																																																																																																																			
+A	0	23		University of Venda		en																																																																																																																																			
+A	0	24		University of Zululand		en																																																																																																																																			
+A	0	25		Vaal University of Technology		en																																																																																																																																			
+A	0	26		Walter Sisulu University		en																																																																																																																																			
+A	0	27		Other		en																																																																																																																																			
+Q	S	currentEmp4	1	Which organisation do you work for?	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	S	currentEmp5	1	What is your official job title?	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	S	currentEmp6	1	Are you known by a different job title? If so, please enter the job title you use	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	!	currentEmp12	1	Do you work full time or part time		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Full Time		en																																																																																																																																			
 A	0	2		Part-time		en																																																																																																																																			
-Q	!	currentEmp10	1	What type of contract are you employed on?		en			N		1																																																																																																							1						1																	
+Q	!	currentEmp10	1	What type of contract are you employed on?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Permanent -- funded by University core funding		en																																																																																																																																			
 A	0	2		Permanent -- as long as funding is available		en																																																																																																																																			
 A	0	3		Fixed term		en																																																																																																																																			
 A	0	4		Freelance consultant/contractor		en																																																																																																																																			
-Q	N	currentEmp11		What is the total duration of your current employment (in years)?		en			Y			1																																																																																																							1																						
-Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	N	currentEmp11		What is the total duration of your current employment (in years)?		en		Y	Y			1																																																																																																							1																						
+Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Accounting & Finance		en																																																																																																																																			
 SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
 SQ	0	3		African languages		en																																																																																																																																			
@@ -674,9 +549,8 @@ SQ	0	63		Theology & Religious Studies		en
 SQ	0	64		Town & Country Planning and Landscape Design		en																																																																																																																																			
 SQ	0	65		Veterinary Medicine		en																																																																																																																																			
 SQ	0	66		Youth Work		en																																																																																																																																			
-SQ	0	67		Other		en																																																																																																																																			
 G	G2	Your employment history	1			en																																																																																																																																			
-Q	!	prevEmp1	1	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1	1	Where was your previous job based?		en		Y	N		1																																																																																																							1						1																	
 A	0	1		This is my first job		en																																																																																																																																			
 A	0	2		University		en																																																																																																																																			
 A	0	3		Research Council		en																																																																																																																																			
@@ -685,7 +559,7 @@ A	0	5		Private Company		en
 A	0	6		Start-up Company		en																																																																																																																																			
 A	0	7		Non-profit Organisation		en																																																																																																																																			
 A	0	8		Government		en																																																																																																																																			
-Q	R	prevEmp2	1	Rank the following factors dependent on how strongly they influenced your decision to accept your current position 		en			N		1																																																								5																									1	1						1															1																							
+Q	R	prevEmp2	1	Rank the following factors dependent on how strongly they influenced your decision to accept your current position 		en		Y	N		1																																																								5																									1	1						1															1																							
 SQ	0	1	1	Rank1		en																																																																																																																																			
 SQ	0	2	1	Rank2		en																																																																																																																																			
 SQ	0	3	1	Rank3		en																																																																																																																																			
@@ -704,46 +578,53 @@ A	0	7		Opportunity for career advancement		en
 A	0	8		Ability to work across disciplines		en																																																																																																																																			
 A	0	9		I want to learn new skills		en																																																																																																																																			
 G	G3	Your working practices	1			en																																																																																																																																			
-Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en			N		1																																																																																																							1						1																	
+Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Same researcher(s)		en																																																																																																																																			
 A	0	2		Regularly change researcher(s)		en																																																																																																																																			
-Q	Y	currentWork2	1	Do you work for a Research Software Group?		en			N		1																																																																																																							1																							
-Q	Y	paper1	1	Has your software contributed to research that has been published in a journal or at a conference?		en			N		1																																																																																																							1																							
-Q	Y	paper2	1	In general, when your software contributes to a paper, are you acknowledged in that paper?		en			N		1																																																																																																							1																							
-Q	Y	paper3	1	Are you generally named as the main author of the paper?		en			N		1																																																																																																							1																							
-Q	Y	paper4	1	Are you generally named as a co-author of the paper?		en			N		1																																																																																																							1																							
-Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en			N		1																																																																																																							1																							
-Q	Y	conf1can	1	Have you ever presented your software work at a conference or workshop?		en			N		1																																																																																																							1																							
-Q	S	conf2can	1	Which conference(s)/workshop(s) (comma separated list with FULLNAME (ACRONYM))		en			N																																																																																																																																
-Q	N	proj1can		How many software projects are you currently involved in?		en			N			1																																																																																																							1																						
-Q	N	proj2zaf		How many programmers are in your team - 1 means you are the only person?		en			N			1																																																																																																							1																						
-Q	M	proj3zaf	1	If you have more than 1 fellow programmer in your team, where are they from?		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	Y	currentWork2	1	Do you work for a Research Software Group?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper1	1	Has your software contributed to research that has been published in a journal or at a conference?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper2	1	In general, when your software contributes to a paper, are you acknowledged in that paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper3	1	Are you generally named as the main author of the paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper4	1	Are you generally named as a co-author of the paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en		Y	N		1																																																																																																							1																							
+Q	Y	conf1can	1	Have you ever presented your software work at a conference or workshop?		en		Y	N		1																																																																																																							1																							
+Q	S	conf2can	1	Which conference(s)/workshop(s) (Please write a comma separated list with FULLNAME and ACRONYM)		en		Y	N																																																																																																																																
+Q	N	proj1can		How many software projects are you currently involved in?		en		Y	N			1																																																																																																							1																						
+Q	N	proj2zaf		How many programmers are in your team - 1 means you are the only person?		en		Y	N			1																																																																																																							1																						
+Q	M	proj3zaf	1	If you have more than 1 fellow programmer in your team, where are they from?		en		Y	N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Same institution		en																																																																																																																																			
-SQ	0	2		Outside institution		en																																																																																																																																			
+SQ	0	2		Other organisation		en																																																																																																																																			
 SQ	0	3		Not applicable		en																																																																																																																																			
-Q	M	proj5zaf	1	Which, if any, version control tools do you use for software development?		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	proj5zaf	1	Which, if any, version control tools do you use for software development?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		CVS		en																																																																																																																																			
 SQ	0	2		SVN		en																																																																																																																																			
 SQ	0	3		GIT		en																																																																																																																																			
 SQ	0	4		Mercurial		en																																																																																																																																			
 SQ	0	5		None		en																																																																																																																																			
-Q	F	stability1		What is the bus factor of your most important software project? (the bus factor is the number of team members who, if run over by a bus, would put the project in jeopardy, so 1 means the project is dependent on a single person)		en			N		1																																																																																																							1																							
+Q	M	proj6zaf	1	Which, if any, online collaboration tools and open repositories do you use for software development?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		Github		en																																																																																																																																			
+SQ	0	2		Bitbucket		en																																																																																																																																			
+SQ	0	3		Zenodo		en																																																																																																																																			
+SQ	0	4		Figshare		en																																																																																																																																			
+SQ	0	5		Institutional Repository		en																																																																																																																																			
+SQ	0	6		None		en																																																																																																																																			
+Q	F	stability1		What is the bus factor of your most important software project? (the bus factor is the number of team members who, if run over by a bus, would put the project in jeopardy, so 1 means the project is dependent on a single person)		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		1		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
 A	0	4		4		en																																																																																																																																			
 A	0	5		5+		en																																																																																																																																			
-Q	Y	stability2	1	Is there a technical hand-over plan for your most important software project?		en			N		1																																																																																																							1																							
-Q	M	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	Y	stability2	1	Is there a technical hand-over plan for your most important software project?		en		Y	N		1																																																																																																							1																							
+Q	M	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en		Y	N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		No formal testing		en																																																																																																																																			
 SQ	0	2		Developers conduct testing		en																																																																																																																																			
-SQ	0	3		test engineers conduct testing		en																																																																																																																																			
+SQ	0	3		Test engineers conduct testing		en																																																																																																																																			
 SQ	0	4		Users conduct testing		en																																																																																																																																			
-Q	Y	open01can	1	Have you ever released your software under an open-source licence? 		en			N		1																																																																																																							1																							
-Q	F	open1can		How often do you release the software projects you've worked on under an open-source licence?		en			N		1																																																																																																							1																							
+Q	Y	open01can	1	Have you ever released your software under an open-source licence? 		en		Y	N		1																																																																																																							1																							
+Q	F	open1can		How often do you release the software projects you've worked on under an open-source licence?		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		1 (None at all)		en																																																																																																																																			
+A	0	1		1 (Never)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
 A	0	4		4		en																																																																																																																																			
@@ -752,11 +633,22 @@ A	0	6		6		en
 A	0	7		7		en																																																																																																																																			
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	Y	open03can	1	Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en			N		1																																																																																																							1																							
-Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en			N		1																																																																																																							1																							
+A	0	10		10 (Always)		en																																																																																																																																			
+Q	M	open02zaf	1	Which open source licences do you prefer to use for your software?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		Apache License 2.0		en																																																																																																																																			
+SQ	0	2		"BSD 3-Clause ""New"" or ""Revised"" license"		en																																																																																																																																			
+SQ	0	3		"BSD 2-Clause ""Simplified"" or ""FreeBSD"" license"		en																																																																																																																																			
+SQ	0	4		Common Development and Distribution License		en																																																																																																																																			
+SQ	0	5		Eclipse Public License		en																																																																																																																																			
+SQ	0	6		GNU General Public License (GPL)		en																																																																																																																																			
+SQ	0	7		"GNU Library or ""Lesser"" General Public License (LGPL)"		en																																																																																																																																			
+SQ	0	8		MIT license		en																																																																																																																																			
+SQ	0	9		Mozilla Public License 2.0		en																																																																																																																																			
+SQ	0	10		I don't know		en																																																																																																																																			
+Q	Y	open03can	1	Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en		Y	N		1																																																																																																							1																							
+Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
-A	0	1		1 (None at all)		en																																																																																																																																			
+A	0	1		1 (Never)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
 A	0	4		4		en																																																																																																																																			
@@ -765,13 +657,13 @@ A	0	6		6		en
 A	0	7		7		en																																																																																																																																			
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
-Q	S	tool1zaf	1	What are your three (3) favourite tools to manage project deliverables, keep track of progress, communicate with your project group(s)?		en			N																																																																																																																																
-Q	Y	train1	1	Have you ever trained researchers in computational techniques? 		en			N		1																																																																																																							1																							
-Q	N	train2		On average, how many times a year do you take part in providing training? 		en			N			1																																																																																																							1																						
-Q	S	train3	1	What training programs are you involved with (comma separated list)  (For example, Software Carpentry, local university training, etc.) 		en			N																																																																																																																																
-Q	Y	fund1	1	Do you know the source of the funding used to support you and your current, largest project? 		en			N		1																																																																																																							1																							
-Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+A	0	10		10 (Always)		en																																																																																																																																			
+Q	S	tool1zaf	1	What are your three (3) favourite tools to manage project deliverables, keep track of progress, communicate with your project group(s)? (Please wirte a comma separated list, eg: Slack, Trello, Google Wave)		en		Y	N																																																																																																																																
+Q	Y	train1	1	Have you ever trained researchers in computational techniques? 		en		Y	N		1																																																																																																							1																							
+Q	N	train2		On average, how many times a year do you take part in providing training? 		en		Y	N			1																																																																																																							1																						
+Q	S	train3	1	What training programs are you involved with (comma separated list)  (For example, Software Carpentry, local university training, etc.) 		en		Y	N																																																																																																																																
+Q	Y	fund1	1	Do you know the source of the funding used to support you and your current, largest project? 		en		Y	N		1																																																																																																							1																							
+Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Donation button		en																																																																																																																																			
 SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
@@ -789,7 +681,7 @@ SQ	0	14		Foundations & consortiums		en
 SQ	0	15		Venture capital		en																																																																																																																																			
 SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 SQ	0	17		Not applicable		en																																																																																																																																			
-Q	M	fund3	1	Which of the following sources are used to fund your current, largest project? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	fund3	1	Which of the following sources are used to fund your current, largest project? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Donation button		en																																																																																																																																			
 SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
@@ -807,7 +699,7 @@ SQ	0	14		Foundations & consortiums		en
 SQ	0	15		Venture capital		en																																																																																																																																			
 SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 SQ	0	17		Not applicable		en																																																																																																																																			
-Q	M	fund4	1	Which of the following sources were used to fund your current, largest project three years ago? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	fund4	1	Which of the following sources were used to fund your current, largest project three years ago? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		I volunteer my time		en																																																																																																																																			
 SQ	0	2		Donation button		en																																																																																																																																			
 SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
@@ -826,7 +718,7 @@ SQ	0	15		Venture capital		en
 SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
 SQ	0	17		Not applicable		en																																																																																																																																			
 G	G4	Your perception of your current position	1			en																																																																																																																																			
-Q	F	likert1				en			N		1																																																																																																							1																							
+Q	F	likert1				en		Y	N		1																																																																																																							1																							
 SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
 SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
 SQ	0	perfCheck3	1	In your work, do you have access to sufficient data and information?		en																																																																																																																																			
@@ -843,35 +735,35 @@ A	0	2		Sometimes		en
 A	0	3		Often		en																																																																																																																																			
 A	0	4		Very Often		en																																																																																																																																			
 A	0	5		Always		en																																																																																																																																			
-Q	F	likert2				en			N		1																																																																																																							1																							
-SQ	0	progRSE4	1	My current position is an integral part of my career plan		en																																																																																																																																			
+Q	F	likert2				en		Y	N		1																																																																																																							1																							
 SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
-SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
-SQ	0	affSat2	1	Most days I am enthusiastic about my job		en																																																																																																																																			
-SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
-SQ	0	turnOver5	1	My current job satisfies my personal needs		en																																																																																																																																			
-SQ	0	progRSE1	1	It is likely that I will gain a promotion within my current group 		en																																																																																																																																			
-SQ	0	affSat3	1	I feel fairly well satisfied with my job		en																																																																																																																																			
-SQ	0	percEmp2	1	I can think of a number of organisations that would probably offer me a job		en																																																																																																																																			
-SQ	0	affSat4	1	I like my job better than the average person		en																																																																																																																																			
-SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
-SQ	0	progRSE3	1	There are many opportunities within my chosen career plan		en																																																																																																																																			
-SQ	0	affRec4	1	I am satisfied with the compliments from my supervisor/line manager concerning my work		en																																																																																																																																			
-SQ	0	affRec5	1	I am satisfied with the encouragement from my supervisor/line manager while doing my job		en																																																																																																																																			
-SQ	0	progRSE2	1	The process I have to complete to gain a promotion is clear and understandable		en																																																																																																																																			
-SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organisation		en																																																																																																																																			
-SQ	0	progRSE5	1	It is likely that my next position will be an RSE role		en																																																																																																																																			
-SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
 SQ	0	affRec2	1	I am satisfied with a word of thanks from my supervisor/line manager		en																																																																																																																																			
+SQ	0	affSat3	1	I feel fairly well satisfied with my job		en																																																																																																																																			
+SQ	0	progRSE2	1	The process I have to complete to gain a promotion is clear and understandable		en																																																																																																																																			
+SQ	0	affRec4	1	I am satisfied with the compliments from my supervisor/line manager concerning my work		en																																																																																																																																			
+SQ	0	percEmp2	1	I can think of a number of organisations that would probably offer me a job		en																																																																																																																																			
+SQ	0	affRec5	1	I am satisfied with the encouragement from my supervisor/line manager while doing my job		en																																																																																																																																			
+SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
+SQ	0	progRSE1	1	It is likely that I will gain a promotion within my current group 		en																																																																																																																																			
+SQ	0	turnOver5	1	My current job satisfies my personal needs		en																																																																																																																																			
+SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
 SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
+SQ	0	affSat2	1	Most days I am enthusiastic about my job		en																																																																																																																																			
+SQ	0	affSat4	1	I like my job better than the average person		en																																																																																																																																			
+SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organisation		en																																																																																																																																			
+SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
+SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
+SQ	0	progRSE5	1	It is likely that my next position will be an RSE role		en																																																																																																																																			
+SQ	0	progRSE4	1	My current position is an integral part of my career plan		en																																																																																																																																			
+SQ	0	progRSE3	1	There are many opportunities within my chosen career plan		en																																																																																																																																			
 A	0	1		Strongly disagree		en																																																																																																																																			
 A	0	2		Disagree		en																																																																																																																																			
 A	0	3		Neither agree or disagree		en																																																																																																																																			
 A	0	4		Agree		en																																																																																																																																			
 A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	likert3				en			N		1																																																																																																							1																							
-SQ	0	satisGen1	1	In general, how satisfied are you with Your current position		en																																																																																																																																			
-SQ	0	satisGen2	1	In general, how satisfied are you with Your career		en																																																																																																																																			
+Q	F	likert3				en		Y	N		1																																																																																																							1																							
+SQ	0	satisGen1	1	In general, how satisfied are you with your current position		en																																																																																																																																			
+SQ	0	satisGen2	1	In general, how satisfied are you with your career		en																																																																																																																																			
 A	0	1		0 - Not at all satisfied		en																																																																																																																																			
 A	0	2		1		en																																																																																																																																			
 A	0	3		2		en																																																																																																																																			
@@ -884,25 +776,26 @@ A	0	9		8		en
 A	0	10		9		en																																																																																																																																			
 A	0	11		10 - Completely satisfied		en																																																																																																																																			
 G	G5	Demographic questions	1			en																																																																																																																																			
-Q	!	socio2	1	Please select your gender		en			Y		1																																																																																																							1						1																	
+Q	!	socio2	1	Please select your gender	IMPORTANT: This information will not be made publicly available	en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Female		en																																																																																																																																			
 A	0	2		Male		en																																																																																																																																			
 A	0	3		Prefer not to say		en																																																																																																																																			
-Q	!	socio3	1	Please select your age		en			Y		1																																																																																																							1						1																	
+Q	!	socio3	1	Please select your age	IMPORTANT: This information will not be made publicly available	en		Y	Y		1																																																																																																							1						1																	
 A	0	1		18 to 24 years		en																																																																																																																																			
 A	0	2		25 to 34 years		en																																																																																																																																			
 A	0	3		35 to 44 years		en																																																																																																																																			
 A	0	4		45 to 54 years		en																																																																																																																																			
 A	0	5		55 to 64 years		en																																																																																																																																			
 A	0	6		Age 65 or older		en																																																																																																																																			
-Q	!	socio5	1	How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. 		en			Y		1																																																																																																							1						1																	
+A	0	7		Prefer not to say		en																																																																																																																																			
+Q	!	socio5	1	How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. 	IMPORTANT: This information will not be made publicly available	en			Y		1																																																																																																							1						1																	
 A	0	1		Black		en																																																																																																																																			
 A	0	2		Coloured		en																																																																																																																																			
 A	0	3		Indian		en																																																																																																																																			
 A	0	4		White		en																																																																																																																																			
 A	0	5		Do not wish to declare		en																																																																																																																																			
-Q	Y	disa1	1	Do you have a condition that is defined as a disability by the White Paper on the Rights of Persons with Disabilities (2015)		en			N		1																																																																																																							1																							
-Q	!	socio4	1	Please select the range of your salary		en			N		1																																																																																																							1						1																	
+Q	Y	disa1	1	Do you have a condition that is defined as a disability by the White Paper on the Rights of Persons with Disabilities (2015)	IMPORTANT: This information will not be made publicly available	en			N		1																																																																																																							1																							
+Q	!	socio4	1	Please select the range of your annual salary	IMPORTANT: This information will not be made publicly available	en		Y	N		1																																																																																																							1						1																	
 A	0	1		Less than R 189 880		en																																																																																																																																			
 A	0	2		Between R 189 881 and R 296 540		en																																																																																																																																			
 A	0	3		Between R 296 541 and R 410 460		en																																																																																																																																			
@@ -912,11 +805,11 @@ A	0	6		Between R 708 311 and R 1 500 000		en
 A	0	7		More than R 1 500 000		en																																																																																																																																			
 A	0	8		Prefer not to say		en																																																																																																																																			
 G	G6	Final questions about you	1			en																																																																																																																																			
-Q	!	tool2	1	What Operating System do you prefer to use at work? 		en			N		1																																																																																																							1						1																	
+Q	!	tool2	1	What Operating System do you prefer to use at work? 		en		Y	N		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		en																																																																																																																																			
 A	0	2		OS X		en																																																																																																																																			
 A	0	3		Windows		en																																																																																																																																			
-Q	M	tool4can	1	 What programming languages do you use at work? (Select as many as apply) 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	tool4can	1	 What programming languages do you use at work? (Select as many as apply) 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Swift		en																																																																																																																																			
 SQ	0	2		JavaScript		en																																																																																																																																			
 SQ	0	3		R		en																																																																																																																																			
@@ -953,17 +846,17 @@ SQ	0	33		VB.NET		en
 SQ	0	34		Ruby		en																																																																																																																																			
 SQ	0	35		Clojure		en																																																																																																																																			
 SQ	0	36		Dart		en																																																																																																																																			
-Q	Y	ukrse1	1	Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list)		en			N		1																																																																																																							1																							
-Q	Y	org1can	1	Would you be interested in joining such an organisation if one was formed in South Africa?		en			N		1																																																																																																							1																							
-Q	M	org2can	1	What would you hope to get out of such an organisation (check all that apply)?		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	Y	ukrse1	1	Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list)		en		Y	N		1																																																																																																							1																							
+Q	Y	org1can	1	Would you be interested in joining such an organisation if one was formed in South Africa?		en		Y	N		1																																																																																																							1																							
+Q	M	org2can	1	What would you hope to get out of such an organisation (check all that apply)?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		Networking		en																																																																																																																																			
 SQ	0	2		Software collaborations		en																																																																																																																																			
 SQ	0	3		Research collaborations		en																																																																																																																																			
 SQ	0	4		Training		en																																																																																																																																			
 SQ	0	5		Research software standards and interoperability definition		en																																																																																																																																			
 SQ	0	6		Job opportunities		en																																																																																																																																			
-Q	M	ukrse2	1	How do you meet other RSEs? 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	ukrse2	1	How do you meet other RSEs? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	1		UK RSE Association		en																																																																																																																																			
 SQ	0	2		N/A		en																																																																																																																																			
-Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en			N																																																																																																																																
+Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en		Y	N																																																																																																																																
 Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en			N																																																																																																																																
