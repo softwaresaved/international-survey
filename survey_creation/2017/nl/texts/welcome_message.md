@@ -12,12 +12,12 @@ Why did I receive this invitation?
 You have received this link because you are working at an organisation in the Netherlands that may employ people who could identify as Research Software Engineer.
 
 
-There is currently very little reliable information about the RSE community in the Netherlands. That's why the [Netherlands eScience Center](https://www.esciencecenter.nl/), the recently started
-[NL-RSE community](http://nl-rse.org/), and the [UK Research Software Engineer Association](http://rse.ac.uk/) have decided to take the first step in collecting this information. The aim is to
+There is currently very little reliable information about the RSE community in the Netherlands. That's why the [Netherlands eScience Center](https://www.esciencecenter.nl/), [ePLAN](https://escience-platform.nl/) (Platform of eScience/Data Research Centers in the Netherlands), the recently started
+[NL-RSE Community](http://nl-rse.org/), and the [UK Research Software Engineer Association](http://rse.ac.uk/) have decided to take the first step in collecting this information. The aim is to
 generate insights in the emergence of the position of developers of research software in the Netherlands. We hope the information will help funders, universities and other research organisations
 develop policies that will support RSEs. This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.
 
-Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.
+Please note that this survey is not compulsory and even if you decide to participate you can withdraw at any moment.
 
 How long will it take?
 ----------------------
