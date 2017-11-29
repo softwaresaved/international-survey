@@ -27,7 +27,7 @@ There is a maximum of 45 questions in this survey. It takes about 10 minutes to 
 Who is responsible for this survey?
 -----------------------------------
 
-This study is conducted by the University of Southampton on behalf of the [Software Sustainability Institute](http://software.ac.uk/) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/25269).
+This study is conducted by the University of Southampton on behalf of the [Software Sustainability Institute](http://software.ac.uk/) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/30610).
 The investigators are [Simon Hettrick](mailto:s.hettrick@software.ac.uk) and [Olivier Philippe](mailto:olivier.philippe@soton.ac.uk). Contact persons in the Netherlands are
 [Ben van Werkhoven](mailto:b.vanwerkhoven@esciencecenter.nl) and [Tom Bakker](mailto:t.bakker@esciencecenter.nl) from the Netherlands eScience Center.
 
