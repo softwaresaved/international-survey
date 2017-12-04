@@ -1,6 +1,6 @@
 ,Yes,No
-paper1. Has your software contributed to research that has been published in a journal or at a conference?,95.24,4.76
+paper1. Has your software contributed to research that has been published in a journal or at a conference?,93.1,6.9
 "paper2. In general, when your software contributes to a paper, are you acknowledged in that paper?",66.67,33.33
-paper3. Are you generally named as the main author of the paper?,48.0,52.0
-paper4. Are you generally named as a co-author of the paper?,92.31,7.69
-paper5. Are you generally acknowledged in the main text of the paper?,,100.0
+paper3. Are you generally named as the main author of the paper?,33.96,66.04
+paper4. Are you generally named as a co-author of the paper?,74.29,25.71
+paper5. Are you generally acknowledged in the main text of the paper?,44.44,55.56

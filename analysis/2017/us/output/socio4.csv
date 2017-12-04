@@ -1,10 +1,11 @@
 ,Please select the range of your salary
-"From $30,000 to $49,999",10
-"From $50,000 to $69,999",10
-"From $70,000 to $89,999",8
+"Less than $30,000",21
+"From $30,000 to $49,999",20
+"From $50,000 to $69,999",17
+"From $70,000 to $89,999",15
 "From $90,000 to $109,999",7
-"From $110,000 to $129,999",5
-"From $130,000 to $149,999",3
-"More than $150,000",3
-Prefer not to say,2
+"From $110,000 to $129,999",6
+"From $130,000 to $149,999",6
+"More than $150,000",4
+Prefer not to say,3
 ,1
