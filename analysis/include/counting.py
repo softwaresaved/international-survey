@@ -285,11 +285,16 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False):
             df_sub[np.nan] = 0
             try:
                 df_sub = df_sub[['Yes', 'No']]
+            # In case one of the field has not been filled by any participants
+            # the key does not exists. Need to create it to avoid error while
+            # plotting, as it expect these keys
             except KeyError:
                 try:
                     df_sub = df_sub[['Yes']]
+                    df_sub['No'] = 0
                 except KeyError:
                     df_sub = df_sub[['No']]
+                    df_sub['Yes'] = 0
     return df_sub
 
 
