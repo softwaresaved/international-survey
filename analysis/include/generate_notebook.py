@@ -21,7 +21,7 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         super().__init__(year, country)
-        self.outfilename = notebook_filename
+        self.outfilename = 'results_{}'.format(notebook_filename)
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()
         # Get all the import from NotebookConfig
