@@ -90,11 +90,14 @@ class CleaningData(CleaningConfig):
             : self.df(): with the reverted items
         """
         for item in item_to_revert:
-            type_question = self.structure_by_question[item]['type_question']
-            answer = self.answers_item_dict[type_question]
-            replacing_value = dict(zip(answer, answer[::-1]))
-            col_to_revert = [col for col in self.df.columns if item in col]
-            self.df[col_to_revert] = self.df[col_to_revert].replace(replacing_value)
+            try:
+                type_question = self.structure_by_question[item]['type_question']
+                answer = self.answers_item_dict[type_question]
+                replacing_value = dict(zip(answer, answer[::-1]))
+                col_to_revert = [col for col in self.df.columns if item in col]
+                self.df[col_to_revert] = self.df[col_to_revert].replace(replacing_value)
+            except KeyError:
+                pass
 
         return self.df
 
