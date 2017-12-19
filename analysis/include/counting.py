@@ -56,23 +56,6 @@ def reorder_nan(df, nan_reorder):
     return df
 
 
-def reorder_answer(df, list_order):
-    """
-    Function to reindex the df according to
-    the argument passed. It can either leave at it is
-    or ordering by taking the order from  the answer file
-    or ordering according to the count. The default behaviour
-    is to re-order with the count
-    :params:
-        :df pd.dataFrame(): The input df to sort
-        : list_order list(): Containing the list of answers as found
-        in the file answer
-    """
-    existing_answer = [x for x in list_order if x in df.index]
-    df = df.reindex(index=existing_answer)
-    return df
-
-
 def apply_rename_columns(df, colnames, rename):
     """
     Sometime the question itself is the third part of the column
@@ -234,24 +217,16 @@ def count_one_choice(df, colnames, file_answer, order_question, rename_columns=F
     df_sub = df[colnames]
     df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+
+    df_sub = reorder_nan(df_sub, nan_reorder='end')
     if order_question == 'True':
         new_question_index = [x.strip('"') for x in get_answer(file_answer)]
         existing_answer = [x for x in new_question_index if x in df_sub.index]
         # add back the element from the answer that would not be found in the list of answer
         # such as Nan and other
         existing_answer.extend([x for x in df_sub.index.values if x not in new_question_index])
-        # for x in existing_answer:
-        #     print(x, type(x))
-        #     try:
-        #         print(x[0])
-        #     except Exception:
-        #         print('Cannot take the first element')
-        # print([type(x) for x in existing_answer])
-        df_sub.index = existing_answer
-
-        # df_sub = df_sub.reset_index()
-        # df_sub = reorder_answer(df_sub, new_question_index)
-    df_sub = reorder_nan(df_sub, nan_reorder='end')
+        # Transform the nan into a proper NaN
+        df_sub = df_sub.reindex(existing_answer)
     return df_sub
 
 
