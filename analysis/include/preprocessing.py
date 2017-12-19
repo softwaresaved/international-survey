@@ -156,7 +156,7 @@ class CleaningData(CleaningConfig):
                 answer_format = row[3]
                 type_question = row[4]
                 file_answer = '{}/{}.csv'.format(self.answer_folder, row[4])
-                order_question = row[5]
+                order_question = row[9]
                 result_dict[code] = {'section': section,
                                      'original_question': question,
                                      'type_question': type_question,
