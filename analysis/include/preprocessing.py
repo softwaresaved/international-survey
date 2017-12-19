@@ -114,7 +114,10 @@ class CleaningData(CleaningConfig):
         """
         # Use the package pycountry to get the language from the country code
         if len(self.country) == 2:
-            country = pycountry.countries.get(alpha_2=self.country.upper())
+            if self.country == 'uk':
+                country = pycountry.countries.get(alpha_2='GB'.upper())
+            else:
+                country = pycountry.countries.get(alpha_2=self.country.upper())
         elif len(self.country) == 3:
             country = pycountry.countries.get(alpha_3=self.country.upper())
         elif len(self.country) == 4:
