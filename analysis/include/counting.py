@@ -354,7 +354,6 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
     :return:
         df(): of the count value of the questions
     """
-
     # Only apply the remove_code for the question with one columns
     # When several columns, the rename_columns is True and get broken
     # With it. Moreover, as the title doesn't appears anywhere on the plots and
