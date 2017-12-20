@@ -1,40 +1,40 @@
 ,Count [PERCENTAGE]
-Python,15.12
-Unix Shell Scripting,11.2
-"Markup languages (HTML, markdown,...)",9.04
-C++,7.52
-C,7.36
-JavaScript,6.8
-FORTRAN,6.48
-SQL,6.32
-Java,5.2
-Matlab,4.88
-R,4.56
-Perl,3.28
-PHP,2.48
-CUDA,1.68
-C#,1.52
-Ruby,1.12
-TypeScript,0.72
-Groovy,0.56
-VBA,0.56
-Visual Basic,0.56
-Scala,0.48
-Assembly,0.4
-Go,0.4
-Rust,0.24
-F#,0.24
-Elixir,0.16
-CoffeeScript,0.16
-Objective-C,0.16
-Julia,0.16
-Haskell,0.16
-Erlang,0.08
-Smalltalk,0.08
-Swift,0.08
-VB.NET,0.08
-Clojure,0.08
-Lua,0.08
+Python,15.0
+Unix Shell Scripting,11.0
+"Markup languages (HTML, markdown,...)",9.0
+C++,8.0
+C,7.0
+JavaScript,7.0
+FORTRAN,6.0
+SQL,6.0
+Java,5.0
+Matlab,5.0
+R,5.0
+Perl,3.0
+PHP,2.0
+CUDA,2.0
+C#,2.0
+Ruby,1.0
+TypeScript,1.0
+Groovy,1.0
+VBA,1.0
+Visual Basic,1.0
+Scala,0.0
+Assembly,0.0
+Go,0.0
+Rust,0.0
+F#,0.0
+Elixir,0.0
+CoffeeScript,0.0
+Objective-C,0.0
+Julia,0.0
+Haskell,0.0
+Erlang,0.0
+Smalltalk,0.0
+Swift,0.0
+VB.NET,0.0
+Clojure,0.0
+Lua,0.0
 Hack,0.0
 Dart,0.0
 Common Lisp,0.0
