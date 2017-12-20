@@ -16,7 +16,6 @@ from include.get_arguments import get_arguments
 def main():
     year, country = get_arguments(sys.argv[1:])
     # load dataset
-
     cleaning_config = CleaningConfig(year, country)
     df = pd.read_csv(cleaning_config.raw_data)
     cleaning_process = CleaningData(year, country, df)
