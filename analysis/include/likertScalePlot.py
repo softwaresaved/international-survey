@@ -256,7 +256,7 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
 
         # Drawing x_labels
         drawing_x_labels(normalise, complete_longest, longest_middle)
-        ax.set_xlabel('Percentages')
+        ax.set_xlabel('Percentage')
 
         # Setting up the y-axis
         ax.set_yticks(y_pos)

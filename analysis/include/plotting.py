@@ -126,7 +126,7 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
 
-    y_label = 'Percentages'
+    y_label = 'Percentage'
     plt.ylabel(y_label)
     plt.yticks(np.arange(0, 100, 10))
 
@@ -136,16 +136,12 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
 def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, legend=False, ranking=False):
     """
     """
-    # df = df.transpose()
     plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=horizontal, dropna=dropna, legend=legend)
-    # plt.set_xticklabels(df.columns, rotation=0)
     plt.suptitle(df.columns[0])
-    if ranking is False:
-        y_label = 'Count'
-    else:
-        y_label = 'Percentages'
+    if ranking is True:
         plt.yticks(np.arange(0, 100, 10))
 
+    y_label = 'Percentage'
     plt.ylabel(y_label)
     return plt
 
@@ -220,7 +216,7 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
         # https://stackoverflow.com/a/27084005/3193951
         plt.xlim([-1, len(df.index)])
         plt.xticks(label_ticks, label_txt, rotation=90)
-        y_label = 'Percentages'
+        y_label = 'Percentage'
         ax.set_ylabel(y_label)
         plt.yticks(np.arange(0, 100, 10))
 
@@ -234,7 +230,7 @@ def plot_y_n_single(df, dropna=True):
     """
     """
 
-    y_label = 'Percentages'
+    y_label = 'Percentage'
 
     if dropna is True:
         df.drop(np.nan, 1, inplace=True, errors='ignore')
@@ -260,7 +256,8 @@ def plot_numeric_var(df):
     print(df.describe())
     n_bins = 40
     y_label = 'Frequencies'
-    x_label = 'Values'
+    # Get the first column name of the df to label the x-axis. This plot expects only one columns
+    x_label = df.columns.values.tolist()[0]
 
     fig, ax = plt.subplots()
     ax = remove_to_right_line(ax)
