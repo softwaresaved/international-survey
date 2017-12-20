@@ -158,7 +158,7 @@ def normalise_per_row(df):
     return df.multiply(100)
 
 
-def add_labels(df, ax, bars, rotation=0):
+def add_labels(df, ax, bars, rotation=0, rounding=True):
     """
     """
     # Create percentage for each cells to have the right annotation
@@ -171,7 +171,10 @@ def add_labels(df, ax, bars, rotation=0):
             y = 0.5 *bar.get_height() +bl[1]
             # Avoid labels when percentage is under 5 (the bar is too small)
             if percentages[i, j] > 5:
-                ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
+                if rounding is True:
+                    ax.text(x, y, "{}".format(str(int(round(percentages[i, j])))), ha='center', rotation=rotation)
+                else:
+                    ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
 
 
 def draw_middle_line(normalise, longest_middle):
@@ -202,7 +205,7 @@ def drawing_x_labels(normalise, complete_longest, longest_middle):
     plt.xticks(xvalues, xlabels)
 
 
-def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True, rotation=0):
+def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True, rotation=0, title_plot=False, rounding=True):
     """
     The idea is to create a fake bar on the left to center the bar on the same point.
     :params:
@@ -264,7 +267,7 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
 
         # Add labels to each box
         if labels:
-            add_labels(df, ax, bars, rotation)
+            add_labels(df, ax, bars, rotation, rounding=rounding)
 
         # Create a line on the middle
         if middle_line:
@@ -274,6 +277,9 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
         if legend:
             ax.legend(bars, df.columns)
 
+        # Change the plot title
+        if title_plot:
+            ax.title(title_plot)
         return fig
     except Exception:
         raise

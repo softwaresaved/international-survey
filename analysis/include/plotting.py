@@ -245,9 +245,9 @@ def plot_y_n_single(df, dropna=True):
     return ax
 
 
-def plot_likert(df):
+def plot_likert(df, title_plot):
 
-    return likert_scale(df)
+    return likert_scale(df, title_plot=title_plot)
 
 
 def plot_numeric_var(df):
@@ -288,7 +288,7 @@ def plot_freetext(wc):
         return None
 
 
-def get_plot(df, type_question):
+def get_plot(df, type_question, title_plot=False):
 
     try:
         # Remove any [PERCENTAGE] strings from either the columns names or the row index name
@@ -309,7 +309,7 @@ def get_plot(df, type_question):
             if len(df.index) == 1:
                 df = df.transpose()
                 return plot_unique_var(df)
-            return plot_likert(df)
+            return plot_likert(df, title_plot)
 
         elif type_question.lower() == 'one choice':
             if len(df.index) == 1:
@@ -341,7 +341,7 @@ def get_plot(df, type_question):
         return None
 
 
-def display_side_by_side(*args):
+def html_by_side(*args):
     """
     https://stackoverflow.com/a/44923103
     """
@@ -349,6 +349,23 @@ def display_side_by_side(*args):
     for df in args:
         html_str+=df.to_html()
     display_html(html_str.replace('table', 'table style="display:inline"'), raw=True)
+
+def display_side_by_side(*args, merging=False):
+    """
+    Display the tables side by side.
+    If the dataset can be merged in one, it is the preferred solution
+    If it is not possible it return an html version of the dataframe and show them side-by-side
+    :params:
+        *args: list of pandas dataframes to display side by side
+        merging bool(): To decide if the dataframes are merge into one or if they are displayed side-by-side
+    :return:
+        None
+    """
+    if True:
+        pass
+        # for df in args:
+    else:
+        html_by_side(args)
 
 
 def main():
