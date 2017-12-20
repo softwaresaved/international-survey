@@ -317,6 +317,8 @@ def get_percentage(df, filename=None, dropna=True):
         except ValueError:
             pass
     value = compute_percentage(df, by_row, by_col)
+    # Remove the decimals
+    value = [np.round(x) for x in value]
 
     index_df = df.index
     name_df = df.columns
