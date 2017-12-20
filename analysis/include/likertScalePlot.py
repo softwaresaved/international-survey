@@ -279,7 +279,7 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
 
         # Change the plot title
         if title_plot:
-            ax.title(title_plot)
+            plt.suptitle(title_plot)
         return fig
     except Exception:
         raise
