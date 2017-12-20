@@ -291,6 +291,15 @@ def plot_freetext(wc):
 def get_plot(df, type_question):
 
     try:
+        # Remove any [PERCENTAGE] strings from either the columns names or the row index name
+        # remove for the columns
+        df = df.rename(columns={col: col.replace('[PERCENTAGE]', '') for col in df.columns})
+        # Remove for the row index
+        df = df.rename(index={col: col.replace('[PERCENTAGE]', '') for col in df.index})
+    except AttributeError:  # In case of numpy number in freenumeric case
+        pass
+
+    try:
         if type_question.lower() == 'y/n/na':
             if len(df.index) == 1:
                 return plot_y_n_single(df)
