@@ -115,7 +115,7 @@ def plot_bar_char(df, sort_order=False, stacked=False,
     return plt
 
 
-def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True):
+def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, title_plot=False):
     """
     """
     # df = df.transpose()
@@ -124,7 +124,10 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
         matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
     plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=False, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
-    plt.suptitle(df.columns[0])
+    if title_plot:
+        plt.suptitle(title_plot)
+    else:
+        plt.suptitle(df.columns[0])
 
     y_label = 'Percentage'
     plt.ylabel(y_label)
@@ -133,11 +136,14 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     return plt
 
 
-def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, legend=False, ranking=False):
+def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, legend=False, ranking=False, title_plot=False):
     """
     """
     plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=horizontal, dropna=dropna, legend=legend)
-    plt.suptitle(df.columns[0])
+    if title_plot:
+        plt.suptitle(title_plot)
+    else:
+        plt.suptitle(df.columns[0])
     if ranking is True:
         plt.yticks(np.arange(0, 100, 10))
 
@@ -158,7 +164,7 @@ def plot_discrete():
 
 
 def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
-                      legend=True, set_label=False):
+                      legend=True, set_label=False, title_plot=False):
     """
     Plotting Y-N values as stacked bars when passed several questions at the same time.
     If want to plot single question Y-N see plot_single_y_n()
@@ -220,16 +226,23 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
         ax.set_ylabel(y_label)
         plt.yticks(np.arange(0, 100, 10))
 
+    if title_plot:
+        ax.suptitle(title_plot)
+
     # Modifying the whitespaces between the bars and the graph
     plt.margins(0.02, 0.02)
 
     return fig
 
 
-def plot_y_n_single(df, dropna=True):
+def plot_y_n_single(df, dropna=True, title_plot=False):
     """
     """
 
+    if title_plot:
+        title = title_plot
+    else:
+        title = df.columns[0]
     y_label = 'Percentage'
 
     if dropna is True:
@@ -238,19 +251,19 @@ def plot_y_n_single(df, dropna=True):
     df.sort_values(by='Yes', inplace=True, ascending=False)
     df = df.transpose()
     ax = df.plot(kind='bar', stacked=False, color=[colormap(0), colormap(3)],
-                 title=df.columns[0], legend=None)
+                 title=title, legend=None)
     ax.set_ylabel(y_label)
     plt.yticks(np.arange(0, 100, 10))
 
     return ax
 
 
-def plot_likert(df, title_plot):
+def plot_likert(df, title_plot=False):
 
     return likert_scale(df, title_plot=title_plot)
 
 
-def plot_numeric_var(df):
+def plot_numeric_var(df, title_plot=False):
     """
     """
     print(df.describe())
@@ -268,12 +281,14 @@ def plot_numeric_var(df):
     max_value = int(math.ceil(max(df.dropna().values)))
     step = int(math.ceil((max_value - min_value) / n_bins))
     plt.xticks(np.arange(min_value, max_value +1, step))
+    if title_plot:
+        plt.suptitle(title_plot)
     # ax.boxplot(df.dropna().values)
 
     return fig
 
 
-def plot_freetext(wc):
+def plot_freetext(wc, title_plot=False):
     """
     """
     # In case the column only has empty value, the wc returned from
@@ -283,6 +298,8 @@ def plot_freetext(wc):
         plt.figure()
         ax = plt.imshow(wc, interpolation='bilinear')
         ax = plt.axis('off')
+        if title_plot:
+            plt.suptitle(title_plot)
         return wc
     else:
         return None
@@ -302,39 +319,38 @@ def get_plot(df, type_question, title_plot=False):
     try:
         if type_question.lower() == 'y/n/na':
             if len(df.index) == 1:
-                return plot_y_n_single(df)
-            return plot_y_n_multiple(df, sort_order='name')
+                return plot_y_n_single(df, title_plot=title_plot)
+            return plot_y_n_multiple(df, sort_order='name', title_plot=title_plot)
 
         elif type_question.lower() == 'likert':
             if len(df.index) == 1:
                 df = df.transpose()
-                return plot_unique_var(df)
-            return plot_likert(df, title_plot)
+                return plot_unique_var(df, title_plot=title_plot)
+            return plot_likert(df, title_plot=title_plot)
 
         elif type_question.lower() == 'one choice':
             if len(df.index) == 1:
-                return plot_unique_var(df, stacked=False, horizontal=False)
-            return plot_multiple_var(df, stacked=False, horizontal=False)
+                return plot_unique_var(df, stacked=False, horizontal=False, title_plot=title_plot)
+            return plot_multiple_var(df, stacked=False, horizontal=False, title_plot=title_plot)
 
         elif type_question.lower() == 'multiple choices':
             if len(df.index) == 1:
                 return plot_unique_var(df, stacked=False, horizontal=False,
-                                       sort_order=False)
-            return plot_multiple_var(df, stacked=False, horizontal=False)
+                                       sort_order=False, title_plot=title_plot)
+            return plot_multiple_var(df, stacked=False, horizontal=False, title_plot=title_plot)
 
         elif type_question.lower() == 'freenumeric':
-            return plot_numeric_var(df)
+            return plot_numeric_var(df, title_plot=title_plot)
 
         elif type_question.lower() == 'ranking':
-            return plot_multiple_var(df, stacked=True, horizontal=False, legend=True, ranking=True)
+            return plot_multiple_var(df, stacked=True, horizontal=False, legend=True, ranking=True, title_plot=title_plot)
 
         elif type_question.lower() == 'freetext':
             # pass
-            return plot_freetext(df)
+            return plot_freetext(df, title_plot=title_plot)
 
         elif type_question.lower() == 'datetime':
             pass
-
         else:
             pass
     except TypeError:  # In Case an empty v_count is passed
