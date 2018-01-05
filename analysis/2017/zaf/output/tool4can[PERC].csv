@@ -1,20 +1,20 @@
 ,Count [PERCENTAGE]
-Python,21.95
-SQL,9.76
-R,9.76
-C,9.76
-C++,9.76
-Fortran,7.32
-JavaScript,7.32
-C#,4.88
-Matlab,2.44
-Perl,2.44
-Visual Basic,2.44
-Assembly,2.44
-Java,2.44
-VBA,2.44
-VB.NET,2.44
-Erlang,2.44
+Python,22.0
+SQL,10.0
+R,10.0
+C,10.0
+C++,10.0
+Fortran,7.0
+JavaScript,7.0
+C#,5.0
+Matlab,2.0
+Perl,2.0
+Visual Basic,2.0
+Assembly,2.0
+Java,2.0
+VBA,2.0
+VB.NET,2.0
+Erlang,2.0
 Lua,0.0
 Go,0.0
 Elixir,0.0
