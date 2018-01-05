@@ -1,10 +1,10 @@
 ,Please select the range of your salary [PERCENTAGE]
-"Less than $30,000",18.67
-"From $30,000 to $49,999",18.0
-"From $50,000 to $69,999",14.67
-"From $70,000 to $89,999",14.0
-"From $90,000 to $109,999",10.67
-"From $110,000 to $129,999",6.67
+"From $90,000 to $109,999",21.0
+"From $70,000 to $89,999",20.0
+"From $50,000 to $69,999",18.0
+"From $110,000 to $129,999",11.0
+"From $30,000 to $49,999",7.0
+Prefer not to say,7.0
+"More than $150,000",7.0
 "From $130,000 to $149,999",6.0
-"More than $150,000",6.0
-Prefer not to say,5.33
+"Less than $30,000",3.0
