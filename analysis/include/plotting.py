@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 
 from IPython.display import display_html
 from include.likertScalePlot import likert_scale, get_colors
+from include.barplot import barPlot
 
 
 def wrap_labels(labels, max_size=20):
