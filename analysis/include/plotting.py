@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 
 from IPython.display import display_html
 from include.likertScalePlot import likert_scale, get_colors
+from include.barplot import barPlot
 
 
 def wrap_labels(labels, max_size=20):
@@ -242,7 +243,7 @@ def plot_y_n_single(df, dropna=True, title_plot=False):
     if title_plot:
         title = title_plot
     else:
-        title = df.columns[0]
+        title = df.index[0]
     y_label = 'Percentage'
 
     if dropna is True:
