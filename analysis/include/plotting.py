@@ -116,7 +116,7 @@ def plot_bar_char(df, sort_order=False, stacked=False,
     return plt
 
 
-def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, title_plot=False):
+def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, title_plot=False, origin=False):
     """
     """
     # df = df.transpose()
@@ -130,7 +130,10 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     else:
         plt.suptitle(df.columns[0])
 
-    y_label = 'Percentage'
+    if origin is False:
+        y_label = 'Percentage'
+    else:
+        y_label = 'Count'
     plt.ylabel(y_label)
     plt.yticks(np.arange(0, 100, 10))
 
@@ -326,7 +329,7 @@ def get_plot(df, type_question, title_plot=False):
         elif type_question.lower() == 'likert':
             if len(df.index) == 1:
                 df = df.transpose()
-                return plot_unique_var(df, title_plot=title_plot)
+                return plot_unique_var(df, title_plot=title_plot, origin='likert')
             return plot_likert(df, title_plot=title_plot)
 
         elif type_question.lower() == 'one choice':
