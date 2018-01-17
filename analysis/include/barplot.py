@@ -17,31 +17,26 @@ try:
 except ModuleNotFoundError:
     import common_plot
 
+try:
+    from include.abstract_plot import abstractPlot
+except ModuleNotFoundError:
+    from abstract_plot import abstractPlot
 
-class barPlot:
+
+class barPlot(abstractPlot):
     """
     Output a barplot with specific configuration
     """
-
     def __init__(self, *args, **kwargs):
         """
         """
-        # get the data
-        self.df = args[0]
-        # set the k,v as attribute to the class
-        self.__dict__.update(kwargs)
-        self._create_figure()
-        print(self.df)
+        super().__init__(*args, **kwargs)
 
-    def _create_figure(self):
-        """
-        Create the matplotlib figure
-        """
-        self.fig, self.ax = plt.subplots()
 
     def create_plot(self):
         """
         """
+        print(self.df)
         return self.fig, self.ax
 
 
