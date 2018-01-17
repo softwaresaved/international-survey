@@ -358,7 +358,7 @@ def get_plot(df, type_question, title_plot=False):
         return None
 
 
-def html_by_side(*args):
+def display_side_by_side(*args):
     """
     https://stackoverflow.com/a/44923103
     """
@@ -366,23 +366,6 @@ def html_by_side(*args):
     for df in args:
         html_str+=df.to_html()
     display_html(html_str.replace('table', 'table style="display:inline"'), raw=True)
-
-def display_side_by_side(*args, merging=False):
-    """
-    Display the tables side by side.
-    If the dataset can be merged in one, it is the preferred solution
-    If it is not possible it return an html version of the dataframe and show them side-by-side
-    :params:
-        *args: list of pandas dataframes to display side by side
-        merging bool(): To decide if the dataframes are merge into one or if they are displayed side-by-side
-    :return:
-        None
-    """
-    if True:
-        pass
-        # for df in args:
-    else:
-        html_by_side(args)
 
 
 def main():
