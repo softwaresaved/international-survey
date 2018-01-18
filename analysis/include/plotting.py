@@ -367,12 +367,18 @@ def display_side_by_side(*args):
     """
     df1 = args[0]
     df2 = args[1]
+    rows, columns = df1.shape
     index_row = df2.index
     df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
     df2.reset_index()
-    df1['Percentage'] = df2.iloc[:, -1]
-    df1.index.name = df1.columns[0]
-    df1.columns = ['Count', 'Percentage']
+    if columns == 1:
+        df1['Percentage'] = df2.iloc[:, -1]
+        df1.index.name = df1.columns[0]
+        df1.columns = ['Count', 'Percentage']
+    else:  # In case of Y-N, the df has Yes and No as columns
+        df1['Yes_P'] = df2.iloc[:, 0]
+        df1['No_P'] = df2.iloc[:, 1]
+        df1.columns = ['Yes [Count]', 'No [Count]', 'NaN value', 'Yes [Percentage]', 'No [Percentage]']
     return df1
 
 
