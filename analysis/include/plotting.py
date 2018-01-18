@@ -12,16 +12,16 @@ from include.likertScalePlot import likert_scale, get_colors
 from include.barplot import barPlot
 
 
-def wrap_labels(labels, max_size=20):
+def wrap_labels(label, max_size=20):
     """
     Function to automatically wrap labels if they are too long
     Split only if whitespace
     params:
-        :labels list(): of strings that contains the labels
+        :labels str(): string that contains the labels
         :max_size int(): 20 by Default, the size of the string
         before being wrapped
     :return:
-        :list() of wrapped labels according to the max size
+        :str() of wrapped labels according to the max size
     """
     def split_at_whitespace(label):
         label_to_return = list()
@@ -35,7 +35,7 @@ def wrap_labels(labels, max_size=20):
             label_to_return.append(letter)
         return ''.join(label_to_return)
 
-    return [split_at_whitespace(label) for label in labels]
+    return split_at_whitespace(label)
 
 
 def remove_to_right_line(ax):
@@ -102,15 +102,17 @@ def plot_bar_char(df, sort_order=False, stacked=False,
     # Add the labels
 
     # To set up the label on x or y axis
-    label_txt = wrap_labels(df.index)
-    label_ticks = range(len(df.index))
+    # remove the labels that have a value of zero
+    label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+    label_ticks = range(len(label_txt))
+
     if horizontal is True:
         plt.yticks(label_ticks, label_txt)
     else:
         # This set the xlimits to center the xtick with the bin
         # Explanation found here:
         # https://stackoverflow.com/a/27084005/3193951
-        plt.xlim([-1, len(df.index)])
+        plt.xlim([-1, len(label_txt)])
         plt.xticks(label_ticks, label_txt, rotation=90)
 
     return plt
@@ -216,15 +218,16 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
 
     # Add the x-labels
     # To set up the label on x or y axis
-    label_txt = wrap_labels(df.index)
-    label_ticks = range(len(df.index))
+    # remove the labels that have a value of zero
+    label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+    label_ticks = range(len(label_txt))
     if horizontal is True:
         plt.yticks(label_ticks, label_txt)
     else:
         # This set the xlimits to center the xtick with the bin
         # Explanation found here:
         # https://stackoverflow.com/a/27084005/3193951
-        plt.xlim([-1, len(df.index)])
+        plt.xlim([-1, len(label_txt)])
         plt.xticks(label_ticks, label_txt, rotation=90)
         y_label = 'Percentage'
         ax.set_ylabel(y_label)
@@ -378,7 +381,10 @@ def display_side_by_side(*args):
     else:  # In case of Y-N, the df has Yes and No as columns
         df1['Yes_P'] = df2.iloc[:, 0]
         df1['No_P'] = df2.iloc[:, 1]
-        df1.columns = ['Yes [Count]', 'No [Count]', 'NaN value', 'Yes [Percentage]', 'No [Percentage]']
+        try:
+            df1.columns = ['Yes [Count]', 'No [Count]', 'NaN value', 'Yes [Percentage]', 'No [Percentage]']
+        except ValueError:  # In case there is not a Nan
+            df1.columns = ['Yes [Count]', 'No [Count]', 'Yes [Percentage]', 'No [Percentage]']
     return df1
 
 
