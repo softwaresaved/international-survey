@@ -289,7 +289,6 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
-    print(df_sub)
     # Reorder according to the answers order found in the folder
     if likert_answer:
         # likert_answer = [x for x in likert_answer if x in df_sub.index]
