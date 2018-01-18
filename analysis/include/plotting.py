@@ -365,10 +365,15 @@ def display_side_by_side(*args):
     """
     https://stackoverflow.com/a/44923103
     """
-    html_str=''
-    for df in args:
-        html_str+=df.to_html()
-    display_html(html_str.replace('table', 'table style="display:inline"'), raw=True)
+    df1 = args[0]
+    df2 = args[1]
+    index_row = df2.index
+    df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
+    df2.reset_index()
+    df1['Percentage'] = df2.iloc[:, -1]
+    df1.index.name = df1.columns[0]
+    df1.columns = ['Count', 'Percentage']
+    return df1
 
 
 def main():
