@@ -376,7 +376,10 @@ def display_side_by_side(*args):
     df2.reset_index()
     if columns == 1:
         df1['Percentage'] = df2.iloc[:, -1]
-        df1.index.name = df1.columns[0]
+        if df1.columns[0] == 'Count':
+            df1.index.name = ''
+        else:
+            df1.index.name = df1.columns[0]
         df1.columns = ['Count', 'Percentage']
     else:  # In case of Y-N, the df has Yes and No as columns
         if df1.columns[0] == 'Yes':
