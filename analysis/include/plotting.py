@@ -379,12 +379,17 @@ def display_side_by_side(*args):
         df1.index.name = df1.columns[0]
         df1.columns = ['Count', 'Percentage']
     else:  # In case of Y-N, the df has Yes and No as columns
-        df1['Yes_P'] = df2.iloc[:, 0]
-        df1['No_P'] = df2.iloc[:, 1]
-        try:
-            df1.columns = ['Yes [Count]', 'No [Count]', 'NaN value', 'Yes [Percentage]', 'No [Percentage]']
-        except ValueError:  # In case there is not a Nan
-            df1.columns = ['Yes [Count]', 'No [Count]', 'Yes [Percentage]', 'No [Percentage]']
+        if df1.columns[0] == 'Yes':
+            df1['Yes_P'] = df2.iloc[:, 0]
+            df1['No_P'] = df2.iloc[:, 1]
+            try:
+                df1.columns = ['Yes [Count]', 'No [Count]', 'NaN value', 'Yes [Percentage]', 'No [Percentage]']
+            except ValueError:  # In case there is not a Nan
+                df1.columns = ['Yes [Count]', 'No [Count]', 'Yes [Percentage]', 'No [Percentage]']
+        else:
+            df1.columns = ['{} [Count]'.format(l) for l in df1.columns]
+            for i, colname in enumerate(df2.columns):
+                df1['{} [Percentage]'.format(colname)] = df2.iloc[:, i]
     return df1
 
 
