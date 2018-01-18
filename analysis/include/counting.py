@@ -273,7 +273,7 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False):
     return df_sub
 
 
-def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, normalize=False, reindex=False):
+def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False, normalize=False, reindex=False):
     """
     Count the values of different columns and transpose the count
     :params:
@@ -289,9 +289,13 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=True, 
 
     # Calculate the counts for them
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    print(df_sub)
     # Reorder according to the answers order found in the folder
     if likert_answer:
-        likert_answer = [x for x in likert_answer if x in df_sub.index]
+        # likert_answer = [x for x in likert_answer if x in df_sub.index]
+        for i in likert_answer:  # Add the missing likert because they have nan value and are not in the dataset
+            if i not in df_sub.index:
+                df.loc[i] = np.nan
         df_sub = df_sub.reindex(index=likert_answer)
     # Transpose the column to row to be able to plot a stacked bar chart
     return df_sub.transpose()
