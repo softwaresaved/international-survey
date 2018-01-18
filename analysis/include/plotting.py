@@ -149,7 +149,7 @@ def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dro
     if title_plot:
         plt.suptitle(title_plot)
     else:
-        plt.suptitle(df.columns[0])
+        plt.suptitle('')
     if ranking is True:
         plt.yticks(np.arange(0, 100, 10))
 
@@ -376,11 +376,11 @@ def display_side_by_side(*args):
     df2.reset_index()
     if columns == 1:
         df1['Percentage'] = df2.iloc[:, -1]
-        if df1.columns[0] == 'Count':
+        df1.index.name = df1.columns[0]
+        if df1.index.name == 'Count':
             df1.index.name = ''
-        else:
-            df1.index.name = df1.columns[0]
         df1.columns = ['Count', 'Percentage']
+
     else:  # In case of Y-N, the df has Yes and No as columns
         if df1.columns[0] == 'Yes':
             df1['Yes_P'] = df2.iloc[:, 0]
