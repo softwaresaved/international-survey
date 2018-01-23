@@ -166,12 +166,12 @@ Our results support this idea, while for 83% of the participants, their software
 Among these participants, only 33% are generally named as main author for the paper. Among the 67% of those who are not main author, 78% are at least mentioned as co-authors. And among these last 22% of RSEs that are not mentioned as co-author or main author, 69% are at least generally acknowledged in the main text of the paper.
 On conference, the number of RSEs that present their work in conference is rather small, only 56%, when compared to the paper publications. 
 
-Software also requires specific citations, and even if the way to do it properly is not standardise yet, it is another way for RSEs to be recognised in their role, but also giving recognition to others that develop software. In that perspective, we asked them *how do they reference software directly or the papers describing the software?*. Among the propositions they could choose, citing the specific version of the software is the most common way to cite it (43%), followed by paper about software or the software itself (32%) or software itself (25%). It is important to note that this question did not have a "No" as an option, therefore these numbers need to be put in perspective of the high number of none answer. Less than 20 % of people chose one of the option. RSEs do not seem to often cite the software they use. 
+Software also requires specific citations, and even if the way to do it properly is not standardise yet, it is another way for RSEs to be recognised in their role, but also giving recognition to others that develop software. In that perspective, we asked them *how do they reference software directly or the papers describing the software?*. Among the propositions they could choose, citing the specific version of the software is the most common way to cite it (43%), followed by paper about software or the software itself (32%) or software itself (25%). It is important to note that this question did not have a "No" as an option, therefore these numbers need to be put in perspective of the high number of none answer. Less than 20 % of people chose one of the options. RSEs do not seem to often cite the software they use. 
 
-The other development practice is how the code is distributed and if the RSEs are often releasing their work under open licence. 
-We asked the participants if they have ever released their work under open source licence and
+The other development practice is how the code is distributed and if the RSEs are releasing their work under open licence. 
+We asked the participants if they have ever released their work under open source licence and 62% of them replied by the affirmative. However, as it could be considered as a small number, among these 62%, it is seems that the vast majority of them doing it all the time (42%). Therefore, as soon as the step to open source is done, it seems that RSEs seems a constant interest in it. However, they rarely use a Digital Object Identifier (DOI) to help to identify their software. only 18% of them are doing it. And the frequency of use of the DOI among them is much more variable than for the open licence. 
  
-A last element about publications is the use of [ORCID](https://orcid.org/). It is an online service that allows to connect 
+A last element about publications is the use of [ORCID](https://orcid.org/). It is an online service that allows to connect different publications and work with one identifier per researcher. Half of them are using the service.
 
 ## Academic publications
 
@@ -227,7 +227,7 @@ On majority of the RSEs' projects the bus factor is 1 (57%), followed by a bus f
 These low numbers should be put in relation of the number of developer involved in the project (35 % of the projects with only one developer and 32 % with 2 developers). However, the presence of a technical plan, which can mitigate the low bus factor in the different projects is really low (19%) and presents a risk of project failures.
 
 
-On technical details we wanted to know which of the programing languages were mostly used by the RSEs. We give them a multichoice list inspired by the [results](https://insights.stackoverflow.com/survey/2017#most-popular-technologies) published by Stackoverflow. Python and C++ are clearly the most used language with 18% and 10%. The rests of the languages that are higher than 5% are Javascript (9%), R (8%), C (8%), Java (7%), Matlab (7%), SQL (7%) and Fortran (6%).
+On technical details we wanted to know which of the programming languages were mostly used by the RSEs. We give them a multi-choice list inspired by the [results](https://insights.stackoverflow.com/survey/2017#most-popular-technologies) published by Stackoverflow. Python and C++ are clearly the most used language with 18% and 10%. The rests of the languages that are higher than 5% are Javascript (9%), R (8%), C (8%), Java (7%), Matlab (7%), SQL (7%) and Fortran (6%).
 About which Operating System used by RSEs, a majority are using GNU/Linux (60%), while Windows and OS X have way less users (23 and 15%).
 
 ## Good practices
@@ -247,6 +247,19 @@ About which Operating System used by RSEs, a majority are using GNU/Linux (60%),
 
 # Job satisfaction
 
+The job satisfaction is an essential pulse to take about the community. It helps to track the evolution and the current state of the RSEs within their role and to catch any sign of structural or organisational dysfunction that are translated into well-being. There are a lot of different metrics to measure the quality of a job on a personal and psychological level [4]. Several models exist to understand the link between different factors of job satisfaction and turnover intention [5]–[9]. Turnover intention is an important measure that is highly associated with the risk of employees leaving the organisation [7]. Job satisfaction is important in retaining RSEs. Perceived employability provides information on how workers values their own skills in regard of the market. To measure the different attitudes toward the RSE role, we used scales that have been created in [5], [6], [8], [9]. These are Likert scale [10], which are 5 point ordinal scales graduated from Strongly disagree to Strongly agree. Each scale is composed of several so called items (i.e. questions) that each measure one attitude.
+
+Beside these specific concepts we asked more general question about their satisfaction in their current position and their satisfaction with their career in general. To the range from *0 - Not at all satisfied* to *10 - Completely satisfied*, 79% of the participants answered more than 5 to the scale (which can be considered as a neutral position) to the question about their satisfaction about their current position. For the question about their satisfaction with their career in general (and using the same scale), 71% of the participants answered more than 5 to the scale. 
+
+The specific questions about their job satisfaction reflect, in general, the same opinion of the two more generic questions but with some differences:
+* *The feedback about the performance*: These questions ask if the RSEs feel that they receive enough information about their work and their performance. While they seems to have enough information about the purpose of their work and having access to sufficient data and information, they are less assertive about the feedback they receive from their colleagues and their supervisors. 
+* *The turnover intention*: These questions aim to measure the desire to quit their current position. Overall, the participants are not willing to leave their position and are not necessarily searching for other job, even if the job would offer the same compensations.  
+* *The perceived employability*: This concept is linked to the previous one. People may not have the intention to leave their jobs, not because they like it, but because they fear they are not employable. This is not the case 
+* *The affective recognition*:
+
+* *The possibility of progression*: 
+
+
 
 ## Group of question: satisgen
 
@@ -254,30 +267,25 @@ About which Operating System used by RSEs, a majority are using GNU/Linux (60%),
 
 ## Group of question: perfCheck
 
-
 ### Do you receive sufficient information on the results of your work?; Does your work give you the opportunity to check on how well you are doing your work?; In your work, do you have access to sufficient data and information?; Do you receive sufficient information on the purpose of your work?; Does your work provide you with direct feedback on how well you are doing your work?; Does your supervisor/line manager inform you about how well you are doing your work?; Do your colleagues inform you about how well you are doing your work?
 
 
 ## Group of question: turnOver
 
-
-
 ### How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?; How often do you look forward to another day at work?; How often do you consider leaving your job?; How often do dream about getting another job that will better suit your needs?
 
-
 ### My current job satisfies my personal needs; I would accept another job at the same compensation level if I was offered it
+
+
+## Group of question: percEmp
+
+### It would not be very difficult for me to get an equivalent job in a different organisation; I can think of a number of organisations that would probably offer me a job; My experience is in demand on the labour market; Given my qualifications and experience, getting a new job would not be very hard at all
 
 
 ## Group of question: affRec
 
 
 ### I am satisfied with my supervisor/line manager's confidence in me; I am satisfied with a word of thanks from my supervisor/line manager; I am satisfied with the recognition I receive from my supervisor/line manager for doing my job; I am satisfied with the compliments from my supervisor/line manager concerning my work; I am satisfied with the encouragement from my supervisor/line manager while doing my job
-
-
-## Group of question: percEmp
-
-
-### It would not be very difficult for me to get an equivalent job in a different organisation; I can think of a number of organisations that would probably offer me a job; My experience is in demand on the labour market; Given my qualifications and experience, getting a new job would not be very hard at all
 
 
 ## Group of question: affSat
@@ -293,6 +301,9 @@ About which Operating System used by RSEs, a majority are using GNU/Linux (60%),
 
 
 # Research Software Engineer
+
+This last section regroups different questions about RSEs in general, the specific skills for them, where they meet other RSEs and the prospect of a conference in Germany. 
+ 
 
 ## Group of question: ukrse
 
