@@ -9,18 +9,19 @@ import matplotlib.pyplot as plt
 
 from IPython.display import display_html
 from include.likertScalePlot import likert_scale, get_colors
+from include.barplot import barPlot
 
 
-def wrap_labels(labels, max_size=20):
+def wrap_labels(label, max_size=20):
     """
     Function to automatically wrap labels if they are too long
     Split only if whitespace
     params:
-        :labels list(): of strings that contains the labels
+        :labels str(): string that contains the labels
         :max_size int(): 20 by Default, the size of the string
         before being wrapped
     :return:
-        :list() of wrapped labels according to the max size
+        :str() of wrapped labels according to the max size
     """
     def split_at_whitespace(label):
         label_to_return = list()
@@ -34,7 +35,7 @@ def wrap_labels(labels, max_size=20):
             label_to_return.append(letter)
         return ''.join(label_to_return)
 
-    return [split_at_whitespace(label) for label in labels]
+    return split_at_whitespace(label)
 
 
 def remove_to_right_line(ax):
@@ -101,21 +102,23 @@ def plot_bar_char(df, sort_order=False, stacked=False,
     # Add the labels
 
     # To set up the label on x or y axis
-    label_txt = wrap_labels(df.index)
-    label_ticks = range(len(df.index))
+    # remove the labels that have a value of zero
+    label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+    label_ticks = range(len(label_txt))
+
     if horizontal is True:
         plt.yticks(label_ticks, label_txt)
     else:
         # This set the xlimits to center the xtick with the bin
         # Explanation found here:
         # https://stackoverflow.com/a/27084005/3193951
-        plt.xlim([-1, len(df.index)])
+        plt.xlim([-1, len(label_txt)])
         plt.xticks(label_ticks, label_txt, rotation=90)
 
     return plt
 
 
-def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, title_plot=False):
+def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, title_plot=False, origin=False):
     """
     """
     # df = df.transpose()
@@ -129,7 +132,10 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     else:
         plt.suptitle(df.columns[0])
 
-    y_label = 'Percentage'
+    if origin is False:
+        y_label = 'Percentage'
+    else:
+        y_label = 'Count'
     plt.ylabel(y_label)
     plt.yticks(np.arange(0, 100, 10))
 
@@ -143,7 +149,7 @@ def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dro
     if title_plot:
         plt.suptitle(title_plot)
     else:
-        plt.suptitle(df.columns[0])
+        plt.suptitle('')
     if ranking is True:
         plt.yticks(np.arange(0, 100, 10))
 
@@ -212,15 +218,16 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
 
     # Add the x-labels
     # To set up the label on x or y axis
-    label_txt = wrap_labels(df.index)
-    label_ticks = range(len(df.index))
+    # remove the labels that have a value of zero
+    label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+    label_ticks = range(len(label_txt))
     if horizontal is True:
         plt.yticks(label_ticks, label_txt)
     else:
         # This set the xlimits to center the xtick with the bin
         # Explanation found here:
         # https://stackoverflow.com/a/27084005/3193951
-        plt.xlim([-1, len(df.index)])
+        plt.xlim([-1, len(label_txt)])
         plt.xticks(label_ticks, label_txt, rotation=90)
         y_label = 'Percentage'
         ax.set_ylabel(y_label)
@@ -242,7 +249,7 @@ def plot_y_n_single(df, dropna=True, title_plot=False):
     if title_plot:
         title = title_plot
     else:
-        title = df.columns[0]
+        title = df.index[0]
     y_label = 'Percentage'
 
     if dropna is True:
@@ -325,7 +332,7 @@ def get_plot(df, type_question, title_plot=False):
         elif type_question.lower() == 'likert':
             if len(df.index) == 1:
                 df = df.transpose()
-                return plot_unique_var(df, title_plot=title_plot)
+                return plot_unique_var(df, title_plot=title_plot, origin='likert')
             return plot_likert(df, title_plot=title_plot)
 
         elif type_question.lower() == 'one choice':
@@ -357,31 +364,36 @@ def get_plot(df, type_question, title_plot=False):
         return None
 
 
-def html_by_side(*args):
+def display_side_by_side(*args):
     """
     https://stackoverflow.com/a/44923103
     """
-    html_str=''
-    for df in args:
-        html_str+=df.to_html()
-    display_html(html_str.replace('table', 'table style="display:inline"'), raw=True)
+    df1 = args[0]
+    df2 = args[1]
+    rows, columns = df1.shape
+    index_row = df2.index
+    df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
+    df2.reset_index()
+    if columns == 1:
+        df1['Percentage'] = df2.iloc[:, -1]
+        df1.index.name = df1.columns[0]
+        if df1.index.name == 'Count':
+            df1.index.name = ''
+        df1.columns = ['Count', 'Percentage']
 
-def display_side_by_side(*args, merging=False):
-    """
-    Display the tables side by side.
-    If the dataset can be merged in one, it is the preferred solution
-    If it is not possible it return an html version of the dataframe and show them side-by-side
-    :params:
-        *args: list of pandas dataframes to display side by side
-        merging bool(): To decide if the dataframes are merge into one or if they are displayed side-by-side
-    :return:
-        None
-    """
-    if True:
-        pass
-        # for df in args:
-    else:
-        html_by_side(args)
+    else:  # In case of Y-N, the df has Yes and No as columns
+        if df1.columns[0] == 'Yes':
+            df1['Yes_P'] = df2.iloc[:, 0]
+            df1['No_P'] = df2.iloc[:, 1]
+            try:
+                df1.columns = ['Yes [Count]', 'No [Count]', 'NaN value', 'Yes [Percentage]', 'No [Percentage]']
+            except ValueError:  # In case there is not a Nan
+                df1.columns = ['Yes [Count]', 'No [Count]', 'Yes [Percentage]', 'No [Percentage]']
+        else:
+            df1.columns = ['{} [Count]'.format(l) for l in df1.columns]
+            for i, colname in enumerate(df2.columns):
+                df1['{} [Percentage]'.format(colname)] = df2.iloc[:, i]
+    return df1
 
 
 def main():
