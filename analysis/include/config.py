@@ -19,6 +19,7 @@ class CleaningConfig:
         # Location for the json file of all questions
         self.json_to_plot_location = './{}/{}/data/to_plot.json'.format(self.year, self.country)
         self.cleaned_df_location = './{}/{}/data/cleaned_data.csv'.format(self.year, self.country)
+        self.public_df_location = './{}/{}/data/public_data.csv'.format(self.year, self.country)
         self.section_nbr_to_keep_after = 1
         self.count_na = True
         self.normalise = False
