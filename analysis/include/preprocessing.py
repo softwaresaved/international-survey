@@ -84,18 +84,18 @@ class CleaningData(CleaningConfig):
         Get the language column and create a new k for it in the structure_by_section
         while creating a file_answer to be able to be plot later in analysis
         """
-        path_to_language = os.path.join('../survey_creation',  self.year, self.country, 'listAnswers', 'languages.csv')
+        path_to_language = os.path.join('../survey_creation', self.year, self.country, 'listAnswers', 'languages.csv')
         list_of_languages = self.df['startlanguage. Start language'].unique()
         if len(list_of_languages) > 1:
             with open(path_to_language, 'w+') as f:
                 for language in list_of_languages:
                     f.write(language)
                     f.write('\n')
-            dict_to_add = {0:{'language': [{'survey_q': ['startlanguage. Start language'],
-                                            'original_question': ['startlanguage. Start language'],
-                                            'answer_format': 'one choice',
-                                            'file_answer': path_to_language,
-                                            'order_question': False}]}}
+            dict_to_add = {0: {'language': [{'survey_q': ['startlanguage. Start language'],
+                                             'original_question': ['startlanguage. Start language'],
+                                             'answer_format': 'one choice',
+                                             'file_answer': path_to_language,
+                                             'order_question': False}]}}
 
             structure_by_section.update(dict_to_add)
             structure_by_section.move_to_end(0, last=False)
@@ -167,22 +167,16 @@ class CleaningData(CleaningConfig):
         """
         result_dict = dict()
         with open(self.question_file, 'r') as f:
-            reader = csv.reader(f)
-            next(reader)
+            reader = csv.DictReader(f)
             for row in reader:
-                section = row[0]
-                code = row[1]
-                question = self.cleaning_some_white_space(row[2])
-                answer_format = row[3]
-                type_question = row[4]
-                file_answer = '{}/{}.csv'.format(self.answer_folder, row[4])
-                order_question = row[9]
-                result_dict[code] = {'section': section,
-                                     'original_question': question,
-                                     'type_question': type_question,
-                                     'answer_format': answer_format,
-                                     'file_answer': file_answer,
-                                     'order_question': order_question}
+                result_dict[row['code']] = {'section': row['section'],
+                                            'original_question': row['question'],
+                                            'type_question': row['answer_file'],
+                                            'answer_format': row['answer_format'],
+                                            'file_answer': '{}/{}.csv'.format(self.answer_folder, row['answer_file']),
+                                            'order_question': row['order_question'],
+                                            'public': row['public']}
+
         return result_dict
 
     def get_answer_item(self, path_to_file):
@@ -234,15 +228,12 @@ class CleaningData(CleaningConfig):
         Dropping all the columns created by limesurvey and
         not needed for later analysis
         """
-        # columns_to_drop = ['id. Response ID', 'submitdate. Date submitted', 'startdate. Date started',
-                           # 'datestamp. Date last action', 'refurl. Referrer URL', 'startlanguage. Start language']
         columns_to_drop = ['id. Response ID', 'submitdate. Date submitted', 'startdate. Date started',
                            'datestamp. Date last action', 'refurl. Referrer URL', 'ipaddr. IP address']
         df = df.drop(columns_to_drop, axis=1)
 
         # Drop the columns about the time for each questions if present (from limesurvey)
         # FIXME See if the regex works or not
-        # df = df.loc[:, ~df.columns.str.contains('^Question time|Group time')]
         df = df.loc[:, ~df.columns.str.contains('Question time')]
         df = df.loc[:, ~df.columns.str.contains('Group time')]
         return df
@@ -492,8 +483,7 @@ class CleaningData(CleaningConfig):
         If it is the case, remove the data corresponding to the question for the
         uploaded dataset
         """
-
-
+        pass
 
     def write_config_file(self):
         """
@@ -502,7 +492,12 @@ class CleaningData(CleaningConfig):
         with open(self.json_to_plot_location, 'w') as f:
             json.dump(dict_to_write, f)
 
-    def write_df(self, df, location=self.cleaned_df_location):
+    def write_df(self):
+        """
+        """
+        self._write_df(self.df, self.cleaned_df_location)
+
+    def _write_df(self, df, location):
         """
         """
         df.to_csv(location)
@@ -514,9 +509,9 @@ def main():
     df = pd.read_csv(CleaningConfig.raw_data)
     cleaning_process = CleaningData(df)
     cleaning_process.cleaning()
-    cleaning_process.write_df(self.df)
+    # cleaning_process.write_df(self.df, self.cleaned_df_location)
     cleaning_process.remove_private_data()
-    cleaning_process.write_config_file()
+    # cleaning_process.write_config_file()
 
 
 if __name__ == "__main__":
