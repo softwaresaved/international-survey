@@ -9,6 +9,7 @@ import glob
 import pandas as pd
 import numpy as np
 from collections import OrderedDict
+import pycountry
 
 
 from include.config import CleaningConfig
@@ -21,47 +22,161 @@ class CleaningData(CleaningConfig):
     that take all the questions headers from limesurvey data and match them
     with the question file to enable automatic process during the plotting
     """
-    def __init__(self, df):
+    def __init__(self, year, country, df):
         """
         """
-        super().__init__()
+        super().__init__(year, country)
         self.df = df
         self.answers_item_dict = self.get_answer_item(self.answer_folder)
+        # Some likert items need to be reverted -- need a list
+        self.likert_item_to_revert = ['turnOver2', 'turnOver3']
 
     def cleaning(self):
         """
         Launch the different steps needed to clean the df
         """
-        self.df = self.dropping_dead_participant(self.df)
-        self.df = self.dropping_lime_useless(self.df)
+        try:
+            self.df = self.dropping_dead_participant(self.df)
+        except KeyError:
+            pass
+        try:
+            self.df = self.dropping_lime_useless(self.df)
+        except ValueError:
+            pass
         self.df = self.cleaning_columns_white_space(self.df)
         self.df = self.cleaning_missing_na(self.df)
+        # self.df = self.fixing_satisQuestion(self.df)
         self.df = self.duplicating_other(self.df)
+        self.df = self.remove_not_right_country(self.df)
+        self.df = self.remove_empty_column(self.df)
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
+        self.df = self.revert_inverted_likert(self.likert_item_to_revert)
+        # In case of the German 2017 survey, they did a mistake with the answer item for the salary and left the pounds for the english
+        # text while converted in euros for the translation in German. This function just convert each of the answers into the euros.
+        if self.year == '2017' and self.country == 'de':
+            self.df = self.clean_salary_de_2017(self.df)
+        self.df, self.structure_by_section = self.create_language_section(self.df, self.structure_by_section)
+        return self.df
+
+    def clean_salary_de_2017(self, df):
+        """
+        This function is only used for the German data in 2017.
+        The salary was not translated into euros
+        """
+        q_header = 'socio4. Please select the range of your salary'
+        replace_dict = {'Less than £24.999': 'Less than 27.499 EUR',
+                        'Between £25.000 and £29.999': 'Between 27.500 and 32.999 EUR',
+                        'Between £30.000 and £34.999': 'Between 33.000 and 38.499 EUR',
+                        'Between £35.000 and £39.999': "Between 38.500 and 43.999 EUR",
+                        'Between £40.000 and £44.999': 'Between 44.000 and 49.999 EUR',
+                        'Between £45.000 and £49.999': 'Between 50.000 and 54.999 EUR',
+                        'Between £50.000 and £59.999': 'Between 55.000 and 65.999 EUR',
+                        'Between £60.000 and £69.999': 'Between 66.000 and 76.999 EUR',
+                        'Between £70.000 and £99.999': 'Between 77.000 and 109.999 EUR',
+                        'More than £100.000': 'More than 110.000 EUR'}
+        df[q_header] = df[q_header].replace(replace_dict)
+        return df
+
+    def create_language_section(self, df, structure_by_section):
+        """
+        Get the language column and create a new k for it in the structure_by_section
+        while creating a file_answer to be able to be plot later in analysis
+        """
+        path_to_language = os.path.join('../survey_creation', self.year, self.country, 'listAnswers', 'languages.csv')
+        list_of_languages = self.df['startlanguage. Start language'].unique()
+        if len(list_of_languages) > 1:
+            with open(path_to_language, 'w+') as f:
+                for language in list_of_languages:
+                    f.write(language)
+                    f.write('\n')
+            dict_to_add = {0: {'language': [{'survey_q': ['startlanguage. Start language'],
+                                             'original_question': ['startlanguage. Start language'],
+                                             'answer_format': 'one choice',
+                                             'file_answer': path_to_language,
+                                             'order_question': False}]}}
+
+            structure_by_section.update(dict_to_add)
+            structure_by_section.move_to_end(0, last=False)
+        return self.df, structure_by_section
+
+    def revert_inverted_likert(self, item_to_revert):
+        """
+        Some items need to be inverted as the question is a negative form
+        :params:
+            :item_to_revert list(): of code contained in the column name
+        :return:
+            : self.df(): with the reverted items
+        """
+        for item in item_to_revert:
+            try:
+                type_question = self.structure_by_question[item]['type_question']
+                answer = self.answers_item_dict[type_question]
+                replacing_value = dict(zip(answer, answer[::-1]))
+                col_to_revert = [col for col in self.df.columns if item in col]
+                self.df[col_to_revert] = self.df[col_to_revert].replace(replacing_value)
+            except KeyError:
+                pass
 
         return self.df
+
+    def remove_empty_column(self, df):
+        """
+        If a column as no values at all (all nan), the column is removed
+        to avoid problem later in the analysis
+        """
+        return df.dropna(axis=1, how='all')
+
+    def remove_not_right_country(self, df):
+        """
+        Remove rows that are not the appropriate country
+        """
+        # Use the package pycountry to get the language from the country code
+        if len(self.country) == 2:
+            if self.country == 'uk':
+                country = pycountry.countries.get(alpha_2='GB'.upper())
+            else:
+                country = pycountry.countries.get(alpha_2=self.country.upper())
+        elif len(self.country) == 3:
+            country = pycountry.countries.get(alpha_3=self.country.upper())
+        elif len(self.country) == 4:
+            country = pycountry.countries.get(alpha_4=self.country.upper())
+        else:
+            raise
+        return df[df['socio1. In which country do you work?'] == country.name]
+
+    def fixing_satisQuestion(self, df):
+        """
+        For the uk 2017, a mistake on how to display the question
+        satisGen1 and satisGen2 has been made. These questions were
+        merge into one table but the questions text was split between
+        the overal text and the items. It appears like this:
+        "In general, how satisfied are you with: [Your current position]"
+        "In general, how satisfied are you with: [Your career]"
+        For the script to match these questions with the csv file that
+        helps to the construction, it should have been like that:
+        "Please answer the following: [In general, how satisfied are you with Your current position]"
+        "Please answer the following: [In general, how satisfied are you with Your career]"
+        This function just replace the text within the bracket to match the ideal case
+        """
+        return df
 
     def get_survey_structure(self):
         """
         """
         result_dict = dict()
         with open(self.question_file, 'r') as f:
-            reader = csv.reader(f)
-            next(reader)
+            reader = csv.DictReader(f)
             for row in reader:
-                section = row[0]
-                code = row[1]
-                question = self.cleaning_some_white_space(row[2])
-                answer_format = row[3]
-                type_question = row[4]
-                file_answer = '{}/{}.csv'.format(self.answer_folder, row[4])
-                result_dict[code] = {'section': section,
-                                     'original_question': question,
-                                     'type_question': type_question,
-                                     'answer_format': answer_format,
-                                     'file_answer': file_answer}
+                result_dict[row['code']] = {'section': row['section'],
+                                            'original_question': row['question'],
+                                            'type_question': row['answer_file'],
+                                            'answer_format': row['answer_format'],
+                                            'file_answer': '{}/{}.csv'.format(self.answer_folder, row['answer_file']),
+                                            'order_question': row['order_question'],
+                                            'public': row['public']}
+
         return result_dict
 
     def get_answer_item(self, path_to_file):
@@ -101,18 +216,24 @@ class CleaningData(CleaningConfig):
         """
         return self.df.loc[self.df['lastpage. Last page']> self.section_nbr_to_keep_after]
 
+    def dropping_empty_question(self, df):
+        """
+        Some question may not have any answer. If the unique value of that question is array([nan])
+        the question is dropped
+        """
+        return self.df.dropna(axis=1, how='all')
+
     def dropping_lime_useless(self, df):
         """
         Dropping all the columns created by limesurvey and
         not needed for later analysis
         """
         columns_to_drop = ['id. Response ID', 'submitdate. Date submitted', 'startdate. Date started',
-                           'datestamp. Date last action', 'refurl. Referrer URL', 'startlanguage. Start language']
+                           'datestamp. Date last action', 'refurl. Referrer URL', 'ipaddr. IP address']
         df = df.drop(columns_to_drop, axis=1)
 
         # Drop the columns about the time for each questions if present (from limesurvey)
         # FIXME See if the regex works or not
-        # df = df.loc[:, ~df.columns.str.contains('^Question time|Group time')]
         df = df.loc[:, ~df.columns.str.contains('Question time')]
         df = df.loc[:, ~df.columns.str.contains('Group time')]
         return df
@@ -190,11 +311,15 @@ class CleaningData(CleaningConfig):
             try:
                 input_dict[code].setdefault('survey_q', []).append(col)
             except KeyError:
-                code = get_question_code(col, 1)
+                multiple_code = get_question_code(col, 1)
                 try:
-                    input_dict[code].setdefault('survey_q', []).append(col)
-                except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
-                    pass
+                    input_dict[multiple_code].setdefault('survey_q', []).append(col)
+                except KeyError:  # Sometime the questions is stored as multiple choice in limesurvey but it is two specific question in the csv
+                    special_code = code[:-1] + multiple_code[-1]
+                    try:
+                        input_dict[special_code].setdefault('survey_q', []).append(col)
+                    except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
+                        print('Not being able to process this columns: {}'.format(col))
 
         return input_dict
 
@@ -245,40 +370,48 @@ class CleaningData(CleaningConfig):
             group_survey_q, group_original_question = list(), list()
             previous_answer_format = None
             previous_file_answer = None
+            previous_order_question = None
             file_answer = None
-            # print(group_question)
             for q in group_question:
                 current_answer_format = group_question[q]['answer_format'].lower()
                 survey_q = group_question[q]['survey_q']
                 original_q = group_question[q]['original_question']
                 file_answer = group_question[q]['file_answer']
+                order_question = group_question[q]['order_question']
+                if order_question == 'TRUE':
+                    order_question = True
+                else:
+                    order_question = False
 
                 if previous_answer_format in ['y/n/na', 'likert'] or current_answer_format in ['y/n/na', 'likert']:
                     if current_answer_format == previous_answer_format or previous_answer_format is None:
                         if previous_answer_format == 'likert' and current_answer_format == 'likert':
                             if previous_file_answer != file_answer:
-                                yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                                yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                                 group_survey_q, group_original_question = list(), list()
                         group_survey_q.extend(survey_q)
                         group_original_question.append(original_q)
                     else:
-                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                         group_survey_q, group_original_question = list(), list()
                         group_survey_q.extend(survey_q)
                         group_original_question.append(original_q)
                 else:
                     if len(group_survey_q) > 0:
-                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer
+                        yield group_survey_q, group_original_question, previous_answer_format, previous_file_answer, previous_order_question
                     group_survey_q, group_original_question = list(), list()
                     group_survey_q.extend(survey_q)
                     group_original_question.append(original_q)
 
                 previous_answer_format = current_answer_format
                 previous_file_answer = file_answer
+                previous_order_question = order_question
 
-            yield group_survey_q, group_original_question, previous_answer_format, file_answer
+            yield group_survey_q, group_original_question, previous_answer_format, file_answer, previous_order_question
 
         def dictionary_by_section(input_dict):
+            # for k in input_dict:
+            #     print(k, input_dict[k])
             output_dict = dict()
             for q in input_dict:
                 try:
@@ -303,6 +436,7 @@ class CleaningData(CleaningConfig):
                         q_dict['original_question'] = q[1]
                         q_dict['answer_format'] = q[2]
                         q_dict['file_answer'] = q[3]
+                        q_dict['order_question'] = q[4]
                         input_dict[section][group].append(q_dict)
             return input_dict
 
@@ -343,17 +477,37 @@ class CleaningData(CleaningConfig):
                 df = df.drop(col, axis=1)
         return df
 
+    def remove_private_data(self):
+        """
+        Check if any N in the Public column in the questions.csv.
+        If it is the case, remove the data corresponding to the question for the
+        uploaded dataset
+        """
+        self.public_df = self.df.copy()
+        for entry in self.survey_structure:
+            public_choice = self.survey_structure[entry]['public'].lower()
+            if public_choice == 'false' or public_choice == 'n' or public_choice == 'no':
+                col_to_remove = self.survey_structure[entry]['survey_q'][0]
+                self.public_df.drop(col_to_remove, axis=1, inplace=True)
+
+        self._write_df(self.public_df, self.public_df_location)
+
     def write_config_file(self):
         """
         """
-        dict_to_write = self.survey_structure
+        dict_to_write = self.structure_by_section
         with open(self.json_to_plot_location, 'w') as f:
             json.dump(dict_to_write, f)
 
     def write_df(self):
         """
         """
-        self.df.to_csv(self.cleaned_df_location)
+        self._write_df(self.df, self.cleaned_df_location)
+
+    def _write_df(self, df, location):
+        """
+        """
+        df.to_csv(location)
 
 
 def main():
@@ -362,8 +516,9 @@ def main():
     df = pd.read_csv(CleaningConfig.raw_data)
     cleaning_process = CleaningData(df)
     cleaning_process.cleaning()
-    cleaning_process.write_df()
-    cleaning_process.write_config_file()
+    # cleaning_process.write_df(self.df, self.cleaned_df_location)
+    cleaning_process.remove_private_data()
+    # cleaning_process.write_config_file()
 
 
 if __name__ == "__main__":
