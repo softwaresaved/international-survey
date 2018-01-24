@@ -4,3 +4,8 @@ raw_*.csv
 __pycache__/
 to_plot.json
 cleaned_data.csv
+raw_data*
+.ipynb_checkpoints/
+venv/
+logs/
+__pycache__/
