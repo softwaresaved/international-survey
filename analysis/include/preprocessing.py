@@ -47,17 +47,37 @@ class CleaningData(CleaningConfig):
         self.df = self.cleaning_missing_na(self.df)
         # self.df = self.fixing_satisQuestion(self.df)
         self.df = self.duplicating_other(self.df)
-        # try:
         self.df = self.remove_not_right_country(self.df)
-        # except KeyError:
-            # pass
         self.df = self.remove_empty_column(self.df)
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
         self.df = self.revert_inverted_likert(self.likert_item_to_revert)
+        # In case of the German 2017 survey, they did a mistake with the answer item for the salary and left the pounds for the english
+        # text while converted in euros for the translation in German. This function just convert each of the answers into the euros.
+        if self.year == '2017' and self.country == 'de':
+            self.df = self.clean_salary_de_2017(self.df)
         self.df, self.structure_by_section = self.create_language_section(self.df, self.structure_by_section)
         return self.df
+
+    def clean_salary_de_2017(self, df):
+        """
+        This function is only used for the German data in 2017.
+        The salary was not translated into euros
+        """
+        q_header = 'socio4. Please select the range of your salary'
+        replace_dict = {'Less than £24.999': 'Less than 27.499 EUR',
+                        'Between £25.000 and £29.999': 'Between 27.500 and 32.999 EUR',
+                        'Between £30.000 and £34.999': 'Between 33.000 and 38.499 EUR',
+                        'Between £35.000 and £39.999': "Between 38.500 and 43.999 EUR",
+                        'Between £40.000 and £44.999': 'Between 44.000 and 49.999 EUR',
+                        'Between £45.000 and £49.999': 'Between 50.000 and 54.999 EUR',
+                        'Between £50.000 and £59.999': 'Between 55.000 and 65.999 EUR',
+                        'Between £60.000 and £69.999': 'Between 66.000 and 76.999 EUR',
+                        'Between £70.000 and £99.999': 'Between 77.000 and 109.999 EUR',
+                        'More than £100.000': 'More than 110.000 EUR'}
+        df[q_header] = df[q_header].replace(replace_dict)
+        return df
 
     def create_language_section(self, df, structure_by_section):
         """
