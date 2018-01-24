@@ -6,8 +6,9 @@ To find the total number of participants, we took all submissions and then remov
 # Section 1. Social demographics
 In this section, we determine some information about the demographics of the respondents: language, gender, pay, educational level, age.
 
+
 ## Language
-This survey offered the possibility to choose in which language the questions were displayed. The participants had the choice between German and English. 70% of the participants chose to fill the survey in German 
+This survey offered the possibility to choose in which language the questions were displayed. The participants had the choice between German and English. 70% of the participants chose to fill the survey in German.
 
 ## Country of work
 The data was cleaned to remove all non-German respondents. 
@@ -24,6 +25,8 @@ Their is a clear gender imbalance in the RSE community in Germany. It is predomi
 The majority of RSEs fall within the *25 to 34 years* (45%), and the next more important age range is *35 to 44 years* (39%). The representation of older or younger range is marginal compared to these two groups (17% in total, split in three age ranges).
 
 ## Salary
+
+We asked the participants to give us the range of salary they are paid. The most common salary in Germany for the participants is less than 27.499 euros (19%). However, almost half of the participants (42%), are concentred within three ranges of salary, spanning from 44.000 euros to 65.999 euros: 10% for the range between 44.000 ad 49.999 euros, 16% between 50.000 and 54.999 euros and 16% between 55.000 and 65.999 euros.
 
 
 ## Professional qualifications
@@ -251,13 +254,15 @@ The job satisfaction is an essential pulse to take about the community. It helps
 
 Beside these specific concepts we asked more general question about their satisfaction in their current position and their satisfaction with their career in general. To the range from *0 - Not at all satisfied* to *10 - Completely satisfied*, 79% of the participants answered more than 5 to the scale (which can be considered as a neutral position) to the question about their satisfaction about their current position. For the question about their satisfaction with their career in general (and using the same scale), 71% of the participants answered more than 5 to the scale. 
 
-The specific questions about their job satisfaction reflect, in general, the same opinion of the two more generic questions but with some differences:
+The specific questions about their job satisfaction reflect, in general, the same opinion as the two more generic questions. However, the granularity helps to identify a couple of issues that would not appears with generic questions:
 * *The feedback about the performance*: These questions ask if the RSEs feel that they receive enough information about their work and their performance. While they seems to have enough information about the purpose of their work and having access to sufficient data and information, they are less assertive about the feedback they receive from their colleagues and their supervisors. 
-* *The turnover intention*: These questions aim to measure the desire to quit their current position. Overall, the participants are not willing to leave their position and are not necessarily searching for other job, even if the job would offer the same compensations.  
-* *The perceived employability*: This concept is linked to the previous one. People may not have the intention to leave their jobs, not because they like it, but because they fear they are not employable. This is not the case 
-* *The affective recognition*:
+* *The turnover intention*: These questions aim to measure the desire to quit their current position. Overall, the participants are not willing to leave their position and are not necessarily searching for other job, even if the potential job would offer the same compensations.  
+* *The perceived employability*: This concept is linked to the previous one. People may not have the intention to leave their jobs, not because they like it, but because they fear they are not employable. This is not the case here, the participants consider themselves more often employable than not. 
+* *The affective recognition*: This concept try to see if the participants receive positive feedback from their supervisors. Overall, again the participants report a positive relation with their supervisors. It means they are not systematic issues with direct management. 
 
-* *The possibility of progression*: 
+* *Affective satisfaction*: Here, the concept measures how much the participants enjoy and like their job. The answers were positive and again, reflect the answers given at the more generic questions. 
+
+* *The possibility of progression*: This question aims to study the possibility of evolution for the RSEs, if information is available and if they see a possibility of evolution within their current career. This is the only questions that clearly received negatives answers. To summarise, even if the RSEs have planned to be in this position, as a part of their career plan, the majority of them think they cannot be promoted in their current group, neither the information for such progression is easily accessible.
 
 
 
@@ -302,26 +307,35 @@ The specific questions about their job satisfaction reflect, in general, the sam
 
 # Research Software Engineer
 
-This last section regroups different questions about RSEs in general, the specific skills for them, where they meet other RSEs and the prospect of a conference in Germany. 
- 
+This last section regroups different questions about RSEs in general, the specific skills for them, where they meet other RSEs and the prospect of a conference in Germany. We asked them *how* they acquired the skills to become an RSE but also *which* skills they would like to acquire to become a better RSE. The propositions are listed and a wordcloud is proposed to see which are the most frequent words.
 
-## Group of question: ukrse
+The term Research Software Engineer may not have a consensus everywhere. This is why in this survey asked the participants if they could think of another job title. When all the none answer, and the answers saying 'No', were filtered, it remained only 22 propositions that are detailed below. 
+The last section was about the RSE network, specific to Germany. It appears that the network is not really efficient yet. First, to the question where they meet other RSE, only 29% of them chose between the different proposition, with a higher number in local RSE group (15%). Added to that, we asked if they were member of the [de-RSE initiative](http://www.de-rse.org/) but only 19% of them where. 
+However, to the question to participate to a conference about software development in Germany, 78% of them answered 'Yes'. 
+
+## Skills
 
 ### How did you learn the skills you need to become an RSE?
 
-### Are you a member of the de-RSE initiative? (Members are people who have signed up to the de-RSE mailing list, http://www.de-rse.org/en/join.html)
+### What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.
 
 ### Do you know a better job title/role than RSE which summarizes all kinds of activities realated to academic software creation?
 
+## RSE network
 
 ### How do you meet other RSEs?
 
+### Are you a member of the de-RSE initiative? (Members are people who have signed up to the de-RSE mailing list, http://www.de-rse.org/en/join.html)
 
 ### Would you like to visit a conference about software development in academia in Germany?; We may contact you for a possible conference announcement via email. If you allow then please add your email address here: https://goo.gl/WizV7d
 
-## Group of question: skill
 
-### What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.
+
+
+
+
+
+
 
 
 
