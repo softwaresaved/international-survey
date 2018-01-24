@@ -92,7 +92,7 @@ section,code,question,answer_format,answer_file,other,random,mandatory,order_que
 5,satisgen2,"In general, how satisfied are you with Your career",LIKERT,likert_satisfied_10,,,Y,,,,,,done,Wie bist Du insgesamt mit Deiner Karriere zufrieden?,,
 6,socio2,Please select your gender,ONE CHOICE,gender,Y,,,,,,,https://www.gov.uk/service-manual/user-centred-design/resources/patterns/gender-and-sex.html,done,Dein Geschlecht,,
 6,socio3,Please select your age,ONE CHOICE,age,,,,FALSE,,,,,done,Dein Alter,,
-6,socio4,Please select the range of your salary,ONE CHOICE,salary,,,,FALSE,,,,,done,Bitte wähle Deine Gehaltsklasse aus!,,
+6,socio4,Please select the range of your salary,ONE CHOICE,salary,,,,FALSE,,,N,,done,Bitte wähle Deine Gehaltsklasse aus!,,
 6,socio10de,Please select your renumeration group according to your collective bargaining agreement,ONE CHOICE,entgeltgruppe_de,Y,,,,,,,,done,Bitte wähle Deine Entgeltgruppe aus!,,
 7,tool2,What Operating System do you prefer to use at work? ,ONE CHOICE,os,Y,,,,,,,,done,Welches Betriebssystem bevorzugst Du auf Arbeit?,,
 7,tool4can,What programming languages do you use at work? (Select as many as apply) ,MULTIPLE CHOICES,programing_language,,,,,,,,,done,Welche Programmiersprachen nutzt Du auf Arbeit? (wähle alle zutreffenden),,
