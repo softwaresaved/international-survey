@@ -17,10 +17,11 @@ Use the code from: https://gist.github.com/fperez/9716279
 class GenerateNotebook(NotebookConfig):
     """
     """
-    def __init__(self, notebook_filename):
+    def __init__(self, year, country, notebook_filename):
         """
         """
-        self.outfilename = notebook_filename
+        super().__init__(year, country)
+        self.outfilename = 'results_{}'.format(notebook_filename)
         # Generate an empty notebook
         self.nb = nbf.v4.new_notebook()
         # Get all the import from NotebookConfig
@@ -28,6 +29,8 @@ class GenerateNotebook(NotebookConfig):
         # Set up some display options for pandas to extend
         # the limit of the row and columns that are displayed
         self._setup_display()
+        # Hide the code when export in html
+        self._hide_code_for_html()
         # Setup matplotlib magic and size of figures
         self._setup_matplotlib()
         # Load the dataset
@@ -45,6 +48,16 @@ class GenerateNotebook(NotebookConfig):
         import_code = '\n'.join(self.to_import)
         self._add_code(import_code)
 
+    def _hide_code_for_html(self):
+        """
+        Hide the code cell when convert the notebook in
+        html
+        source:https://gist.github.com/masnick/d6a1af14812c0c4b3314
+        """
+        self._add_text('This text is used to hide the code cell when exported in html')
+        code = """di.display_html('<script>jQuery(function() {if (jQuery("body.notebook_app").length == 0) { jQuery(".input_area").toggle(); jQuery(".prompt").toggle();}});</script>', raw=True)"""
+        self._add_code(code)
+
     def _setup_display(self):
         """
         Extending the limit of rows and columns
@@ -52,7 +65,8 @@ class GenerateNotebook(NotebookConfig):
         """
         rows = """pd.set_option('display.max_rows', 1000)"""
         columns = """pd.set_option('display.max_columns', 1000) """
-        self._add_code('\n'.join([rows, columns]))
+        tables = """InteractiveShell.ast_node_interactivity = "all" """
+        self._add_code('\n'.join([rows, columns, tables]))
 
     def _setup_matplotlib(self):
         """
@@ -60,6 +74,8 @@ class GenerateNotebook(NotebookConfig):
         """
         magic_inline = """get_ipython().magic('matplotlib inline')  # Activate that line to use in Jupyter """
         # svg_output = """%config InlineBackend.figure_format = 'svg'"""
+        # Dependency of size of figure in the textCleaning.py. Carefull if changing these value
+        # it will impact the quality of the wordcloud generated in textCleaning.py (need to change the width and height)
         size_figures = """matplotlib.rcParams['figure.figsize'] = (15.0, 8.0)"""
         self._add_code('\n'.join([magic_inline, size_figures]))
 
@@ -69,6 +85,13 @@ class GenerateNotebook(NotebookConfig):
         self._add_text('# Loading dataset')
         loading = """df =  pd.read_csv('{}')""".format(self.cleaned_df_location)
         self._add_code(loading)
+
+    def output_total_participants(self):
+        """
+        Show the number of participant that have been filtered out
+        """
+        self._add_text('The total of participant after cleaning the dataset. Remove all participants that have not completed the survey passed the first pages and all participants who are not from the country')
+        self._add_code("""len(df)""")
 
     def add_section(self, text):
         """
@@ -89,16 +112,14 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         self.count = True
-        count_count = """v_to_count  = get_count(df, {},
-                                                "{}",
-                                                "{}")""".format(*args)
+        count_count = """v_to_count, filename  = get_count(df, {}, "{}", "{}", "{}", "{}")""".format(*args)
         self._add_code(count_count)
 
     def add_percentage(self):
         """
         """
         self.percent = True
-        percentage_count = """perc_to_count = get_percentage(v_to_count)"""
+        percentage_count = """perc_to_count = get_percentage(v_to_count, filename)"""
         self._add_code(percentage_count)
 
     def add_display_percentage(self):
@@ -119,19 +140,26 @@ class GenerateNotebook(NotebookConfig):
         """
         """
         args = list()
+        args_na = list()
         if self.count is True:
             args.append('v_to_count')
+            args_na.append('v_na')
         if self.percent is True:
             args.append("perc_to_count")
+            args_na.append('perc_na')
         self.percent, self.count = False, False
         display = """display_side_by_side({})""".format(','.join(args))
+        # display_na = """display_side_by_side({})""".format(','.join(args_na))
         self._add_code(display)
+        # self._add_code(display_na)
 
     def add_plot(self, *args):
         """
         """
-        if self.show_percent is True and args[0] != 'likert':
+        if self.show_percent is True and args[0] != 'likert' and args[0] != 'freenumeric':
             plot = """_ = get_plot(perc_to_count, "{}")""".format(','.join(args))
+        # elif args[0] == 'freetext':
+        #     plot = """_ = get_plot(wc, "{}")""".format(','.join(args))
         else:
             plot = """_ = get_plot(v_to_count, "{}")""".format(','.join(args))
         self._add_code(plot)
@@ -139,8 +167,11 @@ class GenerateNotebook(NotebookConfig):
     def add_wordcloud(self, column):
         """
         """
-        word_cloud = """ _ = wordcloud(df[{}])""".format(column)
+        word_cloud = """ wc = wordcloud(df, {})""".format(column)
         self._add_code(word_cloud)
+        # plot = """_ = get_plot(v_to_count, "{}")""".format(','.join(args))
+        plot = """ plt.imshow(wc, interpolation='bilinear')\n plt.axis("off")"""
+        self._add_code(plot)
 
     def _add_text(self, *args):
         """

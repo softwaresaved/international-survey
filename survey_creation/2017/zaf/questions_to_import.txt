@@ -1,0 +1,862 @@
+class	type/scale	name	relevance	text	help	language	validation	mandatory	other	default	same_default	allowed_filetypes	alphasort	answer_width	array_filter	array_filter_exclude	array_filter_style	assessment_value	category_separator	choice_title	code_filter	commented_checkbox	commented_checkbox_auto	cssclass	date_format	date_max	date_min	display_columns	display_rows	display_type	dropdown_dates	dropdown_dates_minute_step	dropdown_dates_month_style	dropdown_prefix	dropdown_prepostfix	dropdown_separators	dropdown_size	dualscale_headerA	dualscale_headerB	em_validation_q	em_validation_q_tip	em_validation_sq	em_validation_sq_tip	equals_num_value	equation	exclude_all_others	exclude_all_others_auto	hidden	hide_tip	input_boxes	label_input_columns	location_city	location_country	location_defaultcoordinates	location_mapheight	location_mapservice	location_mapwidth	location_mapzoom	location_nodefaultfromip	location_postal	location_state	max_answers	max_filesize	max_num_of_files	max_num_value	max_num_value_n	max_subquestions	maximum_chars	min_answers	min_num_of_files	min_num_value	min_num_value_n	multiflexible_checkbox	multiflexible_max	multiflexible_min	multiflexible_step	num_value_int_only	numbers_only	other_comment_mandatory	other_numbers_only	other_replace_text	page_break	parent_order	prefix	printable_help	public_statistics	random_group	random_order	rank_title	repeat_headings	reverse	samechoiceheight	samelistheight	scale_export	show_comment	show_grand_total	show_title	show_totals	showpopups	slider_accuracy	slider_custom_handle	slider_default	slider_handle	slider_layout	slider_max	slider_middlestart	slider_min	slider_orientation	slider_rating	slider_reset	slider_separator	slider_showminmax	statistics_graphtype	statistics_showgraph	statistics_showmap	suffix	text_input_columns	text_input_width	time_limit	time_limit_action	time_limit_countdown_message	time_limit_disable_next	time_limit_disable_prev	time_limit_message	time_limit_message_delay	time_limit_message_style	time_limit_timer_style	time_limit_warning	time_limit_warning_2	time_limit_warning_2_display_time	time_limit_warning_2_message	time_limit_warning_2_style	time_limit_warning_display_time	time_limit_warning_message	time_limit_warning_style	use_dropdown	value_range_allows_missing
+S		sid		421498																																																																																																																																					
+S		owner_id		1																																																																																																																																					
+S		admin		Administrator																																																																																																																																					
+S		active		Y																																																																																																																																					
+S		adminemail		orp2c15@soton.ac.uk																																																																																																																																					
+S		anonymized		N																																																																																																																																					
+S		format		G																																																																																																																																					
+S		savetimings		Y																																																																																																																																					
+S		template		ubuntu_orange																																																																																																																																					
+S		language		en																																																																																																																																					
+S		datestamp		Y																																																																																																																																					
+S		usecookie		N																																																																																																																																					
+S		allowregister		N																																																																																																																																					
+S		allowsave		Y																																																																																																																																					
+S		autonumber_start		15																																																																																																																																					
+S		autoredirect		N																																																																																																																																					
+S		allowprev		Y																																																																																																																																					
+S		printanswers		Y																																																																																																																																					
+S		ipaddr		Y																																																																																																																																					
+S		refurl		Y																																																																																																																																					
+S		datecreated		2017-05-24																																																																																																																																					
+S		publicstatistics		N																																																																																																																																					
+S		publicgraphs		N																																																																																																																																					
+S		listpublic		N																																																																																																																																					
+S		htmlemail		N																																																																																																																																					
+S		sendconfirmation		Y																																																																																																																																					
+S		tokenanswerspersistence		N																																																																																																																																					
+S		assessments		N																																																																																																																																					
+S		usecaptcha		N																																																																																																																																					
+S		usetokens		N																																																																																																																																					
+S		bounce_email		orp2c15@soton.ac.uk																																																																																																																																					
+S		tokenlength		15																																																																																																																																					
+S		showxquestions		N																																																																																																																																					
+S		showgroupinfo		B																																																																																																																																					
+S		shownoanswer		Y																																																																																																																																					
+S		showqnumcode		N																																																																																																																																					
+S		bounceprocessing		N																																																																																																																																					
+S		showwelcome		Y																																																																																																																																					
+S		showprogress		Y																																																																																																																																					
+S		questionindex		0																																																																																																																																					
+S		navigationdelay		0																																																																																																																																					
+S		nokeyboard		N																																																																																																																																					
+S		alloweditaftercompletion		N																																																																																																																																					
+S		googleanalyticsstyle		0																																																																																																																																					
+SL		surveyls_title		Study about people in the South Africa writing research software		en																																																																																																																																			
+SL		surveyls_welcometext		"<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
+<h2>Why did I receive this invitation?</h2>
+<p>You have received this link because you are a member of the UK RSE Association or you were identified as someone working in an RSE role.
+The <a href=""http://www.nwu.ac.za/"" target=""_blank"">North-West University</a> eResearch Initiative have informally been collaborating with the <a href=""https://software.ac.uk"" target=""_blank"">Software Sustainability Institute</a>(SSI) and various RSE leaders in the UK since 2015. The community of RSEs and specifically the SSI have loads of <a href=""https://www.software.ac.uk/resources"" target=""_blank"">resources for research software developers</a> and we hope that by running this survey, we would be able to create a broader awareness of the communities and resources that exist and help to establish a local RSE community.
+There is currently little reliable information about the global RSE community, so the SSI have been asked to collect this information to help funders and other research organisations develop policies that will support RSEs.
+This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>
+<p>Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.</p>
+<h2>How long will it take?</h2>
+<p>There is a maximum of 64 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
+<h2>Who is responsible for this survey?</h2>
+<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/31060).
+The investigators are <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a> and <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>.
+The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">Data Protection Act</a>. 
+These records are anonymised and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"" target=""_blank"">Creative Commons by attribution, non-commercial licence</a>.</p>
+<p>If you would like more information about the research or about the data collection, please contact <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>.</p>
+<p>If you would like to know more about RSEs in South Africa or would like to help establish a local community, please contact Anelda van der Walt(mailto:anelda.vanderwalt@nwu.ac.za) or sign up for the (South) <a href=""https://groups.google.com/forum/#!forum/swc-za"" target=""_blank"">African Carpentries Google Group</a> for joint information about <a href=""https://software-carpentry.org/"" target=""_blank"">Software</a>/<a href=""http://www.datacarpentry.org/"" target=""_blank"">Data</a>/<a href=""http://librarycarpentry.github.io/"" target=""_blank"">Library Carpentry</a> and Research Software Engineers.</p>
+<p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.</p>"		en																																																																																																																																			
+SL		surveyls_endtext		"<p>Thank you for your participation. If you are interested in the outcomes of this survey, please keep an eye on the <a href=""https://www.software.ac.uk"" target=""_blank"">Software Sustainability Institute's website</a>. You can also get updates by joining the <a href=""http://www.rse.ac.uk/join.html"" target=""_blank"">UK RSEAssociation</a>.</p>"		en																																																																																																																																			
+SL		surveyls_email_invite_subj		Invitation to participate in a survey		en																																																																																																																																			
+SL		surveyls_email_invite		"Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: ""{SURVEYNAME}""  ""{SURVEYDESCRIPTION}""  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}"		en																																																																																																																																			
+SL		surveyls_email_remind_subj		Reminder to participate in a survey		en																																																																																																																																			
+SL		surveyls_email_remind		"Dear {FIRSTNAME},  Recently we invited you to participate in a survey.  We note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.  The survey is titled: ""{SURVEYNAME}""  ""{SURVEYDESCRIPTION}""  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}"		en																																																																																																																																			
+SL		surveyls_email_register		Dear {FIRSTNAME},  You, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.  To complete this survey, click on the following URL:  {SURVEYURL}  If you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.		en																																																																																																																																			
+SL		surveyls_email_confirm_subj		Confirmation of your participation in our survey		en																																																																																																																																			
+SL		surveyls_email_confirm		Dear {FIRSTNAME},  this email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.  If you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.  Sincerely,  {ADMINNAME}		en																																																																																																																																			
+SL		surveyls_dateformat		2		en																																																																																																																																			
+SL		email_admin_notification_subj		Response submission for survey {SURVEYNAME}		en																																																																																																																																			
+SL		email_admin_notification		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}		en																																																																																																																																			
+SL		email_admin_responses_subj		Response submission for survey {SURVEYNAME} with results		en																																																																																																																																			
+SL		email_admin_responses		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}		en																																																																																																																																			
+SL		surveyls_numberformat		0		en																																																																																																																																			
+G	G0	Questions about you	1			en																																																																																																																																			
+Q	!	socio1	1	In which country do you work?		en		Y	N		1																																																																																																							1						1																	
+A	0	1		Afghanistan		en																																																																																																																																			
+A	0	2		Åland Islands		en																																																																																																																																			
+A	0	3		Albania		en																																																																																																																																			
+A	0	4		Algeria		en																																																																																																																																			
+A	0	5		American Samoa		en																																																																																																																																			
+A	0	6		Andorra		en																																																																																																																																			
+A	0	7		Angola		en																																																																																																																																			
+A	0	8		Anguilla		en																																																																																																																																			
+A	0	9		Antarctica		en																																																																																																																																			
+A	0	10		Antigua and Barbuda		en																																																																																																																																			
+A	0	11		Argentina		en																																																																																																																																			
+A	0	12		Armenia		en																																																																																																																																			
+A	0	13		Aruba		en																																																																																																																																			
+A	0	14		Australia		en																																																																																																																																			
+A	0	15		Austria		en																																																																																																																																			
+A	0	16		Azerbaijan		en																																																																																																																																			
+A	0	17		Bahamas		en																																																																																																																																			
+A	0	18		Bahrain		en																																																																																																																																			
+A	0	19		Bangladesh		en																																																																																																																																			
+A	0	20		Barbados		en																																																																																																																																			
+A	0	21		Belarus		en																																																																																																																																			
+A	0	22		Belgium		en																																																																																																																																			
+A	0	23		Belize		en																																																																																																																																			
+A	0	24		Benin		en																																																																																																																																			
+A	0	25		Bermuda		en																																																																																																																																			
+A	0	26		Bhutan		en																																																																																																																																			
+A	0	27		Bolivia, Plurinational State of		en																																																																																																																																			
+A	0	28		Bonaire, Sint Eustatius and Saba		en																																																																																																																																			
+A	0	29		Bosnia and Herzegovina		en																																																																																																																																			
+A	0	30		Botswana		en																																																																																																																																			
+A	0	31		Bouvet Island		en																																																																																																																																			
+A	0	32		Brazil		en																																																																																																																																			
+A	0	33		British Indian Ocean Territory		en																																																																																																																																			
+A	0	34		Brunei Darussalam		en																																																																																																																																			
+A	0	35		Bulgaria		en																																																																																																																																			
+A	0	36		Burkina Faso		en																																																																																																																																			
+A	0	37		Burundi		en																																																																																																																																			
+A	0	38		Cambodia		en																																																																																																																																			
+A	0	39		Cameroon		en																																																																																																																																			
+A	0	40		Canada		en																																																																																																																																			
+A	0	41		Cape Verde		en																																																																																																																																			
+A	0	42		Cayman Islands		en																																																																																																																																			
+A	0	43		Central African Republic		en																																																																																																																																			
+A	0	44		Chad		en																																																																																																																																			
+A	0	45		Chile		en																																																																																																																																			
+A	0	46		China		en																																																																																																																																			
+A	0	47		Christmas Island		en																																																																																																																																			
+A	0	48		Cocos (Keeling) Islands		en																																																																																																																																			
+A	0	49		Colombia		en																																																																																																																																			
+A	0	50		Comoros		en																																																																																																																																			
+A	0	51		Congo		en																																																																																																																																			
+A	0	52		Congo, the Democratic Republic of the		en																																																																																																																																			
+A	0	53		Cook Islands		en																																																																																																																																			
+A	0	54		Costa Rica		en																																																																																																																																			
+A	0	55		Côte d'Ivoire		en																																																																																																																																			
+A	0	56		Croatia		en																																																																																																																																			
+A	0	57		Cuba		en																																																																																																																																			
+A	0	58		Curaçao		en																																																																																																																																			
+A	0	59		Cyprus		en																																																																																																																																			
+A	0	60		Czech Republic		en																																																																																																																																			
+A	0	61		Denmark		en																																																																																																																																			
+A	0	62		Djibouti		en																																																																																																																																			
+A	0	63		Dominica		en																																																																																																																																			
+A	0	64		Dominican Republic		en																																																																																																																																			
+A	0	65		Ecuador		en																																																																																																																																			
+A	0	66		Egypt		en																																																																																																																																			
+A	0	67		El Salvador		en																																																																																																																																			
+A	0	68		Equatorial Guinea		en																																																																																																																																			
+A	0	69		Eritrea		en																																																																																																																																			
+A	0	70		Estonia		en																																																																																																																																			
+A	0	71		Ethiopia		en																																																																																																																																			
+A	0	72		Falkland Islands (Malvinas)		en																																																																																																																																			
+A	0	73		Faroe Islands		en																																																																																																																																			
+A	0	74		Fiji		en																																																																																																																																			
+A	0	75		Finland		en																																																																																																																																			
+A	0	76		France		en																																																																																																																																			
+A	0	77		French Guiana		en																																																																																																																																			
+A	0	78		French Polynesia		en																																																																																																																																			
+A	0	79		French Southern Territories		en																																																																																																																																			
+A	0	80		Gabon		en																																																																																																																																			
+A	0	81		Gambia		en																																																																																																																																			
+A	0	82		Georgia		en																																																																																																																																			
+A	0	83		Germany		en																																																																																																																																			
+A	0	84		Ghana		en																																																																																																																																			
+A	0	85		Gibraltar		en																																																																																																																																			
+A	0	86		Greece		en																																																																																																																																			
+A	0	87		Greenland		en																																																																																																																																			
+A	0	88		Grenada		en																																																																																																																																			
+A	0	89		Guadeloupe		en																																																																																																																																			
+A	0	90		Guam		en																																																																																																																																			
+A	0	91		Guatemala		en																																																																																																																																			
+A	0	92		Guernsey		en																																																																																																																																			
+A	0	93		Guinea		en																																																																																																																																			
+A	0	94		Guinea-Bissau		en																																																																																																																																			
+A	0	95		Guyana		en																																																																																																																																			
+A	0	96		Haiti		en																																																																																																																																			
+A	0	97		Heard Island and McDonald Islands		en																																																																																																																																			
+A	0	98		Holy See (Vatican City State)		en																																																																																																																																			
+A	0	99		Honduras		en																																																																																																																																			
+A	0	100		Hong Kong		en																																																																																																																																			
+A	0	101		Hungary		en																																																																																																																																			
+A	0	102		Iceland		en																																																																																																																																			
+A	0	103		India		en																																																																																																																																			
+A	0	104		Indonesia		en																																																																																																																																			
+A	0	105		Iran, Islamic Republic of		en																																																																																																																																			
+A	0	106		Iraq		en																																																																																																																																			
+A	0	107		Ireland		en																																																																																																																																			
+A	0	108		Isle of Man		en																																																																																																																																			
+A	0	109		Israel		en																																																																																																																																			
+A	0	110		Italy		en																																																																																																																																			
+A	0	111		Jamaica		en																																																																																																																																			
+A	0	112		Japan		en																																																																																																																																			
+A	0	113		Jersey		en																																																																																																																																			
+A	0	114		Jordan		en																																																																																																																																			
+A	0	115		Kazakhstan		en																																																																																																																																			
+A	0	116		Kenya		en																																																																																																																																			
+A	0	117		Kiribati		en																																																																																																																																			
+A	0	118		Korea, Democratic People's Republic of		en																																																																																																																																			
+A	0	119		Korea, Republic of		en																																																																																																																																			
+A	0	120		Kuwait		en																																																																																																																																			
+A	0	121		Kyrgyzstan		en																																																																																																																																			
+A	0	122		Lao People's Democratic Republic		en																																																																																																																																			
+A	0	123		Latvia		en																																																																																																																																			
+A	0	124		Lebanon		en																																																																																																																																			
+A	0	125		Lesotho		en																																																																																																																																			
+A	0	126		Liberia		en																																																																																																																																			
+A	0	127		Libya		en																																																																																																																																			
+A	0	128		Liechtenstein		en																																																																																																																																			
+A	0	129		Lithuania		en																																																																																																																																			
+A	0	130		Luxembourg		en																																																																																																																																			
+A	0	131		Macao		en																																																																																																																																			
+A	0	132		Macedonia, the Former Yugoslav Republic of		en																																																																																																																																			
+A	0	133		Madagascar		en																																																																																																																																			
+A	0	134		Malawi		en																																																																																																																																			
+A	0	135		Malaysia		en																																																																																																																																			
+A	0	136		Maldives		en																																																																																																																																			
+A	0	137		Mali		en																																																																																																																																			
+A	0	138		Malta		en																																																																																																																																			
+A	0	139		Marshall Islands		en																																																																																																																																			
+A	0	140		Martinique		en																																																																																																																																			
+A	0	141		Mauritania		en																																																																																																																																			
+A	0	142		Mauritius		en																																																																																																																																			
+A	0	143		Mayotte		en																																																																																																																																			
+A	0	144		Mexico		en																																																																																																																																			
+A	0	145		Micronesia, Federated States of		en																																																																																																																																			
+A	0	146		Moldova, Republic of		en																																																																																																																																			
+A	0	147		Monaco		en																																																																																																																																			
+A	0	148		Mongolia		en																																																																																																																																			
+A	0	149		Montenegro		en																																																																																																																																			
+A	0	150		Montserrat		en																																																																																																																																			
+A	0	151		Morocco		en																																																																																																																																			
+A	0	152		Mozambique		en																																																																																																																																			
+A	0	153		Myanmar		en																																																																																																																																			
+A	0	154		Namibia		en																																																																																																																																			
+A	0	155		Nauru		en																																																																																																																																			
+A	0	156		Nepal		en																																																																																																																																			
+A	0	157		Netherlands		en																																																																																																																																			
+A	0	158		New Caledonia		en																																																																																																																																			
+A	0	159		New Zealand		en																																																																																																																																			
+A	0	160		Nicaragua		en																																																																																																																																			
+A	0	161		Niger		en																																																																																																																																			
+A	0	162		Nigeria		en																																																																																																																																			
+A	0	163		Niue		en																																																																																																																																			
+A	0	164		Norfolk Island		en																																																																																																																																			
+A	0	165		Northern Mariana Islands		en																																																																																																																																			
+A	0	166		Norway		en																																																																																																																																			
+A	0	167		Oman		en																																																																																																																																			
+A	0	168		Pakistan		en																																																																																																																																			
+A	0	169		Palau		en																																																																																																																																			
+A	0	170		Palestine, State of		en																																																																																																																																			
+A	0	171		Panama		en																																																																																																																																			
+A	0	172		Papua New Guinea		en																																																																																																																																			
+A	0	173		Paraguay		en																																																																																																																																			
+A	0	174		Peru		en																																																																																																																																			
+A	0	175		Philippines		en																																																																																																																																			
+A	0	176		Pitcairn		en																																																																																																																																			
+A	0	177		Poland		en																																																																																																																																			
+A	0	178		Portugal		en																																																																																																																																			
+A	0	179		Puerto Rico		en																																																																																																																																			
+A	0	180		Qatar		en																																																																																																																																			
+A	0	181		Réunion		en																																																																																																																																			
+A	0	182		Romania		en																																																																																																																																			
+A	0	183		Russian Federation		en																																																																																																																																			
+A	0	184		Rwanda		en																																																																																																																																			
+A	0	185		Saint Barthélemy		en																																																																																																																																			
+A	0	186		Saint Helena, Ascension and Tristan da Cunha		en																																																																																																																																			
+A	0	187		Saint Kitts and Nevis		en																																																																																																																																			
+A	0	188		Saint Lucia		en																																																																																																																																			
+A	0	189		Saint Martin (French part)		en																																																																																																																																			
+A	0	190		Saint Pierre and Miquelon		en																																																																																																																																			
+A	0	191		Saint Vincent and the Grenadines		en																																																																																																																																			
+A	0	192		Samoa		en																																																																																																																																			
+A	0	193		San Marino		en																																																																																																																																			
+A	0	194		Sao Tome and Principe		en																																																																																																																																			
+A	0	195		Saudi Arabia		en																																																																																																																																			
+A	0	196		Senegal		en																																																																																																																																			
+A	0	197		Serbia		en																																																																																																																																			
+A	0	198		Seychelles		en																																																																																																																																			
+A	0	199		Sierra Leone		en																																																																																																																																			
+A	0	200		Singapore		en																																																																																																																																			
+A	0	201		Sint Maarten (Dutch part)		en																																																																																																																																			
+A	0	202		Slovakia		en																																																																																																																																			
+A	0	203		Slovenia		en																																																																																																																																			
+A	0	204		Solomon Islands		en																																																																																																																																			
+A	0	205		Somalia		en																																																																																																																																			
+A	0	206		South Africa		en																																																																																																																																			
+A	0	207		South Georgia and the South Sandwich Islands		en																																																																																																																																			
+A	0	208		South Sudan		en																																																																																																																																			
+A	0	209		Spain		en																																																																																																																																			
+A	0	210		Sri Lanka		en																																																																																																																																			
+A	0	211		Sudan		en																																																																																																																																			
+A	0	212		Suriname		en																																																																																																																																			
+A	0	213		Svalbard and Jan Mayen		en																																																																																																																																			
+A	0	214		Swaziland		en																																																																																																																																			
+A	0	215		Sweden		en																																																																																																																																			
+A	0	216		Switzerland		en																																																																																																																																			
+A	0	217		Syrian Arab Republic		en																																																																																																																																			
+A	0	218		Taiwan, Province of China		en																																																																																																																																			
+A	0	219		Tajikistan		en																																																																																																																																			
+A	0	220		Tanzania, United Republic of		en																																																																																																																																			
+A	0	221		Thailand		en																																																																																																																																			
+A	0	222		Timor-Leste		en																																																																																																																																			
+A	0	223		Togo		en																																																																																																																																			
+A	0	224		Tokelau		en																																																																																																																																			
+A	0	225		Tonga		en																																																																																																																																			
+A	0	226		Trinidad and Tobago		en																																																																																																																																			
+A	0	227		Tunisia		en																																																																																																																																			
+A	0	228		Turkey		en																																																																																																																																			
+A	0	229		Turkmenistan		en																																																																																																																																			
+A	0	230		Turks and Caicos Islands		en																																																																																																																																			
+A	0	231		Tuvalu		en																																																																																																																																			
+A	0	232		Uganda		en																																																																																																																																			
+A	0	233		Ukraine		en																																																																																																																																			
+A	0	234		United Arab Emirates		en																																																																																																																																			
+A	0	235		United Kingdom		en																																																																																																																																			
+A	0	236		United States		en																																																																																																																																			
+A	0	237		United States Minor Outlying Islands		en																																																																																																																																			
+A	0	238		Uruguay		en																																																																																																																																			
+A	0	239		Uzbekistan		en																																																																																																																																			
+A	0	240		Vanuatu		en																																																																																																																																			
+A	0	241		Venezuela, Bolivarian Republic of		en																																																																																																																																			
+A	0	242		Viet Nam		en																																																																																																																																			
+A	0	243		Virgin Islands, British		en																																																																																																																																			
+A	0	244		Virgin Islands, U.S.		en																																																																																																																																			
+A	0	245		Wallis and Futuna		en																																																																																																																																			
+A	0	246		Western Sahara		en																																																																																																																																			
+A	0	247		Yemen		en																																																																																																																																			
+A	0	248		Zambia		en																																																																																																																																			
+A	0	249		Zimbabwe		en																																																																																																																																			
+Q	!	edu1	1	What is the highest qualification you have obtained?		en		Y	Y		1																																																																																																							1						1																	
+A	0	1		Grade 12 (National Senior Certificate) or National (vocational) Cert. level 4		en																																																																																																																																			
+A	0	2		Further Education (National Diploma, Advanced certificates, Higher Certificates, Advanced National (vocational) Certificate, ...)		en																																																																																																																																			
+A	0	3		Undergraduate degree		en																																																																																																																																			
+A	0	4		Honours degree		en																																																																																																																																			
+A	0	5		Master degree		en																																																																																																																																			
+A	0	6		Doctorate		en																																																																																																																																			
+A	0	7		None		en																																																																																																																																			
+Q	!	edu2	1	In which subject is your highest academic qualification?		en		Y	Y		1																																																																																																							1						1																	
+A	0	1		Accounting & Finance		en																																																																																																																																			
+A	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
+A	0	3		African languages		en																																																																																																																																			
+A	0	4		Agriculture & Forestry		en																																																																																																																																			
+A	0	5		American Studies		en																																																																																																																																			
+A	0	6		Anatomy & Physiology		en																																																																																																																																			
+A	0	7		Anthropology		en																																																																																																																																			
+A	0	8		Architecture		en																																																																																																																																			
+A	0	9		Art & Design		en																																																																																																																																			
+A	0	10		Biological Sciences		en																																																																																																																																			
+A	0	11		Business & Management Studies		en																																																																																																																																			
+A	0	12		Chemical Engineering		en																																																																																																																																			
+A	0	13		Chemistry		en																																																																																																																																			
+A	0	14		Civil Engineering		en																																																																																																																																			
+A	0	15		Classics & Ancient History		en																																																																																																																																			
+A	0	16		Communication & Media Studies		en																																																																																																																																			
+A	0	17		Complementary Medicine		en																																																																																																																																			
+A	0	18		Computer Science		en																																																																																																																																			
+A	0	19		Counselling		en																																																																																																																																			
+A	0	20		Criminology		en																																																																																																																																			
+A	0	21		Dentistry		en																																																																																																																																			
+A	0	22		East & South Asian Studies		en																																																																																																																																			
+A	0	23		Economics		en																																																																																																																																			
+A	0	24		Education		en																																																																																																																																			
+A	0	25		Electrical & Electronic Engineering		en																																																																																																																																			
+A	0	26		English		en																																																																																																																																			
+A	0	27		Fashion		en																																																																																																																																			
+A	0	28		Food Science		en																																																																																																																																			
+A	0	29		French		en																																																																																																																																			
+A	0	30		Geography & Environmental Sciences		en																																																																																																																																			
+A	0	31		Geology		en																																																																																																																																			
+A	0	32		General Engineering		en																																																																																																																																			
+A	0	33		German		en																																																																																																																																			
+A	0	34		History		en																																																																																																																																			
+A	0	35		History of Art, Architecture & Design		en																																																																																																																																			
+A	0	36		Hospitality, Leisure, Recreation & Tourism		en																																																																																																																																			
+A	0	37		Iberian Languages/Hispanic Studies		en																																																																																																																																			
+A	0	38		Land & Property Management		en																																																																																																																																			
+A	0	39		Law		en																																																																																																																																			
+A	0	40		Librarianship & Information Management		en																																																																																																																																			
+A	0	41		Linguistics		en																																																																																																																																			
+A	0	42		Marketing		en																																																																																																																																			
+A	0	43		Materials Technology		en																																																																																																																																			
+A	0	44		Mathematics		en																																																																																																																																			
+A	0	45		Mechanical Engineering		en																																																																																																																																			
+A	0	46		Medicine		en																																																																																																																																			
+A	0	47		Middle Eastern and African Studies		en																																																																																																																																			
+A	0	48		Music		en																																																																																																																																			
+A	0	49		Nursing		en																																																																																																																																			
+A	0	50		Ophthalmics		en																																																																																																																																			
+A	0	51		Pharmacology & Pharmacy		en																																																																																																																																			
+A	0	52		Philosophy		en																																																																																																																																			
+A	0	53		Physics and Astronomy		en																																																																																																																																			
+A	0	54		Physiotherapy		en																																																																																																																																			
+A	0	55		Politics		en																																																																																																																																			
+A	0	56		Psychology		en																																																																																																																																			
+A	0	57		Robotics		en																																																																																																																																			
+A	0	58		Russian & East European Languages		en																																																																																																																																			
+A	0	59		Social Policy		en																																																																																																																																			
+A	0	60		Social Work		en																																																																																																																																			
+A	0	61		Sociology		en																																																																																																																																			
+A	0	62		Sports Science		en																																																																																																																																			
+A	0	63		Theology & Religious Studies		en																																																																																																																																			
+A	0	64		Town & Country Planning and Landscape Design		en																																																																																																																																			
+A	0	65		Veterinary Medicine		en																																																																																																																																			
+A	0	66		Youth Work		en																																																																																																																																			
+Q	S	edu4	1	Do you hold any other professional degrees/qualifications? (Please enter each of them separated by a semicolon)		en		Y	N																																																																																																																																
+Q	Y	rse1	1	Do you write code as part of your job?		en		Y	N		1																																																																																																							1																							
+Q	F	rse3		Who uses the code that you write?		en		Y	N		1																																																																																																							1																							
+SQ	0	SQ001	1			en																																																																																																																																			
+A	0	1		0 - Mostly me		en																																																																																																																																			
+A	0	2		1		en																																																																																																																																			
+A	0	3		2		en																																																																																																																																			
+A	0	4		3		en																																																																																																																																			
+A	0	5		4		en																																																																																																																																			
+A	0	6		5 - Mostly other people		en																																																																																																																																			
+Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en		Y	N		1																																																																																																							1																							
+Q	N	soft1can		How many years of Software development experience do you have?		en		Y	N			1																																																																																																							1																						
+Q	F	likert0				en		Y	N		1																																																																																																							1																							
+SQ	0	time1can	1	In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)		en																																																																																																																																			
+SQ	0	time2can	1	In an average month, how much time do you spend on Research		en																																																																																																																																			
+SQ	0	time3can	1	In an average month, how much time do you spend on Management		en																																																																																																																																			
+SQ	0	time4can	1	In an average month, how much time do you spend on Teaching		en																																																																																																																																			
+SQ	0	time5can	1	In an average month, how much time do you spend on Other activities		en																																																																																																																																			
+SQ	0	time6zaf	1	In an average month, how much time would you like to spend on programming?  (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)		en																																																																																																																																			
+SQ	0	time7zaf	1	In an average month, how much time would you like to spend on Research		en																																																																																																																																			
+SQ	0	time8zaf	1	In an average month, how much time would you like to spend on Management		en																																																																																																																																			
+SQ	0	time9zaf	1	In an average month, how much time would you like to spend on Teaching		en																																																																																																																																			
+A	0	1		1 (Never)		en																																																																																																																																			
+A	0	2		2		en																																																																																																																																			
+A	0	3		3		en																																																																																																																																			
+A	0	4		4		en																																																																																																																																			
+A	0	5		5		en																																																																																																																																			
+A	0	6		6		en																																																																																																																																			
+A	0	7		7		en																																																																																																																																			
+A	0	8		8		en																																																																																																																																			
+A	0	9		9		en																																																																																																																																			
+A	0	10		10 (Always)		en																																																																																																																																			
+G	G1	Your current employment	1			en																																																																																																																																			
+Q	!	currentEmp1	1	What type of organisation do you work for?		en		Y	Y		1																																																																																																							1						1																	
+A	0	1		University		en																																																																																																																																			
+A	0	2		Research Council		en																																																																																																																																			
+A	0	3		Research Organisation (e.g. SKA, HartRAO, SAEON, SANSA, ...)		en																																																																																																																																			
+A	0	4		Private Company		en																																																																																																																																			
+A	0	5		Start-up Company		en																																																																																																																																			
+A	0	6		Non-profit Organisation		en																																																																																																																																			
+A	0	7		Government		en																																																																																																																																			
+Q	!	currentEmp2	1	Which University? Please please provide the full official name of the university or organisation e.g. University of Cape Town if your organisation is not listed		en		Y	Y		1																																																																																																							1						1																	
+A	0	1		Cape Peninsula University of Technology		en																																																																																																																																			
+A	0	2		Central University of Technology		en																																																																																																																																			
+A	0	3		Durban University of Technology		en																																																																																																																																			
+A	0	4		Mangosuthu University of Technology		en																																																																																																																																			
+A	0	5		Nelson Mandela University		en																																																																																																																																			
+A	0	6		North-West University		en																																																																																																																																			
+A	0	7		Rhodes University		en																																																																																																																																			
+A	0	8		Sefako Makgatho Health Sciences University		en																																																																																																																																			
+A	0	9		Sol Plaatje University		en																																																																																																																																			
+A	0	10		Tshwane University of Technology		en																																																																																																																																			
+A	0	11		University of Cape Town		en																																																																																																																																			
+A	0	12		University of Fort Hare		en																																																																																																																																			
+A	0	13		University of Johannesburg		en																																																																																																																																			
+A	0	14		University of KwaZulu-Natal		en																																																																																																																																			
+A	0	15		University of Limpopo		en																																																																																																																																			
+A	0	16		University of Mpumalanga		en																																																																																																																																			
+A	0	17		University of Pretoria		en																																																																																																																																			
+A	0	18		University of South Africa		en																																																																																																																																			
+A	0	19		University of Stellenbosch		en																																																																																																																																			
+A	0	20		University of the Free State		en																																																																																																																																			
+A	0	21		University of the Western Cape		en																																																																																																																																			
+A	0	22		University of the Witwatersrand		en																																																																																																																																			
+A	0	23		University of Venda		en																																																																																																																																			
+A	0	24		University of Zululand		en																																																																																																																																			
+A	0	25		Vaal University of Technology		en																																																																																																																																			
+A	0	26		Walter Sisulu University		en																																																																																																																																			
+A	0	27		Other		en																																																																																																																																			
+Q	S	currentEmp4	1	Which organisation do you work for?	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	S	currentEmp5	1	What is your official job title?	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	S	currentEmp6	1	Are you known by a different job title? If so, please enter the job title you use	IMPORTANT: This information will not be made publicly available	en		Y	N																																																																																																																																
+Q	!	currentEmp12	1	Do you work full time or part time		en		Y	N		1																																																																																																							1						1																	
+A	0	1		Full Time		en																																																																																																																																			
+A	0	2		Part-time		en																																																																																																																																			
+Q	!	currentEmp10	1	What type of contract are you employed on?		en		Y	Y		1																																																																																																							1						1																	
+A	0	1		Permanent -- funded by University core funding		en																																																																																																																																			
+A	0	2		Permanent -- as long as funding is available		en																																																																																																																																			
+A	0	3		Fixed term		en																																																																																																																																			
+A	0	4		Freelance consultant/contractor		en																																																																																																																																			
+Q	N	currentEmp11		What is the total duration of your current employment (in years)?		en		Y	Y			1																																																																																																							1																						
+Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		Accounting & Finance		en																																																																																																																																			
+SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
+SQ	0	3		African languages		en																																																																																																																																			
+SQ	0	4		Agriculture & Forestry		en																																																																																																																																			
+SQ	0	5		American Studies		en																																																																																																																																			
+SQ	0	6		Anatomy & Physiology		en																																																																																																																																			
+SQ	0	7		Anthropology		en																																																																																																																																			
+SQ	0	8		Architecture		en																																																																																																																																			
+SQ	0	9		Art & Design		en																																																																																																																																			
+SQ	0	10		Biological Sciences		en																																																																																																																																			
+SQ	0	11		Business & Management Studies		en																																																																																																																																			
+SQ	0	12		Chemical Engineering		en																																																																																																																																			
+SQ	0	13		Chemistry		en																																																																																																																																			
+SQ	0	14		Civil Engineering		en																																																																																																																																			
+SQ	0	15		Classics & Ancient History		en																																																																																																																																			
+SQ	0	16		Communication & Media Studies		en																																																																																																																																			
+SQ	0	17		Complementary Medicine		en																																																																																																																																			
+SQ	0	18		Computer Science		en																																																																																																																																			
+SQ	0	19		Counselling		en																																																																																																																																			
+SQ	0	20		Criminology		en																																																																																																																																			
+SQ	0	21		Dentistry		en																																																																																																																																			
+SQ	0	22		East & South Asian Studies		en																																																																																																																																			
+SQ	0	23		Economics		en																																																																																																																																			
+SQ	0	24		Education		en																																																																																																																																			
+SQ	0	25		Electrical & Electronic Engineering		en																																																																																																																																			
+SQ	0	26		English		en																																																																																																																																			
+SQ	0	27		Fashion		en																																																																																																																																			
+SQ	0	28		Food Science		en																																																																																																																																			
+SQ	0	29		French		en																																																																																																																																			
+SQ	0	30		Geography & Environmental Sciences		en																																																																																																																																			
+SQ	0	31		Geology		en																																																																																																																																			
+SQ	0	32		General Engineering		en																																																																																																																																			
+SQ	0	33		German		en																																																																																																																																			
+SQ	0	34		History		en																																																																																																																																			
+SQ	0	35		History of Art, Architecture & Design		en																																																																																																																																			
+SQ	0	36		Hospitality, Leisure, Recreation & Tourism		en																																																																																																																																			
+SQ	0	37		Iberian Languages/Hispanic Studies		en																																																																																																																																			
+SQ	0	38		Land & Property Management		en																																																																																																																																			
+SQ	0	39		Law		en																																																																																																																																			
+SQ	0	40		Librarianship & Information Management		en																																																																																																																																			
+SQ	0	41		Linguistics		en																																																																																																																																			
+SQ	0	42		Marketing		en																																																																																																																																			
+SQ	0	43		Materials Technology		en																																																																																																																																			
+SQ	0	44		Mathematics		en																																																																																																																																			
+SQ	0	45		Mechanical Engineering		en																																																																																																																																			
+SQ	0	46		Medicine		en																																																																																																																																			
+SQ	0	47		Middle Eastern and African Studies		en																																																																																																																																			
+SQ	0	48		Music		en																																																																																																																																			
+SQ	0	49		Nursing		en																																																																																																																																			
+SQ	0	50		Ophthalmics		en																																																																																																																																			
+SQ	0	51		Pharmacology & Pharmacy		en																																																																																																																																			
+SQ	0	52		Philosophy		en																																																																																																																																			
+SQ	0	53		Physics and Astronomy		en																																																																																																																																			
+SQ	0	54		Physiotherapy		en																																																																																																																																			
+SQ	0	55		Politics		en																																																																																																																																			
+SQ	0	56		Psychology		en																																																																																																																																			
+SQ	0	57		Robotics		en																																																																																																																																			
+SQ	0	58		Russian & East European Languages		en																																																																																																																																			
+SQ	0	59		Social Policy		en																																																																																																																																			
+SQ	0	60		Social Work		en																																																																																																																																			
+SQ	0	61		Sociology		en																																																																																																																																			
+SQ	0	62		Sports Science		en																																																																																																																																			
+SQ	0	63		Theology & Religious Studies		en																																																																																																																																			
+SQ	0	64		Town & Country Planning and Landscape Design		en																																																																																																																																			
+SQ	0	65		Veterinary Medicine		en																																																																																																																																			
+SQ	0	66		Youth Work		en																																																																																																																																			
+G	G2	Your employment history	1			en																																																																																																																																			
+Q	!	prevEmp1	1	Where was your previous job based?		en		Y	N		1																																																																																																							1						1																	
+A	0	1		This is my first job		en																																																																																																																																			
+A	0	2		University		en																																																																																																																																			
+A	0	3		Research Council		en																																																																																																																																			
+A	0	4		Research Organisation (e.g. SKA, HartRAO, SAEON, SANSA, ...)		en																																																																																																																																			
+A	0	5		Private Company		en																																																																																																																																			
+A	0	6		Start-up Company		en																																																																																																																																			
+A	0	7		Non-profit Organisation		en																																																																																																																																			
+A	0	8		Government		en																																																																																																																																			
+Q	R	prevEmp2	1	Rank the following factors dependent on how strongly they influenced your decision to accept your current position 		en		Y	N		1																																																								5																									1	1						1															1																							
+SQ	0	1	1	Rank1		en																																																																																																																																			
+SQ	0	2	1	Rank2		en																																																																																																																																			
+SQ	0	3	1	Rank3		en																																																																																																																																			
+SQ	0	4	1	Rank4		en																																																																																																																																			
+SQ	0	5	1	Rank5		en																																																																																																																																			
+SQ	0	6	1	Rank6		en																																																																																																																																			
+SQ	0	7	1	Rank7		en																																																																																																																																			
+SQ	0	8	1	Rank8		en																																																																																																																																			
+A	0	1		Freedom to choose own working practices		en																																																																																																																																			
+A	0	2		Desire to advance research		en																																																																																																																																			
+A	0	3		The salary		en																																																																																																																																			
+A	0	4		Opportunity to develop software		en																																																																																																																																			
+A	0	5		Flexible working hours		en																																																																																																																																			
+A	0	6		Desire to work in a research environment		en																																																																																																																																			
+A	0	7		Opportunity for career advancement		en																																																																																																																																			
+A	0	8		Ability to work across disciplines		en																																																																																																																																			
+A	0	9		I want to learn new skills		en																																																																																																																																			
+G	G3	Your working practices	1			en																																																																																																																																			
+Q	!	currentWork1	1	Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with? 		en		Y	N		1																																																																																																							1						1																	
+A	0	1		Same researcher(s)		en																																																																																																																																			
+A	0	2		Regularly change researcher(s)		en																																																																																																																																			
+Q	Y	currentWork2	1	Do you work for a Research Software Group?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper1	1	Has your software contributed to research that has been published in a journal or at a conference?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper2	1	In general, when your software contributes to a paper, are you acknowledged in that paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper3	1	Are you generally named as the main author of the paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper4	1	Are you generally named as a co-author of the paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en		Y	N		1																																																																																																							1																							
+Q	Y	conf1can	1	Have you ever presented your software work at a conference or workshop?		en		Y	N		1																																																																																																							1																							
+Q	S	conf2can	1	Which conference(s)/workshop(s) (Please write a comma separated list with FULLNAME and ACRONYM)		en		Y	N																																																																																																																																
+Q	N	proj1can		How many software projects are you currently involved in?		en		Y	N			1																																																																																																							1																						
+Q	N	proj2zaf		How many programmers are in your team - 1 means you are the only person?		en		Y	N			1																																																																																																							1																						
+Q	M	proj3zaf	1	If you have more than 1 fellow programmer in your team, where are they from?		en		Y	N	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		Same institution		en																																																																																																																																			
+SQ	0	2		Other organisation		en																																																																																																																																			
+SQ	0	3		Not applicable		en																																																																																																																																			
+Q	M	proj5zaf	1	Which, if any, version control tools do you use for software development?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		CVS		en																																																																																																																																			
+SQ	0	2		SVN		en																																																																																																																																			
+SQ	0	3		GIT		en																																																																																																																																			
+SQ	0	4		Mercurial		en																																																																																																																																			
+SQ	0	5		None		en																																																																																																																																			
+Q	M	proj6zaf	1	Which, if any, online collaboration tools and open repositories do you use for software development?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		Github		en																																																																																																																																			
+SQ	0	2		Bitbucket		en																																																																																																																																			
+SQ	0	3		Zenodo		en																																																																																																																																			
+SQ	0	4		Figshare		en																																																																																																																																			
+SQ	0	5		Institutional Repository		en																																																																																																																																			
+SQ	0	6		None		en																																																																																																																																			
+Q	F	stability1		What is the bus factor of your most important software project? (the bus factor is the number of team members who, if run over by a bus, would put the project in jeopardy, so 1 means the project is dependent on a single person)		en		Y	N		1																																																																																																							1																							
+SQ	0	SQ001	1			en																																																																																																																																			
+A	0	1		1		en																																																																																																																																			
+A	0	2		2		en																																																																																																																																			
+A	0	3		3		en																																																																																																																																			
+A	0	4		4		en																																																																																																																																			
+A	0	5		5+		en																																																																																																																																			
+Q	Y	stability2	1	Is there a technical hand-over plan for your most important software project?		en		Y	N		1																																																																																																							1																							
+Q	M	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en		Y	N	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		No formal testing		en																																																																																																																																			
+SQ	0	2		Developers conduct testing		en																																																																																																																																			
+SQ	0	3		Test engineers conduct testing		en																																																																																																																																			
+SQ	0	4		Users conduct testing		en																																																																																																																																			
+Q	Y	open01can	1	Have you ever released your software under an open-source licence? 		en		Y	N		1																																																																																																							1																							
+Q	F	open1can		How often do you release the software projects you've worked on under an open-source licence?		en		Y	N		1																																																																																																							1																							
+SQ	0	SQ001	1			en																																																																																																																																			
+A	0	1		1 (Never)		en																																																																																																																																			
+A	0	2		2		en																																																																																																																																			
+A	0	3		3		en																																																																																																																																			
+A	0	4		4		en																																																																																																																																			
+A	0	5		5		en																																																																																																																																			
+A	0	6		6		en																																																																																																																																			
+A	0	7		7		en																																																																																																																																			
+A	0	8		8		en																																																																																																																																			
+A	0	9		9		en																																																																																																																																			
+A	0	10		10 (Always)		en																																																																																																																																			
+Q	M	open02zaf	1	Which open source licences do you prefer to use for your software?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		Apache License 2.0		en																																																																																																																																			
+SQ	0	2		"BSD 3-Clause ""New"" or ""Revised"" license"		en																																																																																																																																			
+SQ	0	3		"BSD 2-Clause ""Simplified"" or ""FreeBSD"" license"		en																																																																																																																																			
+SQ	0	4		Common Development and Distribution License		en																																																																																																																																			
+SQ	0	5		Eclipse Public License		en																																																																																																																																			
+SQ	0	6		GNU General Public License (GPL)		en																																																																																																																																			
+SQ	0	7		"GNU Library or ""Lesser"" General Public License (LGPL)"		en																																																																																																																																			
+SQ	0	8		MIT license		en																																																																																																																																			
+SQ	0	9		Mozilla Public License 2.0		en																																																																																																																																			
+SQ	0	10		I don't know		en																																																																																																																																			
+Q	Y	open03can	1	Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en		Y	N		1																																																																																																							1																							
+Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en		Y	N		1																																																																																																							1																							
+SQ	0	SQ001	1			en																																																																																																																																			
+A	0	1		1 (Never)		en																																																																																																																																			
+A	0	2		2		en																																																																																																																																			
+A	0	3		3		en																																																																																																																																			
+A	0	4		4		en																																																																																																																																			
+A	0	5		5		en																																																																																																																																			
+A	0	6		6		en																																																																																																																																			
+A	0	7		7		en																																																																																																																																			
+A	0	8		8		en																																																																																																																																			
+A	0	9		9		en																																																																																																																																			
+A	0	10		10 (Always)		en																																																																																																																																			
+Q	S	tool1zaf	1	What are your three (3) favourite tools to manage project deliverables, keep track of progress, communicate with your project group(s)? (Please wirte a comma separated list, eg: Slack, Trello, Google Wave)		en		Y	N																																																																																																																																
+Q	Y	train1	1	Have you ever trained researchers in computational techniques? 		en		Y	N		1																																																																																																							1																							
+Q	N	train2		On average, how many times a year do you take part in providing training? 		en		Y	N			1																																																																																																							1																						
+Q	S	train3	1	What training programs are you involved with (comma separated list)  (For example, Software Carpentry, local university training, etc.) 		en		Y	N																																																																																																																																
+Q	Y	fund1	1	Do you know the source of the funding used to support you and your current, largest project? 		en		Y	N		1																																																																																																							1																							
+Q	M	fund2	1	Which of the following sources are used to pay for your effort as an RSE/equivalent? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		I volunteer my time		en																																																																																																																																			
+SQ	0	2		Donation button		en																																																																																																																																			
+SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
+SQ	0	4		Crowdfunding (recurring)		en																																																																																																																																			
+SQ	0	5		Books & merchandise		en																																																																																																																																			
+SQ	0	6		Advertising & sponsorships		en																																																																																																																																			
+SQ	0	7		Industry support		en																																																																																																																																			
+SQ	0	8		Consulting & services		en																																																																																																																																			
+SQ	0	9		Grants		en																																																																																																																																			
+SQ	0	10		SaaS		en																																																																																																																																			
+SQ	0	11		Membership		en																																																																																																																																			
+SQ	0	12		Dual license		en																																																																																																																																			
+SQ	0	13		Open core		en																																																																																																																																			
+SQ	0	14		Foundations & consortiums		en																																																																																																																																			
+SQ	0	15		Venture capital		en																																																																																																																																			
+SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
+SQ	0	17		Not applicable		en																																																																																																																																			
+Q	M	fund3	1	Which of the following sources are used to fund your current, largest project? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		I volunteer my time		en																																																																																																																																			
+SQ	0	2		Donation button		en																																																																																																																																			
+SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
+SQ	0	4		Crowdfunding (recurring)		en																																																																																																																																			
+SQ	0	5		Books & merchandise		en																																																																																																																																			
+SQ	0	6		Advertising & sponsorships		en																																																																																																																																			
+SQ	0	7		Industry support		en																																																																																																																																			
+SQ	0	8		Consulting & services		en																																																																																																																																			
+SQ	0	9		Grants		en																																																																																																																																			
+SQ	0	10		SaaS		en																																																																																																																																			
+SQ	0	11		Membership		en																																																																																																																																			
+SQ	0	12		Dual license		en																																																																																																																																			
+SQ	0	13		Open core		en																																																																																																																																			
+SQ	0	14		Foundations & consortiums		en																																																																																																																																			
+SQ	0	15		Venture capital		en																																																																																																																																			
+SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
+SQ	0	17		Not applicable		en																																																																																																																																			
+Q	M	fund4	1	Which of the following sources were used to fund your current, largest project three years ago? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		I volunteer my time		en																																																																																																																																			
+SQ	0	2		Donation button		en																																																																																																																																			
+SQ	0	3		Crowdfunding (one-time)		en																																																																																																																																			
+SQ	0	4		Crowdfunding (recurring)		en																																																																																																																																			
+SQ	0	5		Books & merchandise		en																																																																																																																																			
+SQ	0	6		Advertising & sponsorships		en																																																																																																																																			
+SQ	0	7		Industry support		en																																																																																																																																			
+SQ	0	8		Consulting & services		en																																																																																																																																			
+SQ	0	9		Grants		en																																																																																																																																			
+SQ	0	10		SaaS		en																																																																																																																																			
+SQ	0	11		Membership		en																																																																																																																																			
+SQ	0	12		Dual license		en																																																																																																																																			
+SQ	0	13		Open core		en																																																																																																																																			
+SQ	0	14		Foundations & consortiums		en																																																																																																																																			
+SQ	0	15		Venture capital		en																																																																																																																																			
+SQ	0	16		Trademark licensing & franchising		en																																																																																																																																			
+SQ	0	17		Not applicable		en																																																																																																																																			
+G	G4	Your perception of your current position	1			en																																																																																																																																			
+Q	F	likert1				en		Y	N		1																																																																																																							1																							
+SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
+SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck3	1	In your work, do you have access to sufficient data and information?		en																																																																																																																																			
+SQ	0	perfCheck4	1	Do you receive sufficient information on the purpose of your work?		en																																																																																																																																			
+SQ	0	perfCheck5	1	Does your work provide you with direct feedback on how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck6	1	Does your supervisor/line manager inform you about how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck7	1	Do your colleagues inform you about how well you are doing your work?		en																																																																																																																																			
+SQ	0	turnOver1	1	How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?		en																																																																																																																																			
+SQ	0	turnOver2	1	How often do you look forward to another day at work?		en																																																																																																																																			
+SQ	0	turnOver3	1	How often do you consider leaving your job?		en																																																																																																																																			
+SQ	0	turnOver4	1	How often do dream about getting another job that will better suit your needs?		en																																																																																																																																			
+A	0	1		Never		en																																																																																																																																			
+A	0	2		Sometimes		en																																																																																																																																			
+A	0	3		Often		en																																																																																																																																			
+A	0	4		Very Often		en																																																																																																																																			
+A	0	5		Always		en																																																																																																																																			
+Q	F	likert2				en		Y	N		1																																																																																																							1																							
+SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
+SQ	0	affRec2	1	I am satisfied with a word of thanks from my supervisor/line manager		en																																																																																																																																			
+SQ	0	affSat3	1	I feel fairly well satisfied with my job		en																																																																																																																																			
+SQ	0	progRSE2	1	The process I have to complete to gain a promotion is clear and understandable		en																																																																																																																																			
+SQ	0	affRec4	1	I am satisfied with the compliments from my supervisor/line manager concerning my work		en																																																																																																																																			
+SQ	0	percEmp2	1	I can think of a number of organisations that would probably offer me a job		en																																																																																																																																			
+SQ	0	affRec5	1	I am satisfied with the encouragement from my supervisor/line manager while doing my job		en																																																																																																																																			
+SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
+SQ	0	progRSE1	1	It is likely that I will gain a promotion within my current group 		en																																																																																																																																			
+SQ	0	turnOver5	1	My current job satisfies my personal needs		en																																																																																																																																			
+SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
+SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
+SQ	0	affSat2	1	Most days I am enthusiastic about my job		en																																																																																																																																			
+SQ	0	affSat4	1	I like my job better than the average person		en																																																																																																																																			
+SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organisation		en																																																																																																																																			
+SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
+SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
+SQ	0	progRSE5	1	It is likely that my next position will be an RSE role		en																																																																																																																																			
+SQ	0	progRSE4	1	My current position is an integral part of my career plan		en																																																																																																																																			
+SQ	0	progRSE3	1	There are many opportunities within my chosen career plan		en																																																																																																																																			
+A	0	1		Strongly disagree		en																																																																																																																																			
+A	0	2		Disagree		en																																																																																																																																			
+A	0	3		Neither agree or disagree		en																																																																																																																																			
+A	0	4		Agree		en																																																																																																																																			
+A	0	5		Strongly Agree		en																																																																																																																																			
+Q	F	likert3				en		Y	N		1																																																																																																							1																							
+SQ	0	satisGen1	1	In general, how satisfied are you with your current position		en																																																																																																																																			
+SQ	0	satisGen2	1	In general, how satisfied are you with your career		en																																																																																																																																			
+A	0	1		0 - Not at all satisfied		en																																																																																																																																			
+A	0	2		1		en																																																																																																																																			
+A	0	3		2		en																																																																																																																																			
+A	0	4		3		en																																																																																																																																			
+A	0	5		4		en																																																																																																																																			
+A	0	6		5		en																																																																																																																																			
+A	0	7		6		en																																																																																																																																			
+A	0	8		7		en																																																																																																																																			
+A	0	9		8		en																																																																																																																																			
+A	0	10		9		en																																																																																																																																			
+A	0	11		10 - Completely satisfied		en																																																																																																																																			
+G	G5	Demographic questions	1			en																																																																																																																																			
+Q	!	socio2	1	Please select your gender	IMPORTANT: This information will not be made publicly available	en		Y	Y		1																																																																																																							1						1																	
+A	0	1		Female		en																																																																																																																																			
+A	0	2		Male		en																																																																																																																																			
+A	0	3		Prefer not to say		en																																																																																																																																			
+Q	!	socio3	1	Please select your age	IMPORTANT: This information will not be made publicly available	en		Y	Y		1																																																																																																							1						1																	
+A	0	1		18 to 24 years		en																																																																																																																																			
+A	0	2		25 to 34 years		en																																																																																																																																			
+A	0	3		35 to 44 years		en																																																																																																																																			
+A	0	4		45 to 54 years		en																																																																																																																																			
+A	0	5		55 to 64 years		en																																																																																																																																			
+A	0	6		Age 65 or older		en																																																																																																																																			
+A	0	7		Prefer not to say		en																																																																																																																																			
+Q	!	socio5	1	How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. 	IMPORTANT: This information will not be made publicly available	en			Y		1																																																																																																							1						1																	
+A	0	1		Black		en																																																																																																																																			
+A	0	2		Coloured		en																																																																																																																																			
+A	0	3		Indian		en																																																																																																																																			
+A	0	4		White		en																																																																																																																																			
+A	0	5		Do not wish to declare		en																																																																																																																																			
+Q	Y	disa1	1	Do you have a condition that is defined as a disability by the White Paper on the Rights of Persons with Disabilities (2015)	IMPORTANT: This information will not be made publicly available	en			N		1																																																																																																							1																							
+Q	!	socio4	1	Please select the range of your annual salary	IMPORTANT: This information will not be made publicly available	en		Y	N		1																																																																																																							1						1																	
+A	0	1		Less than R 189 880		en																																																																																																																																			
+A	0	2		Between R 189 881 and R 296 540		en																																																																																																																																			
+A	0	3		Between R 296 541 and R 410 460		en																																																																																																																																			
+A	0	4		Between R 410 461 and R 555 600		en																																																																																																																																			
+A	0	5		Between R 555 601 and R 708 310		en																																																																																																																																			
+A	0	6		Between R 708 311 and R 1 500 000		en																																																																																																																																			
+A	0	7		More than R 1 500 000		en																																																																																																																																			
+A	0	8		Prefer not to say		en																																																																																																																																			
+G	G6	Final questions about you	1			en																																																																																																																																			
+Q	!	tool2	1	What Operating System do you prefer to use at work? 		en		Y	N		1																																																																																																							1						1																	
+A	0	1		GNU/Linux		en																																																																																																																																			
+A	0	2		OS X		en																																																																																																																																			
+A	0	3		Windows		en																																																																																																																																			
+Q	M	tool4can	1	 What programming languages do you use at work? (Select as many as apply) 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		Swift		en																																																																																																																																			
+SQ	0	2		JavaScript		en																																																																																																																																			
+SQ	0	3		R		en																																																																																																																																			
+SQ	0	4		PHP		en																																																																																																																																			
+SQ	0	5		C		en																																																																																																																																			
+SQ	0	6		Common Lisp		en																																																																																																																																			
+SQ	0	7		Erlang		en																																																																																																																																			
+SQ	0	8		Smalltalk		en																																																																																																																																			
+SQ	0	9		CoffeeScript		en																																																																																																																																			
+SQ	0	10		F#		en																																																																																																																																			
+SQ	0	11		Java		en																																																																																																																																			
+SQ	0	12		Rust		en																																																																																																																																			
+SQ	0	13		SQL		en																																																																																																																																			
+SQ	0	14		TypeScript		en																																																																																																																																			
+SQ	0	15		Hack		en																																																																																																																																			
+SQ	0	16		C++		en																																																																																																																																			
+SQ	0	17		Visual Basic		en																																																																																																																																			
+SQ	0	18		C#		en																																																																																																																																			
+SQ	0	19		Matlab		en																																																																																																																																			
+SQ	0	20		Perl		en																																																																																																																																			
+SQ	0	21		Fortran		en																																																																																																																																			
+SQ	0	22		Groovy		en																																																																																																																																			
+SQ	0	23		Haskell		en																																																																																																																																			
+SQ	0	24		Julia		en																																																																																																																																			
+SQ	0	25		Lua		en																																																																																																																																			
+SQ	0	26		Scala		en																																																																																																																																			
+SQ	0	27		Objective-C		en																																																																																																																																			
+SQ	0	28		Python		en																																																																																																																																			
+SQ	0	29		Go		en																																																																																																																																			
+SQ	0	30		Assembly		en																																																																																																																																			
+SQ	0	31		VBA		en																																																																																																																																			
+SQ	0	32		Elixir		en																																																																																																																																			
+SQ	0	33		VB.NET		en																																																																																																																																			
+SQ	0	34		Ruby		en																																																																																																																																			
+SQ	0	35		Clojure		en																																																																																																																																			
+SQ	0	36		Dart		en																																																																																																																																			
+Q	Y	ukrse1	1	Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list)		en		Y	N		1																																																																																																							1																							
+Q	Y	org1can	1	Would you be interested in joining such an organisation if one was formed in South Africa?		en		Y	N		1																																																																																																							1																							
+Q	M	org2can	1	What would you hope to get out of such an organisation (check all that apply)?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		Networking		en																																																																																																																																			
+SQ	0	2		Software collaborations		en																																																																																																																																			
+SQ	0	3		Research collaborations		en																																																																																																																																			
+SQ	0	4		Training		en																																																																																																																																			
+SQ	0	5		Research software standards and interoperability definition		en																																																																																																																																			
+SQ	0	6		Job opportunities		en																																																																																																																																			
+Q	M	ukrse2	1	How do you meet other RSEs? 		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	1		UK RSE Association		en																																																																																																																																			
+SQ	0	2		N/A		en																																																																																																																																			
+Q	S	skill2	1	What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.		en		Y	N																																																																																																																																
+Q	S	ukrse3	1	How did you learn the skills you need to become an RSE? 		en			N																																																																																																																																
