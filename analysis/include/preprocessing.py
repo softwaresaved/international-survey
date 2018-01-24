@@ -483,7 +483,13 @@ class CleaningData(CleaningConfig):
         If it is the case, remove the data corresponding to the question for the
         uploaded dataset
         """
-        pass
+        self.public_df = self.df.copy()
+        for entry in self.survey_structure:
+            if self.survey_structure[entry]['public'].lower() == 'false':
+                col_to_remove = self.survey_structure[entry]['survey_q'][0]
+                self.public_df.drop(col_to_remove, axis=1, inplace=True)
+
+        self._write_df(self.public_df, self.public_df_location)
 
     def write_config_file(self):
         """

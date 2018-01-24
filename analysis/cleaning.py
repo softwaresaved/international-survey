@@ -21,6 +21,7 @@ def main():
     cleaning_process = CleaningData(year, country, df)
     df = cleaning_process.cleaning()
     cleaning_process.write_df()
+    cleaning_process.remove_private_data()
     cleaning_process.write_config_file()
 
 
