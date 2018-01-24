@@ -41,15 +41,15 @@ However, despite the majority of them writing code, only 47% consider themselves
 
 Unsurprisingly, RSEs spend the majority of their time coding. The only other major call on their time is "research", so it would appear that their job title accurately describes their work. "Teaching" is the aspect of work with the least call on RSEs time: 54% of RSEs reported that they spent no time teaching.
 
-## Do you write code as part of your job?
+### Do you write code as part of your job?
 
-## Who uses the code that you write?
+### Who uses the code that you write?
 
-## Do you consider yourself a professional software developer?
+### Do you consider yourself a professional software developer?
 
-## How many years of Software development experience do you have?
+### How many years of Software development experience do you have?
 
-## In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)
+### In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)
 
 
 # Questions about employment
@@ -58,7 +58,7 @@ Unsurprisingly, RSEs spend the majority of their time coding. The only other maj
 
 At the question about the field where they work, the participants mainly answered *Computer Science*, followed by *Physics and Astronomy* and *Biological Sciences* (both 14%). These is the three main disciplines found in the question about education. 
 
-## What type of organisation do you work for?
+### What type of organisation do you work for?
 
 ### Which University do you work for?
 
@@ -93,13 +93,13 @@ The last question about the funding was about the previous project. This helps t
 It is important to note that these percentages are not mutually exclusives as the participants had the option to choose several sources of funding for each question. 
 
 
-## Do you work full time or part time
+### Do you work full time or part time
 
-## What type of contract are you employed on?
+### What type of contract are you employed on?
 
-## What is the duration (in years) of your current contract?
+### What is the duration (in years) of your current contract?
 
-## Do you know the source of the funding used to support you and your current, largest project?
+### Do you know the source of the funding used to support you and your current, largest project?
 
 ### Which of the following sources are used to pay for your effort as an RSE/equivalent?
 
