@@ -485,7 +485,8 @@ class CleaningData(CleaningConfig):
         """
         self.public_df = self.df.copy()
         for entry in self.survey_structure:
-            if self.survey_structure[entry]['public'].lower() == 'false':
+            public_choice = self.survey_structure[entry]['public'].lower()
+            if public_choice == 'false' or public_choice == 'n' or public_choice == 'no':
                 col_to_remove = self.survey_structure[entry]['survey_q'][0]
                 self.public_df.drop(col_to_remove, axis=1, inplace=True)
 
