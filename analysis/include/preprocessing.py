@@ -486,6 +486,15 @@ class CleaningData(CleaningConfig):
                 df = df.drop(col, axis=1)
         return df
 
+    def remove_private_data(self):
+        """
+        Check if any N in the Public column in the questions.csv.
+        If it is the case, remove the data corresponding to the question for the
+        uploaded dataset
+        """
+
+
+
     def write_config_file(self):
         """
         """
@@ -493,10 +502,10 @@ class CleaningData(CleaningConfig):
         with open(self.json_to_plot_location, 'w') as f:
             json.dump(dict_to_write, f)
 
-    def write_df(self):
+    def write_df(self, df, location=self.cleaned_df_location):
         """
         """
-        self.df.to_csv(self.cleaned_df_location)
+        df.to_csv(location)
 
 
 def main():
@@ -505,7 +514,8 @@ def main():
     df = pd.read_csv(CleaningConfig.raw_data)
     cleaning_process = CleaningData(df)
     cleaning_process.cleaning()
-    cleaning_process.write_df()
+    cleaning_process.write_df(self.df)
+    cleaning_process.remove_private_data()
     cleaning_process.write_config_file()
 
 
