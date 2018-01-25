@@ -82,10 +82,12 @@ They work in more different field than they come from. The majority still works 
 
 # Section 4: Questions about the type of contract
 
+Almost all the participants are employed under full time contract (82%, n=18) and they are mainly Permanent (either funded by University core funding, or as long as funding is available. But this apparent stability in contract has to be tempered with the average length of the contract (5 years). On the origin of their funding (which 72%, n=13 of the participants know the origin), it seems that the type of funding is not applicable for them (40%, n=4) or that it comes from Grants (30%, n=3).  This is the method of Grants that is also privilegied as funding process for their current larger project (50%, n=5) and for their previous largest project too (50%, n=5).
 
 
 ### Do you work full time or part time
 ### What type of contract are you employed on?
+### What is the total duration of your current employment (in years)?
 ### Do you know the source of the funding used to support you and your current, largest project?
 ### Which of the following sources are used to pay for your effort as an RSE/equivalent?
 ### Which of the following sources are used to fund your current, largest project?
