@@ -55,7 +55,7 @@ As expected, the vast majority of RSEs (86%, n=19) write code. 15% (n=3) of the 
 
 However, despite the majority of them writing code, only 23% (n=5) consider themselves as *professional software developer*. This is a low number when we consider the average time of developing software (14 years) and that they are mainly developing software for others.
 
-Surprisingly, the participants do not spend much of their time coding, but doing research. Software development come only second in the most time consuming task. The second type of question asked if the participants wanted to spend more time than what they do. Here again, the participants seems to want to spend more time doing research. Again, software development comes second.
+Surprisingly, the participants do not spend much of their time coding, but doing research. Software development come only second in the most time consuming task. The second type of question asked if the participants wanted to spend more time than what they do. Here again, the participants seems to want to spend more time doing research. Again, software development comes second. They are mainly coming from the North-West University and the University of Pretoria (40%, n=4 and 20%, n=2) but 12 participants did not answer to that question.
 
 
 ### Do you write code as part of your job?
@@ -69,6 +69,9 @@ Surprisingly, the participants do not spend much of their time coding, but doing
 
 # Section 3: Questions about employment
 
+The participants work principally for an university (45%, n=10) and for research organisation (32%, n=7).
+They work in more different field than they come from. The majority still works in Physics and Astronomy (29%, n=12) but several of them are working in Computer Science (12%, n=5), Mathematics (10%, n=4) and Education (7%, n=3).
+
 ### What type of organisation do you work for?
 ### Which University? Please please provide the full official name of the university or organisation e.g. University of Cape Town if your organisation is not listed
 ### Which organisation do you work for?
@@ -78,6 +81,8 @@ Surprisingly, the participants do not spend much of their time coding, but doing
 
 
 # Section 4: Questions about the type of contract
+
+
 
 ### Do you work full time or part time
 ### What type of contract are you employed on?
