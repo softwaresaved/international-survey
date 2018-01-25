@@ -285,6 +285,9 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
     # Subset the columns
     df_sub = df[colnames]
 
+    # Convert into string in case all the choice where number
+    df_sub = df_sub.applymap(str)
+
     df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
 
     # Calculate the counts for them
