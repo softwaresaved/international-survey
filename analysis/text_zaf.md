@@ -49,12 +49,22 @@ No participant reported any form of disability.
 
 
 # Section 2: Questions about coding
+In this section we investigate the relationship between RSEs and the code they develop.
+
+As expected, the vast majority of RSEs (86%, n=19) write code. 15% (n=3) of the participants write code for themselves while the vast majority write code for other people (85%, n=17).
+
+However, despite the majority of them writing code, only 23% (n=5) consider themselves as *professional software developer*. This is a low number when we consider the average time of developing software (14 years) and that they are mainly developing software for others.
+
+Surprisingly, the participants do not spend much of their time coding, but doing research. Software development come only second in the most time consuming task. The second type of question asked if the participants wanted to spend more time than what they do. Here again, the participants seems to want to spend more time doing research. Again, software development comes second.
+
 
 ### Do you write code as part of your job?
 ### Who uses the code that you write?
 ### Do you consider yourself a professional software developer?
 ### How many years of Software development experience do you have?
-### In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.); In an average month, how much time do you spend on Research; In an average month, how much time do you spend on Management; In an average month, how much time do you spend on Teaching; In an average month, how much time do you spend on Other activities; In an average month, how much time would you like to spend on programming? (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.); In an average month, how much time would you like to spend on Research; In an average month, how much time would you like to spend on Management; In an average month, how much time would you like to spend on Teaching
+### In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.); In an average month, how much time do you spend on Research; In an average month, how much time do you spend on Management; In an average month, how much time do you spend on Teaching; In an average month, how much time do you spend on Other activities
+
+### In an average month, how much time would you like to spend on programming? (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.); In an average month, how much time would you like to spend on Research; In an average month, how much time would you like to spend on Management; In an average month, how much time would you like to spend on Teaching
 
 
 # Section 3: Questions about employment
@@ -164,7 +174,3 @@ No participant reported any form of disability.
 ### Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list)
 ### Would you be interested in joining such an organisation if one was formed in South Africa?
 ### What would you hope to get out of such an organisation (check all that apply)?
-
-
-
-
