@@ -32,7 +32,7 @@ We asked the participants to give us the range of salary they are paid. The most
 ## Professional qualifications
 
 
-# Questions about coding
+# Section 2: Questions about coding
 
 In this section we investigate the relationship between RSEs and the code they develop.
 
@@ -52,7 +52,7 @@ Unsurprisingly, RSEs spend the majority of their time coding. The only other maj
 ### In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)
 
 
-# Questions about employment
+# Section 3: Questions about employment
 
 30% of RSEs work within a university. However, in Germany they have research centers which are different. In total, these account for 58%, with a majority of RSEs working in the *Helmholtz Association of German Research Centres* and for the *Max Plancks Society* (both accounting for 25% of the total of participants).
 
@@ -72,14 +72,13 @@ At the question about the field where they work, the participants mainly answere
 
 ### Which University of Applied Sciences?
 
-## What is your official job title?
+### What is your official job title?
 
-## Are you known in your group by a different job title? If so, please enter the job title you use
+### Are you known in your group by a different job title? If so, please enter the job title you use
 
-## In which disciplines do you work (select as many as apply)
+### In which disciplines do you work (select as many as apply)
 
-
-# Questions about the type of contract
+# Section 4: Questions about the type of contract
 
 Type of contracts and funding are important to understand the situation of RSEs and if they have stable position in academia. 
 A vast majority of participants have a full time job (78%) but it is often a fixed term position (34% as long as funding is available and 26% are funded by the Institution core funding). 27% of them do have a permanent position (the other types of contract are marginals). The average length of contract duration is more or less 5 years for the participants that does not have a permanent position. 
@@ -107,7 +106,7 @@ It is important to note that these percentages are not mutually exclusives as th
 
 ### Which of the following sources were used to fund your current, largest project three years ago?
 
-# Question about previous employment
+# Section 5: Question about previous employment
 
 Several questions were about the participants previous job. The idea is to collect insight of their career and understand what are their motivation to be an RSE. 
 
@@ -127,12 +126,12 @@ We asked the participants to rank the reasons why they chose their actual positi
 
 It appears that the Desire to work in a research environment, the Freedom to choose own working practices and the desire to advance research are more often ranked as the first reasons than any others one. On the contrarious, the Opportunity for career advancement and the salary are the least common reasons for choosing a position as RSE. 
 
-## Where was your previous job based?
+### Where was your previous job based?
 
-## Rank the following factors dependent on how strongly they influenced your decision to accept your current position
+### Rank the following factors dependent on how strongly they influenced your decision to accept your current position
 
 
-# Collaboration and training
+# Section 6: Collaboration and training
 
 RSEs do not work for themselves, their role involves writing code that is used by others (as seen in section 4), but the collaboration can take other forms. This is why we asked with whom the participants work with. Usually, they seems to be embedded in a stable group, 64% of them report to work with the same researchers, while a minority as a more flexible collaboration (36%).
 On the side of collaboration, we wanted to know if they were working within a stable group of researcher software. It is the case for 56% of them, while 44% do not have such group. 
@@ -160,7 +159,7 @@ RSEs have programming skills that is not necessarily shared within their field. 
 ### What training programs are you involved with (comma separated list; for example, Software Carpentry, local university training, etc.)
 
 
-# Publications
+# Section 7: Publications
 
 RSEs is an hybrid role between a researcher and a software developer. We investigated both of these aspects concerning publication and dissemination of their work, one on the traditional aspect of it (publications and conference) and on the more software aspect (open source and DOI). 
 One essential aspect of career in academia is the publications and the conferences to gain recognition. However, the role of RSE being less about writing articles than creating the infrastructure and the software for the article to exists, there is some fear that they will fail to have recognition through the paper and conference.
@@ -209,7 +208,7 @@ A last element about publications is the use of [ORCID](https://orcid.org/). It 
 ### Do you have an ORCID ID?
 
 
-# Sustainability and technical details
+# Section 8: Sustainability and technical details
 
 This section comprises two subsections that focus on the technical and development aspects of the RSEs' work. They aim to understand good practices in developing software and which tools are important for for RSEs. 
 
@@ -248,7 +247,7 @@ About which Operating System used by RSEs, a majority are using GNU/Linux (60%),
 ### What Operating System do you prefer to use at work?
 
 
-# Job satisfaction
+# Section 9: Job satisfaction
 
 The job satisfaction is an essential pulse to take about the community. It helps to track the evolution and the current state of the RSEs within their role and to catch any sign of structural or organisational dysfunction that are translated into well-being. There are a lot of different metrics to measure the quality of a job on a personal and psychological level [4]. Several models exist to understand the link between different factors of job satisfaction and turnover intention [5]–[9]. Turnover intention is an important measure that is highly associated with the risk of employees leaving the organisation [7]. Job satisfaction is important in retaining RSEs. Perceived employability provides information on how workers values their own skills in regard of the market. To measure the different attitudes toward the RSE role, we used scales that have been created in [5], [6], [8], [9]. These are Likert scale [10], which are 5 point ordinal scales graduated from Strongly disagree to Strongly agree. Each scale is composed of several so called items (i.e. questions) that each measure one attitude.
 
@@ -256,8 +255,11 @@ Beside these specific concepts we asked more general question about their satisf
 
 The specific questions about their job satisfaction reflect, in general, the same opinion as the two more generic questions. However, the granularity helps to identify a couple of issues that would not appears with generic questions:
 * *The feedback about the performance*: These questions ask if the RSEs feel that they receive enough information about their work and their performance. While they seems to have enough information about the purpose of their work and having access to sufficient data and information, they are less assertive about the feedback they receive from their colleagues and their supervisors. 
+
 * *The turnover intention*: These questions aim to measure the desire to quit their current position. Overall, the participants are not willing to leave their position and are not necessarily searching for other job, even if the potential job would offer the same compensations.  
+
 * *The perceived employability*: This concept is linked to the previous one. People may not have the intention to leave their jobs, not because they like it, but because they fear they are not employable. This is not the case here, the participants consider themselves more often employable than not. 
+
 * *The affective recognition*: This concept try to see if the participants receive positive feedback from their supervisors. Overall, again the participants report a positive relation with their supervisors. It means they are not systematic issues with direct management. 
 
 * *Affective satisfaction*: Here, the concept measures how much the participants enjoy and like their job. The answers were positive and again, reflect the answers given at the more generic questions. 
@@ -266,46 +268,43 @@ The specific questions about their job satisfaction reflect, in general, the sam
 
 
 
-## Group of question: satisgen
+## General satisfaction
 
 ### In general, how satisfied are you with Your current position; In general, how satisfied are you with Your career
 
-## Group of question: perfCheck
+## Feedback about performance
 
 ### Do you receive sufficient information on the results of your work?; Does your work give you the opportunity to check on how well you are doing your work?; In your work, do you have access to sufficient data and information?; Do you receive sufficient information on the purpose of your work?; Does your work provide you with direct feedback on how well you are doing your work?; Does your supervisor/line manager inform you about how well you are doing your work?; Do your colleagues inform you about how well you are doing your work?
 
 
-## Group of question: turnOver
+## Turnover intention
 
 ### How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?; How often do you look forward to another day at work?; How often do you consider leaving your job?; How often do dream about getting another job that will better suit your needs?
 
 ### My current job satisfies my personal needs; I would accept another job at the same compensation level if I was offered it
 
 
-## Group of question: percEmp
+## Perceived employability
 
 ### It would not be very difficult for me to get an equivalent job in a different organisation; I can think of a number of organisations that would probably offer me a job; My experience is in demand on the labour market; Given my qualifications and experience, getting a new job would not be very hard at all
 
 
-## Group of question: affRec
-
+## Affective recognition
 
 ### I am satisfied with my supervisor/line manager's confidence in me; I am satisfied with a word of thanks from my supervisor/line manager; I am satisfied with the recognition I receive from my supervisor/line manager for doing my job; I am satisfied with the compliments from my supervisor/line manager concerning my work; I am satisfied with the encouragement from my supervisor/line manager while doing my job
 
 
-## Group of question: affSat
-
+## Affective satisfaction
 
 ### I find real enjoyment in my job; Most days I am enthusiastic about my job; I feel fairly well satisfied with my job; I like my job better than the average person
 
 
-## Group of question: progRSE
-
+## Possibility of progression
 
 ### It is likely that I will gain a promotion within my current group; The process I have to complete to gain a promotion is clear and understandable; There are many opportunities within my chosen career plan; My current position is an integral part of my career plan; It is likely that my next position will be an RSE role
 
 
-# Research Software Engineer
+# Section 10: Research Software Engineer
 
 This last section regroups different questions about RSEs in general, the specific skills for them, where they meet other RSEs and the prospect of a conference in Germany. We asked them *how* they acquired the skills to become an RSE but also *which* skills they would like to acquire to become a better RSE. The propositions are listed and a wordcloud is proposed to see which are the most frequent words.
 
