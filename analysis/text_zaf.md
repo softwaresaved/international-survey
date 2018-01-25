@@ -95,6 +95,25 @@ Almost all the participants are employed under full time contract (82%, n=18) an
 
 
 # Section 5: Questions about previous employment
+Several questions were about the participants previous job. The idea is to collect insight of their career and understand what are their motivation to be an RSE.
+
+More than a half of the participants worked in a university prior to their current position (59%, n=13), added to this majority, 9%, n=2 come from Research organisation.
+At least 14%, n=3 shift career and moved from the private sector to academy and for 18%, n=4 it is their first job.
+
+We asked the participants to rank the reasons why they chose their actual position among 8 different ones:
+* Desire to work in a research environment
+* Freedom to choose own working practices
+* Desire to advance research
+* I want to learn new skills
+* Opportunity to develop software
+* Flexible working hours
+* Ability to work across disciplines
+* Opportunity for career advancement
+* The salary
+
+It appears that the Desire to advance research, and the Ability to work across disciplines are the biggest reasons why the RSE chose their current position.
+On the contrary, the salary and the Opportunity to develop software are the least common reasons for choosing a position as RSE. The lack of interest in developing software was also visible when we asked them in which activity they would spend more of their time.
+
 
 ### Where was your previous job based?
 ### Rank the following factors dependent on how strongly they influenced your decision to accept your current position
