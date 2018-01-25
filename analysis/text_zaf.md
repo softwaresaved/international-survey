@@ -114,12 +114,17 @@ We asked the participants to rank the reasons why they chose their actual positi
 It appears that the Desire to advance research, and the Ability to work across disciplines are the biggest reasons why the RSE chose their current position.
 On the contrary, the salary and the Opportunity to develop software are the least common reasons for choosing a position as RSE. The lack of interest in developing software was also visible when we asked them in which activity they would spend more of their time.
 
-
 ### Where was your previous job based?
 ### Rank the following factors dependent on how strongly they influenced your decision to accept your current position
 
 
 # Section 6: Collaboration and training
+RSEs do not work for themselves, their role involves writing code that is used by others (as seen in section 4), but the collaboration can take other forms. This is why we asked with whom the participants work with. Usually, they seems to be embedded in a stable group, 64% of them report to work with the same researchers, while a minority as a more flexible collaboration (36%).
+On the side of collaboration, we wanted to know if they were working within a stable group of researcher software. It is the case for 56% of them, while 44% do not have such group.
+
+Working for researchers or working within a research software group is different than working on the same project with other developers. We then ask how much software developers typically work on the same project as the participants. It appears that RSEs work more often as the sole developer (35%) on the project or in pair (32%). Being between 3 and 5 developers is not that uncommon (24%) but bigger projects than that are marginals.
+
+RSEs have programming skills that is not necessarily shared within their field. Therefore, they can train other researchers to develop some best practices or learn how to program more efficiently. 66% of them participate to such training. They are not teaching directly to students but transferring skills is an important aspect of their job. In average, they do training twice a year and according to the wordcloud, this training is more often under the form of workshop than traditional teaching. A type of training probably more adapted to teach computing skills.
 
 ## Collaboration
 ### Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with?
