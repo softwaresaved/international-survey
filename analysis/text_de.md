@@ -33,25 +33,25 @@ We asked the participants to give us the range of salary they are paid. The most
 
 
 ### Professional qualifications
+The RSE in general do not have personal qualification, among the 375 participants, only 54 filled this question with a valuable information
 
+### Do you hold any other professional degrees/qualifications? (Please enter each of them separated by a semicolon)
 
 # Section 2: Questions about coding
 
 In this section we investigate the relationship between RSEs and the code they develop.
 
-As expected, the vast majority of RSEs (96%) write code. Also, more than the half of them (54%) are involved in software projects taht does not necessarily involve coding on their behalf.
+As expected, the vast majority of RSEs (96%) write code. They are in vast majority writing code for other people, only 8% of them write code for themselves, and 71% for 2 or more people
+
+Also, more than the half of them (54%) are involved in software projects that does not necessarily involve coding on their behalf.
 However, despite the majority of them writing code, only 47% consider themselves as *professional software developer*. This is a low number when we consider the average time of developing software (10 years) and that they are mainly developing software for others.
 
 Unsurprisingly, RSEs spend the majority of their time coding. The only other major call on their time is "research", so it would appear that their job title accurately describes their work. "Teaching" is the aspect of work with the least call on RSEs time: 54% of RSEs reported that they spent no time teaching.
 
 ### Do you write code as part of your job?
-
 ### Who uses the code that you write?
-
 ### Do you consider yourself a professional software developer?
-
 ### How many years of Software development experience do you have?
-
 ### In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)
 
 
@@ -62,23 +62,14 @@ Unsurprisingly, RSEs spend the majority of their time coding. The only other maj
 At the question about the field where they work, the participants mainly answered *Computer Science*, followed by *Physics and Astronomy* and *Biological Sciences* (both 14%). These is the three main disciplines found in the question about education.
 
 ### What type of organisation do you work for?
-
 ### Which University do you work for?
-
 ### Which Fraunhofer institute do you work for?
-
 ### Which Helmholtz institute do you work for?
-
 ### Which Leibniz institute do you work for?
-
 ### Which Max-Planck institute do you work for?
-
 ### Which University of Applied Sciences?
-
 ### What is your official job title?
-
 ### Are you known in your group by a different job title? If so, please enter the job title you use
-
 ### In which disciplines do you work (select as many as apply)
 
 # Section 4: Questions about the type of contract
@@ -96,24 +87,18 @@ It is important to note that these percentages are not mutually exclusives as th
 
 
 ### Do you work full time or part time
-
 ### What type of contract are you employed on?
-
 ### What is the duration (in years) of your current contract?
-
 ### Do you know the source of the funding used to support you and your current, largest project?
-
 ### Which of the following sources are used to pay for your effort as an RSE/equivalent?
-
 ### Which of the following sources are used to fund your current, largest project?
-
 ### Which of the following sources were used to fund your current, largest project three years ago?
 
 # Section 5: Question about previous employment
 
 Several questions were about the participants previous job. The idea is to collect insight of their career and understand what are their motivation to be an RSE.
 
-More than a half of the participants worked in a university prior to their current position(54%). The others come from Max Planck Society (11%) or Other (10%).
+More than a half of the participants worked in a university prior to their current position (54%). The others come from Max Planck Society (11%) or Other (10%).
 At least 10% shift career and moved from the private sector to academy.
 
 We asked the participants to rank the reasons why they chose their actual position among 8 different ones:
@@ -127,7 +112,7 @@ We asked the participants to rank the reasons why they chose their actual positi
 * Opportunity for career advancement
 * The salary
 
-It appears that the Desire to work in a research environment, the Freedom to choose own working practices and the desire to advance research are more often ranked as the first reasons than any others one. On the contrarious, the Opportunity for career advancement and the salary are the least common reasons for choosing a position as RSE.
+It appears that the Desire to work in a research environment, the Freedom to choose own working practices and the desire to advance research are more often ranked as the first reasons than any others one. On the contraries, the Opportunity for career advancement and the salary are the least common reasons for choosing a position as RSE.
 
 ### Where was your previous job based?
 
@@ -146,19 +131,14 @@ RSEs have programming skills that is not necessarily shared within their field. 
 ## Collaboration
 
 ### Do you always work with the same researcher(s), or do you regularly change the researcher(s) you work with?
-
 ### Do you work for a Research Software Group?
-
 ### How many software projects are you currently involved in?
-
 ### How many software developers typically work on your projects?
 
 ## Training
 
 ### Have you ever trained researchers in computational techniques?
-
 ### On average, how many times a year do you take part in providing training?
-
 ### What training programs are you involved with (comma separated list; for example, Software Carpentry, local university training, etc.)
 
 
@@ -182,13 +162,8 @@ A last element about publications is the use of [ORCID](https://orcid.org/). It 
 
 
 ### Has your software contributed to research that has been published in a journal or at a conference?; In general, when your software contributes to a paper, are you acknowledged in that paper?; Are you generally named as the main author of the paper?; Are you generally named as a co-author of the paper?; Are you generally acknowledged in the main text of the paper?
-
-
 ### Have you ever presented your software work at a conference or workshop?
-
-
 ### Which conference(s)/workshop(s) (comma separated list with FULLNAME (ACRONYM), ACRONYM, ...)
-
 ### Do you reference software directly or the papers describing the software?
 
 
@@ -196,18 +171,10 @@ A last element about publications is the use of [ORCID](https://orcid.org/). It 
 
 
 ### Have you ever released your software under an open-source licence?
-
-
 ### How often do you release the software projects you've worked on under an open-source licence?
-
-
 ### Have you ever used a Digital Object Identifier (DOI) to identify your software?
-
-
 ### How often do you associate your software with a Digital Object Identifier (DOI)?
-
 ### Which (infrastructure) tools do you use if assigning DOIs (e.g. local library, Zenodo)?
-
 ### Do you have an ORCID ID?
 
 
@@ -238,15 +205,12 @@ About which Operating System used by RSEs, a majority are using GNU/Linux (60%),
 ## Good practices
 
 ### In general, what sort of testing do you conduct on your software? (check all that apply)
-
 ### What is the bus factor of your most important software project?
-
 ### Is there a technical hand-over plan for your most important software project?
 
 ## Technical details
 
 ### What programming languages do you use at work? (Select as many as apply)
-
 ### What Operating System do you prefer to use at work?
 
 
@@ -283,7 +247,6 @@ The specific questions about their job satisfaction reflect, in general, the sam
 ## Turnover intention
 
 ### How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?; How often do you look forward to another day at work?; How often do you consider leaving your job?; How often do dream about getting another job that will better suit your needs?
-
 ### My current job satisfies my personal needs; I would accept another job at the same compensation level if I was offered it
 
 
@@ -318,31 +281,11 @@ However, to the question to participate to a conference about software developme
 ## Skills
 
 ### How did you learn the skills you need to become an RSE?
-
 ### What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.
-
 ### Do you know a better job title/role than RSE which summarizes all kinds of activities realated to academic software creation?
 
 ## RSE network
 
 ### How do you meet other RSEs?
-
 ### Are you a member of the de-RSE initiative? (Members are people who have signed up to the de-RSE mailing list, http://www.de-rse.org/en/join.html)
-
 ### Would you like to visit a conference about software development in academia in Germany?; We may contact you for a possible conference announcement via email. If you allow then please add your email address here: https://goo.gl/WizV7d
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
