@@ -132,10 +132,7 @@ def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropn
     else:
         plt.suptitle(df.columns[0])
 
-    if origin is False:
-        y_label = 'Percentage'
-    else:
-        y_label = 'Count'
+    y_label = 'Percentage'
     plt.ylabel(y_label)
     plt.yticks(np.arange(0, 100, 10))
 
@@ -368,8 +365,10 @@ def display_side_by_side(*args):
     """
     https://stackoverflow.com/a/44923103
     """
-    df1 = args[0]
-    df2 = args[1]
+    original_df1 = args[0]
+    df1 = original_df1.copy()
+    original_df2 = args[1]
+    df2 = original_df2.copy()
     rows, columns = df1.shape
     index_row = df2.index
     df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
