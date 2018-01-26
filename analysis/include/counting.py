@@ -293,7 +293,7 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
             # # then transform into int to loose the decimal point
             df_sub[col] = df_sub[col].apply(int)
             # # then transform into a string
-            df_sub[col] = df_sub[col].applymap(str)
+            df_sub[col] = df_sub[col].apply(str)
             # # then replace the -1 into np.nan
             df_sub[col] = df_sub[col].replace({'-1': np.nan})
 
