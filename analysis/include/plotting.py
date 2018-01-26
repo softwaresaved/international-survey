@@ -328,8 +328,8 @@ def get_plot(df, type_question, title_plot=False):
 
         elif type_question.lower() == 'likert':
             if len(df.index) == 1:
-                df = df.transpose()
                 return plot_unique_var(df, title_plot=title_plot, origin='likert')
+            df = df.transpose()
             return plot_likert(df, title_plot=title_plot)
 
         elif type_question.lower() == 'one choice':
