@@ -285,22 +285,29 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
     # Subset the columns
     df_sub = df[colnames]
 
-    # Convert into string in case all the choice where number
+    # Convert into string in case all the choice where number only (therefore there is a decimal)
+    # first convert the np.nan into a value that is different
+    df_sub = df_sub.fillna(-1)
+    # # then transform into int to loose the decimal point
+    df_sub = df_sub.applymap(int)
+    # # then transform into a string
     df_sub = df_sub.applymap(str)
+    # # then replace the -1 into np.nan
+    df_sub = df_sub.replace({'-1': np.nan})
 
     df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
 
     # Calculate the counts for them
-    df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
+    df_count = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     # Reorder according to the answers order found in the folder
     if likert_answer:
         # likert_answer = [x for x in likert_answer if x in df_sub.index]
         for i in likert_answer:  # Add the missing likert because they have nan value and are not in the dataset
-            if i not in df_sub.index:
-                df.loc[i] = np.nan
-        df_sub = df_sub.reindex(index=likert_answer)
+            if i not in df_count.index:
+                df_count.loc[i] = np.nan
+        df_count = df_count.reindex(index=likert_answer)
     # Transpose the column to row to be able to plot a stacked bar chart
-    return df_sub.transpose()
+    return df_count.transpose()
 
 
 def get_percentage(df, filename=None, dropna=True):
