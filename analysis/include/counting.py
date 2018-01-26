@@ -286,17 +286,31 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
     df_sub = df[colnames]
 
     # Convert into string in case all the choice where number only (therefore there is a decimal)
-    for col in df_sub.columns:
-        if df_sub[col].dtypes == np.float64 or df_sub[col].dtype == np.int64:
-            # first convert the np.nan into a value that is different
-            df_sub[col] = df_sub[col].fillna(-1)
-            # # then transform into int to loose the decimal point
-            df_sub[col] = df_sub[col].apply(int)
-            # # then transform into a string
-            df_sub[col] = df_sub[col].apply(str)
-            # # then replace the -1 into np.nan
-            df_sub[col] = df_sub[col].replace({'-1': np.nan})
+    # for col in df_sub.columns:
+    #     if df_sub[col].dtypes == np.float64 or df_sub[col].dtype == np.int64:
+    #         # first convert the np.nan into a value that is different
+    #         df_sub.loc[col] = df_sub[col].fillna(-1)
+    #         # # then transform into int to loose the decimal point
+    #         print(df_sub[col])
+    #         df_sub.loc[col] = df_sub[col].apply(int)
+    #         # # then transform into a string
+    #         df_sub.loc[col] = df_sub[col].apply(str)
+    #         # # then replace the -1 into np.nan
+    #         df_sub.loc[col] = df_sub[col].replace({'-1': np.nan})
 
+    def convert_to_int(x):
+        try:
+            return int(x)
+        except ValueError:
+            return x
+    # first convert the np.nan into a value that is different
+    df_sub = df_sub.fillna(-1)
+    # # then transform into int to loose the decimal point
+    df_sub = df_sub.applymap(lambda x: convert_to_int(x))
+    # # then transform into a string
+    df_sub = df_sub.applymap(str)
+    # # then replace the -1 into np.nan
+    df_sub = df_sub.replace({'-1': np.nan})
     df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
 
     # Calculate the counts for them
