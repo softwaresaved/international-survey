@@ -1,6 +1,16 @@
 # International collaboration for survey
 
-## Current status:
+## Published results
+
+|Country |2016 |2017 |
+|  :-:       |  :-:   |  :-:   
+|Germany| N/A| 2017 Results|
+|Netherlands | N/A    | 
+|South Africa| N/A  	 |
+|UK | 2016 Results | 
+|USA 	       | N/A  
+
+## Current status
 
 |country     |translation|adaptation|draft survey|Finalised|ethic|Survey started|Survey finished|analysis|publication|
 |  :-:       |  :-:   |  :-:   |  :-:   |  :-:   |  :-:   |  :-:     |  :-:     |  :-:   |  :-:   |
