@@ -1,6 +1,18 @@
 # International collaboration for survey
 
-## Current status:
+## Published results
+
+The results will be published in two forms. Currently, only the "Narrative" version is published. This is a Jupyter notebook with charts and a short narrative describing the results. The "Data" will soon be available in the form of a csv of the survey data.
+
+|Country |2016 |2017 |
+|  :-:       |  :-:   |  :-:   
+|Germany| N/A| Narrative|
+|Netherlands | N/A    | 
+|South Africa| N/A  	 |
+|UK | Narrative | 
+|USA 	       | N/A  
+
+## Current status
 
 |country     |translation|adaptation|draft survey|Finalised|ethic|Survey started|Survey finished|analysis|publication|
 |  :-:       |  :-:   |  :-:   |  :-:   |  :-:   |  :-:   |  :-:     |  :-:     |  :-:   |  :-:   |
