@@ -286,14 +286,16 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
     df_sub = df[colnames]
 
     # Convert into string in case all the choice where number only (therefore there is a decimal)
-    # first convert the np.nan into a value that is different
-    df_sub = df_sub.fillna(-1)
-    # # then transform into int to loose the decimal point
-    df_sub = df_sub.applymap(int)
-    # # then transform into a string
-    df_sub = df_sub.applymap(str)
-    # # then replace the -1 into np.nan
-    df_sub = df_sub.replace({'-1': np.nan})
+    for col in df_sub.columns:
+        if df_sub[col].dtypes == np.float64:
+            # first convert the np.nan into a value that is different
+            df_sub = df_sub.fillna(-1)
+            # # then transform into int to loose the decimal point
+            df_sub = df_sub.applymap(int)
+            # # then transform into a string
+            df_sub = df_sub.applymap(str)
+            # # then replace the -1 into np.nan
+            df_sub = df_sub.replace({'-1': np.nan})
 
     df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
 
@@ -307,7 +309,8 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
                 df_count.loc[i] = np.nan
         df_count = df_count.reindex(index=likert_answer)
     # Transpose the column to row to be able to plot a stacked bar chart
-    return df_count.transpose()
+    return df_count
+    # return df_count.transpose()
 
 
 def get_percentage(df, filename=None, dropna=True):
