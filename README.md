@@ -4,10 +4,10 @@
 
 |Country |2016 |2017 |
 |  :-:       |  :-:   |  :-:   
-|Germany| N/A| 2017 Results|
+|Germany| N/A| Narrative / Data|
 |Netherlands | N/A    | 
 |South Africa| N/A  	 |
-|UK | 2016 Results | 
+|UK | Narrative / Data | 
 |USA 	       | N/A  
 
 ## Current status
