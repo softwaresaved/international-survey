@@ -2,7 +2,7 @@
 
 ## Published results
 
-The results are published in two forms. Currently, only the "Narrative" version is published. This is a Jupyter notebook with charts and a short narrative describing the results. The "Data" will soon be available in the form of a csv of the survey data.
+The results will be published in two forms. Currently, only the "Narrative" version is published. This is a Jupyter notebook with charts and a short narrative describing the results. The "Data" will soon be available in the form of a csv of the survey data.
 
 |Country |2016 |2017 |
 |  :-:       |  :-:   |  :-:   
