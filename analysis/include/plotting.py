@@ -103,7 +103,10 @@ def plot_bar_char(df, sort_order=False, stacked=False,
 
     # To set up the label on x or y axis
     # remove the labels that have a value of zero
-    label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+    if dropna is True:
+        label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+    else:
+        label_txt = [wrap_labels(label) for label in df.index]
     label_ticks = range(len(label_txt))
 
     if horizontal is True:
@@ -118,14 +121,14 @@ def plot_bar_char(df, sort_order=False, stacked=False,
     return plt
 
 
-def plot_unique_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, title_plot=False, origin=False):
+def plot_unique_var(df, sort_order=False, stacked=False, dropna=True, title_plot=False, origin=False):
     """
     """
     # df = df.transpose()
     # Set up a bigger size
     if len(df.index) > 10:
         matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
-    plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=False, dropna=dropna)
+    plt = plot_bar_char(df, sort_order=sort_order, stacked=stacked, dropna=dropna)
     # plt.set_xticklabels(df.columns, rotation=0)
     if title_plot:
         plt.suptitle(title_plot)
@@ -166,7 +169,7 @@ def plot_discrete():
     pass
 
 
-def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
+def plot_y_n_multiple(df, sort_order='Yes',
                       legend=True, set_label=False, title_plot=False):
     """
     Plotting Y-N values as stacked bars when passed several questions at the same time.
@@ -195,17 +198,16 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
     # if sort_order.lower() == 'yes':
     #     df.sort_values(by='Yes', inplace=True, ascending=False)
 
-    if horizontal is True:
-        # Reverse the list otherwise the bars are build in the reverse
-        # order than the dataframe
-        # Not WORKING
-        # df = df.reindex(index=df.index[::-1])
-        for i, d in enumerate(df.index):
-            yes_bar = ax.barh(index[i], width=df['Yes'][i], height=bar_width, color=colors(0), label='Yes')
-            no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(3), label='No')
-    else:
-        yes_bar = ax.bar(index, df['Yes'], width=bar_width, bottom=None, color=colors(0), label='Yes')
-        no_bar = ax.bar(index, df['No'], width=bar_width, bottom=df['Yes'], color=colors(3), label='No')
+    # if horizontal is True:
+    #     # Reverse the list otherwise the bars are build in the reverse
+    #     # order than the dataframe
+    #     # Not WORKING
+    #     # df = df.reindex(index=df.index[::-1])
+    #     for i, d in enumerate(df.index):
+    #         yes_bar = ax.barh(index[i], width=df['Yes'][i], height=bar_width, color=colors(0), label='Yes')
+    #         no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(3), label='No')
+    yes_bar = ax.bar(index, df['Yes'], width=bar_width, bottom=None, color=colors(0), label='Yes')
+    no_bar = ax.bar(index, df['No'], width=bar_width, bottom=df['Yes'], color=colors(3), label='No')
 
     if set_label is True:
         pass
@@ -218,17 +220,14 @@ def plot_y_n_multiple(df, sort_order='Yes', horizontal=False,
     # remove the labels that have a value of zero
     label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
     label_ticks = range(len(label_txt))
-    if horizontal is True:
-        plt.yticks(label_ticks, label_txt)
-    else:
-        # This set the xlimits to center the xtick with the bin
-        # Explanation found here:
-        # https://stackoverflow.com/a/27084005/3193951
-        plt.xlim([-1, len(label_txt)])
-        plt.xticks(label_ticks, label_txt, rotation=90)
-        y_label = 'Percentage'
-        ax.set_ylabel(y_label)
-        plt.yticks(np.arange(0, 100, 10))
+    # This set the xlimits to center the xtick with the bin
+    # Explanation found here:
+    # https://stackoverflow.com/a/27084005/3193951
+    plt.xlim([-1, len(label_txt)])
+    plt.xticks(label_ticks, label_txt, rotation=90)
+    y_label = 'Percentage'
+    ax.set_ylabel(y_label)
+    plt.yticks(np.arange(0, 100, 10))
 
     if title_plot:
         ax.suptitle(title_plot)
@@ -309,7 +308,7 @@ def plot_freetext(wc, title_plot=False):
         return None
 
 
-def get_plot(df, type_question, title_plot=False):
+def get_plot(df, type_question, title_plot=False, dropna=True):
 
     try:
         # Remove any [PERCENTAGE] strings from either the columns names or the row index name
@@ -328,19 +327,19 @@ def get_plot(df, type_question, title_plot=False):
 
         elif type_question.lower() == 'likert':
             if len(df.index) == 1:
-                return plot_unique_var(df, title_plot=title_plot, origin='likert')
+                return plot_unique_var(df, title_plot=title_plot, origin='likert', dropna=dropna)
             df = df.transpose()
             return plot_likert(df, title_plot=title_plot)
 
         elif type_question.lower() == 'one choice':
             if len(df.index) == 1:
-                return plot_unique_var(df, stacked=False, horizontal=False, title_plot=title_plot)
-            return plot_multiple_var(df, stacked=False, horizontal=False, title_plot=title_plot)
+                return plot_unique_var(df, stacked=False, title_plot=title_plot, dropna=dropna)
+            return plot_multiple_var(df, stacked=False, title_plot=title_plot, dropna=dropna)
 
         elif type_question.lower() == 'multiple choices':
             if len(df.index) == 1:
-                return plot_unique_var(df, stacked=False, horizontal=False,
-                                       sort_order=False, title_plot=title_plot)
+                return plot_unique_var(df, stacked=False,
+                                       sort_order=False, title_plot=title_plot, dropna=dropna)
             return plot_multiple_var(df, stacked=False, horizontal=False, title_plot=title_plot)
 
         elif type_question.lower() == 'freenumeric':
