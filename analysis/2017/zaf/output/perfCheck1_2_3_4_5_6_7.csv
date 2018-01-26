@@ -1,8 +1,6 @@
-,Never,Sometimes,Often,Very Often,Always
-Do you receive sufficient information on the results of your work?,1.0,4.0,3.0,4.0,2.0
-Does your work give you the opportunity to check on how well you are doing your work?,1.0,5.0,1.0,6.0,1.0
-"In your work, do you have access to sufficient data and information?",,3.0,3.0,6.0,2.0
-Do you receive sufficient information on the purpose of your work?,,2.0,1.0,9.0,2.0
-Does your work provide you with direct feedback on how well you are doing your work?,1.0,4.0,3.0,6.0,
-Does your supervisor/line manager inform you about how well you are doing your work?,3.0,2.0,4.0,4.0,1.0
-Do your colleagues inform you about how well you are doing your work?,1.0,5.0,3.0,5.0,
+,Do you receive sufficient information on the results of your work?,Does your work give you the opportunity to check on how well you are doing your work?,"In your work, do you have access to sufficient data and information?",Do you receive sufficient information on the purpose of your work?,Does your work provide you with direct feedback on how well you are doing your work?,Does your supervisor/line manager inform you about how well you are doing your work?,Do your colleagues inform you about how well you are doing your work?
+Never,1,1,,,1.0,3,1.0
+Sometimes,4,5,3.0,2.0,4.0,2,5.0
+Often,3,1,3.0,1.0,3.0,4,3.0
+Very Often,4,6,6.0,9.0,6.0,4,5.0
+Always,2,1,2.0,2.0,,1,

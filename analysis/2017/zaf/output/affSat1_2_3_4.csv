@@ -1,5 +1,6 @@
-,Strongly disagree,Disagree,Neither agree or disagree,Agree,Strongly Agree
-I find real enjoyment in my job,1.0,2.0,1.0,7.0,3.0
-Most days I am enthusiastic about my job,2.0,,3.0,6.0,2.0
-I feel fairly well satisfied with my job,1.0,3.0,1.0,7.0,2.0
-I like my job better than the average person,1.0,1.0,1.0,8.0,3.0
+,I find real enjoyment in my job,Most days I am enthusiastic about my job,I feel fairly well satisfied with my job,I like my job better than the average person
+Strongly disagree,1,2.0,1,1
+Disagree,2,,3,1
+Neither agree or disagree,1,3.0,1,1
+Agree,7,6.0,7,8
+Strongly Agree,3,2.0,2,3
