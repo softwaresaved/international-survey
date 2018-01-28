@@ -1,6 +1,6 @@
-,Strongly disagree,Disagree,Neither agree or disagree,Agree,Strongly Agree
-I am satisfied with my supervisor/line manager's confidence in me,8,22,42,105,92
-I am satisfied with a word of thanks from my supervisor/line manager,22,25,71,110,41
-I am satisfied with the recognition I receive from my supervisor/line manager for doing my job,23,38,58,98,52
-I am satisfied with the compliments from my supervisor/line manager concerning my work,19,27,67,102,54
-I am satisfied with the encouragement from my supervisor/line manager while doing my job,25,40,64,99,41
+,I am satisfied with my supervisor/line manager's confidence in me,I am satisfied with a word of thanks from my supervisor/line manager,I am satisfied with the recognition I receive from my supervisor/line manager for doing my job,I am satisfied with the compliments from my supervisor/line manager concerning my work,I am satisfied with the encouragement from my supervisor/line manager while doing my job
+Strongly disagree,8,22,23,19,25
+Disagree,22,25,38,27,40
+Neither agree or disagree,42,71,58,67,64
+Agree,105,110,98,102,99
+Strongly Agree,92,41,52,54,41
