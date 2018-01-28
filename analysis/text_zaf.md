@@ -148,9 +148,9 @@ Among these participants that are acknowledged in the paper, only 38% (n=3) are 
 On conference, the number of RSEs that present their work in conference is rather small, only 26% (n=5), when compared to the paper publications.
 
 One important development practice is how the code is distributed and if the RSEs are releasing their work under open licence.
-We asked the participants if they have ever released their work under open source licence and 62% of them replied by the affirmative. However, as it could be considered as a small number, among these 62%, it is seems that the vast majority of them doing it all the time (42%). Therefore, as soon as the step to open source is done, it seems that RSEs seems a constant interest in it. However, they rarely use a Digital Object Identifier (DOI) to help to identify their software. only 18% of them are doing it. And the frequency of use of the DOI among them is much more variable than for the open licence.
+We asked the participants if they have ever released their work under open source licence and 44% (n=8) of them replied by the affirmative. Among these RSEs that publish data under open source licence, the majority of them are using it more often than not (76% n=6) and prefer the licence *Apache Licence 2.0* and the *BSD 3-Clause "New" or "Revised" licence" to do so (50%, n=6).
 
-A last element about publications is the use of [ORCID](https://orcid.org/). It is an online service that allows to connect different publications and work with one identifier per researcher. Half of them are using the service.
+However, they rarely use a Digital Object Identifier (DOI) to help to identify their software, only 11%, n=2 of them are doing it. And the frequency of use of the DOI among them is much more variable than for the open licence.
 
 ## Academic publications
 ### Has your software contributed to research that has been published in a journal or at a conference?; In general, when your software contributes to a paper, are you acknowledged in that paper?; Are you generally named as the main author of the paper?; Are you generally named as a co-author of the paper?
