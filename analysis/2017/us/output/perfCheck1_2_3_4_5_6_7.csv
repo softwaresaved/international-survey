@@ -1,8 +1,6 @@
-,Never,Sometimes,Often,Very Often,Always
-Do you receive sufficient information on the results of your work?,3,30,42,35,28
-Does your work give you the opportunity to check on how well you are doing your work?,8,39,37,30,19
-"In your work, do you have access to sufficient data and information?",2,18,38,47,29
-Do you receive sufficient information on the purpose of your work?,3,15,13,51,57
-Does your work provide you with direct feedback on how well you are doing your work?,10,34,39,37,18
-Does your supervisor/line manager inform you about how well you are doing your work?,10,49,38,20,16
-Do your colleagues inform you about how well you are doing your work?,10,62,40,21,6
+,Do you receive sufficient information on the results of your work?,Does your work give you the opportunity to check on how well you are doing your work?,"In your work, do you have access to sufficient data and information?",Do you receive sufficient information on the purpose of your work?,Does your work provide you with direct feedback on how well you are doing your work?,Does your supervisor/line manager inform you about how well you are doing your work?,Do your colleagues inform you about how well you are doing your work?
+Never,3,8,2,3,10,10,10
+Sometimes,30,39,18,15,34,49,62
+Often,42,37,38,13,39,38,40
+Very Often,35,30,47,51,37,20,21
+Always,28,19,29,57,18,16,6
