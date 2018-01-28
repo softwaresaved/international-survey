@@ -15,7 +15,7 @@ This survey offered the possibility to choose in which language the questions we
 The data was cleaned to remove all participants that were not working in Germany
 
 ## Qualifications
-The highest proportion of RSEs hold a *doctorate* (48%) as their highest qualification but only by a margin when compared to *master degree* (43%). The rest of the participants are splitted between *undergraduate degree* (5%), *Other* (2%) and *final secondary-school examinations, general qualification for university entrance* (2%).
+The highest proportion of RSEs hold a *doctorate* (48%) as their highest qualification but only by a margin when compared to *master degree* (43%). The rest of the participants are split between *undergraduate degree* (5%), *Other* (2%) and *final secondary-school examinations, general qualification for university entrance* (2%).
 
 Most RSEs derive from a background in *Physics and Astronomy* (26%). Then the three mains background are *Computer Science* (17%), *Biological Sciences* (11%) and *Other* (11%). There is a significant reduction in numbers in the next most popular background *Geography & Environmental Sciences* (7%).
 ### Education level
@@ -29,7 +29,7 @@ The majority of RSEs fall within the *25 to 34 years* (45%), and the next more i
 
 ## Salary
 
-We asked the participants to give us the range of salary they are paid. The most common salary in Germany for the participants is less than 27.499 euros (19%). However, almost half of the participants (42%), are concentred within three ranges of salary, spanning from 44.000 euros to 65.999 euros: 10% for the range between 44.000 ad 49.999 euros, 16% between 50.000 and 54.999 euros and 16% between 55.000 and 65.999 euros.
+We asked the participants to give us the range of salary they are paid. The most common salary in Germany for the participants is less than 27.499 euros (19%). However, almost half of the participants (42%), are concentrated within three ranges of salary, spanning from 44.000 euros to 65.999 euros: 10% for the range between 44.000 ad 49.999 euros, 16% between 50.000 and 54.999 euros and 16% between 55.000 and 65.999 euros.
 
 
 ### Professional qualifications
