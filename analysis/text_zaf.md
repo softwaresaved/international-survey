@@ -167,20 +167,64 @@ However, they rarely use a Digital Object Identifier (DOI) to help to identify t
 
 # Section 8: Sustainability and technical details
 
+This section comprises two subsections that focus on the technical and development aspects of the RSEs' work. They aim to understand good practices in developing software and which tools are important for RSEs.
+
+Developing software requires a set of good practices to ensure the quality of the subsequent analysis as well as the robustness of the developed software, to name a few of important aspects. We wanted to see if the implementation of some simple but essential good practices were a reality. Three measures were created, the implementation of testing, the bus factor and the technical hand over plan.
+These metrics allows to see the importance of the RSEs role in their team but also if they are themselves implementing some practices that are used widely in industry but less in academic research.
+
+We asked the participants to choose any of the following testing methods:
+* Test engineers conduct testing
+* Developers conduct testing
+* Users conduct testing
+* No formal testing
+
+Obviously, the *test engineers conduct testing* is the most potential testing method but may not be possible in number of small projects while, no formal testing should not occur in any ideal scenario, regardless of the size of the project.
+
+24% (n=7) of the participants confessed they were not implementing any testing at all. It may seems a low number but we think it is still a high percentage considering the specific work of this population. When they are conducting testing, the RSEs seems to prefer (or only able to implement) *developer testing* (41% of them, n=12) or letting the users conduct the testing (28%, n=8), while the use of test engineers is marginal (7%, n=2).
+
+We chose two broad measures to provide an insight into sustainability: the bus factor and technical hand over planning. The bus factor is a measure of the number of developers who understand a specific software project and could, with only a cursory review of the project, maintain or extend the code. A project with a bus factor of 1 is completely reliant on only one developer. If this developer finds new employment, becomes ill or is hit by the titular bus, then the project will fail. A high bus factor provides some confidence that the project can be sustained even if a developer leaves. A technical hand over plan is used to introduce a new developer to a software project. These plans cover basic information, such as the licence and location of the software, a repository, a description of the software architecture, a summary of development plans and any other information that a new developer would need to understand the software. A project that has written (and maintained) a technical hand over plan can withstand the departure of a developer, even a key developer, significantly better than one without such a plan.
+
+On a vast majority of the RSEs' projects the bus factor is 1 (78%, n=14), higher bus factors are only marginal. The presence of a technical plan can mitigate the low bus factor in the different projects. But this presence is really low (11%, n=2) and presents a risk of project failures.
+
+On a more positive note about sustainability, it appears that a large majority of the participants use a version control (76%, n=16) and mainly GIT (62%, n=13).
+They also extensively use collaboration tools (97%, n=17), they mostly use Github (60%, n=12) but some are using Institutional Repository (15%, n=3) or Bitbucket (10%, n=2). They also extensively use collaboration online tools to communicate with their project groups, mainly Slack.
+
+On technical details we wanted to know which of the programming languages are mostly used by the RSEs. We give them a multi-choice list inspired by the [results](https://insights.stackoverflow.com/survey/2017#most-popular-technologies) published by Stackoverflow. Python is clearly the most used language (22%, n=9) followed by SQL (10%, n=4) and R (10%, n=4).
+About which Operating System used by RSEs, a majority are using GNU/Linux (46%, n=6), while Windows and OS X have way less users (31%, n=4 and 23%, n=3).
+
 ## Good practices
 ### In general, what sort of testing do you conduct on your software? (check all that apply)
 ### What is the bus factor of your most important software project? (the bus factor is the number of team members who, if run over by a bus, would put the project in jeopardy, so 1 means the project is dependent on a single person)
 ### Is there a technical hand-over plan for your most important software project?
 ### Which, if any, version control tools do you use for software development?
 ### Which, if any, online collaboration tools and open repositories do you use for software development?
+### What are your three (3) favourite tools to manage project deliverables, keep track of progress, communicate with your project group(s)? (Please wirte a comma separated list, eg: Slack, Trello, Google Wave)
 
 ## Technical details
 ### What programming languages do you use at work? (Select as many as apply)
 ### What Operating System do you prefer to use at work?
-### What are your three (3) favourite tools to manage project deliverables, keep track of progress, communicate with your project group(s)? (Please wirte a comma separated list, eg: Slack, Trello, Google Wave)
 
 
 # Section 9: Job satisfaction
+
+The job satisfaction is an essential pulse to take about the community. It helps to track the evolution and the current state of the RSEs within their role and to catch any sign of structural or organisational dysfunction that are translated into well-being. There are a lot of different metrics to measure the quality of a job on a personal and psychological level [4]. Several models exist to understand the link between different factors of job satisfaction and turnover intention [5]–[9]. Turnover intention is an important measure that is highly associated with the risk of employees leaving the organisation [7]. Job satisfaction is important in retaining RSEs. Perceived employability provides information on how workers values their own skills in regard of the market. To measure the different attitudes toward the RSE role, we used scales that have been created in [5], [6], [8], [9]. These are Likert scale [10], which are 5 point ordinal scales graduated from Strongly disagree to Strongly agree. Each scale is composed of several so called items (i.e. questions) that each measure one attitude.
+
+Beside these specific concepts we asked more general question about their satisfaction in their current position and their satisfaction with their career in general with a range of answers from *0 - Not at all satisfied* to *10 - Completely satisfied*. 69% of the participants answered more than 5 to the scale (which can be considered as a neutral position) to the question about their satisfaction about their current position. For the question about their satisfaction with their career in general (and using the same scale), only one participants answered 0, the rest of the participants answered at least 5.
+
+The specific questions about their job satisfaction reflect, in general, the same opinion as the two more generic questions. However, the granularity helps to identify a several issues that would not appears with generic questions:
+
+* *The feedback about the performance*: These questions ask if the RSEs feel that they receive enough information about their work and their performance. While they seems to have enough information about the purpose of their work and having access to sufficient data and information, they are less assertive about the feedback they receive from their colleagues and their supervisors, mainly from the supervisors.
+
+* *The turnover intention*: These questions aim to measure the desire to quit their current position. Overall, the participants are not willing to leave their position and are not necessarily searching for other job, even if the potential job would offer the same compensations. However, these positive signals about their job are tempered by the low score on the question "How often do you look forward to another day at work?".
+
+* *The perceived employability*: This concept is linked to the previous one. People may not have the intention to leave their jobs, not because they like it, but because they fear they are not employable. This is not the case here, the participants consider themselves more often employable than not.=
+
+* *The affective recognition*: This concept try to see if the participants receive positive feedback from their supervisors. Overall, again the participants report a positive relation with their supervisors. It means they are not systematic issues with direct management.
+
+* *Affective satisfaction*: Here, the concept measures how much the participants enjoy and like their job. The answers were positive and again, reflect the answers given at the more generic questions.
+
+* *The possibility of progression*: This question aims to study the possibility of evolution for the RSEs, if information is available and if they see a possibility of evolution within their current career. This is the only questions that clearly received negative answers. To summarise, even if the RSEs have planned to be in this position, as a part of their career plan, the majority of them think they cannot be promoted in their current group. Also, it seems unlikely their next position will be an RSE role which can be translate into a higher turnover in the following year. This risk is aggravated by the low bus factor and the absence of technical hand-over plan (see section 8).
+
 
 ## General satisfaction
 ### In general, how satisfied are you with your current position; In general, how satisfied are you with your career
@@ -207,6 +251,11 @@ However, they rarely use a Digital Object Identifier (DOI) to help to identify t
 
 # Section 10: Research Software Engineer
 
+This last section regroups different questions about RSEs in general, the specific skills for them, where they meet other RSEs and the prospect of a conference in Germany. We asked them *how* they acquired the skills to become an RSE but also *which* skills they would like to acquire to become a better RSE. The propositions are listed and a wordcloud is proposed to see which are the most frequent words.
+It seems the RSE learn their skills on their own through self-teaching or experience.
+
+The last section was about the RSE networkt appears that the network is not really efficient yet. First, to the question where they meet other RSE, only  1 participant met them through the UKRSE Association (which, on later question, none of the participants mention to be part of it).
+However, to the question if they would be interested in such organisation in South Africa, 62% (n=8) answered 'Yes'. In which organisation, what they will like the most would be the possibility to network and build a range of collaboration (both in research and software), the interestin training and job opportunities being the less important for them.
 ## Skills
 ### How did you learn the skills you need to become an RSE?
 ### What three skills would you like to acquire or improve to help your work as a Research Software Engineer? The skills can be technical and non-technical.
