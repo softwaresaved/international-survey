@@ -1,2 +1,6 @@
-,1,2,3,4,5+
-"What is the bus factor of your most important software project? (the bus factor is the number of team members who, if run over by a bus, would put the project in jeopardy, so 1 means the project is dependent on a single person) []",56,51,18,7,10
+,"What is the bus factor of your most important software project? (the bus factor is the number of team members who, if run over by a bus, would put the project in jeopardy, so 1 means the project is dependent on a single person) []"
+1,56
+2,51
+3,18
+4,7
+5+,10

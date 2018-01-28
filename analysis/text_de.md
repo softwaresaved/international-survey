@@ -94,7 +94,7 @@ It is important to note that these percentages are not mutually exclusives as th
 ### Which of the following sources are used to fund your current, largest project?
 ### Which of the following sources were used to fund your current, largest project three years ago?
 
-# Section 5: Question about previous employment
+# Section 5. Question about previous employment
 
 Several questions were about the participants previous job. The idea is to collect insight of their career and understand what are their motivation to be an RSE.
 
@@ -119,7 +119,7 @@ It appears that the Desire to work in a research environment, the Freedom to cho
 ### Rank the following factors dependent on how strongly they influenced your decision to accept your current position
 
 
-# Section 6: Collaboration and training
+# Section 6. Collaboration and training
 
 RSEs do not work for themselves, their role involves writing code that is used by others (as seen in section 2), but the collaboration can take other forms. This is why we asked with whom the participants work with. Usually, they seems to be embedded in a stable group, 64% of them report to work with the same researchers, while a minority has a more flexible collaboration (36%).
 On the side of collaboration, we wanted to know if they were working within a stable group of researcher software. It is the case for 56% of them, while 44% do not have such group.
@@ -177,7 +177,7 @@ A last element about publications is the use of [ORCID](https://orcid.org/). It 
 ### Do you have an ORCID ID?
 
 
-# Section 8: Sustainability and technical details
+# Section 8. Sustainability and technical details
 
 This section comprises two subsections that focus on the technical and development aspects of the RSEs' work. They aim to understand good practices in developing software and which tools are important for RSEs.
 
@@ -270,7 +270,7 @@ The specific questions about their job satisfaction reflect, in general, the sam
 ### It is likely that I will gain a promotion within my current group; The process I have to complete to gain a promotion is clear and understandable; There are many opportunities within my chosen career plan; My current position is an integral part of my career plan; It is likely that my next position will be an RSE role
 
 
-# Section 10: Research Software Engineer
+# Section 10. Research Software Engineer
 
 This last section regroups different questions about RSEs in general, the specific skills for them, where they meet other RSEs and the prospect of a conference in Germany. We asked them *how* they acquired the skills to become an RSE but also *which* skills they would like to acquire to become a better RSE. The propositions are listed and a wordcloud is proposed to see which are the most frequent words.
 
