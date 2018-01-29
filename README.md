@@ -5,12 +5,12 @@
 The results will be published in two forms. Currently, only the "Narrative" version is published. This is a Jupyter notebook with charts and a short narrative describing the results. The "Data" will soon be available in the form of a csv of the survey data.
 
 |Country |2016 |2017 |
-|  :-:       |  :-:   |  :-:   
-|Germany| N/A| Narrative|
-|Netherlands | N/A    | 
-|South Africa| N/A  	 |
-|UK | Narrative | 
-|USA 	       | N/A  
+|  :-:       |  :-:   |  :-:  |
+|Germany| N/A | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_de_2017_narrative.ipynb)|
+|Netherlands | N/A | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_nl_2017_narrative.ipynb)    | 
+|South Africa| N/A | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_zaf_2017_narrative.ipynb)  	 |
+|UK | | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_uk_2017_narrative.ipynb) | 
+|USA 	   | N/A    | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_us_2017_narrative.ipynb)  |
 
 ## Current status
 
