@@ -57,8 +57,20 @@ class CleaningData(CleaningConfig):
         # text while converted in euros for the translation in German. This function just convert each of the answers into the euros.
         if self.year == '2017' and self.country == 'de':
             self.df = self.clean_salary_de_2017(self.df)
+        if self.year == '2017' and self.country == 'us':
+            self.df = self.clean_salary_us_2017(self.df)
         self.df, self.structure_by_section = self.create_language_section(self.df, self.structure_by_section)
         return self.df
+
+    def clean_salary_us_2017(self, df):
+        """
+        This function is only used for the US data in 2017.
+        The salary has the '$' symbol which is not displayed
+        properly in HTML and jupyter notebook.
+        """
+        q_header = 'socio4. Please select the range of your salary'
+        df[q_header] = df[q_header].str.replace('$', "\$")
+        return df
 
     def clean_salary_de_2017(self, df):
         """
