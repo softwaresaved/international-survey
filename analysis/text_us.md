@@ -1,12 +1,20 @@
 # Importing modules
 
 # Loading dataset
+To find the total number of participants, we took all submissions and then removed those from people who were outside the country (see question 1) and those from people who had not completed the first ten questions (i.e. those people who did not complete the first page of the survey).
+
 
 # Section 1. Social demographics
+In this section, we determine some information about the demographics of the respondents: language, country of work, gender, salary, educational level, age.
+
 
 ## Country of work
 ### In which country do you work?
+
+## Gender
 ### Please select your gender
+
+## Age
 ### Please select your age
 
 ## Ethnic origin
