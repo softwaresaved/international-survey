@@ -14,12 +14,6 @@ This survey offered the possibility to choose in which language the questions we
 ### In which country do you work?
 The data was cleaned to remove all participants that were not working in Germany
 
-## Qualifications
-The highest proportion of RSEs hold a *doctorate* (48%) as their highest qualification but only by a margin when compared to *master degree* (43%). The rest of the participants are split between *undergraduate degree* (5%), *Other* (2%) and *final secondary-school examinations, general qualification for university entrance* (2%).
-
-Most RSEs derive from a background in *Physics and Astronomy* (26%). Then the three mains background are *Computer Science* (17%), *Biological Sciences* (11%) and *Other* (11%). There is a significant reduction in numbers in the next most popular background *Geography & Environmental Sciences* (7%).
-### Education level
-### Field of qualification
 
 ## Gender
 Their is a clear gender imbalance in the RSE community in Germany. It is predominately *male* (83%). Only 13% of the participants describe their gender as *female*, while 4% *prefer not to say*.
@@ -31,11 +25,17 @@ The majority of RSEs fall within the *25 to 34 years* (45%), and the next more i
 
 We asked the participants to give us the range of salary they are paid. The most common salary in Germany for the participants is less than 27.499 euros (19%). However, almost half of the participants (42%), are concentrated within three ranges of salary, spanning from 44.000 euros to 65.999 euros: 10% for the range between 44.000 ad 49.999 euros, 16% between 50.000 and 54.999 euros and 16% between 55.000 and 65.999 euros.
 
+## Qualifications
+The highest proportion of RSEs hold a *doctorate* (48%) as their highest qualification but only by a margin when compared to *master degree* (43%). The rest of the participants are split between *undergraduate degree* (5%), *Other* (2%) and *final secondary-school examinations, general qualification for university entrance* (2%).
 
+Most RSEs derive from a background in *Physics and Astronomy* (26%). Then the three mains background are *Computer Science* (17%), *Biological Sciences* (11%) and *Other* (11%). There is a significant reduction in numbers in the next most popular background *Geography & Environmental Sciences* (7%).
+### Education level
+### Field of qualification
 ### Professional qualifications
 The RSE in general do not have personal qualification, among the 375 participants, only 54 filled this question with a valuable information
 
 ### Do you hold any other professional degrees/qualifications? (Please enter each of them separated by a semicolon)
+
 
 # Section 2: Questions about coding
 
@@ -55,7 +55,7 @@ Unsurprisingly, RSEs spend the majority of their time coding. The only other maj
 ### In an average month, how much time do you spend on software development (Please rate your answer between 1 to 10. 1 Being none at all and 10 being All your time.)
 
 
-# Section 3: Questions about employment
+# Section 3. Questions about employment
 
 30% of RSEs work within a university. However, in Germany they have research centers which are different. In total, these account for 58%, with a majority of RSEs working in the *Helmholtz Association of German Research Centres* and for the *Max Plancks Society* (both accounting for 25% of the total of participants).
 
@@ -94,7 +94,7 @@ It is important to note that these percentages are not mutually exclusives as th
 ### Which of the following sources are used to fund your current, largest project?
 ### Which of the following sources were used to fund your current, largest project three years ago?
 
-# Section 5. Question about previous employment
+# Section 5. Questions about previous employment
 
 Several questions were about the participants previous job. The idea is to collect insight of their career and understand what are their motivation to be an RSE.
 
