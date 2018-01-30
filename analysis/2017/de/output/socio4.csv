@@ -1,12 +1,12 @@
 ,Please select the range of your salary
-Less than 27.499 EUR,50
-Between 27.500 and 32.999 EUR,19
-Between 33.000 and 38.499 EUR,14
-Between 38.500 and 43.999 EUR,16
-Between 44.000 and 49.999 EUR,25
-Between 50.000 and 54.999 EUR,41
-Between 55.000 and 65.999 EUR,40
-Between 66.000 and 76.999 EUR,14
-Between 77.000 and 109.999 EUR,12
-Prefer not to say,26
-,68
+Less than 27.499 EUR,50.0
+Between 27.500 and 32.999 EUR,19.0
+Between 33.000 and 38.499 EUR,14.0
+Between 38.500 and 43.999 EUR,16.0
+Between 44.000 and 49.999 EUR,25.0
+Between 50.000 and 54.999 EUR,41.0
+Between 55.000 and 65.999 EUR,40.0
+Between 66.000 and 76.999 EUR,14.0
+Between 77.000 and 109.999 EUR,12.0
+More than 110.000 EUR,
+Prefer not to say,26.0
