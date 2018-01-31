@@ -326,7 +326,7 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
             return plot_y_n_multiple(df, sort_order='name', title_plot=title_plot)
 
         elif type_question.lower() == 'likert':
-            if len(df.index) == 1:
+            if len(df.columns) == 1:
                 return plot_unique_var(df, title_plot=title_plot, origin='likert', dropna=False)
             df = df.transpose()
             return plot_likert(df, title_plot=title_plot)
