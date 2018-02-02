@@ -1,3 +1,12 @@
-,0 - Not at all satisfied,1,2,3,4,5,6,7,8,9,10 - Completely satisfied
-Your current position,7,4,6,4,12,18,32,61,44,26,5
-Your career,4,4,7,14,19,23,37,55,41,12,4
+,Your current position,Your career
+0 - Not at all satisfied,7,4
+1,4,4
+2,6,7
+3,4,14
+4,12,19
+5,18,23
+6,32,37
+7,61,55
+8,44,41
+9,26,12
+10 - Completely satisfied,5,4

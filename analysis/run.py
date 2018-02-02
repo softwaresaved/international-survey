@@ -88,13 +88,6 @@ def main():
                                        folder_df)
                     notebook.add_plot(answer_format)
 
-                # if answer_format == 'ranking':
-                #     notebook.add_count(list_questions, answer_format, file_answer, order_question,
-                #                        folder_df)
-                #     notebook.add_percentage()
-                #     notebook.add_display_percentage()
-                #     notebook.add_plot(answer_format)
-    #
     print('Running notebook')
     notebook.run_notebook()
     print('Saving notebook')
