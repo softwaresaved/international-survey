@@ -1,5 +1,6 @@
-,Never,Sometimes,Often,Very Often,Always
-How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?,32.0,98.0,41.0,24.0,12.0
-How often do you look forward to another day at work?,26.0,115.0,74.0,,
-How often do you consider leaving your job?,54.0,135.0,30.0,,
-How often do you dream about getting another job that will better suit your needs?,43.0,99.0,23.0,34.0,19.0
+,How often do you feel frustrated when not given the opportunity to achieve your personal work-related goals?,How often do you look forward to another day at work?,How often do you consider leaving your job?,How often do you dream about getting another job that will better suit your needs?
+Never,32,26.0,54.0,43
+Sometimes,98,115.0,135.0,99
+Often,41,74.0,30.0,23
+Very Often,24,,,34
+Always,12,,,19
