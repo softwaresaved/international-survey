@@ -329,11 +329,12 @@ def get_percentage(df, filename=None, dropna=True):
     """
     Normalise results to be plotted
     """
+    print(df)
     if len(df.columns) > 1 and len(df.index) > 1:
         by_row, by_col = True, False
     else:
         by_row, by_col = True, True
-
+    print('By row: {}, by col: {}'.format(by_row, by_col))
     if dropna is True:
         # get nan Percentage
         # 'Percentage NaN'
@@ -344,10 +345,9 @@ def get_percentage(df, filename=None, dropna=True):
             df = df.drop(np.nan, axis=1)
         except ValueError:
             df = df.fillna(0)  # In case of likert, the df is transpose and here replace with 0 to be able to compute percentage
-            pass
     value = compute_percentage(df, by_row, by_col)
     # Remove the decimals
-    value = [np.round(x) for x in value]
+    # value = [np.round(x) for x in value]
 
     index_df = df.index
     name_df = df.columns
