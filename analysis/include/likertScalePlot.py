@@ -215,9 +215,13 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
     df = df.fillna(0)
     try:
         # Create the figure object
-        fig = plt.figure(figsize=(10, 8))
-        # Create an axes object in the figure
-        ax = fig.add_subplot(111)
+        # if figsize is None:
+        #     fig = plt.figure(figsize=(10, 8))
+        # else:
+        #     fig = plt.figure(figsize=figsize)
+        # # Create an axes object in the figure
+        # ax = fig.add_subplot(111)
+        fig, ax = plt.subplots()
 
         # Generate an array of colors based on different colormap. The default value
         # Use a divergent colormap.
@@ -280,7 +284,7 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
         # Change the plot title
         if title_plot:
             plt.suptitle(title_plot)
-        return fig
+        return ax
     except Exception:
         raise
 

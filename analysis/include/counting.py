@@ -329,12 +329,10 @@ def get_percentage(df, filename=None, dropna=True):
     """
     Normalise results to be plotted
     """
-    print(df)
     if len(df.columns) > 1 and len(df.index) > 1:
         by_row, by_col = True, False
     else:
         by_row, by_col = True, True
-    print('By row: {}, by col: {}'.format(by_row, by_col))
     if dropna is True:
         # get nan Percentage
         # 'Percentage NaN'
