@@ -11,18 +11,6 @@ from include.likertScalePlot import likert_scale, get_colors
 from include.barplot import barPlot
 
 
-
-
-
-
-def plot_likert(df):
-
-    df = df.transpose()
-    fig, ax = plt.subplots()
-    plot = likert_scale(df)
-    return df, fig, ax
-
-
 def plot_numeric_var(df):
     """
     """
@@ -59,7 +47,6 @@ def bar_plot(df, colormap, horizontal=False):
     return ax
 
 
-
 def plot_y_n_single(df, colormap):
     """
     """
@@ -68,6 +55,7 @@ def plot_y_n_single(df, colormap):
     colors = [np.array((colormap(0), colormap(3)))]
     ax = df.plot.bar(label='index', width=width, color=colors)
     return ax
+
 
 def stacked_y_n(df, colormap):
     """
@@ -100,10 +88,20 @@ def ranking_plot(df, colormap):
     ax = df.plot.bar(color=colors, stacked=True, width=width)
     return ax
 
+
+def likert_plot(df):
+
+    # df = df.transpose()
+    # fig, ax = plt.subplots()
+    ax = likert_scale(df)
+    return ax
+
+
 def get_plot(df, type_question, title_plot=False, dropna=True):
 
     colormap = plt.cm.tab20
     y_label = 'Percentage'
+    legend = None
     # Remove any [PERCENTAGE] strings from either the columns names or the row index name
     # remove for the columns
     try:
@@ -118,19 +116,85 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
     try:
         if type_question.lower() == 'one choice' or type_question.lower() == 'multiple choices':
             ax = bar_plot(df, colormap)
+            legend = False
 
         elif type_question.lower() == 'y/n/na':
             if len(df.index) == 1:
                 df = df.transpose()
                 ax = plot_y_n_single(df, colormap)
+                legend = False
             else:
                 ax = stacked_y_n(df, colormap)
+                legend = True
+
         elif type_question.lower() == 'ranking':
             ax = ranking_plot(df, colormap)
-        cosmetic_changes_plot(df, ax, title_plot=False, y_label=y_label)
+            legend = True
+
+        elif type_question.lower() == 'likert':
+            df = df.transpose()
+            ax = likert_plot(df)
+
+        cosmetic_changes_plot(df, ax, legend=legend)
+
     except TypeError:  # In Case an empty v_count is passed
         return None
 
+def cosmetic_changes_plot(df, ax, legend):
+    """
+    Get the plot and return a modified one to have some
+    cosmetic changes
+    """
+
+    # Remove the upper and right line
+    remove_to_right_line(ax)
+    setup_legend(ax, legend)
+    # Add appropriate title
+    # if title:
+    #     add_title(title_plot)
+    #
+    # # Add appropriate x labels
+    # if x_labels:
+    #     add_x_labels(df)
+    #
+    # # Add appropriate y labels
+    # if y_label:
+    #     add_y_label(y_label)
+
+    # Add or remove the legend
+    # add_legend()
+    return ax
+
+
+def setup_legend(ax, legend):
+    if legend is True:
+        plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
+    elif legend is False:
+        ax.legend().set_visible(False)
+    else:
+        pass
+
+
+def remove_to_right_line(ax):
+    """
+    Remove the top and the right axis
+    """
+    # Ensure that the axis ticks only show up on the bottom and left of the plot.
+    # Ticks on the right and top of the plot are generally unnecessary chartjunk.
+    # Hide the right and top spines
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.get_xaxis().tick_bottom()
+    ax.get_yaxis().tick_left()
+
+def add_title(title_plot):
+    if title_plot:
+        plt.title(title_plot)
+    else:
+        plt.title('hdsjkadjskaldjaskljdsalkjdaslkjdaslkjdsalk')
+
+def add_y_label(y_label):
+    ax.set_ylabel(y_label)
 
 def add_x_labels(df):
 
@@ -170,47 +234,6 @@ def add_x_labels(df):
     plt.xticks(label_ticks, label_txt, rotation=90)
 
 
-def cosmetic_changes_plot(df, ax, title_plot=False, y_label='', x_index='index'):
-    """
-    Get the plot and return a modified one to have some
-    cosmetic changes
-    """
-    def remove_to_right_line(ax):
-        """
-        Remove the top and the right axis
-        """
-        # Ensure that the axis ticks only show up on the bottom and left of the plot.
-        # Ticks on the right and top of the plot are generally unnecessary chartjunk.
-        # Hide the right and top spines
-        ax.spines['right'].set_visible(False)
-        ax.spines['top'].set_visible(False)
-        ax.get_xaxis().tick_bottom()
-        ax.get_yaxis().tick_left()
-
-    def add_title(title_plot):
-        if title_plot:
-            plt.title(title_plot)
-        else:
-            plt.title('hdsjkadjskaldjaskljdsalkjdaslkjdaslkjdsalk')
-
-    def add_y_label(y_label):
-        ax.set_ylabel(y_label)
-
-    # Remove the upper and right line
-    remove_to_right_line(ax)
-
-    # Add appropriate title
-    add_title(title_plot)
-
-    # Add appropriate x labels
-    add_x_labels(df)
-
-    # Add appropriate y labels
-    add_y_label(y_label)
-
-    # Add or remove the legend
-    # add_legend()
-    return ax
 
 def display_side_by_side(*args):
     """
