@@ -11,16 +11,6 @@ from include.likertScalePlot import likert_scale, get_colors
 from include.barplot import barPlot
 
 
-def plot_multiple_var(df, sort_order=False, stacked=False, horizontal=False, dropna=True, legend=False, ranking=False, title_plot=False):
-    """
-    """
-    ax = plot_bar_char(df, sort_order=sort_order, stacked=stacked, horizontal=horizontal, dropna=dropna, legend=legend)
-    # if ranking is True:
-    #     plot.yticks(np.arange(0, 100, 10))
-    #
-    # y_label = 'Percentage'
-    # plt.ylabel(y_label)
-    return df, ax
 
 
 
@@ -79,7 +69,7 @@ def plot_y_n_single(df, colormap):
     ax = df.plot.bar(label='index', width=width, color=colors)
     return ax
 
-def stacked_y_n(df, colormap, sort_order='Yes', legend=True):
+def stacked_y_n(df, colormap):
     """
     Plotting Y-N values as stacked bars when passed several questions at the same time.
     If want to plot single question Y-N see plot_single_y_n()
@@ -99,6 +89,15 @@ def stacked_y_n(df, colormap, sort_order='Yes', legend=True):
     # Take the colors associate to yes and no
     colors = [colormap(0), colormap(3)]
     ax = df.plot.bar(width=width, color=colors, stacked=True)
+    return ax
+
+
+def ranking_plot(df, colormap):
+    """
+    """
+    width = 0.8
+    colors = colormap(np.arange(len(df)))
+    ax = df.plot.bar(color=colors, stacked=True, width=width)
     return ax
 
 def get_plot(df, type_question, title_plot=False, dropna=True):
@@ -126,6 +125,8 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
                 ax = plot_y_n_single(df, colormap)
             else:
                 ax = stacked_y_n(df, colormap)
+        elif type_question.lower() == 'ranking':
+            ax = ranking_plot(df, colormap)
         cosmetic_changes_plot(df, ax, title_plot=False, y_label=y_label)
     except TypeError:  # In Case an empty v_count is passed
         return None
@@ -221,6 +222,8 @@ def display_side_by_side(*args):
     df1 = original_df1.copy()
     original_df2 = args[1]
     df2 = original_df2.copy()
+    # Round the value to display them
+    df2 = df2.round()
     rows, columns = df1.shape
     index_row = df2.index
     df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
