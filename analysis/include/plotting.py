@@ -55,17 +55,31 @@ def plot_numeric_var(df):
     return df, fig, ax
 
 
-def bar_plot(df, colormap):
+def bar_plot(df, colormap, horizontal=False):
     """
     """
     # Get the color palette
     colors = [colormap(np.arange(len(df)))]
     width=0.8
-    ax = df.plot.bar(label='index', width=width, color=colors)
+    if horizontal:
+        ax = df.plot.barh(label='index', width=width, color=colors)
+    else:
+        ax = df.plot.bar(label='index', width=width, color=colors)
 
     return ax
 
-def plot_y_n_multiple(df, sort_order='Yes', legend=True, set_label=False, title_plot=False):
+
+
+def plot_y_n_single(df, colormap):
+    """
+    """
+    width=0.8
+    # Take the colors associate to yes and no
+    colors = [np.array((colormap(0), colormap(3)))]
+    ax = df.plot.bar(label='index', width=width, color=colors)
+    return ax
+
+def stacked_y_n(df, colormap, sort_order='Yes', legend=True):
     """
     Plotting Y-N values as stacked bars when passed several questions at the same time.
     If want to plot single question Y-N see plot_single_y_n()
@@ -81,63 +95,11 @@ def plot_y_n_multiple(df, sort_order='Yes', legend=True, set_label=False, title_
     :return:
         :fig matplotlib.plt.plot(): Return the plot itself
     """
-    fig, ax = plt.subplots()
-    df = df[['Yes', 'No']]
-    index = np.arange(len(df))
-    colors = plt.cm.tab20
-    bar_width = 0.9
-    # opacity = 0.7
-
-    # # Sorting the df with the Yes values
-    # if sort_order.lower() == 'yes':
-    #     df.sort_values(by='Yes', inplace=True, ascending=False)
-
-    # if horizontal is True:
-    #     # Reverse the list otherwise the bars are build in the reverse
-    #     # order than the dataframe
-    #     # Not WORKING
-    #     # df = df.reindex(index=df.index[::-1])
-    #     for i, d in enumerate(df.index):
-    #         yes_bar = ax.barh(index[i], width=df['Yes'][i], height=bar_width, color=colors(0), label='Yes')
-    #         no_bar = ax.barh(index[i], width=df['No'][i], height=bar_width, left=df['Yes'][i], color=colors(3), label='No')
-    yes_bar = ax.bar(index, df['Yes'], width=bar_width, bottom=None, color=colors(0), label='Yes')
-    no_bar = ax.bar(index, df['No'], width=bar_width, bottom=df['Yes'], color=colors(3), label='No')
-
-    if set_label is True:
-        pass
-
-    # Add the legend
-    ax.legend((yes_bar, no_bar), ('Yes', 'No'))
-
-    # Add the x-labels
-    # To set up the label on x or y axis
-    # remove the labels that have a value of zero
-    label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
-    label_ticks = range(len(label_txt))
-    # This set the xlimits to center the xtick with the bin
-    # Explanation found here:
-    # https://stackoverflow.com/a/27084005/3193951
-    plt.xlim([-1, len(label_txt)])
-    plt.xticks(label_ticks, label_txt, rotation=90)
-    y_label = 'Percentage'
-    ax.set_ylabel(y_label)
-    plt.yticks(np.arange(0, 100, 10))
-
-    # Modifying the whitespaces between the bars and the graph
-    plt.margins(0.02, 0.02)
-
-    return df, fig, ax
-
-
-def plot_y_n_single(df, colormap):
-    """
-    """
     width=0.8
     # Take the colors associate to yes and no
-    colors = [np.array((colormap(0), colormap(3)))]
-    ax = df.plot.bar(label='index', width=0.8, color=colors)
+    colors = [colormap(0), colormap(3)]
+    ax = df.plot.bar(width=width, color=colors, stacked=True)
     return ax
-
 
 def get_plot(df, type_question, title_plot=False, dropna=True):
 
@@ -159,8 +121,11 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
             ax = bar_plot(df, colormap)
 
         elif type_question.lower() == 'y/n/na':
-            df = df.transpose()
-            ax = plot_y_n_single(df, colormap)
+            if len(df.index) == 1:
+                df = df.transpose()
+                ax = plot_y_n_single(df, colormap)
+            else:
+                ax = stacked_y_n(df, colormap)
         cosmetic_changes_plot(df, ax, title_plot=False, y_label=y_label)
     except TypeError:  # In Case an empty v_count is passed
         return None
@@ -192,7 +157,10 @@ def add_x_labels(df):
             return ''.join(label_to_return)
 
         return split_at_whitespace(label)
-    label_txt = [wrap_labels(label) for label in df.index]
+    # Add the x-labels
+    # To set up the label on x or y axis
+    # remove the labels that have a value of zero
+    label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
     label_ticks = range(len(label_txt))
     # This set the xlimits to center the xtick with the bin
     # Explanation found here:
@@ -217,7 +185,6 @@ def cosmetic_changes_plot(df, ax, title_plot=False, y_label='', x_index='index')
         ax.spines['top'].set_visible(False)
         ax.get_xaxis().tick_bottom()
         ax.get_yaxis().tick_left()
-        # return ax
 
     def add_title(title_plot):
         if title_plot:
@@ -235,14 +202,13 @@ def cosmetic_changes_plot(df, ax, title_plot=False, y_label='', x_index='index')
     add_title(title_plot)
 
     # Add appropriate x labels
-    # add_x_labels(df)
+    add_x_labels(df)
 
     # Add appropriate y labels
     add_y_label(y_label)
 
     # Add or remove the legend
     # add_legend()
-    print(ax)
     return ax
 
 def display_side_by_side(*args):
