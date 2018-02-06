@@ -53,7 +53,7 @@ def plot_y_n_single(df, colormap):
     width=0.8
     # Take the colors associate to yes and no
     colors = [np.array((colormap(0), colormap(3)))]
-    ax = df.plot.bar(label='index', width=width, color=colors)
+    ax = df.transpose().plot.bar(label='index', width=width, color=colors)
     return ax
 
 
@@ -102,6 +102,7 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
     colormap = plt.cm.tab20
     y_label = 'Percentage'
     legend = None
+    title = None
     # Remove any [PERCENTAGE] strings from either the columns names or the row index name
     # remove for the columns
     try:
@@ -115,32 +116,41 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
 
     try:
         if type_question.lower() == 'one choice' or type_question.lower() == 'multiple choices':
+            # Round the df to avoid having the column of those lower than 1 percent being showed
+            df = df.round()
             ax = bar_plot(df, colormap)
             legend = False
+            title = True
 
         elif type_question.lower() == 'y/n/na':
             if len(df.index) == 1:
-                df = df.transpose()
+                # df = df.transpose()
+                # Round the df to avoid having the column of those lower than 1 percent being showed
+                df = df.round()
                 ax = plot_y_n_single(df, colormap)
                 legend = False
+                title = True
             else:
                 ax = stacked_y_n(df, colormap)
                 legend = True
+                title = True
 
         elif type_question.lower() == 'ranking':
             ax = ranking_plot(df, colormap)
             legend = True
+            title = True
 
         elif type_question.lower() == 'likert':
             df = df.transpose()
             ax = likert_plot(df)
+            title = True
 
-        cosmetic_changes_plot(df, ax, legend=legend)
+        cosmetic_changes_plot(df, ax, legend=legend, title=title)
 
     except TypeError:  # In Case an empty v_count is passed
         return None
 
-def cosmetic_changes_plot(df, ax, legend):
+def cosmetic_changes_plot(df, ax, legend, title, title_name=None):
     """
     Get the plot and return a modified one to have some
     cosmetic changes
@@ -150,8 +160,8 @@ def cosmetic_changes_plot(df, ax, legend):
     remove_to_right_line(ax)
     setup_legend(ax, legend)
     # Add appropriate title
-    # if title:
-    #     add_title(title_plot)
+    if title or title_name:
+        add_title(df, title_name)
     #
     # # Add appropriate x labels
     # if x_labels:
@@ -165,6 +175,11 @@ def cosmetic_changes_plot(df, ax, legend):
     # add_legend()
     return ax
 
+
+def add_title(df, title_name):
+    # if len(df.columns) == 1:
+        # plt.title(df.columns[0], fontsize=16)
+    plt.title(df.index.name, fontsize=16)
 
 def setup_legend(ax, legend):
     if legend is True:
@@ -187,11 +202,6 @@ def remove_to_right_line(ax):
     ax.get_xaxis().tick_bottom()
     ax.get_yaxis().tick_left()
 
-def add_title(title_plot):
-    if title_plot:
-        plt.title(title_plot)
-    else:
-        plt.title('hdsjkadjskaldjaskljdsalkjdaslkjdaslkjdsalk')
 
 def add_y_label(y_label):
     ax.set_ylabel(y_label)
@@ -253,9 +263,9 @@ def display_side_by_side(*args):
     df2.reset_index()
     if columns == 1:
         df1['Percentage'] = df2.iloc[:, -1]
-        df1.index.name = df1.columns[0]
-        if df1.index.name == 'Count':
-            df1.index.name = ''
+        # df1.index.name = df1.columns[0]
+        # if df1.index.name == 'Count':
+        #     df1.index.name = ''
         df1.columns = ['Count', 'Percentage']
 
     else:  # In case of Y-N, the df has Yes and No as columns
