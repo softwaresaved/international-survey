@@ -70,12 +70,19 @@ def apply_rename_columns(df, by):
     # In case of the columns or index are not following the rules above
     # try to remove the code only (the case for y-n-na when they are multiple)
     except IndexError:
-        print(df.index)
         if by == 'index':
             df = df.rename(index=lambda x: x.split('.')[1])
         if by == 'columns':
             df = df.rename(columns=lambda x: x.split('.')[1])
     return df
+
+
+def remove_code_from_string(inputlist):
+    """
+    Receive a list and return a list without the code
+    added to the question
+    """
+    return [s.split('. ')[1:][0] for s in inputlist]
 
 
 def remove_code_from_column(df, colnames):
@@ -94,7 +101,7 @@ def remove_code_from_column(df, colnames):
         :df DataFrame(): The same df with the rename columns
         :new_col list(): the colnames w/o the code
     """
-    new_col = [s.split('. ')[1:][0] for s in colnames]
+    new_col = remove_code_from_string(colnames)
     df.rename(columns=dict(zip(colnames, new_col)), inplace=True)
     return df, new_col
 
@@ -368,9 +375,14 @@ def set_title(df, questions, type_question):
     # if type_question.lower() == 'y/n/na' or type_question.lower() == 'one choice':
 
     if len(questions) == 1:
-        df.index.names = questions
+        renamed_q = remove_code_from_string([questions[0].split('.')[1].strip()])
+        print(renamed_q)
+        df.index.names = [renamed_q]
     else:
-        print('ok')
+        # Get the code of the questions and check in transforming_title if it corresponds to something
+        unique_code = list(set(s.split('. ')[0].strip() for s in questions))
+        unique_code = ''.join(i for i in unique_code[0] if not i.isdigit())
+        print(unique_code)
     # print(questions)
     # print(get_common_root(questions))
     # if len(questions) == 1:
