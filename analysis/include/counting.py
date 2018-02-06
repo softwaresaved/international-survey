@@ -70,6 +70,7 @@ def apply_rename_columns(df, by):
     # In case of the columns or index are not following the rules above
     # try to remove the code only (the case for y-n-na when they are multiple)
     except IndexError:
+        print(df.index)
         if by == 'index':
             df = df.rename(index=lambda x: x.split('.')[1])
         if by == 'columns':
@@ -93,7 +94,6 @@ def remove_code_from_column(df, colnames):
         :df DataFrame(): The same df with the rename columns
         :new_col list(): the colnames w/o the code
     """
-
     new_col = [s.split('. ')[1:][0] for s in colnames]
     df.rename(columns=dict(zip(colnames, new_col)), inplace=True)
     return df, new_col
@@ -396,8 +396,8 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
     # With it. Moreover, as the title doesn't appears anywhere on the plots and
     # tables, it is not needed.
     questions_tokeep_for_writing = questions
-    if len(questions) == 1:
-        df, questions = remove_code_from_column(df, questions)
+    # if len(questions) == 1:
+    #     df, questions = remove_code_from_column(df, questions)
 
     if type_question.lower() == 'y/n/na':
         counted_df = count_yn(df, questions, dropna=False)
@@ -405,7 +405,6 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
 
     elif type_question.lower() == 'one choice':
         counted_df = count_one_choice(df, questions, file_answer, order_question)
-        counted_df = apply_rename_columns(counted_df, by='index')
 
     elif type_question.lower() == 'multiple choices':
         counted_df = count_multi_choice(df, questions)
