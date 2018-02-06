@@ -62,9 +62,6 @@ def apply_rename_columns(df, by):
     names. IN that case, to extract the appropriate text it need
     to be splitted based on the [
     """
-    # print(colnames)
-    # print('\n')
-    # print(list(df.columns))
     try:
         if by == 'index':
             df = df.rename(index=lambda x: x.split('[')[2][:-1])
