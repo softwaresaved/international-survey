@@ -56,24 +56,34 @@ def reorder_nan(df, nan_reorder):
     return df
 
 
-def apply_rename_columns(df, colnames, rename):
+def apply_rename_columns(df, by):
     """
     Sometime the question itself is the third part of the column
     names. IN that case, to extract the appropriate text it need
     to be splitted based on the [
     """
-    if rename is True:
-        try:
-            df.columns = [s.split('[')[2][:-1] for s in colnames]
-        except IndexError:
-            pass
+    # print(colnames)
+    # print('\n')
+    # print(list(df.columns))
+    try:
+        if by == 'index':
+            df = df.rename(index=lambda x: x.split('[')[2][:-1])
+        if by == 'columns':
+            df = df.rename(columns=lambda x: x.split('[')[2][:-1])
+    # In case of the columns or index are not following the rules above
+    # try to remove the code only (the case for y-n-na when they are multiple)
+    except IndexError:
+        if by == 'index':
+            df = df.rename(index=lambda x: x.split('.')[1])
+        if by == 'columns':
+            df = df.rename(columns=lambda x: x.split('.')[1])
     return df
 
 
 def remove_code_from_column(df, colnames):
     """
     Function to remove the code from the columns.
-    Limesurvey adds the code at the begenning of the string.
+    Limesurvey adds the code at the beginning of the string.
     following this patternd "code1. STRING"
     Get the dataframe and remove the code to all the columns then
     return the same dataframe.
@@ -90,6 +100,45 @@ def remove_code_from_column(df, colnames):
     new_col = [s.split('. ')[1:][0] for s in colnames]
     df.rename(columns=dict(zip(colnames, new_col)), inplace=True)
     return df, new_col
+
+
+def extract_common_substring(string1, string2):
+    """
+    To get the common substring between two strings
+    solution found: https://stackoverflow.com/a/18716089
+    """
+    return ''.join(el[0] for el in it.takewhile(lambda t: t[0] == t[1], zip(string1, string2)))
+
+
+def extract_unique_substring(string1, string2, common_string):
+    """
+    return both of unique element
+    """
+    return string1.replace(common_string, ''), string2.replace(common_string, '')
+
+
+def get_common_root(input_set):
+
+    unique_element = list()
+    iter_set = iter(input_set)
+
+    previous_element = next(iter_set)
+    element = next(iter_set)
+    common_substring = extract_common_substring(previous_element, element)
+    unique_substring = extract_unique_substring(element, previous_element, common_substring)
+    for unique in unique_substring:
+        if unique not in unique_element:
+            unique_element.append(unique)
+    previous_element = element
+    for element in input_set:
+        common_substring = extract_common_substring(previous_element, element)
+        unique_substring = extract_unique_substring(element, previous_element, common_substring)
+        for unique in unique_substring:
+            if unique not in unique_element:
+                unique_element.append(unique)
+        previous_element = element
+    all_unique_element = '_'.join(sorted(unique_element))
+    return common_substring, all_unique_element
 
 
 def record_df(df, colnames, path_to_record, percentage=False):
@@ -118,43 +167,6 @@ def record_df(df, colnames, path_to_record, percentage=False):
         except OSError as exception:
             if exception.errno != errno.EEXIST:
                 raise
-
-    def get_common_root(input_set):
-
-        def extract_common_substring(string1, string2):
-            """
-            To get the common substring between two strings
-            solution found: https://stackoverflow.com/a/18716089
-            """
-            return ''.join(el[0] for el in it.takewhile(lambda t: t[0] == t[1], zip(string1, string2)))
-
-        def extract_unique_substring(string1, string2, common_string):
-            """
-            return both of unique element
-            """
-            return string1.replace(common_string, ''), string2.replace(common_string, '')
-
-        unique_element = list()
-        iter_set = iter(input_set)
-
-        previous_element = next(iter_set)
-        element = next(iter_set)
-        common_substring = extract_common_substring(previous_element, element)
-        unique_substring = extract_unique_substring(element, previous_element, common_substring)
-        for unique in unique_substring:
-            if unique not in unique_element:
-                unique_element.append(unique)
-        previous_element = element
-        for element in input_set:
-            common_substring = extract_common_substring(previous_element, element)
-            unique_substring = extract_unique_substring(element, previous_element, common_substring)
-            for unique in unique_substring:
-                if unique not in unique_element:
-                    unique_element.append(unique)
-            previous_element = element
-        all_unique_element = '_'.join(sorted(unique_element))
-        return common_substring + all_unique_element
-
     if path_to_record:
         check_directory(path_to_record)
         # Create a filename for the file to be saved based on the code of the question
@@ -176,18 +188,15 @@ def record_df(df, colnames, path_to_record, percentage=False):
         else:
             filename_path = list(unique_code)[0].split('[')[0]  # to remove anything btw brackets for some q
         filename = os.path.join(path_to_record, '{}.{}'.format(filename_path, 'csv'))
-
         df.to_csv(filename, index=True, encoding='utf-8')
         return filename
 
 
-def count_multi_choice(df, colnames, rename_columns=False, dropna=False, normalize=False):
+def count_multi_choice(df, colnames, dropna=False, normalize=False):
     """
     """
     # Subset the dataframe
     df_sub = df[colnames]
-    # Rename the column or not
-    df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
     # As the No can be considered as absence of Yes, fill the value 'No' with na to keep Yes only
     df_sub = df_sub.fillna(value='No')
     # Calculate the count for the column
@@ -201,10 +210,11 @@ def count_multi_choice(df, colnames, rename_columns=False, dropna=False, normali
     df_sub.columns = ['Count']
 
     df_sub = reorder_nan(df_sub, nan_reorder='end')
+
     return df_sub
 
 
-def count_one_choice(df, colnames, file_answer, order_question, rename_columns=False,
+def count_one_choice(df, colnames, file_answer, order_question,
                      dropna=False, normalize=False):
     """
     Count the values of different columns and transpose the count
@@ -215,7 +225,6 @@ def count_one_choice(df, colnames, file_answer, order_question, rename_columns=F
         :result_df pd.df(): dataframe with the count of each answer for each columns
     """
     df_sub = df[colnames]
-    df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
     df_sub = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
 
     df_sub = reorder_nan(df_sub, nan_reorder='end')
@@ -230,13 +239,14 @@ def count_one_choice(df, colnames, file_answer, order_question, rename_columns=F
     return df_sub
 
 
-def count_yn(df, colnames, multiple=False, normalize=False, dropna=False):
+def count_yn(df, colnames, normalize=False, dropna=False):
     """
     """
-    if multiple is True:
-        df_sub = df[colnames]
-    else:
+    if len(colnames) == 1:
+        colnames = colnames[0]
         df_sub = df[colnames].to_frame(name=colnames)
+    else:
+        df_sub = df[colnames]
 
     df_sub = df_sub.apply(pd.Series.value_counts,
                           dropna=dropna,
@@ -273,7 +283,7 @@ def count_yn(df, colnames, multiple=False, normalize=False, dropna=False):
     return df_sub
 
 
-def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False, normalize=False, reindex=False):
+def count_likert(df, colnames, likert_answer, dropna=False, normalize=False, reindex=False):
     """
     Count the values of different columns and transpose the count
     :params:
@@ -284,19 +294,6 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
     """
     # Subset the columns
     df_sub = df[colnames]
-
-    # Convert into string in case all the choice where number only (therefore there is a decimal)
-    # for col in df_sub.columns:
-    #     if df_sub[col].dtypes == np.float64 or df_sub[col].dtype == np.int64:
-    #         # first convert the np.nan into a value that is different
-    #         df_sub.loc[col] = df_sub[col].fillna(-1)
-    #         # # then transform into int to loose the decimal point
-    #         print(df_sub[col])
-    #         df_sub.loc[col] = df_sub[col].apply(int)
-    #         # # then transform into a string
-    #         df_sub.loc[col] = df_sub[col].apply(str)
-    #         # # then replace the -1 into np.nan
-    #         df_sub.loc[col] = df_sub[col].replace({'-1': np.nan})
 
     def convert_to_int(x):
         try:
@@ -311,13 +308,11 @@ def count_likert(df, colnames, likert_answer, rename_columns=True, dropna=False,
     df_sub = df_sub.applymap(str)
     # # then replace the -1 into np.nan
     df_sub = df_sub.replace({'-1': np.nan})
-    df_sub = apply_rename_columns(df_sub, colnames, rename_columns)
 
     # Calculate the counts for them
     df_count = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)
     # Reorder according to the answers order found in the folder
     if likert_answer:
-        # likert_answer = [x for x in likert_answer if x in df_sub.index]
         for i in likert_answer:  # Add the missing likert because they have nan value and are not in the dataset
             if i not in df_count.index:
                 df_count.loc[i] = np.nan
@@ -344,8 +339,6 @@ def get_percentage(df, filename=None, dropna=True):
         except ValueError:
             df = df.fillna(0)  # In case of likert, the df is transpose and here replace with 0 to be able to compute percentage
     value = compute_percentage(df, by_row, by_col)
-    # Remove the decimals
-    # value = [np.round(x) for x in value]
 
     index_df = df.index
     name_df = df.columns
@@ -358,6 +351,7 @@ def get_percentage(df, filename=None, dropna=True):
     if filename:
         filename = filename[:-4] + '[PERC]' + '.csv'
         percent.to_csv(filename, index=True, encoding='utf-8')
+    percent.index.names = df.index.names
     return percent
 
 
@@ -369,6 +363,23 @@ def get_words_count(df, column):
         return wordcloud(df, column)
     except ZeroDivisionError:
         return "This question does not have values"
+
+
+def set_title(df, questions, type_question):
+    """
+    """
+    # if type_question.lower() == 'y/n/na' or type_question.lower() == 'one choice':
+
+    if len(questions) == 1:
+        df.index.names = questions
+    else:
+        print('ok')
+    # print(questions)
+    # print(get_common_root(questions))
+    # if len(questions) == 1:
+    # else:
+    #     pass
+    return df
 
 
 def get_count(df, questions, type_question, file_answer, order_question, path_to_record=None):
@@ -392,29 +403,31 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
         df, questions = remove_code_from_column(df, questions)
 
     if type_question.lower() == 'y/n/na':
-        if len(questions) == 1:
-            questions = questions[0]
-            multiple = False
-        else:
-            multiple = True
-        counted_df = count_yn(df, questions, multiple=multiple, dropna=False)
+        counted_df = count_yn(df, questions, dropna=False)
+        counted_df = apply_rename_columns(counted_df, by='index')
 
     elif type_question.lower() == 'one choice':
-        counted_df = count_one_choice(df, questions, file_answer, order_question, rename_columns=True)
+        counted_df = count_one_choice(df, questions, file_answer, order_question)
+        counted_df = apply_rename_columns(counted_df, by='index')
 
     elif type_question.lower() == 'multiple choices':
-        counted_df = count_multi_choice(df, questions, rename_columns=True)
+        counted_df = count_multi_choice(df, questions)
+        counted_df = apply_rename_columns(counted_df, by='index')
 
     elif type_question.lower() == 'likert':
         likert_answer = get_answer(file_answer)
-        if len(questions) == 1:
-            rename_columns = False
-        else:
-            rename_columns = True
-        counted_df = count_likert(df, questions, likert_answer, rename_columns)
+        # if len(questions) == 1:
+        #     rename_columns = False
+        # else:
+        #     rename_columns = True
+        counted_df = count_likert(df, questions, likert_answer)
+
+        if len(questions) > 1:
+            counted_df = apply_rename_columns(counted_df, by='columns')
 
     elif type_question.lower() == 'ranking':
-        counted_df = count_one_choice(df, questions, file_answer, order_question, rename_columns=True)
+        counted_df = count_one_choice(df, questions, file_answer, order_question)
+        counted_df = apply_rename_columns(counted_df, by='columns')
 
     elif type_question.lower() == 'freetext':
         counted_df = get_words_count(df, questions)
@@ -424,6 +437,9 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
 
     elif type_question.lower() == 'datetime':
         pass
+
+    # Rename the index of the df to be able to get it later
+    counted_df = set_title(counted_df, questions, type_question)
 
     if path_to_record:
         file_path = record_df(counted_df, questions_tokeep_for_writing, path_to_record)
