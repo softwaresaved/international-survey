@@ -375,9 +375,9 @@ def set_title(df, questions, type_question):
     # if type_question.lower() == 'y/n/na' or type_question.lower() == 'one choice':
 
     if len(questions) == 1:
-        renamed_q = remove_code_from_string([questions[0].split('.')[1].strip()])
+        renamed_q = [questions[0].split('.')[1].strip()]
         print(renamed_q)
-        df.index.names = [renamed_q]
+        df.index.names = renamed_q
     else:
         # Get the code of the questions and check in transforming_title if it corresponds to something
         unique_code = list(set(s.split('. ')[0].strip() for s in questions))
