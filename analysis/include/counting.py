@@ -405,6 +405,8 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
 
     elif type_question.lower() == 'one choice':
         counted_df = count_one_choice(df, questions, file_answer, order_question)
+        if order_question is False:
+            counted_df = apply_rename_columns(counted_df, by='index')
 
     elif type_question.lower() == 'multiple choices':
         counted_df = count_multi_choice(df, questions)
