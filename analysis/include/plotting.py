@@ -99,6 +99,7 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
     colormap = plt.cm.tab20
     y_label = 'Percentage'
     legend = None
+    x_label = None
     wrap_label = False
     # Remove any [PERCENTAGE] strings from either the columns names or the row index name
     # remove for the columns
@@ -117,6 +118,7 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
             df = df.round()
             ax = bar_plot(df, colormap)
             legend = False
+            x_label = True
 
         elif type_question.lower() == 'y/n/na':
             if len(df.index) == 1:
@@ -127,11 +129,13 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
             else:
                 ax = stacked_y_n(df, colormap)
                 legend = True
+                x_label = True
                 wrap_label = True
 
         elif type_question.lower() == 'ranking':
             ax = ranking_plot(df, colormap)
             legend = True
+            x_label = True
             wrap_label = True
 
         elif type_question.lower() == 'likert':
@@ -139,13 +143,13 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
             ax = likert_plot(df)
             wrap_label = False
 
-        cosmetic_changes_plot(df, ax, legend=legend, wrap_label=wrap_label)
+        cosmetic_changes_plot(df, ax, legend=legend, x_label=x_label, wrap_label=wrap_label)
 
     except TypeError:  # In Case an empty v_count is passed
         return None
 
 
-def cosmetic_changes_plot(df, ax, legend, wrap_label):
+def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label):
     """
     Get the plot and return a modified one to have some
     cosmetic changes
@@ -158,8 +162,8 @@ def cosmetic_changes_plot(df, ax, legend, wrap_label):
     add_title(df)
     #
     # # Add appropriate x labels
-    # if wrap_label:
-    add_x_labels(df, wrap_label)
+    if add_x_labels:
+        add_x_labels(df, wrap_label)
     #
     # # Add appropriate y labels
     # if y_label:
@@ -171,8 +175,6 @@ def cosmetic_changes_plot(df, ax, legend, wrap_label):
 
 
 def add_title(df):
-    # if len(df.columns) == 1:
-        # plt.title(df.columns[0], fontsize=16)
     plt.title(df.index.name, fontsize=16)
 
 
