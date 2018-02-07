@@ -68,8 +68,6 @@ def main():
                 # it joins them together before writing it
                 question_to_write = '; '.join(original_question)
                 notebook.add_question_title(question_to_write)
-                # for txt in original_question:
-                    # notebook.add_question_title(txt)
 
                 if answer_format not in ['freetext', 'datetime', 'freenumeric']:
                     notebook.add_count(list_questions, answer_format, file_answer, order_question,
