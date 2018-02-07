@@ -8,6 +8,9 @@ import numpy as np
 
 from include.likertScalePlot import compute_percentage
 from include.textCleaning import wordcloud
+
+from include.transforming_title import corresponding_title
+
 import itertools as it
 
 
@@ -256,7 +259,6 @@ def count_yn(df, colnames, normalize=False, dropna=False):
                           dropna=dropna,
                           normalize=normalize)
 
-    # Transpose the column to row to be able to plot a stacked bar chart
     df_sub = df_sub.transpose()
     if dropna is True:
         try:
@@ -376,18 +378,18 @@ def set_title(df, questions, type_question):
 
     if len(questions) == 1:
         renamed_q = [questions[0].split('.')[1].strip()]
-        print(renamed_q)
         df.index.names = renamed_q
     else:
         # Get the code of the questions and check in transforming_title if it corresponds to something
         unique_code = list(set(s.split('. ')[0].strip() for s in questions))
         unique_code = ''.join(i for i in unique_code[0] if not i.isdigit())
-        print(unique_code)
-    # print(questions)
-    # print(get_common_root(questions))
-    # if len(questions) == 1:
-    # else:
-    #     pass
+        unique_code = unique_code.replace('likerttime', '').replace('[', '').replace(']', '')
+        try:
+            df.index.names = [corresponding_title[unique_code]]
+        except KeyError:
+            multichoice_title = list(set(s.split('. ')[1].split('[')[0].strip() for s in questions))
+            df.index.names = multichoice_title
+
     return df
 
 
