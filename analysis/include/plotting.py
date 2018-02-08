@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from include.likertScalePlot import likert_scale, get_colors
+from include.likertScalePlot import likert_scale
 
 
 def plot_numeric_var(df):
@@ -95,12 +95,13 @@ def likert_plot(df):
 
 
 def get_plot(df, type_question, title_plot=False, dropna=True):
-
+    """
+    """
     colormap = plt.cm.tab20
-    y_label = 'Percentage'
     legend = None
-    x_label = None
+    x_label = False
     wrap_label = False
+    y_label = True
     # Remove any [PERCENTAGE] strings from either the columns names or the row index name
     # remove for the columns
     try:
@@ -109,8 +110,6 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
         df = df.rename(index={col: col.replace('[PERCENTAGE]', '') for col in df.index})
     except AttributeError:  # In case of numpy number in freenumeric case
         pass
-
-    # Check if dropna is True. In this case, remove the data that have a nan value
 
     try:
         if type_question.lower() == 'one choice' or type_question.lower() == 'multiple choices':
@@ -139,17 +138,16 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
             wrap_label = True
 
         elif type_question.lower() == 'likert':
-            # df = df.transpose()
             ax = likert_plot(df)
-            wrap_label = False
+            y_label = False
 
-        cosmetic_changes_plot(df, ax, legend=legend, x_label=x_label, wrap_label=wrap_label)
+        cosmetic_changes_plot(df, ax, legend=legend, x_label=x_label, wrap_label=wrap_label, y_label=y_label)
 
     except TypeError:  # In Case an empty v_count is passed
         return None
 
 
-def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label):
+def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label, y_label):
     """
     Get the plot and return a modified one to have some
     cosmetic changes
@@ -162,15 +160,21 @@ def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label):
     add_title(df)
     #
     # # Add appropriate x labels
-    if add_x_labels:
+    if x_label is True:
         add_x_labels(df, wrap_label)
     #
     # # Add appropriate y labels
-    # if y_label:
-    #     add_y_label(y_label)
+    if y_label:
+        ax.set_ylabel('Percentage')
+        # plt.yticks(np.arange(0, 100, 10))
+        # add_y_label(y_label)
 
     # Add or remove the legend
     # add_legend()
+
+    # Remove the xlabels
+    ax.set_xlabel('')
+
     return ax
 
 
@@ -200,8 +204,8 @@ def remove_to_right_line(ax):
     ax.get_yaxis().tick_left()
 
 
-def add_y_label(y_label):
-    plt.set_ylabel(y_label)
+def add_y_label(ax, y_label):
+    ax.set_ylabel(y_label)
 
 
 def add_x_labels(df, wrap_label):
