@@ -15,4 +15,4 @@ corresponding_title = {'paper': 'Publications',
                        'affsat': 'Affective satisfaction',
                        'time': 'Spending time',
                        'satisgen': 'General satisfaction',
-                       'prevEmp': 'Reason to choose this job'}
+                       'prevEmp': 'Reasons to choose this job'}
