@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from include.likertScalePlot import likert_scale
+from include.likertScalePlot import likert_scale, get_colors
 
 
 def plot_numeric_var(df):
@@ -35,7 +35,8 @@ def bar_plot(df, colormap, horizontal=False):
     """
     """
     # Get the color palette
-    colors = [colormap(np.arange(len(df)))]
+    # colors = [colormap(np.arange(len(df)))]
+    colors = get_colors(df, colormap, axis=0)
     width=0.8
     if horizontal:
         ax = df.plot.barh(label='index', width=width, color=colors)
@@ -50,7 +51,8 @@ def plot_y_n_single(df, colormap):
     """
     width=0.8
     # Take the colors associate to yes and no
-    colors = [np.array((colormap(0), colormap(3)))]
+    # colors = [np.array((colormap(0), colormap(3)))]
+    colors = [colormap(0), colormap(3)]
     ax = df.transpose().plot.bar(label='index', width=width, color=colors)
     return ax
 
@@ -138,8 +140,20 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
             wrap_label = True
 
         elif type_question.lower() == 'likert':
-            ax = likert_plot(df)
-            y_label = False
+            # Way to check if the likert question here as only one question
+            # In that case, it plot a normal barplot
+            if len(df.columns) == 1:
+                df = df.round()
+                ax = bar_plot(df, colormap)
+                legend = False
+                x_label = True
+            else:
+                ax = likert_plot(df)
+                y_label = False
+
+        elif type_question.lower() == 'freenumeric':
+            pass
+
 
         cosmetic_changes_plot(df, ax, legend=legend, x_label=x_label, wrap_label=wrap_label, y_label=y_label)
 
@@ -155,6 +169,8 @@ def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label, y_label):
 
     # Remove the upper and right line
     remove_to_right_line(ax)
+
+    # Set up legends
     setup_legend(ax, legend)
     # Add appropriate title
     add_title(df)
@@ -165,12 +181,7 @@ def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label, y_label):
     #
     # # Add appropriate y labels
     if y_label:
-        ax.set_ylabel('Percentage')
-        # plt.yticks(np.arange(0, 100, 10))
-        # add_y_label(y_label)
-
-    # Add or remove the legend
-    # add_legend()
+        add_y_label(ax)
 
     # Remove the xlabels
     ax.set_xlabel('')
@@ -204,8 +215,9 @@ def remove_to_right_line(ax):
     ax.get_yaxis().tick_left()
 
 
-def add_y_label(ax, y_label):
-    ax.set_ylabel(y_label)
+def add_y_label(ax):
+    ax.set_ylabel('Percentage')
+    # plt.yticks(np.arange(0, 100, 10))
 
 
 def add_x_labels(df, wrap_label):
