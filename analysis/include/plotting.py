@@ -19,7 +19,7 @@ def plot_numeric_var(df):
     x_label = df.columns.values.tolist()[0]
 
     fig, ax = plt.subplots()
-    ax = remove_to_right_line(ax)
+    # ax = remove_to_right_line(ax)
     ax.set_ylabel(y_label)
     ax.set_xlabel(x_label)
     ax.hist(df.dropna().values, n_bins, normed=False, edgecolor='white', linewidth=1, color="#3F5D7D")
@@ -28,7 +28,7 @@ def plot_numeric_var(df):
     step = int(math.ceil((max_value - min_value) / n_bins))
     plt.xticks(np.arange(min_value, max_value +1, step))
 
-    return df, fig, ax
+    return ax
 
 
 def bar_plot(df, colormap, horizontal=False):
@@ -104,6 +104,8 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
     x_label = False
     wrap_label = False
     y_label = True
+    dropna=True
+
     # Remove any [PERCENTAGE] strings from either the columns names or the row index name
     # remove for the columns
     try:
@@ -147,21 +149,22 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
                 ax = bar_plot(df, colormap)
                 legend = False
                 x_label = True
+                dropna = False
             else:
                 ax = likert_plot(df)
                 y_label = False
 
         elif type_question.lower() == 'freenumeric':
-            pass
+            ax = plot_numeric_var(df)
 
 
-        cosmetic_changes_plot(df, ax, legend=legend, x_label=x_label, wrap_label=wrap_label, y_label=y_label)
+        cosmetic_changes_plot(df, ax, legend=legend, x_label=x_label, wrap_label=wrap_label, y_label=y_label, dropna=dropna)
 
     except TypeError:  # In Case an empty v_count is passed
         return None
 
 
-def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label, y_label):
+def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label, y_label, dropna):
     """
     Get the plot and return a modified one to have some
     cosmetic changes
@@ -177,7 +180,7 @@ def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label, y_label):
     #
     # # Add appropriate x labels
     if x_label is True:
-        add_x_labels(df, wrap_label)
+        add_x_labels(df, wrap_label, dropna)
     #
     # # Add appropriate y labels
     if y_label:
@@ -220,7 +223,7 @@ def add_y_label(ax):
     # plt.yticks(np.arange(0, 100, 10))
 
 
-def add_x_labels(df, wrap_label):
+def add_x_labels(df, wrap_label, dropna):
 
     def wrap_labels(label, max_size=20):
         """
@@ -248,11 +251,19 @@ def add_x_labels(df, wrap_label):
         return split_at_whitespace(label)
     # Add the x-labels
     # To set up the label on x or y axis
-    # remove the labels that have a value of zero
-    if wrap_label:
-        label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+    if dropna is True:
+        # remove the labels that have a value of zero
+        if wrap_label:
+            label_txt = [wrap_labels(label) for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+        else:
+            label_txt = [label for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
     else:
-        label_txt = [label for i, label in enumerate(df.index) if df.ix[i, 0] >= 1]
+
+        # remove the labels that have a value of zero
+        if wrap_label:
+            label_txt = [wrap_labels(label) for i, label in enumerate(df.index)]
+        else:
+            label_txt = [label for i, label in enumerate(df.index)]
     label_ticks = range(len(label_txt))
     # This set the xlimits to center the xtick with the bin
     # Explanation found here:
