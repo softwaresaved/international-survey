@@ -383,12 +383,14 @@ def set_title(df, questions, type_question):
         # Get the code of the questions and check in transforming_title if it corresponds to something
         unique_code = list(set(s.split('. ')[0].strip() for s in questions))
         unique_code = ''.join(i for i in unique_code[0] if not i.isdigit())
-        unique_code = unique_code.replace('likerttime', '').replace('[', '').replace(']', '')
+        unique_code = unique_code.replace('[', '').replace(']', '').replace(',', '')
+        # unique_code = unique_code.replace('likert, '')
+        unique_code = unique_code.replace('likert', '')
         try:
             df.index.names = [corresponding_title[unique_code]]
         except KeyError:
             multichoice_title = list(set(s.split('. ')[1].split('[')[0].strip() for s in questions))
-            df.index.names = multichoice_title.replace('[', '').replace(']', '').strip()
+            df.index.names = [multichoice_title[0].replace('[', '').replace(']', '').strip()]
 
     return df
 
