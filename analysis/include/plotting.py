@@ -49,10 +49,16 @@ def bar_plot(df, colormap, horizontal=False):
 def plot_y_n_single(df, colormap):
     """
     """
+    # fig, ax = plt.subplots()
     width=0.8
     # Take the colors associate to yes and no
     # colors = [np.array((colormap(0), colormap(3)))]
-    colors = [colormap(0), colormap(3)]
+    colors = []
+    if df.iloc[0].loc['Yes'] > 0:
+        colors.append(colormap(0))
+    if df.iloc[0].loc['No'] > 0:
+        colors.append(colormap(3))
+    # colors = [np.array(colors)]
     ax = df.transpose().plot.bar(label='index', width=width, color=colors)
     return ax
 
@@ -127,6 +133,7 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
             if len(df.index) == 1:
                 # Round the df to avoid having the column of those lower than 1 percent being showed
                 df = df.round()
+                df.sort_values(by='Yes', inplace=True, ascending=False)
                 ax = plot_y_n_single(df, colormap)
                 legend = False
             else:
@@ -138,7 +145,7 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
         elif type_question.lower() == 'ranking':
             ax = ranking_plot(df, colormap)
             legend = True
-            x_label = True
+            x_label = False
             wrap_label = True
 
         elif type_question.lower() == 'likert':
@@ -186,10 +193,19 @@ def cosmetic_changes_plot(df, ax, legend, x_label, wrap_label, y_label, dropna):
     if y_label:
         add_y_label(ax)
 
-    # Remove the xlabels
+    # Remove the xlabel title
     ax.set_xlabel('')
 
     return ax
+
+
+# def add_labels():
+#
+# # set individual bar lables using above list
+#     for i in ax.patches:
+#         # get_width pulls left or right; get_y pushes up or down
+#         ax.text(i.get_width()+700, i.get_y()+.18, \
+#                 str(round((i.get_width()), 2)), fontsize=11, color='dimgrey')
 
 
 def add_title(df):
