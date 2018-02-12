@@ -1,40 +1,40 @@
-,Count [PERCENTAGE]
-Python,15.0
-Unix Shell Scripting,11.0
-"Markup languages (HTML, markdown,...)",9.0
-C++,8.0
-C,7.0
-JavaScript,7.0
-FORTRAN,6.0
-SQL,6.0
-Java,5.0
-Matlab,5.0
-R,5.0
-Perl,3.0
-PHP,2.0
-CUDA,2.0
-C#,2.0
-Ruby,1.0
-TypeScript,1.0
-Groovy,1.0
-VBA,1.0
-Visual Basic,1.0
-Scala,0.0
-Assembly,0.0
-Go,0.0
-Rust,0.0
-F#,0.0
-Elixir,0.0
-CoffeeScript,0.0
-Objective-C,0.0
-Julia,0.0
-Haskell,0.0
-Erlang,0.0
-Smalltalk,0.0
-Swift,0.0
-VB.NET,0.0
-Clojure,0.0
-Lua,0.0
+What programming languages do you use at work? (Select as many as apply),Count [PERCENTAGE]
+Python,15.120000000000001
+Unix Shell Scripting,11.200000000000001
+"Markup languages (HTML, markdown,...)",9.04
+C++,7.5200000000000005
+C,7.359999999999999
+JavaScript,6.800000000000001
+FORTRAN,6.4799999999999995
+SQL,6.32
+Java,5.2
+Matlab,4.88
+R,4.5600000000000005
+Perl,3.2800000000000002
+PHP,2.48
+CUDA,1.68
+C#,1.52
+Ruby,1.1199999999999999
+TypeScript,0.72
+Groovy,0.5599999999999999
+VBA,0.5599999999999999
+Visual Basic,0.5599999999999999
+Scala,0.48
+Assembly,0.4
+Go,0.4
+Rust,0.24
+F#,0.24
+Elixir,0.16
+CoffeeScript,0.16
+Objective-C,0.16
+Julia,0.16
+Haskell,0.16
+Erlang,0.08
+Smalltalk,0.08
+Swift,0.08
+VB.NET,0.08
+Clojure,0.08
+Lua,0.08
 Hack,0.0
 Dart,0.0
 Common Lisp,0.0

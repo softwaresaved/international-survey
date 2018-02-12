@@ -1,12 +1,11 @@
-,Please select the range of your salary [PERCENTAGE]
-Less than 27.499 EUR,19.0
-Between 27.500 and 32.999 EUR,7.0
-Between 33.000 and 38.499 EUR,5.0
-Between 38.500 and 43.999 EUR,6.0
-Between 44.000 and 49.999 EUR,10.0
-Between 50.000 and 54.999 EUR,16.0
-Between 55.000 and 65.999 EUR,16.0
-Between 66.000 and 76.999 EUR,5.0
-Between 77.000 and 109.999 EUR,5.0
-More than 110.000 EUR,0.0
-Prefer not to say,10.0
+Please select the range of your salary,socio4. Please select the range of your salary [PERCENTAGE]
+Less than 27.499 EUR,19.45525291828794
+Between 50.000 and 54.999 EUR,15.953307392996107
+Between 55.000 and 65.999 EUR,15.56420233463035
+Prefer not to say,10.116731517509727
+Between 44.000 and 49.999 EUR,9.72762645914397
+Between 27.500 and 32.999 EUR,7.392996108949417
+Between 38.500 and 43.999 EUR,6.22568093385214
+Between 33.000 and 38.499 EUR,5.447470817120623
+Between 66.000 and 76.999 EUR,5.447470817120623
+Between 77.000 and 109.999 EUR,4.669260700389105

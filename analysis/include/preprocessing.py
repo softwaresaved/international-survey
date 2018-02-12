@@ -45,7 +45,6 @@ class CleaningData(CleaningConfig):
             pass
         self.df = self.cleaning_columns_white_space(self.df)
         self.df = self.cleaning_missing_na(self.df)
-        # self.df = self.fixing_satisQuestion(self.df)
         self.df = self.duplicating_other(self.df)
         self.df = self.remove_not_right_country(self.df)
         self.df = self.remove_empty_column(self.df)
@@ -157,22 +156,6 @@ class CleaningData(CleaningConfig):
         else:
             raise
         return df[df['socio1. In which country do you work?'] == country.name]
-
-    def fixing_satisQuestion(self, df):
-        """
-        For the uk 2017, a mistake on how to display the question
-        satisGen1 and satisGen2 has been made. These questions were
-        merge into one table but the questions text was split between
-        the overal text and the items. It appears like this:
-        "In general, how satisfied are you with: [Your current position]"
-        "In general, how satisfied are you with: [Your career]"
-        For the script to match these questions with the csv file that
-        helps to the construction, it should have been like that:
-        "Please answer the following: [In general, how satisfied are you with Your current position]"
-        "Please answer the following: [In general, how satisfied are you with Your career]"
-        This function just replace the text within the bracket to match the ideal case
-        """
-        return df
 
     def get_survey_structure(self):
         """

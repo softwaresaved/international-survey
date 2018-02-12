@@ -1,17 +1,17 @@
-,Count [PERCENTAGE]
-Grants,69.0
-Industry support,13.0
-Volunteers,7.0
-Consulting & services,4.0
-Foundations & consortiums,2.0
-Membership,1.0
-Dual license,1.0
-Open core,1.0
-Trademark licensing & franchising,1.0
-Donation button,0.0
-Crowdfunding (one-time),0.0
-SaaS,0.0
-Venture capital,0.0
+"Which of the following sources are used to fund your current, largest project?",Count [PERCENTAGE]
+Grants,69.16299559471366
+Industry support,13.215859030837004
+Volunteers,6.607929515418502
+Consulting & services,3.524229074889868
+Foundations & consortiums,2.2026431718061676
+Membership,0.881057268722467
+Dual license,0.881057268722467
+Open core,0.881057268722467
+Trademark licensing & franchising,0.881057268722467
+Donation button,0.4405286343612335
+Crowdfunding (one-time),0.4405286343612335
+SaaS,0.4405286343612335
+Venture capital,0.4405286343612335
 Crowdfunding (recurring),0.0
 Books & merchandise,0.0
 Advertising & sponsorships,0.0

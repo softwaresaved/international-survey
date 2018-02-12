@@ -1,6 +1,6 @@
-,Count [PERCENTAGE]
-GIT,62.0
-None,24.0
-SVN,10.0
-CVS,5.0
+"Which, if any, version control tools do you use for software development?",Count [PERCENTAGE]
+GIT,61.904761904761905
+None,23.809523809523807
+SVN,9.523809523809524
+CVS,4.761904761904762
 Mercurial,0.0

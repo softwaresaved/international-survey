@@ -1,9 +1,6 @@
-,What is the highest qualification you have obtained? [PERCENTAGE]
-None,0.0
-High-school diploma,0.0
-MBO (Middelbaar beroepsonderwijs),0.0
-HBO (Hoger beroepsonderwijs) Bachelor,3.0
-HBO (Hoger beroepsonderwijs) Master,1.0
-WO (Wetenschappelijk onderwijs) Bachelor,3.0
-WO (Wetenschappelijk onderwijs) Master,38.0
-PhD,56.0
+What is the highest qualification you have obtained?,edu1. What is the highest qualification you have obtained? [PERCENTAGE]
+HBO (Hoger beroepsonderwijs) Bachelor,2.5974025974025974
+HBO (Hoger beroepsonderwijs) Master,1.2987012987012987
+WO (Wetenschappelijk onderwijs) Bachelor,2.5974025974025974
+WO (Wetenschappelijk onderwijs) Master,37.66233766233766
+PhD,55.84415584415584
