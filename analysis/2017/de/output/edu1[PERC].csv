@@ -1,7 +1,7 @@
-,What is the highest qualification you have obtained? [PERCENTAGE]
-Doctorate,48.0
-Master degree,43.0
-Undergraduate degree,5.0
-Other,2.0
-"Final secondary-school examinations, general qualification for university entrance",2.0
-GSCEs,0.0
+What is the highest qualification you have obtained?,edu1. What is the highest qualification you have obtained? [PERCENTAGE]
+Doctorate,48.30769230769231
+Master degree,43.07692307692308
+Undergraduate degree,4.615384615384616
+Other,2.1538461538461537
+"Final secondary-school examinations, general qualification for university entrance",1.5384615384615385
+GSCEs,0.3076923076923077

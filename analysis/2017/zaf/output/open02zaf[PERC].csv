@@ -1,9 +1,9 @@
-,Count [PERCENTAGE]
+Which open source licences do you prefer to use for your software?,Count [PERCENTAGE]
 Apache License 2.0,25.0
 "BSD 3-Clause ""New"" or ""Revised"" license",25.0
-GNU General Public License (GPL),17.0
-MIT license,17.0
-I don't know,17.0
+GNU General Public License (GPL),16.666666666666664
+MIT license,16.666666666666664
+I don't know,16.666666666666664
 "BSD 2-Clause ""Simplified"" or ""FreeBSD"" license",0.0
 Common Development and Distribution License,0.0
 Eclipse Public License,0.0

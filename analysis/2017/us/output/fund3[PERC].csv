@@ -1,13 +1,13 @@
-,Count [PERCENTAGE]
-Grants,51.0
-Funding by institution,29.0
-Industry support,8.0
-I volunteer my time,6.0
-Foundations & consortiums,3.0
-Consulting & services,2.0
-Re-charge or charge-back,1.0
-Membership,1.0
-Trademark licensing & franchising,1.0
+"Which of the following sources are used to fund your current, largest project?",Count [PERCENTAGE]
+Grants,50.83798882681564
+Funding by institution,29.05027932960894
+Industry support,7.82122905027933
+I volunteer my time,6.145251396648044
+Foundations & consortiums,2.793296089385475
+Consulting & services,1.675977653631285
+Re-charge or charge-back,0.5586592178770949
+Membership,0.5586592178770949
+Trademark licensing & franchising,0.5586592178770949
 Donation button,0.0
 Crowdfunding (one-time),0.0
 Crowdfunding (recurring),0.0

@@ -1,16 +1,16 @@
-,Count [PERCENTAGE]
-Grants,64.0
-My previous project is less than 3 years old,12.0
-Industry support,12.0
-Volunteers,5.0
-Consulting & services,3.0
-Dual license,1.0
-Open core,1.0
-Advertising & sponsorships,0.0
-SaaS,0.0
-Foundations & consortiums,0.0
-Venture capital,0.0
-Trademark licensing & franchising,0.0
+"Which of the following sources were used to fund your current, largest project three years ago?",Count [PERCENTAGE]
+Grants,63.81909547738693
+My previous project is less than 3 years old,12.060301507537687
+Industry support,11.557788944723619
+Volunteers,5.025125628140704
+Consulting & services,3.015075376884422
+Dual license,1.0050251256281406
+Open core,1.0050251256281406
+Advertising & sponsorships,0.5025125628140703
+SaaS,0.5025125628140703
+Foundations & consortiums,0.5025125628140703
+Venture capital,0.5025125628140703
+Trademark licensing & franchising,0.5025125628140703
 Books & merchandise,0.0
 Crowdfunding (recurring),0.0
 Crowdfunding (one-time),0.0
