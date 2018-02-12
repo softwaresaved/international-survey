@@ -65,6 +65,23 @@ def apply_rename_columns(df, by):
     names. IN that case, to extract the appropriate text it need
     to be splitted based on the [
     """
+    # Some satisGen are not working with the rest of the scripts as they have different
+    # title
+    # For the script to match these questions with the csv file that
+    # helps to the construction, it should have been reformated
+    # This function just replace the text within the bracket to match the ideal case
+    #
+    # US VERSION Not working
+    # likert3[satisgen1]. [In general, how satisfied are you with [Your current position]]
+    # likert3[satisgen2]. [In general, how satisfied are you with [Your career]]
+    if 'likert3[satisgen2]. [In general, how satisfied are you with [Your career]]' in df.columns:
+
+        dict_to_match = {'likert3[satisgen1]. [In general, how satisfied are you with [Your current position]]':
+                         'satisGen1[SQ001]. In general, how satisfied are you with: [Your current position]',
+                         'likert3[satisgen2]. [In general, how satisfied are you with [Your career]]':
+                         'satisGen1[SQ002]. In general, how satisfied are you with: [Your career]'}
+        df = df.rename(columns=dict_to_match)
+
     try:
         if by == 'index':
             df = df.rename(index=lambda x: x.split('[')[2][:-1])
@@ -323,6 +340,12 @@ def count_likert(df, colnames, likert_answer, dropna=False, normalize=False, rei
             if i not in df_count.index:
                 df_count.loc[i] = np.nan
         df_count = df_count.reindex(index=likert_answer)
+
+    # There is one exception with the questions about general satisfaction.
+    # The structure of the questions is as follow:
+    # likert3[satisgen1]. [In general, how satisfied are you with [Your current position]]',
+    #'likert3[satisgen2]. [In general, how satisfied are you with [Your career]]'
+    # therefore if the goes through the cleaninng process it loose the question header
     return df_count
 
 
@@ -374,11 +397,11 @@ def get_words_count(df, column):
 def set_title(df, questions, type_question):
     """
     """
-    # if type_question.lower() == 'y/n/na' or type_question.lower() == 'one choice':
 
     if len(questions) == 1:
         renamed_q = [questions[0].split('.')[1].replace('[', '').replace(']', '').strip()]
         df.index.names = renamed_q
+        return df
     else:
         # Get the code of the questions and check in transforming_title if it corresponds to something
         unique_code = list(set(s.split('. ')[0].strip() for s in questions))
@@ -392,7 +415,7 @@ def set_title(df, questions, type_question):
             multichoice_title = list(set(s.split('. ')[1].split('[')[0].strip() for s in questions))
             df.index.names = [multichoice_title[0].replace('[', '').replace(']', '').strip()]
 
-    return df
+        return df
 
 
 def get_count(df, questions, type_question, file_answer, order_question, path_to_record=None):
@@ -412,8 +435,6 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
     # With it. Moreover, as the title doesn't appears anywhere on the plots and
     # tables, it is not needed.
     questions_tokeep_for_writing = questions
-    # if len(questions) == 1:
-    #     df, questions = remove_code_from_column(df, questions)
 
     if type_question.lower() == 'y/n/na':
         counted_df = count_yn(df, questions, dropna=False)
@@ -430,10 +451,6 @@ def get_count(df, questions, type_question, file_answer, order_question, path_to
 
     elif type_question.lower() == 'likert':
         likert_answer = get_answer(file_answer)
-        # if len(questions) == 1:
-        #     rename_columns = False
-        # else:
-        #     rename_columns = True
         counted_df = count_likert(df, questions, likert_answer)
 
         if len(questions) > 1:
