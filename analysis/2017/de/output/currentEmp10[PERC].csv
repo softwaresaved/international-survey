@@ -1,10 +1,10 @@
-,What type of contract are you employed on? [PERCENTAGE]
-Fixed term -- as long as funding is available,34.0
-Permanent -- funded by Institution core funding,27.0
-Fixed term -- funded by Institution core funding,26.0
-Research/Student Assistant,6.0
-Other,5.0
-Permanent -- as long as funding is available,2.0
-Freelancer consultant contractor,1.0
-Agency staff,0.0
-Zero hours contract,0.0
+What type of contract are you employed on?,currentEmp10. What type of contract are you employed on? [PERCENTAGE]
+Fixed term -- as long as funding is available,33.84615384615385
+Permanent -- funded by Institution core funding,27.076923076923077
+Fixed term -- funded by Institution core funding,25.538461538461537
+Research/Student Assistant,5.846153846153846
+Other,4.615384615384616
+Permanent -- as long as funding is available,1.5384615384615385
+Freelancer consultant contractor,0.9230769230769231
+Agency staff,0.3076923076923077
+Zero hours contract,0.3076923076923077

@@ -1,10 +1,10 @@
-,Please select the range of your salary [PERCENTAGE]
-"Less than \$30,000",3.0
-"From \$30,000 to \$49,999",7.0
-"From \$50,000 to \$69,999",18.0
+Please select the range of your salary,socio4. Please select the range of your salary [PERCENTAGE]
+"Less than \$30,000",2.857142857142857
+"From \$30,000 to \$49,999",7.142857142857142
+"From \$50,000 to \$69,999",17.857142857142858
 "From \$70,000 to \$89,999",20.0
-"From \$90,000 to \$109,999",21.0
-"From \$110,000 to \$129,999",11.0
-"From \$130,000 to \$149,999",6.0
-"More than \$150,000",7.0
-Prefer not to say,7.0
+"From \$90,000 to \$109,999",20.714285714285715
+"From \$110,000 to \$129,999",11.428571428571429
+"From \$130,000 to \$149,999",5.714285714285714
+"More than \$150,000",7.142857142857142
+Prefer not to say,7.142857142857142

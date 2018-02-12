@@ -1,6 +1,6 @@
-,What is the bus factor of your most important software project? (the bus factor is the number of team members who if run over by a bus would put the project in jeopardy so 1 means the project is dependent on a single person) [PERCENTAGE]
-1,45.0
-2,27.0
-3,19.0
-4,3.0
-5+,7.0
+What is the bus factor of your most important software project? (the bus factor is the number of team members who if run over by a bus would put the project in jeopardy so 1 means the project is dependent on a single person),stability1. What is the bus factor of your most important software project? (the bus factor is the number of team members who if run over by a bus would put the project in jeopardy so 1 means the project is dependent on a single person) [PERCENTAGE]
+1,45.33333333333333
+2,26.666666666666668
+3,18.666666666666668
+5+,6.666666666666667
+4,2.666666666666667

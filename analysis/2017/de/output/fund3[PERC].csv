@@ -1,14 +1,14 @@
-,Count [PERCENTAGE]
-"Federal and state governments (BMBF, BMWi, BMVg and other sections)",42.0
-"DFG, German Research Foundation",34.0
-"European Union (e.g. H2020, COST, EUREKA)",10.0
-I volunteer my time,5.0
-"Foundations and conveyors (public and private, e.g. VolkswagenStiftung, Robert Bosch Stiftung, Klaus Tschira Stiftung, Stiftung Mercator)",4.0
-Industry support,1.0
-Stifterverband,0.0
-Associations and chambers,0.0
-Membership,0.0
-Consulting & services,0.0
+"Which of the following sources are used to fund your current, largest project?",Count [PERCENTAGE]
+"Federal and state governments (BMBF, BMWi, BMVg and other sections)",42.465753424657535
+"DFG, German Research Foundation",34.24657534246575
+"European Union (e.g. H2020, COST, EUREKA)",10.50228310502283
+I volunteer my time,5.47945205479452
+"Foundations and conveyors (public and private, e.g. VolkswagenStiftung, Robert Bosch Stiftung, Klaus Tschira Stiftung, Stiftung Mercator)",4.10958904109589
+Industry support,1.36986301369863
+Stifterverband,0.45662100456621
+Associations and chambers,0.45662100456621
+Membership,0.45662100456621
+Consulting & services,0.45662100456621
 Crowdfunding (one-time),0.0
 Crowdfunding (recurring),0.0
 Venture capital,0.0

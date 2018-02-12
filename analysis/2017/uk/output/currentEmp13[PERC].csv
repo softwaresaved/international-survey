@@ -1,66 +1,66 @@
-,Count [PERCENTAGE]
-Computer Science,15.0
-Biological Sciences,11.0
-Physics and Astronomy,10.0
-Mathematics,6.0
-Chemistry,5.0
-Medicine,5.0
-Geography & Environmental Sciences,4.0
-Electrical & Electronic Engineering,3.0
-Mechanical Engineering,3.0
-General Engineering,3.0
-Materials Technology,2.0
-Education,2.0
-Psychology,2.0
-Chemical Engineering,2.0
-Civil Engineering,2.0
-Aeronautical & Manufacturing Engineering,1.0
-Geology,1.0
-Linguistics,1.0
-Anatomy & Physiology,1.0
-Librarianship & Information Management,1.0
-Robotics,1.0
-History,1.0
-Architecture,1.0
-Sociology,1.0
-Economics,1.0
-Classics & Ancient History,1.0
-Social Policy,1.0
-Business & Management Studies,1.0
-Pharmacology & Pharmacy,1.0
-Agriculture & Forestry,1.0
-Middle Eastern and African Studies,1.0
-Anthropology,1.0
-Ophthalmics,1.0
-Food Science,1.0
-Theology & Religious Studies,1.0
-Town & Country Planning and Landscape Design,1.0
-Communication & Media Studies,1.0
-Art & Design,1.0
-"History of Art, Architecture & Design",0.0
-Law,0.0
-Nursing,0.0
-Politics,0.0
-Land & Property Management,0.0
-Philosophy,0.0
-English,0.0
-Physiotherapy,0.0
-Social Work,0.0
-Sports Science,0.0
-Veterinary Medicine,0.0
-Youth Work,0.0
-Music,0.0
-Marketing,0.0
-Iberian Languages/Hispanic Studies,0.0
-"Hospitality, Leisure, Recreation & Tourism",0.0
-German,0.0
-French,0.0
-Fashion,0.0
-East & South Asian Studies,0.0
-Dentistry,0.0
-Criminology,0.0
-Counselling,0.0
-Complementary Medicine,0.0
-American Studies,0.0
+In which disciplines do you work (select as many as apply)?,Count [PERCENTAGE]
+Computer Science,14.659685863874344
+Biological Sciences,11.387434554973822
+Physics and Astronomy,10.471204188481675
+Mathematics,5.49738219895288
+Chemistry,5.104712041884817
+Medicine,4.842931937172775
+Geography & Environmental Sciences,4.450261780104712
+Electrical & Electronic Engineering,3.2722513089005236
+Mechanical Engineering,3.1413612565445024
+General Engineering,2.6178010471204187
+Materials Technology,2.225130890052356
+Education,1.963350785340314
+Psychology,1.5706806282722512
+Chemical Engineering,1.5706806282722512
+Civil Engineering,1.5706806282722512
+Aeronautical & Manufacturing Engineering,1.4397905759162304
+Geology,1.4397905759162304
+Linguistics,1.4397905759162304
+Anatomy & Physiology,1.4397905759162304
+Librarianship & Information Management,1.1780104712041886
+Robotics,1.1780104712041886
+History,1.0471204188481675
+Architecture,1.0471204188481675
+Sociology,1.0471204188481675
+Economics,1.0471204188481675
+Classics & Ancient History,0.9162303664921465
+Social Policy,0.9162303664921465
+Business & Management Studies,0.9162303664921465
+Pharmacology & Pharmacy,0.7853403141361256
+Agriculture & Forestry,0.7853403141361256
+Middle Eastern and African Studies,0.6544502617801047
+Anthropology,0.6544502617801047
+Ophthalmics,0.5235602094240838
+Food Science,0.5235602094240838
+Theology & Religious Studies,0.5235602094240838
+Town & Country Planning and Landscape Design,0.5235602094240838
+Communication & Media Studies,0.5235602094240838
+Art & Design,0.5235602094240838
+"History of Art, Architecture & Design",0.3926701570680628
+Law,0.3926701570680628
+Nursing,0.3926701570680628
+Politics,0.2617801047120419
+Land & Property Management,0.2617801047120419
+Philosophy,0.2617801047120419
+English,0.2617801047120419
+Physiotherapy,0.13089005235602094
+Social Work,0.13089005235602094
+Sports Science,0.13089005235602094
+Veterinary Medicine,0.13089005235602094
+Youth Work,0.13089005235602094
+Music,0.13089005235602094
+Marketing,0.13089005235602094
+Iberian Languages/Hispanic Studies,0.13089005235602094
+"Hospitality, Leisure, Recreation & Tourism",0.13089005235602094
+German,0.13089005235602094
+French,0.13089005235602094
+Fashion,0.13089005235602094
+East & South Asian Studies,0.13089005235602094
+Dentistry,0.13089005235602094
+Criminology,0.13089005235602094
+Counselling,0.13089005235602094
+Complementary Medicine,0.13089005235602094
+American Studies,0.13089005235602094
 Russian & East European Languages,0.0
 Accounting & Finance,0.0
