@@ -1,9 +1,9 @@
 Which university?,currentEmp2. Which university? [PERCENTAGE]
 University of Edinburgh,13.939393939393941
 University of Sheffield,8.484848484848486
-University of Manchester,6.666666666666667
 University College London (UCL),6.666666666666667
 University of Oxford,6.666666666666667
+University of Manchester,6.666666666666667
 University of St Andrews,6.0606060606060606
 University of Cambridge,5.454545454545454
 University of Southampton,4.848484848484849
@@ -12,27 +12,27 @@ University of Bristol,4.242424242424243
 Imperial College London,3.6363636363636362
 University of Birmingham,3.0303030303030303
 "University of Warwick, Coventry",2.4242424242424243
-Newcastle University,1.8181818181818181
 University of Reading,1.8181818181818181
-University of Dundee,1.8181818181818181
 University of Bath,1.8181818181818181
-"Durham University, Durham and Stockton-on-Tees (Queen's Campus)",1.2121212121212122
+Newcastle University,1.8181818181818181
+University of Dundee,1.8181818181818181
+University of Exeter,1.2121212121212122
 University of Glasgow,1.2121212121212122
+Other,1.2121212121212122
 University of York,1.2121212121212122
 Bournemouth University,1.2121212121212122
-University of Exeter,1.2121212121212122
 King's College London,1.2121212121212122
-Other,1.2121212121212122
-"University of Gloucestershire, Cheltenham, Gloucester and London",0.6060606060606061
-"Queen Mary, University of London",0.6060606060606061
-Bangor University,0.6060606060606061
-Swansea University,0.6060606060606061
-Royal Veterinary College,0.6060606060606061
-"Cranfield University, Cranfield, and Shrivenham",0.6060606060606061
-"St George's, University of London",0.6060606060606061
-University of Leicester,0.6060606060606061
-University of Nottingham,0.6060606060606061
+"Durham University, Durham and Stockton-on-Tees (Queen's Campus)",1.2121212121212122
 University of Liverpool,0.6060606060606061
-"Heriot-Watt University, Edinburgh and Galashiels",0.6060606060606061
+"St George's, University of London",0.6060606060606061
+Swansea University,0.6060606060606061
 "Birkbeck, University of London",0.6060606060606061
+"Heriot-Watt University, Edinburgh and Galashiels",0.6060606060606061
+"Queen Mary, University of London",0.6060606060606061
+University of Nottingham,0.6060606060606061
+"University of Gloucestershire, Cheltenham, Gloucester and London",0.6060606060606061
+Royal Veterinary College,0.6060606060606061
+Bangor University,0.6060606060606061
+"Cranfield University, Cranfield, and Shrivenham",0.6060606060606061
+University of Leicester,0.6060606060606061
 "University of Sussex, Falmer and Brighton",0.6060606060606061
