@@ -14,5 +14,6 @@ corresponding_title = {'paper': 'Publications',
                        'percemp': 'Perceived employability',
                        'affsat': 'Affective satisfaction',
                        'time': 'Spending time',
+                       'timecan': 'Spending time',
                        'satisgen': 'General satisfaction',
                        'prevEmp': 'Reasons to choose this job'}

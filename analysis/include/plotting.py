@@ -42,14 +42,12 @@ def bar_plot(df, colormap, horizontal=False):
         ax = df.plot.barh(label='index', width=width, color=colors)
     else:
         ax = df.plot.bar(label='index', width=width, color=colors)
-
     return ax
 
 
 def plot_y_n_single(df, colormap):
     """
     """
-    # fig, ax = plt.subplots()
     width=0.8
     # Take the colors associate to yes and no
     # colors = [np.array((colormap(0), colormap(3)))]
@@ -58,7 +56,6 @@ def plot_y_n_single(df, colormap):
         colors.append(colormap(0))
     if df.iloc[0].loc['No'] > 0:
         colors.append(colormap(3))
-    # colors = [np.array(colors)]
     ax = df.transpose().plot.bar(label='index', width=width, color=colors)
     return ax
 
@@ -96,7 +93,6 @@ def ranking_plot(df, colormap):
 
 
 def likert_plot(df):
-
     df = df.transpose()
     ax = likert_scale(df)
     return ax
@@ -111,7 +107,6 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
     wrap_label = False
     y_label = True
     dropna=True
-
     # Remove any [PERCENTAGE] strings from either the columns names or the row index name
     # remove for the columns
     try:
@@ -163,7 +158,6 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
 
         elif type_question.lower() == 'freenumeric':
             ax = plot_numeric_var(df)
-
 
         cosmetic_changes_plot(df, ax, legend=legend, x_label=x_label, wrap_label=wrap_label, y_label=y_label, dropna=dropna)
 
