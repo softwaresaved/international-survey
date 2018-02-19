@@ -79,6 +79,6 @@ We now provide some more detail about the columns in the questions csv file. You
 
 # Technical solution
 
-We decided to use the open source [limesurvey](http://www.limesurvey.org) service to create the survey. This solution presents advantages in term of price and variety of hosting solutions. It also makes it is easier to share survey templates that can be later modified by each organisation/country. The template is in [template/](./templates').
+We decided to use the open source [limesurvey](http://www.limesurvey.org) service to create the survey. This solution presents advantages in term of price and variety of hosting solutions.
 
 The collaboration will be done on this repository to ensure access to the information for every one and respect the principle of transparency. However, on early stage, the repository is going to be set up on *private mode* until everyone agrees on going on *public*.
