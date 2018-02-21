@@ -137,12 +137,12 @@ Lastly, a short overview of the three top languages per countries is presented h
 
 
 |Country| First language| Second language| Third language |
-|:-----:|:-----:|:-----:|:-----:|:-----:|
-|**Germany**| |Python (18%)|C++ (10%)|Javascript (9%)|
-|**Netherlands**| |N/A|N/A|N/A|
-|**United Kingdom**| |Python (15%)|Unix Shell Script (11%)|Markup language (9%)|
-|**United States of America**| |Python (18%)|C (11%)|C++ (10%)|
-|**South Africa**| |Python (22%)|SQL (10%)|R (10%)|
+|:-----:|:-----:|:-----:|:-----:|
+|**Germany**|Python (18%)|C++ (10%)|Javascript (9%)|
+|**Netherlands**|N/A|N/A|N/A|
+|**United Kingdom**|Python (15%)|Unix Shell Script (11%)|Markup language (9%)|
+|**United States of America**|Python (18%)|C (11%)|C++ (10%)|
+|**South Africa**|Python (22%)|SQL (10%)|R (10%)|
 
 
 ## Links to the results<a name="links"></a>
