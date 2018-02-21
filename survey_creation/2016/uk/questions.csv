@@ -12,19 +12,24 @@ section,code,question,answer_format,file_17,other,condition,mandatory,random,pub
 2,currentEmp4,Which organisation do you work for?,ONE CHOICE,type_organisation,,,,,,, --  -- Which organisation do you work for? --  --  --  -- ,,currentEmp4
 2,currentEmp5,What is your official job title (i.e. the job title on your contract of employment)?,FREETEXT,,,,,,,, --  --  --  --  --  -- What is your official job title (i.e. the job title on your contract of employment)? --  -- ,,
 2,currentEmp16a,In what year did you start your current position?,FREENUMERIC,,,,,,,, --  -- In what year did you start your current position? --  --  --  -- ,,
+2,currentEmp10,What type of contract are you employed on?,ONE CHOICE,type_contract,,,,,,,What type of contract are you employed on? --  -- ,,currentEmp10
 2,currentEmp11,What is the duration of your current contract?,FREENUMERIC,,,,,,,,Month,,
 2,currentEmp12,Do you work full time or part time?,ONE CHOICE,type_hours,,,,,,,Do you work full time or part time? --  -- ,,currentEmp12
 2,currentEmp16b,Is this your first job?,Y/N/NA,,,,,,,,Is this your first job? --  -- ,,
+2,prevEmp16a,Have you previously worked in the private sector?,Y/N/NA,,,,,,,,Have you previously worked in the private sector? --  -- ,,
 2,prevEmp16b,Why did you leave the private sector?,ONE CHOICE,reasons_leave_job,,,,,,,Why did you leave the private sector? --  -- ,,reasons_leave_job
 2,prevEmp16c,What was the official job title of your previous job (i.e. the job title stated on your contact of employment)?,FREETEXT,,,,,,,,What was the official job title of your previous job (i.e. the job title stated on your contact of employment)? --  -- ,,
 2,prevEmp16d,What was the type of your contract?,ONE CHOICE,type_contract,,,,,,, --  --  --  --  --  -- What was the type of your contract? --  -- ,,prevEmp16d
 3,currentEmp6,Are you known in your group by a different job title (e.g. the job title on your group website or business cards)?,Y/N/NA,,,,,,,, --  --  --  --  --  -- Are you known in your group by a different job title (e.g. the job title on your group website or business cards)? --  -- ,,
 3,currentEmp5,What is this job title?,FREETEXT,,,,,,,,What is this job title? --  -- ,,
+3,currentWork2,Do you work within a group that provides software development help or expertise to researchers from other groups within your organisation?,Y/N/NA,,,,,,,,Do you work within a group that provides software development help or expertise to researchers from other groups within your organisation? --  -- ,,
 3,currentWork16a,What percentage of your time do you spend developing software each week?,FREETEXT,,,,,,,, --  -- What percentage of your time do you spend developing software each week? --  --  --  -- ,,
+3,paper1,Has your software ever contributed to research that has been published in a journal or at a conference?,Y/N/NA,,,,,,,,Has your software ever contributed to research that has been published in a journal or at a conference? --  -- ,,
 3,paper2,Were you acknowledged in the paper?,Y/N/NA,,,,,,,,Were you acknowledged in the paper?,,
 3,paper4,Were you named as a co-author of the paper?,Y/N/NA,,,,,,,,Were you named as a co-author of the paper?,,
 3,paper5,Were you named as the lead author of the paper?,Y/N/NA,,,,,,,,Were you named as the lead author of the paper?,,
 3,stability1,What is the bus factor of your most important software project?,LIKERT,bus_factor,,,,,,," --  --  --  --  --  -- What is the bus factor of your most important software project? --  --  --  --  --  -- Your ""most important software project"" is the work-related project that you believe to have had the greatest impact on the research community. --  --  --  -- The ""bus factor"" designates the minimal number of developers that have to be hit by a bus (or quit) before a project is incapacitated. --  --  --  -- ",,bus_factor
+3,stability2,Is there a technical hand-over plan for your most important software project?,Y/N/NA,,,,,,,," --  --  --  --  --  -- Is there a technical hand-over plan for your most important software project? --  --  --  --  --  -- Your ""most important software project"" is the work-related project that you believe to have had the greatest impact on the research community. --  --  --  -- ",,
 4,perfCheck1,Do you receive sufficient information on the results of your work?,LIKERT,likert_time_5,,,,,,,Do you receive sufficient information on the results of your work?,,likert_time_5
 4,perfCheck2,Does your work give you the opportunity to check on how well you are doing your work?,LIKERT,likert_time_5,,,,,,,Does your work give you the opportunity to check on how well you are doing your work?,,likert_time_5
 5,perfCheck4,Do you receive sufficient information on the purpose of your work?,LIKERT,likert_time_5,,,,,,,Do you receive sufficient information on the purpose of your work?,,likert_time_5
@@ -58,8 +63,12 @@ section,code,question,answer_format,file_17,other,condition,mandatory,random,pub
 6,skill2-1,"In your opinion, what are the three most important skills that a Research Software Engineer must possess?",FREETEXT,,,,,,,,Skill 2,,
 6,skill2-2,"In your opinion, what are the three most important skills that a Research Software Engineer must possess?",FREETEXT,,,,,,,,Skill 3,,
 6,ukrse1,Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list),Y/N/NA,,,,,,,,Are you a member of the UK RSE Association? (Members are people who have signed up to the UK RSE mailing list) --  -- ,,
+6,tool1,What are the three tools or services you use most often to achieve your work?,FREETEXT,,,,,,,,Tool/Service 1,,
+6,tool16a,What are the three tools or services you use most often to achieve your work?,FREETEXT,,,,,,,,Tool/Service 2,,
+6,tool16b,What are the three tools or services you use most often to achieve your work?,FREETEXT,,,,,,,,Tool/Service 3,,
 6,socio2,Please select your gender,ONE CHOICE,gender,,,,,,,Please select your gender --  -- ,,socio2
 6,socio3,Please select your age,ONE CHOICE,age,,,,,,,Please select your age --  -- ,,age
 6,socio4,Please select the range of your salary,ONE CHOICE,salary,,,,,,,Please select the range of your salary --  -- ,,salary
 6,tool2,What is your Operating System of choice for use at work?,ONE CHOICE,os,,,,,,,What is your Operating System of choice for use at work? --  -- ,,os
+7,contact16a,I would like to leave my email address so that I can receive a report on the outcomes of this survey.,Y/N/NA,,,,,,,,I would like to leave my email address so that I can receive a report on the outcomes of this survey. --  -- ,,
 7,contact16b,Please enter your email address,FREETEXT,,,,,,,,Please enter your email address --  -- ,,

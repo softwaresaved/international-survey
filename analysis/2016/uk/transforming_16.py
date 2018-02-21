@@ -21,7 +21,9 @@ def subsetting_df(df, complete_info):
     for element in complete_info:
         new_col_name = '{}. {}'.format(element['code'], element['question'].replace(u'\xa0', ' '))
         if element['Original title'] in df.columns:
+
             subsetting_list.append(new_col_name)
+            # print(element['Original title'])
         df.rename(columns={element['Original title']: new_col_name}, inplace=True)
 
     return df[subsetting_list]
@@ -190,7 +192,10 @@ def main():
     new_list_question = list()
     for col in sub_df:
         for row in complete_info:
-            if '{}. {}'.format(row['code'], row['question']) == col:
+
+            new_col_name = '{}. {}'.format(row['code'], row['question'].replace(u'\xa0', ' '))
+            # if '{}. {}'.format(row['code'], row['question']) == col:
+            if new_col_name.lower().rstrip() == col.lower().rstrip():
                 if row['answer_format'].lower() == 'one choice':
                     row = clean_one_choice(root_file_answer, row, sub_df, col)
                 elif 'likert' in row['answer_format'].lower():
