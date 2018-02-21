@@ -22,9 +22,9 @@ Here a table that split the number of participants per country.
 **South Africa**|39|22|17|22
 **TOTAL**|1377|577|800|841
 
-<sub>\* The *Total participants* are the number of people that opened the survey no matter how far they went through.</sub>
+<sub> \* The *Total participants* are the number of people that opened the survey no matter how far they went through.</sub>
 
-<sub>\*\* The *Partial participants* are the number of participants that did not finished the survey but may have skip only the last question.</sub>
+<sub> \*\* The *Partial participants* are the number of participants that did not finished the survey but may have skip only the last question.</sub>
 
 ## Composition of the survey
 
@@ -48,7 +48,7 @@ The different sections may not be in all surveys as every countries had the poss
 The results differ from one country to another but it exists some tendencies that are shared among different places and could be seen as common faith for RSEs around the world.
 First, we can say the RSE are mainly male and are from to 25 to 44 years old. They also hold, for the majority of them, a doctorate.
 
-<sub>*Disclaimer: These results only give an overview of some results, if you want the exact number for each country with more precision you should go directly to the different notebook as linked in the [last section](#links). </sub>
+<sub>\*Disclaimer: These results only give an overview of some results, if you want the exact number for each country with more precision you should go directly to the different notebook as linked in the [last section](#links). </sub>
 
 
 
@@ -75,6 +75,7 @@ Second, where they get their diploma. It is clear that 3 disciplines are constan
 
 RSEs are coming from the same disciplines and it looks like they also works for the same ones. When we asked them for which disciplines they work for, it is more or less the same results, *Computer sciences*, *Biology* and *Physics and Astronomy* are over represented.
 
+
 |||
 :-----:|:-----:|:-----:|:-----:
 **Germany**|Computer science (18%)|Physics and astronomy (14%) |Biology (14%)
@@ -83,6 +84,7 @@ RSEs are coming from the same disciplines and it looks like they also works for 
 **United States of America**|Computer science (21%)|Biology (12%)|Physics and astronomy (9%)
 **South Africa**|Physics and astronomy (29%)|CS (12%)|Mathematics (10%)
 
+
 However, if we take a closer look at the results, it is possible to see a more interdisciplanry perspective in their work. In the following [notebook](https://github.com/softwaresaved/survey_additional_analysis/blob/master/interdisciplinary_aspects_of_research_software_engineers_in_uk.ipynb) data about United Kingdom are analysed and it appears that up to 63% of UK participants are working in more than one disciplines.
 
 
@@ -90,6 +92,7 @@ Among other results that are shared accross countries we can talk about the reas
 
 
 We also investigated their publications, both in traditional academic fashion and more on software practices. They are still showing a major contribution to paper publication through software development but they are not always cited in the paper.
+
 
 **Country**|**Software used for publication**|**Cited in the paper**
 :-----:|:-----:|:-----:
@@ -122,7 +125,9 @@ Sustainability is an important aspect we advocate here at the SSI. This is norma
 **United States of America**|7% No testing|1 (39%)|Yes (18%)
 **South Africa**|24% no testing|1 (78%)|Yes (11%)
 
+
 The percentage of RSE not implementing any form of testing could be seen as rather low. However, understanding the importance of their work in producing and publishing results, 10% should be seen as high. A similar problem is found with the bus factor. It is often only one person responsible for the software writing. This could be explained by the low number of software developers dedicated to a project, but the low number of technical plan creates a problematic situation (moreover when we analyse the result about future promotion).
+
 
 **Country**|**Testing**|**Bus factor**|**Technical handover**
 :-----:|:-----:|:-----:|:-----:
@@ -134,6 +139,7 @@ The percentage of RSE not implementing any form of testing could be seen as rath
 
 
 And lastly, a short overview of the three top languages per countries. As we can see, there is some differences but Python is clearly the dominant language among RSEs.
+
 
 ||||
 :-----:|:-----:|:-----:|:-----:|:-----:
