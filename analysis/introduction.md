@@ -27,7 +27,7 @@ Here is a table with the number of participants per country.
 
 ## Composition of the survey
 
-The survey itself had ten major sections covering various aspects.
+The surveys are composed of 10 sections which investigated a specific aspect of the RSEs. These questions were focus on the individual level mainly.
 The different sections may not appear in all surveys as each country tailored each survey. For a report of which questions are present in which survey, please follow this [link](https://github.com/softwaresaved/international-survey/blob/master/survey_creation/2017/summary_questions.csv). Here is a brief description of each section and its associated goals:
 
 1. **Demographics**: In this section, we were interested in the traditional social and economical aspect of the participants. Gender, age, salary and education are among the investigated dimensions and adapted to the specificities of each countries.
@@ -45,9 +45,10 @@ The different sections may not appear in all surveys as each country tailored ea
 
 Results differ from one country to another but exists some tendencies are shared among different places become clear and could be seen as common faith for RSEs around the world. Firstly, we can say RSEs are mainly male and are from 25 to 44 years old. They also hold, for the majority of them, a doctorate.
 
-<sub>\*Disclaimer: These results only give an overview of some results. To find out the exact number for each country with more precision, go directly to the different notebook as linked in the [last section](#links). </sub>
+<sub>\*Disclaimer: These are only an overview of all the results. To find out the exact number for each country with more precision, go directly to the different notebook as linked in the [last section](#links). </sub>
 
 
+We asked the participants which qualification they obtained, which is reported below.
 
 **Countries**|**Gender**|**Age**|**Qualification**
 :-----:|:-----:|:-----:|:-----:
@@ -57,7 +58,7 @@ Results differ from one country to another but exists some tendencies are shared
 **United States of America**|Male (82%)|25 – 44 (69%)|Doctorate (60%)
 **South Africa**|Male (92%)|25 – 44 (76%)|Doctorate (68%)
 
-Secondly, where they get their diploma. It is clear that 3 disciplines are constantly represented, *Computer sciences*, *Physics and Astronomy* and *Biology*.
+In majority, the participants hold a Doctorate. When we asked them in which field they obtained they qualification, there are three 3 disciplines that are clearly more important: *Computer sciences*, *Physics and Astronomy* and *Biology*.
 
 
 |||
