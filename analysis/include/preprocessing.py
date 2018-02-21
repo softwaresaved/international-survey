@@ -52,6 +52,9 @@ class CleaningData(CleaningConfig):
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
         self.df = self.revert_inverted_likert(self.likert_item_to_revert)
+        # In the 2016 emails there is a columns with emails that needs to be removed
+        if self.year == '2016' and self.country == 'uk':
+            self.df = self.remove_email_2016(self.df)
         # In case of the German 2017 survey, they did a mistake with the answer item for the salary and left the pounds for the english
         # text while converted in euros for the translation in German. This function just convert each of the answers into the euros.
         if self.year == '2017' and self.country == 'de':
@@ -60,6 +63,14 @@ class CleaningData(CleaningConfig):
             self.df = self.clean_salary_us_2017(self.df)
         self.df, self.structure_by_section = self.create_language_section(self.df, self.structure_by_section)
         return self.df
+
+    def remove_email_2016(self, df):
+        """
+        Function to drop the column containing email for the 2016 uk version
+        """
+        mail = "contact16b. Please enter your email address"
+        df = df.drop(mail, axis=1)
+        return df
 
     def clean_salary_us_2017(self, df):
         """
@@ -96,20 +107,23 @@ class CleaningData(CleaningConfig):
         while creating a file_answer to be able to be plot later in analysis
         """
         path_to_language = os.path.join('../survey_creation', self.year, self.country, 'listAnswers', 'languages.csv')
-        list_of_languages = self.df['startlanguage. Start language'].unique()
-        if len(list_of_languages) > 1:
-            with open(path_to_language, 'w+') as f:
-                for language in list_of_languages:
-                    f.write(language)
-                    f.write('\n')
-            dict_to_add = {0: {'language': [{'survey_q': ['startlanguage. Start language'],
-                                             'original_question': ['startlanguage. Start language'],
-                                             'answer_format': 'one choice',
-                                             'file_answer': path_to_language,
-                                             'order_question': False}]}}
+        try:
+            list_of_languages = self.df['startlanguage. Start language'].unique()
+            if len(list_of_languages) > 1:
+                with open(path_to_language, 'w+') as f:
+                    for language in list_of_languages:
+                        f.write(language)
+                        f.write('\n')
+                dict_to_add = {0: {'language': [{'survey_q': ['startlanguage. Start language'],
+                                                'original_question': ['startlanguage. Start language'],
+                                                'answer_format': 'one choice',
+                                                'file_answer': path_to_language,
+                                                'order_question': False}]}}
 
-            structure_by_section.update(dict_to_add)
-            structure_by_section.move_to_end(0, last=False)
+                structure_by_section.update(dict_to_add)
+                structure_by_section.move_to_end(0, last=False)
+        except KeyError:
+            pass
         return self.df, structure_by_section
 
     def revert_inverted_likert(self, item_to_revert):
