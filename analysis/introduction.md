@@ -1,17 +1,16 @@
 # International survey
 
-The Software Sustainability Institute conducted last year a survey on Research Software Developers to understand who are they and what are their work conditions. This knowledge is essential to tailor any policy for this specific group, which importance raised these last years but may still lack official recognition.
-This year, several additional countries participated by adapting the survey to their own country with the help of:
+Last year, the Software Sustainability Institute conducted a survey on Research Software Developers to understand who they are and their work conditions. This knowledge is essential to tailor any policy for this specific group, whose importance has increased in these past years but may still lack official recognition.
+This year, several additional countries participated by adapting the survey to their own country:
 * Germany: Stephan Janosch and Martin Hammitzsch.
 * The Netherlands: Ben van Werkhoven and Tom Bakker.
 * South Africa: Anelda van der Walt.
 * The United States of America: Sandra Gesing and Daniel Katz
 
-
 ## Diffusion
 
-We reached a total of 1377 participants and after selecting only the participants that were from the specifics countries, we analysed 841 responses.
-Here a table that split the number of participants per country.
+We reached a total of 1377 participants and after selecting only the participants from specifics countries, we analysed 841 responses.
+Here is a table with the number of participants per country.
 
 **Countries** |**Total participants\***|**Partial participants\*\***|**Participants who finished the survey**|**Number of participants actually analysed**
 :-----:|:-----:|:-----:|:-----:|:-----:
@@ -24,31 +23,29 @@ Here a table that split the number of participants per country.
 
 <sub> \* The *Total participants* are the number of people that opened the survey no matter how far they went through.</sub>
 
-<sub> \*\* The *Partial participants* are the number of participants that did not finished the survey but may have skip only the last question.</sub>
+<sub> \*\* The *Partial participants* are the number of participants that did not finished the survey but may have only skipped the last question.</sub>
 
 ## Composition of the survey
 
-The survey itself had 10 majors sections that covers several aspects
-The different sections may not be in all surveys as every countries had the possibility to tailor their own survey. For a report of which question is present in which survey please follow this [link](https://github.com/softwaresaved/international-survey/blob/master/survey_creation/2017/summary_questions.csv). Here following a brief description of each sections and the associated goals.
+The survey itself had ten major sections covering various aspects.
+The different sections may not appear in all surveys as each country tailored each survey. For a report of which questions are present in which survey, please follow this [link](https://github.com/softwaresaved/international-survey/blob/master/survey_creation/2017/summary_questions.csv). Here is a brief description of each section and its associated goals:
 
-1. **Demographics**: In that section we were interested in the traditional social and economical aspect of the participants. Gender, age, salary and education are among the investigated dimensions and adapted to the specificities of each countries.
-2. **Coding**: Obviously, RSEs are coding, but how often, for how long and for whom?
+1. **Demographics**: In this section, we were interested in the traditional social and economical aspect of the participants. Gender, age, salary and education are among the investigated dimensions and adapted to the specificities of each countries.
+2. **Coding**: Obviously, RSEs are coding, but how often, for how long and for whom.
 3. **Employment**: Which type of organisation they work for and in which disciplines.
-4. **Current contract**: Which type of contract and funding they have. It helps to assess the working stability of the participants.
-5. **Previous employment**: Where they were previously working and the reasons they choose a job as an RSEs.
-6. **Collaboration and training**: RSEs works for other researchers, we investigated this aspect here by asking question about with whom they work with and for which projects but also if they train their fellow researchers.
-7. **Publications**: Publications is an important aspect of academic work. However, as RSEs is an hybrid role, it may not be easy for them to benefit from this form of recognition. On the side, some specific rules applies to the publication and dissemination of software. This section also try to understand these practices.
+4. **Current contract**: What type of contract and funding they have. This helps to assess the working stability of the participants.
+5. **Previous employment**: Where they were previously working and the reasons they chose to be an RSE.
+6. **Collaboration and training**: RSEs works for other researchers. We investigated this aspect here by asking questions not only about with whom they work and for which projects, but also if they train their fellow researchers.
+7. **Publications**: Publications are an important aspect of academic work. However, as RSEs have hybrid roles, it may not be easy for them to benefit from this form of recognition. Additionally, some specific rules apply to the publication and dissemination of software. This section tries to understand these practices.
 8. **Sustainability**: Some practices should be put in place to ensure quality of code but also the sustainability of the developed softwares.
-9. **Job Satisfaction**: Here the aim was to ask the participants about their job satisfaction to identify potential structural issues that are translated into individual perspectives.
-10. **RSE Network**: Developing a network for RSE is a long task and countries have different maturity levels on this regards. It is therefore essential to see how these efforts are accepted within the population of RSE and how they are aware of such organisations.
-
+9. **Job Satisfaction**: The aim of this section is to ask the participants about their job satisfaction to identify potential structural issues that are translated into individual perspectives.
+10. **RSE Network**: Developing a network for RSEs is a long task and countries have different maturity levels on this regard. It is therefore essential to see how these efforts are accepted within the RSE population and measure awareness of such organisations.
 
 ## Quick insight of some results\*
 
-The results differ from one country to another but it exists some tendencies that are shared among different places and could be seen as common faith for RSEs around the world.
-First, we can say the RSE are mainly male and are from to 25 to 44 years old. They also hold, for the majority of them, a doctorate.
+Results differ from one country to another but exists some tendencies are shared among different places become clear and could be seen as common faith for RSEs around the world. Firstly, we can say RSEs are mainly male and are from 25 to 44 years old. They also hold, for the majority of them, a doctorate.
 
-<sub>\*Disclaimer: These results only give an overview of some results, if you want the exact number for each country with more precision you should go directly to the different notebook as linked in the [last section](#links). </sub>
+<sub>\*Disclaimer: These results only give an overview of some results. To find out the exact number for each country with more precision, go directly to the different notebook as linked in the [last section](#links). </sub>
 
 
 
@@ -60,7 +57,7 @@ First, we can say the RSE are mainly male and are from to 25 to 44 years old. Th
 **United States of America**|Male (82%)|25 – 44 (69%)|Doctorate (60%)
 **South Africa**|Male (92%)|25 – 44 (76%)|Doctorate (68%)
 
-Second, where they get their diploma. It is clear that 3 disciplines are constantly represented, *Computer sciences*, *Physics and Astronomy* and *Biology*.
+Secondly, where they get their diploma. It is clear that 3 disciplines are constantly represented, *Computer sciences*, *Physics and Astronomy* and *Biology*.
 
 
 |||
@@ -73,7 +70,7 @@ Second, where they get their diploma. It is clear that 3 disciplines are constan
 
 
 
-RSEs are coming from the same disciplines and it looks like they also works for the same ones. When we asked them for which disciplines they work for, it is more or less the same results, *Computer sciences*, *Biology* and *Physics and Astronomy* are over represented.
+RSEs are coming from the same disciplines and it looks like they also work in the same ones. When we asked them for which disciplines they work, similar results come up, *Computer sciences*, *Biology* and *Physics and Astronomy* are over represented.
 
 
 |||
@@ -85,14 +82,12 @@ RSEs are coming from the same disciplines and it looks like they also works for 
 **South Africa**|Physics and astronomy (29%)|CS (12%)|Mathematics (10%)
 
 
-However, if we take a closer look at the results, it is possible to see a more interdisciplanry perspective in their work. In the following [notebook](https://github.com/softwaresaved/survey_additional_analysis/blob/master/interdisciplinary_aspects_of_research_software_engineers_in_uk.ipynb) data about United Kingdom are analysed and it appears that up to 63% of UK participants are working in more than one disciplines.
+However, if we take a closer look at the results, it is possible to see a more interdisciplanry perspective in their work. In the following [notebook](https://github.com/softwaresaved/survey_additional_analysis/blob/master/interdisciplinary_aspects_of_research_software_engineers_in_uk.ipynb) data about United Kingdom is analysed. It appears that up to 63% of UK participants are working in more than one discipline.
 
 
-Among other results that are shared accross countries we can talk about the reasons why RSEs chose their job. It is clear that their interest in research is the main motivation to become an RSE and it is a position they wanted to have and they are happy with. However, even if it seems that they are really enjoying their job, they do not see much possibility of progression or promotion with their current job. This is a problem already highlighted in 2016 in United Kingdom and the situation does not seem to change in 2017.
-
+Among other results that are shared accross countries, we can talk about the reasons why RSEs chose their job. It is clear that interest in research is the main motivation to become an RSE—it is a position they wanted to have and are happy with. However, even if it seems that they are enjoying their job, they do not see much possibility of progression or promotion with their current job. This is a problem already highlighted in 2016 in United Kingdom and the situation did not change in 2017.
 
 We also investigated their publications, both in traditional academic fashion and more on software practices. They are still showing a major contribution to paper publication through software development but they are not always cited in the paper.
-
 
 **Country**|**Software used for publication**|**Cited in the paper**
 :-----:|:-----:|:-----:
@@ -103,8 +98,7 @@ We also investigated their publications, both in traditional academic fashion an
 **South Africa**|74%|42%
 
 
-This year we asked them about the use of Open Source licence and if they use Digital Object Identifier (DOI). The former is most extensively used, and among the users, they are often used. On contrary the use of DOI has a lower penetration rate and even among those who use it, they do not tend to frequently associate a DOI. Therefore, Open source seems more spread and as soon it is used, it becomes natural to associate an open source licence to the software, while the DOI do not share the same enthousiasm.
-
+This year we asked them about the use of Open Source licence and if they use a Digital Object Identifier (DOI). On the one hand, the former is most extensively used, and among the users, they are often used. On the other hand, the use of DOI has a lower penetration rate and even among those who use it, they do not tend to frequently associate a DOI. Therefore, Open source seems more spread and as soon it is used, it becomes natural to associate an open source licence to the software, while the DOI does not share the same enthusiasm.
 
 **Country**|**Use of open source licence**|**Frequency of open source use**|**Use of DOI**|**Percent of time for doi**
 :-----:|:-----:|:-----:|:-----:|:-----:
@@ -114,7 +108,7 @@ This year we asked them about the use of Open Source licence and if they use Dig
 **United States of America**|81%|40% all the time|32%|Sometime (26%)
 **South Africa**|44%|variable|11%|Not often
 
-Sustainability is an important aspect we advocate here at the SSI. This is normal we try to study this aspect too. To see if RSE are developing appropriate practices to ensure their software will outlived them we asked them if they are developing appropriate testing as well as the bus factor of their biggest project and the presence or not of a technical plan.
+Sustainability is an important aspect we advocate here at the Software Sustainability Institute. So it is normal we try to study this aspect too. To find out if RSEs are developing appropriate practices to ensure their software will outlive them, we asked if they are developing appropriate testing as well as the bus factor of their biggest project and the presence or not of a technical plan.
 
 
 **Country**|**Testing**|**Bus factor**|**Technical handover**
@@ -126,7 +120,7 @@ Sustainability is an important aspect we advocate here at the SSI. This is norma
 **South Africa**|24% no testing|1 (78%)|Yes (11%)
 
 
-The percentage of RSE not implementing any form of testing could be seen as rather low. However, understanding the importance of their work in producing and publishing results, 10% should be seen as high. A similar problem is found with the bus factor. It is often only one person responsible for the software writing. This could be explained by the low number of software developers dedicated to a project, but the low number of technical plan creates a problematic situation (moreover when we analyse the result about future promotion).
+The percentage of RSEs not implementing any form of testing could be seen as rather low. However, understanding the importance of their work in producing and publishing results, 10% should be seen as high. A similar problem is found with the bus factor. Often, only one person is responsible for the software writing. This could be explained by the low number of software developers dedicated to a project, though the low number of technical plan creates a problematic situation (even more when we perform an analysis of the result about future promotion).
 
 
 **Country**|**Testing**|**Bus factor**|**Technical handover**
@@ -138,7 +132,7 @@ The percentage of RSE not implementing any form of testing could be seen as rath
 **South Africa**|24% no testing|1 (78%)|Yes (11%)
 
 
-And lastly, a short overview of the three top languages per countries. As we can see, there is some differences but Python is clearly the dominant language among RSEs.
+Lastly, a short overview of the three top languages per countries is presented here. As we can see, there are some differences but Python is clearly the dominant language among RSEs.
 
 
 ||||
@@ -152,8 +146,8 @@ And lastly, a short overview of the three top languages per countries. As we can
 
 ## Links to the results<a name="links"></a>
 
-This quick overview only scratch the surface of the data collected. To get a complete access to the available information, everything is stored on the [Github repository](https://github.com/softwaresaved/international-survey).
-If you want to have direct access to any of the specific surveys:
+This quick overview only scratches the surface of the data collected. To get complete access to the available information, you can peruse the [Github repository](https://github.com/softwaresaved/international-survey).
+Direct access to any of the specific surveys is also available:
 
 * [Germany](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_de_2017_narrative.ipynb)
 * [Netherlands](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_nl_2017_narrative.ipynb)
@@ -161,6 +155,6 @@ If you want to have direct access to any of the specific surveys:
 * [United States of America](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_us_2017_narrative.ipynb)
 * [South Africa](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_zaf_2017_narrative.ipynba)
 
-Another repository also contains extra analysis and will contain more in the near future: [extra analysis](https://github.com/softwaresaved/survey_additional_analysis)
+This is another repository that contains extra analysis and will contain more in the near future: [extra analysis](https://github.com/softwaresaved/survey_additional_analysis)
 
-If you want to participate to the 2018 version, we are creating the next survey and hope to run it in July. To participate, all information are available [here]()
+We are currently working on creating the survey for 2018 and hope to run it in July. To participate, read all information available at [here]()
