@@ -61,26 +61,26 @@ We asked the participants which qualification they obtained, which is reported b
 In majority, the participants hold a Doctorate. When we asked them in which field they obtained they qualification, there are three 3 disciplines that are clearly more important: *Computer sciences*, *Physics and Astronomy* and *Biology*.
 
 
-|||
-:-----:|:-----:|:-----:|:-----:
-**Germany**|Physics and astronomy (26%)|Computer sciences (17%)|Biology (11%)
-**Netherlands**|Computer sciences (20%)|Physics and astronomy (18%)|Biology (12%)
-**United Kingdom**|Computer sciences (27%)|Physics and astronomy (27%)|Biology (8%)
-**United States of America**|Computer sciences (25%)|Physics and astronomy (15%)|Biology (15%)
-**South Africa**|Physics and astronomy (55%)|Other (9%)|Electrical & Electronic Engineering (5%)
+|Country| First discipline| Second discipline | Third discipline |
+|:-----:|:-----:|:-----:|:-----:|
+|**Germany**|Physics and astronomy (26%)|Computer sciences (17%)|Biology (11%)|
+|**Netherlands**|Computer sciences (20%)|Physics and astronomy (18%)|Biology (12%)|
+|**United Kingdom**|Computer sciences (27%)|Physics and astronomy (27%)|Biology (8%)|
+|**United States of America**|Computer sciences (25%)|Physics and astronomy (15%)|Biology (15%)|
+|**South Africa**|Physics and astronomy (55%)|Other (9%)|Electrical & Electronic Engineering (5%)|
 
 
 
 RSEs are coming from the same disciplines and it looks like they also work in the same ones. When we asked them for which disciplines they work, similar results come up, *Computer sciences*, *Biology* and *Physics and Astronomy* are over represented.
 
 
-|||
-:-----:|:-----:|:-----:|:-----:
-**Germany**|Computer science (18%)|Physics and astronomy (14%) |Biology (14%)
-**Netherlands**|Computer science (20%)|Biology (10%)|Physics and astronomy (10%)
-**United Kingdom**|Computer science (15%)|Biology (11%)|Physics and astronomy (10%)
-**United States of America**|Computer science (21%)|Biology (12%)|Physics and astronomy (9%)
-**South Africa**|Physics and astronomy (29%)|CS (12%)|Mathematics (10%)
+|Country| First discipline | Second discipline | Third discipline |
+|:-----:|:-----:|:-----:|:-----:|
+|**Germany**|Computer science (18%)|Physics and astronomy (14%) |Biology (14%)|
+|**Netherlands**|Computer science (20%)|Biology (10%)|Physics and astronomy (10%)
+|**United Kingdom**|Computer science (15%)|Biology (11%)|Physics and astronomy (10%)|
+|**United States of America**|Computer science (21%)|Biology (12%)|Physics and astronomy (9%)|
+|**South Africa**|Physics and astronomy (29%)|CS (12%)|Mathematics (10%)|
 
 
 However, if we take a closer look at the results, it is possible to see a more interdisciplanry perspective in their work. In the following [notebook](https://github.com/softwaresaved/survey_additional_analysis/blob/master/interdisciplinary_aspects_of_research_software_engineers_in_uk.ipynb) data about United Kingdom is analysed. It appears that up to 63% of UK participants are working in more than one discipline.
@@ -136,13 +136,13 @@ The percentage of RSEs not implementing any form of testing could be seen as rat
 Lastly, a short overview of the three top languages per countries is presented here. As we can see, there are some differences but Python is clearly the dominant language among RSEs.
 
 
-||||
-:-----:|:-----:|:-----:|:-----:|:-----:
-**Germany**| |Python (18%)|C++ (10%)|Javascript (9%)
-**Netherlands**| |N/A|N/A|N/A
-**United Kingdom**| |Python (15%)|Unix Shell Script (11%)|Markup language (9%)
-**United States of America**| |Python (18%)|C (11%)|C++ (10%)
-**South Africa**| |Python (22%)|SQL (10%)|R (10%)
+|Country| First language| Second language| Third language |
+|:-----:|:-----:|:-----:|:-----:|:-----:|
+|**Germany**| |Python (18%)|C++ (10%)|Javascript (9%)|
+|**Netherlands**| |N/A|N/A|N/A|
+|**United Kingdom**| |Python (15%)|Unix Shell Script (11%)|Markup language (9%)|
+|**United States of America**| |Python (18%)|C (11%)|C++ (10%)|
+|**South Africa**| |Python (22%)|SQL (10%)|R (10%)|
 
 
 ## Links to the results<a name="links"></a>
