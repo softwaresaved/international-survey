@@ -19,7 +19,7 @@ def subsetting_df(df, complete_info):
     """
     subsetting_list = list()
     for element in complete_info:
-        new_col_name = '{}. {}'.format(element['code'], element['questions'].replace(u'\xa0', ' '))
+        new_col_name = '{}. {}'.format(element['code'], element['question'].replace(u'\xa0', ' '))
         if element['Original title'] in df.columns:
             subsetting_list.append(new_col_name)
         df.rename(columns={element['Original title']: new_col_name}, inplace=True)
@@ -112,16 +112,16 @@ def clean_one_choice(root_file_answer, row, df, col):
 
     if len(difference) > 0:
         write_new_answer(new_answer, root_file_answer, row['code'])
-        row['file_answer'] = row['code']
+        row['answer_file'] = row['code']
     else:
-        row['file_answer'] = row['file_17']
+        row['answer_file'] = row['file_17']
     return row
 
 
 def clean_likert(root_file_answer, row, df, col):
     """
     """
-    row['file_answer'] = row['file_17']
+    row['answer_file'] = row['file_17']
     if row['file_17'] == 'likert_agree':
         replacing_dict = {'1 (Strongly disagree)': 'Strongly disagree',
                           '2': 'Disagree', '3': 'Neither agree or disagree',
@@ -142,6 +142,14 @@ def clean_numeric(df, col):
 
     df[col].replace((np.inf, -np.inf), np.nan, inplace=True)
     return df[col]
+
+
+def del_mails(df):
+    """
+    Function to delete emails from the cleaned dataset
+    """
+    mail = "Please enter your email address --  -- "
+    return df.drop(mail, axis=1, inplace=True)
 
 
 def main():
@@ -167,7 +175,7 @@ def main():
     sub_df = subsetting_df(df, complete_info)
 
     # Dropping Non-UK
-    sub_df = sub_df[sub_df['socio1. In which country do you live?'] == 'United Kingdom']
+    sub_df = sub_df[sub_df['socio1. In which country do you work?'] == 'United Kingdom']
 
     # Clean the years
     sub_df = clean_year(sub_df)
@@ -182,7 +190,7 @@ def main():
     new_list_question = list()
     for col in sub_df:
         for row in complete_info:
-            if '{}. {}'.format(row['code'], row['questions']) == col:
+            if '{}. {}'.format(row['code'], row['question']) == col:
                 if row['answer_format'].lower() == 'one choice':
                     row = clean_one_choice(root_file_answer, row, sub_df, col)
                 elif 'likert' in row['answer_format'].lower():
@@ -190,7 +198,7 @@ def main():
                 elif row['answer_format'].lower() == 'freenumeric':
                     sub_df[col] = clean_numeric(sub_df, col)
                 else:
-                    row['file_answer'] = row['file_17']
+                    row['answer_file'] = row['file_17']
                 new_list_question.append(row)
 
     writing_new_dict(new_list_question, root_file)
