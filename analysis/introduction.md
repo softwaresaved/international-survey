@@ -123,16 +123,6 @@ Sustainability is an important aspect we advocate here at the Software Sustainab
 
 The percentage of RSEs not implementing any form of testing could be seen as rather low. However, understanding the importance of their work in producing and publishing results, 10% should be seen as high. A similar problem is found with the bus factor. Often, only one person is responsible for the software writing. This could be explained by the low number of software developers dedicated to a project, though the low number of technical plan creates a problematic situation (even more when we perform an analysis of the result about future promotion).
 
-
-**Country**|**Testing**|**Bus factor**|**Technical handover**
-:-----:|:-----:|:-----:|:-----:
-**Germany**|15% not implementing anything|1 (57%)|Yes (19%)
-**Netherlands**|13% not implementing anything|1 (45%)|Yes (21%)
-**United Kingdom**|10% No testing|1 (42%)|Yes (26%)
-**United States of America**|7% No testing|1 (39%)|Yes (18%)
-**South Africa**|24% no testing|1 (78%)|Yes (11%)
-
-
 Lastly, a short overview of the three top languages per countries is presented here. As we can see, there are some differences but Python is clearly the dominant language among RSEs.
 
 
