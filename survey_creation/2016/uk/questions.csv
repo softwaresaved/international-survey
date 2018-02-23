@@ -70,5 +70,3 @@ section,code,question,answer_format,file_17,other,condition,mandatory,random,pub
 6,socio3,Please select your age,ONE CHOICE,age,,,,,,,Please select your age --  -- ,,age
 6,socio4,Please select the range of your salary,ONE CHOICE,salary,,,,,,,Please select the range of your salary --  -- ,,salary
 6,tool2,What is your Operating System of choice for use at work?,ONE CHOICE,os,,,,,,,What is your Operating System of choice for use at work? --  -- ,,os
-7,contact16a,I would like to leave my email address so that I can receive a report on the outcomes of this survey.,Y/N/NA,,,,,,,,I would like to leave my email address so that I can receive a report on the outcomes of this survey. --  -- ,,
-7,contact16b,Please enter your email address,FREETEXT,,,,,,,,Please enter your email address --  -- ,,
