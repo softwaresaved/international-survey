@@ -10,20 +10,14 @@ This year, several additional countries participated by adapting the survey to t
 ## Diffusion
 
 We reached a total of 1377 participants and after selecting only the participants from specifics countries, we analysed 841 responses.
-Here is a table with the number of participants per country.
 
-**Countries** |**Total participants\***|**Partial participants\*\***|**Participants who finished the survey**|**Number of participants actually analysed**
+**Countries** |**Number of analysed responses**|**Link to analysis**|**Link to data**|
 :-----:|:-----:|:-----:|:-----:|:-----:
-**Germany**|574|296|278|325
-**Netherlands**|100|28|72|77
-**United Kingdom**|232|88|144|164
-**United States of America**|432|143|289|253
-**South Africa**|39|22|17|22
-**TOTAL**|1377|577|800|841
-
-<sub> \* The *Total participants* are the number of people that opened the survey no matter how far they went through.</sub>
-
-<sub> \*\* The *Partial participants* are the number of participants that did not finished the survey but may have only skipped the last question.</sub>
+**Germany**|325|[jupyter notebook](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_de_2017_narrative.ipynb)||
+**Netherlands**|77|[jupyter notebook](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_nl_2017_narrative.ipynb)||
+**United Kingdom**|164|[jupyter notebook](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_uk_2017_narrative.ipynb)||
+**United States of America**|253|[jupyter notebook](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_us_2017_narrative.ipynb)||
+**South Africa**|22|[jupyter notebook](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_zaf_2017_narrative.ipynba)||
 
 ## Composition of the survey
 
@@ -86,7 +80,29 @@ RSEs are coming from the same disciplines and it looks like they also work in th
 However, if we take a closer look at the results, it is possible to see a more interdisciplanry perspective in their work. In the following [notebook](https://github.com/softwaresaved/survey_additional_analysis/blob/master/interdisciplinary_aspects_of_research_software_engineers_in_uk.ipynb) data about United Kingdom is analysed. It appears that up to 63% of UK participants are working in more than one discipline.
 
 
-Among other results that are shared accross countries, we can talk about the reasons why RSEs chose their job. It is clear that interest in research is the main motivation to become an RSE—it is a position they wanted to have and are happy with. However, even if it seems that they are enjoying their job, they do not see much possibility of progression or promotion with their current job. This is a problem already highlighted in 2016 in United Kingdom and the situation did not change in 2017.
+Another specific aspect of the RSEs is what drive them to choose this work. We have seen, the majority of them hold a Doctorate, meaning a real interest and knowledge of a science field. This interest is clearly translated into the reasons of choosing this job. We asked them to rank the following propositions for the reasons to choose their position:
+
+* Desire to work in a research environment
+* Freedom to choose own working practices
+* Desire to advance research
+* I want to learn new skills
+* Opportunity to develop software
+* Flexible working hours
+* Ability to work across disciplines
+* Opportunity for career advancement
+* The salary
+
+
+|Country| First reason | Second reason | Third reason |
+|:-----:|:-----:|:-----:|:-----:|
+|**Germany**|Desire to work in a research environment|Freedom to choose own working practices|Desire to advance research|
+|**Netherlands**|N/A|N/A|N/A|
+|**United Kingdom**|Desire to work in a research environment|Desire to advance research|Opportunity to develop software|
+|**United States of America**|Desire to advance research|Desire to work in a research environment|Freedom to choose own working practices|
+|**South Africa**|Desire to work in a research environment|Flexible working hours|Ability to work accross disciplines|
+
+We can see that is the research environment that mainly attracts RSEs and they are dedicated people that, as results also report, love their work and are really satisfied with it.
+However, even if it seems that they are enjoying their job, they do not see much possibility of progression or promotion with their current job. This is a problem already highlighted in 2016 in United Kingdom and the situation did not change in 2017.
 
 We also investigated their publications, both in traditional academic fashion and more on software practices. They are still showing a major contribution to paper publication through software development but they are not always cited in the paper.
 
@@ -138,14 +154,7 @@ Lastly, a short overview of the three top languages per countries is presented h
 ## Links to the results<a name="links"></a>
 
 This quick overview only scratches the surface of the data collected. To get complete access to the available information, you can peruse the [Github repository](https://github.com/softwaresaved/international-survey).
-Direct access to any of the specific surveys is also available:
-
-* [Germany](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_de_2017_narrative.ipynb)
-* [Netherlands](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_nl_2017_narrative.ipynb)
-* [United Kingdom](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_uk_2017_narrative.ipynb)
-* [United States of America](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_us_2017_narrative.ipynb)
-* [South Africa](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_zaf_2017_narrative.ipynba)
 
 This is another repository that contains extra analysis and will contain more in the near future: [extra analysis](https://github.com/softwaresaved/survey_additional_analysis)
 
-We are currently working on creating the survey for 2018 and hope to run it in July. To participate, read all information available at [here]()
+We are currently working on creating the survey for 2018 and hope to run it in July. To participate, read all information available at [here](https://github.com/softwaresaved/international-survey/blob/master/HOW%20TO%20CONTRIBUTE.md)
