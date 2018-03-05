@@ -61,8 +61,41 @@ class CleaningData(CleaningConfig):
             self.df = self.clean_salary_de_2017(self.df)
         if self.year == '2017' and self.country == 'us':
             self.df = self.clean_salary_us_2017(self.df)
+            self.df = self.clean_highest_education(self.df)
         self.df, self.structure_by_section = self.create_language_section(self.df, self.structure_by_section)
         return self.df
+
+    def clean_highest_education(self, df):
+        """
+        In the US 2017, the 'other' field was exceptionally too much used.
+        This function do some easy cleaning to match some others with pre-existing categories
+        """
+        # Columns name to be used here
+        free_text_col = '[OTHER_RAW]. edu2[other]. In which subject is your highest academic degree/qualification? [Other]'
+        choice_col = 'edu2. In which subject is your highest academic degree/qualification?'
+
+        # Dictionary to translate the values
+        translate_fields = {'Cognitive Science': 'Psychology',
+                            'Statistics': 'Mathematics',
+                            'Genetics': 'Biological Sciences',
+                            'Scandinavian Languages and Literatures': 'Russian & East European Languages',
+                            'bioinformatics': 'Biological Sciences',
+                            'Biostatistics': 'Biological Sciences',
+                            'Physics': 'Physics and Astronomy',
+                            'Medical Physics': 'Medicine',
+                            'Computer Systems Engineering': 'Computer Science',
+                            'Artificial Intelligence and Mathematics': 'Mathematics',
+                            'Evolutionary genomics': 'Biological Sciences',
+                            'Epidemiology': 'Medicine',
+                            'Oceanography': 'Geography & Environmental Sciences',
+                            'Computational Science and Engineering': 'Computer Science'}
+
+        df.loc[df[choice_col] == 'Other'][free_text_col].value_counts(dropna=False).to_frame().rename(columns={free_text_col: 'Freetext for academic subject'})
+
+        # Mapping the dictionary into the df[choice_col] column if the value in free_text_col is in the the translate_field dictionary
+        df.loc[df[free_text_col].isin(translate_fields.keys()), choice_col] = df[free_text_col].map(translate_fields)
+        return df
+
 
     def remove_email_2016(self, df):
         """
