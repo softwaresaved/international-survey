@@ -56,7 +56,7 @@ def plot_y_n_single(df, colormap):
         colors.append(colormap(0))
     if df.iloc[0].loc['No'] > 0:
         colors.append(colormap(3))
-    ax = df.transpose().plot.bar(label='index', width=width, color=colors)
+    ax = df.transpose().plot.bar(label='index', width=width, color=colors, fontsize=14)
     return ax
 
 
@@ -88,7 +88,7 @@ def ranking_plot(df, colormap):
     """
     width = 0.8
     colors = colormap(np.arange(len(df)))
-    ax = df.plot.bar(color=colors, stacked=True, width=width)
+    ax = df.plot.bar(color=colors, stacked=True, width=width, fontsize=14)
     return ax
 
 
@@ -140,7 +140,6 @@ def get_plot(df, type_question, title_plot=False, dropna=True):
         elif type_question.lower() == 'ranking':
             ax = ranking_plot(df, colormap)
             legend = True
-            x_label = False
             wrap_label = True
 
         elif type_question.lower() == 'likert':
@@ -229,7 +228,7 @@ def remove_to_right_line(ax):
 
 
 def add_y_label(ax):
-    ax.set_ylabel('Percentage')
+    ax.set_ylabel('Percentage', fontsize=14)
     # plt.yticks(np.arange(0, 100, 10))
 
 
@@ -279,7 +278,7 @@ def add_x_labels(df, wrap_label, dropna):
     # Explanation found here:
     # https://stackoverflow.com/a/27084005/3193951
     plt.xlim([-1, len(label_txt)])
-    plt.xticks(label_ticks, label_txt, rotation=90)
+    plt.xticks(label_ticks, label_txt, rotation=90, fontsize=14)
 
 
 def display_side_by_side(*args):
