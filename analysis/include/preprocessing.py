@@ -96,7 +96,6 @@ class CleaningData(CleaningConfig):
         df.loc[df[free_text_col].isin(translate_fields.keys()), choice_col] = df[free_text_col].map(translate_fields)
         return df
 
-
     def remove_email_2016(self, df):
         """
         Function to drop the column containing email for the 2016 uk version
@@ -148,10 +147,10 @@ class CleaningData(CleaningConfig):
                         f.write(language)
                         f.write('\n')
                 dict_to_add = {0: {'language': [{'survey_q': ['startlanguage. Start language'],
-                                                'original_question': ['startlanguage. Start language'],
-                                                'answer_format': 'one choice',
-                                                'file_answer': path_to_language,
-                                                'order_question': False}]}}
+                                                 'original_question': ['startlanguage. Start language'],
+                                                 'answer_format': 'one choice',
+                                                 'file_answer': path_to_language,
+                                                 'order_question': False}]}}
 
                 structure_by_section.update(dict_to_add)
                 structure_by_section.move_to_end(0, last=False)
@@ -531,6 +530,10 @@ class CleaningData(CleaningConfig):
             if public_choice == 'false' or public_choice == 'n' or public_choice == 'no':
                 col_to_remove = self.survey_structure[entry]['survey_q'][0]
                 self.public_df.drop(col_to_remove, axis=1, inplace=True)
+        # Delete all the columns created from the 'other field' to be sure none of these are uploaded
+        for col in self.public_df.columns:
+            if '[OTHER_RAW]' in col:
+                self.public_df.drop(col, axis=1, inplace=True)
 
         self._write_df(self.public_df, self.public_df_location)
 
