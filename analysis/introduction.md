@@ -5,11 +5,11 @@ This year, several additional countries participated by adapting the survey to t
 * Germany: Stephan Janosch and Martin Hammitzsch.
 * The Netherlands: Ben van Werkhoven and Tom Bakker.
 * South Africa: Anelda van der Walt.
-* The United States of America: Sandra Gesing and Daniel Katz
+* United States of America: Daniel S. Katz and Sandra Gesing 
 
 ## Diffusion
 
-We reached a total of 1377 participants and after selecting only the participants from specifics countries, we analysed 841 responses.
+We reached a total of 1377 participants and after selecting only the participants from the specific country being surveyed, we analysed 841 responses.
 
 **Countries** |**Number of analysed responses**|**Link to analysis**|**Link to data**|
 :-----:|:-----:|:-----:|:-----:|:-----:
@@ -21,8 +21,8 @@ We reached a total of 1377 participants and after selecting only the participant
 
 ## Composition of the survey
 
-The surveys are composed of 10 sections which investigated a specific aspect of the RSEs. These questions were focus on the individual level mainly.
-The different sections may not appear in all surveys as each country tailored each survey. For a report of which questions are present in which survey, please follow this [link](https://github.com/softwaresaved/international-survey/blob/master/survey_creation/2017/summary_questions.csv). Here is a brief description of each section and its associated goals:
+The surveys are composed of 10 sections that each investigated a specific aspect of the RSEs. These questions were mainly focused on the individual level.
+The different sections may not appear in all surveys, as each country tailored each survey. For a report of which questions are present in which survey, please follow this [link](https://github.com/softwaresaved/international-survey/blob/master/survey_creation/2017/summary_questions.csv). Here is a brief description of each section and its associated goals:
 
 1. **Demographics**: In this section, we were interested in the traditional social and economical aspect of the participants. Gender, age, salary and education are among the investigated dimensions and adapted to the specificities of each countries.
 2. **Coding**: Obviously, RSEs are coding, but how often, for how long and for whom.
@@ -31,15 +31,15 @@ The different sections may not appear in all surveys as each country tailored ea
 5. **Previous employment**: Where they were previously working and the reasons they chose to be an RSE.
 6. **Collaboration and training**: RSEs works for other researchers. We investigated this aspect here by asking questions not only about with whom they work and for which projects, but also if they train their fellow researchers.
 7. **Publications**: Publications are an important aspect of academic work. However, as RSEs have hybrid roles, it may not be easy for them to benefit from this form of recognition. Additionally, some specific rules apply to the publication and dissemination of software. This section tries to understand these practices.
-8. **Sustainability**: Some practices should be put in place to ensure quality of code but also the sustainability of the developed softwares.
+8. **Sustainability**: Some practices should be put in place to ensure quality of code but also the sustainability of the developed software.
 9. **Job Satisfaction**: The aim of this section is to ask the participants about their job satisfaction to identify potential structural issues that are translated into individual perspectives.
 10. **RSE Network**: Developing a network for RSEs is a long task and countries have different maturity levels on this regard. It is therefore essential to see how these efforts are accepted within the RSE population and measure awareness of such organisations.
 
 ## Quick insight of some results\*
 
-Results differ from one country to another but exists some tendencies are shared among different places become clear and could be seen as common faith for RSEs around the world. Firstly, we can say RSEs are mainly male and are from 25 to 44 years old. They also hold, for the majority of them, a doctorate.
+Results differ from one country to another but some tendencies are shared among different places and could be seen as common for RSEs around the world. Firstly, we can say RSEs are mainly male and are from 25 to 44 years old. The majority of them hold a doctorate.
 
-<sub>\*Disclaimer: These are only an overview of all the results. To find out the exact number for each country with more precision, go directly to the different notebook as linked in the [last section](#links). </sub>
+<sub>\*Disclaimer: This is only an overview of the results. To find out the exact numbers for each country, go directly to the different notebooks as linked in the [last section](#links). </sub>
 
 
 We asked the participants which qualification they obtained, which is reported below.
@@ -52,7 +52,7 @@ We asked the participants which qualification they obtained, which is reported b
 **United States of America**|Male (82%)|25 – 44 (69%)|Doctorate (60%)
 **South Africa**|Male (92%)|25 – 44 (76%)|Doctorate (68%)
 
-In majority, the participants hold a Doctorate. When we asked them in which field they obtained they qualification, there are three 3 disciplines that are clearly more important: *Computer sciences*, *Physics and Astronomy* and *Biology*.
+When we asked them in which field they obtained they qualification, there are three 3 disciplines that are clearly most common: *Computer sciences*, *Physics and Astronomy* and *Biology*.
 
 
 |Country| First discipline| Second discipline | Third discipline |
@@ -65,7 +65,7 @@ In majority, the participants hold a Doctorate. When we asked them in which fiel
 
 
 
-RSEs are coming from the same disciplines and it looks like they also work in the same ones. When we asked them for which disciplines they work, similar results come up, *Computer sciences*, *Biology* and *Physics and Astronomy* are over represented.
+RSEs come from the same disciplines and it looks like they also work in the same ones. When we asked them for which disciplines they work, similar results came up, *Computer sciences*, *Biology* and *Physics and Astronomy* are over represented.
 
 
 |Country| First discipline | Second discipline | Third discipline |
@@ -80,7 +80,7 @@ RSEs are coming from the same disciplines and it looks like they also work in th
 However, if we take a closer look at the results, it is possible to see a more interdisciplanry perspective in their work. In the following [notebook](https://github.com/softwaresaved/survey_additional_analysis/blob/master/interdisciplinary_aspects_of_research_software_engineers_in_uk.ipynb) data about United Kingdom is analysed. It appears that up to 63% of UK participants are working in more than one discipline.
 
 
-Another specific aspect of the RSEs is what drive them to choose this work. We have seen, the majority of them hold a Doctorate, meaning a real interest and knowledge of a science field. This interest is clearly translated into the reasons of choosing this job. We asked them to rank the following propositions for the reasons to choose their position:
+Another specific aspect of the RSEs is what drives them to choose this work. We have seen that the majority hold a Doctorate, meaning a real interest and knowledge of a science field. This interest is clearly translated into the reasons for choosing this job. We asked them to rank the following propositions for the reasons they chose their position:
 
 * Desire to work in a research environment
 * Freedom to choose own working practices
@@ -102,9 +102,9 @@ Another specific aspect of the RSEs is what drive them to choose this work. We h
 |**South Africa**|Desire to work in a research environment|Flexible working hours|Ability to work accross disciplines|
 
 We can see that is the research environment that mainly attracts RSEs and they are dedicated people that, as results also report, love their work and are really satisfied with it.
-However, even if it seems that they are enjoying their job, they do not see much possibility of progression or promotion with their current job. This is a problem already highlighted in 2016 in United Kingdom and the situation did not change in 2017.
+However, even if it seems that they are enjoying their job, they do not see much possibility of progression or promotion with their current job. This problem was previously highlighted in 2016 in the United Kingdom, and the situation did not change in 2017.
 
-We also investigated their publications, both in traditional academic fashion and more on software practices. They are still showing a major contribution to paper publication through software development but they are not always cited in the paper.
+We also investigated their publications, both in traditional academic fashion and more on software practices. RSEs show a major contribution to paper publication through software development, but they are not always cited in the paper.
 
 **Country**|**Software used for publication**|**Cited in the paper**
 :-----:|:-----:|:-----:
@@ -115,7 +115,7 @@ We also investigated their publications, both in traditional academic fashion an
 **South Africa**|74%|42%
 
 
-This year we asked them about the use of Open Source licence and if they use a Digital Object Identifier (DOI). On the one hand, the former is most extensively used, and among the users, they are often used. On the other hand, the use of DOI has a lower penetration rate and even among those who use it, they do not tend to frequently associate a DOI. Therefore, Open source seems more spread and as soon it is used, it becomes natural to associate an open source licence to the software, while the DOI does not share the same enthusiasm.
+This year we asked them about the use of Open Source licence and if they use a Digital Object Identifier (DOI). On the one hand, an open source licence is extensively used, and on the other hand, DOIs for software have a lower penetration rate.
 
 **Country**|**Use of open source licence**|**Frequency of open source use**|**Use of DOI**|**Percent of time for doi**
 :-----:|:-----:|:-----:|:-----:|:-----:
@@ -125,7 +125,7 @@ This year we asked them about the use of Open Source licence and if they use a D
 **United States of America**|81%|40% all the time|32%|Sometime (26%)
 **South Africa**|44%|variable|11%|Not often
 
-Sustainability is an important aspect we advocate here at the Software Sustainability Institute. So it is normal we try to study this aspect too. To find out if RSEs are developing appropriate practices to ensure their software will outlive them, we asked if they are developing appropriate testing as well as the bus factor of their biggest project and the presence or not of a technical plan.
+Sustainability is an important aspect we advocate here at the Software Sustainability Institute. So it is normal for us to try to study this. To find out if RSEs are developing appropriate practices to ensure their software will outlive them, we asked if they are developing appropriate testing as well as the bus factor of their biggest project and the presence or not of a technical plan.
 
 
 **Country**|**Testing**|**Bus factor**|**Technical handover**
@@ -137,7 +137,7 @@ Sustainability is an important aspect we advocate here at the Software Sustainab
 **South Africa**|24% no testing|1 (78%)|Yes (11%)
 
 
-The percentage of RSEs not implementing any form of testing could be seen as rather low. However, understanding the importance of their work in producing and publishing results, 10% should be seen as high. A similar problem is found with the bus factor. Often, only one person is responsible for the software writing. This could be explained by the low number of software developers dedicated to a project, though the low number of technical plan creates a problematic situation (even more when we perform an analysis of the result about future promotion).
+The percentage of RSEs not implementing any form of testing could be seen as rather low. However, understanding the importance of their work in producing and publishing results, 10% should be seen as high. A similar problem is found with the bus factor. Often, only one person is responsible for developing the software. This could be explained by the low number of software developers dedicated to a project, though the low number of technical handover plans creates a problematic situation (even more when we perform an analysis of the result about future promotion).
 
 Lastly, a short overview of the three top languages per countries is presented here. As we can see, there are some differences but Python is clearly the dominant language among RSEs.
 
