@@ -527,12 +527,21 @@ class CleaningData(CleaningConfig):
         self.public_df = self.df.copy()
         for entry in self.survey_structure:
             public_choice = self.survey_structure[entry]['public'].lower()
-            if public_choice == 'false' or public_choice == 'n' or public_choice == 'no':
+            if public_choice == 'false' or public_choice == 'n' or public_choice == 'no' or public_choice == 'f':
                 col_to_remove = self.survey_structure[entry]['survey_q'][0]
                 self.public_df.drop(col_to_remove, axis=1, inplace=True)
         # Delete all the columns created from the 'other field' to be sure none of these are uploaded
         for col in self.public_df.columns:
             if '[OTHER_RAW]' in col:
+                self.public_df.drop(col, axis=1, inplace=True)
+
+        # Finally remove all the columns that are not in the questions.csv to be sure it remove any additional data
+        # from limesurvey
+        code_to_keep = [x for x in self.survey_structure.keys()]
+        for col in self.public_df.columns:
+            for x in code_to_keep:
+                if x in col:
+                    break
                 self.public_df.drop(col, axis=1, inplace=True)
 
         self._write_df(self.public_df, self.public_df_location)
