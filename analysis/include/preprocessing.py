@@ -539,10 +539,16 @@ class CleaningData(CleaningConfig):
         # from limesurvey
         code_to_keep = [x for x in self.survey_structure.keys()]
         for col in self.public_df.columns:
+            print(col)
+            remove = True
             for x in code_to_keep:
                 if x in col:
-                    break
-                self.public_df.drop(col, axis=1, inplace=True)
+                    remove = False
+            if remove is True:
+                try:
+                    self.public_df.drop(col, axis=1, inplace=True)
+                except ValueError:
+                    pass
 
         self._write_df(self.public_df, self.public_df_location)
 
