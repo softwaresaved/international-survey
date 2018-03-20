@@ -38,13 +38,48 @@ However there are some drawbacks that I can think of right now. Don't hesitate t
 
 ## Modified questions from 2017.
 
-- Removed:
+I created a file [INSERT LINK] that summarise all the questions in 2017. The questions.csv [INSERT LINK] is the work in progress version and should represent the state of the next survey. I add the details here about the modifications done to keep track of them.
 
-- Merged:
+- *Removed*:
+    - edu3 (**Enter your academic subject**): Get removed and replace with the field 'other' in the the edu2)
 
-- Answers reworked:
+    - rse1 (**Do you write code as part of your job**). I think it does not give any valuable information. Dropping it.
 
-- Added: I did not add any questions, I think it is on lower priority now and should be done when we have a cleaner version of the current survey.
+    - fund1: (**Do you know the source of the funding used to support you and your current, largest project?**): Only Y/N that work as a conditional question. Get removed to directly ask for funding
+
+    - fund3 (**Which of the following sources are used to fund your current, largest project?**): Removed as do not provide clear information we can draw on. Also it is less centered on the participant itself
+
+    - fund4 (**Which of the following sources were used to fund your current, largest project three years ago?**): same reasons as for fund1
+
+    - affSat1 (**I find real enjoyment in my job**): affGen can replace these questions
+
+    - affSat2 (**Most days I am enthusiastic about my job**): affGen can replace these questions
+
+    - affSat3 (**I feel fairly well satisfied with my job**): affGen can replace these questions
+
+    - affSat4 (**I like my job better than the average person**): affGen can replace these questions
+
+    - train1 (**Have you ever trained researchers in computational techniques?**): Removed as it is a Y/N and get included in train2
+
+- *Reworked*:
+    - open2de: Reworked the question to change from a Y/N to a likert 10 (None at all - All the time).
+
+- *Merged*:
+    - open01can + open1can: Only asked if researchers used open-source then the frequency. Merged them into one question and reworked the answer from "None to All the time"
+    - open03can + open3can: Only asked if researchers used open-source then the frequency. Merged them into one question and reworked the answer from "None to All the time"
+    - train1+ train2: Include the Y/N into the list of answers
+
+- *Answers reworked*:
+    - rse3 (**Who uses the code that you write?**): Change the answers to be
+        - Mostly me
+        - I mostly write code for another person
+        - I mostly write code for a team of 2-3 persons
+        - I mostly write code for a team of 4-5 persons
+        - I mostly write code for a team that have more than 5 persons
+        - I mostly write code for several different teams
+    - fund2: added: "I do not know where my funding comes from" to the list
+
+- *Added*: I did not add any questions, I think it is on lower priority now and should be done when we have a cleaner version of the current survey.
 
 
 ## Modifications on the file structure
