@@ -238,7 +238,10 @@ class CleaningData(CleaningConfig):
                 # Set the delimiter as : to avoid taking
                 # the comma as delimiter
                 reader = csv.reader(f, delimiter=':')
-                answer_item_dict[file_key] = [i[0] for i in reader]
+                try:
+                    answer_item_dict[file_key] = [i[0] for i in reader]
+                except IndexError:
+                    answer_item_dict[file_key] = [i for i in reader]
 
         return answer_item_dict
 
