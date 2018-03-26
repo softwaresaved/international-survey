@@ -1,0 +1,503 @@
+,socio1. In which country do you work?,rse1. Do you write software for research as part of your job?,edu1. What is the highest level of education you have attained?,edu2. In which discipline is your highest academic qualification?,"time1can. On average, how much of your time is spent developing software?","time2can. On average, how much of your time is spent on research?","time2acan. On average, how much of the time you spend developing software is spent on new development/enhancement?","time2bcan. On average, how much of the time you spend developing software is devoted to maintenance and support activities?","time3can. On average, how much time do you spend on management?","time5can. On average, how much time do you spend on other activities?",soft1can. How many years of software development experience do you have?,soft2can. Do you consider yourself a professional software developer?,proj1_can. How many software projects are you currently involved in?,proj2_can. How many software developers typically work on your projects?,proj5_can. Do your research software projects typically include a project manager?,proj6_can. What development methodology does your current project use?,canarie1_can. Have you ever visited the Research Software Registry at science.canarie.ca?,canarie2_can. How many software components from science.canarie.ca have you integrated into your projects?,currentEmp1. What type of organization do you work for?,currentEmp5. What is your current job title?,currentEmp7. In which application area do you primarily work?,currentEmp10. What is the nature of your current employment?,group1_can. Do you work within a group that provides software development help or expertise to researchers from across your organization?,group1a_can. Is there such a group within your organization?,group2_can. Do you think such a group would have value?,group3_can. Would you be interested in participating in such a group?,paper1. Have you contributed software to research that has been published in a journal or presented at a conference?,"paper2. In general, when your software contributes to a paper, are you acknowledged in that paper?",paper3. Are you generally named as the main author of the paper?,paper4. Are you generally named as a co-author of the paper?,conf2_can. Which conference(s)/workshop(s)?,"open1_can. When you release code, how often do you use an open source license?",open3_can. List any open repositories (eg. GitHub) to which your software projects have been published.,"open3_can. When you release code or data, how often do you assign a Digital Object Identifier (DOI) to it?","skill1. In your opinion, what are the three most important skills that a Research Software Developer must possess? These skills can be technical and non-technical.",skill2. What three skills would you like to acquire or improve to help your work as a Research Software Developer? These skills can be technical and non-technical.,tool1. What are the three tools or services you use most often in your software work?,tool2. What is your Operating System of choice for development?,tool3_can. What is your Operating System of choice for deployment?,"tool4_can. What programming languages do you use in developing research software? Please list in order, beginning with most frequently used.",data1_can. Do any of your current projects make use of a data management or data archiving component?,data2_can. Is it part of your software or an external system? (please specify),open4_can. Do any of your current projects accommodate the open/public sharing of data?,open5_can. Is the creation of a Digital Object Identifier (DOI) and metadata for individual assets supported?,org1_can. Would you be interested in joining such an organization if one was formed in Canada?,instit1_can. Have you developed software that is accessed from multiple institutions?,caf1_can. Do any of your current or previous projects make use of the Canadian Access Federation (CAF) Federated Identity Management (FIM) service?
+0,Canada,No,Doctorate,Other,3,9,3,3,5,2,20.0,No,4.0,3-5,Yes,Other,Yes,0.0,University,Distinguished Professor,Social sciences and humanities,Full-time,No,Yes,,,Yes,Yes,No,Yes,"DH, CDSH/SCHN, MLA",Always,,Often,"Creative and structured thinking
+disciplinary aptitude
+pertinent technical skills",as above.,,Mac OS,Mac OS,"mostly, rapid prototyping languages at the moment.",Yes,External System,Yes,No,Yes,Yes,I'm not familiar with CAF
+1,Canada,Yes,Doctorate,Information technology,4,4,8,2,2,2,21.0,Yes,5.0,3-5,Yes,Scrum,Yes,2.0,Non-profit,Chercheur,Information technology,Full-time,No,Yes,,,Yes,Yes,Yes,Yes,"CONLL, ACFAS, COMPUTERM, TIA",Always,Github,Never,"Connaissance algorithmique
+Test et validation logiciel
+Capacité d'analyse",,"Eclipse
+Code versioning
+Continuous integration server",Windows,GNU/Linux,"Java, Scala, Python",No,,No,,Yes,Yes,No
+2,Canada,Yes,Doctorate,Theoretical physics and chemistry,3,7,6,3,2,2,40.0,No,1.0,10+,No,No formal methodology,No,,University,Professor of Chemistry,Theoretical physics and chemistry,Full-time,No,No,Yes,Yes,Yes,No,No,No,"Many. American Chemical Society, Canadian Society for Chemistry, CECAM workshops, deMon Developers Workshop, Topical conferences on multiscale simulations of materials and biomaterials.",Never,,Never,"translating physical equations into algorithms
+coding
+selection of front-line applications","project management
+version-handling
+herding cats",,GNU/Linux,GNU/Linux,"Fortran, Python, C++",No,,No,,Yes,No,I'm not familiar with CAF
+3,Canada,No,Some College,Other,10 (All my time),3,5,6,1 (None at all),2,10.0,Yes,5.0,3-5,Yes,Kanban,No,0.0,Other,Software Developer,,Full-time,No,No,No,,No,No,No,No,,Very Often,"Github
+BitBucket",Never,Curiosity,"AI,Communications, Machine Learning","Git, Atom, Linux",GNU/Linux,GNU/Linux,"Ruby,JS",No,,No,,No,No,No
+4,Canada,Yes,Masters Degree,Other,4,2,6,2,2,2,5.0,No,4.0,Just me,No,Kanban,Yes,0.0,University,professionnel de recherche,Other,Full-time,No,No,No,,Yes,No,No,No,,Always,Bioconductor,Never,,,"Éditeur de texte
+git
+stackoverflow",GNU/Linux,GNU/Linux,"R, ruby (et RAILS), perl",Yes,Software,,,Yes,Yes,I'm not familiar with CAF
+5,Canada,Yes,Masters Degree,Molecular biology,7,3,5,3,2,3,12.0,No,4.0,Just me,No,No formal methodology,Yes,0.0,Government department,Bioinformatics Programmer,Life sciences research related to human health and disease,Full-time,No,No,Yes,Yes,Yes,Yes,No,Yes,,Always,,Never,"Big picture view
+Ability to dissect user requirements
+Agile development","Project management
+Advanced algorithm development
+Big data","Netbeans
+Hibernate
+Struts2",GNU/Linux,GNU/Linux,"Java
+Perl
+R",Yes,External System,No,,Yes,No,I'm not familiar with CAF
+6,Canada,Yes,Doctorate,Other,3,4,3,1 (None at all),3,2,20.0,No,2.0,3-5,Yes,No formal methodology,No,0.0,University,Asst Prof,Other,Full-time,No,No,Yes,Yes,Yes,Yes,No,Yes,"GECCO
+Building Simulation
+CISBAT",Always,GitHub,Never,"Creative problem solving
+Balancing time and reward
+Persistance","Better programming knowledge
+Better computer science knowledge
+Better software development knowledge","Anaconda
+Sublime",Windows,Windows,"Python
+Matlab",No,,Yes,No,Yes,Yes,I'm not familiar with CAF
+7,Canada,Yes,Masters Degree,Electrical and electronic engineering,10 (All my time),1 (None at all),2,2,6,1 (None at all),17.0,Yes,2.0,6-9,Yes,Kanban,Yes,12.0,Non-profit,Chargé de projets,Information technology,Part-time,Yes,,,,No,No,No,No,Plusieurs colloques et journées technos au CRIM. Canarie Summit.,Always,GitHub,Never,"Expertise
+Minutie
+Organisation","Leadership
+Communication
+Développement des affaires","Atlassian Suite
+Google Docs",Mac OS,GNU/Linux,"JS
+Scala",Yes,Software,No,,No,Yes,No
+8,Canada,Yes,Doctorate,Astronomy and astrophysics,3,5,9,2,4,4,15.0,No,20.0,3-5,No,No formal methodology,Yes,0.0,University,Associate Professor,Astronomy and astrophysics,Full-time,Yes,,,,Yes,Yes,No,Yes,Astronomical Data Analysis Software and Systems (ADASS),Always,"GitHub, bitbucket",Sometimes,"Flexibility, Mathematical background, Initiative","Software Project Management, Testing structures, Time management","Git/github, OpenStack/AWS, Dockerhub",GNU/Linux,GNU/Linux,"Python, C++",Yes,Software,Yes,Yes,No,Yes,No
+9,Canada,Yes,Masters Degree,Oceanography,3,5,7,4,8,2,15.0,No,5.0,3-5,Yes,Scrum,Yes,0.0,Non-profit,Data manager,Oceanography,Full-time,Yes,,,,Yes,Yes,No,Yes,,Never,,Never,"Understand field of research where software is needed (scientific skills)
+Up to date knowledge of software development practises
+Project management skills","Research current open source practises
+Maintain current knowledge in technology
+Update code skills in python","Matlab
+Python and R on Jupyter
+SQL developer",Mac OS,Mac OS,"Matlab, Python",Yes,External System,Yes,No,Yes,No,I'm not familiar with CAF
+10,Canada,No,Masters Degree,Other,1 (None at all),4,1 (None at all),1 (None at all),10 (All my time),5,0.0,No,0.0,2,Yes,Other,Yes,0.0,Non-profit,commercialization manager,Information technology,Full-time,Yes,,,,Yes,No,No,No,IRMACS - http://www.irmac.ca/events/list.php?event_id=108,,Github,,"Logic/Reasoning, Time Management and Documentation","Code-release, documentation, software release","Slack, Outlook and Powerpoint",Mac OS,Mac OS,"Java, C, C++",Yes,Software,Yes,Yes,Yes,Yes,I'm not familiar with CAF
+11,Canada,Yes,Doctorate,Applied mathematics,8,8,8,2,2,3,56.0,Yes,8.0,6-9,Yes,Other,Yes,0.0,University,Distinguished Professor Emeritus,Information technology,Other,Yes,,,,Yes,Yes,Yes,Yes,During my career I have been author or co-author of over 280 refereed publications and 17 books. My work has been presented at over 180 different conferences. The list is too long to present here.,Sometimes,GitHub,Never,"Design
+Project and people management
+Coding","Statistics applied to Big Data
+Better understanding of various types of database structures (Graph ...)","PHP
+JavaScript
+SQL databases",Windows,Other,"JavaScript
+Java
+Objective C",Yes,Software,Yes,No,Yes,Yes,I'm not familiar with CAF
+12,Canada,No,Masters Degree,Earth science,2,9,9,2,5,5,1.0,No,1.0,3-5,Yes,No formal methodology,Yes,0.0,University,Project Manager,Geoghraphical information,Full-time,Yes,,,,No,Yes,Yes,Yes,AAG,Never,,Never,"Time management
+Interpersonal skills (user engagement and for meetings)
+Programming","Programming
+Technical communication
+Market knowledge","Asana
+Google Scholar
+QGIS",Windows,Windows,Python,Yes,External System,Yes,No,No,Yes,Yes
+13,Canada,Yes,Masters Degree,Electrical and electronic engineering,5,5,10 (All my time),1 (None at all),1 (None at all),1 (None at all),5.0,Yes,2.0,3-5,No,No formal methodology,Yes,0.0,University,Software Developer,Health Sciences,Full-time,Yes,,,,Yes,Yes,No,No,,Very Often,"GitHub
+Bitbucket",Never,"Discipline
+Flexibility
+Mastery of code","Discipline
+Mastery of code
+Focus","GitHub
+Travis
+Slack",GNU/Linux,GNU/Linux,"Ruby
+Python
+C++",Yes,Software,Yes,,Yes,Yes,I'm not familiar with CAF
+14,Canada,Yes,Masters Degree,Other,5,3,3,3,2,1 (None at all),15.0,Yes,4.0,3-5,No,No formal methodology,No,0.0,University,Senior data analyst,Other,Full-time,Yes,,,,Yes,Yes,No,No,GLBIO,Always,"Github
+(sourceforge when it was still around but have migrated everything to github now)",Never,"adaptability
+good communication and organizational skills
+strong statistics skills",,"cytoscape
+eclipse
+R studio",Mac OS,Mac OS,"Java
+R
+perl
+bash (shell scripting)",No,,No,,Yes,Yes,No
+15,Canada,Yes,Bachelors Degree,Geoghraphical information,5,1 (None at all),9,2,5,2,21.0,Yes,1.0,3-5,Yes,Scrum,Yes,,University,Web Services specialist,Oceanography,Contract,Yes,,,,Yes,,,,In previous position at ESRI User's Conference & Developer's Summit and at company user's conference.,,,Never,"Communication
+Knowledge of platform and data interoperability
+Persistance","Improve my knowledge of the research our organization's scientists are involved in
+Improve my knowledge of Agile development best practices
+Improve my knowledge of IoT connectivity models","Python
+SQL
+JavaScript",Windows,GNU/Linux,"Python
+SQL
+JavaScript
+MatLab",Yes,External System,Yes,,Yes,Yes,I'm not familiar with CAF
+16,Canada,Yes,Doctorate,Other,4,5,5,5,4,1 (None at all),8.0,No,5.0,2,No,No formal methodology,No,0.0,University,Postdoc,Other,Full-time,Yes,,,,,,,,,,,,,,,,,,,,,,,,
+17,Canada,Yes,Doctorate,Physical chemistry,3,6,10 (All my time),1 (None at all),5,2,10.0,No,6.0,3-5,No,No formal methodology,Yes,1.0,University,Associate Professor,Physical chemistry,Full-time,No,No,Yes,Yes,Yes,Yes,Yes,No,"A presentation I gave explicitly about a software development project I lead was presented at the High Performance Computing Symposium (HPCS) in Halifax NS, 2014.  I also present aspects of the algorithms that I (and my team) develop and integrate into software products at all of the conferences I attend, including recently the Canadian Chemistry Conference and Exhibition and Pacifichem.",Always,bitbucket,Sometimes,"1. Problem-solving (obviously)
+2. Ability to interact with both administrators (PIs) and end users
+3. Broad knowledge base of existing solutions for leveraging","I would like to:
+1. Expand my knowledge of languages.
+2. Expand my knowledge of established development protocols (i.e. scrum, waterfall, etc.)
+3. Expand my knowledge of dealing with large datasets (memory handling, code optimization, parallel computing, etc.)","Visual code editor
+Concurrent versioning system",Mac OS,Mac OS,"Python
+Java
+PHP
+Fortran
+C",Yes,Software,Yes,Yes,Yes,Yes,I'm not familiar with CAF
+18,Canada,Yes,Doctorate,Other,10 (All my time),,2,8,1 (None at all),2,25.0,,4.0,,No,No formal methodology,No,,University,Senior Research Associate (Software Engineer),Other,Full-time,Yes,,,,Yes,Yes,No,Yes,"COMBINE and HARMONY workshops (BioPAX related), ISMB...",Always,"Github, Sourceforge, Google Code (obsolete), Bitbucket, OSSRH, Central Maven",,"fundamental interdisciplinary scientific background, Java and Javascript programming","supercomputing, no-sql, AI...","VIM, JetBrains IDEA, Google Chrome",GNU/Linux,GNU/Linux,"Java, Javascript, shell (bash)",Yes,Software,Yes,,,Yes,I'm not familiar with CAF
+19,Canada,Yes,Bachelors Degree,Information technology,8,1 (None at all),8,2,2,2,34.0,Yes,2.0,3-5,Yes,Scrum,No,0.0,University,Senior Software Developer,Information technology,Full-time,Yes,,,,Yes,No,No,No,CANHEIT,Very Often,,Never,"- business / requirements analysis
+- communication
+- writing easy to read code",,"- github
+- ansible
+- jira",Mac OS,GNU/Linux,"- java
+- python
+- javascript",Yes,Software,Yes,Yes,Yes,Yes,Yes
+20,Canada,No,Masters Degree,Biomedical engineering,1 (None at all),10 (All my time),1 (None at all),1 (None at all),10 (All my time),1 (None at all),8.0,Yes,,Just me,Yes,Waterfall,No,,University,,Information technology,Full-time,Yes,,,,,,,,,,,,,,,,,,,,,,,,
+22,Canada,Yes,Doctorate,Information technology,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+23,Canada,Yes,Masters Degree,Other,5,7,6,5,5,5,5.0,Yes,5.0,2,Yes,Waterfall,No,,Other,Programmers Team Lead,Health Sciences,Full-time,Yes,,,,Yes,Yes,Yes,No,"REDCap (Research Electronic Data Capture) International  conference in 2016  -  North Carolina, USA",Always,The code is published to community site of REDCap consortium for other sites to use .,Always,"Teaching yourself
+Documentation & using best practices on code structure.
+Time management is very important to the success of the project.",,"Jira
+Jira stash
+Git hub",Windows,Windows,"PHP, ASP.net , HTML, JS, JQuery, JS node",Yes,Software,No,,Yes,Yes,No
+24,Canada,Yes,Masters Degree,Genetics,9,1 (None at all),9,9,1 (None at all),1 (None at all),2.0,Yes,2.0,Just me,Yes,No formal methodology,No,0.0,Government department,Programmer Analyst,Genetics,Full-time,Yes,,,,No,,,,,,,Never,Communication Skills; Project Management Skills; Knowledge in the field,,Git; Visual Studio Code. Database Management Tools,Mac OS,GNU/Linux,PHP; R; JavaScript;,Yes,Software,No,,Yes,No,I'm not familiar with CAF
+25,Canada,Yes,Masters Degree,Other,5,2,1 (None at all),1 (None at all),2,2,3.0,Yes,2.0,2,Yes,Waterfall,No,0.0,University,web developer,Geophysics,Full-time,Yes,,,,No,No,No,No,,Sometimes,,Never,,,,GNU/Linux,GNU/Linux,,No,,No,,No,No,No
+26,Canada,Yes,Bachelors Degree,Biomedical engineering,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+27,Canada,Yes,Masters Degree,Information technology,8,3,5,5,2,2,20.0,Yes,3.0,3-5,Yes,Scrum,No,,Government department,,Astronomy and astrophysics,Full-time,Yes,,,,Yes,Yes,No,Yes,,Always,,Never,Curiosity,,"IDE, git, shell",Mac OS,Mac OS,,Yes,Software,Yes,Yes,Yes,Yes,No
+28,Canada,Yes,Bachelors Degree,Other,9,1 (None at all),5,5,2,3,15.0,Yes,2.0,3-5,No,Scrum,Yes,1.0,Government department,Software Developer,Astronomy and astrophysics,Other,Yes,,,,Yes,No,No,No,"It was years ago, as a student working for a professor who was working on a model to statistically sample coal composition.  (to predict usage based on that composition). He took me & the software to a conference to show it off. Since then, no.",Always,GitHub.,,"1) Communication skills
+2) Rapid prototyping
+3) Ability to converge on a solution","1) I'd like to know a broader range of open-source tools
+2) Machine Learning understanding
+3) User interview techniques (as a way to converge on a solution faster!)","Selenium (for automated test)
+Docker 
+Travis (Jenkins in past)",Other,GNU/Linux,"Java, Javascript, Python",Yes,Software,Yes,,Yes,Yes,No
+29,Canada,Yes,Some University,Physics,7,6,5,6,4,3,10.0,Yes,13.0,6-9,Yes,No formal methodology,Yes,,University,,Physics,Full-time,No,Yes,,,No,Yes,No,No,,Sometimes,,Often,"Quick learner ,  got Background in Programming  , Analyze User Needs.",dont know,"programming tools like coding
+performance testing tool
+programmes languages",Windows,Android,"C , JAVASCRIPT , B",Yes,Software,Yes,Yes,No,Yes,No
+30,Canada,Yes,Masters Degree,Electrical and electronic engineering,5,2,5,2,3,3,18.0,Yes,4.0,6-9,Yes,Kanban,Yes,6.0,Non-profit,Senior advisor,Earth science,Full-time,Yes,,,,Yes,No,No,Yes,"CANARIE Workshop
+ESGF Conference
+AGU
+CRV
+Geomatique 2016
+HPCS 2015",Very Often,"Ouranos_Inc
+CRIM_ca
+Birdhouse
+Spark",Never,"Communication
+Patience
+Open mind","Better presentation material
+Better demonstrations
+Better logs and monitors","Visual Studio 2015
+PyCharm
+Matlab",Windows,GNU/Linux,"C++
+Python
+Matlab
+JavaScript
+C
+Java
+Scala",Yes,Software,Yes,Yes,Yes,Yes,No
+31,Canada,Yes,Doctorate,Artificial intelligence,7,10 (All my time),9,3,8,2,12.0,,2.0,2,Yes,No formal methodology,No,,University,Research Data Scientist,Artificial intelligence,Full-time,,,,,Yes,Yes,Yes,Yes,"IEEE ICCI*CC 2016
+SAM, WorldComp 2016",,,Always,"Open source coding
+Linux expertise
+Handling uncertain research areas","Legal knowledge
+Patent filing knowledge
+Hadoop","Cygwin
+C programming
+Matlab",Other,,"C
+Matlab
+Python",No,,No,,Yes,No,No
+32,Canada,Yes,Bachelors Degree,Information technology,7,5,5,6,7,5,11.0,Yes,10.0,10+,No,Kanban,No,,Non-profit,Programmer,Information technology,Full-time,Yes,,,,No,No,,,,Very Often,,Often,,,,Mac OS,Mac OS,,Yes,Software,Yes,No,No,No,No
+33,Canada,Yes,Doctorate,Information technology,2,5,2,2,3,5,30.0,No,3.0,Just me,No,No formal methodology,Yes,0.0,University,Professor,Information technology,Full-time,No,No,Yes,No,Yes,Yes,Yes,Yes,,Often,"Github
+Project web site",Never,"1. Must  be able to communicate - understand what the problem is that the software is to solve
+2. Needs to be proficient in several different programming languages/tools to be able to adopt the appropriate development environment
+3. Needs to understand the computational environment - operating system, sequential vs parallel, cpu vs gpu, etc.",1. Additional technical expertise and proficiency,"1. Java
+2. Python
+3. Eclipse",Windows,Windows,"1. Java
+2. Python
+3. C",No,,No,,No,Yes,No
+34,Canada,Yes,Bachelors Degree,Information technology,5,5,5,7,8,5,10.0,Yes,2.0,6-9,Yes,Scrum,Yes,2.0,Private sector,Project Director,Information technology,Full-time,Yes,,,,No,No,No,No,,Never,,Very Often,Understanding of multiple platforms. Ability to teach others Ablility to clearly explain,"Manage time better, Manage workers better Be a louder speaker","ezscrum, ajax anwhere",Windows,Windows,Java Python Html,Yes,External System,No,,Yes,No,No
+35,Canada,No,Bachelors Degree,Other,1 (None at all),3,1 (None at all),1 (None at all),9,4,,No,3.0,3-5,Yes,No formal methodology,Yes,0.0,College,Research Project Manager,Other,Full-time,Yes,,,,Yes,,No,,,,GitHub,,"Flexibility
+Communication
+Willingness to listen","Programming
+GUI
+Database development","Outlook
+Slack
+Word/Excel",Windows,Windows,"ASP.Net
+C#
+PHP",,,,,Yes,Yes,I'm not familiar with CAF
+36,Canada,Yes,Doctorate,Agricultural engineering,7,2,5,5,1 (None at all),1 (None at all),12.0,,2.0,3-5,Yes,Waterfall,No,0.0,College,Research Programmer Associate,Other,Part-time,No,No,Yes,Yes,No,No,No,No,,Never,,Never,"1. computer science subjects
+2. subject related (i.e., area being targeted by the project; eg. agriculture, medicine, mechatronics, etc.)
+3. programming language(s)","parallel processing
+project management
+job search","Microsoft Visual Developer Studio
+Notepad++
+Microsoft command line",Other,Other,"C/C++
+PHP
+C#
+Javascript
+Java
+Matlab/Octave",No,,No,,Yes,No,I'm not familiar with CAF
+37,Canada,Yes,College Diploma,Information technology,10 (All my time),8,8,4,5,2,2.0,Yes,3.0,3-5,Yes,No formal methodology,No,0.0,College,Research Associate,Agricultural engineering,Contract,Yes,,,,Yes,No,No,No,,Sometimes,GitHub,Never,"Problem solving
+Ability to translate pseudocode to code
+Analyzing new features","Debugging skills
+Communication
+Documentation","Visual Studio Code / IDE
+SQL server management studio
+Xen server",Windows,Windows,"C#
+HTML
+JavaScript
+C++
+PHP
+Java",Yes,Software,No,,,Yes,I'm not familiar with CAF
+38,Canada,No,College Diploma,Structural engineering,1 (None at all),1 (None at all),,1 (None at all),,,,,,Just me,,No formal methodology,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+39,Canada,Yes,Bachelors Degree,Applied mathematics,2,4,3,4,1 (None at all),3,15.0,No,2.0,Just me,No,No formal methodology,No,0.0,University,DBA,Other,Full-time,Yes,,,,No,No,No,No,,Sometimes,,Never,,,,GNU/Linux,GNU/Linux,"C
+Bash
+Php
+Asp.net
+Python",No,,No,,Yes,No,No
+40,Canada,Yes,Bachelors Degree,Information technology,7,6,5,4,3,2,6.0,Yes,5.0,6-9,Yes,Waterfall,Yes,3.0,Private sector,manager,Information technology,Full-time,Yes,,,,No,No,No,No,,Sometimes,,Sometimes,,,,Windows,Windows,,Yes,Software,No,,Yes,Yes,No
+41,Canada,Yes,Doctorate,Other,4,10 (All my time),5,1 (None at all),5,,20.0,Yes,5.0,2,No,No formal methodology,Yes,0.0,University,Associate Professor,Information technology,Full-time,No,No,No,,Yes,Yes,Yes,Yes,"ICDCS, IPCCC, MASCOTS, IWQoS, LCN, ACM Multimedia",,,,One most important skill is research skill.  The developer must understand the nature of research and how it is different from industry project.,,"cloud, SDN, spark, video codec standards",Mac OS,GNU/Linux,"Java, C/C++, Python, JavaScript, Perl",No,,No,,Yes,No,I'm not familiar with CAF
+42,Canada,Yes,Doctorate,Theoretical physics and chemistry,3,9,4,4,6,8,30.0,No,5.0,6-9,No,No formal methodology,No,0.0,University,professor,Theoretical physics and chemistry,Full-time,Yes,,,,Yes,Yes,Yes,Yes,,Very Often,,Never,"intelligence
+patience",python,fortran,GNU/Linux,GNU/Linux,fortran,No,,No,,Yes,Yes,No
+43,Canada,Yes,College Diploma,Information technology,10 (All my time),4,10 (All my time),5,1 (None at all),1 (None at all),3.0,Yes,4.0,Just me,Yes,No formal methodology,No,0.0,College,Research Associate,Information technology,Full-time,,,,,Yes,No,No,No,Farms.com Conference,Always,,Never,,,,Windows,Windows,,Yes,Software,Yes,,No,Yes,I'm not familiar with CAF
+44,Canada,Yes,Doctorate,Evolution and ecology,3,3,5,3,3,2,3.0,No,2.0,3-5,Yes,Waterfall,No,0.0,Private sector,CEO,Other,Full-time,Yes,,,,Yes,Yes,No,Yes,"North American Symposium on Bat Research, Ecological Society of America, Association des Biologistes du Québec (workshop)",Always,GitHub and Bitbucket,Often,"Organized, perfectionist, perseverance, hardworking. Knowing at least two programming languages ​​and having an excellent knowledge of tools and third-party software that enhance programming, code revision and teamwork","Start working with Python, develop my expertise in deep learning and signal processing","R Devtools and Rmarkdown packages
+Github",GNU/Linux,Windows,"R language mainly, C++",No,,Yes,No,Yes,Yes,No
+45,Canada,Yes,Doctorate,Fluid mechanics,5,5,5,5,5,5,4.0,Yes,2.0,6-9,Yes,,No,1.0,University,Graduate student,Fluid mechanics,Full-time,Yes,,,,Yes,Yes,Yes,Yes,CarPEFC,Always,OpenFCST,Often,"Programming skill, understanding the algorithms and efficiency of the code.","Programming skill, understanding the algorithms and efficiency of the code.","C++, Matlab and Python.",GNU/Linux,GNU/Linux,"C++, Matlab and Python.",Yes,Software,No,,Yes,Yes,No
+46,Canada,Yes,Masters Degree,Applied mathematics,7,10 (All my time),8,2,2,3,4.0,Yes,1.0,3-5,Yes,Other,No,0.0,University,Research Assistant / Graduate Student (Ph.D.),Fuel and energy technology,Grad student,No,No,Yes,Yes,Yes,Yes,Yes,Yes,"1. A. Kosakian, M. Secanell, D. Novitski, and S. Holdcroft, “Numerical estimation of oxygen transport properties in thin polymer membranes.” Proceedings of the Canadian Society for Mechanical Engineering International Congress, Kelowna, BC, Canada, June 26-29, 2016
+2. A. Kosakian, M. Secanell, D. Novitski, and S. Holdcroft, “A numerical algorithm for estimation of oxygen transport properties in thin polymer membranes.”  5th Annual CaRPE-FC Technical Review Meeting, Vancouver, BC, Canada, May 2-3, 2016 (talk and poster)",Always,"https://github.com/OpenFCST/OpenFCSTv03
+
+Other (closed): Bitbucket - contains most of my work (development version of OpenFCST, to be released in late 2017)",,"1. Flexibility: ability to learn and work with different software and programming languages
+2. Knowledge of principles of (scientific) programming and algorithmic thinking
+3. Ability to test and document their own code","1. More languages/standards: C++11, Python
+2. Better C++ skills
+3. Better algorithmic thinking, faster coding with same (high) quality","1. git, Bitbucket
+2. JIRA
+3. Linux",GNU/Linux,GNU/Linux,"C++, MATLAB, Python",Yes,External System,,,Yes,Yes,I'm not familiar with CAF
+47,Canada,Yes,Doctorate,Other studies in natural sciences and engineering,6,7,8,2,2,3,10.0,No,7.0,2,No,No formal methodology,Yes,0.0,Private sector,,Other studies in natural sciences and engineering,Full-time,Yes,,,,Yes,No,No,No,,Always,,Very Often,,,,Windows,Windows,"R, C++, C",Yes,External System,No,,Yes,Yes,I'm not familiar with CAF
+48,Canada,Yes,Some University,Other,10 (All my time),1 (None at all),7,3,1 (None at all),1 (None at all),0.0,No,2.0,3-5,Yes,No formal methodology,No,0.0,University,,Mechanical engineering,Co-op/intern,No,No,No,,Yes,,No,,,Always,,Never,"Time-Management
+How to research
+Organization","Time-Management
+How to research
+Organization","Atom
+BitBucket
+Linux",GNU/Linux,GNU/Linux,"Python
+C++",No,,No,,Yes,Yes,I'm not familiar with CAF
+49,Canada,Yes,Doctorate,Chemical engineering,7,5,4,5,2,4,16.0,Yes,3.0,2,No,No formal methodology,No,0.0,University,Assistant Professor,Chemical engineering,Full-time,No,No,Yes,Yes,Yes,Yes,No,Yes,,Sometimes,GitHub,Never,"1) Logical thinking
+2) Good understanding of the topic at hand
+3) Good programming skills","1) Philosophy of software development
+2) Version control","NetBeans
+MatLab",Windows,Windows,"JAVA
+MatLab
+VBA
+TI-83+ (and newer equivalents) Basic",No,,No,,Yes,No,No
+50,Canada,No,Doctorate,Health Sciences,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+51,Canada,Yes,Masters Degree,Information technology,3,1 (None at all),10 (All my time),1 (None at all),7,1 (None at all),16.0,Yes,10.0,10+,Yes,Other,Yes,2.0,Non-profit,Directeur R-D,Information technology,Full-time,Yes,,,,Yes,Yes,No,Yes,,Always,https://github.com/crim-ca/,Never,"- Très bonne capacité d'abstraction d'un problème
+- Capacité d'appropriation rapide des nouvelles technologies
+- Bonne capacité d'adaption aux meilleurs solutions pour résoudre un problème
+-","- Intelligence artificielle
+- Meilleure vision architecturale
+- Programmation python",,,,,,,,,,,
+52,Canada,Yes,Masters Degree,Information technology,3,3,8,2,3,1 (None at all),42.0,No,5.0,2,Yes,Other,Yes,2.0,Non-profit,Directeur et conseiller sénior,Artificial intelligence,Full-time,Yes,,,,Yes,No,No,No,,Very Often,"GitHub, SourceForge",Never,"Programmation scripts et shells (Python, R, Matlab, bash, etc.),  outils calcul distribué, bonne base en mathémathiques","Tensorflow,  clouds commerciaux,  Torch","Jupyter+Python, shell scripts, Edward",GNU/Linux,GNU/Linux,"Python, bash, C++, Perl",Yes,Software,Yes,Yes,No,Yes,No
+53,Canada,Yes,Bachelors Degree,Chemical engineering,5,5,8,3,1 (None at all),1 (None at all),5.0,No,2.0,3-5,No,Scrum,No,,University,Graduate Student,Fuel and energy technology,Grad student,No,No,,,Yes,Yes,Yes,Yes,"Gordon Research Seminar (2015), Gordon Research Conference (2015), 228th ECS Meeting (2014)",Always,"https://github.com/OpenFCST/OpenFCSTv03
+https://github.com/OpenFCST/OpenFCST_v0.2",,"Team work,
+Coding ethics,
+Knowledge of version control","Learn languages such as JAVA,
+Knowledge of different testing platforms,
+Advanced Object Oriented Concepts introduced with the new versions of C++","Integrated Development Environment,
+Debugger usually Valgrind
+Markup syntax",GNU/Linux,GNU/Linux,"C++, Python",No,,No,,Yes,Yes,I'm not familiar with CAF
+54,Canada,Yes,Masters Degree,Artificial intelligence,7,5,5,4,3,3,5.0,Yes,3.0,2,No,No formal methodology,No,0.0,Other,it's complicated,Robotics,Other,No,No,Yes,Yes,Yes,Yes,No,Yes,,Always,"Github, Bitbucket, Docker Hub",Never,"Multi-platform flexibility
+Rapid prototyping abilities
+Quick assimilation of big project structures","Better knowledge of modern scripting languages (Python, ...)","Docker
+Git
+CMake",GNU/Linux,,"C++, Cuda, GLSL",Yes,External System,Yes,No,Yes,Yes,I'm not familiar with CAF
+55,Canada,Yes,Doctorate,Life sciences research related to human health and disease,3,9,9,10 (All my time),8,9,10.0,Yes,30.0,10+,Yes,Scrum,Yes,50.0,Non-profit,CEO,Biomedical engineering,Full-time,Yes,,,,Yes,Yes,Yes,Yes,,Very Often,"agjkhjk
+
+hjtjhashasejrg
+ajgjgg;hesuegugi",Always,Qualification related project results,Improve the technical level of scientific research,Drawing calculation registration,GNU/Linux,GNU/Linux,jekarj  l r eklr  ergklgre,Yes,Software,Yes,Yes,Yes,Yes,Yes
+56,Canada,Yes,Doctorate,Biomedical engineering,2,3,5,5,2,3,15.0,No,3.0,3-5,No,No formal methodology,Yes,0.0,University,Professor,Other,Full-time,No,No,,,Yes,Yes,No,Yes,"Human Brain Mapping
+Brainhack
+HPCS",Always,"https://github.com/SIMEXP/niak
+https://github.com/SIMEXP/psom
+https://github.com/SIMEXP/brainsprite.js",Sometimes,"domain-specific knowledge (e.g. neuroscience to develop neuroscience-related software)
+testing/debuging
+writing good documentation","management/growth of an open source project
+user testing
+scientific visualization libraries (javascript)","Octave
+github
+circle CI",GNU/Linux,GNU/Linux,"Octave
+javascript
+python",Yes,External System,Yes,Yes,Yes,No,I'm not familiar with CAF
+57,Canada,Yes,Masters Degree,Information technology,5,5,3,3,2,3,10.0,Yes,8.0,3-5,Yes,No formal methodology,No,,Private sector,IT Lead Team,Information technology,Full-time,Yes,,,,Yes,Yes,No,No,,Sometimes,,Never,"hard working , innovative and a team worker",N/a,,GNU/Linux,iOS,,No,,Yes,Yes,No,No,No
+58,Canada,Yes,Doctorate,Physics,2,3,1 (None at all),1 (None at all),9,1 (None at all),20.0,No,0.0,3-5,Yes,Waterfall,Yes,0.0,Non-profit,Directeur scientifique,Information technology,Full-time,Yes,,,,Yes,No,No,Yes,Computer Vision & Pattern Recognition,Sometimes,,,"Rigueur, Bonne pratique, Rédaction",,,Windows,Windows,C++,Yes,External System,Yes,,,Yes,I'm not familiar with CAF
+59,Canada,Yes,Bachelors Degree,Information technology,8,4,8,3,2,3,2.0,Yes,1.0,Just me,Yes,No formal methodology,No,0.0,Non-profit,Software Developer,Information technology,Full-time,No,No,,,No,,,,,Never,,Never,,,,,,,,,,,,,
+60,Canada,Yes,Doctorate,Electrical and electronic engineering,3,8,6,2,1 (None at all),2,25.0,No,1.0,Just me,No,,No,0.0,Non-profit,Senior Researcher,Artificial intelligence,Full-time,No,,,,Yes,Yes,Yes,Yes,,Never,,Never,"Understanding the research objective.
+
+Modularity for future enhancement","Keeping up with the current state-of-the-art.
+
+Better understanding of the open source software tools available for research","1. Kaldi toolkit
+2. perl
+3. Need to improve my python skills",GNU/Linux,Other,"1. Pearl
+2. C / C++",,,No,,No,,I'm not familiar with CAF
+61,Canada,Yes,Doctorate,Other,5,5,5,5,2,2,8.0,No,5.0,2,No,No formal methodology,No,0.0,University,High performance computing consultant,Other,Part-time,Yes,,,,Yes,Yes,No,Yes,"SC 15, IPDPS, ICS",,,Sometimes,"Communication, research skills, programming ability","Time management,","GCC, git, MPI",GNU/Linux,GNU/Linux,"C++,c, python",No,,No,,Yes,No,I'm not familiar with CAF
+63,Canada,Yes,Doctorate,Other,2,5,7,3,5,5,20.0,Yes,1.0,2,No,No formal methodology,No,,University,Professor,Other,Full-time,No,Yes,,,No,,Yes,Yes,,,,,"Versatile
+Knowledge of research
+Good practices",,"open source components
+papers describing such components
+online documentation",,Other,"C/C++, Java",No,,No,,,No,I'm not familiar with CAF
+65,Canada,Yes,College Diploma,Other,7,1 (None at all),10 (All my time),3,2,3,5.0,Yes,4.0,3-5,Yes,Kanban,No,,Other,programmeur,Other,Full-time,No,,,,No,No,No,No,,Often,github,Never,"curiosité, capacité d'abstraction","patience, rigueur","git, jetbrains ides, stack overflow",GNU/Linux,GNU/Linux,javascript,,,Yes,No,Yes,,I'm not familiar with CAF
+67,Canada,Yes,College Diploma,Other,2,1 (None at all),2,2,2,2,41.0,Yes,5.0,3-5,Yes,No formal methodology,Yes,4.0,University,,Physics,Contract,No,Yes,,,Yes,Yes,No,Yes,"OpenStack developers conference (Paris, Portland, Vancouver)",Always,Github,Never,"lateral-thinking, tenacity, good listener, flexibility (I know, that is four).",anything that helps.,"OpenStack, git, Linux utilities",GNU/Linux,GNU/Linux,"python, c++, bash, c, perl,",Yes,Software,No,,,Yes,No
+68,Canada,Yes,Doctorate,Other,2,3,6,6,8,2,30.0,No,5.0,Just me,No,No formal methodology,Yes,0.0,Non-profit,CTO,Other,Full-time,Yes,,,,No,Yes,No,No,,Always,,Never,"Listening
+Coding
+Testing",DevOps,"emacs
+google",GNU/Linux,GNU/Linux,"Perl
+Python
+C/C++",Yes,External System,Yes,No,No,Yes,No
+69,Canada,Yes,Bachelors Degree,Other,5,5,7,5,2,2,5.0,No,2.0,2,No,No formal methodology,No,,Government department,Computational Biologist,Genetics,Full-time,Yes,,,,No,,,,,,,,"Critical thinking, organizational skills and problem solving","More problem solving, more experience and more time","Eclipse
+Mobaexterm
+SVN",Windows,Windows,"Java
+SQL",No,,No,,Yes,No,I'm not familiar with CAF
+70,Canada,Yes,Some University,Other,2,4,7,3,1 (None at all),4,3.0,No,2.0,3-5,No,No formal methodology,No,0.0,Non-profit,Coop student,Other,Co-op/intern,No,,,,Yes,Yes,Yes,Yes,,Very Often,"Github, Bitbucket",Never,,,,GNU/Linux,GNU/Linux,"Python, C++, Perl",Yes,Software,No,,Yes,Yes,I'm not familiar with CAF
+71,Canada,Yes,Doctorate,Microbiology,5,2,8,2,1 (None at all),3,15.0,No,4.0,Just me,Yes,No formal methodology,No,0.0,Non-profit,computational biologist,Life sciences research related to human health and disease,Full-time,Yes,,,,Yes,Yes,No,Yes,,Never,bcgsc/mirna,Never,"Ability to google intelligently
+Ability to understand the utility of a software package in the context of the research area
+Ability to read and modify other's code","Unit testing
+Machine learning
+Non-sql database skills","google
+pycharm
+svn",GNU/Linux,GNU/Linux,"R
+bash
+python
+perl",No,,No,,Yes,Yes,I'm not familiar with CAF
+72,Canada,Yes,Bachelors Degree,Genetics,4,1 (None at all),5,5,7,2,22.0,Yes,9.0,2,Yes,Other,No,0.0,Non-profit,Project Manager IT/Systems,Genetics,Full-time,Yes,,,,No,No,No,No,Don't remember any more,Often,GitHub,Never,"Interpersonal Communications
+Analysis of a problem
+Technical Language Proficiency","Software Security
+More C++
+R","Sublime Text
+MobaXTerm
+Git",Windows,GNU/Linux,"Python
+PHP
+Javascript
+C",Yes,External System,Yes,No,Yes,Yes,No
+73,Canada,Yes,Bachelors Degree,Molecular biology,8,5,3,4,1 (None at all),5,3.0,Yes,4.0,2,Yes,No formal methodology,No,0.0,Non-profit,Computational Biologist,Other,Full-time,No,,,,Yes,Yes,Yes,No,,Sometimes,,,"Problem solving
+Communication
+Programming",,"Kouchat
+Bash
+Sun-grid Engine",Windows,GNU/Linux,"Bash, python, perl",No,,No,,,,I'm not familiar with CAF
+74,Canada,No,Masters Degree,Other,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+75,Canada,Yes,Doctorate,Biochemistry,9,1 (None at all),5,5,3,2,5.0,Yes,5.0,Just me,No,No formal methodology,No,0.0,Charity,Computational biologist,Health Sciences,Full-time,Yes,,,,No,No,No,No,,Always,Github,Never,"Logic thinking, problem solving, communication",,"Bitbucket, JIRA, github",Mac OS,GNU/Linux,"Python, MatLab, R, Perl, Java",Yes,External System,Yes,No,Yes,Yes,I'm not familiar with CAF
+76,Canada,Yes,Doctorate,Information technology,3,5,6,2,2,1 (None at all),,No,,Just me,,Kanban,No,2.0,,,Physical geography,Part-time,No,No,Yes,,Yes,No,Yes,Yes,,Very Often,github,Never,,,,,iOS,,Yes,External System,No,,No,No,Yes
+77,Canada,Yes,Some University,Mining and mineral processing,7,5,2,1 (None at all),8,8,,Yes,,2,,No formal methodology,No,,College,,Polymer chemistry,Grad student,Yes,,,,No,Yes,No,,,Sometimes,,Never,,,,Mac OS,Mac OS,,No,,No,,Yes,No,I'm not familiar with CAF
+78,Canada,Yes,Doctorate,Artificial intelligence,4,6,5,2,3,5,20.0,No,2.0,2,No,No formal methodology,No,0.0,University,,Other,Full-time,No,Yes,,,Yes,Yes,No,Yes,,Always,"GitHub
+Home web site",Never,"Problem solving
+Coding skills
+Trouble-shouting",,"Programmatically accessible public databases (NCBI, Ensemble, etc)
+Various bioinformatics tools",Mac OS,GNU/Linux,"R / Bioconductor
+Python",No,,Yes,No,,,I'm not familiar with CAF
+79,Canada,Yes,Masters Degree,Industrial engineering,7,10 (All my time),5,1 (None at all),1 (None at all),1 (None at all),3.0,No,1.0,Just me,No,No formal methodology,No,0.0,University,PhD student,Applied mathematics,Full-time,No,No,No,,Yes,Yes,Yes,Yes,,Always,,Never,"- Python
+- Hadoop/map reduce
+- parrallelism",- parallelism,"- Matlab
+- R
+- Python",Mac OS,Windows,- Matlab,No,,No,,Yes,No,No
+80,Canada,Yes,Masters Degree,Nuclear engineering,8,2,6,1 (None at all),7,5,7.0,No,,3-5,Yes,No formal methodology,No,1.0,Non-profit,Researcher,,Contract,Yes,,,,Yes,No,Yes,No,,Very Often,"GitHub , CSV",Sometimes,"Business Analysis
+Devops",Business Analysis,,,Windows,,No,,No,,No,No,Yes
+81,Canada,Yes,Doctorate,Fluid mechanics,5,3,5,5,1 (None at all),2,,No,1.0,Just me,No,No formal methodology,No,,University,Associé de recherche,Applied mathematics,Other,No,,,,Yes,No,,Yes,,Always,"Softpedia, Sourceforge",Never,,,,,,,,,,,,,
+82,Canada,Yes,Doctorate,Applied mathematics,2,8,3,7,4,4,18.0,No,2.0,3-5,No,No formal methodology,No,0.0,University,Professeur agrégé,Applied mathematics,Full-time,No,No,Yes,Yes,Yes,Yes,Yes,Yes,"Voir ma liste de présentations en bas de cette page:
+https://www.gerad.ca/Sebastien.Le.Digabel/Publications/",Always,,Never,"1. Fort niveau en mathématiques.
+2. Bon niveau de génie logiciel.
+3. Rigueur",,"LaTeX
+C++
+Emails",Mac OS,Mac OS,"C++
+Matlab",No,,,,Yes,Yes,I'm not familiar with CAF
+83,Canada,Yes,Masters Degree,Applied mathematics,5,10 (All my time),9,2,1 (None at all),1 (None at all),20.0,Yes,1.0,2,No,No formal methodology,No,0.0,University,Associate Researcher,Applied mathematics,Full-time,No,,,,,Yes,No,,,Always,,Never,"Good knowledge of at least one mainstream programming language (ex. C++, python, Java).
+Good understanding of the theory and algorithms that are implemented by the software (ex. if the software solves some type of problems, understand how the problem is modelized, and what do the algorithms do to solve it).
+Organized well enough to be able to support the software users, get their comments and issues, answer users as much as possible, implement changes that are useful to the users/clients, be able to prioritize code changes.","Git/GitHub/Website management. Ex. how to put our work on GitHub and still require users to fill a form when they want to download the software.
+Team leadership / Managing a small team.
+Efficiency at work - Get things done faster. Time Management.","g++
+git
+LaTeX",GNU/Linux,GNU/Linux,"C++
+python
+bash",No,,No,,Yes,Yes,No
+84,Canada,No,Doctorate,Health Sciences,1 (None at all),7,3,1 (None at all),3,2,0.0,No,1.0,2,Yes,No formal methodology,No,0.0,University,Associate Dean for Research,Health Sciences,Full-time,Yes,,,,No,Yes,No,Yes,,Never,,Never,Creativity,,Java,Mac OS,iOS,,Yes,External System,No,,No,No,No
+85,Canada,Yes,Doctorate,Biomedical engineering,2,5,5,3,6,4,15.0,No,5.0,3-5,No,No formal methodology,Yes,0.0,University,Associate Professor,Biomedical engineering,Full-time,No,Yes,,,Yes,Yes,No,Yes,"Canadian High Performance Computing, CASCON, CMBEC",Very Often,"GitHub, SourceForge",Never,"Algorithm design, high performance computing, testing","Leveraging GPGPU, leveraging AWS, web interface programming","IDE (various), MATLAB, MobaXterm",GNU/Linux,GNU/Linux,"MATLAB, PHP, PERL, C++, Python, Java",No,,No,,,Yes,No
+86,Canada,Yes,Doctorate,Evolution and ecology,9,3,5,5,2,,15.0,Yes,6.0,2,No,No formal methodology,Yes,0.0,Non-profit,Software Developer,,Contract,Yes,,,,Yes,Yes,No,Yes,"Evolution, iEvoBio",Always,GitHub,Always,"understanding the user experience of researchers
+ability to understand, maintain, and refactor others' code
+ability to document well","how to manage groups
+creating products/projects from the ground up
+testing","JetBrains IntelliJ
+BBEdit
+Git/Github",Mac OS,GNU/Linux,"Java, Python, Perl",Yes,External System,Yes,Yes,Yes,Yes,I'm not familiar with CAF
+87,Canada,Yes,Masters Degree,Earth science,6,4,6,3,4,3,6.0,No,2.0,Just me,No,No formal methodology,No,0.0,University,PhD Candidate,Earth science,Grad student,No,Yes,,,Yes,Yes,No,Yes,,Never,,Never,"translate problems / formulas into code
+understand complexity of real world and simplify problems for numerical modelling
+data management","visualisation
+big data analysis
+machine learning","matlab
+stackoverflow
+git",GNU/Linux,GNU/Linux,"matlab
+python
+linux shell",Yes,External System,No,,Yes,No,No
+88,Canada,Yes,Bachelors Degree,Genetics,3,3,8,2,6,4,16.0,No,2.0,2,Yes,No formal methodology,No,0.0,Private sector,Technical Marketing Manager,Industrial engineering,Full-time,No,No,,,No,Yes,No,Yes,,Very Often,,Never,"Organizational skills
+Communication skills
+Algorithmic clarity",Better understanding of certain algorithms,"Knime/R
+Eclipse 
+Python",Windows,Other,"C
+Python",Yes,Software,No,,Yes,No,No
+89,Canada,Yes,Some University,Space science,6,7,4,8,5,5,,No,2.0,3-5,No,,No,,University,,Statistics and probability,Contract,No,No,Yes,No,Yes,No,,No,,Never,,Very Often,,,,,iOS,,No,,Yes,No,Yes,No,Yes
+90,Canada,No,Doctorate,Information technology,3,6,9,2,4,4,15.0,No,4.0,,,,Yes,2.0,University,full Professor,Information technology,Full-time,,,,,Yes,,No,Yes,"IEEE CLOUD, ACM ICPE, IEEE ClodCom etc.",Often,,,Solid technical expertise; Ability to communicate effectively; work in a timely manner,,"GitHub, Amazon WS",GNU/Linux,GNU/Linux,"Java, C, Python",Yes,,,,,Yes,
+91,Canada,Yes,Doctorate,Physical geography,3,4,7,5,6,8,,No,,Just me,No,No formal methodology,Yes,,Private sector,,Fuel and energy technology,Self-employed,No,Yes,,,Yes,Yes,,No,,Sometimes,,Very Often,,,,,Windows,,No,,No,,Yes,Yes,No
+92,Canada,Yes,Masters Degree,Information technology,3,7,3,5,2,5,10.0,No,10.0,Just me,No,No formal methodology,No,0.0,Non-profit,Process Development Coordinator,Genetics,Full-time,Yes,,,,Yes,Yes,Yes,Yes,,Always,,Sometimes,"critical thinking
+initiative
+speed",,"google
+bash
+matlab",GNU/Linux,GNU/Linux,"bash
+matlab
+python
+perl",No,,No,,No,Yes,I'm not familiar with CAF
+93,Canada,Yes,Bachelors Degree,Other,5,1 (None at all),7,3,1 (None at all),5,15.0,Yes,3.0,3-5,No,,No,0.0,University,Systems Administrator,Information technology,Full-time,No,,,,Yes,No,No,No,Society for American Archaeology,Always,github,Never,people skills and project management,more time (time travel?),"git
+web browser
+vi",GNU/Linux,GNU/Linux,php python perl r,No,,No,,No,Yes,No
+94,Canada,Yes,Bachelors Degree,Biochemistry,2,10 (All my time),9,2,2,7,4.0,No,2.0,3-5,Yes,,No,,Non-profit,computational biologist,Genetics,Full-time,Yes,,,,No,Yes,No,Yes,,Always,,,,,,GNU/Linux,GNU/Linux,,Yes,External System,Yes,,No,No,I'm not familiar with CAF
+95,Canada,Yes,Doctorate,Physics,3,2,3,2,4,,18.0,Yes,3.0,Just me,No,No formal methodology,No,0.0,University,Applicants Analyst,,Full-time,Yes,,,,Yes,Yes,No,No,,Always,github,Never,"User-minded
+Pragmatic
+Diligent","Containers
+Project management","emacs
+make
+git",GNU/Linux,GNU/Linux,"C++,  Python, bash, fortran, R, cuda",Yes,Software,No,,Yes,Yes,No
+96,Canada,Yes,Doctorate,Physical chemistry,3,8,6,3,1 (None at all),2,47.0,No,5.0,Just me,No,No formal methodology,No,0.0,University,Professor,Animal biology,Full-time,No,,,,Yes,Yes,Yes,No,Many - the software is often part of the research project,Never,,Never,,,Microsoft Visual Studio,Windows,Windows,C++,No,,No,,,Yes,No
+97,Canada,Yes,Doctorate,Astronomy and astrophysics,2,5,2,2,3,5,18.0,No,3.0,Just me,No,No formal methodology,No,0.0,University,Assistant Professor,Astronomy and astrophysics,Full-time,No,No,Yes,No,Yes,Yes,No,Yes,,Sometimes,GitHub,Never,"Communications, flexibility, experience","High Performance Computing, GPU usage, more object-oriented programming experience","Stack Overflow, General internet search, emacs",GNU/Linux,GNU/Linux,"Python, IDL, Perl, C, Fortran",No,,No,,No,Yes,I'm not familiar with CAF
+98,Canada,Yes,Bachelors Degree,Other,5,2,7,2,2,3,8.0,Yes,5.0,Just me,No,Kanban,Yes,2.0,University,Research Associate,Geoghraphical information,Full-time,Yes,,,,Yes,Yes,No,Yes,"Boreal Ecosystem Recovery and Assessment Stakeholder Workshop 2016
+Canadian Institute of Forestry SEISMIC LINE RESTORATION TECHNICAL SESSION 2016
+TECTERRA Geomatics Showcase 2015",Very Often,"GitHub
+BitBucket",Never,"- Willingness to research and develop outside one's technical comfort zone
+- Ability to engage and understand stakeholders and collaborate on their needs
+- Knowing when to adopt and existing solution or write your own","- Project budgeting/planning
+- Familiarity with more programming language paradigms
+- Writing more fault-tolerant code that handles errors/unknowns","- Git
+- Google
+- Terminal",Mac OS,GNU/Linux,"- JavaScript
+- Ruby
+- Python
+- PHP
+- C",Yes,Software,Yes,No,Yes,Yes,No
+99,Canada,Yes,Doctorate,Physics,3,4,2,2,2,2,25.0,No,2.0,Just me,No,No formal methodology,No,0.0,University,Full Professor,Physics,Full-time,No,No,Yes,Yes,Yes,Yes,No,Yes,"CANHEIT, CAP",Always,Moodle,Never,"Ability to code, think flexibly when debugging, work with others",the ability to make more time!,,GNU/Linux,GNU/Linux,C++ and Python,Yes,External System,No,,No,Yes,No
+100,Canada,No,College Diploma,Information technology,7,1 (None at all),7,3,2,3,16.0,No,4.0,Just me,,Kanban,No,0.0,,,Information technology,Contract,No,,,,No,,,,,Very Often,,Never,,,,GNU/Linux,GNU/Linux,"Python, Julia, Clojure",,,,,,,
+101,Canada,Yes,Doctorate,Physics,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+102,Canada,Yes,Masters Degree,Chemical engineering,9,2,9,4,,4,20.0,Yes,1.0,10+,Yes,No formal methodology,No,0.0,University,Professionnel de Recherche,Applied mathematics,Full-time,Yes,,,,No,Yes,No,No,HPCS,Never,aucun,Never,"- Capacité à mettre en place des tests de validations automatiques quotidiens sur les logiciels produits
+- Savoir utiliser une large gamme d'outils pour gérer tout ce qui entoure un logiciel, ex: git, scripts, makefiles, code coverage
+- Connaissance en CHP","- C++ 2011, 2014
+- Python
+- CMake","git, qtcreator, valgrind",GNU/Linux,GNU/Linux,C++,Yes,External System,No,,Yes,No,No
+103,Canada,Yes,Doctorate,Other,4,3,4,3,5,3,20.0,No,2.0,2,No,No formal methodology,No,0.0,University,Associé de recherche,Chemical engineering,Contract,No,,,,Yes,Yes,Yes,Yes,,Never,,Never,"rudiment de génie logiciel
+gestionnaire de version
+programmation efficace (software carpentry)",rudiment de génie logiciel,Clusters de Calcul Québec,GNU/Linux,GNU/Linux,,Yes,External System,Yes,Yes,Yes,Yes,No
+104,Canada,Yes,Masters Degree,Other,7,1 (None at all),5,3,2,2,10.0,Yes,4.0,10+,Yes,No formal methodology,Yes,0.0,University,Chef d'équipe,Artificial intelligence,Full-time,Yes,,,,Yes,Yes,No,No,"plein: GTC (plusieurs fois), Montreal deep learning summer school, autre summer schoold, NIPS, ...",Always,"GitHub, assembla, google code, sourceforge",Never,Bonne structure de code. Capacité à aidé et comprendre les besoins des utilisateur. Capacité de débogging/investigation des problèmes.,Meilleur anglais pour répondre sur les mailing list,"GitHub, travis, emacs",GNU/Linux,GNU/Linux,"Python, C++, CUDA",No,,No,,Yes,Yes,No
+105,Canada,Yes,Doctorate,Hydrology,3,3,5,2,3,1 (None at all),12.0,No,2.0,3-5,Yes,Kanban,Yes,1.0,Non-profit,"Specialist, Climate scenarios and services",Earth science,Full-time,No,No,Yes,Yes,Yes,Yes,No,No,Earth System Grid Federation Face 2 Face 2016,Always,"Github, Google Code, BitBucket",Never,"Focus - easy to get carried away in the development of the tools and neglect the actual research it is made for. 
+Communication - being able to attract a community around the software
+Professionalism - writing clean, understandable, maintainable code","Software architecture
+Deployment  on production machines
+Project management","IPython
+Github
+Google",GNU/Linux,GNU/Linux,"Python
+Javascript
+Fortran",Yes,External System,Yes,,Yes,Yes,I'm not familiar with CAF
+106,Canada,Yes,Masters Degree,Artificial intelligence,4,4,6,4,2,1 (None at all),3.0,Yes,4.0,3-5,Yes,No formal methodology,No,0.0,University,Deep Learning Analyst,Artificial intelligence,Full-time,,,,,Yes,Yes,No,,,Often,,Never,,,,GNU/Linux,GNU/Linux,"Python, C++",,,,,,Yes,I'm not familiar with CAF
+107,Canada,No,Doctorate,Artificial intelligence,2,2,10 (All my time),1 (None at all),9,2,40.0,No,1.0,3-5,No,No formal methodology,Yes,,University,Professor,Artificial intelligence,Full-time,No,Yes,,,Yes,Yes,No,Yes,,Never,,Never,,,,GNU/Linux,GNU/Linux,C,No,,No,,No,No,No
+108,Canada,Yes,Masters Degree,Mechanical engineering,7,2,6,4,3,2,20.0,Yes,2.0,6-9,Yes,Scrum,Yes,1.0,University,Scientiffic Computing Analyst,Genetics,Full-time,Yes,,,,Yes,Yes,No,Yes,High Performance Computing Symposium,Always,bitbucket,Never,"Organized
+Flexible
+Team work",,"PyCharm
+Git
+SQuirrel",GNU/Linux,GNU/Linux,"Pyhton
+Javascript
+SQL
+BASH
+PHP",Yes,External System,No,,No,Yes,No
+109,Canada,Yes,Masters Degree,Artificial intelligence,4,3,2,1 (None at all),2,2,15.0,Yes,2.0,3-5,No,No formal methodology,No,,University,,Artificial intelligence,Full-time,Yes,,,,Yes,Yes,No,No,,Always,,Never,,,,Windows,GNU/Linux,,Yes,External System,,,No,Yes,I'm not familiar with CAF
+110,Canada,Yes,Bachelors Degree,Information technology,5,1 (None at all),4,2,5,1 (None at all),10.0,Yes,5.0,3-5,No,No formal methodology,No,0.0,Non-profit,Assistant Director of Data Management,Animal biology,Full-time,Yes,,,,Yes,No,No,No,"2015 Symposium on Digital Earth, GLATOS, OTN Symposiums/workshops, US IOOS DMAC, various telemetry conferences in US and Europe",Always,gitlab.oceantrack.org,Often,,,"git
+atom
+Slack",Mac OS,,"Python
+R
+PostgreSQL
+JavaScript
+PHP
+Matlab",Yes,Software,Yes,Yes,Yes,Yes,I'm not familiar with CAF
+111,Canada,Yes,Doctorate,Information technology,3,6,8,2,2,4,20.0,No,4.0,3-5,No,Scrum,No,0.0,University,Associate Professor,Information technology,Full-time,Yes,,,,Yes,Yes,No,Yes,"SIGMOD, WebDB, VLDB, ICDE",Very Often,"GitHub, Bitbucket, Ualberta library",Very Often,Problem solving. Communication. Ability to develop scalable code.,"Software process management, continuos integration.","github, dbpedia, elasticsearch",GNU/Linux,GNU/Linux,"Java, Python, C, C++, C",Yes,External System,Yes,No,,Yes,No
+112,Canada,Yes,Doctorate,Theoretical physics and chemistry,3,6,9,2,4,2,22.0,No,3.0,10+,No,Other,Yes,0.0,University,Professor; University Scholar; Canada Research Chair,Theoretical physics and chemistry,Full-time,No,No,Yes,Yes,Yes,Yes,Yes,Yes,"Too many to count, really -- about 3-4 per year.",Always,GitHub,Sometimes,"1. Numerical Algorithms/Algorithmic Thinking
+2. Software Design Principles and Patterns
+3. Language Knowledge","1. Language Knowledge (I know mostly semi-archaic Fortran 77/90/95/2003).
+2. GPU/Parallel Programming
+3. Improving my ability to think in an Object-Oriented Way","1. GitHub/Travis CI/Etc..
+2. Python (and editors/tools like PyCharm, Jupyter)
+3. Libraries like numpy, scipy, etc.",GNU/Linux,Other,"Python
+C/C++
+Fortran 90/95/2003
+Assembler
+bash/Perl",No,,No,,Yes,Yes,No
+113,Canada,Yes,Doctorate,Physics,5,3,3,7,5,3,8.0,No,1.0,6-9,Yes,No formal methodology,No,0.0,University,Analyste informatique,Artificial intelligence,Full-time,Yes,,,,Yes,Yes,No,No,,Always,GitHub,Never,"Programmation en language haute performance (C, Fortran, python+numpy, ...)
+Mathématique appliquée et méthodes numériques
+Logiciel de contrôle des versions et gestion de code commun (git, SVN, ...)","Compilateurs et optimisation des programmes
+Administration systèmes informatiques
+Débuggeurs","Python
+Github
+SLURM",GNU/Linux,GNU/Linux,"Python
+C
+CUDA",No,,Yes,Yes,Yes,Yes,I'm not familiar with CAF
