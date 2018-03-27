@@ -19,12 +19,18 @@ def subsetting_df(df, complete_info):
     """
     subsetting_list = list()
     for element in complete_info:
-        new_col_name = '{}. {}'.format(element['code'], element['question'].replace(u'\xa0', ' '))
-        if element['question'] in df.columns:
+        for col in df.columns:
+            multi_col = col.split('[')[0].strip()
+            if element['question'] == col or element['question'] == multi_col:
 
-            subsetting_list.append(new_col_name)
-            # print(element['Original title'])
-        df.rename(columns={element['question']: new_col_name}, inplace=True)
+                if element['answer_format'].lower() == 'multiple choices':
+                    new_col_name = '{}[multi]. {}'.format(element['code'], col.replace(u'\xa0', ' ').strip())
+                else:
+                    new_col_name = '{}. {}'.format(element['code'], col.replace(u'\xa0', ' ').strip())
+                print(new_col_name)
+                subsetting_list.append(new_col_name)
+                # print(element['Original title'])
+                df.rename(columns={col: new_col_name}, inplace=True)
 
     return df[subsetting_list]
 
@@ -202,6 +208,8 @@ def main():
                     sub_df[col], row = clean_likert(root_file_answer, row, sub_df, col)
                 elif row['answer_format'].lower() == 'freenumeric':
                     sub_df[col] = clean_numeric(sub_df, col)
+                elif row['answer_format'].lower() == 'multiple choice':
+                    print('Column with multiple choice: {}'.format(col))
                 new_list_question.append(row)
 
     # writing_new_dict(new_list_question, root_file)
