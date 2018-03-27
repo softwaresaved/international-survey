@@ -62,8 +62,42 @@ class CleaningData(CleaningConfig):
         if self.year == '2017' and self.country == 'us':
             self.df = self.clean_salary_us_2017(self.df)
             self.df = self.clean_highest_education(self.df)
+        if self.year == '2017' and self.country == 'can':
+            self.df = self.clean_can_edu(self.df)
         self.df, self.structure_by_section = self.create_language_section(self.df, self.structure_by_section)
         return self.df
+
+    def clean_can_edu(self, df):
+        """
+        In the Canada 2017, the 'other' field was exceptionally too much used.
+        This function do some easy cleaning to match some others with pre-existing categories
+        """
+
+        col_to_check = {'[OTHER_RAW]. edu2. In which discipline is your highest academic qualification? [Other]': 'edu2. In which discipline is your highest academic qualification?',
+                        '[OTHER_RAW]. currentEmp7. In which application area do you primarily work? [Other]': 'currentEmp7. In which application area do you primarily work?'}
+        translate_fields = {'Humanities': 'Social sciences and humanities',
+                            'History': 'Social sciences and humanities',
+                            'Bioinformatique': 'Biomedical engineering',
+                            'Bioinformatics': 'Biomedical engineering',
+                            'Bioinformatics and Computational Biology': 'Biomedical engineering',
+                            'Biochemistry/Bioinformatics': 'Biomedical engineering',
+                            'Computational Science': 'Information technology',
+                            'Computer Engineering/Science': 'Information technology',
+                            'Computer Engineering': 'Information technology',
+                            'computer engineering': 'Information technology',
+                            'computer': 'Information technology',
+                            'Computer Science': 'Information technology',
+                            'Computer Engineering/Science': 'Information technology',
+                            'Computer Engineering': 'Information technology',
+                            'Computer science': 'Information technology',
+                            'Computer & information science': 'Information technology',
+                            'informatique': 'Information technology'
+                            }
+        for free_text_col, choice_col in col_to_check.items():
+            df.loc[df[choice_col] == 'Other'][free_text_col].value_counts(dropna=False).to_frame().rename(columns={free_text_col: 'Freetext for academic subject'})
+            # Mapping the dictionary into the df[choice_col] column if the value in free_text_col is in the the translate_field dictionary
+            df.loc[df[free_text_col].isin(translate_fields.keys()), choice_col] = df[free_text_col].map(translate_fields)
+        return df
 
     def clean_highest_education(self, df):
         """
@@ -78,7 +112,6 @@ class CleaningData(CleaningConfig):
         translate_fields = {'Cognitive Science': 'Psychology',
                             'Statistics': 'Mathematics',
                             'Genetics': 'Biological Sciences',
-                            'Scandinavian Languages and Literatures': 'Russian & East European Languages',
                             'bioinformatics': 'Biological Sciences',
                             'Biostatistics': 'Biological Sciences',
                             'Physics': 'Physics and Astronomy',

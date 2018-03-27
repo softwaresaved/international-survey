@@ -10,3 +10,4 @@ venv/
 logs/
 __pycache__/
 original_data.csv
+data_17.csv
