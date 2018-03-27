@@ -1,0 +1,58 @@
+{
+    "description": "<p>This is the first official release for the 2017 international survey. It also contains the 2016 results for United-Kingdom only.</p>", 
+    "license": "other-open", 
+    "title": "softwaresaved/international-survey: Public release for 2017 results", 
+    "version": "2017-v1.1", 
+    "upload_type": "software", 
+    "publication_date": "2018-03-27", 
+    "creators": [
+        {
+            "affiliation": "Software Sustainability Institute", 
+            "name": "Olivier Philippe"
+        }, 
+        {
+            "name": "Martin Hammitzsch"
+        }, 
+        {
+            "name": "Stephan Janosch"
+        }, 
+        {
+            "name": "Anelda van der Walt"
+        }, 
+        {
+            "name": "Ben van Werkhoven"
+        }, 
+        {
+            "affiliation": "Software Sustainability Institute", 
+            "name": "Simon Hettrick"
+        }, 
+        {
+            "name": "Daniel S. Katz"
+        }, 
+        {
+            "name": "Katrin Leinweber"
+        }, 
+        {
+            "name": "Sandra Gesing"
+        }, 
+        {
+            "name": "Stephan Druskat"
+        },
+        {
+            "name": "Scott Henwood"
+        }
+    ], 
+    "access_right": "open", 
+    "related_identifiers": [
+        {
+            "scheme": "url", 
+            "identifier": "https://github.com/softwaresaved/international-survey/tree/2017-v1.1", 
+            "relation": "isSupplementTo"
+        }, 
+        {
+            "scheme": "doi", 
+            "identifier": "10.5281/zenodo.1194668", 
+            "relation": "isPartOf"
+        }
+    ]
+}
