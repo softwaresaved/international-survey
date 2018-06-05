@@ -18,6 +18,7 @@ We publish the results under the form of notebooks. All surveys have an attached
 
 |Country | Notebook | Dataset |
 |  :-:       |  :-:   |  :-:  |
+|Canada| 	[Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_can_2017_narrative.ipynb)| [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/can/data/public_data.csv)|
 |Germany|  [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_de_2017_narrative.ipynb)| [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/de/data/public_data.csv)|
 |Netherlands | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_nl_2017_narrative.ipynb)    | [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/nl/data/public_data.csv)|
 |South Africa | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_zaf_2017_narrative.ipynb)  	 | [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/zaf/data/public_data.csv)|
@@ -28,6 +29,7 @@ We publish the results under the form of notebooks. All surveys have an attached
 
 |country     |translation|adaptation|draft survey|Finalised|ethic|Survey started|Survey finished|analysis|publication|
 |  :-:       |  :-:   |  :-:   |  :-:   |  :-:   |  :-:   |  :-:     |  :-:     |  :-:   |  :-:   |
+|Canada     |  done  |  done  |  done  |  done  |  done  | N/A | N/A | N/A       |  27/03/18      |
 |Germany     |  done  |  done  |  done  |  done  |  done  | 17/10/17 | 31/12/17 | 09/03/18       |  11/03/18      |
 |Netherlands | N/A    |  done  |  done  | done |  done  |    29/11/17      |    31/12/17      |  09/03/18      |   11/03/18     |
 |South Africa| N/A  	 |  done  |  done  |done |  done  | 23/11/17         |     31/12/17     |    09/03/18    |   11/03/18     |
