@@ -6,7 +6,8 @@
 
 In 2016 the Software Sustainability Institute ran the first survey of Research Software Engineers (RSEs) - the people who write code in academia. This produced the first insight into the demographics, job satisfaction, and practices of RSEs. To support and broaden this work, the Institute will run the UK survey every year and - it is hoped - will expand the survey so that insight and comparison can be made across different countries. Ultimately, we hope that these results, the anonymised version of which will all be open licensed, will act as a valuable resource to understand and improve the working conditions for RSEs.
 
-In 2017, we have conducted surveys in the UK and in Canada. We now have German and Dutch collaborators, and we are looking at expanding into Norway, South Africa and the US.
+In 2017 we also surveyed Canadian RSEs and we added four further countries, Germany, Netherlands, South Africa and USA. 
+Our thanks to our partners: Scott Henwood (Canada), Stephan Janosch and Martin Hammitzsch (Germany), Ben van Werkhoven and Tom Bakker (Netherlands), Anelda van der Walt (South Africa) and Daniel Katz and Sandra Gesing (USA).
 
 This repository is used to create and analyse international surveys. It use csv file, limesurvey and jupyter notebook. Each country create a specific csv question file where the questions are stored. Then from this file a limesurvey's file is create and the service is used to collect answers. Once the answers are collected, the analysis are automated and create a jupyter notebook with all the descriptive analysis. For more details please refer to the [HOWTOCONTRIBUTE](https://github.com/softwaresaved/international-survey/blob/master/HOW%20TO%20CONTRIBUTE.md).
 
@@ -31,4 +32,3 @@ We publish the results under the form of notebooks. All surveys have an attached
 |Netherlands | N/A    |  done  |  done  | done |  done  |    29/11/17      |    31/12/17      |  09/03/18      |   11/03/18     |
 |South Africa| N/A  	 |  done  |  done  |done |  done  | 23/11/17         |     31/12/17     |    09/03/18    |   11/03/18     |
 |USA 	       | N/A  	 |  done  |  done	 |  done  |  done  | 14/11/17 |    31/12/17      |    09/03/18    | 11/03/18       |
-
