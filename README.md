@@ -32,3 +32,21 @@ We publish the results under the form of notebooks. All surveys have an attached
 |Netherlands | N/A    |  done  |  done  | done |  done  |    29/11/17      |    31/12/17      |  09/03/18      |   11/03/18     |
 |South Africa| N/A  	 |  done  |  done  |done |  done  | 23/11/17         |     31/12/17     |    09/03/18    |   11/03/18     |
 |USA 	       | N/A  	 |  done  |  done	 |  done  |  done  | 14/11/17 |    31/12/17      |    09/03/18    | 11/03/18       |
+
+
+
+## Contributors
+Here is a list of contributors for the 2017 version of the survey (alphabetic order). They are also mentioned in the [.zenodo.json](https://github.com/softwaresaved/international-survey/blob/master/.zenodo.json) to be automatically added to the DOI.
+
+* Stephan Druskat
+* Sandra Gesing
+* Martin Hammitzsch
+* Scott Henwood
+* Simon Hettrick
+* Stephan Janosch
+* Katrin Leinweber
+* Olivier Philippe
+* Daniel S. Katz
+* Anelda van der Walt
+* Ben van Werkhoven
+
