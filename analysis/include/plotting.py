@@ -292,7 +292,8 @@ def display_side_by_side(*args):
     original_df2 = args[1]
     df2 = original_df2.copy()
     # Round the value to display them
-    df2 = df2.round()
+    # And remove the remaining trailing 0 by converting to str
+    df2 = df2.round().str.replace('.0', '')
     rows, columns = df1.shape
     index_row = df2.index
     df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
