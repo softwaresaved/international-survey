@@ -293,16 +293,15 @@ def display_side_by_side(*args):
     df2 = original_df2.copy()
     # Round the value to display them
     # And remove the remaining trailing 0 by converting to str
-    df2 = df2.round().str.replace('.0', '')
+    df2 = df2.round()
+    df2.loc[:, df2.dtypes== np.float64] = df2.loc[:, df2.dtypes== np.float64].astype(str)
+    df2 = df2.replace('.0', '', regex=True)
     rows, columns = df1.shape
     index_row = df2.index
     df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
     df2.reset_index()
     if columns == 1:
         df1['Percentage'] = df2.iloc[:, -1]
-        # df1.index.name = df1.columns[0]
-        # if df1.index.name == 'Count':
-        #     df1.index.name = ''
         df1.columns = ['Count', 'Percentage']
 
     else:  # In case of Y-N, the df has Yes and No as columns
