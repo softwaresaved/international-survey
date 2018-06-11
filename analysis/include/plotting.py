@@ -295,7 +295,7 @@ def display_side_by_side(*args):
     # And remove the remaining trailing 0 by converting to str
     df2 = df2.round()
     df2.loc[:, df2.dtypes== np.float64] = df2.loc[:, df2.dtypes== np.float64].astype(str)
-    df2 = df2.replace('.0', '', regex=True)
+    df2 = df2.replace('\.0', '', regex=True)
     rows, columns = df1.shape
     index_row = df2.index
     df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
