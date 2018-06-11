@@ -331,6 +331,8 @@ def count_likert(df, colnames, likert_answer, dropna=False, normalize=False, rei
     df_sub = df_sub.applymap(str)
     # # then replace the -1 into np.nan
     df_sub = df_sub.replace({'-1': np.nan})
+    # df_sub = df_sub.astype(str)
+    # df_sub = df_sub.replace('.0', '', regex=True)
 
     # Calculate the counts for them
     df_count = df_sub.apply(pd.Series.value_counts, dropna=dropna, normalize=normalize)

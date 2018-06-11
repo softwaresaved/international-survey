@@ -281,7 +281,7 @@ def add_x_labels(df, wrap_label, dropna):
     plt.xticks(label_ticks, label_txt, rotation=90, fontsize=14)
 
 
-def display_side_by_side(*args):
+def display_side_by_side(*args, multiple=True):
     """
     Merging two dataframe into one were the first one contains the count values and the second
     one contains the percentage. They needs to have the same index name
@@ -289,33 +289,37 @@ def display_side_by_side(*args):
     """
     original_df1 = args[0]
     df1 = original_df1.copy()
-    original_df2 = args[1]
-    df2 = original_df2.copy()
-    # Round the value to display them
-    # And remove the remaining trailing 0 by converting to str
-    df2 = df2.round()
-    df2.loc[:, df2.dtypes== np.float64] = df2.loc[:, df2.dtypes== np.float64].astype(str)
-    df2 = df2.replace('\.0', '', regex=True)
-    rows, columns = df1.shape
-    index_row = df2.index
-    df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
-    df2.reset_index()
-    if columns == 1:
-        df1['Percentage'] = df2.iloc[:, -1]
-        df1.columns = ['Count', 'Percentage']
+    if multiple is True:
+        original_df2 = args[1]
+        df2 = original_df2.copy()
+        # Round the value to display them
+        # And remove the remaining trailing 0 by converting to str
+        df2 = df2.round()
+        df2.loc[:, df2.dtypes== np.float64] = df2.loc[:, df2.dtypes== np.float64].astype(str)
+        df2 = df2.replace('\.0', '', regex=True)
+        rows, columns = df1.shape
+        index_row = df2.index
+        df2.index = [i.replace(' [PERCENTAGE]', '') for i in index_row]
+        df2.reset_index()
+        if columns == 1:
+            df1['Percentage'] = df2.iloc[:, -1]
+            df1.columns = ['Count', 'Percentage']
 
-    else:  # In case of Y-N, the df has Yes and No as columns
-        if df1.columns[0] == 'Yes':
-            df1['Yes_P'] = df2.iloc[:, 0]
-            df1['No_P'] = df2.iloc[:, 1]
-            try:
-                df1.columns = ['Yes [Count]', 'No [Count]', 'NaN value', 'Yes [Percentage]', 'No [Percentage]']
-            except ValueError:  # In case there is not a Nan
-                df1.columns = ['Yes [Count]', 'No [Count]', 'Yes [Percentage]', 'No [Percentage]']
-        else:
-            df1.columns = ['{} [Count]'.format(l) for l in df1.columns]
-            for i, colname in enumerate(df2.columns):
-                df1['{} [Percentage]'.format(colname)] = df2.iloc[:, i]
+        else:  # In case of Y-N, the df has Yes and No as columns
+            if df1.columns[0] == 'Yes':
+                df1['Yes_P'] = df2.iloc[:, 0]
+                df1['No_P'] = df2.iloc[:, 1]
+                try:
+                    df1.columns = ['Yes [Count]', 'No [Count]', 'NaN value', 'Yes [Percentage]', 'No [Percentage]']
+                except ValueError:  # In case there is not a Nan
+                    df1.columns = ['Yes [Count]', 'No [Count]', 'Yes [Percentage]', 'No [Percentage]']
+            else:
+                df1.columns = ['{} [Count]'.format(l) for l in df1.columns]
+                for i, colname in enumerate(df2.columns):
+                    df1['{} [Percentage]'.format(colname)] = df2.iloc[:, i]
+    else:
+        df1.loc[:, df1.dtypes== np.float64] = df1.loc[:, df1.dtypes== np.float64].astype(str)
+        df1 = df1.replace('\.0', '', regex=True)
     return df1
 
 
