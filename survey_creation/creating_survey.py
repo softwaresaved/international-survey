@@ -15,26 +15,18 @@ All information about the TSV file structure can be retrieved here:
     https://manual.limesurvey.org/Tab_Separated_Value_survey_structure
 """
 
+import re
 import csv
 import sys
 import os
+import itertools
 from collections import OrderedDict
-from include.logger import logger
 from include.get_arguments import get_arguments
 from config.config import creationConfig as main_config
 import importlib
 from random import shuffle
 from markdown import markdown
 from bs4 import BeautifulSoup
-
-RUNNING = 'dev'
-
-if RUNNING == 'dev':
-    DEBUGGING='DEBUG'
-elif RUNNING == 'prod':
-    DEBUGGING='INFO'
-
-logger = logger(name='creating survey', stream_level=DEBUGGING)
 
 
 class surveyCreation:
@@ -57,6 +49,12 @@ class surveyCreation:
         self.year = year
         # self.project = project
         self.specific_config = self.import_config()
+        # create a dictionary containing all the questions code
+        # and for each the order of the answers as output in the survey
+        # This dict is needed for the setup_condition(self) as it
+        # require the position of the answer. It is only needed
+        # for the one choice type of question as it works only for Y/N and one choice
+        self.order_answer_one_choice = dict()
 
     def import_config(self):
         """
@@ -199,6 +197,7 @@ class surveyCreation:
 
     def create_survey_settings(self):
         """
+        Add the welcome and the end message and set up the different setting in the survey
         """
         def get_text(type_message, lang=None):
             """
@@ -240,7 +239,6 @@ class surveyCreation:
             survey_title = self.specific_config.survey_title[lang]
             survey_title_row = {'class': 'SL', 'name': 'surveyls_title', 'text': survey_title}
             survey_settings.insert(0, survey_title_row)
-            # print(survey_settings)
             survey_settings = self._add_text_message(survey_settings, welcome_message, 'welcome')
             survey_settings = self._add_text_message(survey_settings, end_message, 'end')
 
@@ -296,13 +294,7 @@ class surveyCreation:
             current_answer_format = q['answer_format'].lower()
             current_file_answer = q['answer_file']
             current_code = ''.join([i for i in q['code'] if not i.isdigit()])
-            # Checking if there is a condition. When not, it is an empty string ''
-            if q['condition'] != '':
-                current_condition = True
-            else:
-                current_condition = False
-
-            if current_answer_format == 'likert' and current_condition is False:
+            if current_answer_format == 'likert':
                 if len(group_survey_q) > 0:
                     if current_file_answer == previous_file_answer or previous_file_answer is None:
                         if previous_answer_format == 'likert':
@@ -338,6 +330,7 @@ class surveyCreation:
         Return a formatted dictionary with the shared information
         accross all questions
         """
+
         if type_question == 'multi_likert':
             question = main_config.likert_question
         elif type_question == 'one choice':
@@ -371,6 +364,8 @@ class surveyCreation:
             question['name'] = row['code']
             question['text'] = row[txt_lang]
 
+        question['relevance'] = self.setup_condition(row['condition'])
+
         question['language'] = lang
 
         if row['other'] == 'Y':
@@ -392,7 +387,6 @@ class surveyCreation:
     def setup_subquestion(self, type_question, lang, list_likert=None, txt_lang=None):
         """
         """
-
         if type_question == 'multi_likert':
             for row in list_likert:
                 subquestion = main_config.subquestion
@@ -413,7 +407,7 @@ class surveyCreation:
                 self._write_row(subquestion)
 
         if type_question == 'likert':
-            # Need to create an  empty subquestion
+            # Need to create an empty subquestion
             subquestion = main_config.subquestion
             subquestion['name'] = 'SQ001'
             subquestion['relevance'] = '1'
@@ -426,9 +420,11 @@ class surveyCreation:
         Create the answer itself
         """
         n = 1
-        print(row['code'])
         for text_answer in self.get_answer(self.year, self.country, row['answer_file']):
             if type_question == 'one choice':
+                # add the answer and its position to the self.order_answer_one_choice dict for
+                # the self.setup_condition()
+                self.order_answer_one_choice.setdefault(row['code'], {})[n] = text_answer.lower()
                 answer_row = main_config.one_choice_answer
             elif type_question == 'multi choice':
                 answer_row = main_config.multiple_choice_answer
@@ -469,36 +465,145 @@ class surveyCreation:
 
     def setup_condition(self, condition):
         """
+        transform preformated 'condition' into accepted 'relevance' for limesurvey and return
+        the string.
+        Add a condition to the question to appears only if it satisfied conditions from previous
+        questions.
+        DISCLAIMER: Only works with Y/N and one choice type of question for the question that trigger
+        the condition.
+        The condition is added in the question row under the "relevance" field.
+        To create the appropriate 'relevance' field it needs to:
+            1. Get the code of the question that trigger the condition (field 'name')
+            2.1 Get the name of the answer for that question to test the question (field 'name'). In
+            case of a one choice, it is a number associated to the position of the answer (incremental, starts at 1)
+            In case of a Y/N questions, it is either "Y" or "N".
+        The formatting of the condition is as follow:
+            (($code_question.NAOK == "$name_answer") $BOOL ($code.NAOK == "$name_answer"))
+        :params:
+            condition str: get a pre-formatted condition such as:
+                ($code_question == "$answer_text") $BOOL ($cond2)
+        :return:
+            relevance str: formatted condition for the question
         """
-        def split_list(inlist, logical_element):
-            return [i.strip() for i in list_to_compare.lower().split(logical_element.lower())]
 
-        def remove_unused_word(word):
-            return word.replace('in', '').strip()
+        def split_conditions(condition):
+            """
+            Split the condition received by the boolean operators and
+            return a list of the different conditions
+            :params:
+                condition str: containing a text like "(cond1) AND (cond2) OR cond3)
+            :return:
+                list_of_conditions list: containing the different conditions
+            """
+            extracted_condition = re.findall('\(.*?\)', condition)
+            return extracted_condition
+
+        def format_conditions(list_conditions):
+            """
+            Get the list of conditions and for each match the appropriate
+            index position of the answer that trigger it and apply some formating
+            to be compatible with limesurvey
+            The formatting of the condition is as follow:
+                (($code_question.NAOK == "$name_answer") $BOOL ($code.NAOK == "$name_answer"))
+            :params:
+                list_condition list: list of strings that contain the conditions
+                that are preformated as ($code_question == "$answer")
+            :return:
+                list_formated_condition list: contain the same condition but formated for limesurvey
+            """
+            list_formated_condition = list()
+            for condition in list_conditions:
+                # get the code of the question
+                code = condition.split(' ')[0].replace('(', '')
+                # get the comparison operator
+                operator = condition.split(' ')[1]
+                # check if the operator are ok
+                for x in operator:
+                    if x not in ['=', '!', '<', '>']:
+                        raise TypeError('Error in the condition formating: {}'.format(condition))
+                # get the answer it is comparing with
+                answer = condition.split('"')[1::2][0].lower()
+                # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
+                if answer in ['y', 'n', 'yes', 'no']:
+                    position_answer = answer[0].upper()  # Only need the Y or N
+                # If not it means it is from a one choice question and the position of the answer
+                # needs to be retrieved
+                else:
+                    # find that answer in the dict created during the self.setup_answer() to find the index position
+                    # of that answer
+                    for n in self.order_answer_one_choice[code]:
+                        if self.order_answer_one_choice[code][n] == answer.lower():
+                            position_answer = n
+                            break
+                format_condition = '({}.NAOK {} "{}")'.format(code, operator, position_answer)
+                list_formated_condition.append(format_condition)
+            return list_formated_condition
+
+        def get_position_bool(instring):
+            """
+            Check if the string contains 'and' and/or 'or' and get their index.
+            then return a dict with the index position as key and the boolean as values
+            :params:
+                instring str: containing the text with the potential conditions
+            :return:
+                dict_position_bool dict: index position of the boolean as key and boolean
+                as value
+            """
+            def find_index_word(instring, match_word):
+                """
+                Check the position of the match_word in the instring
+                and return a list of the different index position
+                :params:
+                    instring str: where to check the presence of the word
+                    match_word str: the word to check if it is in the instring
+
+                :return:
+                    list_position list: list of all the index position (the index
+                    of the first charactere of the match word)
+                """
+                list_position = list()
+                index = 0
+                while index < len(instring):
+                    index = instring.lower().find(match_word.lower(), index)
+                    if index == -1:
+                        break
+                    list_position.append(index)
+                    index += len(match_word)
+                return list_position
+
+            dict_position_bool = dict()
+            for boolean in [') and (', ') or (']:
+                for i in find_index_word(instring, boolean):
+                    dict_position_bool[i] = boolean.replace(')', '').replace('(', '').strip()
+            return dict_position_bool
+
+        def final_formating(list_formated_conditions, dict_of_bool):
+            """
+            """
+            if len(list_formated_conditions) == 1:
+                return list_formated_conditions[0]
+            else:
+                # get the list of the position of the different bool
+                bool_list = [dict_of_bool[x].upper() for x in sorted(dict_of_bool)]
+                # Create a new list by alternating the element of each list
+                # Source: https://stackoverflow.com/a/21482016
+                to_iterate = [x for x in itertools.chain.from_iterable(itertools.zip_longest(list_formated_conditions, bool_list)) if x]
+
+                list_formated_conditions = "({})".format(' '.join(to_iterate))
+            return list_formated_conditions
 
         # If condition is empty it wil be an empty string
         if condition == '':
             return
-        if 'OR' in condition:
-            logical_element = 'or'
-        elif 'AND' in condition:
-            logical_element = 'and'
-        else:
-            logical_element = None
-        # First check if there is a list in the field
-        if '[' in condition:
-            element_to_compare = condition.split('[')[0]
-            list_to_compare = condition.split('[')[1].replace(']', '')
-            list_to_compare = split_list(list_to_compare, logical_element)
-            element_to_compare = remove_unused_word(element_to_compare)
 
-        else:  # no list, only several element or several conditions
-            # First split with AND and OR:
-            if logical_element:
-                list_conditions = condition.lower().split(logical_element)
-            else:
-                # Transform it into a list for later operation to be consistent
-                list_conditions = [condition.lower()]
+        else:
+            # Split the conditions by the different AND and OR present and
+            # keeps the order to be sure to reconstruct later
+            list_of_conditions = split_conditions(condition)
+            formated_conditions = format_conditions(list_of_conditions)
+            dict_of_bool = get_position_bool(condition)
+            formated_string = final_formating(formated_conditions, dict_of_bool)
+            return formated_string
 
     def create_survey_questions(self):
         """
@@ -519,13 +624,11 @@ class surveyCreation:
 
             # Open the csv file and read it through a dictionary (generator)
             question_to_transform = self.read_survey_file(self.year, self.country)
-
             # pass this generator into the function group_likert() to group Y/N and likert together
             for q in self.group_likert(question_to_transform):
 
                 # If questions were grouped together, need to change how it is process
                 if len(q) > 1:
-                    # print([row['code'] for row in q])
 
                     # Check if a new section needs to be added before processing the question
                     nbr_section = self.check_adding_section(q[0], nbr_section, self.specific_config.sections_txt, lang)
@@ -543,12 +646,10 @@ class surveyCreation:
 
                 else:
                     for row in q:
-                        # print(row['code'])
                         # Check if a new section needs to be added before processing the question
                         nbr_section = self.check_adding_section(row, nbr_section, self.specific_config.sections_txt,
                                                                 lang)
 
-                        self.setup_condition(row['condition'])
 
                         if row['answer_format'].lower() == 'one choice':
                             self.setup_question('one choice', row, txt_lang, lang)
@@ -574,7 +675,6 @@ class surveyCreation:
                             self.setup_question('freenumeric', row, txt_lang, lang)
 
                         if row['answer_format'].lower() == 'freetext':
-                            print(row)
                             self.setup_question('freetext', row, txt_lang, lang)
 
                         if row['answer_format'].lower() == 'likert':
