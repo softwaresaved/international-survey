@@ -432,8 +432,13 @@ class surveyCreation:
                 answer_row = main_config.likert_answer
             elif type_question == 'ranking':
                 answer_row = main_config.ranking_answer
-            # answer_row['name'] = 'A' + str(n)
             answer_row['name'] = str(n)
+            # answer_row['name'] = 'A' + str(n)
+            # For multichoice the answers are considered as subquestion
+            # Need to change the name value
+            if type_question == 'multi choice':
+                default_sq_value = 'SQ000'
+                answer_row['name'] = default_sq_value[:-len(str(n))] + str(n)
             # to get the translation  of the answers. If there is None, it takes the first
             # element (the english one). Needed because sometimes, the answers are not translated
             try:
@@ -525,7 +530,7 @@ class surveyCreation:
                 answer = condition.split('"')[1::2][0].lower()
                 # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
                 if answer in ['y', 'n', 'yes', 'no']:
-                    position_answer = answer[0].upper()  # Only need the Y or N
+                    position_answer = '"{}"'.format(answer[0].upper())  # Only need the Y or N
                 # If not it means it is from a one choice question and the position of the answer
                 # needs to be retrieved
                 else:
@@ -533,7 +538,8 @@ class surveyCreation:
                     # of that answer
                     for n in self.order_answer_one_choice[code]:
                         if self.order_answer_one_choice[code][n] == answer.lower():
-                            position_answer = "{}".format(n)
+                            # Need the double quotes for the limesurvey
+                            position_answer = '"{}"'.format(n)
                             break
                 format_condition = '({}.NAOK {} {})'.format(code, operator, position_answer)
                 list_formated_condition.append(format_condition)
@@ -581,7 +587,7 @@ class surveyCreation:
             """
             """
             if len(list_formated_conditions) == 1:
-                return list_formated_conditions[0]
+                return "({})".format(list_formated_conditions[0])
             else:
                 # get the list of the position of the different bool
                 bool_list = [dict_of_bool[x].upper() for x in sorted(dict_of_bool)]
