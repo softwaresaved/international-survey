@@ -533,9 +533,9 @@ class surveyCreation:
                     # of that answer
                     for n in self.order_answer_one_choice[code]:
                         if self.order_answer_one_choice[code][n] == answer.lower():
-                            position_answer = n
+                            position_answer = "{}".format(n)
                             break
-                format_condition = '({}.NAOK {} "{}")'.format(code, operator, position_answer)
+                format_condition = '({}.NAOK {} {})'.format(code, operator, position_answer)
                 list_formated_condition.append(format_condition)
             return list_formated_condition
 
