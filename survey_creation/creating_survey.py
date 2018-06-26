@@ -653,8 +653,7 @@ class surveyCreation:
                 else:
                     for row in q:
                         # Check if a new section needs to be added before processing the question
-                        nbr_section = self.check_adding_section(row, nbr_section, self.specific_config.sections_txt,
-                                                                lang)
+                        nbr_section = self.check_adding_section(row, nbr_section, self.specific_config.sections_txt, lang)
 
                         if row['answer_format'].lower() == 'one choice':
                             self.setup_question('one choice', row, txt_lang, lang)
