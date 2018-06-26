@@ -3,7 +3,7 @@ Question number,code,question,answer_format,de,nl,uk,us,zaf,nzl,aus,can,other,an
 2,edu1,What is the highest qualification you have obtained?,ONE CHOICE,Y,Y,Y,Y,Y,,,,,education,Y,,,,,,
 3,edu2,In which subject is your highest academic qualification?,ONE CHOICE,Y,Y,Y,Y,Y,,,,Y,academic_field,,,,,,,
 4,edu4,Do you hold any other professional qualifications?,FREETEXT,Y,,Y,Y,Y,,,,Y,,,,,,,,
-5,rse4de,"Are you involved and responsible for software projects with non-coding activities as part of your job, e.g. do you lead a software projects, design software architectures or UIs, testing, write documentation?",Y/N/NA,Y,,,,,,,,Y,,,,,,,,
+5,rse4de,"Does the majority of your role comprise leading a group of software developers or RSEs?",Y/N/NA,Y,,,,,,,,Y,,,,,,,,
 6,rse3,Who uses the code that you write?,LIKERT,Y,Y,Y,Y,Y,,,,Y,likert_usage_5,,,,,,,
 7,soft2can,Do you consider yourself a professional software developer?,Y/N/NA,Y,Y,Y,Y,Y,,,,Y,,,,,,,,
 8,soft1can,How many years of Software development experience do you have?,FREENUMERIC,Y,Y,Y,Y,Y,,,,Y,,,,,,,,
