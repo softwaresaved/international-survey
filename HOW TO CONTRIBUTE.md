@@ -52,9 +52,7 @@ We now provide some more detail about the columns in the questions csv file. You
 * **{country_code}**: These columns are set up when a country is added to the survey. In their respective column, each country specify if they want to have the question in their survey by writting a 'Y' in the appropriate cell. If no value is set up, it assumes the questions will not be shown in the version of the survey for the country.
 
 
-* **condition**: This indicates whether a question only appears if an specific answer was given to a previous question. The formatting needs to be as follow:
-    ```($code_question $operator $answer) $boolean ($code_question $operator $answer)
-    ```
+* **condition**: This indicates whether a question only appears if an specific answer was given to a previous question. The formatting needs to be as follow: `($code_question $operator $answer) $boolean ($code_question $operator $answer)`
     * The `$code_question` can be found in the column `code`
     * The `$operator` can be: `==`, `!=`, `>`, `<`, `<=`, `>=`
     * the `boolean` can be: `OR`, `AND`
@@ -62,12 +60,13 @@ We now provide some more detail about the columns in the questions csv file. You
 
 * **other**: Indicates when a field 'other' needs to be added to the answers. Works only for the some type of questions ('one choice', 'multiple choice'). The only value it can takes is 'Y'. There is no need to specify anything when 'other' is not wanted.
 
+* **country_specific** * Indicate if a questions is by nature specific to a country (i.e. the list of university)
+
 * **random**: Indicate that the questions need to be randomised. Works only when several questions sharing the same `answer_file` AND the same `code` (without including the number) AND if the questions is 'Y/N/NA' or 'Likert. The only value it can takes is 'Y'.
 
+* **trans_{1-3}**: Column to write down the translation of the question.
 
-* **lang_trans{1-3}**: Column to write down the translation of the question.
-
-## Case of translation.
+## Case of translation
 
 1. Translated welcome and end text should be placed in the same folder as the english version, in the [text folder](https://github.com/softwaresaved/international-survey/tree/2018-survey/survey_creation/2018/texts).
 1. Translated questions should be done in the main [question file](https://github.com/softwaresaved/international-survey/blob/master/survey_creation/2018/questions.csv) under the columns (`trans_1`, `trans_2`, `trans_3`)
