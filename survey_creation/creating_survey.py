@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-__author__ = 'Olivier Philippe'
+__author__ = "Olivier Philippe"
 
 
 """
@@ -61,21 +61,24 @@ class surveyCreation:
         Import the config file associated with the folder name
         """
         # module = 'config.{}'.format(self.project)
-        module = '.{}.{}'.format(self.year, self.country)
-        return importlib.import_module(module, package='config').config()
+        module = ".{}.{}".format(self.year, self.country)
+        return importlib.import_module(module, package="config").config()
 
     def init_outfile(self):
         """
         Rewrite over the existing file to avoid issue of appending and
         return the path to the file
         """
-        outfile_name = 'questions_to_import.txt'
+        outfile_name = "questions_to_import.txt"
         outfile = os.path.join(self.year, self.country, outfile_name)
-        with open(outfile, 'w') as f:
-            w = csv.DictWriter(f, delimiter='\t',
-                               lineterminator='\n',
-                               quotechar='"',
-                               fieldnames=main_config.main_headers)
+        with open(outfile, "w") as f:
+            w = csv.DictWriter(
+                f,
+                delimiter="\t",
+                lineterminator="\n",
+                quotechar='"',
+                fieldnames=main_config.main_headers,
+            )
             w.writeheader()
         return outfile
 
@@ -87,7 +90,7 @@ class surveyCreation:
         for element in original_list:
             to_replace = False
             for e in modified_list:
-                if element['name'] == e['name']:
+                if element["name"] == e["name"]:
                     return_list.append(e)
                     to_replace = True
                     break
@@ -116,11 +119,14 @@ class surveyCreation:
 
         :return: None, record into the self.outfile
         """
-        with open(self.outfile, 'a') as f:
-            w = csv.DictWriter(f, delimiter='\t',
-                               lineterminator='\n',
-                               quotechar='"',
-                               fieldnames=main_config.main_headers)
+        with open(self.outfile, "a") as f:
+            w = csv.DictWriter(
+                f,
+                delimiter="\t",
+                lineterminator="\n",
+                quotechar='"',
+                fieldnames=main_config.main_headers,
+            )
             w.writerow(row)
 
     def _record_list(self, list_to_copy):
@@ -135,11 +141,13 @@ class surveyCreation:
         :return:
             :None: record each dict from the list into the self.outfile
         """
+
         def create_empty_row():
             """
             Create an Ordered dictionary to be used to translate csv file to tsv
             """
-            return OrderedDict((k, '') for k in main_config.main_headers)
+            return OrderedDict((k, "") for k in main_config.main_headers)
+
         for element in list_to_copy:
             row = create_empty_row()
             row.update(element)
@@ -161,9 +169,13 @@ class surveyCreation:
         """
         # Create a copy the header to the empty file
         # Check if some parameters needs to be modify from the specific_config
-        good_parameters = self._to_modify(main_config.global_headers, self.specific_config.header_to_modify)
+        good_parameters = self._to_modify(
+            main_config.global_headers, self.specific_config.header_to_modify
+        )
         # Check if some parameters needs to be added.
-        good_parameters = self._to_add(good_parameters, self.specific_config.header_to_add)
+        good_parameters = self._to_add(
+            good_parameters, self.specific_config.header_to_add
+        )
         # Record the copy into the file
         self._record_list(good_parameters)
 
@@ -189,9 +201,9 @@ class surveyCreation:
         message_done = False
         for element in full_list:
             if message_done is False:
-                if element['name'] == 'surveyls_{}text'.format(type_message):
+                if element["name"] == "surveyls_{}text".format(type_message):
                     message_done = True
-                    element['text'] = message
+                    element["text"] = message
             return_list.append(element)
         return return_list
 
@@ -199,25 +211,26 @@ class surveyCreation:
         """
         Add the welcome and the end message and set up the different setting in the survey
         """
+
         def get_text(type_message, lang=None):
             """
             """
-            if lang and lang != 'en':
-                filename = '{}_message_{}.md'.format(type_message, lang)
+            if lang and lang != "en":
+                filename = "{}_message_{}.md".format(type_message, lang)
             else:
-                filename = '{}_message.md'.format(type_message)
+                filename = "{}_message.md".format(type_message)
 
             # folder = os.path.join(self.project, 'texts')
-            folder = os.path.join(self.year, self.country, 'texts')
+            folder = os.path.join(self.year, self.country, "texts")
             path = os.path.join(folder, filename)
-            with open(path, 'r') as f:
+            with open(path, "r") as f:
                 html_file = markdown(f.read())
 
             # Need to add target="_blank" to the link for opening in new tab in limesurvey
-            soup = BeautifulSoup(html_file, 'html.parser')
-            links = soup.find_all('a')
+            soup = BeautifulSoup(html_file, "html.parser")
+            links = soup.find_all("a")
             for link in links:
-                link['target'] = '_blank'
+                link["target"] = "_blank"
             return soup
 
         for lang in self.languages:
@@ -228,37 +241,47 @@ class surveyCreation:
             survey_title = None
             survey_title_row = None
             # Get the welcome message
-            welcome_message = get_text('welcome', lang)
+            welcome_message = get_text("welcome", lang)
             # Get the end message
-            end_message = get_text('end', lang)
-            survey_settings = self._to_modify(main_config.global_settings,
-                                              self.specific_config.settings_to_modify)
-            survey_settings = self._to_add(survey_settings,
-                                           self.specific_config.settings_to_add)
+            end_message = get_text("end", lang)
+            survey_settings = self._to_modify(
+                main_config.global_settings, self.specific_config.settings_to_modify
+            )
+            survey_settings = self._to_add(
+                survey_settings, self.specific_config.settings_to_add
+            )
 
             survey_title = self.specific_config.survey_title[lang]
-            survey_title_row = {'class': 'SL', 'name': 'surveyls_title', 'text': survey_title}
+            survey_title_row = {
+                "class": "SL",
+                "name": "surveyls_title",
+                "text": survey_title,
+            }
             survey_settings.insert(0, survey_title_row)
-            survey_settings = self._add_text_message(survey_settings, welcome_message, 'welcome')
-            survey_settings = self._add_text_message(survey_settings, end_message, 'end')
+            survey_settings = self._add_text_message(
+                survey_settings, welcome_message, "welcome"
+            )
+            survey_settings = self._add_text_message(
+                survey_settings, end_message, "end"
+            )
 
             # Add the appropriate language field for each of the dictionary
             setting_with_lang = list()
             for d in survey_settings:
-                d['language'] = lang
+                d["language"] = lang
                 setting_with_lang.append(d)
 
             self._record_list(setting_with_lang)
 
     def check_adding_section(self, row, nbr_section, default_row, lang):
-        if int(row['section']) - 1 != nbr_section:
+        if int(row["section"]) - 1 != nbr_section:
             # -1 because the section numbers starts at 0 but
             # in the csv survey_file it starts at 1
-            nbr_section = int(row['section']) - 1
+            nbr_section = int(row["section"]) - 1
             section = main_config.group_format
             # type/scale are like 'G0', 'G1', etc.
-            section['type/scale'] = 'G' + str(nbr_section)
-            section['language'] = lang
+            section["type/scale"] = "G" + str(nbr_section)
+            section["language"] = lang
             section.update(default_row[nbr_section][lang])
             self._write_row(section)
         return nbr_section
@@ -269,8 +292,8 @@ class surveyCreation:
         Read the survey csv file and yield each line as a dictionary
         """
         # question_file = os.path.join(year, country, '.'.join([folder, 'csv']))
-        question_file = os.path.join(year, country, 'questions.csv')
-        with open(question_file, 'r') as f:
+        question_file = os.path.join(year, country, "questions.csv")
+        with open(question_file, "r") as f:
             csv_f = csv.DictReader(f)
             for row in csv_f:
                 yield row
@@ -291,13 +314,13 @@ class surveyCreation:
         previous_file_answer = None
         group_survey_q = list()
         for q in indict:
-            current_answer_format = q['answer_format'].lower()
-            current_file_answer = q['answer_file']
-            current_code = ''.join([i for i in q['code'] if not i.isdigit()])
-            if current_answer_format == 'likert':
+            current_answer_format = q["answer_format"].lower()
+            current_file_answer = q["answer_file"]
+            current_code = "".join([i for i in q["code"] if not i.isdigit()])
+            if current_answer_format == "likert":
                 if len(group_survey_q) > 0:
                     if current_file_answer == previous_file_answer or previous_file_answer is None:
-                        if previous_answer_format == 'likert':
+                        if previous_answer_format == "likert":
                             pass
                         else:
                             yield group_survey_q
@@ -321,8 +344,10 @@ class surveyCreation:
     def get_answer(year, country, file_answer):
         """
         """
-        outfile = os.path.join(year, country, 'listAnswers', '{}.csv'.format(file_answer))
-        with open(outfile, 'r') as f:
+        outfile = os.path.join(
+            year, country, "listAnswers", "{}.csv".format(file_answer)
+        )
+        with open(outfile, "r") as f:
             return [x[:-1] for x in f.readlines()]
 
     def setup_question(self, type_question, row, txt_lang, lang):
@@ -331,88 +356,88 @@ class surveyCreation:
         accross all questions
         """
 
-        if type_question == 'multi_likert':
+        if type_question == "multi_likert":
             question = main_config.likert_question
-        elif type_question == 'one choice':
+        elif type_question == "one choice":
             question = main_config.one_choice_question
-        elif type_question == 'ranking':
+        elif type_question == "ranking":
             question = main_config.ranking_question
-        elif type_question == 'multiple choice':
+        elif type_question == "multiple choice":
             question = main_config.multiple_choice_question
-        elif type_question == 'freenumeric':
+        elif type_question == "freenumeric":
             question = main_config.freenumeric_question
-        elif type_question == 'freetext':
+        elif type_question == "freetext":
             question = main_config.freetext_question
-        elif type_question == 'likert':
+        elif type_question == "likert":
             question = main_config.likert_question
-        elif type_question == 'y/n/na':
+        elif type_question == "y/n/na":
             question = main_config.y_n_question
-        elif type_question == 'datetime':
+        elif type_question == "datetime":
             question = main_config.datetime_question
 
-        if type_question == 'multi_likert':
+        if type_question == "multi_likert":
             # If multi likert it means the questions are presented in an array
             # where the header is the header for the arrays and all questions
             # are created during the subquestion process. In consequences
             # The questions here cannot have the row['text'] as for the other
             # type of questions but rather an unique id that is ensure
             # by incrementing the self.code_to_multiple_question.
-            question['name'] = 'likert' + str(self.code_to_multiple_question)
-            self.code_to_multiple_question +=1
-            question['text'] = ''
+            question["name"] = "likert" + str(self.code_to_multiple_question)
+            self.code_to_multiple_question += 1
+            question["text"] = ""
         else:
-            question['name'] = row['code']
-            question['text'] = row[txt_lang]
+            question["name"] = row["code"]
+            question["text"] = row[txt_lang]
 
-        question['relevance'] = self.setup_condition(row['condition'])
+        question["relevance"] = self.setup_condition(row["condition"])
 
-        question['language'] = lang
+        question["language"] = lang
 
-        if row['other'] == 'Y':
-            question['other'] = 'Y'
+        if row["other"] == "Y":
+            question["other"] = "Y"
         else:
-            question['other'] = 'N'
+            question["other"] = "N"
 
-        if row['mandatory'] == 'Y':
-            question['mandatory'] = 'Y'
+        if row["mandatory"] == "Y":
+            question["mandatory"] = "Y"
         else:
-            question['mandatory'] = ''
+            question["mandatory"] = ""
 
-        if row['public'] == 'N':
-            question['help'] = self.specific_config.private_data[lang]
+        if row["public"] == "N":
+            question["help"] = self.specific_config.private_data[lang]
         else:
-            question['help'] = ''
+            question["help"] = ""
         self._write_row(question)
 
     def setup_subquestion(self, type_question, lang, list_likert=None, txt_lang=None):
         """
         """
-        if type_question == 'multi_likert':
+        if type_question == "multi_likert":
             for row in list_likert:
                 subquestion = main_config.subquestion
-                subquestion['relevance'] = '1'
-                subquestion['language'] = lang
-                subquestion['name'] = row['code']
-                subquestion['text'] = row[txt_lang]
+                subquestion["relevance"] = "1"
+                subquestion["language"] = lang
+                subquestion["name"] = row["code"]
+                subquestion["text"] = row[txt_lang]
                 self._write_row(subquestion)
 
-        if type_question == 'ranking':
+        if type_question == "ranking":
             # Create the Subquestion ranks
             for i in range(1, 9):  # To get 8 ranked questions
                 subquestion = main_config.subquestion
-                subquestion['name'] = str(i)
-                subquestion['text'] = 'Rank' + str(i)
-                subquestion['language'] = lang
-                subquestion['relevance'] = '1'
+                subquestion["name"] = str(i)
+                subquestion["text"] = "Rank" + str(i)
+                subquestion["language"] = lang
+                subquestion["relevance"] = "1"
                 self._write_row(subquestion)
 
-        if type_question == 'likert':
+        if type_question == "likert":
             # Need to create an empty subquestion
             subquestion = main_config.subquestion
-            subquestion['name'] = 'SQ001'
-            subquestion['relevance'] = '1'
-            subquestion['language'] = lang
-            subquestion['text'] = ''
+            subquestion["name"] = "SQ001"
+            subquestion["relevance"] = "1"
+            subquestion["language"] = lang
+            subquestion["text"] = ""
             self._write_row(subquestion)
 
     def setup_answer(self, type_question, row, index_lang, lang):
@@ -420,34 +445,36 @@ class surveyCreation:
         Create the answer itself
         """
         n = 1
-        for text_answer in self.get_answer(self.year, self.country, row['answer_file']):
-            if type_question == 'one choice':
+        for text_answer in self.get_answer(self.year, self.country, row["answer_file"]):
+            if type_question == "one choice":
                 # add the answer and its position to the self.order_answer_one_choice dict for
                 # the self.setup_condition()
-                self.order_answer_one_choice.setdefault(row['code'], {})[n] = text_answer.lower()
+                self.order_answer_one_choice.setdefault(row["code"], {})[
+                    n
+                ] = text_answer.lower()
                 answer_row = main_config.one_choice_answer
-            elif type_question == 'multi choice':
+            elif type_question == "multi choice":
                 answer_row = main_config.multiple_choice_answer
-            elif type_question == 'likert':
+            elif type_question == "likert":
                 answer_row = main_config.likert_answer
-            elif type_question == 'ranking':
+            elif type_question == "ranking":
                 answer_row = main_config.ranking_answer
-            answer_row['name'] = str(n)
+            answer_row["name"] = str(n)
             # answer_row['name'] = 'A' + str(n)
             # For multichoice the answers are considered as subquestion
             # Need to change the name value
-            if type_question == 'multi choice':
-                default_sq_value = 'SQ000'
-                answer_row['name'] = default_sq_value[:-len(str(n))] + str(n)
+            if type_question == "multi choice":
+                default_sq_value = "SQ000"
+                answer_row["name"] = default_sq_value[: -len(str(n))] + str(n)
             # to get the translation  of the answers. If there is None, it takes the first
             # element (the english one). Needed because sometimes, the answers are not translated
             try:
-                answer_row['text'] = text_answer.split(';')[index_lang].strip('"')
+                answer_row["text"] = text_answer.split(";")[index_lang].strip('"')
             except IndexError:
-                answer_row['text'] = text_answer.split(';')[0].strip('"')
-            answer_row['language'] = lang
+                answer_row["text"] = text_answer.split(";")[0].strip('"')
+            answer_row["language"] = lang
             self._write_row(answer_row)
-            n +=1
+            n += 1
 
     def get_txt_lang(self, lang, index_lang):
         """
@@ -463,10 +490,10 @@ class surveyCreation:
             :str(): the key used later to access the text of the question
         """
         # Speficify where to find the text for the question
-        if lang != 'en':
-            return 'lang_trans' + str(index_lang)
+        if lang != "en":
+            return "lang_trans" + str(index_lang)
         else:
-            return 'question'
+            return "question"
 
     def setup_condition(self, condition):
         """
@@ -500,7 +527,7 @@ class surveyCreation:
             :return:
                 list_of_conditions list: containing the different conditions
             """
-            extracted_condition = re.findall('\(.*?\)', condition)
+            extracted_condition = re.findall("\(.*?\)", condition)
             return extracted_condition
 
         def format_conditions(list_conditions):
@@ -519,18 +546,22 @@ class surveyCreation:
             list_formated_condition = list()
             for condition in list_conditions:
                 # get the code of the question
-                code = condition.split(' ')[0].replace('(', '')
+                code = condition.split(" ")[0].replace("(", "")
                 # get the comparison operator
-                operator = condition.split(' ')[1]
+                operator = condition.split(" ")[1]
                 # check if the operator are ok
                 for x in operator:
-                    if x not in ['=', '!', '<', '>']:
-                        raise TypeError('Error in the condition formating: {}'.format(condition))
+                    if x not in ["=", "!", "<", ">"]:
+                        raise TypeError(
+                            "Error in the condition formating: {}".format(condition)
+                        )
                 # get the answer it is comparing with
                 answer = condition.split('"')[1::2][0].lower()
                 # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
-                if answer in ['y', 'n', 'yes', 'no']:
-                    position_answer = '"{}"'.format(answer[0].upper())  # Only need the Y or N
+                if answer in ["y", "n", "yes", "no"]:
+                    position_answer = '"{}"'.format(
+                        answer[0].upper()
+                    )  # Only need the Y or N
                 # If not it means it is from a one choice question and the position of the answer
                 # needs to be retrieved
                 else:
@@ -541,7 +572,9 @@ class surveyCreation:
                             # Need the double quotes for the limesurvey
                             position_answer = '"{}"'.format(n)
                             break
-                format_condition = '({}.NAOK {} {})'.format(code, operator, position_answer)
+                format_condition = "({}.NAOK {} {})".format(
+                    code, operator, position_answer
+                )
                 list_formated_condition.append(format_condition)
             return list_formated_condition
 
@@ -555,6 +588,7 @@ class surveyCreation:
                 dict_position_bool dict: index position of the boolean as key and boolean
                 as value
             """
+
             def find_index_word(instring, match_word):
                 """
                 Check the position of the match_word in the instring
@@ -578,9 +612,11 @@ class surveyCreation:
                 return list_position
 
             dict_position_bool = dict()
-            for boolean in [') and (', ') or (']:
+            for boolean in [") and (", ") or ("]:
                 for i in find_index_word(instring, boolean):
-                    dict_position_bool[i] = boolean.replace(')', '').replace('(', '').strip()
+                    dict_position_bool[i] = (
+                        boolean.replace(")", "").replace("(", "").strip()
+                    )
             return dict_position_bool
 
         def final_formating(list_formated_conditions, dict_of_bool):
@@ -593,13 +629,19 @@ class surveyCreation:
                 bool_list = [dict_of_bool[x].upper() for x in sorted(dict_of_bool)]
                 # Create a new list by alternating the element of each list
                 # Source: https://stackoverflow.com/a/21482016
-                to_iterate = [x for x in itertools.chain.from_iterable(itertools.zip_longest(list_formated_conditions, bool_list)) if x]
+                to_iterate = [
+                    x
+                    for x in itertools.chain.from_iterable(
+                        itertools.zip_longest(list_formated_conditions, bool_list)
+                    )
+                    if x
+                ]
 
-                list_formated_conditions = "({})".format(' '.join(to_iterate))
+                list_formated_conditions = "({})".format(" ".join(to_iterate))
             return list_formated_conditions
 
         # If condition is empty it wil be an empty string
-        if condition == '':
+        if condition == "":
             return
 
         else:
@@ -621,8 +663,9 @@ class surveyCreation:
             txt_lang = self.get_txt_lang(lang, index_lang)
             # Add a first section
             nbr_section = -1
-            nbr_section = self.check_adding_section({'section': 0}, nbr_section, self.specific_config.sections_txt,
-                                                    lang)
+            nbr_section = self.check_adding_section(
+                {"section": 0}, nbr_section, self.specific_config.sections_txt, lang
+            )
 
             # Need this variable to inc each time a new multiple questions is created to ensure they are unique
             # only used in the case of likert and y/n/na merged together
@@ -637,61 +680,65 @@ class surveyCreation:
                 if len(q) > 1:
 
                     # Check if a new section needs to be added before processing the question
-                    nbr_section = self.check_adding_section(q[0], nbr_section, self.specific_config.sections_txt, lang)
+                    nbr_section = self.check_adding_section(
+                        q[0], nbr_section, self.specific_config.sections_txt, lang
+                    )
 
                     # Check if the list of items need to be randomize
                     # if it is the case, just use shuffle() to shuffle the list in-place
-                    if q[0]['random'] == 'Y':
+                    if q[0]["random"] == "Y":
                         shuffle(q)
 
                     # Create the question header that needs to be created once for all the
                     # following question
-                    self.setup_question('multi_likert', q[0], txt_lang, lang)
-                    self.setup_subquestion('multi_likert', lang, q, txt_lang)
-                    self.setup_answer('likert', q[0], index_lang, lang)
+                    self.setup_question("multi_likert", q[0], txt_lang, lang)
+                    self.setup_subquestion("multi_likert", lang, q, txt_lang)
+                    self.setup_answer("likert", q[0], index_lang, lang)
 
                 else:
                     for row in q:
                         # Check if a new section needs to be added before processing the question
-                        nbr_section = self.check_adding_section(row, nbr_section, self.specific_config.sections_txt, lang)
+                        nbr_section = self.check_adding_section(
+                            row, nbr_section, self.specific_config.sections_txt, lang
+                        )
 
-                        if row['answer_format'].lower() == 'one choice':
-                            self.setup_question('one choice', row, txt_lang, lang)
-                            self.setup_answer('one choice', row, index_lang, lang)
+                        if row["answer_format"].lower() == "one choice":
+                            self.setup_question("one choice", row, txt_lang, lang)
+                            self.setup_answer("one choice", row, index_lang, lang)
 
-                        if row['answer_format'].lower() == 'ranking':
+                        if row["answer_format"].lower() == "ranking":
                             # Ranking questions work differently
                             # First a list of rank SQ class need to be created (max 8 here)
                             # Then only the questions are created
                             # As neither of them have specific value for database, they are
                             # created here and not pulled from the config file
-                            self.setup_question('ranking', row, txt_lang, lang)
+                            self.setup_question("ranking", row, txt_lang, lang)
                             # Create the Subquestion ranks
-                            self.setup_subquestion('ranking', lang)
-                            self.setup_answer('ranking', row, index_lang, lang)
+                            self.setup_subquestion("ranking", lang)
+                            self.setup_answer("ranking", row, index_lang, lang)
 
-                        if row['answer_format'].lower() == 'multiple choices':
-                            self.setup_question('multiple choice', row, txt_lang, lang)
+                        if row["answer_format"].lower() == "multiple choices":
+                            self.setup_question("multiple choice", row, txt_lang, lang)
 
-                            self.setup_answer('multi choice', row, index_lang, lang)
+                            self.setup_answer("multi choice", row, index_lang, lang)
 
-                        if row['answer_format'].lower() == 'freenumeric':
-                            self.setup_question('freenumeric', row, txt_lang, lang)
+                        if row["answer_format"].lower() == "freenumeric":
+                            self.setup_question("freenumeric", row, txt_lang, lang)
 
-                        if row['answer_format'].lower() == 'freetext':
-                            self.setup_question('freetext', row, txt_lang, lang)
+                        if row["answer_format"].lower() == "freetext":
+                            self.setup_question("freetext", row, txt_lang, lang)
 
-                        if row['answer_format'].lower() == 'likert':
-                            self.setup_question('likert', row, txt_lang, lang)
+                        if row["answer_format"].lower() == "likert":
+                            self.setup_question("likert", row, txt_lang, lang)
                             # Need to create an  empty subquestion
-                            self.setup_subquestion('likert', lang)
-                            self.setup_answer('likert', row, index_lang, lang)
+                            self.setup_subquestion("likert", lang)
+                            self.setup_answer("likert", row, index_lang, lang)
 
-                        if row['answer_format'].lower() == 'y/n/na':
-                            self.setup_question('y/n/na', row, txt_lang, lang)
+                        if row["answer_format"].lower() == "y/n/na":
+                            self.setup_question("y/n/na", row, txt_lang, lang)
 
-                        if row['answer_format'].lower() == 'datetime':
-                            self.setup_question('datetime', row, txt_lang, lang)
+                        if row["answer_format"].lower() == "datetime":
+                            self.setup_question("datetime", row, txt_lang, lang)
 
     def run(self):
         """
