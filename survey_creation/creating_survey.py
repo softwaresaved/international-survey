@@ -559,22 +559,16 @@ class surveyCreation:
                 answer = condition.split('"')[1::2][0].lower()
                 # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
                 if answer in ["y", "n", "yes", "no"]:
-                    position_answer = '"{}"'.format(
-                        answer[0].upper()
-                    )  # Only need the Y or N
+                    position_answer = '"{}"'.format( answer[0].upper())  # Only need the Y or N
                 # If not it means it is from a one choice question and the position of the answer
                 # needs to be retrieved
                 else:
                     # find that answer in the dict created during the self.setup_answer() to find the index position
                     # of that answer
                     for n in self.order_answer_one_choice[code]:
-                        if self.order_answer_one_choice[code][n] == answer.lower():
-                            # Need the double quotes for the limesurvey
-                            position_answer = '"{}"'.format(n)
+                        if self.order_answer_one_choice[code][n] == answer.lower(): # Need the double quotes for the limesurvey position_answer = '"{}"'.format(n)
                             break
-                format_condition = "({}.NAOK {} {})".format(
-                    code, operator, position_answer
-                )
+                format_condition = "({}.NAOK {} {})".format( code, operator, position_answer)
                 list_formated_condition.append(format_condition)
             return list_formated_condition
 
