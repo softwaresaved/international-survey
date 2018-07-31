@@ -13,7 +13,14 @@ from collections import OrderedDict
 
 # # Here the list of the countries -- need to be put into a config file rather than hardcoded
 # # TODO: config file!
-list_countries = ['de', 'nl', 'uk', 'us', 'zaf', 'nzl', 'aus', 'can']
+dict_countries = {'de': "Germany",
+                  'nl': "Netherlands",
+                  'uk': "United Kingdom of Great Britain and Northern Ireland",
+                  'us': "United States of America",
+                  'zaf': "South Africa",
+                  'nzl': "New Zealand",
+                  'aus': "Australia",
+                  'can': "Canada"}
 list_bool = ['yes', 'y', 't', 'true']
 
 
@@ -80,7 +87,7 @@ class gettingQuestions:
                 new_question['answer_file'] = ''
                 new_question['other'] = ''
                 new_question['country_specific'] = ''
-                for country in list_countries:
+                for country in dict_countries:
                     new_question[country] = ''
 
                 # append it to the dictionary
@@ -93,19 +100,43 @@ class gettingQuestions:
         """
         Append the existing condition with the conditions about the countries
         """
-        def create_country_cond(question):
+        def create_country_list(question):
             """
+            Check which country is associated with the question and
+            return a list containing all of them. In case of `country_specific` is
+            selected, it will not add the country `world` as a new specific question
+            is created within self.add_world_other()
+            params:
+                question dict(): containing all the params for the question
+            return:
+                cond_country_to_add list(): all countries that are associated with the question
             """
-            cond_country_to_add = list()
-            for country in list_countries:
-                if self.dict_questions[k][country].lower() in list_bool:
-                    cond_country_to_add.append(country)
-            if self.dict_questions[k]['world'].lower() in list_bool and self.dict_questions[k]['country_specific'].lower() not in list_bool :
-                cond_country_to_add.append('world')
-            return cond_country_to_add
-        for k in self.dict_questions:
-            condition = self.dict_questions[k]['condition']
+            list_countries_to_add = list()
+            for country in dict_countries:
+                if question[country].lower() in list_bool:
+                    list_countries_to_add.append(country)
+            if question['world'].lower() in list_bool and question['country_specific'].lower() not in list_bool:
+                list_countries_to_add.append('world')
+            return list_countries_to_add
 
+        def create_country_condition(country_code, operator="==", code_question_country="currentEmp1"):
+            """
+            Create the country condition based on the code of the country and the condition requested
+            """
+            return "(if {} {} {})".format(code_question_country, operator, code_question_country)
+
+        for k in self.dict_questions:
+            list_countries_to_add = create_country_list(self.dict_questions[k])
+            # In case all the countries and world is present, no need to add any condition
+            if len(list_countries_to_add) == len(dict_countries.keys()) +1:
+                pass
+            # In case only 'world' is present, need to add a NOT country for all countries
+            elif 'world' in list_countries_to_add and len(list_countries_to_add) == 1:
+                pass
+            # Any other type, just add the list of country
+            else:
+                pass
+            condition = self.dict_questions[k]['condition']
 
 
 def main():
