@@ -74,35 +74,37 @@ class gettingQuestions:
             new_dict[k] = self.dict_questions[k]
             # check if the questions need to be created
             if check_world_free_txt(new_dict[k]):
+                new_code = "{}_world".format(k)
                 new_question = new_dict[k]
-                new_question['code'] = "{}_world".format(k)
                 new_question['answer_format'] = 'FREETEXT'
                 new_question['answer_file'] = ''
                 new_question['other'] = ''
+                new_question['country_specific'] = ''
                 for country in list_countries:
                     new_question[country] = ''
 
-                print(new_question)
-                # create the question
-
                 # append it to the dictionary
+                new_dict[new_code] = new_question
 
         # replace the current dictionary with the new one
-        self.dict_question = new_dict
-        pass
+        self.dict_questions = new_dict
 
     def add_condition_about_countries(self):
         """
         Append the existing condition with the conditions about the countries
         """
-        for k in self.dict_question:
-            condition = self.dict_questions[k]['condition']
+        def create_country_cond(question):
+            """
+            """
             cond_country_to_add = list()
             for country in list_countries:
-                if self.dict_question[k][country] in list_bool:
+                if self.dict_questions[k][country].lower() in list_bool:
                     cond_country_to_add.append(country)
-            if len(cond_country_to_add) and self.dict_question[k]['world'] in list_bool:
-                print(k)
+            if self.dict_questions[k]['world'].lower() in list_bool and self.dict_questions[k]['country_specific'].lower() not in list_bool :
+                cond_country_to_add.append('world')
+            return cond_country_to_add
+        for k in self.dict_questions:
+            condition = self.dict_questions[k]['condition']
 
 
 
