@@ -14,6 +14,7 @@ from collections import OrderedDict
 # # Here the list of the countries -- need to be put into a config file rather than hardcoded
 # # TODO: config file!
 list_countries = ['de', 'nl', 'uk', 'us', 'zaf', 'nzl', 'aus', 'can']
+list_bool = ['yes', 'y', 't', 'true']
 
 
 class gettingQuestions:
@@ -61,8 +62,8 @@ class gettingQuestions:
             :return:
                 bool: True if match the condition, False if not
             """
-            if question['country_specific'].lower() in ['y', 'yes', 'true', 't']:
-                if question['world'].lower() in ['y', 'yes', 'true', 't']:
+            if question['country_specific'].lower() in list_bool:
+                if question['world'].lower() in list_bool:
                     return True
 
         # recreate a new ordered dict
@@ -94,13 +95,22 @@ class gettingQuestions:
         """
         Append the existing condition with the conditions about the countries
         """
-        pass
+        for k in self.dict_question:
+            condition = self.dict_questions[k]['condition']
+            cond_country_to_add = list()
+            for country in list_countries:
+                if self.dict_question[k][country] in list_bool:
+                    cond_country_to_add.append(country)
+            if len(cond_country_to_add) and self.dict_question[k]['world'] in list_bool:
+                print(k)
+
 
 
 def main():
     getting_question = gettingQuestions()
     getting_question.read_original_file()
     getting_question.add_world_other()
+    getting_question.add_condition_about_countries()
     # print(getting_question.dict_questions)
 
 
