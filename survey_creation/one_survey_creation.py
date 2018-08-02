@@ -107,6 +107,51 @@ class gettingQuestions:
         # replace the current dictionary with the new one
         self.dict_questions = new_dict
 
+    def create_country_list(self, question):
+        """
+        Check which country is associated with the question and
+        return a list containing all of them. In case of `country_specific` is
+        selected, it will not add the country `world` as a new specific question
+        is created within self.add_world_other()
+        params:
+            question dict(): containing all the params for the question
+        return:
+            cond_country_to_add list(): all countries that are associated with the question
+        """
+        list_countries_to_add = list()
+        for country in self.dict_countries:
+            if question[country].lower() in self.list_bool:
+                list_countries_to_add.append(country)
+        if question['world'].lower() in self.list_bool and question['country_specific'].lower() not in self.list_bool:
+            list_countries_to_add.append('world')
+        return list_countries_to_add
+
+    def create_country_q(self):
+        """
+        Create a specific question for each country if the question is a country_specific one
+        """
+        # recreate a new ordered dict
+        new_dict = OrderedDict()
+
+        for k in self.dict_questions:
+            # First check if there is country_specific condition.
+            # In that case, need to create a question for each possibility to be able to show the different answers
+            # As limesurvey does not allow the creation of conditions for questions.
+            if self.dict_questions[k]['country_specific'] in self.list_bool:
+
+                for country in self.create_country_list(self.dict_questions[k]):
+                    new_code = 'k_q_{}'.format(country)
+                    new_question = self.dict_questions[k].copy()
+                    new_question['answer_file'] = '{}/{}'.format(country, new_question['answer_file'])
+                    new_question['country_specific'] = ''
+                    for c in self.dict_countries.keys():
+                        new_question[c] = ''
+                    new_question[country] = 'Y'
+                    new_dict[new_code] = new_question
+            else:
+                new_dict[k] = self.dict_questions[k]
+        self.dict_questions = new_dict
+
     def create_country_condition(self, countries, operator, existing_condition, code_question_country="socio1"):
         """
         Create the country condition based on which country need to be include or exclude from a question
@@ -146,24 +191,6 @@ class gettingQuestions:
         Append the existing condition with the conditions about the countries and replace
         that value in the dictionary.
         """
-        def create_country_list(question):
-            """
-            Check which country is associated with the question and
-            return a list containing all of them. In case of `country_specific` is
-            selected, it will not add the country `world` as a new specific question
-            is created within self.add_world_other()
-            params:
-                question dict(): containing all the params for the question
-            return:
-                cond_country_to_add list(): all countries that are associated with the question
-            """
-            list_countries_to_add = list()
-            for country in self.dict_countries:
-                if question[country].lower() in self.list_bool:
-                    list_countries_to_add.append(country)
-            if question['world'].lower() in self.list_bool and question['country_specific'].lower() not in self.list_bool:
-                list_countries_to_add.append('world')
-            return list_countries_to_add
 
         def _create_condition(list_countries_to_add, condition):
             """
@@ -193,37 +220,18 @@ class gettingQuestions:
                 final_condition = self.create_country_condition(list_countries_to_exclude, operator='!=', existing_condition=condition)
             return final_condition
 
-        # create a list of key to remove after all these operation for country specific
-        q_to_del = list()
         for k in self.dict_questions:
             condition = self.dict_questions[k]['condition']
-            list_countries_to_add = create_country_list(self.dict_questions[k])
+            list_countries_to_add = self.create_country_list(self.dict_questions[k])
 
-            # First check if there is country_specific condition.
-            # In that case, need to create a question for each possibility to be able to show the different answers
-            # As limesurvey does not allow the creation of conditions for questions.
-            if self.dict_questions[k]['country_specific'] in self.list_bool:
-
-                q_to_del.append(k)
-                for country in list_countries_to_add:
-                    new_code = 'k_q_{}'.format(country)
-                    new_question = self.dict_questions[k].copy()
-                    new_question['answer_file'] = '{}/{}'.format(country, new_question['answer_file'])
-                    print(new_question)
-            # If not, add conditions when it is needed
-            else:
-
-                self.dict_questions[k]['condition'] = _create_condition(list_countries_to_add, condition)
-
-        # Finally removing all the questions that have been country specific and recreated
-        for k in q_to_del:
-            del self.dict_questions[k]
+            self.dict_questions[k]['condition'] = _create_condition(list_countries_to_add, condition)
 
 
 def main():
     getting_question = gettingQuestions()
     getting_question.read_original_file()
     getting_question.add_world_other()
+    getting_question.create_country_q()
     getting_question.add_condition_about_countries()
 
 
