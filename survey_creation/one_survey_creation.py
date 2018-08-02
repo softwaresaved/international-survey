@@ -7,6 +7,7 @@ Wrapper around survey_creation.py script to create only one survey file rather t
 __author__ = "Olivier Philippe"
 
 
+import re
 import csv
 from collections import OrderedDict
 
@@ -21,7 +22,7 @@ dict_countries = {'de': "Germany",
                   'nzl': "New Zealand",
                   'aus': "Australia",
                   'can': "Canada"}
-list_bool = ['yes', 'y', 't', 'true']
+list_bool = ['yes', 'y', 't', 'true', 'Yes', 'YES', 'Y', 'T', 'True', 'TRUE']
 
 filename = './2018/questions.csv'
 
@@ -88,7 +89,7 @@ class gettingQuestions:
             # check if the questions need to be created
             if check_world_free_txt(new_dict[k]):
                 # Create the new question with freetext
-                new_code = "{}_world".format(k)
+                new_code = "{}_qworld".format(k)
                 new_question = new_dict[k].copy()  # copy otherwise modify both dict
                 new_question['answer_format'] = 'FREETEXT'
                 new_question['answer_file'] = ''
@@ -106,6 +107,42 @@ class gettingQuestions:
 
         # replace the current dictionary with the new one
         self.dict_questions = new_dict
+
+    def create_country_condition(self, countries, operator, existing_condition, code_question_country="socio1"):
+        """
+        Create the country condition based on which country need to be include or exclude from a question
+        Parse the list provided and output a formated string for each of them.
+        :params:
+            countries list() of str(): All countries that need to formatted in the condition.
+            operator str(): the type of comparison needed for the condition
+            existing_condition str(): str containing the existing condition for the question
+            code_question_country str(): the code of the question where the country is asked
+        :return:
+            formatted_condition str(): format the condition as:
+
+                (if $code_question_country $operator $country1 AND $existing_condition) OR
+                ((if $code_question_country $operator $country2 AND $existing_condition)
+            this respect the rules for limesurvey:
+                https://manual.limesurvey.org/Setting_conditions/en
+        """
+        list_str_countries = list()
+
+        # Split the potential conditions
+        extracted_condition = re.findall("\(.*?\)", existing_condition)
+        if len(extracted_condition) > 1:
+            raise NotImplementedError('The implementation of more than one condition for the original questions has not been ',
+                                      'implemented yet')
+
+        for country in countries:
+            country_condition = "(if {} {} \"{}\")".format(code_question_country, operator, self.dict_countries[country])
+            list_str_countries.append(country_condition)
+
+        if len(extracted_condition) == 1:
+            # for i in list_str_countries:
+            #     merge_condition = "({} AND {})".format(extracted_condition[0], i)
+            list_str_countries = ["({} AND {})".format(extracted_condition[0], i) for i in list_str_countries]
+
+        return '{}'.format(' OR '.join(list_str_countries))
 
     def add_condition_about_countries(self):
         """
@@ -131,52 +168,37 @@ class gettingQuestions:
                 list_countries_to_add.append('world')
             return list_countries_to_add
 
-        def create_country_condition(countries, operator, code_question_country="socio1"):
-            """
-            Create the country condition based on which country need to be include or exclude from a question
-            Parse the list provided and output a formated string for each of them.
-            :params:
-                countries list() of str(): All countries that need to formatted in the condition.
-                operator str(): the type of comparison needed for the condition
-                code_question_country str(): the code of the question where the country is asked
-            :return:
-                formatted_condition str(): format the condition as:
-                    (if $code_question_country $operator $country1) OR ((if $code_question_country $operator $country2)
-            """
-            list_str_countries = list()
-            for country in countries:
-                country_condition = "(if {} {} \"{}\")".format(code_question_country, operator, self.dict_countries[country])
-                list_str_countries.append(country_condition)
-            return '({})'.format(' OR '.join(list_str_countries))
-
         for k in self.dict_questions:
             condition = self.dict_questions[k]['condition']
             list_countries_to_add = create_country_list(self.dict_questions[k])
 
-            # In case all the countries and the world option is present too, no need for conditions
-            if len(list_countries_to_add) == len(self.dict_countries) +1:  # size of all potential country + 'world'
-                final_condition = condition
+            # First check if there is country_specific condition.
+            # In that case, need to create a question for each possibility to be able to show the different answers
+            # As limesurvey does not allow the creation of conditions for questions.
+            if self.dict_questions[k]['country_specific'] in self.list_bool:
+                # for country in list_countries_to_add:
+                #     new_code
+                #     new_question = self.dict_questions[k].copy()
+                pass
 
-            # In case world is not present, create an inclusive list of countries
-            elif 'world' not in list_countries_to_add:
-                condition_to_add = create_country_condition(list_countries_to_add, operator='==')
-                if condition:
-                    final_condition = "{} AND {}".format(condition, condition_to_add)
-                else:
-                    final_condition = condition_to_add
+            # If not, add conditions when it is needed
+            else:
+                # In case all the countries and the world option is present too, no need for conditions
+                if len(list_countries_to_add) == len(self.dict_countries) +1:  # size of all potential country + 'world'
+                    final_condition = condition
 
-            # If there is less country but world is present need to apply exclusion
-            elif len(list_countries_to_add) <= len(self.dict_countries) and 'world' in list_countries_to_add:
-                # To get the exclusion list, need to invert the list and passing all countries that are NOT present
-                # in that list.
-                list_countries_to_exclude = [i for i in self.dict_countries.keys() if i not in list_countries_to_add]
-                condition_to_add = create_country_condition(list_countries_to_exclude, operator='!=')
+                # In case world is not present, create an inclusive list of countries
+                elif 'world' not in list_countries_to_add:
+                    final_condition = self.create_country_condition(list_countries_to_add, operator='==', existing_condition=condition)
 
-                if condition:
-                    final_condition = "{} AND {}".format(condition, condition_to_add)
-                else:
-                    final_condition = condition_to_add
-            self.dict_questions[k]['condition'] = final_condition
+                # If there is less country but world is present need to apply exclusion
+                elif len(list_countries_to_add) <= len(self.dict_countries) and 'world' in list_countries_to_add:
+                    # To get the exclusion list, need to invert the list and passing all countries that are NOT present
+                    # in that list.
+                    list_countries_to_exclude = [i for i in self.dict_countries.keys() if i not in list_countries_to_add]
+                    final_condition = self.create_country_condition(list_countries_to_exclude, operator='!=', existing_condition=condition)
+                print(final_condition)
+                self.dict_questions[k]['condition'] = final_condition
 
 
 def main():
