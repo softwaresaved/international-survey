@@ -89,13 +89,12 @@ class gettingQuestions:
             # check if the questions need to be created
             if check_world_free_txt(new_dict[k]):
                 # Create the new question with freetext
-                new_code = "{}_qworld".format(k)
+                new_code = "{}_q_world".format(k)
                 new_question = new_dict[k].copy()  # copy otherwise modify both dict
                 new_question['answer_format'] = 'FREETEXT'
                 new_question['answer_file'] = ''
                 new_question['other'] = ''
                 new_question['country_specific'] = ''
-                # new_question['world'] = 'Y'
                 for country in self.dict_countries:
                     new_question[country] = ''
 
@@ -138,8 +137,6 @@ class gettingQuestions:
             list_str_countries.append(country_condition)
 
         if len(extracted_condition) == 1:
-            # for i in list_str_countries:
-            #     merge_condition = "({} AND {})".format(extracted_condition[0], i)
             list_str_countries = ["({} AND {})".format(extracted_condition[0], i) for i in list_str_countries]
 
         return '{}'.format(' OR '.join(list_str_countries))
@@ -168,6 +165,36 @@ class gettingQuestions:
                 list_countries_to_add.append('world')
             return list_countries_to_add
 
+        def _create_condition(list_countries_to_add, condition):
+            """
+            Create the condition string from a list of countries and the pre-existing condition
+            :params:
+                list_countries_to_add list() of str(): all countries that need to be
+                added in the condition in the form of a code country
+                condition str(): existing condition for the question
+            :return:
+                final_condition str(): the condition reformated to include the countries
+                exception if needed
+            """
+
+            # In case all the countries and the world option is present too, no need for conditions
+            if len(list_countries_to_add) == len(self.dict_countries) +1:  # size of all potential country + 'world'
+                final_condition = condition
+
+            # In case world is not present, create an inclusive list of countries
+            elif 'world' not in list_countries_to_add:
+                final_condition = self.create_country_condition(list_countries_to_add, operator='==', existing_condition=condition)
+
+            # If there is less country but world is present need to apply exclusion
+            elif len(list_countries_to_add) <= len(self.dict_countries) and 'world' in list_countries_to_add:
+                # To get the exclusion list, need to invert the list and passing all countries that are NOT present
+                # in that list.
+                list_countries_to_exclude = [i for i in self.dict_countries.keys() if i not in list_countries_to_add]
+                final_condition = self.create_country_condition(list_countries_to_exclude, operator='!=', existing_condition=condition)
+            return final_condition
+
+        # create a list of key to remove after all these operation for country specific
+        q_to_del = list()
         for k in self.dict_questions:
             condition = self.dict_questions[k]['condition']
             list_countries_to_add = create_country_list(self.dict_questions[k])
@@ -176,29 +203,21 @@ class gettingQuestions:
             # In that case, need to create a question for each possibility to be able to show the different answers
             # As limesurvey does not allow the creation of conditions for questions.
             if self.dict_questions[k]['country_specific'] in self.list_bool:
-                # for country in list_countries_to_add:
-                #     new_code
-                #     new_question = self.dict_questions[k].copy()
-                pass
 
+                q_to_del.append(k)
+                for country in list_countries_to_add:
+                    new_code = 'k_q_{}'.format(country)
+                    new_question = self.dict_questions[k].copy()
+                    new_question['answer_file'] = '{}/{}'.format(country, new_question['answer_file'])
+                    print(new_question)
             # If not, add conditions when it is needed
             else:
-                # In case all the countries and the world option is present too, no need for conditions
-                if len(list_countries_to_add) == len(self.dict_countries) +1:  # size of all potential country + 'world'
-                    final_condition = condition
 
-                # In case world is not present, create an inclusive list of countries
-                elif 'world' not in list_countries_to_add:
-                    final_condition = self.create_country_condition(list_countries_to_add, operator='==', existing_condition=condition)
+                self.dict_questions[k]['condition'] = _create_condition(list_countries_to_add, condition)
 
-                # If there is less country but world is present need to apply exclusion
-                elif len(list_countries_to_add) <= len(self.dict_countries) and 'world' in list_countries_to_add:
-                    # To get the exclusion list, need to invert the list and passing all countries that are NOT present
-                    # in that list.
-                    list_countries_to_exclude = [i for i in self.dict_countries.keys() if i not in list_countries_to_add]
-                    final_condition = self.create_country_condition(list_countries_to_exclude, operator='!=', existing_condition=condition)
-                print(final_condition)
-                self.dict_questions[k]['condition'] = final_condition
+        # Finally removing all the questions that have been country specific and recreated
+        for k in q_to_del:
+            del self.dict_questions[k]
 
 
 def main():
