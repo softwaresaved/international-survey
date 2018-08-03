@@ -144,17 +144,17 @@ class gettingQuestions:
             if self.dict_questions[k]['country_specific'] in self.list_bool:
 
                 for country in self.create_country_list(self.dict_questions[k]):
-                    new_code = 'k_q_{}'.format(country)
+                    new_code = '{}_q_{}'.format(k, country)
                     new_question = self.dict_questions[k].copy()
                     new_question['answer_file'] = '{}/{}'.format(country, new_question['answer_file'])
-                    new_question['country_specific'] = ''
+                    new_question['country_specific'] = 'Y'
                     for c in self.dict_countries.keys():
                         new_question[c] = ''
                     new_question[country] = 'Y'
                     new_dict[new_code] = new_question
             else:
-                new_dict[k] = self.dict_questions[k]
-        self.dict_questions = new_dict
+                new_dict[k] = self.dict_questions[k].copy()
+        self.dict_questions = new_dict.copy()
 
     def create_country_condition(self, countries, operator, existing_condition, code_question_country="socio1"):
         """
@@ -214,7 +214,7 @@ class gettingQuestions:
 
             # In case world is not present, create an inclusive list of countries
             elif 'world' not in list_countries_to_add:
-                final_condition = self.create_country_condition(list_countries_to_add, operator='==', existing_condition=condition)
+                final_condition = self.create_country_condition(list_countries_to_add, operator='=', existing_condition=condition)
 
             # If there is less country but world is present need to apply exclusion
             elif len(list_countries_to_add) <= len(self.dict_countries) and 'world' in list_countries_to_add:
@@ -242,7 +242,6 @@ class gettingQuestions:
         self.create_country_q()
         logger.info('Add specific conditions for new created country')
         self.add_condition_about_countries()
-
 
 def main():
 
