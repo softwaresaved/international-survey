@@ -46,7 +46,7 @@ class surveyCreation:
             :questions dict(): All questions and details about them
         """
         self.questions = questions
-        # self.project = project
+        self.year = '2018'
         # create a dictionary containing all the questions code
         # and for each the order of the answers as output in the survey
         # This dict is needed for the setup_condition(self) as it
@@ -60,8 +60,7 @@ class surveyCreation:
         return the path to the file
         """
         outfile_name = "questions_to_import.txt"
-        outfile = os.path.join(self.year, self.country, outfile_name)
-        with open(outfile, "w") as f:
+        with open(outfile_name, "w") as f:
             w = csv.DictWriter(
                 f,
                 delimiter="\t",
@@ -70,7 +69,7 @@ class surveyCreation:
                 fieldnames=static_headers.main_headers,
             )
             w.writeheader()
-        return outfile
+        self.outfile = outfile_name
 
     @staticmethod
     def _to_modify(original_list, modified_list):
@@ -210,8 +209,7 @@ class surveyCreation:
             else:
                 filename = "{}_message.md".format(type_message)
 
-            # folder = os.path.join(self.project, 'texts')
-            folder = os.path.join(self.year, self.country, "texts")
+            folder = os.path.join(self.year, "texts")
             path = os.path.join(folder, filename)
             with open(path, "r") as f:
                 html_file = markdown(f.read())
@@ -277,12 +275,12 @@ class surveyCreation:
         return nbr_section
 
     @staticmethod
-    def read_survey_file(year, country):
+    def read_survey_file(year):
         """
         Read the survey csv file and yield each line as a dictionary
         """
         # question_file = os.path.join(year, country, '.'.join([folder, 'csv']))
-        question_file = os.path.join(year, country, "questions.csv")
+        question_file = os.path.join(year, "questions.csv")
         with open(question_file, "r") as f:
             csv_f = csv.DictReader(f)
             for row in csv_f:
@@ -331,11 +329,11 @@ class surveyCreation:
         yield group_survey_q
 
     @staticmethod
-    def get_answer(year, country, file_answer):
+    def get_answer(year, file_answer):
         """
         """
         outfile = os.path.join(
-            year, country, "listAnswers", "{}.csv".format(file_answer)
+            year, "answers", "{}.csv".format(file_answer)
         )
         with open(outfile, "r") as f:
             return [x[:-1] for x in f.readlines()]
@@ -435,7 +433,7 @@ class surveyCreation:
         Create the answer itself
         """
         n = 1
-        for text_answer in self.get_answer(self.year, self.country, row["answer_file"]):
+        for text_answer in self.get_answer(self.year, row["answer_file"]):
             if type_question == "one choice":
                 # add the answer and its position to the self.order_answer_one_choice dict for
                 # the self.setup_condition()
@@ -534,11 +532,14 @@ class surveyCreation:
                 list_formated_condition list: contain the same condition but formated for limesurvey
             """
             list_formated_condition = list()
+            print(list_conditions)
             for condition in list_conditions:
                 # get the code of the question
-                code = condition.split(" ")[0].replace("(", "")
+                code = condition.split(" ")[1].replace("(", "")
+                print('code', condition.split(" "))
                 # get the comparison operator
-                operator = condition.split(" ")[1]
+                operator = condition.split(" ")[2]
+                print('operator', operator)
                 # check if the operator are ok
                 for x in operator:
                     if x not in ["=", "!", "<", ">"]:
@@ -546,7 +547,8 @@ class surveyCreation:
                             "Error in the condition formating: {}".format(condition)
                         )
                 # get the answer it is comparing with
-                answer = condition.split('"')[1::2][0].lower()
+                print('condition', condition.split('"'))
+                answer = condition.split('"')[-2].lower()
                 # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
                 if answer in ["y", "n", "yes", "no"]:
                     position_answer = '"{}"'.format( answer[0].upper())  # Only need the Y or N
@@ -555,10 +557,16 @@ class surveyCreation:
                 else:
                     # find that answer in the dict created during the self.setup_answer() to find the index position
                     # of that answer
+                    print('Answer to match: ', answer.lower())
+
+                    print(self.order_answer_one_choice[code])
                     for n in self.order_answer_one_choice[code]:
-                        if self.order_answer_one_choice[code][n] == answer.lower(): # Need the double quotes for the limesurvey position_answer = '"{}"'.format(n)
+                        print('position answer from dic: ', self.order_answer_one_choice[code][n])
+                        if self.order_answer_one_choice[code][n].rstrip() == answer.lower().rstrip():  # Need the double quotes for the limesurvey position_answer = '"{}"'.format(n)
+                            position_answer = '"{}"'.format(self.order_answer_one_choice[code][n])
+                            print(position_answer)
                             break
-                format_condition = "({}.NAOK {} {})".format( code, operator, position_answer)
+                format_condition = "({}.NAOK {} {})".format(code, operator, position_answer)
                 list_formated_condition.append(format_condition)
             return list_formated_condition
 
@@ -655,14 +663,11 @@ class surveyCreation:
             # only used in the case of likert and y/n/na merged together
             self.code_to_multiple_question = 0
 
-            # Open the csv file and read it through a dictionary (generator)
-            question_to_transform = self.read_survey_file(self.year, self.country)
             # pass this generator into the function group_likert() to group Y/N and likert together
-            for q in self.group_likert(question_to_transform):
+            for q in self.group_likert(self.questions):
 
                 # If questions were grouped together, need to change how it is process
                 if len(q) > 1:
-
                     # Check if a new section needs to be added before processing the question
                     nbr_section = self.check_adding_section(
                         q[0], nbr_section, specific_config.sections_txt, lang
@@ -728,13 +733,11 @@ class surveyCreation:
         """
         Run the survey creation
         """
-        pass
-        # self.outfile = self.init_outfile()
-        # self.create_header()
-        #
-        # self.languages = self._get_languages()
-        # self.create_survey_settings()
-        # self.create_survey_questions()
+        self.init_outfile()
+        self.create_header()
+        self.languages = self._get_languages()
+        self.create_survey_settings()
+        self.create_survey_questions()
 
 
 def main():
