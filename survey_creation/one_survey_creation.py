@@ -230,6 +230,19 @@ class gettingQuestions:
 
             self.dict_questions[k]['condition'] = _create_condition(list_countries_to_add, condition)
 
+
+    def insert_code_in_dict(self):
+        """
+        Creating_survey script expect each row with the code key inserted in the key-value 'code': $code,
+        rather than being the keys of the dictionary and then having all row in a list
+        """
+        final_list = list()
+        for k in self.dict_questions:
+            new_dict = self.dict_questions[k]
+            new_dict['code'] = k
+            final_list.append(new_dict)
+        self.dict_questions = final_list
+
     def run(self):
         """
         Run all the steps at one time
@@ -242,6 +255,7 @@ class gettingQuestions:
         self.create_country_q()
         logger.info('Add specific conditions for new created country')
         self.add_condition_about_countries()
+        self.insert_code_in_dict()
 
 def main():
 
