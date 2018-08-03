@@ -146,7 +146,7 @@ class gettingQuestions:
                 for country in self.create_country_list(self.dict_questions[k]):
                     new_code = '{}_q_{}'.format(k, country)
                     new_question = self.dict_questions[k].copy()
-                    new_question['answer_file'] = '{}/{}'.format(country, new_question['answer_file'])
+                    new_question['answer_file'] = 'countries/{}/{}'.format(country, new_question['answer_file'])
                     new_question['country_specific'] = 'Y'
                     for c in self.dict_countries.keys():
                         new_question[c] = ''
