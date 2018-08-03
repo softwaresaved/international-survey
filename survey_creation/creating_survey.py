@@ -22,7 +22,8 @@ import os
 import itertools
 from collections import OrderedDict
 from include.get_arguments import get_arguments
-from include.config import creationConfig as static_headers
+from include.static_headers import creationConfig as static_headers
+from include.config import config as specific_config
 import importlib
 from random import shuffle
 from markdown import markdown
@@ -46,21 +47,12 @@ class surveyCreation:
         """
         self.questions = questions
         # self.project = project
-        self.specific_config = self.import_config()
         # create a dictionary containing all the questions code
         # and for each the order of the answers as output in the survey
         # This dict is needed for the setup_condition(self) as it
         # require the position of the answer. It is only needed
         # for the one choice type of question as it works only for Y/N and one choice
         self.order_answer_one_choice = dict()
-
-    def import_config(self):
-        """
-        Import the config file associated with the folder name
-        """
-        # module = 'config.{}'.format(self.project)
-        # module = ".{}.{}".format(self.year, self.country)
-        return importlib.import_module('.include/config.py', package="config").config()
 
     def init_outfile(self):
         """
@@ -168,11 +160,11 @@ class surveyCreation:
         # Create a copy the header to the empty file
         # Check if some parameters needs to be modify from the specific_config
         good_parameters = self._to_modify(
-            static_headers.global_headers, self.specific_config.header_to_modify
+            static_headers.global_headers, specific_config.header_to_modify
         )
         # Check if some parameters needs to be added.
         good_parameters = self._to_add(
-            good_parameters, self.specific_config.header_to_add
+            good_parameters, specific_config.header_to_add
         )
         # Record the copy into the file
         self._record_list(good_parameters)
@@ -186,7 +178,7 @@ class surveyCreation:
         """
         languages = static_headers.languages
         try:  # Only add language if the option is in the config file
-            languages.append(self.specific_config.languages_to_add)
+            languages.append(specific_config.languages_to_add)
         except AttributeError:
             pass
         return languages
@@ -243,13 +235,13 @@ class surveyCreation:
             # Get the end message
             end_message = get_text("end", lang)
             survey_settings = self._to_modify(
-                static_headers.global_settings, self.specific_config.settings_to_modify
+                static_headers.global_settings, specific_config.settings_to_modify
             )
             survey_settings = self._to_add(
-                survey_settings, self.specific_config.settings_to_add
+                survey_settings, specific_config.settings_to_add
             )
 
-            survey_title = self.specific_config.survey_title[lang]
+            survey_title = specific_config.survey_title[lang]
             survey_title_row = {
                 "class": "SL",
                 "name": "surveyls_title",
@@ -402,7 +394,7 @@ class surveyCreation:
             question["mandatory"] = ""
 
         if row["public"] == "N":
-            question["help"] = self.specific_config.private_data[lang]
+            question["help"] = specific_config.private_data[lang]
         else:
             question["help"] = ""
         self._write_row(question)
@@ -656,7 +648,7 @@ class surveyCreation:
             # Add a first section
             nbr_section = -1
             nbr_section = self.check_adding_section(
-                {"section": 0}, nbr_section, self.specific_config.sections_txt, lang
+                {"section": 0}, nbr_section, specific_config.sections_txt, lang
             )
 
             # Need this variable to inc each time a new multiple questions is created to ensure they are unique
@@ -673,7 +665,7 @@ class surveyCreation:
 
                     # Check if a new section needs to be added before processing the question
                     nbr_section = self.check_adding_section(
-                        q[0], nbr_section, self.specific_config.sections_txt, lang
+                        q[0], nbr_section, specific_config.sections_txt, lang
                     )
 
                     # Check if the list of items need to be randomize
@@ -691,7 +683,7 @@ class surveyCreation:
                     for row in q:
                         # Check if a new section needs to be added before processing the question
                         nbr_section = self.check_adding_section(
-                            row, nbr_section, self.specific_config.sections_txt, lang
+                            row, nbr_section, specific_config.sections_txt, lang
                         )
 
                         if row["answer_format"].lower() == "one choice":
