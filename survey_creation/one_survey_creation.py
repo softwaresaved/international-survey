@@ -24,8 +24,8 @@ dict_countries = {'de': "Germany",
                   'us': "United States of America",
                   'zaf': "South Africa",
                   'nzl': "New Zealand",
-                  'aus': "Australia",
-                  'can': "Canada"}
+                  # 'can': 'Canada',
+                  'aus': "Australia"}
 list_bool = ['yes', 'y', 't', 'true', 'Yes', 'YES', 'Y', 'T', 'True', 'TRUE']
 
 filename = './2018/questions.csv'
