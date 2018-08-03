@@ -435,11 +435,6 @@ class surveyCreation:
         n = 1
         for text_answer in self.get_answer(self.year, row["answer_file"]):
             if type_question == "one choice":
-                # add the answer and its position to the self.order_answer_one_choice dict for
-                # the self.setup_condition()
-                self.order_answer_one_choice.setdefault(row["code"], {})[
-                    n
-                ] = text_answer.lower()
                 answer_row = static_headers.one_choice_answer
             elif type_question == "multi choice":
                 answer_row = static_headers.multiple_choice_answer
@@ -461,7 +456,15 @@ class surveyCreation:
             except IndexError:
                 answer_row["text"] = text_answer.split(";")[0].strip('"')
             answer_row["language"] = lang
+
             self._write_row(answer_row)
+
+            if type_question == "one choice":
+                # add the answer and its position to the self.order_answer_one_choice dict for
+                # the self.setup_condition()
+                self.order_answer_one_choice.setdefault(row["code"], {})[ n ] = answer_row['text'].lower()
+
+
             n += 1
 
     def get_txt_lang(self, lang, index_lang):
@@ -532,14 +535,11 @@ class surveyCreation:
                 list_formated_condition list: contain the same condition but formated for limesurvey
             """
             list_formated_condition = list()
-            print(list_conditions)
             for condition in list_conditions:
                 # get the code of the question
                 code = condition.split(" ")[1].replace("(", "")
-                print('code', condition.split(" "))
                 # get the comparison operator
                 operator = condition.split(" ")[2]
-                print('operator', operator)
                 # check if the operator are ok
                 for x in operator:
                     if x not in ["=", "!", "<", ">"]:
@@ -547,7 +547,6 @@ class surveyCreation:
                             "Error in the condition formating: {}".format(condition)
                         )
                 # get the answer it is comparing with
-                print('condition', condition.split('"'))
                 answer = condition.split('"')[-2].lower()
                 # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
                 if answer in ["y", "n", "yes", "no"]:
@@ -557,14 +556,10 @@ class surveyCreation:
                 else:
                     # find that answer in the dict created during the self.setup_answer() to find the index position
                     # of that answer
-                    print('Answer to match: ', answer.lower())
 
-                    print(self.order_answer_one_choice[code])
                     for n in self.order_answer_one_choice[code]:
-                        print('position answer from dic: ', self.order_answer_one_choice[code][n])
                         if self.order_answer_one_choice[code][n].rstrip() == answer.lower().rstrip():  # Need the double quotes for the limesurvey position_answer = '"{}"'.format(n)
                             position_answer = '"{}"'.format(self.order_answer_one_choice[code][n])
-                            print(position_answer)
                             break
                 format_condition = "({}.NAOK {} {})".format(code, operator, position_answer)
                 list_formated_condition.append(format_condition)
