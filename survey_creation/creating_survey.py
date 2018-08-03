@@ -22,7 +22,7 @@ import os
 import itertools
 from collections import OrderedDict
 from include.get_arguments import get_arguments
-from config.config import creationConfig as main_config
+from include.config import creationConfig as static_headers
 import importlib
 from random import shuffle
 from markdown import markdown
@@ -36,17 +36,15 @@ class surveyCreation:
     country's project
     """
 
-    def __init__(self, country, year):
+    def __init__(self, questions):
         """
         Get the project name (folder).
         Import the associated config file
         Create the outfile path
         :params:
-            :project str(): the name of which folder/project the information
-                is stored
+            :questions dict(): All questions and details about them
         """
-        self.country = country
-        self.year = year
+        self.questions = questions
         # self.project = project
         self.specific_config = self.import_config()
         # create a dictionary containing all the questions code
@@ -61,8 +59,8 @@ class surveyCreation:
         Import the config file associated with the folder name
         """
         # module = 'config.{}'.format(self.project)
-        module = ".{}.{}".format(self.year, self.country)
-        return importlib.import_module(module, package="config").config()
+        # module = ".{}.{}".format(self.year, self.country)
+        return importlib.import_module('.include/config.py', package="config").config()
 
     def init_outfile(self):
         """
@@ -77,7 +75,7 @@ class surveyCreation:
                 delimiter="\t",
                 lineterminator="\n",
                 quotechar='"',
-                fieldnames=main_config.main_headers,
+                fieldnames=static_headers.main_headers,
             )
             w.writeheader()
         return outfile
@@ -110,7 +108,7 @@ class surveyCreation:
         """
         Append a dictionary (a row) to the outfile.
         The dictionary as to respected the keys structure
-        found in the main_config.main_headers
+        found in the static_headers.main_headers
         As the format accepted by limesurvey is tsv, the
         separator as setup to be tabulation ('\t')
         :params:
@@ -125,7 +123,7 @@ class surveyCreation:
                 delimiter="\t",
                 lineterminator="\n",
                 quotechar='"',
-                fieldnames=main_config.main_headers,
+                fieldnames=static_headers.main_headers,
             )
             w.writerow(row)
 
@@ -146,7 +144,7 @@ class surveyCreation:
             """
             Create an Ordered dictionary to be used to translate csv file to tsv
             """
-            return OrderedDict((k, "") for k in main_config.main_headers)
+            return OrderedDict((k, "") for k in static_headers.main_headers)
 
         for element in list_to_copy:
             row = create_empty_row()
@@ -156,7 +154,7 @@ class surveyCreation:
     def create_header(self):
         """
         Create the headers for the outfile. The
-        headers are recorded in the main_config file.
+        headers are recorded in the static_headers file.
         The specific_config file can also contain specific parameters
         to either modify or add to the headers dictionary before recording
         it into  the outfile.
@@ -170,7 +168,7 @@ class surveyCreation:
         # Create a copy the header to the empty file
         # Check if some parameters needs to be modify from the specific_config
         good_parameters = self._to_modify(
-            main_config.global_headers, self.specific_config.header_to_modify
+            static_headers.global_headers, self.specific_config.header_to_modify
         )
         # Check if some parameters needs to be added.
         good_parameters = self._to_add(
@@ -186,7 +184,7 @@ class surveyCreation:
             :languages list(): all languages represented by their code
                 the language 'en' is always the first element to the list
         """
-        languages = main_config.languages
+        languages = static_headers.languages
         try:  # Only add language if the option is in the config file
             languages.append(self.specific_config.languages_to_add)
         except AttributeError:
@@ -245,7 +243,7 @@ class surveyCreation:
             # Get the end message
             end_message = get_text("end", lang)
             survey_settings = self._to_modify(
-                main_config.global_settings, self.specific_config.settings_to_modify
+                static_headers.global_settings, self.specific_config.settings_to_modify
             )
             survey_settings = self._to_add(
                 survey_settings, self.specific_config.settings_to_add
@@ -278,7 +276,7 @@ class surveyCreation:
             # -1 because the section numbers starts at 0 but
             # in the csv survey_file it starts at 1
             nbr_section = int(row["section"]) - 1
-            section = main_config.group_format
+            section = static_headers.group_format
             # type/scale are like 'G0', 'G1', etc.
             section["type/scale"] = "G" + str(nbr_section)
             section["language"] = lang
@@ -357,23 +355,23 @@ class surveyCreation:
         """
 
         if type_question == "multi_likert":
-            question = main_config.likert_question
+            question = static_headers.likert_question
         elif type_question == "one choice":
-            question = main_config.one_choice_question
+            question = static_headers.one_choice_question
         elif type_question == "ranking":
-            question = main_config.ranking_question
+            question = static_headers.ranking_question
         elif type_question == "multiple choice":
-            question = main_config.multiple_choice_question
+            question = static_headers.multiple_choice_question
         elif type_question == "freenumeric":
-            question = main_config.freenumeric_question
+            question = static_headers.freenumeric_question
         elif type_question == "freetext":
-            question = main_config.freetext_question
+            question = static_headers.freetext_question
         elif type_question == "likert":
-            question = main_config.likert_question
+            question = static_headers.likert_question
         elif type_question == "y/n/na":
-            question = main_config.y_n_question
+            question = static_headers.y_n_question
         elif type_question == "datetime":
-            question = main_config.datetime_question
+            question = static_headers.datetime_question
 
         if type_question == "multi_likert":
             # If multi likert it means the questions are presented in an array
@@ -414,7 +412,7 @@ class surveyCreation:
         """
         if type_question == "multi_likert":
             for row in list_likert:
-                subquestion = main_config.subquestion
+                subquestion = static_headers.subquestion
                 subquestion["relevance"] = "1"
                 subquestion["language"] = lang
                 subquestion["name"] = row["code"]
@@ -424,7 +422,7 @@ class surveyCreation:
         if type_question == "ranking":
             # Create the Subquestion ranks
             for i in range(1, 9):  # To get 8 ranked questions
-                subquestion = main_config.subquestion
+                subquestion = static_headers.subquestion
                 subquestion["name"] = str(i)
                 subquestion["text"] = "Rank" + str(i)
                 subquestion["language"] = lang
@@ -433,7 +431,7 @@ class surveyCreation:
 
         if type_question == "likert":
             # Need to create an empty subquestion
-            subquestion = main_config.subquestion
+            subquestion = static_headers.subquestion
             subquestion["name"] = "SQ001"
             subquestion["relevance"] = "1"
             subquestion["language"] = lang
@@ -452,13 +450,13 @@ class surveyCreation:
                 self.order_answer_one_choice.setdefault(row["code"], {})[
                     n
                 ] = text_answer.lower()
-                answer_row = main_config.one_choice_answer
+                answer_row = static_headers.one_choice_answer
             elif type_question == "multi choice":
-                answer_row = main_config.multiple_choice_answer
+                answer_row = static_headers.multiple_choice_answer
             elif type_question == "likert":
-                answer_row = main_config.likert_answer
+                answer_row = static_headers.likert_answer
             elif type_question == "ranking":
-                answer_row = main_config.ranking_answer
+                answer_row = static_headers.ranking_answer
             answer_row["name"] = str(n)
             # answer_row['name'] = 'A' + str(n)
             # For multichoice the answers are considered as subquestion
@@ -724,7 +722,7 @@ class surveyCreation:
 
                         if row["answer_format"].lower() == "likert":
                             self.setup_question("likert", row, txt_lang, lang)
-                            # Need to create an  empty subquestion
+                            # Need to create an empty subquestion
                             self.setup_subquestion("likert", lang)
                             self.setup_answer("likert", row, index_lang, lang)
 
@@ -738,18 +736,21 @@ class surveyCreation:
         """
         Run the survey creation
         """
-        self.outfile = self.init_outfile()
-        self.create_header()
-        self.languages = self._get_languages()
-        self.create_survey_settings()
-        self.create_survey_questions()
+        pass
+        # self.outfile = self.init_outfile()
+        # self.create_header()
+        #
+        # self.languages = self._get_languages()
+        # self.create_survey_settings()
+        # self.create_survey_questions()
 
 
 def main():
-    # Get which country and which year to create the analysis
-    year, country = get_arguments(sys.argv[1:])
-    create_survey = surveyCreation(country, year)
-    create_survey.run()
+    pass
+    # # Get which country and which year to create the analysis
+    # year, country = get_arguments(sys.argv[1:])
+    # create_survey = surveyCreation(country, year)
+    # create_survey.run()
 
 
 if __name__ == "__main__":

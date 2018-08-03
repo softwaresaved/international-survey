@@ -10,6 +10,10 @@ __author__ = "Olivier Philippe"
 import re
 import csv
 from collections import OrderedDict
+from creating_survey import surveyCreation
+from include.logger import logger
+
+logger = logger(name="one_survey_creation", stream_level="DEBUG")
 
 
 # # Here the list of the countries -- need to be put into a config file rather than hardcoded
@@ -226,13 +230,40 @@ class gettingQuestions:
 
             self.dict_questions[k]['condition'] = _create_condition(list_countries_to_add, condition)
 
+    def run(self):
+        """
+        Run all the steps at one time
+        """
+        logger.info('Reading the file')
+        self.read_original_file()
+        logger.info('Add the world condition')
+        self.add_world_other()
+        logger.info('Create question for each country')
+        self.create_country_q()
+        logger.info('Add specific conditions for new created country')
+        self.add_condition_about_countries()
+
 
 def main():
+
+    # logger.info('Read config file')
+    # config_file = "../config/" + args.config
+    #
+    # # set up access credentials
+    # config_value = configParser()
+    # config_value.read(config_file)
+
+    # Get the file and transform it to create all the questions and conditions for each country
+
+    logger.info('Getting the file and transforming it for the country specific conditions')
     getting_question = gettingQuestions()
-    getting_question.read_original_file()
-    getting_question.add_world_other()
-    getting_question.create_country_q()
-    getting_question.add_condition_about_countries()
+    getting_question.run()
+
+    # Init the survey creation process
+    logger.info('Init the survey creation')
+    creating_survey = surveyCreation(getting_question.dict_questions)
+    logger.info('Running the survey creation')
+    creating_survey.run()
 
 
 if __name__ == "__main__":
