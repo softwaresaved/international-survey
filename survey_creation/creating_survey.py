@@ -180,6 +180,7 @@ class surveyCreation:
             languages.append(specific_config.languages_to_add)
         except AttributeError:
             pass
+        print(languages)
         return languages
 
     @staticmethod
@@ -332,9 +333,8 @@ class surveyCreation:
     def get_answer(year, file_answer):
         """
         """
-        outfile = os.path.join(
-            year, "answers", "{}.csv".format(file_answer)
-        )
+        # outfile = os.path.join(year, "answers", 'countries', "{}.csv".format(file_answer))
+        outfile = file_answer
         with open(outfile, "r") as f:
             return [x[:-1] for x in f.readlines()]
 
@@ -378,6 +378,7 @@ class surveyCreation:
             question["text"] = row[txt_lang]
 
         question["relevance"] = self.setup_condition(row["condition"])
+        # question["relevance"] = ""
 
         question["language"] = lang
 
@@ -434,6 +435,7 @@ class surveyCreation:
         """
         n = 1
         for text_answer in self.get_answer(self.year, row["answer_file"]):
+            # print(row)
             if type_question == "one choice":
                 answer_row = static_headers.one_choice_answer
             elif type_question == "multi choice":
@@ -481,6 +483,7 @@ class surveyCreation:
             :str(): the key used later to access the text of the question
         """
         # Speficify where to find the text for the question
+        print(lang)
         if lang != "en":
             return "lang_trans" + str(index_lang)
         else:
@@ -536,6 +539,7 @@ class surveyCreation:
             """
             list_formated_condition = list()
             for condition in list_conditions:
+                print('Condition: {}'.format(condition))
                 # get the code of the question
                 code = condition.split(" ")[1].replace("(", "")
                 # get the comparison operator
@@ -547,21 +551,36 @@ class surveyCreation:
                             "Error in the condition formating: {}".format(condition)
                         )
                 # get the answer it is comparing with
-                answer = condition.split('"')[-2].lower()
+                if operator == '=':
+                    operator = '=='
+                try:
+                    answer = condition.split('"')[-2].lower()
+                    print('Answer right: {}'.format(answer))
+                except IndexError:
+                    print(condition)
+                    raise
+                # set up a variable to confirm the
                 # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
                 if answer in ["y", "n", "yes", "no"]:
-                    position_answer = '"{}"'.format( answer[0].upper())  # Only need the Y or N
+                    position_answer = "{}".format(answer[0].upper())  # Only need the Y or N
                 # If not it means it is from a one choice question and the position of the answer
                 # needs to be retrieved
                 else:
                     # find that answer in the dict created during the self.setup_answer() to find the index position
                     # of that answer
 
+                    position_answer = None
                     for n in self.order_answer_one_choice[code]:
+                        # print('Answer: {}  -- Comparing with: {} at the position: {}'.format(answer, self.order_answer_one_choice[code][n], n))
                         if self.order_answer_one_choice[code][n].rstrip() == answer.lower().rstrip():  # Need the double quotes for the limesurvey position_answer = '"{}"'.format(n)
-                            position_answer = '"{}"'.format(self.order_answer_one_choice[code][n])
+                            position_answer = "{}".format(n)
                             break
-                format_condition = "({}.NAOK {} {})".format(code, operator, position_answer)
+                    if position_answer is None:  # Did not find a matching answer because the question was country specific and need to check in the newly created question with _q_$codeCountry
+                        for key in self.order_answer_one_choice:
+                            if code in key:   # partial match
+                                print('Matching partial key: {}'.format(key))
+                format_condition = """({}.NAOK {} "{}")""".format(code, operator, position_answer)
+                # format_condition = """({}.NAOK {}""".format(str(code), str(operator)) + """ \"{})\"""".format(str(position_answer))
                 list_formated_condition.append(format_condition)
             return list_formated_condition
 
@@ -634,10 +653,16 @@ class surveyCreation:
         else:
             # Split the conditions by the different AND and OR present and
             # keeps the order to be sure to reconstruct later
+            # print('Conditions: {}'.format(condition))
             list_of_conditions = split_conditions(condition)
+            # print(list_of_conditions)
             formated_conditions = format_conditions(list_of_conditions)
+            # print('formatted conditions: {}'.format(formated_conditions))
             dict_of_bool = get_position_bool(condition)
             formated_string = final_formating(formated_conditions, dict_of_bool)
+            print(formated_string)
+            # print('formatted string: {}'.format(formated_string))
+            # print('\n')
             return formated_string
 
     def create_survey_questions(self):
