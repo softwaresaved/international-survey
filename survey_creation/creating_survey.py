@@ -17,14 +17,11 @@ All information about the TSV file structure can be retrieved here:
 
 import re
 import csv
-import sys
 import os
 import itertools
 from collections import OrderedDict
-from include.get_arguments import get_arguments
 from include.static_headers import creationConfig as static_headers
 from include.config import config as specific_config
-import importlib
 from random import shuffle
 from markdown import markdown
 from bs4 import BeautifulSoup
@@ -59,7 +56,7 @@ class surveyCreation:
         Rewrite over the existing file to avoid issue of appending and
         return the path to the file
         """
-        outfile_name = "questions_to_import.txt"
+        outfile_name = "./2018/questions_to_import.txt"
         with open(outfile_name, "w") as f:
             w = csv.DictWriter(
                 f,
@@ -180,7 +177,6 @@ class surveyCreation:
             languages.append(specific_config.languages_to_add)
         except AttributeError:
             pass
-        print(languages)
         return languages
 
     @staticmethod
@@ -435,7 +431,6 @@ class surveyCreation:
         """
         n = 1
         for text_answer in self.get_answer(self.year, row["answer_file"]):
-            # print(row)
             if type_question == "one choice":
                 answer_row = static_headers.one_choice_answer
             elif type_question == "multi choice":
@@ -464,8 +459,7 @@ class surveyCreation:
             if type_question == "one choice":
                 # add the answer and its position to the self.order_answer_one_choice dict for
                 # the self.setup_condition()
-                self.order_answer_one_choice.setdefault(row["code"], {})[ n ] = answer_row['text'].lower()
-
+                self.order_answer_one_choice.setdefault(row["code"], {})[n] = answer_row['text'].lower()
 
             n += 1
 
@@ -483,7 +477,6 @@ class surveyCreation:
             :str(): the key used later to access the text of the question
         """
         # Speficify where to find the text for the question
-        print(lang)
         if lang != "en":
             return "lang_trans" + str(index_lang)
         else:
@@ -537,9 +530,9 @@ class surveyCreation:
             :return:
                 list_formated_condition list: contain the same condition but formated for limesurvey
             """
+
             list_formated_condition = list()
             for condition in list_conditions:
-                print('Condition: {}'.format(condition))
                 # get the code of the question
                 code = condition.split(" ")[1].replace("(", "")
                 # get the comparison operator
@@ -555,9 +548,7 @@ class surveyCreation:
                     operator = '=='
                 try:
                     answer = condition.split('"')[-2].lower()
-                    print('Answer right: {}'.format(answer))
                 except IndexError:
-                    print(condition)
                     raise
                 # set up a variable to confirm the
                 # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
@@ -571,16 +562,15 @@ class surveyCreation:
 
                     position_answer = None
                     for n in self.order_answer_one_choice[code]:
-                        # print('Answer: {}  -- Comparing with: {} at the position: {}'.format(answer, self.order_answer_one_choice[code][n], n))
                         if self.order_answer_one_choice[code][n].rstrip() == answer.lower().rstrip():  # Need the double quotes for the limesurvey position_answer = '"{}"'.format(n)
                             position_answer = "{}".format(n)
                             break
-                    if position_answer is None:  # Did not find a matching answer because the question was country specific and need to check in the newly created question with _q_$codeCountry
-                        for key in self.order_answer_one_choice:
-                            if code in key:   # partial match
-                                print('Matching partial key: {}'.format(key))
-                format_condition = """({}.NAOK {} "{}")""".format(code, operator, position_answer)
-                # format_condition = """({}.NAOK {}""".format(str(code), str(operator)) + """ \"{})\"""".format(str(position_answer))
+                # In case of exclusion for some countries, need to look like that
+                # (is_empty(socio1.NAOK) || (socio1.NAOK != 236)) or (is_empty(socio1.NAOK) || (socio1.NAOK != 237)) or (is_empty(socio1.NAOK) || (socio1.NAOK != 44))))
+                if operator == '!=':
+                    format_condition = """(!is_empty({0}.NAOK) and ({0}.NAOK {1} {2}))""".format(code, operator, position_answer)
+                else:
+                    format_condition = """({}.NAOK {} {})""".format(code, operator, position_answer)
                 list_formated_condition.append(format_condition)
             return list_formated_condition
 
@@ -635,14 +625,7 @@ class surveyCreation:
                 bool_list = [dict_of_bool[x].upper() for x in sorted(dict_of_bool)]
                 # Create a new list by alternating the element of each list
                 # Source: https://stackoverflow.com/a/21482016
-                to_iterate = [
-                    x
-                    for x in itertools.chain.from_iterable(
-                        itertools.zip_longest(list_formated_conditions, bool_list)
-                    )
-                    if x
-                ]
-
+                to_iterate = [x for x in itertools.chain.from_iterable(itertools.zip_longest(list_formated_conditions, bool_list)) if x]
                 list_formated_conditions = "({})".format(" ".join(to_iterate))
             return list_formated_conditions
 
@@ -653,16 +636,11 @@ class surveyCreation:
         else:
             # Split the conditions by the different AND and OR present and
             # keeps the order to be sure to reconstruct later
-            # print('Conditions: {}'.format(condition))
             list_of_conditions = split_conditions(condition)
-            # print(list_of_conditions)
             formated_conditions = format_conditions(list_of_conditions)
-            # print('formatted conditions: {}'.format(formated_conditions))
             dict_of_bool = get_position_bool(condition)
             formated_string = final_formating(formated_conditions, dict_of_bool)
-            print(formated_string)
             # print('formatted string: {}'.format(formated_string))
-            # print('\n')
             return formated_string
 
     def create_survey_questions(self):

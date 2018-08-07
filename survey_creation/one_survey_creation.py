@@ -222,6 +222,7 @@ class gettingQuestions:
                 ((if $code_question_country $operator $country2 AND $existing_condition)
             this respect the rules for limesurvey:
                 https://manual.limesurvey.org/Setting_conditions/en
+
         """
         list_str_countries = list()
 
@@ -232,13 +233,14 @@ class gettingQuestions:
                                       'implemented yet')
 
         for country in countries:
+
             country_condition = "(if {} {} \"{}\")".format(code_question_country, operator, self.dict_countries[country])
             list_str_countries.append(country_condition)
 
         if len(extracted_condition) == 1:
             list_str_countries = ["({} AND {})".format(extracted_condition[0], i) for i in list_str_countries]
 
-        return '{}'.format(' OR '.join(list_str_countries))
+        return '{}'.format(" AND ".join(list_str_countries))
 
     def add_condition_about_countries(self):
         """
@@ -303,9 +305,7 @@ class gettingQuestions:
         logger.info('Add specific conditions for new created country')
         self.add_condition_about_countries()
         self.insert_code_in_dict()
-        # for k in self.dict_questions:
-        #     print(k)
-        #     print('\n')
+
 
 def main():
 
