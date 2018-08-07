@@ -7,6 +7,7 @@ Wrapper around survey_creation.py script to create only one survey file rather t
 __author__ = "Olivier Philippe"
 
 
+import os
 import re
 import csv
 from collections import OrderedDict
@@ -30,6 +31,8 @@ list_bool = ['yes', 'y', 't', 'true', 'Yes', 'YES', 'Y', 'T', 'True', 'TRUE']
 
 filename = './2018/questions.csv'
 
+year = '2018'
+
 
 class gettingQuestions:
     """
@@ -40,23 +43,50 @@ class gettingQuestions:
     def __init__(self, *args, **kwargs):
         """
         """
+        self.year = year
         self.filename = filename
-        self.dict_countries = dict_countries
-        self.list_bool = list_bool
         # Dictionary containing the different questions
-        self.dict_questions = OrderedDict()
+        self.dict_questions = self.read_original_file()
+        self.dict_countries = self.get_list_countries(dict_countries)
+        self.list_bool = list_bool
 
     def read_original_file(self):
         """
         load the file into an OrderedDict with the code of the
         question as key and respecting the order of the question
         """
+        dict_questions = OrderedDict()
         with open(self.filename, "r") as f:
             csv_f = csv.DictReader(f)
             for row in csv_f:
                 code = row['code']
                 del row['code']
-                self.dict_questions[code] = row
+                dict_questions[code] = row
+        return dict_questions
+
+    def get_list_countries(self, dict_to_check):
+        """
+        Compare the existing list of countries in the config file and
+        in the question file and remove the ones that are not present
+        :params:
+            dict_to_check dict(): contains all the potential countries
+        :return:
+            outdict dict(): same as dict_to_check but without the missing keys
+        """
+
+        set_country = set()
+        for k in self.dict_questions:
+            for i in self.dict_questions[k].keys():
+                if i in dict_to_check.keys():
+                    set_country.add(i)
+
+        to_remove = list()
+        for k in dict_to_check:
+            if k not in set_country:
+                to_remove.append(k)
+        for l in to_remove:
+            del dict_to_check[l]
+        return dict_to_check
 
     def add_world_other(self):
         """
@@ -93,7 +123,7 @@ class gettingQuestions:
             # check if the questions need to be created
             if check_world_free_txt(new_dict[k]):
                 # Create the new question with freetext
-                new_code = "{}_q_world".format(k)
+                new_code = "{}qworld".format(k)
                 new_question = new_dict[k].copy()  # copy otherwise modify both dict
                 new_question['answer_format'] = 'FREETEXT'
                 new_question['answer_file'] = ''
@@ -141,19 +171,39 @@ class gettingQuestions:
             # First check if there is country_specific condition.
             # In that case, need to create a question for each possibility to be able to show the different answers
             # As limesurvey does not allow the creation of conditions for questions.
-            if self.dict_questions[k]['country_specific'] in self.list_bool:
+            if self.dict_questions[k]['country_specific'] in self.list_bool and self.dict_questions[k]['answer_format'].lower() in ['one choice', 'y/n/na']:
 
                 for country in self.create_country_list(self.dict_questions[k]):
-                    new_code = '{}_q_{}'.format(k, country)
-                    new_question = self.dict_questions[k].copy()
-                    new_question['answer_file'] = 'countries/{}/{}'.format(country, new_question['answer_file'])
-                    new_question['country_specific'] = 'Y'
-                    for c in self.dict_countries.keys():
-                        new_question[c] = ''
-                    new_question[country] = 'Y'
-                    new_dict[new_code] = new_question
+                    try:
+                        new_question = self.dict_questions[k].copy()
+                        # check if that country has a specific answer file
+                        outfile = os.path.join(self.year, "answers", 'countries', country, "{}.csv".format(new_question['answer_file']))
+                        open(outfile)
+                        new_code = '{}q{}'.format(k, country)
+                        new_question['answer_file'] = outfile
+                        new_question['country_specific'] = ''
+                        for c in self.dict_countries.keys():
+                            new_question[c] = ''
+                        new_question[country] = 'Y'
+                        new_dict[new_code] = new_question
+
+                    # If the specific file is not found it means that country does not need a specific version
+                    # of the question. Then keep the original question.
+                    except IOError:
+                        try:
+                            new_dict[k][country] = 'Y'
+                        except KeyError:
+                            new_dict[k] = self.dict_questions[k].copy()
+                            if new_dict[k]['answer_file'] != '':
+                                new_dict[k]['answer_file'] = os.path.join(self.year, 'answers', "{}.csv".format(new_dict[k]['answer_file']))
+                            for i in self.dict_countries.keys():
+                                new_dict[k][i] = ''
+                            new_dict[k][country] = 'Y'
+
             else:
                 new_dict[k] = self.dict_questions[k].copy()
+                if new_dict[k]['answer_file'] != '':
+                    new_dict[k]['answer_file'] = os.path.join(self.year, 'answers', "{}.csv".format(new_dict[k]['answer_file']))
         self.dict_questions = new_dict.copy()
 
     def create_country_condition(self, countries, operator, existing_condition, code_question_country="socio1"):
@@ -230,7 +280,6 @@ class gettingQuestions:
 
             self.dict_questions[k]['condition'] = _create_condition(list_countries_to_add, condition)
 
-
     def insert_code_in_dict(self):
         """
         Creating_survey script expect each row with the code key inserted in the key-value 'code': $code,
@@ -247,8 +296,6 @@ class gettingQuestions:
         """
         Run all the steps at one time
         """
-        logger.info('Reading the file')
-        self.read_original_file()
         logger.info('Add the world condition')
         self.add_world_other()
         logger.info('Create question for each country')
@@ -256,6 +303,9 @@ class gettingQuestions:
         logger.info('Add specific conditions for new created country')
         self.add_condition_about_countries()
         self.insert_code_in_dict()
+        # for k in self.dict_questions:
+        #     print(k)
+        #     print('\n')
 
 def main():
 

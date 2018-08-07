@@ -16,7 +16,7 @@ class config:
     # Same as header_to_modify
     settings_to_modify = []
     settings_to_add = []
-    languages_to_add = 'de-informal'
+    # languages_to_add = 'de-informal'
 
     # The index positions starts at 0
     # Adding the survey title to the global description. The index position is at 0 and the structure of the dictionary is as follow:
