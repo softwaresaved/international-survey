@@ -44,23 +44,22 @@ S		navigationdelay		0
 S		nokeyboard		N																																																																																																																																					
 S		alloweditaftercompletion		N																																																																																																																																					
 S		googleanalyticsstyle		0																																																																																																																																					
-SL		surveyls_title		Study about people writing scientic software for Germany		en																																																																																																																																			
+SL		surveyls_title		Study about people writing scientic software		en																																																																																																																																			
 SL		surveyls_welcometext		"<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We also call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
 <h2>Why did I receive this invitation?</h2>
-<p>You have received this link because you are a member of the UK RSE Association or somehow known to the German chapter de-RSE or you were identified as someone creating scientific software.
+<p>You have received this link because you were identified as someone creating scientific software and because you are following one of the mailing list we used to disseminate the information.
 There is currently little reliable information about the community of people creating research related software, so we have decided to collect this information to help funders and other research organisations develop policies.
 This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>
 <p>Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.</p>
 <h2>How long will it take?</h2>
-<p>There are ca. 80 questions in this survey. It takes about 15 to 20 minutes to complete.</p>
+<p>There are ca. 80 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
 <h2>Who is responsible for this survey?</h2>
-<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> (SSI) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/25269).
+<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> (SSI) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/45232).
 The investigators are <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a> and <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>.
-The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">Data Protection Act</a>. 
+The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">Data Protection Act</a>.
 These records are anonymised and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"" target=""_blank"">Creative Commons by attribution, non-commercial licence</a>.</p>
-<p>If you would like more information about the research or about the data collection, please contact <a href=""mailto:martin.hammitzsch@gfz-potsdam.de"" target=""_blank"">Martin Hammitzsch</a> or <a href=""mailto:janosch@mpi-cbg.de&gt;"" target=""_blank"">Stephan Janosch</a>.</p>
 <p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.</p>"		en																																																																																																																																			
-SL		surveyls_endtext		"<p>Thank you for your participation. If you are interested in the outcomes of this survey, please keep an eye on the <a href=""http://rse.ac.uk/"" target=""_blank"">UKRSE</a> and the <a href=""http://www.de-RSE.org"" target=""_blank"">de-RSE</a> websites. You can also get updates by joining the <a href=""http://http://www.de-rse.org/en/join.html"" target=""_blank"">de-RSE</a>.</p>"		en																																																																																																																																			
+SL		surveyls_endtext		"<p>Thank you for your participation. If you are interested in the outcomes of this survey, please keep an eye on the <a href=""http://rse.ac.uk/"" target=""_blank"">UKRSE</a>.</p>"		en																																																																																																																																			
 SL		surveyls_email_invite_subj		Invitation to participate in a survey		en																																																																																																																																			
 SL		surveyls_email_invite		"Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: ""{SURVEYNAME}""  ""{SURVEYDESCRIPTION}""  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}"		en																																																																																																																																			
 SL		surveyls_email_remind_subj		Reminder to participate in a survey		en																																																																																																																																			
@@ -324,14 +323,15 @@ A	0	245		Equatorial Guinea		en
 A	0	246		Ethiopia		en																																																																																																																																			
 A	0	247		Åland Islands		en																																																																																																																																			
 A	0	248		Austria		en																																																																																																																																			
-Q	!	edu1qde	((socio1.NAOK == 44))	What is the highest qualification you have obtained?		en			N		1																																																																																																							1						1																	
+Q	Y	rse1		Do you write software for academic research as part of your job		en			N		1																																																																																																							1																							
+Q	!	edu1qde	((socio1.NAOK == 44))	What is the highest level of education you have attained?		en			N		1																																																																																																							1						1																	
 A	0	1		GSCEs		en																																																																																																																																			
 A	0	2		Final secondary-school examinations, general qualification for university entrance		en																																																																																																																																			
 A	0	3		Undergraduate degree		en																																																																																																																																			
 A	0	4		Master degree		en																																																																																																																																			
 A	0	5		Doctorate		en																																																																																																																																			
 A	0	6		None		en																																																																																																																																			
-Q	!	edu1qnl	((socio1.NAOK == 152))	What is the highest qualification you have obtained?		en			N		1																																																																																																							1						1																	
+Q	!	edu1qnl	((socio1.NAOK == 152))	What is the highest level of education you have attained?		en			N		1																																																																																																							1						1																	
 A	0	1		None		en																																																																																																																																			
 A	0	2		High-school diploma		en																																																																																																																																			
 A	0	3		MBO (Middelbaar beroepsonderwijs)		en																																																																																																																																			
@@ -340,7 +340,7 @@ A	0	5		HBO (Hoger beroepsonderwijs) Master		en
 A	0	6		WO (Wetenschappelijk onderwijs) Bachelor		en																																																																																																																																			
 A	0	7		WO (Wetenschappelijk onderwijs) Master		en																																																																																																																																			
 A	0	8		PhD		en																																																																																																																																			
-Q	!	edu1quk	((socio1.NAOK == 237))	What is the highest qualification you have obtained?		en			N		1																																																																																																							1						1																	
+Q	!	edu1quk	((socio1.NAOK == 237))	What is the highest level of education you have attained?		en			N		1																																																																																																							1						1																	
 A	0	1		GSCEs		en																																																																																																																																			
 A	0	2		Further Education (NVQ A-Level, ...)		en																																																																																																																																			
 A	0	3		Undergraduate degree		en																																																																																																																																			
@@ -348,7 +348,7 @@ A	0	4		Master degree		en
 A	0	5		Doctorate		en																																																																																																																																			
 A	0	6		None		en																																																																																																																																			
 A	0	7		Other		en																																																																																																																																			
-Q	!	edu1qus	((socio1.NAOK == 236))	What is the highest qualification you have obtained?		en			N		1																																																																																																							1						1																	
+Q	!	edu1qus	((socio1.NAOK == 236))	What is the highest level of education you have attained?		en			N		1																																																																																																							1						1																	
 A	0	1		GSCEs		en																																																																																																																																			
 A	0	2		Further Education (NVQ A-Level, ...)		en																																																																																																																																			
 A	0	3		Undergraduate degree		en																																																																																																																																			
@@ -356,7 +356,7 @@ A	0	4		Master degree		en
 A	0	5		Doctorate		en																																																																																																																																			
 A	0	6		None		en																																																																																																																																			
 A	0	7		Other		en																																																																																																																																			
-Q	!	edu1qzaf	((socio1.NAOK == 210))	What is the highest qualification you have obtained?		en			N		1																																																																																																							1						1																	
+Q	!	edu1qzaf	((socio1.NAOK == 210))	What is the highest level of education you have attained?		en			N		1																																																																																																							1						1																	
 A	0	1		GSCEs		en																																																																																																																																			
 A	0	2		Further Education (NVQ A-Level, ...)		en																																																																																																																																			
 A	0	3		Undergraduate degree		en																																																																																																																																			
@@ -364,8 +364,32 @@ A	0	4		Master degree		en
 A	0	5		Doctorate		en																																																																																																																																			
 A	0	6		None		en																																																																																																																																			
 A	0	7		Other		en																																																																																																																																			
-Q	S	edu1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)))	What is the highest qualification you have obtained?		en			N																																																																																																																																
-Q	!	edu2		In which subject is your highest academic qualification?		en			N		1																																																																																																							1						1																	
+Q	!	edu1qnzl	((socio1.NAOK == 150))	What is the highest level of education you have attained?		en			N		1																																																																																																							1						1																	
+A	0	1		GSCEs		en																																																																																																																																			
+A	0	2		Further Education (NVQ A-Level, ...)		en																																																																																																																																			
+A	0	3		Undergraduate degree		en																																																																																																																																			
+A	0	4		Master degree		en																																																																																																																																			
+A	0	5		Doctorate		en																																																																																																																																			
+A	0	6		None		en																																																																																																																																			
+A	0	7		Other		en																																																																																																																																			
+Q	!	edu1qcan	((socio1.NAOK == 97))	What is the highest level of education you have attained?		en			N		1																																																																																																							1						1																	
+A	0	1		GSCEs		en																																																																																																																																			
+A	0	2		Further Education (NVQ A-Level, ...)		en																																																																																																																																			
+A	0	3		Undergraduate degree		en																																																																																																																																			
+A	0	4		Master degree		en																																																																																																																																			
+A	0	5		Doctorate		en																																																																																																																																			
+A	0	6		None		en																																																																																																																																			
+A	0	7		Other		en																																																																																																																																			
+Q	!	edu1qaus	((socio1.NAOK == 15))	What is the highest level of education you have attained?		en			N		1																																																																																																							1						1																	
+A	0	1		GSCEs		en																																																																																																																																			
+A	0	2		Further Education (NVQ A-Level, ...)		en																																																																																																																																			
+A	0	3		Undergraduate degree		en																																																																																																																																			
+A	0	4		Master degree		en																																																																																																																																			
+A	0	5		Doctorate		en																																																																																																																																			
+A	0	6		None		en																																																																																																																																			
+A	0	7		Other		en																																																																																																																																			
+Q	S	edu1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 150)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 97)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 15)))	What is the highest level of education you have attained?		en			N																																																																																																																																
+Q	!	edu2		In which discipline is your highest academic qualification?		en			N		1																																																																																																							1						1																	
 A	0	1		Accounting & Finance		en																																																																																																																																			
 A	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
 A	0	3		Agriculture & Forestry		en																																																																																																																																			
@@ -431,8 +455,8 @@ A	0	62		Theology & Religious Studies		en
 A	0	63		Town & Country Planning and Landscape Design		en																																																																																																																																			
 A	0	64		Veterinary Medicine		en																																																																																																																																			
 A	0	65		Youth Work		en																																																																																																																																			
-Q	S	edu4		Do you hold any other professional qualifications?		en			N																																																																																																																																
-Q	Y	rse4de		Does the majority of your role comprise leading a group of software developers or RSEs?		en			N		1																																																																																																							1																							
+Q	S	edu4		List any professional qualifications you hold (eg. P. Eng, PMP, …)?		en			N																																																																																																																																
+Q	Y	rse4de	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	Does the majority of your role comprise leading a group of software developers or RSEs?		en			N		1																																																																																																							1																							
 Q	F	rse3		Who uses the code that you write?		en			N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		0 - Mostly me		en																																																																																																																																			
@@ -444,16 +468,16 @@ A	0	6		5 - Mostly other people		en
 Q	Y	soft2can		Do you consider yourself a professional software developer?		en			N		1																																																																																																							1																							
 Q	N	soft1can		How many years of software development experience do you have?		en			N			1																																																																																																							1																						
 Q	F	likert0				en			N		1																																																																																																							1																							
-SQ	0	time1can	1	In an average month, how much time do you spend on software development		en																																																																																																																																			
-SQ	0	time2can	1	In an average month, how much time do you spend on research		en																																																																																																																																			
-SQ	0	time3can	1	In an average month, how much time do you spend on management		en																																																																																																																																			
-SQ	0	time4can	1	In an average month, how much time do you spend on teaching		en																																																																																																																																			
-SQ	0	time5can	1	In an average month, how much time do you spend on other activities		en																																																																																																																																			
-SQ	0	time6zaf	1	In an average month, how much time would you like to spend on software development?		en																																																																																																																																			
-SQ	0	time7zaf	1	In an average month, how much time would you like to spend on research		en																																																																																																																																			
-SQ	0	time8zaf	1	In an average month, how much time would you like to spend on management		en																																																																																																																																			
-SQ	0	time9zaf	1	In an average month, how much time would you like to spend on teaching		en																																																																																																																																			
-SQ	0	time10zaf	1	In an average month, how much time would you like to spend on other activities		en																																																																																																																																			
+SQ	0	time1can	1	On average, what percentage of your time is spent developing software?		en																																																																																																																																			
+SQ	0	time2can	1	On average, what percentage of your time is spent on research		en																																																																																																																																			
+SQ	0	time3can	1	On average, what percentage of your time is spent on management		en																																																																																																																																			
+SQ	0	time4can	1	On average, what percentage of your time is spent on teaching		en																																																																																																																																			
+SQ	0	time5can	1	On average, what percentage of your time is spent on other activities		en																																																																																																																																			
+SQ	0	timeLike6zaf	1	In an average month, how much time would you like to spend on software development?		en																																																																																																																																			
+SQ	0	timeLike7zaf	1	In an average month, how much time would you like to spend on research		en																																																																																																																																			
+SQ	0	timeLike8zaf	1	In an average month, how much time would you like to spend on management		en																																																																																																																																			
+SQ	0	timeLie9zaf	1	In an average month, how much time would you like to spend on teaching		en																																																																																																																																			
+SQ	0	timeLike10zaf	1	In an average month, how much time would you like to spend on other activities		en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
@@ -465,16 +489,7 @@ A	0	8		8		en
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
 G	G1	Your current employment	1			en																																																																																																																																			
-Q	!	currentEmp1qde	((socio1.NAOK == 44))	What type of organisation do you work for?		en			N		1																																																																																																							1						1																	
-A	0	1		University		en																																																																																																																																			
-A	0	2		University of Applied Sciences		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Fraunhofer Society		en																																																																																																																																			
-A	0	6		Helmholtz Association of German Research Centres		en																																																																																																																																			
-A	0	7		Leibniz Association		en																																																																																																																																			
-A	0	8		Max Planck Society		en																																																																																																																																			
-Q	!	currentEmp1	((socio1.NAOK == 152) AND (socio1.NAOK == 237) AND (socio1.NAOK == 236) AND (socio1.NAOK == 210))	What type of organisation do you work for?		en			N		1																																																																																																							1						1																	
+Q	!	currentEmp1		Please select your organization type		en			N		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Research Institute		en																																																																																																																																			
 A	0	3		Private Company		en																																																																																																																																			
@@ -482,9 +497,7 @@ A	0	4		Government		en
 A	0	5		Other non-profit		en																																																																																																																																			
 A	0	6		Research council		en																																																																																																																																			
 A	0	7		Start-up		en																																																																																																																																			
-Q	S	currentEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)))	What type of organisation do you work for?		en			N																																																																																																																																
-Q	S	currentEmp20	((socio1.NAOK == 44) AND (socio1.NAOK == 152) AND (socio1.NAOK == 237) AND (socio1.NAOK == 236) AND (socio1.NAOK == 210))	Which company do you work for?		en			N																																																																																																																																
-Q	S	currentEmp20qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)))	Which company do you work for?		en			N																																																																																																																																
+Q	S	currentEmp20	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	Which company do you work for?		en			N																																																																																																																																
 Q	!	currentEmp2qde	((currentEmp1.NAOK == 1) AND (socio1.NAOK == 44))	Which university do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		Abraham Geiger College		en																																																																																																																																			
 A	0	2		University of Freiburg		en																																																																																																																																			
@@ -1944,7 +1957,311 @@ A	0	24		University of Zululand		en
 A	0	25		Vaal University of Technology		en																																																																																																																																			
 A	0	26		Walter Sisulu University		en																																																																																																																																			
 A	0	27		Other		en																																																																																																																																			
-Q	S	currentEmp2qworld	((currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)))	Which university do you work for?		en			N																																																																																																																																
+Q	!	currentEmp2qnzl	((currentEmp1.NAOK == 1) AND (socio1.NAOK == 150))	Which university do you work for?		en			Y		1																																																																																																							1						1																	
+A	0	1		University of Aberdeen		en																																																																																																																																			
+A	0	2		Abertay University		en																																																																																																																																			
+A	0	3		Aberystwyth University		en																																																																																																																																			
+A	0	4		Anglia Ruskin University, Cambridge		en																																																																																																																																			
+A	0	5		The Arts University Bournemouth		en																																																																																																																																			
+A	0	6		University of the Arts London		en																																																																																																																																			
+A	0	7		Aston University, Birmingham		en																																																																																																																																			
+A	0	8		Bangor University		en																																																																																																																																			
+A	0	9		University of Bath		en																																																																																																																																			
+A	0	10		Bath Spa University		en																																																																																																																																			
+A	0	11		University of Bedfordshire, Luton and Bedford		en																																																																																																																																			
+A	0	12		Birkbeck, University of London		en																																																																																																																																			
+A	0	13		University of Birmingham		en																																																																																																																																			
+A	0	14		Birmingham City University		en																																																																																																																																			
+A	0	15		University College Birmingham		en																																																																																																																																			
+A	0	16		Bishop Grosseteste University		en																																																																																																																																			
+A	0	17		University Centre at Blackburn College, Blackburn		en																																																																																																																																			
+A	0	18		University of Bolton		en																																																																																																																																			
+A	0	19		Bournemouth University		en																																																																																																																																			
+A	0	20		BPP University		en																																																																																																																																			
+A	0	21		University of Bradford		en																																																																																																																																			
+A	0	22		University of Brighton		en																																																																																																																																			
+A	0	23		University of Bristol		en																																																																																																																																			
+A	0	24		Brunel University, Uxbridge and London		en																																																																																																																																			
+A	0	25		University of Buckingham		en																																																																																																																																			
+A	0	26		Buckinghamshire New University, High Wycombe		en																																																																																																																																			
+A	0	27		University of Cambridge		en																																																																																																																																			
+A	0	28		Institute of Cancer Research		en																																																																																																																																			
+A	0	29		Canterbury Christ Church University, Canterbury, Thanet, Tunbridge Wells and Chatham		en																																																																																																																																			
+A	0	30		Cardiff University		en																																																																																																																																			
+A	0	31		Cardiff Metropolitan University (UWIC)		en																																																																																																																																			
+A	0	32		University of Central Lancashire, Preston and Burnley		en																																																																																																																																			
+A	0	33		University of Chester, Chester and Warrington		en																																																																																																																																			
+A	0	34		University of Chichester		en																																																																																																																																			
+A	0	35		City University London		en																																																																																																																																			
+A	0	36		Courtauld Institute of Art		en																																																																																																																																			
+A	0	37		Coventry University		en																																																																																																																																			
+A	0	38		Cranfield University, Cranfield, and Shrivenham		en																																																																																																																																			
+A	0	39		University for the Creative Arts, Canterbury, Epsom, Farnham, Maidstone and Rochester		en																																																																																																																																			
+A	0	40		University of Cumbria, Carlisle (main campus), London, Penrith and Ambleside		en																																																																																																																																			
+A	0	41		De Montfort University, Leicester		en																																																																																																																																			
+A	0	42		University of Derby		en																																																																																																																																			
+A	0	43		University of Dundee		en																																																																																																																																			
+A	0	44		Durham University, Durham and Stockton-on-Tees (Queen's Campus)		en																																																																																																																																			
+A	0	45		University of East Anglia, Norwich		en																																																																																																																																			
+A	0	46		University of East London		en																																																																																																																																			
+A	0	47		Edge Hill University, Ormskirk, Lancashire		en																																																																																																																																			
+A	0	48		University of Edinburgh		en																																																																																																																																			
+A	0	49		Edinburgh Napier University		en																																																																																																																																			
+A	0	50		University of Essex, Colchester and Southend-on-Sea		en																																																																																																																																			
+A	0	51		University of Exeter		en																																																																																																																																			
+A	0	52		Falmouth University		en																																																																																																																																			
+A	0	53		University of Glasgow		en																																																																																																																																			
+A	0	54		Glasgow Caledonian University		en																																																																																																																																			
+A	0	55		University of Gloucestershire, Cheltenham, Gloucester and London		en																																																																																																																																			
+A	0	56		Goldsmiths, University of London		en																																																																																																																																			
+A	0	57		University of Greenwich		en																																																																																																																																			
+A	0	58		Glyndŵr University, Wrexham		en																																																																																																																																			
+A	0	59		Harper Adams University, Newport, Shropshire		en																																																																																																																																			
+A	0	60		Heriot-Watt University, Edinburgh and Galashiels		en																																																																																																																																			
+A	0	61		University of Hertfordshire, Hatfield		en																																																																																																																																			
+A	0	62		Heythrop College		en																																																																																																																																			
+A	0	63		University of the Highlands & Islands, Inverness (main campus), Elgin, Perth & across north and western Scotland		en																																																																																																																																			
+A	0	64		University of Huddersfield, Huddersfield & Barnsley		en																																																																																																																																			
+A	0	65		University of Hull, Hull and Scarborough		en																																																																																																																																			
+A	0	66		Imperial College London		en																																																																																																																																			
+A	0	67		Keele University, Staffordshire		en																																																																																																																																			
+A	0	68		University of Kent, Canterbury and Medway		en																																																																																																																																			
+A	0	69		King's College London		en																																																																																																																																			
+A	0	70		Kingston University		en																																																																																																																																			
+A	0	71		Lancaster University		en																																																																																																																																			
+A	0	72		University of Law		en																																																																																																																																			
+A	0	73		University of Leeds		en																																																																																																																																			
+A	0	74		Leeds Beckett University		en																																																																																																																																			
+A	0	75		Leeds Trinity University		en																																																																																																																																			
+A	0	76		University of Leicester		en																																																																																																																																			
+A	0	77		University of Lincoln, Lincoln, Hull, Riseholme and Holbeach		en																																																																																																																																			
+A	0	78		University of Liverpool		en																																																																																																																																			
+A	0	79		Liverpool Hope University		en																																																																																																																																			
+A	0	80		Liverpool John Moores University		en																																																																																																																																			
+A	0	81		University College London (UCL)		en																																																																																																																																			
+A	0	82		London Business School		en																																																																																																																																			
+A	0	83		London School of Economics and Political Science (LSE)		en																																																																																																																																			
+A	0	84		London School of Hygiene and Tropical Medicine		en																																																																																																																																			
+A	0	85		University of London Institute in Paris		en																																																																																																																																			
+A	0	86		University of London International Programmes (Distance Learning)		en																																																																																																																																			
+A	0	87		London Metropolitan University		en																																																																																																																																			
+A	0	88		London South Bank University		en																																																																																																																																			
+A	0	89		Loughborough University		en																																																																																																																																			
+A	0	90		University of Manchester		en																																																																																																																																			
+A	0	91		Manchester Metropolitan University		en																																																																																																																																			
+A	0	92		University Marine Biological Station, Millport		en																																																																																																																																			
+A	0	93		Middlesex University, London		en																																																																																																																																			
+A	0	94		Newcastle University		en																																																																																																																																			
+A	0	95		Newman University, Birmingham		en																																																																																																																																			
+A	0	96		University of Northampton		en																																																																																																																																			
+A	0	97		Northumbria University, Newcastle upon Tyne		en																																																																																																																																			
+A	0	98		Norwich University of the Arts		en																																																																																																																																			
+A	0	99		University of Nottingham		en																																																																																																																																			
+A	0	100		Nottingham Trent University		en																																																																																																																																			
+A	0	101		The Open University, Milton Keynes		en																																																																																																																																			
+A	0	102		University of Oxford		en																																																																																																																																			
+A	0	103		Oxford Brookes University		en																																																																																																																																			
+A	0	104		University of Plymouth		en																																																																																																																																			
+A	0	105		University of Portsmouth		en																																																																																																																																			
+A	0	106		Queen's University Belfast		en																																																																																																																																			
+A	0	107		Queen Margaret University, Edinburgh		en																																																																																																																																			
+A	0	108		Queen Mary, University of London		en																																																																																																																																			
+A	0	109		University of Reading		en																																																																																																																																			
+A	0	110		Regent's University London		en																																																																																																																																			
+A	0	111		The Robert Gordon University, Aberdeen		en																																																																																																																																			
+A	0	112		Roehampton University, London		en																																																																																																																																			
+A	0	113		Royal Academy of Music		en																																																																																																																																			
+A	0	114		Royal Agricultural University, Cirencester		en																																																																																																																																			
+A	0	115		Royal Central School of Speech and Drama		en																																																																																																																																			
+A	0	116		Royal College of Art, London		en																																																																																																																																			
+A	0	117		Royal Holloway, University of London, Egham		en																																																																																																																																			
+A	0	118		Royal Veterinary College		en																																																																																																																																			
+A	0	119		University of St Andrews		en																																																																																																																																			
+A	0	120		St George's, University of London		en																																																																																																																																			
+A	0	121		University of St Mark & St John, Plymouth		en																																																																																																																																			
+A	0	122		St Mary's University, Twickenham		en																																																																																																																																			
+A	0	123		University of Salford		en																																																																																																																																			
+A	0	124		School of Advanced Study		en																																																																																																																																			
+A	0	125		School of Oriental and African Studies (SOAS)		en																																																																																																																																			
+A	0	126		University of Sheffield		en																																																																																																																																			
+A	0	127		Sheffield Hallam University		en																																																																																																																																			
+A	0	128		University of Southampton		en																																																																																																																																			
+A	0	129		Southampton Solent University		en																																																																																																																																			
+A	0	130		University of South Wales		en																																																																																																																																			
+A	0	131		Staffordshire University, Stoke-on-Trent, Stafford and Lichfield		en																																																																																																																																			
+A	0	132		University of Stirling, Bridge of Allan		en																																																																																																																																			
+A	0	133		University of Strathclyde		en																																																																																																																																			
+A	0	134		University of Strathclyde, Glasgow		en																																																																																																																																			
+A	0	135		University of Sunderland		en																																																																																																																																			
+A	0	136		University of Surrey, Guildford		en																																																																																																																																			
+A	0	137		University of Sussex, Falmer and Brighton		en																																																																																																																																			
+A	0	138		Swansea University		en																																																																																																																																			
+A	0	139		Teesside University, Middlesbrough and Darlington		en																																																																																																																																			
+A	0	140		Ulster University, Coleraine, Jordanstown, Magee and Belfast		en																																																																																																																																			
+A	0	141		University of Wales, Trinity Saint David		en																																																																																																																																			
+A	0	142		University of Warwick, Coventry		en																																																																																																																																			
+A	0	143		University of West London, Ealing and Brentford		en																																																																																																																																			
+A	0	144		University of Westminster, London		en																																																																																																																																			
+A	0	145		University of the West of England, Bristol		en																																																																																																																																			
+A	0	146		University of the West of Scotland, Paisley, Hamilton, Ayr & Dumfries		en																																																																																																																																			
+A	0	147		University of Winchester		en																																																																																																																																			
+A	0	148		University of Wolverhampton		en																																																																																																																																			
+A	0	149		University of Worcester		en																																																																																																																																			
+A	0	150		University of York		en																																																																																																																																			
+A	0	151		York St John University		en																																																																																																																																			
+Q	!	currentEmp2qaus	((currentEmp1.NAOK == 1) AND (socio1.NAOK == 15))	Which university do you work for?		en			Y		1																																																																																																							1						1																	
+A	0	1		University of Aberdeen		en																																																																																																																																			
+A	0	2		Abertay University		en																																																																																																																																			
+A	0	3		Aberystwyth University		en																																																																																																																																			
+A	0	4		Anglia Ruskin University, Cambridge		en																																																																																																																																			
+A	0	5		The Arts University Bournemouth		en																																																																																																																																			
+A	0	6		University of the Arts London		en																																																																																																																																			
+A	0	7		Aston University, Birmingham		en																																																																																																																																			
+A	0	8		Bangor University		en																																																																																																																																			
+A	0	9		University of Bath		en																																																																																																																																			
+A	0	10		Bath Spa University		en																																																																																																																																			
+A	0	11		University of Bedfordshire, Luton and Bedford		en																																																																																																																																			
+A	0	12		Birkbeck, University of London		en																																																																																																																																			
+A	0	13		University of Birmingham		en																																																																																																																																			
+A	0	14		Birmingham City University		en																																																																																																																																			
+A	0	15		University College Birmingham		en																																																																																																																																			
+A	0	16		Bishop Grosseteste University		en																																																																																																																																			
+A	0	17		University Centre at Blackburn College, Blackburn		en																																																																																																																																			
+A	0	18		University of Bolton		en																																																																																																																																			
+A	0	19		Bournemouth University		en																																																																																																																																			
+A	0	20		BPP University		en																																																																																																																																			
+A	0	21		University of Bradford		en																																																																																																																																			
+A	0	22		University of Brighton		en																																																																																																																																			
+A	0	23		University of Bristol		en																																																																																																																																			
+A	0	24		Brunel University, Uxbridge and London		en																																																																																																																																			
+A	0	25		University of Buckingham		en																																																																																																																																			
+A	0	26		Buckinghamshire New University, High Wycombe		en																																																																																																																																			
+A	0	27		University of Cambridge		en																																																																																																																																			
+A	0	28		Institute of Cancer Research		en																																																																																																																																			
+A	0	29		Canterbury Christ Church University, Canterbury, Thanet, Tunbridge Wells and Chatham		en																																																																																																																																			
+A	0	30		Cardiff University		en																																																																																																																																			
+A	0	31		Cardiff Metropolitan University (UWIC)		en																																																																																																																																			
+A	0	32		University of Central Lancashire, Preston and Burnley		en																																																																																																																																			
+A	0	33		University of Chester, Chester and Warrington		en																																																																																																																																			
+A	0	34		University of Chichester		en																																																																																																																																			
+A	0	35		City University London		en																																																																																																																																			
+A	0	36		Courtauld Institute of Art		en																																																																																																																																			
+A	0	37		Coventry University		en																																																																																																																																			
+A	0	38		Cranfield University, Cranfield, and Shrivenham		en																																																																																																																																			
+A	0	39		University for the Creative Arts, Canterbury, Epsom, Farnham, Maidstone and Rochester		en																																																																																																																																			
+A	0	40		University of Cumbria, Carlisle (main campus), London, Penrith and Ambleside		en																																																																																																																																			
+A	0	41		De Montfort University, Leicester		en																																																																																																																																			
+A	0	42		University of Derby		en																																																																																																																																			
+A	0	43		University of Dundee		en																																																																																																																																			
+A	0	44		Durham University, Durham and Stockton-on-Tees (Queen's Campus)		en																																																																																																																																			
+A	0	45		University of East Anglia, Norwich		en																																																																																																																																			
+A	0	46		University of East London		en																																																																																																																																			
+A	0	47		Edge Hill University, Ormskirk, Lancashire		en																																																																																																																																			
+A	0	48		University of Edinburgh		en																																																																																																																																			
+A	0	49		Edinburgh Napier University		en																																																																																																																																			
+A	0	50		University of Essex, Colchester and Southend-on-Sea		en																																																																																																																																			
+A	0	51		University of Exeter		en																																																																																																																																			
+A	0	52		Falmouth University		en																																																																																																																																			
+A	0	53		University of Glasgow		en																																																																																																																																			
+A	0	54		Glasgow Caledonian University		en																																																																																																																																			
+A	0	55		University of Gloucestershire, Cheltenham, Gloucester and London		en																																																																																																																																			
+A	0	56		Goldsmiths, University of London		en																																																																																																																																			
+A	0	57		University of Greenwich		en																																																																																																																																			
+A	0	58		Glyndŵr University, Wrexham		en																																																																																																																																			
+A	0	59		Harper Adams University, Newport, Shropshire		en																																																																																																																																			
+A	0	60		Heriot-Watt University, Edinburgh and Galashiels		en																																																																																																																																			
+A	0	61		University of Hertfordshire, Hatfield		en																																																																																																																																			
+A	0	62		Heythrop College		en																																																																																																																																			
+A	0	63		University of the Highlands & Islands, Inverness (main campus), Elgin, Perth & across north and western Scotland		en																																																																																																																																			
+A	0	64		University of Huddersfield, Huddersfield & Barnsley		en																																																																																																																																			
+A	0	65		University of Hull, Hull and Scarborough		en																																																																																																																																			
+A	0	66		Imperial College London		en																																																																																																																																			
+A	0	67		Keele University, Staffordshire		en																																																																																																																																			
+A	0	68		University of Kent, Canterbury and Medway		en																																																																																																																																			
+A	0	69		King's College London		en																																																																																																																																			
+A	0	70		Kingston University		en																																																																																																																																			
+A	0	71		Lancaster University		en																																																																																																																																			
+A	0	72		University of Law		en																																																																																																																																			
+A	0	73		University of Leeds		en																																																																																																																																			
+A	0	74		Leeds Beckett University		en																																																																																																																																			
+A	0	75		Leeds Trinity University		en																																																																																																																																			
+A	0	76		University of Leicester		en																																																																																																																																			
+A	0	77		University of Lincoln, Lincoln, Hull, Riseholme and Holbeach		en																																																																																																																																			
+A	0	78		University of Liverpool		en																																																																																																																																			
+A	0	79		Liverpool Hope University		en																																																																																																																																			
+A	0	80		Liverpool John Moores University		en																																																																																																																																			
+A	0	81		University College London (UCL)		en																																																																																																																																			
+A	0	82		London Business School		en																																																																																																																																			
+A	0	83		London School of Economics and Political Science (LSE)		en																																																																																																																																			
+A	0	84		London School of Hygiene and Tropical Medicine		en																																																																																																																																			
+A	0	85		University of London Institute in Paris		en																																																																																																																																			
+A	0	86		University of London International Programmes (Distance Learning)		en																																																																																																																																			
+A	0	87		London Metropolitan University		en																																																																																																																																			
+A	0	88		London South Bank University		en																																																																																																																																			
+A	0	89		Loughborough University		en																																																																																																																																			
+A	0	90		University of Manchester		en																																																																																																																																			
+A	0	91		Manchester Metropolitan University		en																																																																																																																																			
+A	0	92		University Marine Biological Station, Millport		en																																																																																																																																			
+A	0	93		Middlesex University, London		en																																																																																																																																			
+A	0	94		Newcastle University		en																																																																																																																																			
+A	0	95		Newman University, Birmingham		en																																																																																																																																			
+A	0	96		University of Northampton		en																																																																																																																																			
+A	0	97		Northumbria University, Newcastle upon Tyne		en																																																																																																																																			
+A	0	98		Norwich University of the Arts		en																																																																																																																																			
+A	0	99		University of Nottingham		en																																																																																																																																			
+A	0	100		Nottingham Trent University		en																																																																																																																																			
+A	0	101		The Open University, Milton Keynes		en																																																																																																																																			
+A	0	102		University of Oxford		en																																																																																																																																			
+A	0	103		Oxford Brookes University		en																																																																																																																																			
+A	0	104		University of Plymouth		en																																																																																																																																			
+A	0	105		University of Portsmouth		en																																																																																																																																			
+A	0	106		Queen's University Belfast		en																																																																																																																																			
+A	0	107		Queen Margaret University, Edinburgh		en																																																																																																																																			
+A	0	108		Queen Mary, University of London		en																																																																																																																																			
+A	0	109		University of Reading		en																																																																																																																																			
+A	0	110		Regent's University London		en																																																																																																																																			
+A	0	111		The Robert Gordon University, Aberdeen		en																																																																																																																																			
+A	0	112		Roehampton University, London		en																																																																																																																																			
+A	0	113		Royal Academy of Music		en																																																																																																																																			
+A	0	114		Royal Agricultural University, Cirencester		en																																																																																																																																			
+A	0	115		Royal Central School of Speech and Drama		en																																																																																																																																			
+A	0	116		Royal College of Art, London		en																																																																																																																																			
+A	0	117		Royal Holloway, University of London, Egham		en																																																																																																																																			
+A	0	118		Royal Veterinary College		en																																																																																																																																			
+A	0	119		University of St Andrews		en																																																																																																																																			
+A	0	120		St George's, University of London		en																																																																																																																																			
+A	0	121		University of St Mark & St John, Plymouth		en																																																																																																																																			
+A	0	122		St Mary's University, Twickenham		en																																																																																																																																			
+A	0	123		University of Salford		en																																																																																																																																			
+A	0	124		School of Advanced Study		en																																																																																																																																			
+A	0	125		School of Oriental and African Studies (SOAS)		en																																																																																																																																			
+A	0	126		University of Sheffield		en																																																																																																																																			
+A	0	127		Sheffield Hallam University		en																																																																																																																																			
+A	0	128		University of Southampton		en																																																																																																																																			
+A	0	129		Southampton Solent University		en																																																																																																																																			
+A	0	130		University of South Wales		en																																																																																																																																			
+A	0	131		Staffordshire University, Stoke-on-Trent, Stafford and Lichfield		en																																																																																																																																			
+A	0	132		University of Stirling, Bridge of Allan		en																																																																																																																																			
+A	0	133		University of Strathclyde		en																																																																																																																																			
+A	0	134		University of Strathclyde, Glasgow		en																																																																																																																																			
+A	0	135		University of Sunderland		en																																																																																																																																			
+A	0	136		University of Surrey, Guildford		en																																																																																																																																			
+A	0	137		University of Sussex, Falmer and Brighton		en																																																																																																																																			
+A	0	138		Swansea University		en																																																																																																																																			
+A	0	139		Teesside University, Middlesbrough and Darlington		en																																																																																																																																			
+A	0	140		Ulster University, Coleraine, Jordanstown, Magee and Belfast		en																																																																																																																																			
+A	0	141		University of Wales, Trinity Saint David		en																																																																																																																																			
+A	0	142		University of Warwick, Coventry		en																																																																																																																																			
+A	0	143		University of West London, Ealing and Brentford		en																																																																																																																																			
+A	0	144		University of Westminster, London		en																																																																																																																																			
+A	0	145		University of the West of England, Bristol		en																																																																																																																																			
+A	0	146		University of the West of Scotland, Paisley, Hamilton, Ayr & Dumfries		en																																																																																																																																			
+A	0	147		University of Winchester		en																																																																																																																																			
+A	0	148		University of Wolverhampton		en																																																																																																																																			
+A	0	149		University of Worcester		en																																																																																																																																			
+A	0	150		University of York		en																																																																																																																																			
+A	0	151		York St John University		en																																																																																																																																			
+Q	S	currentEmp2qworld	((currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 150)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 97)) AND (currentEmp1.NAOK == 1) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 15)))	Which university do you work for?		en			N																																																																																																																																
 Q	!	currentEmp20deqde	((currentEmp1.NAOK == None) AND (socio1.NAOK == 44))	Which Fraunhofer institute do you work for?		en			N		1																																																																																																							1						1																	
 A	0	1		Fraunhofer Information Center for Planning and Building		en																																																																																																																																			
 A	0	2		Fraunhofer Institute for Algorithms and Scientific Computing		en																																																																																																																																			
@@ -2301,12 +2618,12 @@ A	0	109		Touro College Berlin		en
 A	0	110		Environment Campus Birkenfeld		en																																																																																																																																			
 A	0	111		Westsächsische Hochschule Zwickau - University of Applied Sciences		en																																																																																																																																			
 A	0	112		Wildau Institute of Technology		en																																																																																																																																			
-Q	S	currentEmp5		What is your official job title?		en			N																																																																																																																																
-Q	S	currentEmp6		Are you known in your group by a different job title? If so, please enter the job title you use		en			N																																																																																																																																
-Q	!	currentEmp12		Do you work full time or part time		en			N		1																																																																																																							1						1																	
+Q	S	currentEmp5	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	What is your official job title?		en			N																																																																																																																																
+Q	S	currentEmp6	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	Are you known in your group by a different job title? If so, please enter the job title you use		en			N																																																																																																																																
+Q	!	currentEmp12	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	Do you work full time or part time		en			N		1																																																																																																							1						1																	
 A	0	1		Full Time		en																																																																																																																																			
 A	0	2		Part-time		en																																																																																																																																			
-Q	!	currentEmp10		What type of contract are you employed on?		en			N		1																																																																																																							1						1																	
+Q	!	currentEmp10		What is the nature of your current employment?		en			N		1																																																																																																							1						1																	
 A	0	1		Permanent -- funded by Institution core funding		en																																																																																																																																			
 A	0	2		Permanent -- as long as funding is available		en																																																																																																																																			
 A	0	3		Fixed term -- funded by Institution core funding		en																																																																																																																																			
@@ -2315,9 +2632,9 @@ A	0	5		Research/Student Assistant		en
 A	0	6		Agency staff		en																																																																																																																																			
 A	0	7		Freelancer consultant contractor		en																																																																																																																																			
 A	0	8		Zero hours contract		en																																																																																																																																			
-Q	D	currentEmp9		When did you start your current contract?		en			N		1																					1																																																																																		1																							
-Q	N	currentEmp11		What is the duration (in years) of your current contract?		en			N			1																																																																																																							1																						
-Q	M	currentEmp13		In which disciplines do you work (select as many as apply)		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	D	currentEmp9	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	When did you start your current contract?		en			N		1																					1																																																																																		1																							
+Q	N	currentEmp11	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	What is the duration (in years) of your current contract?		en			N			1																																																																																																							1																						
+Q	M	currentEmp13		Please select the discipline in which you work. Please select all that apply.		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		Accounting & Finance		en																																																																																																																																			
 SQ	0	SQ002		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
 SQ	0	SQ003		Agriculture & Forestry		en																																																																																																																																			
@@ -2393,7 +2710,7 @@ A	0	5		Fraunhofer Society		en
 A	0	6		Helmholtz Association of German Research Centres		en																																																																																																																																			
 A	0	7		Leibniz Association		en																																																																																																																																			
 A	0	8		Max Planck Society		en																																																																																																																																			
-Q	!	prevEmp1	((socio1.NAOK == 152) AND (socio1.NAOK == 237) AND (socio1.NAOK == 236) AND (socio1.NAOK == 210))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1	((socio1.NAOK == 152) AND (socio1.NAOK == 237) AND (socio1.NAOK == 236) AND (socio1.NAOK == 210) AND (socio1.NAOK == 150) AND (socio1.NAOK == 15))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Research Institute		en																																																																																																																																			
 A	0	3		Private Company		en																																																																																																																																			
@@ -2401,8 +2718,8 @@ A	0	4		Government		en
 A	0	5		Other non-profit		en																																																																																																																																			
 A	0	6		Research council		en																																																																																																																																			
 A	0	7		Start-up		en																																																																																																																																			
-Q	S	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)))	Where was your previous job based?		en			N																																																																																																																																
-Q	R	prevEmp2		Rank the following factors dependent on how strongly they influenced your decision to accept your current position		en			N		1																																																								5																									1	1						1															1																							
+Q	S	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 150)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 97)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 15)))	Where was your previous job based?		en			N																																																																																																																																
+Q	R	prevEmp2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	Rank the following factors dependent on how strongly they influenced your decision to accept your current position		en			N		1																																																								5																									1	1						1															1																							
 SQ	0	1	1	Rank1		en																																																																																																																																			
 SQ	0	2	1	Rank2		en																																																																																																																																			
 SQ	0	3	1	Rank3		en																																																																																																																																			
@@ -2424,7 +2741,7 @@ G	G3	Your working practices	1			en
 Q	!	currentWork1		Do you always work with the same researchers, or do you regularly change the researchers you work with? 		en			N		1																																																																																																							1						1																	
 A	0	1		Same researcher(s)		en																																																																																																																																			
 A	0	2		Regularly change researcher(s)		en																																																																																																																																			
-Q	Y	currentWork2		Do you work for a Research Software Group?		en			N		1																																																																																																							1																							
+Q	Y	currentWork2		Are you part of a dedicated research software group within your institution?		en			N		1																																																																																																							1																							
 Q	Y	paper1		Has your software contributed to research that has been published (in a journal or at conference)?		en			N		1																																																																																																							1																							
 Q	!	paper2mod	((paper1.NAOK == Y))	In general, when your software contributes to a paper, are you acknowledged in that paper?		en			N		1																																																																																																							1						1																	
 A	0	1		Not mentioned at all		en																																																																																																																																			
@@ -2432,16 +2749,23 @@ A	0	2		Acknowledged in the main text		en
 A	0	3		Named as co-author		en																																																																																																																																			
 A	0	4		Named as main author		en																																																																																																																																			
 Q	Y	conf1can		Have you presented your software work at a conference or workshop?		en			N		1																																																																																																							1																							
-Q	S	conf2can	((conf2can.NAOK == Y))	Which conference or workshop? (Please comma separate and state full name or acronym)		en			N																																																																																																																																
+Q	S	conf2can	((conf2can.NAOK == Y))	At which conference(s)/workshop(s) have you presented your software work?		en			N																																																																																																																																
 Q	N	proj1can		How many software projects are you currently involved in?		en			N			1																																																																																																							1																						
 Q	N	proj2can		How many software developers typically work on your projects?		en			N			1																																																																																																							1																						
-Q	N	stability1		What is the bus factor of your most important software project?		en			N			1																																																																																																							1																						
-Q	Y	stability2		Is there a technical hand-over plan for your most important software project?		en			N		1																																																																																																							1																							
-Q	M	proj4can		In general, what sort of testing do you conduct on your software? (check all that apply) 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	N	proj7can	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 150)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 15)))	What percentage of these developers are dedicated to the project full time?		en			N			1																																																																																																							1																						
+Q	Y	proj8can	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 150)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 97)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 15)))	Do your research software projects typically include a project manager?		en			N		1																																																																																																							1																							
+Q	N	stability1	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	What is the bus factor of your most important software project?		en			N			1																																																																																																							1																						
+Q	Y	stability2		Do the projects you work on typically have a plan to cope with developers leaving the group?		en			N		1																																																																																																							1																							
+Q	M	proj4can		How are your projects typically tested? Please check all that apply.		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		No formal testing		en																																																																																																																																			
 SQ	0	SQ002		No formal testing but users provide feedback		en																																																																																																																																			
 SQ	0	SQ003		Developers conduct testing		en																																																																																																																																			
 SQ	0	SQ004		Test engineers conduct testing		en																																																																																																																																			
+Q	!	proj5can	((!is_empty(socio1.NAOK) and (socio1.NAOK != 44)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 152)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 237)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 210)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 150)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 15)))	What development methodology does your current project use?		en			N		1																																																																																																							1						1																	
+A	0	1		Waterfall		en																																																																																																																																			
+A	0	2		Scrum		en																																																																																																																																			
+A	0	3		Kaban		en																																																																																																																																			
+A	0	4		No formal methodology		en																																																																																																																																			
 Q	F	likert1				en			N		1																																																																																																							1																							
 SQ	0	open1can	1	How often do you use an open-source licence for your software?		en																																																																																																																																			
 SQ	0	open3can	1	How often do you associate your software with a Digital Object Identifier (DOI)? 		en																																																																																																																																			
@@ -2456,7 +2780,7 @@ A	0	8		8		en
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
 Q	S	open3de		Which tools do you use to mint a DOI (e.g. local library, Zenodo)?		en			N																																																																																																																																
-Q	!	open2de		How often do you reference software directly or the papers describing the software?		en			N		1																																																																																																							1						1																	
+Q	!	open2de	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	How often do you reference software directly or the papers describing the software?		en			N		1																																																																																																							1						1																	
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
@@ -2475,9 +2799,9 @@ SQ	0	SQ003		GIT		en
 SQ	0	SQ004		Mercurial		en																																																																																																																																			
 SQ	0	SQ005		None		en																																																																																																																																			
 Q	S	proj6zaf		Which online collaboration tools and open repositories do you use for software development?		en			N																																																																																																																																
-Q	N	train2		On average, how many times a year do you take part in providing training? 		en			N			1																																																																																																							1																						
-Q	S	train3	((train2.NAOK == Y))	What training programs are you involved with (comma separated list, e.g., Software Carpentry, local university training, etc.) 		en			N																																																																																																																																
-Q	M	fund2		Which of the following sources are used to pay for your effort as an RSE? 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	N	train2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	On average, how many times a year do you take part in providing training? 		en			N			1																																																																																																							1																						
+Q	S	train3	((train2.NAOK == Y) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	What training programs are you involved with (comma separated list, e.g., Software Carpentry, local university training, etc.) 		en			N																																																																																																																																
+Q	M	fund2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	Which of the following sources are used to pay for your effort as an RSE? 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		I volunteer my time		en																																																																																																																																			
 SQ	0	SQ002		Donation button		en																																																																																																																																			
 SQ	0	SQ003		Crowdfunding (one-time)		en																																																																																																																																			
@@ -2494,8 +2818,17 @@ SQ	0	SQ013		Open core		en
 SQ	0	SQ014		Foundations & consortiums		en																																																																																																																																			
 SQ	0	SQ015		Venture capital		en																																																																																																																																			
 SQ	0	SQ016		Trademark licensing & franchising		en																																																																																																																																			
+Q	!	fund1can	((socio1.NAOK == 97))	How is your current research software work funded?		en			N		1																																																																																																							1						1																	
+A	0	1		Employer		en																																																																																																																																			
+A	0	2		CANARIE		en																																																																																																																																			
+A	0	3		CFI		en																																																																																																																																			
+A	0	4		CIHR		en																																																																																																																																			
+A	0	5		Genome Canada		en																																																																																																																																			
+A	0	6		NSERC		en																																																																																																																																			
+A	0	7		SSHRC		en																																																																																																																																			
+A	0	8		Don't know		en																																																																																																																																			
 G	G4	Your perception of your current position	1			en																																																																																																																																			
-Q	F	likert2				en			N		1																																																																																																							1																							
+Q	F	likert2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))			en			N		1																																																																																																							1																							
 SQ	0	satisGen1	1	In general, how satisfied are you with your current position		en																																																																																																																																			
 SQ	0	satisGen2	1	In general, how satisfied are you with your career		en																																																																																																																																			
 A	0	1		﻿0 - Not at all satisfied		en																																																																																																																																			
@@ -2509,7 +2842,7 @@ A	0	8		7		en
 A	0	9		8		en																																																																																																																																			
 A	0	10		9		en																																																																																																																																			
 A	0	11		10 - Completely satisfied		en																																																																																																																																			
-Q	F	likert3				en			N		1																																																																																																							1																							
+Q	F	likert3	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))			en			N		1																																																																																																							1																							
 SQ	0	recog1	1	Do you feel that your contribution to research is recognised by your supervisor/line manager		en																																																																																																																																			
 SQ	0	recog2	1	Do you feel that your contribution to research is recognised by the researchers you work with		en																																																																																																																																			
 SQ	0	recog3	1	Do you feel that your contribution to research is recognised by your university?		en																																																																																																																																			
@@ -2518,7 +2851,7 @@ A	0	2		Disagree		en
 A	0	3		Neither agree or disagree		en																																																																																																																																			
 A	0	4		Agree		en																																																																																																																																			
 A	0	5		Strongly Agree		en																																																																																																																																			
-Q	F	turnOver3		How often do you consider leaving your job?		en			N		1																																																																																																							1																							
+Q	F	turnOver3	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	How often do you consider leaving your job?		en			N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
@@ -2530,7 +2863,7 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
-Q	F	likert4				en			N		1																																																																																																							1																							
+Q	F	likert4	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))			en			N		1																																																																																																							1																							
 SQ	0	turnOver6	1	I would accept another job at the same compensation level if I was offered it		en																																																																																																																																			
 SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organisation		en																																																																																																																																			
 SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
@@ -2544,7 +2877,7 @@ A	0	3		Neither agree or disagree		en
 A	0	4		Agree		en																																																																																																																																			
 A	0	5		Strongly Agree		en																																																																																																																																			
 G	G5	Demographic questions	1			en																																																																																																																																			
-Q	!	socio2		Please select your gender		en			N		1																																																																																																							1						1																	
+Q	!	socio2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	Please select your gender		en			N		1																																																																																																							1						1																	
 A	0	1		Female		en																																																																																																																																			
 A	0	2		Male		en																																																																																																																																			
 A	0	3		Prefer not to say		en																																																																																																																																			
@@ -2569,14 +2902,14 @@ A	0	17		Other Ethnic group: Arab		en
 A	0	18		Other Ethnic group: Any other ethnic group		en																																																																																																																																			
 A	0	19		Do not wish to declare		en																																																																																																																																			
 Q	Y	disa1	((socio1.NAOK == 237))	Do you have a condition that is defined as a disability by your country?		en			N		1																																																																																																							1																							
-Q	!	socio3		Please select your age		en			N		1																																																																																																							1						1																	
+Q	!	socio3	((!is_empty(socio1.NAOK) and (socio1.NAOK != 97)))	Please select your age		en			N		1																																																																																																							1						1																	
 A	0	1		18 to 24 years		en																																																																																																																																			
 A	0	2		25 to 34 years		en																																																																																																																																			
 A	0	3		35 to 44 years		en																																																																																																																																			
 A	0	4		45 to 54 years		en																																																																																																																																			
 A	0	5		55 to 64 years		en																																																																																																																																			
 A	0	6		Age 65 or older		en																																																																																																																																			
-Q	Y	ukrse1		Are you a member of a RSE Association in your country?		en			N		1																																																																																																							1																							
+Q	Y	ukrse1		Are you a member of an association of Research Software Developers (e.g. UK RSE)?		en			N		1																																																																																																							1																							
 Q	Y	org1can		Would you be interested in joining such an organisation?		en			N		1																																																																																																							1																							
 Q	M	org2can	((org1can.NAOK == Y))	What would you hope to get out of such an organisation (check all that apply)?		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		Networking		en																																																																																																																																			
@@ -2629,6 +2962,20 @@ A	0	5		Between R 555 601 and R 708 310		en
 A	0	6		Between R 708 311 and R 1 500 000		en																																																																																																																																			
 A	0	7		More than R 1 500 000		en																																																																																																																																			
 A	0	8		Prefer not to say		en																																																																																																																																			
+Q	!	socio4qnzl	((socio1.NAOK == 150))	Please select the range of your salary		en			N		1																																																																																																							1						1																	
+A	0	1		< £18,031		en																																																																																																																																			
+A	0	2		≥ £18,031 and < £24,057		en																																																																																																																																			
+A	0	3		≥ £24,057 and < £32,277		en																																																																																																																																			
+A	0	4		≥ £32,277 and < £43,325		en																																																																																																																																			
+A	0	5		≥ £43,325 and < £58,172		en																																																																																																																																			
+A	0	6		≥ £58,172		en																																																																																																																																			
+Q	!	socio4qaus	((socio1.NAOK == 15))	Please select the range of your salary		en			N		1																																																																																																							1						1																	
+A	0	1		< £18,031		en																																																																																																																																			
+A	0	2		≥ £18,031 and < £24,057		en																																																																																																																																			
+A	0	3		≥ £24,057 and < £32,277		en																																																																																																																																			
+A	0	4		≥ £32,277 and < £43,325		en																																																																																																																																			
+A	0	5		≥ £43,325 and < £58,172		en																																																																																																																																			
+A	0	6		≥ £58,172		en																																																																																																																																			
 Q	!	socio10deqde	((socio1.NAOK == 44))	Please select your renumeration group according to your collective bargaining agreement		en			N		1																																																																																																							1						1																	
 A	0	1		E1-E7		en																																																																																																																																			
 A	0	2		E8		en																																																																																																																																			
@@ -2639,11 +2986,11 @@ A	0	6		E12		en
 A	0	7		E13		en																																																																																																																																			
 A	0	8		E14		en																																																																																																																																			
 A	0	9		E15		en																																																																																																																																			
-Q	!	tool2		What Operating System do you prefer to use at work? 		en			N		1																																																																																																							1						1																	
+Q	!	tool2		Which operating system do you primarily use for development?		en			N		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		en																																																																																																																																			
 A	0	2		OS X		en																																																																																																																																			
 A	0	3		Windows		en																																																																																																																																			
-Q	M	tool4can		What programming languages do you use at work? (select as many as apply) 		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+Q	M	tool4can		What programming languages do you use at work? Please select all that apply.		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		Assembly		en																																																																																																																																			
 SQ	0	SQ002		C		en																																																																																																																																			
 SQ	0	SQ003		C#		en																																																																																																																																			
@@ -2680,6 +3027,14 @@ SQ	0	SQ033		TypeScript		en
 SQ	0	SQ034		VB.NET		en																																																																																																																																			
 SQ	0	SQ035		VBA		en																																																																																																																																			
 SQ	0	SQ036		Visual Basic		en																																																																																																																																			
+Q	M	tool5canqcan	((socio1.NAOK == 97))	On which platform(s) is your most recent research software project deployed? Please select all that apply.		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		Compute Canada HPC, 		en																																																																																																																																			
+SQ	0	SQ002		University compute centre		en																																																																																																																																			
+SQ	0	SQ003		Other HPC		en																																																																																																																																			
+SQ	0	SQ004		Cloud		en																																																																																																																																			
+SQ	0	SQ005		Stand-alone server(s)		en																																																																																																																																			
+SQ	0	SQ006		Laptop/desktop		en																																																																																																																																			
+SQ	0	SQ007		Mobile		en																																																																																																																																			
 Q	S	ukrse3		How did you learn the skills you need to become an Research Software Engineer / Research Software Developer? 		en			N																																																																																																																																
-Q	Y	ukrse12de		Would you attend an RSE Conference in your country?		en			N		1																																																																																																							1																							
+Q	Y	ukrse12de		Would you like to attend a conference about software development in academia?		en			N		1																																																																																																							1																							
 Q	S	skill2		What three skills would you like to acquire or improve to help your work as a Research Software Engineer/ Research Software Developer? The skills can be technical and non-technical.		en			N																																																																																																																																

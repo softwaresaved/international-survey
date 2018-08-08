@@ -547,6 +547,7 @@ class surveyCreation:
                 if operator == '=':
                     operator = '=='
                 try:
+                    print(condition)
                     answer = condition.split('"')[-2].lower()
                 except IndexError:
                     raise
