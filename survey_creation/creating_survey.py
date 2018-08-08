@@ -463,11 +463,11 @@ class surveyCreation:
 
             n += 1
 
-    def get_txt_lang(self, lang, index_lang):
+    def get_txt_lang(self, lang):
         """
         Return the right txt key when a translation is pickup
         if it is in English, the key is only 'question', but in
-        case of translation it is 'lang_trans'.format(int) for all
+        case of translation it is 'trans_'.format(lang) for all
         the language the survey has. The order of the languages in the
         main csv file needs to be the same order as in the config file
         params:
@@ -478,7 +478,7 @@ class surveyCreation:
         """
         # Speficify where to find the text for the question
         if lang != "en":
-            return "lang_trans" + str(index_lang)
+            return "trans_" + str(lang)
         else:
             return "question"
 
@@ -651,7 +651,7 @@ class surveyCreation:
         # the enumerate helps for finding the right answer and the right lang_trans
         # in case of more than one translation
         for index_lang, lang in enumerate(self.languages):
-            txt_lang = self.get_txt_lang(lang, index_lang)
+            txt_lang = self.get_txt_lang(lang)
             # Add a first section
             nbr_section = -1
             nbr_section = self.check_adding_section(

@@ -1,4 +1,4 @@
-section,code,question,help,condition,answer_format,answer_file,de,nl,uk,us,zaf,nzl,aus,can,world,country_specific,other,random,mandatory,public,trans_de,trans_fr
+section,code,question,help,condition,answer_format,answer_file,de,nl,uk,us,zaf,nzl,aus,can,world,country_specific,other,random,mandatory,public,trans_de-informal,trans_fr
 1,socio1,In which country do you work?,,,ONE CHOICE,countries,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,,,In welchem Land arbeitest Du?,
 1,rse1,Do you write software for academic research as part of your job,,,Y/N/NA,,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,,,Entwickelst Du in Deiner Arbeitszeit Software für Forschung und Wissenschaft? Schreibst Du z.B. Quellcode oder Skripte?,
 1,edu1,What is the highest level of education you have attained?,,,ONE CHOICE,education,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,,"Was ist Dein höchster, an einer Bildungseinrichtung erworbener Abschluss?",
