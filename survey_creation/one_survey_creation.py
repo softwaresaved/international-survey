@@ -240,7 +240,10 @@ class gettingQuestions:
         if len(extracted_condition) == 1:
             list_str_countries = ["({} AND {})".format(extracted_condition[0], i) for i in list_str_countries]
 
-        return '{}'.format(" AND ".join(list_str_countries))
+        if operator == '!=':
+            return '{}'.format(" AND ".join(list_str_countries))
+        else:
+            return '{}'.format(" OR ".join(list_str_countries))
 
     def add_condition_about_countries(self):
         """
