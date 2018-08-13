@@ -219,6 +219,7 @@ class surveyCreation:
             return soup
 
         for lang in self.languages:
+            print(lang)
             # All these None are a workaround to fix the bug that add
             # two titles for the second language. No idea why
             survey_settings = None
@@ -461,7 +462,7 @@ class surveyCreation:
             if (type_question == "one choice" or type_question == 'multi choice') and index_lang == 0:
                 # add the answer and its position to the self.order_answer_one_choice dict for
                 # the self.setup_condition()
-                self.order_answer_one_choice.setdefault(row["code"], {})[n] = answer_row['text'].lower()
+                self.order_answer_one_choice.setdefault(row["code"], {})[n] = text_answer.split(";")[0].strip('"').lower()
 
             n += 1
 
@@ -549,7 +550,6 @@ class surveyCreation:
                 if operator == '=':
                     operator = '=='
                 try:
-                    print(condition)
                     answer = condition.split('"')[-2].lower()
                 except IndexError:
                     raise
@@ -565,9 +565,19 @@ class surveyCreation:
 
                     position_answer = None
                     for n in self.order_answer_one_choice[code]:
-                        if self.order_answer_one_choice[code][n].rstrip() == answer.lower().rstrip():  # Need the double quotes for the limesurvey position_answer = '"{}"'.format(n)
+                        print("Key to match: {}  --  Key tested: {}".format(answer.lower().rstrip(), self.order_answer_one_choice[code][n].rstrip()))
+                        if self.order_answer_one_choice[code][n].lower().rstrip() == answer.lower().rstrip():
                             position_answer = "{}".format(n)
                             break
+                    # if position_answer is None:
+                    #     print(code)
+                    #     print(answer.lower().rstrip())
+                    #     print(self.order_answer_one_choice[code])
+                        # for i in self.order_answer_one_choice:
+                        #     print(i)
+                        #     print(self.order_answer_one_choice[i])
+                        #     print('\n')
+                        raise
                 # In case of exclusion for some countries, need to look like that
                 # (is_empty(socio1.NAOK) || (socio1.NAOK != 236)) or (is_empty(socio1.NAOK) || (socio1.NAOK != 237)) or (is_empty(socio1.NAOK) || (socio1.NAOK != 44))))
                 if operator == '!=':
