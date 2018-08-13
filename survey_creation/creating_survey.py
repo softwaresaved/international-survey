@@ -455,8 +455,10 @@ class surveyCreation:
             answer_row["language"] = lang
 
             self._write_row(answer_row)
-
-            if type_question == "one choice":
+            # check for index_lang and create the dictionary only for the english version of the questions
+            # otherwise it will not find the matchin questions and limesurvey still works when only english
+            # is selectioned for the conditions
+            if (type_question == "one choice" or type_question == 'multi choice') and index_lang == 0:
                 # add the answer and its position to the self.order_answer_one_choice dict for
                 # the self.setup_condition()
                 self.order_answer_one_choice.setdefault(row["code"], {})[n] = answer_row['text'].lower()
