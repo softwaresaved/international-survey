@@ -26,7 +26,7 @@ section,code,question,help,condition,answer_format,answer_file,de,nl,uk,us,zaf,n
 2,currentEmp22de,Which Leibniz institute do you work for?,,"(if currentEmp1 = ""Leibniz Association"")",ONE CHOICE,leibniz_de,Y,,,,,,,,,Y,Y,,,FALSE,An welchem Leibniz-Institut arbeitest Du?,
 2,currentEmp23de,Which Max-Planck institute do you work for?,,"(if currentEmp1 = ""Max Planck Society"")",ONE CHOICE,mpg_de,Y,,,,,,,,,Y,Y,,,FALSE,An welchem Max-Planck-Institut arbeitest Du?,
 2,currentEmp24de,Which University of Applied Sciences?,,"(if currentEmp1 = ""University of Applied Sciences"")",ONE CHOICE,fh_de,Y,,,,,,,,,Y,Y,,,FALSE,An welcher Fachhochschule arbeitest Du?,
-2,currentEmp5,What is your official job title?,,,FREETEXT,,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,FALSE,Wie ist Deine offizielle Stellenbezeichnung (Job Title)?,Quel est le titre officiel de votre poste?,
+2,currentEmp5,What is your official job title?,,,FREETEXT,,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,FALSE,Wie ist Deine offizielle Stellenbezeichnung (Job Title)?,Quel est le titre officiel de votre poste?
 2,currentEmp6,"Are you known in your group by a different job title? If so, please enter the job title you use",,,FREETEXT,,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,FALSE,"Bist Du innerhalb Deiner Gruppe unter einer anderer Stellenbezeichung bekannt? Wenn ja, wie heißt diese?",
 2,currentEmp12,Do you work full time or part time,,,ONE CHOICE,type_hours,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,,Bist Du Vollzeit oder Teilzeit beschäftigt?,
 2,currentEmp10,What is the nature of your current employment?,,,ONE CHOICE,type_contract,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,,,Auf welcher Art von Arbeitsvertrag bist Du beschäftigt?,Quelle est la nature de votre emploi actuel?
