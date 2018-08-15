@@ -25,7 +25,7 @@ dict_countries = {'de': "Germany",
                   'us': "United States of America",
                   'zaf': "South Africa",
                   'nzl': "New Zealand",
-                  # 'can': 'Canada',
+                  'can': 'Canada',
                   'aus': "Australia"}
 list_bool = ['yes', 'y', 't', 'true', 'Yes', 'YES', 'Y', 'T', 'True', 'TRUE']
 
@@ -171,7 +171,7 @@ class gettingQuestions:
             # First check if there is country_specific condition.
             # In that case, need to create a question for each possibility to be able to show the different answers
             # As limesurvey does not allow the creation of conditions for questions.
-            if self.dict_questions[k]['country_specific'] in self.list_bool and self.dict_questions[k]['answer_format'].lower() in ['one choice', 'y/n/na']:
+            if self.dict_questions[k]['country_specific'] in self.list_bool and self.dict_questions[k]['answer_format'].lower() in ['one choice', 'y/n/na', 'multiple choices']:
 
                 for country in self.create_country_list(self.dict_questions[k]):
                     try:
