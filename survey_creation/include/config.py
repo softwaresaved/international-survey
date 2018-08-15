@@ -16,12 +16,12 @@ class config:
     # Same as header_to_modify
     settings_to_modify = []
     settings_to_add = []
-    # languages_to_add = 'de-informal'
+    languages_to_add = 'de-informal'
 
     # The index positions starts at 0
     # Adding the survey title to the global description. The index position is at 0 and the structure of the dictionary is as follow:
-    survey_title = {'en': 'Study about people writing scientic software for Germany',
-                    'de-informal': 'Umfrage für Personen, die wissenschaftliche Software bzw. Forschungssoftware in der deutschen Wissenschaft und Forschung entwickeln'}
+    survey_title = {'en': 'Study about people writing scientic software',
+                    'de-informal': ''}
 
     sections_txt = {0: {'en': {'name': 'Questions about you', 'text': ''},
                         'de-informal': {'name': 'Fragen zu Deiner Person', 'text': ''}},
