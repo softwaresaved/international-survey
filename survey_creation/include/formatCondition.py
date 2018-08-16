@@ -282,15 +282,11 @@ class conditionFormat:
                     if current_question[country].lower() in self.list_bool:
                         list_countries_to_add.append(country)
                 for country in list_countries_to_add:
-                    print(country)
                     new_code = '{}q{}'.format(code, country)
-                    print(answer)
-                    # print(self.questions['{}qde'.format(code)])
 
             # find that answer in the dict created during the self.setup_answer() to find the index position
             # of that answer
             for n in self.order_answer_one_choice[code]:
-                # print("Key to match: {}  --  Key tested: {}".format(answer.lower().rstrip(), self.order_answer_one_choice[code][n].rstrip()))
                 if self.order_answer_one_choice[code][n].lower().rstrip() == answer.lower().rstrip():
                     position_answer = "{}".format(n)
                     break
@@ -299,7 +295,6 @@ class conditionFormat:
             if position_answer is None:
                 code = new_code
                 for n in self.order_answer_one_choice[code]:
-                    # print("Key to match: {}  --  Key tested: {}".format(answer.lower().rstrip(), self.order_answer_one_choice[code][n].rstrip()))
                     if self.order_answer_one_choice[code][n].lower().rstrip() == answer.lower().rstrip():
                         position_answer = "{}".format(n)
                         break
