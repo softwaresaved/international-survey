@@ -25,7 +25,10 @@ from include.config import config as specific_config
 from random import shuffle
 from markdown import markdown
 from bs4 import BeautifulSoup
+from include.logger import logger
 
+
+logger = logger(name="creating_survey", stream_level="DEBUG")
 
 class surveyCreation:
     """
@@ -213,7 +216,7 @@ class surveyCreation:
             return soup
 
         for lang in self.languages:
-            print(lang)
+            logger.info('Creating the questions for the language: {}'.format(lang))
             # All these None are a workaround to fix the bug that add
             # two titles for the second language. No idea why
             survey_settings = None
