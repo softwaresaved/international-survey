@@ -72,7 +72,7 @@ section,code,question,help,condition,answer_format,answer_file,de,nl,uk,us,zaf,n
 5,progRSE2,The process I have to complete to gain a promotion is clear and understandable,,,LIKERT,likert_agree,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,,"Das Verfahren für eine Beförderung ist bekannt, klar und verständlich.",
 5,progRSE3,There are many opportunities within my chosen career plan,,,LIKERT,likert_agree,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,,Es gibt viele Möglichkeiten in dem von mir gewählten Karriereplan.,
 5,progRSE5,It is likely that my next position will be an Research Software Engineer / Research Software Developer role,,,LIKERT,likert_agree,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,,"Es ist wahrscheinlich, dass ich in meiner nächsten Position als RSE tätig sein werde.",
-6,socio2,Please select your gender,,,ONE CHOICE,gender,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,,Dein Geschlecht,
+6,socio2,Please select your gender,,,ONE CHOICE,gender,Y,Y,Y,Y,Y,Y,Y,,Y,,Y,,,,Dein Geschlecht,
 6,socio5,"How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. ",,,ONE CHOICE,ethnicity,,,Y,,,,,,,Y,,,,,,
 6,disa1,Do you have a condition that is defined as a disability by your country?,,,Y/N/NA,,,,Y,,,,,,,,,,,,,
 6,socio3,Please select your age,,,ONE CHOICE,age,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,,Dein Alter,
