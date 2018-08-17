@@ -87,59 +87,6 @@ class gettingQuestions:
             del dict_to_check[l]
         return dict_to_check
 
-    def add_world_other(self):
-        """
-        Check question if it is country specific and one choice
-        and if 'world' is also selected. In that case, add a new question
-        using the same code and the same text but give a freetext and add the condition
-        that should be NOT any country selected
-        - create a new question with
-            - code: '$code_world'
-            - txt: '$txt_of_the_question' (just get the same text)
-            - type: freetext
-            - condition: (if not countries)
-        """
-        def check_world_free_txt(question):
-            """
-            Check if the question is  either one_choice or multiple_choice
-            and its is selected as 'country_specific'
-            and 'world' is selected then:
-            :params:
-                question dict(): the question to check
-            :return:
-                bool: True if match the condition, False if not
-            """
-            if question['country_specific'].lower() in self.list_bool:
-                if question['world'].lower() in self.list_bool:
-                    return True
-
-        # recreate a new ordered dict
-        new_dict = OrderedDict()
-        # parse all the questions to find which one has to be created for world
-        for k in self.dict_questions:
-            # add the question to the new dict to respect the same order
-            new_dict[k] = self.dict_questions[k]
-            # check if the questions need to be created
-            if check_world_free_txt(new_dict[k]):
-                # Create the new question with freetext
-                new_code = "{}qworld".format(k)
-                new_question = new_dict[k].copy()  # copy otherwise modify both dict
-                new_question['answer_format'] = 'FREETEXT'
-                new_question['answer_file'] = ''
-                new_question['other'] = ''
-                new_question['country_specific'] = ''
-                for country in self.dict_countries:
-                    new_question[country] = ''
-
-                # remove the 'world' in the previous question to
-                # ensure no confusion later in the add_condition_about_countries()
-                new_dict[k]['world'] = ''
-                # append it to the dictionary
-                new_dict[new_code] = new_question
-
-        # replace the current dictionary with the new one
-        self.dict_questions = new_dict
-
     def create_country_list(self, question):
         """
         Check which country is associated with the question and
@@ -155,7 +102,7 @@ class gettingQuestions:
         for country in self.dict_countries:
             if question[country].lower() in self.list_bool:
                 list_countries_to_add.append(country)
-        if question['world'].lower() in self.list_bool and question['country_specific'].lower() not in self.list_bool:
+        if question['world'].lower() in self.list_bool:  # and question['country_specific'].lower() not in self.list_bool:
             list_countries_to_add.append('world')
         return list_countries_to_add
 
@@ -171,38 +118,45 @@ class gettingQuestions:
             # In that case, need to create a question for each possibility to be able to show the different answers
             # As limesurvey does not allow the creation of conditions for questions.
             if self.dict_questions[k]['country_specific'] in self.list_bool and self.dict_questions[k]['answer_format'].lower() in ['one choice', 'y/n/na', 'multiple choices']:
-
                 for country in self.create_country_list(self.dict_questions[k]):
-                    try:
-                        new_question = self.dict_questions[k].copy()
-                        # check if that country has a specific answer file
+                    new_question = self.dict_questions[k].copy()
+                    # check if that country has a specific answer file
+                    if new_question['answer_file'] != '':
                         outfile = os.path.join(self.year, "answers", 'countries', country, "{}.csv".format(new_question['answer_file']))
-                        open(outfile)
-                        new_code = '{}q{}'.format(k, country)
-                        new_question['answer_file'] = outfile
-                        new_question['country_specific'] = ''
-                        for c in self.dict_countries.keys():
-                            new_question[c] = ''
-                        new_question[country] = 'Y'
-                        new_dict[new_code] = new_question
-
-                    # If the specific file is not found it means that country does not need a specific version
-                    # of the question. Then keep the original question.
-                    except IOError:
                         try:
-                            new_dict[k][country] = 'Y'
-                        except KeyError:
-                            new_dict[k] = self.dict_questions[k].copy()
-                            if new_dict[k]['answer_file'] != '':
-                                new_dict[k]['answer_file'] = os.path.join(self.year, 'answers', "{}.csv".format(new_dict[k]['answer_file']))
-                            for i in self.dict_countries.keys():
-                                new_dict[k][i] = ''
-                            new_dict[k][country] = 'Y'
+                            open(outfile)
+                            new_question['answer_file'] = outfile
+
+                        # If the specific file is not found it means that country does not need a specific version
+                        # of the question. Then keep the original question.
+                        except IOError:
+                            outfile = os.path.join(self.year, 'answers', "{}.csv".format(new_question['answer_file']))
+                            new_question['answer_file'] = os.path.join(self.year, 'answers', "{}.csv".format(new_question['answer_file']))
+                            try:
+                                open(outfile)
+                                new_question['answer_file'] = outfile
+                            # If there is no file in the answer folder. It means that for that country (more likely world), the question should be FREETEXT
+                            except IOError:
+                                new_question['answer_file'] = ''
+                                new_question['answer_format'] = 'FREETEXT'
+                                new_question['other'] = ''
+                                new_question['country_specific'] = ''
+                                for country in self.dict_countries:
+                                    new_question[country] = ''
+                                country = 'world'
+
+                    new_code = '{}q{}'.format(k, country)
+                    new_question['country_specific'] = ''
+                    for c in self.dict_countries.keys():
+                        new_question[c] = ''
+                    new_question[country] = 'Y'
+                    new_dict[new_code] = new_question
 
             else:
                 new_dict[k] = self.dict_questions[k].copy()
                 if new_dict[k]['answer_file'] != '':
                     new_dict[k]['answer_file'] = os.path.join(self.year, 'answers', "{}.csv".format(new_dict[k]['answer_file']))
+
         self.dict_questions = new_dict.copy()
 
     def insert_code_in_dict(self):
@@ -230,12 +184,15 @@ class gettingQuestions:
         Run all the steps at one time
         """
         logger.info('Add the world condition')
-        self.add_world_other()
         logger.info('Create question for each country')
         self.create_country_q()
 
         # Run the condition formating for all the questions
         self.format_condition()
+        for k in self.dict_questions:
+            print(k)
+            print(self.dict_questions[k])
+            print('\n')
         self.insert_code_in_dict()
 
 

@@ -128,8 +128,6 @@ class conditionFormat:
             list_countries_to_add.append('world')
         return list_countries_to_add
 
-
-
     def check_if_condition_country_specific(self, current_question):
         """
         Check if the condition is based on a country specific question.
@@ -275,25 +273,27 @@ class conditionFormat:
         # If not it means it is from a one choice question and the position of the answer
         # needs to be retrieved
         else:
-            if self.questions[code]['country_specific'] in self.list_bool:
-
+            # find that answer in the dict created during the self.setup_answer() to find the index position
+            # of that answer
+            try:
+                for n in self.order_answer_one_choice[code]:
+                    if self.order_answer_one_choice[code][n].lower().rstrip() == answer.lower().rstrip():
+                        position_answer = "{}".format(n)
+                        break
+            # If the key does not exists it is because the original code has been removed to create
+            # questions specific to each countries
+            except KeyError:
                 list_countries_to_add = list()
                 for country in self.dict_countries:
                     if current_question[country].lower() in self.list_bool:
                         list_countries_to_add.append(country)
+                if len(list_countries_to_add) == 0:
+                    if current_question['world'].lower() in self.list_bool:
+                        list_countries_to_add.append('world')
                 for country in list_countries_to_add:
-                    new_code = '{}q{}'.format(code, country)
 
-            # find that answer in the dict created during the self.setup_answer() to find the index position
-            # of that answer
-            for n in self.order_answer_one_choice[code]:
-                if self.order_answer_one_choice[code][n].lower().rstrip() == answer.lower().rstrip():
-                    position_answer = "{}".format(n)
-                    break
+                    code = '{}q{}'.format(code, country)
 
-
-            if position_answer is None:
-                code = new_code
                 for n in self.order_answer_one_choice[code]:
                     if self.order_answer_one_choice[code][n].lower().rstrip() == answer.lower().rstrip():
                         position_answer = "{}".format(n)
@@ -302,7 +302,8 @@ class conditionFormat:
         return position_answer, code
 
     def format_for_lime(self, code, operator, answer):
-
+        """
+        """
         # In case of exclusion for some countries, need to look like that
         # (is_empty(socio1.NAOK) || (socio1.NAOK != 236)) or (is_empty(socio1.NAOK) || (socio1.NAOK != 237)) or (is_empty(socio1.NAOK) || (socio1.NAOK != 44))))
         if operator == '!=':
@@ -354,6 +355,7 @@ class conditionFormat:
             list_of_conditions = self.split_conditions(condition)
             formated_conditions = list()
             for code, operator, answer in self.split_elements(list_of_conditions):
+
                 answer, code = self.get_position_answer(current_question, answer, code)
                 formated_conditions.append(self.format_for_lime(code, operator, answer))
             dict_of_bool = self.get_position_bool(condition)

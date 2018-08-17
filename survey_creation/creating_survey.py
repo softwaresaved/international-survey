@@ -15,10 +15,8 @@ All information about the TSV file structure can be retrieved here:
     https://manual.limesurvey.org/Tab_Separated_Value_survey_structure
 """
 
-import re
 import csv
 import os
-import itertools
 from collections import OrderedDict
 from include.static_headers import creationConfig as static_headers
 from include.config import config as specific_config
@@ -29,6 +27,7 @@ from include.logger import logger
 
 
 logger = logger(name="creating_survey", stream_level="DEBUG")
+
 
 class surveyCreation:
     """
@@ -171,7 +170,12 @@ class surveyCreation:
         """
         languages = static_headers.languages
         try:  # Only add language if the option is in the config file
-            languages.append(specific_config.languages_to_add)
+            if isinstance(specific_config.languages_to_add, str):
+                languages.append(specific_config.languages_to_add)
+            elif isinstance(specific_config.languages_to_add, list):
+                languages.extend(specific_config.languages_to_add)
+            else:
+                raise TypeError('Issue with the type of languages. Need to a str or list type')
         except AttributeError:
             pass
         return languages
@@ -293,13 +297,12 @@ class surveyCreation:
         """
         previous_answer_format = None
         previous_file_answer = None
-        previous_code = None
         previous_file_answer = None
         group_survey_q = list()
         for q in indict:
             current_answer_format = q["answer_format"].lower()
             current_file_answer = q["answer_file"]
-            current_code = "".join([i for i in q["code"] if not i.isdigit()])
+            # current_code = "".join([i for i in q["code"] if not i.isdigit()])
             if current_answer_format == "likert":
                 if len(group_survey_q) > 0:
                     if current_file_answer == previous_file_answer or previous_file_answer is None:
@@ -319,7 +322,6 @@ class surveyCreation:
             group_survey_q.append(q)
             previous_answer_format = current_answer_format
             previous_file_answer = current_file_answer
-            previous_code = current_code
 
         yield group_survey_q
 
