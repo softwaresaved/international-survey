@@ -18,8 +18,7 @@ section,code,question,help,condition,answer_format,answer_file,de,nl,uk,us,zaf,n
 1,timeLike8zaf,"In an average month, how much time would you like to spend on management",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit Management verbringen?,
 1,timeLie9zaf,"In an average month, how much time would you like to spend on teaching",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit Lehre verbringen?,
 1,timeLike10zaf,"In an average month, how much time would you like to spend on other activities",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit anderen Aktivitäten verbringen?,
-2,currentEmp1,Please select your organization type,,,ONE CHOICE,type_organisation,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,,Wo arbeitest Du?,Veuillez indiquer la nature de votre organisation.
-2,currentEmp20,Which company do you work for?,,,FREETEXT,,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,,,
+2,currentEmp1,Please select your organization type,,,ONE CHOICE,type_organisation,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,Wo arbeitest Du?,Veuillez indiquer la nature de votre organisation.
 2,currentEmp2,Which university do you work for?,,"(currentEmp1 = ""University"")",ONE CHOICE,universities,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,,,FALSE,An welcher Universität arbeitest Du?,
 2,currentEmp20de,Which Fraunhofer institute do you work for?,,"(currentEmp1 = ""Fraunhofer Society"")",ONE CHOICE,fraunhofer_de,Y,,,,,,,,,Y,Y,,,FALSE,An welchem Fraunhofer-Institut arbeitest Du?,
 2,currentEmp21de,Which Helmholtz institute do you work for?,,"(currentEmp1 = ""Helmholtz Association of German Research Centres"")",ONE CHOICE,hgf_de,Y,,,,,,,,,Y,Y,,,FALSE,An welchem Helmholtz-Institut arbeitest Du?,

@@ -8,10 +8,11 @@ class config:
     # To modify, just add the keys of the dictionary
     header_to_modify = [{'class': 'S', 'name': 'sid', 'text': '421498'},
                         {'class': 'S', 'name': 'admin_email', 'text': 'olivier.philippe@soton.ac.uk'},
-                        {'class': 'S', 'name': 'allowprev', 'text': 'Y'}]
+                        {'class': 'S', 'name': 'allowprev', 'text': 'N'}]
     # Add header and description. Tuple of a dictionary + the position where it is supposed
     # to be inserted
-    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'de-informal'}, 12)]
+    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'de-informal'}, 12),
+                     ({'class': 'S', 'name': 'additional_languages', 'text': 'de-informal'}, 13)]
 
     # Same as header_to_modify
     settings_to_modify = []
@@ -44,7 +45,7 @@ class config:
                         'fr': {'name': 'Questions démographiques', 'text': ''}},
                     6: {'en': {'name': 'Final questions about you', 'text': ''},
                         'de-informal': {'name': 'Die letzen Fragen über Dich', 'text': ''},
-                        'fr': {'name': 'Dernières questions a propos de vous', 'text': ''}}}
+                        'fr': {'name': 'Dernières questions à propos de vous', 'text': ''}}}
 
     private_data = {'en': 'IMPORTANT: This information will not be made publicly available',
                     'de-informal': 'IMPORTANT: This information will not be made publicly available [DE-INFORMAL]',
