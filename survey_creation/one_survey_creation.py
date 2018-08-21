@@ -141,14 +141,13 @@ class gettingQuestions:
                                 new_question['answer_format'] = 'FREETEXT'
                                 new_question['other'] = ''
                                 new_question['country_specific'] = ''
-                                for country in self.dict_countries:
-                                    new_question[country] = ''
                                 country = 'world'
 
                     new_code = '{}q{}'.format(k, country)
                     new_question['country_specific'] = ''
                     for c in self.dict_countries.keys():
                         new_question[c] = ''
+                    new_question['world'] = ''
                     new_question[country] = 'Y'
                     new_dict[new_code] = new_question
 
