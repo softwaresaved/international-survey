@@ -256,7 +256,7 @@ class surveyCreation:
             )
             # adding the policy data
             consent_message = get_text('consent', lang)
-            # survey_settings = self._add_text_message(survey_settings, consent_message, 'policy_notice')
+            survey_settings = self._add_text_message(survey_settings, consent_message, 'policy_notice')
             # Add the appropriate language field for each of the dictionary
             setting_with_lang = list()
             for d in survey_settings:
