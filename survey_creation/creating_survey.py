@@ -302,13 +302,16 @@ class surveyCreation:
         """
         previous_answer_format = None
         previous_file_answer = None
-        previous_file_answer = None
+        previous_condition = None
         group_survey_q = list()
         for q in indict:
             current_answer_format = q["answer_format"].lower()
+            # try:
+            current_condition = q['condition']
+            # except AttributeError:
             current_file_answer = q["answer_file"]
             # current_code = "".join([i for i in q["code"] if not i.isdigit()])
-            if current_answer_format == "likert":
+            if current_answer_format == "likert" and (current_condition is None or current_condition == previous_condition):
                 if len(group_survey_q) > 0:
                     if current_file_answer == previous_file_answer or previous_file_answer is None:
                         if previous_answer_format == "likert":
@@ -327,6 +330,7 @@ class surveyCreation:
             group_survey_q.append(q)
             previous_answer_format = current_answer_format
             previous_file_answer = current_file_answer
+            previous_condition = current_condition
 
         yield group_survey_q
 
