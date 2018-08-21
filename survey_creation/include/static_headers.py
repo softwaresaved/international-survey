@@ -56,14 +56,14 @@ class creationConfig:
                       {'class': 'S', 'name': 'datestamp', 'text': 'Y'},
                       {'class': 'S', 'name': 'usecookie', 'text': 'N'},
                       {'class': 'S', 'name': 'allowregister', 'text': 'N'},
-                      {'class': 'S', 'name': 'allowsave', 'text': 'Y'},
+                      {'class': 'S', 'name': 'allowsave', 'text': 'N'},
                       {'class': 'S', 'name': 'autonumber_start', 'text': '15'},
                       {'class': 'S', 'name': 'autoredirect', 'text': 'N'},
                       {'class': 'S', 'name': 'allowprev', 'text': 'N'},
                       {'class': 'S', 'name': 'printanswers', 'text': 'Y'},
                       {'class': 'S', 'name': 'ipaddr', 'text': 'Y'},
                       {'class': 'S', 'name': 'refurl', 'text': 'Y'},
-                      {'class': 'S', 'name': 'datecreated', 'text': '2017-05-24'},
+                      {'class': 'S', 'name': 'datecreated', 'text': '2018-09-03'},
                       {'class': 'S', 'name': 'publicstatistics', 'text': 'N'},
                       {'class': 'S', 'name': 'publicgraphs', 'text': 'N'},
                       {'class': 'S', 'name': 'listpublic', 'text': 'N'},
@@ -105,12 +105,14 @@ class creationConfig:
                        {'class': 'SL', 'name': 'email_admin_responses_subj', 'text': """Response submission for survey {SURVEYNAME} with results""", 'language': 'en'},
                        {'class': 'SL', 'name': 'email_admin_responses', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}""", 'language': 'en'},
                        {'class': 'SL', 'name': 'surveyls_numberformat', 'text': '0', 'language': 'en'}]
+                       # {'class': 'SL', 'name': 'surveyls_policy_notice', 'text': "", 'language': 'en'},
+                       # {'class': 'SL', 'name': 'surveyls_policy_error', 'text': "", 'language': 'en'},
+                       # {'class': 'SL', 'name': 'surveyls_policy_notice_label', 'text': "", 'language': 'en'}]
 
     # Standard layout for groups
     group_format = {'class': 'G', 'type/scale': 'G+inc_number', 'relevance': '1'}
 
     # Standard layout for questions
-
     one_choice_question = {'class': 'Q', 'type/scale': '!', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1', 'time_limit_action': 1}
     one_choice_answer = {'class': 'A', 'type/scale': '0'}
 
@@ -127,7 +129,6 @@ class creationConfig:
 
     freenumeric_question = {'class': 'Q', 'type/scale': 'N', 'allowed_filetypes': '1', 'statistics_showmap': '1'}
 
-    # freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300', 'location_mapwidth': '500', 'location_mapzoom': '110500', 'statistics_showgraph': '1', 'statistics_showmap': '1', 'text_input_width': '12', 'time_limit_action': '1', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0'}
     freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1'}
 
     likert_question = {'class': 'Q', 'type/scale': 'F', 'same_default': '1', 'statistics_showgraph': '1'}
