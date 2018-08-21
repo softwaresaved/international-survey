@@ -11,17 +11,16 @@ S		template		ubuntu_orange
 S		language		en																																																																																																																																					
 S		datestamp		Y																																																																																																																																					
 S		usecookie		N																																																																																																																																					
-S		additional_languages		de-informal																																																																																																																																					
-S		additional_languages		de-informal																																																																																																																																					
+S		additional_languages		de-informal, fr																																																																																																																																					
 S		allowregister		N																																																																																																																																					
-S		allowsave		Y																																																																																																																																					
+S		allowsave		N																																																																																																																																					
 S		autonumber_start		15																																																																																																																																					
 S		autoredirect		N																																																																																																																																					
 S		allowprev		N																																																																																																																																					
 S		printanswers		Y																																																																																																																																					
 S		ipaddr		Y																																																																																																																																					
 S		refurl		Y																																																																																																																																					
-S		datecreated		2017-05-24																																																																																																																																					
+S		datecreated		2018-09-03																																																																																																																																					
 S		publicstatistics		N																																																																																																																																					
 S		publicgraphs		N																																																																																																																																					
 S		listpublic		N																																																																																																																																					
@@ -47,18 +46,37 @@ S		alloweditaftercompletion		N
 S		googleanalyticsstyle		0																																																																																																																																					
 SL		surveyls_title		Study about people writing scientic software		en																																																																																																																																			
 SL		surveyls_welcometext		"<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We also call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
-<h2>Why did I receive this invitation?</h2>
+<p><strong>Survey number: ERGO/FPSE/45232</strong></p>
+<h2>Why have I been asked to participate?</h2>
 <p>You have received this link because you were identified as someone creating scientific software and because you are following one of the mailing list we used to disseminate the information.
 There is currently little reliable information about the community of people creating research related software, so we have decided to collect this information to help funders and other research organisations develop policies.
 This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>
 <p>Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.</p>
 <h2>How long will it take?</h2>
 <p>There are ca. 80 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
+<h2>What will happen to me if I take part?</h2>
+<p>You will continue to the next page and answer several questions based on the country you are working from.</p>
+<h2>Are there any benefits in my taking part?</h2>
+<p>We try to help Research Software Developer/Engineer to be recognised at an institutional level. There is no direct individual benefit to answer this survey.</p>
+<h2>Are there any risks involved?</h2>
+<p>No</p>
+<h2>Do I have to take part?</h2>
+<p>No, it is entirely up to you to decide whether or not to take part. If you decide you do not want to take part, just close this page.</p>
+<h2>What happens if I change my mind?</h2>
+<p>You have the right to change your mind and withdraw at any time without giving a reason and without your participant rights being affected. If you decide to withdraw, just close the survey at any time.
+If you withdraw from the study, we will keep the information about you that we have already obtained for the purposes of achieving the objectives of the study only.</p>
+<h2>What will happen to the results of the research?</h2>
+<p>We do not collect personal information such as email address or name. Research findings made available in any reports or publications will not include personal information that can directly identify you.</p>
+<h2>Will my participation be confidential?</h2>
+<p>Your participation and the information we collect about you during the course of the research will be kept strictly confidential.</p>
+<p>Only members of the research team and responsible members of the University of Southampton may be given access to data about you for monitoring purposes and/or to carry out an audit of the study to ensure that the research is complying with applicable regulations. Individuals from regulatory authorities (people who check that we are carrying out the study correctly) may require access to your data. All of these people have a duty to keep your information, as a research participant, strictly confidential.</p>
+<p>However we share the data as open source. These data does not contain personal information.</p>
 <h2>Who is responsible for this survey?</h2>
 <p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> (SSI) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/45232).
 The investigators are <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a> and <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>.
 The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">Data Protection Act</a>.
 These records are anonymised and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"" target=""_blank"">Creative Commons by attribution, non-commercial licence</a>.</p>
+<h2>What happens if there is a problem?</h2>
 <p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.</p>"		en																																																																																																																																			
 SL		surveyls_endtext		"<p>Thank you for your participation. If you are interested in the outcomes of this survey, please keep an eye on the <a href=""http://rse.ac.uk/"" target=""_blank"">UKRSE</a>.</p>"		en																																																																																																																																			
 SL		surveyls_email_invite_subj		Invitation to participate in a survey		en																																																																																																																																			
