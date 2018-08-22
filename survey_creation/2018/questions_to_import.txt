@@ -44,7 +44,7 @@ S		navigationdelay		0
 S		nokeyboard		N																																																																																																																																					
 S		alloweditaftercompletion		N																																																																																																																																					
 S		googleanalyticsstyle		0																																																																																																																																					
-SL		surveyls_title		Study about people writing scientic software		en																																																																																																																																			
+SL		surveyls_title		Study about people writing scientific software		en																																																																																																																																			
 SL		surveyls_welcometext		"<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We also call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
 <p><strong>Survey number: ERGO/FPSE/45232</strong></p>
 <h2>Why have I been asked to participate?</h2>
@@ -77,7 +77,18 @@ The investigators are <a href=""mailto:s.hettrick@software.ac.uk"" target=""_bla
 The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">Data Protection Act</a>.
 These records are anonymised and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a <a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"" target=""_blank"">Creative Commons by attribution, non-commercial licence</a>.</p>
 <h2>What happens if there is a problem?</h2>
-<p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.</p>"		en																																																																																																																																			
+<p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.</p>
+<h2>By clicking on the ""next"" button I confirm:</h2>
+<ul>
+<li>I have read and understood the information and have had the opportunity to ask questions about the study.</li>
+<li>I agree to take part in this research project and agree for my data to be used for the purpose of this study.</li>
+<li>
+<p>I understand my participation is voluntary and I may withdraw (at any time)for any reason without my participation rights being affected.</p>
+</li>
+<li>
+<p>I agree with the above statements and wish to continue</p>
+</li>
+</ul>"		en																																																																																																																																			
 SL		surveyls_endtext		"<p>Thank you for your participation. If you are interested in the outcomes of this survey, please keep an eye on the <a href=""http://rse.ac.uk/"" target=""_blank"">UKRSE</a>.</p>"		en																																																																																																																																			
 SL		surveyls_email_invite_subj		Invitation to participate in a survey		en																																																																																																																																			
 SL		surveyls_email_invite		"Dear {FIRSTNAME},  you have been invited to participate in a survey.  The survey is titled: ""{SURVEYNAME}""  ""{SURVEYDESCRIPTION}""  To participate, please click on the link below.  Sincerely,  {ADMINNAME} ({ADMINEMAIL})  ---------------------------------------------- Click here to do the survey: {SURVEYURL}  If you do not want to participate in this survey and don't want to receive any more invitations please click the following link: {OPTOUTURL}  If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link: {OPTINURL}"		en																																																																																																																																			
