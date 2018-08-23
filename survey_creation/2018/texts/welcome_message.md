@@ -6,27 +6,24 @@
 Why have I been asked to participate?
 ----------------------------------
 
-You have received this link because you were identified as someone creating scientific software and because you are following one of the mailing list we used to disseminate the information.
-There is currently little reliable information about the community of people creating research related software, so we have decided to collect this information to help funders and other research organisations develop policies.
-This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.
+You have received this link because you were identified as someone creating scientific software and because you are on one of the mailing list we used to disseminate the survey. There is currently little reliable information about the community of people creating research related software, so we have decided to use this survey to gather information to help funders and other research organisations develop policies. This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.
 
-Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.
+Please note that this research is not compulsory and even if you decide to participate, you can withdraw at any moment.
 
 How long will it take?
 ----------------------
 
-There are ca. 80 questions in this survey. It takes about 10 to 15 minutes to complete.
+There are 80 questions in this survey. It takes about 10 to 15 minutes to complete.
 
 What will happen to me if I take part?
 --------------------------------------
 
-You will continue to the next page and answer several questions based on the country you are working from.
-
+You will continue to the next page and begin to answer questions based on the country you are working from.
 
 Are there any benefits in my taking part?
 -----------------------------------------
 
-We try to help Research Software Developer/Engineer to be recognised at an institutional level. There is no direct individual benefit to answer this survey.
+We try to help Research Software Developer/Engineer to be recognised at an institutional level. There is no direct individual benefit to answering this survey.
 
 Are there any risks involved?
 -----------------------------
