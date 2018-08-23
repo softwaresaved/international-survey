@@ -48,16 +48,14 @@ SL		surveyls_title		Study about people writing scientific software		en
 SL		surveyls_welcometext		"<p><strong>The purpose of this survey is to collect information about people who develop software that is used in research. We also call these people <em><a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">Research Software Engineers</a></em> <a href=""https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers"" target=""_blank"">(RSEs)</a>, but they use many different job titles (including postdoctoral researcher and research assistant).</strong></p>
 <p><strong>Survey number: ERGO/FPSE/45232</strong></p>
 <h2>Why have I been asked to participate?</h2>
-<p>You have received this link because you were identified as someone creating scientific software and because you are following one of the mailing list we used to disseminate the information.
-There is currently little reliable information about the community of people creating research related software, so we have decided to collect this information to help funders and other research organisations develop policies.
-This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>
-<p>Please note that this research is not compulsory and even if you decide to participate you can withdraw at any moment.</p>
+<p>You have received this link because you were identified as someone creating scientific software and because you are on one of the mailing list we used to disseminate the survey. There is currently little reliable information about the community of people creating research related software, so we have decided to use this survey to gather information to help funders and other research organisations develop policies. This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.</p>
+<p>Please note that this research is not compulsory and even if you decide to participate, you can withdraw at any moment.</p>
 <h2>How long will it take?</h2>
-<p>There are ca. 80 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
+<p>There are 80 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
 <h2>What will happen to me if I take part?</h2>
-<p>You will continue to the next page and answer several questions based on the country you are working from.</p>
+<p>You will continue to the next page and begin to answer questions based on the country you are working from.</p>
 <h2>Are there any benefits in my taking part?</h2>
-<p>We try to help Research Software Developer/Engineer to be recognised at an institutional level. There is no direct individual benefit to answer this survey.</p>
+<p>We try to help Research Software Developer/Engineer to be recognised at an institutional level. There is no direct individual benefit to answering this survey.</p>
 <h2>Are there any risks involved?</h2>
 <p>No</p>
 <h2>Do I have to take part?</h2>
@@ -1052,11 +1050,11 @@ A	0	6		5 - Mostly other people		en
 Q	Y	soft2can		Do you consider yourself a professional software developer?		en			N		1																																																																																																							1																							
 Q	N	soft1can		How many years of software development experience do you have?		en			N			1																																																																																																							1																						
 Q	F	likert0				en			N		1																																																																																																							1																							
-SQ	0	time1can	1	On average, what percentage of your time is spent developing software?		en																																																																																																																																			
-SQ	0	time2can	1	On average, what percentage of your time is spent on research		en																																																																																																																																			
-SQ	0	time3can	1	On average, what percentage of your time is spent on management		en																																																																																																																																			
-SQ	0	time4can	1	On average, what percentage of your time is spent on teaching		en																																																																																																																																			
-SQ	0	time5can	1	On average, what percentage of your time is spent on other activities		en																																																																																																																																			
+SQ	0	time1can	1	On average, how much of your time is spent developing software?		en																																																																																																																																			
+SQ	0	time2can	1	On average, how much of your time is spent on research		en																																																																																																																																			
+SQ	0	time3can	1	On average, how much of your time is spent on management		en																																																																																																																																			
+SQ	0	time4can	1	On average, how much of your time is spent on teaching		en																																																																																																																																			
+SQ	0	time5can	1	On average, how much of your time is spent on other activities		en																																																																																																																																			
 A	0	1		﻿1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
@@ -1095,68 +1093,60 @@ A	0	7		Leibniz Association		en
 A	0	8		Max Planck Society		en																																																																																																																																			
 Q	!	currentEmp1qnl	((socio1.NAOK == 154))	Please select your organization type		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	currentEmp1quk	((socio1.NAOK == 232))	Please select your organization type		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	currentEmp1qus	((socio1.NAOK == 233))	Please select your organization type		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	currentEmp1qzaf	((socio1.NAOK == 203))	Please select your organization type		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	currentEmp1qnzl	((socio1.NAOK == 156))	Please select your organization type		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	currentEmp1qcan	((socio1.NAOK == 41))	Please select your organization type		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	currentEmp1qaus	((socio1.NAOK == 14))	Please select your organization type		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	currentEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 79)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 232)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 233)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 203)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 156)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Please select your organization type		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	currentEmp2qde	((currentEmp1qde.NAOK == 1) AND (socio1.NAOK == 79))	Which university do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		Abraham Geiger College		en																																																																																																																																			
 A	0	2		University of Freiburg		en																																																																																																																																			
@@ -3035,16 +3025,16 @@ A	0	2		Part-time		en
 A	0	3		Prefer not to say		en																																																																																																																																			
 Q	!	currentEmp10		What is the nature of your current employment?		en			N		1																																																																																																							1						1																	
 A	0	1		Permanent -- funded by Institution core funding		en																																																																																																																																			
-A	0	2		Permanent -- as long as funding is available		en																																																																																																																																			
+A	0	2		Permanent -- funded by project funds		en																																																																																																																																			
 A	0	3		Fixed term -- funded by Institution core funding		en																																																																																																																																			
-A	0	4		Fixed term -- as long as funding is available		en																																																																																																																																			
+A	0	4		Fixed term -- funded by project funds		en																																																																																																																																			
 A	0	5		Research/Student Assistant		en																																																																																																																																			
 A	0	6		Agency staff		en																																																																																																																																			
 A	0	7		Freelancer, consultant, contractor		en																																																																																																																																			
 A	0	8		Zero hours contract		en																																																																																																																																			
 A	0	9		Prefer not to say		en																																																																																																																																			
-Q	D	currentEmp9	((!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	When did you start your current contract?		en			N		1																					1																																																																																		1																							
-Q	N	currentEmp11	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	What is the duration (in years) of your current contract?		en			N			1																																																																																																							1																						
+Q	D	currentEmp9	((!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	When did you start your current position?		en			N		1																					1																																																																																		1																							
+Q	N	currentEmp11	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	What is the expected duration (in years) of your current position?		en			N			1																																																																																																							1																						
 Q	M	currentEmp13qde	((socio1.NAOK == 79))	Please select the discipline in which you work. Please select all that apply.		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		Accounting & Finance		en																																																																																																																																			
 SQ	0	SQ002		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
@@ -3598,52 +3588,46 @@ A	0	7		Leibniz Association		en
 A	0	8		Max Planck Society		en																																																																																																																																			
 Q	!	prevEmp1quk	((socio1.NAOK == 232))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	prevEmp1qus	((socio1.NAOK == 233))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	prevEmp1qzaf	((socio1.NAOK == 203))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	prevEmp1qnzl	((socio1.NAOK == 156))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	prevEmp1qaus	((socio1.NAOK == 14))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 79)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 232)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 233)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 203)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 156)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
-A	0	2		Research Institute		en																																																																																																																																			
-A	0	3		Private Company		en																																																																																																																																			
-A	0	4		Government		en																																																																																																																																			
-A	0	5		Other non-profit		en																																																																																																																																			
-A	0	6		Research council		en																																																																																																																																			
-A	0	7		Start-up		en																																																																																																																																			
+A	0	2		Private company		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
+A	0	4		NGO		en																																																																																																																																			
+A	0	5		National laboratory		en																																																																																																																																			
+A	0	6		Non-profit organization		en																																																																																																																																			
 Q	R	prevEmp2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	Rank the following factors dependent on how strongly they influenced your decision to accept your current position		en			N		1																																																								5																									1	1						1															1																							
 SQ	0	1	1	Rank1		en																																																																																																																																			
 SQ	0	2	1	Rank2		en																																																																																																																																			
@@ -3670,8 +3654,9 @@ Q	Y	currentWork2		Are you part of a dedicated research software group within you
 Q	!	paper2mod		In general, when your software contributes to a paper, are you acknowledged in that paper?		en			N		1																																																																																																							1						1																	
 A	0	1		Not mentioned at all		en																																																																																																																																			
 A	0	2		Acknowledged in the main text		en																																																																																																																																			
-A	0	3		Named as co-author		en																																																																																																																																			
-A	0	4		Named as main author		en																																																																																																																																			
+A	0	3		Acknowledged in acknowledgements section		en																																																																																																																																			
+A	0	4		Named as co-author		en																																																																																																																																			
+A	0	5		Named as main author		en																																																																																																																																			
 Q	Y	conf1can		Have you presented your software work at a conference or workshop?		en			N		1																																																																																																							1																							
 Q	S	conf2can	((conf2can.NAOK == 'Y'))	At which conference(s)/workshop(s) have you presented your software work?		en			N																																																																																																																																
 Q	N	proj1can		How many software projects are you currently involved in?		en			N			1																																																																																																							1																						
@@ -3701,7 +3686,7 @@ A	0	6		6		en
 A	0	7		7		en																																																																																																																																			
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
+A	0	10		10 (All the time)		en																																																																																																																																			
 Q	F	likert2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))			en			N		1																																																																																																							1																							
 SQ	0	open2de	1	How often do you reference software directly or the papers describing the software?		en																																																																																																																																			
 SQ	0	open3can	1	How often do you associate your software with a Digital Object Identifier (DOI)? 		en																																																																																																																																			
@@ -3714,7 +3699,7 @@ A	0	6		6		en
 A	0	7		7		en																																																																																																																																			
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
+A	0	10		10 (All the time)		en																																																																																																																																			
 Q	S	open3de		Which tools do you use to mint a DOI (e.g. local library, Zenodo)?		en			N																																																																																																																																
 Q	Y	open1de		Do you have an ORCID ID?		en			N		1																																																																																																							1																							
 Q	M	proj5zaf		Which version control tools do you use for software development?		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
@@ -3743,6 +3728,7 @@ SQ	0	SQ013		Open core		en
 SQ	0	SQ014		Foundations & consortiums		en																																																																																																																																			
 SQ	0	SQ015		Venture capital		en																																																																																																																																			
 SQ	0	SQ016		Trademark licensing & franchising		en																																																																																																																																			
+SQ	0	SQ017		Institutional support		en																																																																																																																																			
 Q	!	fund1can	((socio1.NAOK == 41))	How is your current research software work funded?		en			Y		1																																																																																																							1						1																	
 A	0	1		Employer		en																																																																																																																																			
 A	0	2		CANARIE		en																																																																																																																																			
@@ -3787,7 +3773,7 @@ A	0	6		6		en
 A	0	7		7		en																																																																																																																																			
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
-A	0	10		10 (All my time)		en																																																																																																																																			
+A	0	10		10 (All the time)		en																																																																																																																																			
 Q	F	turnOver6	((!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	I would accept another job at the same compensation level if I was offered it		en			N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		Strongly disagree		en																																																																																																																																			
@@ -3812,6 +3798,35 @@ Q	!	socio2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	Please select your
 A	0	1		Female		en																																																																																																																																			
 A	0	2		Male		en																																																																																																																																			
 A	0	3		Prefer not to say		en																																																																																																																																			
+Q	M	socio5quk	((socio1.NAOK == 232))	How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		White: English / Welsh / Scottish / Northern Irish / British		en																																																																																																																																			
+SQ	0	SQ002		White: Irish		en																																																																																																																																			
+SQ	0	SQ003		White: Gypsy or Irish Traveller		en																																																																																																																																			
+SQ	0	SQ004		White: Any other White background		en																																																																																																																																			
+SQ	0	SQ005		Mixed / Multiple Ethnic groups: White and Black Caribbean		en																																																																																																																																			
+SQ	0	SQ006		Mixed / Multiple Ethnic groups: White and Black African		en																																																																																																																																			
+SQ	0	SQ007		Mixed / Multiple Ethnic groups: White and Asian		en																																																																																																																																			
+SQ	0	SQ008		Mixed / Multiple Ethnic groups: Any other Mixed / Multiple ethnic background,		en																																																																																																																																			
+SQ	0	SQ009		Asian / Asian British: Indian		en																																																																																																																																			
+SQ	0	SQ010		Asian / Asian British: Pakistani		en																																																																																																																																			
+SQ	0	SQ011		Asian / Asian British: Bangladeshi		en																																																																																																																																			
+SQ	0	SQ012		Asian / Asian British: Chinese		en																																																																																																																																			
+SQ	0	SQ013		Asian / Asian British: Any other Asian background		en																																																																																																																																			
+SQ	0	SQ014		Black / African / Caribbean / Black British:  African		en																																																																																																																																			
+SQ	0	SQ015		Black / African / Caribbean / Black British: Caribbean		en																																																																																																																																			
+SQ	0	SQ016		Black / African / Caribbean / Black British: Any other Black / African / Caribbean background		en																																																																																																																																			
+SQ	0	SQ017		Other Ethnic group: Arab		en																																																																																																																																			
+SQ	0	SQ018		Other Ethnic group: Any other ethnic group		en																																																																																																																																			
+SQ	0	SQ019		Do not wish to declare		en																																																																																																																																			
+Q	M	socio5qus	((socio1.NAOK == 233))	How would you describe your ethnic origin?  This refers to people who share the same cultural background and identity, not country of birth or nationality. 		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		White		en																																																																																																																																			
+SQ	0	SQ002		Black or African American		en																																																																																																																																			
+SQ	0	SQ003		Asian		en																																																																																																																																			
+SQ	0	SQ004		American Indian and Alaska Native		en																																																																																																																																			
+SQ	0	SQ005		Native Hawaiian and Other Pacific Islander		en																																																																																																																																			
+SQ	0	SQ006		Some other race		en																																																																																																																																			
+SQ	0	SQ007		Do not wish to answer		en																																																																																																																																			
+SQ	0	SQ008				en																																																																																																																																			
 Q	!	socio5usqus	((socio1.NAOK == 233))	Do you consider yourself Hispanic or Latino		en			N		1																																																																																																							1						1																	
 A	0	1		Yes		en																																																																																																																																			
 A	0	2		No		en																																																																																																																																			
@@ -3824,14 +3839,7 @@ A	0	3		35 to 44 years		en
 A	0	4		45 to 54 years		en																																																																																																																																			
 A	0	5		55 to 64 years		en																																																																																																																																			
 A	0	6		Age 65 or older		en																																																																																																																																			
-Q	Y	ukrse1		Are you a member of an association of Research Software Developers (e.g. UK RSE)?		en			N		1																																																																																																							1																							
-Q	Y	org1can		Would you be interested in joining such an organisation?		en			N		1																																																																																																							1																							
-Q	M	org2can	((org1can.NAOK == 'Y'))	What would you hope to get out of such an organisation (check all that apply)?		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
-SQ	0	SQ001		Networking		en																																																																																																																																			
-SQ	0	SQ002		Research collaborations		en																																																																																																																																			
-SQ	0	SQ003		Training		en																																																																																																																																			
-SQ	0	SQ004		Research software standards and interoperability definition		en																																																																																																																																			
-SQ	0	SQ005		Job opportunities		en																																																																																																																																			
+A	0	7		Prefer not to say		en																																																																																																																																			
 Q	!	socio4qde	((socio1.NAOK == 79))	Please select the range of your salary		en			N		1																																																																																																							1						1																	
 A	0	1		< £18,031		en																																																																																																																																			
 A	0	2		≥ £18,031 and < £24,057		en																																																																																																																																			
@@ -3859,14 +3867,14 @@ A	0	4		≥ £32,277 and < £43,325		en
 A	0	5		≥ £43,325 and < £58,172		en																																																																																																																																			
 A	0	6		≥ £58,172		en																																																																																																																																			
 Q	!	socio4qus	((socio1.NAOK == 233))	Please select the range of your salary		en			N		1																																																																																																							1						1																	
-A	0	1		Less than \$30,000		en																																																																																																																																			
-A	0	2		From \$30,000 to \$49,999		en																																																																																																																																			
-A	0	3		From \$50,000 to \$69,999		en																																																																																																																																			
-A	0	4		From \$70,000 to \$89,999		en																																																																																																																																			
-A	0	5		From \$90,000 to \$109,999		en																																																																																																																																			
-A	0	6		From \$110,000 to \$129,999		en																																																																																																																																			
-A	0	7		From \$130,000 to \$149,999		en																																																																																																																																			
-A	0	8		More than \$150,000		en																																																																																																																																			
+A	0	1		Less than $30,000		en																																																																																																																																			
+A	0	2		From $30,000 to $49,999		en																																																																																																																																			
+A	0	3		From $50,000 to $69,999		en																																																																																																																																			
+A	0	4		From $70,000 to $89,999		en																																																																																																																																			
+A	0	5		From $90,000 to $109,999		en																																																																																																																																			
+A	0	6		From $110,000 to $129,999		en																																																																																																																																			
+A	0	7		From $130,000 to $149,999		en																																																																																																																																			
+A	0	8		More than $150,000		en																																																																																																																																			
 A	0	9		Prefer not to say		en																																																																																																																																			
 Q	!	socio4qzaf	((socio1.NAOK == 203))	Please select the range of your salary		en			N		1																																																																																																							1						1																	
 A	0	1		Less than R 189 880		en																																																																																																																																			
@@ -3901,6 +3909,15 @@ A	0	6		E12		en
 A	0	7		E13		en																																																																																																																																			
 A	0	8		E14		en																																																																																																																																			
 A	0	9		E15		en																																																																																																																																			
+G	G6	Final questions about you	1			en																																																																																																																																			
+Q	Y	ukrse1		Are you a member of an association of Research Software Developers (e.g. UK RSE)?		en			N		1																																																																																																							1																							
+Q	Y	org1can		Would you be interested in joining such an organisation?		en			N		1																																																																																																							1																							
+Q	M	org2can	((org1can.NAOK == 'Y'))	What would you hope to get out of such an organisation (check all that apply)?		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		Networking		en																																																																																																																																			
+SQ	0	SQ002		Research collaborations		en																																																																																																																																			
+SQ	0	SQ003		Training		en																																																																																																																																			
+SQ	0	SQ004		Research software standards and interoperability definition		en																																																																																																																																			
+SQ	0	SQ005		Job opportunities		en																																																																																																																																			
 Q	!	tool2		Which operating system do you primarily use for development?		en			Y		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		en																																																																																																																																			
 A	0	2		OS X		en																																																																																																																																			
@@ -4871,69 +4888,61 @@ A	0	6		Helmholtz-Gemeinschaft Deutscher Forschungszentren		de-informal
 A	0	7		Leibniz-Gemeinschaft		de-informal																																																																																																																																			
 A	0	8		Max-Planck-Gesellschaft 		de-informal																																																																																																																																			
 Q	!	currentEmp1qnl	((socio1.NAOK == 154))	Wo arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	currentEmp1quk	((socio1.NAOK == 232))	Wo arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	currentEmp1qus	((socio1.NAOK == 233))	Wo arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	currentEmp1qzaf	((socio1.NAOK == 203))	Wo arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	currentEmp1qnzl	((socio1.NAOK == 156))	Wo arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	currentEmp1qcan	((socio1.NAOK == 41))	Wo arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	currentEmp1qaus	((socio1.NAOK == 14))	Wo arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	currentEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 79)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 232)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 233)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 203)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 156)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Wo arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	currentEmp2qde	((currentEmp1qde.NAOK == 1) AND (socio1.NAOK == 79))	An welcher Universität arbeitest Du?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Abraham-Geiger-Kolleg		de-informal																																																																																																																																			
 A	0	2		Albert-Ludwigs-Universität Freiburg		de-informal																																																																																																																																			
@@ -7374,53 +7383,47 @@ A	0	6		Helmholtz-Gemeinschaft Deutscher Forschungszentren		de-informal
 A	0	7		Leibniz-Gemeinschaft		de-informal																																																																																																																																			
 A	0	8		Max-Planck-Gesellschaft 		de-informal																																																																																																																																			
 Q	!	prevEmp1quk	((socio1.NAOK == 232))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	prevEmp1qus	((socio1.NAOK == 233))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	prevEmp1qzaf	((socio1.NAOK == 203))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	prevEmp1qnzl	((socio1.NAOK == 156))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	prevEmp1qaus	((socio1.NAOK == 14))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 79)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 232)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 233)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 203)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 156)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
-A	0	1		University		de-informal																																																																																																																																			
-A	0	2		Research Institute		de-informal																																																																																																																																			
-A	0	3		Private Company		de-informal																																																																																																																																			
-A	0	4		Government		de-informal																																																																																																																																			
-A	0	5		Other non-profit		de-informal																																																																																																																																			
-A	0	6		Research council		de-informal																																																																																																																																			
-A	0	7		Start-up		de-informal																																																																																																																																			
+A	0	1		Universität		de-informal																																																																																																																																			
+A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
+A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
+A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
+A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
+A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
 Q	R	prevEmp2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	Ordne die folgenden Faktoren dem Einfluß nach an, den sie auf Deinen Entschluß, Deine jetzige Position anzutreten, hatten.		de-informal			N		1																																																								5																									1	1						1															1																							
 SQ	0	1	1	Rank1		de-informal																																																																																																																																			
 SQ	0	2	1	Rank2		de-informal																																																																																																																																			
@@ -7447,8 +7450,9 @@ Q	Y	currentWork2		Arbeitest Du in einer Gruppe		de-informal			N		1														
 Q	!	paper2mod		Wenn deine Software zu einer Publikation beigeträgst, wirst Du dafür normalerweise namentlich in der Publikation erwähnt bzw. zitiert?		de-informal			N		1																																																																																																							1						1																	
 A	0	1		Überhaupt nicht erwähnt		de-informal																																																																																																																																			
 A	0	2		Im Text genannt		de-informal																																																																																																																																			
-A	0	3		Als Co-Autor benannt		de-informal																																																																																																																																			
-A	0	4		Als Hauptautor benannt		de-informal																																																																																																																																			
+A	0	3				de-informal																																																																																																																																			
+A	0	4		Als Co-Autor benannt		de-informal																																																																																																																																			
+A	0	5		Als Hauptautor benannt		de-informal																																																																																																																																			
 Q	Y	conf1can		Hast Du Deine software-bezogene Arbeit schon mal auf einer Konferenz oder einem Workshop vorgestellt?		de-informal			N		1																																																																																																							1																							
 Q	S	conf2can	((conf2can.NAOK == 'Y'))	Auf welcher Konferenz oder auf welchem Workshop hast Du Deine software-bezogene Arbeit vorgestellt? (Gib Deine Antworten bitte als Komma separierte Liste ein, z.B. NAME (ABKÜRZUNG), ABKÜRZUNG, ...)		de-informal			N																																																																																																																																
 Q	N	proj1can		In wie vielen Softwareprojekten bis Du derzeit direkt involviert?		de-informal			N			1																																																																																																							1																						
@@ -7520,6 +7524,7 @@ SQ	0	SQ013		Open core (Vermarktung proprietäre Softwareversionen oder Add-ons f
 SQ	0	SQ014		Stiftungen und Konsortien		de-informal																																																																																																																																			
 SQ	0	SQ015		Risikokapital		de-informal																																																																																																																																			
 SQ	0	SQ016		Lizenzierung einer Marke und Franchising		de-informal																																																																																																																																			
+SQ	0	SQ017				de-informal																																																																																																																																			
 Q	!	fund1can	((socio1.NAOK == 41))			de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Employer		de-informal																																																																																																																																			
 A	0	2		CANARIE		de-informal																																																																																																																																			
@@ -7589,6 +7594,35 @@ Q	!	socio2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	Dein Geschlecht		d
 A	0	1		Weiblich		de-informal																																																																																																																																			
 A	0	2		Männlich		de-informal																																																																																																																																			
 A	0	3		keine Angabe		de-informal																																																																																																																																			
+Q	M	socio5quk	((socio1.NAOK == 232))			de-informal			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		White: English / Welsh / Scottish / Northern Irish / British		de-informal																																																																																																																																			
+SQ	0	SQ002		White: Irish		de-informal																																																																																																																																			
+SQ	0	SQ003		White: Gypsy or Irish Traveller		de-informal																																																																																																																																			
+SQ	0	SQ004		White: Any other White background		de-informal																																																																																																																																			
+SQ	0	SQ005		Mixed / Multiple Ethnic groups: White and Black Caribbean		de-informal																																																																																																																																			
+SQ	0	SQ006		Mixed / Multiple Ethnic groups: White and Black African		de-informal																																																																																																																																			
+SQ	0	SQ007		Mixed / Multiple Ethnic groups: White and Asian		de-informal																																																																																																																																			
+SQ	0	SQ008		Mixed / Multiple Ethnic groups: Any other Mixed / Multiple ethnic background,		de-informal																																																																																																																																			
+SQ	0	SQ009		Asian / Asian British: Indian		de-informal																																																																																																																																			
+SQ	0	SQ010		Asian / Asian British: Pakistani		de-informal																																																																																																																																			
+SQ	0	SQ011		Asian / Asian British: Bangladeshi		de-informal																																																																																																																																			
+SQ	0	SQ012		Asian / Asian British: Chinese		de-informal																																																																																																																																			
+SQ	0	SQ013		Asian / Asian British: Any other Asian background		de-informal																																																																																																																																			
+SQ	0	SQ014		Black / African / Caribbean / Black British:  African		de-informal																																																																																																																																			
+SQ	0	SQ015		Black / African / Caribbean / Black British: Caribbean		de-informal																																																																																																																																			
+SQ	0	SQ016		Black / African / Caribbean / Black British: Any other Black / African / Caribbean background		de-informal																																																																																																																																			
+SQ	0	SQ017		Other Ethnic group: Arab		de-informal																																																																																																																																			
+SQ	0	SQ018		Other Ethnic group: Any other ethnic group		de-informal																																																																																																																																			
+SQ	0	SQ019		Do not wish to declare		de-informal																																																																																																																																			
+Q	M	socio5qus	((socio1.NAOK == 233))			de-informal			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		White		de-informal																																																																																																																																			
+SQ	0	SQ002		Black or African American		de-informal																																																																																																																																			
+SQ	0	SQ003		Asian		de-informal																																																																																																																																			
+SQ	0	SQ004		American Indian and Alaska Native		de-informal																																																																																																																																			
+SQ	0	SQ005		Native Hawaiian and Other Pacific Islander		de-informal																																																																																																																																			
+SQ	0	SQ006		Some other race		de-informal																																																																																																																																			
+SQ	0	SQ007		Do not wish to answer		de-informal																																																																																																																																			
+SQ	0	SQ008				de-informal																																																																																																																																			
 Q	!	socio5usqus	((socio1.NAOK == 233))			de-informal			N		1																																																																																																							1						1																	
 A	0	1		Yes		de-informal																																																																																																																																			
 A	0	2		No		de-informal																																																																																																																																			
@@ -7601,14 +7635,7 @@ A	0	3		35 bis 44 Jahre		de-informal
 A	0	4		45 bis 54 Jahre		de-informal																																																																																																																																			
 A	0	5		55 bis 64 Jahre		de-informal																																																																																																																																			
 A	0	6		65 Jahre und älter		de-informal																																																																																																																																			
-Q	Y	ukrse1		Bist Du Mitglied in einem Verband von Research Software Engineers (z. B. UK RSE, de-RSE, NL-RSE)?		de-informal			N		1																																																																																																							1																							
-Q	Y	org1can		Bist Du daran interessiert, einer solchen Organisation beizutreten?		de-informal			N		1																																																																																																							1																							
-Q	M	org2can	((org1can.NAOK == 'Y'))	Was würdest Du von einer solchen Organisation erwarten? (wähle alle zutreffenden)		de-informal			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
-SQ	0	SQ001		”Vernetzung”		de-informal																																																																																																																																			
-SQ	0	SQ002		Kooperation in der Forschung”		de-informal																																																																																																																																			
-SQ	0	SQ003		Ausbildung, Weiterbildung”		de-informal																																																																																																																																			
-SQ	0	SQ004		Standards für Forschungssoftware und Interoperabilität”		de-informal																																																																																																																																			
-SQ	0	SQ005		Job-Möglichkeiten”		de-informal																																																																																																																																			
+A	0	7		keine Angabe		de-informal																																																																																																																																			
 Q	!	socio4qde	((socio1.NAOK == 79))	Bitte wähle Deine Gehaltsklasse aus!		de-informal			N		1																																																																																																							1						1																	
 A	0	1		< £18,031		de-informal																																																																																																																																			
 A	0	2		≥ £18,031 and < £24,057		de-informal																																																																																																																																			
@@ -7636,14 +7663,14 @@ A	0	4		≥ £32,277 and < £43,325		de-informal
 A	0	5		≥ £43,325 and < £58,172		de-informal																																																																																																																																			
 A	0	6		≥ £58,172		de-informal																																																																																																																																			
 Q	!	socio4qus	((socio1.NAOK == 233))	Bitte wähle Deine Gehaltsklasse aus!		de-informal			N		1																																																																																																							1						1																	
-A	0	1		Less than \$30,000		de-informal																																																																																																																																			
-A	0	2		From \$30,000 to \$49,999		de-informal																																																																																																																																			
-A	0	3		From \$50,000 to \$69,999		de-informal																																																																																																																																			
-A	0	4		From \$70,000 to \$89,999		de-informal																																																																																																																																			
-A	0	5		From \$90,000 to \$109,999		de-informal																																																																																																																																			
-A	0	6		From \$110,000 to \$129,999		de-informal																																																																																																																																			
-A	0	7		From \$130,000 to \$149,999		de-informal																																																																																																																																			
-A	0	8		More than \$150,000		de-informal																																																																																																																																			
+A	0	1		Less than $30,000		de-informal																																																																																																																																			
+A	0	2		From $30,000 to $49,999		de-informal																																																																																																																																			
+A	0	3		From $50,000 to $69,999		de-informal																																																																																																																																			
+A	0	4		From $70,000 to $89,999		de-informal																																																																																																																																			
+A	0	5		From $90,000 to $109,999		de-informal																																																																																																																																			
+A	0	6		From $110,000 to $129,999		de-informal																																																																																																																																			
+A	0	7		From $130,000 to $149,999		de-informal																																																																																																																																			
+A	0	8		More than $150,000		de-informal																																																																																																																																			
 A	0	9		Prefer not to say		de-informal																																																																																																																																			
 Q	!	socio4qzaf	((socio1.NAOK == 203))	Bitte wähle Deine Gehaltsklasse aus!		de-informal			N		1																																																																																																							1						1																	
 A	0	1		Less than R 189 880		de-informal																																																																																																																																			
@@ -7678,6 +7705,15 @@ A	0	6		E12		de-informal
 A	0	7		E13		de-informal																																																																																																																																			
 A	0	8		E14		de-informal																																																																																																																																			
 A	0	9		E15		de-informal																																																																																																																																			
+G	G6	Die letzen Fragen über Dich	1			de-informal																																																																																																																																			
+Q	Y	ukrse1		Bist Du Mitglied in einem Verband von Research Software Engineers (z. B. UK RSE, de-RSE, NL-RSE)?		de-informal			N		1																																																																																																							1																							
+Q	Y	org1can		Bist Du daran interessiert, einer solchen Organisation beizutreten?		de-informal			N		1																																																																																																							1																							
+Q	M	org2can	((org1can.NAOK == 'Y'))	Was würdest Du von einer solchen Organisation erwarten? (wähle alle zutreffenden)		de-informal			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		”Vernetzung”		de-informal																																																																																																																																			
+SQ	0	SQ002		Kooperation in der Forschung”		de-informal																																																																																																																																			
+SQ	0	SQ003		Ausbildung, Weiterbildung”		de-informal																																																																																																																																			
+SQ	0	SQ004		Standards für Forschungssoftware und Interoperabilität”		de-informal																																																																																																																																			
+SQ	0	SQ005		Job-Möglichkeiten”		de-informal																																																																																																																																			
 Q	!	tool2		Welches Betriebssystem bevorzugst Du auf Arbeit?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		de-informal																																																																																																																																			
 A	0	2		OS X		de-informal																																																																																																																																			
@@ -8606,11 +8642,11 @@ A	0	6		5 - Mostly other people		fr
 Q	Y	soft2can		Vous considérez-vous comme un développeur de logiciels professionnel?		fr			N		1																																																																																																							1																							
 Q	N	soft1can		Combien d’années d’expérience cumulez-vous en développement de logiciels?		fr			N			1																																																																																																							1																						
 Q	F	likert0				fr			N		1																																																																																																							1																							
-SQ	0	time1can	1	Quel pourcentage de votre temps consacrez-vous en moyenne au développement de logiciels?		fr																																																																																																																																			
-SQ	0	time2can	1	Quel pourcentage de votre temps consacrez-vous en moyenne à la recherche?		fr																																																																																																																																			
-SQ	0	time3can	1	Quel pourcentage de votre temps consacrez-vous en moyenne à la gestion?		fr																																																																																																																																			
-SQ	0	time4can	1	Quel pourcentage de votre temps consacrez-vous en moyenne à l’enseignement?		fr																																																																																																																																			
-SQ	0	time5can	1	Quel pourcentage de votre temps consacrez-vous en moyenne à d’autres activités?		fr																																																																																																																																			
+SQ	0	time1can	1	Quelle proportion de votre temps consacrez-vous en moyenne au développement de logiciels?		fr																																																																																																																																			
+SQ	0	time2can	1	Quelle proportion de votre temps consacrez-vous en moyenne à la recherche?		fr																																																																																																																																			
+SQ	0	time3can	1	Quelle proportion de votre temps consacrez-vous en moyenne à la gestion?		fr																																																																																																																																			
+SQ	0	time4can	1	Quelle proportion de votre temps consacrez-vous en moyenne à l’enseignement?		fr																																																																																																																																			
+SQ	0	time5can	1	Quelle proportion de votre temps consacrez-vous en moyenne à d’autres activités?		fr																																																																																																																																			
 A	0	1		1 (Pas du tout)		fr																																																																																																																																			
 A	0	2		2		fr																																																																																																																																			
 A	0	3		3		fr																																																																																																																																			
@@ -8649,68 +8685,60 @@ A	0	7		Leibniz Association		fr
 A	0	8		Max Planck Society		fr																																																																																																																																			
 Q	!	currentEmp1qnl	((socio1.NAOK == 154))	Veuillez indiquer la nature de votre organisation.		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	currentEmp1quk	((socio1.NAOK == 232))	Veuillez indiquer la nature de votre organisation.		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	currentEmp1qus	((socio1.NAOK == 233))	Veuillez indiquer la nature de votre organisation.		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	currentEmp1qzaf	((socio1.NAOK == 203))	Veuillez indiquer la nature de votre organisation.		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	currentEmp1qnzl	((socio1.NAOK == 156))	Veuillez indiquer la nature de votre organisation.		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	currentEmp1qcan	((socio1.NAOK == 41))	Veuillez indiquer la nature de votre organisation.		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	currentEmp1qaus	((socio1.NAOK == 14))	Veuillez indiquer la nature de votre organisation.		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	currentEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 79)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 232)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 233)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 203)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 156)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Veuillez indiquer la nature de votre organisation.		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	currentEmp2qde	((currentEmp1qde.NAOK == 1) AND (socio1.NAOK == 79))			fr			Y		1																																																																																																							1						1																	
 A	0	1		Abraham Geiger College		fr																																																																																																																																			
 A	0	2		University of Freiburg		fr																																																																																																																																			
@@ -10589,9 +10617,9 @@ A	0	2		Part-time		fr
 A	0	3		Prefer not to say		fr																																																																																																																																			
 Q	!	currentEmp10		Quelle est la nature de votre emploi actuel?		fr			N		1																																																																																																							1						1																	
 A	0	1		Permanent -- funded by Institution core funding		fr																																																																																																																																			
-A	0	2		Permanent -- as long as funding is available		fr																																																																																																																																			
+A	0	2		Permanent -- funded by project funds		fr																																																																																																																																			
 A	0	3		Fixed term -- funded by Institution core funding		fr																																																																																																																																			
-A	0	4		Fixed term -- as long as funding is available		fr																																																																																																																																			
+A	0	4		Fixed term -- funded by project funds		fr																																																																																																																																			
 A	0	5		Research/Student Assistant		fr																																																																																																																																			
 A	0	6		Agency staff		fr																																																																																																																																			
 A	0	7		Freelancer, consultant, contractor		fr																																																																																																																																			
@@ -11152,52 +11180,46 @@ A	0	7		Leibniz Association		fr
 A	0	8		Max Planck Society		fr																																																																																																																																			
 Q	!	prevEmp1quk	((socio1.NAOK == 232))			fr			N		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	prevEmp1qus	((socio1.NAOK == 233))			fr			N		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	prevEmp1qzaf	((socio1.NAOK == 203))			fr			N		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	prevEmp1qnzl	((socio1.NAOK == 156))			fr			N		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	prevEmp1qaus	((socio1.NAOK == 14))			fr			N		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 79)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 232)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 233)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 203)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 156)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))			fr			N		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
-A	0	2		Research Institute		fr																																																																																																																																			
-A	0	3		Private Company		fr																																																																																																																																			
-A	0	4		Government		fr																																																																																																																																			
-A	0	5		Other non-profit		fr																																																																																																																																			
-A	0	6		Research council		fr																																																																																																																																			
-A	0	7		Start-up		fr																																																																																																																																			
+A	0	2		Private company		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
+A	0	4		NGO		fr																																																																																																																																			
+A	0	5		National laboratory		fr																																																																																																																																			
+A	0	6		Non-profit organization		fr																																																																																																																																			
 Q	R	prevEmp2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))			fr			N		1																																																								5																									1	1						1															1																							
 SQ	0	1	1	Rank1		fr																																																																																																																																			
 SQ	0	2	1	Rank2		fr																																																																																																																																			
@@ -11224,8 +11246,9 @@ Q	Y	currentWork2		Êtes-vous membre d’une équipe dont le seul but est de cré
 Q	!	paper2mod		En général, les articles mentionnent-ils votre participation quand votre logiciel a concouru à la publication de résultats scientifiques dans un périodique?		fr			N		1																																																																																																							1						1																	
 A	0	1		Pas du tout mentionné		fr																																																																																																																																			
 A	0	2		Mentionné dans le corps du texte		fr																																																																																																																																			
-A	0	3		Mentionné en tant que co-auteur		fr																																																																																																																																			
-A	0	4		Mentionné en tant qu’auteur principal		fr																																																																																																																																			
+A	0	3		Acknowledged in acknowledgements section		fr																																																																																																																																			
+A	0	4		Mentionné en tant que co-auteur		fr																																																																																																																																			
+A	0	5		Mentionné en tant qu’auteur principal		fr																																																																																																																																			
 Q	Y	conf1can		Avez-vous déjà présenté votre travail de développement lors d’un colloque ou un atelier?		fr			N		1																																																																																																							1																							
 Q	S	conf2can	((conf2can.NAOK == 'Y'))	Dans quel(s) colloque(s) ou atelier(s) avez-vous présenté votre travail de développement?		fr			N																																																																																																																																
 Q	N	proj1can		À combien de projets de développement participez-vous présentement?		fr			N			1																																																																																																							1																						
@@ -11255,7 +11278,7 @@ A	0	6		6		fr
 A	0	7		7		fr																																																																																																																																			
 A	0	8		8		fr																																																																																																																																			
 A	0	9		9		fr																																																																																																																																			
-A	0	10		10 (Tout mon temps)		fr																																																																																																																																			
+A	0	10		10 (Tout le temps)		fr																																																																																																																																			
 Q	F	likert2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))			fr			N		1																																																																																																							1																							
 SQ	0	open2de	1			fr																																																																																																																																			
 SQ	0	open3can	1	À quelle fréquence associez-vous un identifiant d’objet numérique (DOI) à vos logiciels? 		fr																																																																																																																																			
@@ -11268,7 +11291,7 @@ A	0	6		6		fr
 A	0	7		7		fr																																																																																																																																			
 A	0	8		8		fr																																																																																																																																			
 A	0	9		9		fr																																																																																																																																			
-A	0	10		10 (Tout mon temps)		fr																																																																																																																																			
+A	0	10		10 (Tout le temps)		fr																																																																																																																																			
 Q	S	open3de		Quels outils (infrastructure) utilisez-vous quand vous attribuez un DOI à votre logiciel (par ex., bibliothèque locale, Zenodo)?		fr			N																																																																																																																																
 Q	Y	open1de		Avez-vous un identifiant ORCID ID?		fr			N		1																																																																																																							1																							
 Q	M	proj5zaf		Quels outils, s’il y a lieu, utilisez-vous pour suivre les versions du logiciel développé?		fr			N	Y	1	1						1	1									1	1																																																																																					1	1																						
@@ -11297,6 +11320,7 @@ SQ	0	SQ013		Open core		fr
 SQ	0	SQ014		Foundations & consortiums		fr																																																																																																																																			
 SQ	0	SQ015		Venture capital		fr																																																																																																																																			
 SQ	0	SQ016		Trademark licensing & franchising		fr																																																																																																																																			
+SQ	0	SQ017		Institutional support		fr																																																																																																																																			
 Q	!	fund1can	((socio1.NAOK == 41))	Qui finance votre travail actuel sur les logiciels scientifiques? Cocher toutes les réponses qui s’appliquent.		fr			Y		1																																																																																																							1						1																	
 A	0	1		Employer		fr																																																																																																																																			
 A	0	2		CANARIE		fr																																																																																																																																			
@@ -11341,7 +11365,7 @@ A	0	6		6		fr
 A	0	7		7		fr																																																																																																																																			
 A	0	8		8		fr																																																																																																																																			
 A	0	9		9		fr																																																																																																																																			
-A	0	10		10 (Tout mon temps)		fr																																																																																																																																			
+A	0	10		10 (Tout le temps)		fr																																																																																																																																			
 Q	F	turnOver6	((!is_empty(socio1.NAOK) and (socio1.NAOK != 154)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))			fr			N		1																																																																																																							1																							
 SQ	0	SQ001	1			fr																																																																																																																																			
 A	0	1		Pas du tout d’accord		fr																																																																																																																																			
@@ -11366,6 +11390,35 @@ Q	!	socio2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))			fr			Y		1							
 A	0	1		Female		fr																																																																																																																																			
 A	0	2		Male		fr																																																																																																																																			
 A	0	3		Prefer not to say		fr																																																																																																																																			
+Q	M	socio5quk	((socio1.NAOK == 232))			fr			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		White: English / Welsh / Scottish / Northern Irish / British		fr																																																																																																																																			
+SQ	0	SQ002		White: Irish		fr																																																																																																																																			
+SQ	0	SQ003		White: Gypsy or Irish Traveller		fr																																																																																																																																			
+SQ	0	SQ004		White: Any other White background		fr																																																																																																																																			
+SQ	0	SQ005		Mixed / Multiple Ethnic groups: White and Black Caribbean		fr																																																																																																																																			
+SQ	0	SQ006		Mixed / Multiple Ethnic groups: White and Black African		fr																																																																																																																																			
+SQ	0	SQ007		Mixed / Multiple Ethnic groups: White and Asian		fr																																																																																																																																			
+SQ	0	SQ008		Mixed / Multiple Ethnic groups: Any other Mixed / Multiple ethnic background,		fr																																																																																																																																			
+SQ	0	SQ009		Asian / Asian British: Indian		fr																																																																																																																																			
+SQ	0	SQ010		Asian / Asian British: Pakistani		fr																																																																																																																																			
+SQ	0	SQ011		Asian / Asian British: Bangladeshi		fr																																																																																																																																			
+SQ	0	SQ012		Asian / Asian British: Chinese		fr																																																																																																																																			
+SQ	0	SQ013		Asian / Asian British: Any other Asian background		fr																																																																																																																																			
+SQ	0	SQ014		Black / African / Caribbean / Black British:  African		fr																																																																																																																																			
+SQ	0	SQ015		Black / African / Caribbean / Black British: Caribbean		fr																																																																																																																																			
+SQ	0	SQ016		Black / African / Caribbean / Black British: Any other Black / African / Caribbean background		fr																																																																																																																																			
+SQ	0	SQ017		Other Ethnic group: Arab		fr																																																																																																																																			
+SQ	0	SQ018		Other Ethnic group: Any other ethnic group		fr																																																																																																																																			
+SQ	0	SQ019		Do not wish to declare		fr																																																																																																																																			
+Q	M	socio5qus	((socio1.NAOK == 233))			fr			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		White		fr																																																																																																																																			
+SQ	0	SQ002		Black or African American		fr																																																																																																																																			
+SQ	0	SQ003		Asian		fr																																																																																																																																			
+SQ	0	SQ004		American Indian and Alaska Native		fr																																																																																																																																			
+SQ	0	SQ005		Native Hawaiian and Other Pacific Islander		fr																																																																																																																																			
+SQ	0	SQ006		Some other race		fr																																																																																																																																			
+SQ	0	SQ007		Do not wish to answer		fr																																																																																																																																			
+SQ	0	SQ008				fr																																																																																																																																			
 Q	!	socio5usqus	((socio1.NAOK == 233))			fr			N		1																																																																																																							1						1																	
 A	0	1		Yes		fr																																																																																																																																			
 A	0	2		No		fr																																																																																																																																			
@@ -11378,14 +11431,7 @@ A	0	3		35 to 44 years		fr
 A	0	4		45 to 54 years		fr																																																																																																																																			
 A	0	5		55 to 64 years		fr																																																																																																																																			
 A	0	6		Age 65 or older		fr																																																																																																																																			
-Q	Y	ukrse1		Faites-vous partie d’une association de développeurs de logiciels scientifiques (par ex., la RSE du R.-U.)?		fr			N		1																																																																																																							1																							
-Q	Y	org1can		Aimeriez-vous être membre d’une telle organisation si on en créait une au Canada?		fr			N		1																																																																																																							1																							
-Q	M	org2can	((org1can.NAOK == 'Y'))	Que vous attendriez-vous à retirer de l’adhésion à une telle organisation? Cocher toutes les réponses qui s’appliquent.		fr			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
-SQ	0	SQ001		Réseautage		fr																																																																																																																																			
-SQ	0	SQ002		Collaboration en recherche		fr																																																																																																																																			
-SQ	0	SQ003		Formation		fr																																																																																																																																			
-SQ	0	SQ004		Normalisation des logiciels scientifiques et définition de l’interopérabilité		fr																																																																																																																																			
-SQ	0	SQ005		Possibilités d’emploi		fr																																																																																																																																			
+A	0	7		Prefer not to say		fr																																																																																																																																			
 Q	!	socio4qde	((socio1.NAOK == 79))			fr			N		1																																																																																																							1						1																	
 A	0	1		< £18,031		fr																																																																																																																																			
 A	0	2		≥ £18,031 and < £24,057		fr																																																																																																																																			
@@ -11413,14 +11459,14 @@ A	0	4		≥ £32,277 and < £43,325		fr
 A	0	5		≥ £43,325 and < £58,172		fr																																																																																																																																			
 A	0	6		≥ £58,172		fr																																																																																																																																			
 Q	!	socio4qus	((socio1.NAOK == 233))			fr			N		1																																																																																																							1						1																	
-A	0	1		Less than \$30,000		fr																																																																																																																																			
-A	0	2		From \$30,000 to \$49,999		fr																																																																																																																																			
-A	0	3		From \$50,000 to \$69,999		fr																																																																																																																																			
-A	0	4		From \$70,000 to \$89,999		fr																																																																																																																																			
-A	0	5		From \$90,000 to \$109,999		fr																																																																																																																																			
-A	0	6		From \$110,000 to \$129,999		fr																																																																																																																																			
-A	0	7		From \$130,000 to \$149,999		fr																																																																																																																																			
-A	0	8		More than \$150,000		fr																																																																																																																																			
+A	0	1		Less than $30,000		fr																																																																																																																																			
+A	0	2		From $30,000 to $49,999		fr																																																																																																																																			
+A	0	3		From $50,000 to $69,999		fr																																																																																																																																			
+A	0	4		From $70,000 to $89,999		fr																																																																																																																																			
+A	0	5		From $90,000 to $109,999		fr																																																																																																																																			
+A	0	6		From $110,000 to $129,999		fr																																																																																																																																			
+A	0	7		From $130,000 to $149,999		fr																																																																																																																																			
+A	0	8		More than $150,000		fr																																																																																																																																			
 A	0	9		Prefer not to say		fr																																																																																																																																			
 Q	!	socio4qzaf	((socio1.NAOK == 203))			fr			N		1																																																																																																							1						1																	
 A	0	1		Less than R 189 880		fr																																																																																																																																			
@@ -11455,6 +11501,15 @@ A	0	6		E12		fr
 A	0	7		E13		fr																																																																																																																																			
 A	0	8		E14		fr																																																																																																																																			
 A	0	9		E15		fr																																																																																																																																			
+G	G6	Dernières questions à propos de vous	1			fr																																																																																																																																			
+Q	Y	ukrse1		Faites-vous partie d’une association de développeurs de logiciels scientifiques (par ex., la RSE du R.-U.)?		fr			N		1																																																																																																							1																							
+Q	Y	org1can		Aimeriez-vous être membre d’une telle organisation si on en créait une au Canada?		fr			N		1																																																																																																							1																							
+Q	M	org2can	((org1can.NAOK == 'Y'))	Que vous attendriez-vous à retirer de l’adhésion à une telle organisation? Cocher toutes les réponses qui s’appliquent.		fr			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		Réseautage		fr																																																																																																																																			
+SQ	0	SQ002		Collaboration en recherche		fr																																																																																																																																			
+SQ	0	SQ003		Formation		fr																																																																																																																																			
+SQ	0	SQ004		Normalisation des logiciels scientifiques et définition de l’interopérabilité		fr																																																																																																																																			
+SQ	0	SQ005		Possibilités d’emploi		fr																																																																																																																																			
 Q	!	tool2		Quel système d’exploitation utilisez-vous principalement pour le développement?		fr			Y		1																																																																																																							1						1																	
 A	0	1		GNU/Linux		fr																																																																																																																																			
 A	0	2		OS X		fr																																																																																																																																			
