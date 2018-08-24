@@ -218,7 +218,6 @@ class conditionFormat:
                 # in that list.
                 list_countries_to_exclude = [i for i in self.dict_countries.keys() if i not in list_countries_to_add]
                 final_condition = self.create_country_condition(current_question, list_countries_to_exclude, operator='!=', existing_condition=condition)
-            print(final_condition)
             return final_condition
 
         condition = question['condition']

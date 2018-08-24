@@ -3875,12 +3875,12 @@ A	0	4		≥ NZD 85,000 and < NZD 105,000		en
 A	0	5		≥ NZD 105,000 and < NZD 120,000		en																																																																																																																																			
 A	0	6		≥ NZD 120,000		en																																																																																																																																			
 Q	!	socio4qaus	((socio1.NAOK == 14))	Please select the range of your salary		en			N		1																																																																																																							1						1																	
-A	0	1		< £18,031		en																																																																																																																																			
-A	0	2		≥ £18,031 and < £24,057		en																																																																																																																																			
-A	0	3		≥ £24,057 and < £32,277		en																																																																																																																																			
-A	0	4		≥ £32,277 and < £43,325		en																																																																																																																																			
-A	0	5		≥ £43,325 and < £58,172		en																																																																																																																																			
-A	0	6		≥ £58,172		en																																																																																																																																			
+A	0	1		+< AUD 45,000		en																																																																																																																																			
+A	0	2		+≥ AUD 45,000 and < AUD 65,000		en																																																																																																																																			
+A	0	3		+≥ AUD 65,000 and < AUD 85,000		en																																																																																																																																			
+A	0	4		+≥ AUD 85,000 and < AUD 105,000		en																																																																																																																																			
+A	0	5		+≥ AUD 105,000 and < AUD 120,000		en																																																																																																																																			
+A	0	6		+≥ AUD 120,000		en																																																																																																																																			
 Q	!	socio10deqde	((socio1.NAOK == 79))	Please select your renumeration group according to your collective bargaining agreement		en			N		1																																																																																																							1						1																	
 A	0	1		E1-E7		en																																																																																																																																			
 A	0	2		E8		en																																																																																																																																			
@@ -3891,6 +3891,46 @@ A	0	6		E12		en
 A	0	7		E13		en																																																																																																																																			
 A	0	8		E14		en																																																																																																																																			
 A	0	9		E15		en																																																																																																																																			
+Q	!	socio11ausnzlqnzl	((socio1.NAOK == 156))	What is the category of your pay-scale?		en			Y		1																																																																																																							1						1																	
+A	0	1		Academic		en																																																																																																																																			
+A	0	2		Professional		en																																																																																																																																			
+Q	!	socio11ausnzlqaus	((socio1.NAOK == 14))	What is the category of your pay-scale?		en			Y		1																																																																																																							1						1																	
+A	0	1		Academic		en																																																																																																																																			
+A	0	2		Professional		en																																																																																																																																			
+Q	!	socio12ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 1) AND (socio1.NAOK == 156))	What is your pay-level?		en			Y		1																																																																																																							1						1																	
+A	0	1		﻿A - Associate Lecturer / Research Associate		en																																																																																																																																			
+A	0	2		B - Lecturer / Research Fellow		en																																																																																																																																			
+A	0	3		C- Senior Lecturer / Senior Research Fellow		en																																																																																																																																			
+A	0	4		D - Associate Professor / Principle Research Fellow		en																																																																																																																																			
+A	0	5		E - Professor / Senior Principle Research Fellow		en																																																																																																																																			
+Q	!	socio12ausnzlqaus	((socio11ausnzlqaus.NAOK == 1) AND (socio1.NAOK == 14))	What is your pay-level?		en			Y		1																																																																																																							1						1																	
+A	0	1		﻿A - Associate Lecturer / Research Associate		en																																																																																																																																			
+A	0	2		B - Lecturer / Research Fellow		en																																																																																																																																			
+A	0	3		C- Senior Lecturer / Senior Research Fellow		en																																																																																																																																			
+A	0	4		D - Associate Professor / Principle Research Fellow		en																																																																																																																																			
+A	0	5		E - Professor / Senior Principle Research Fellow		en																																																																																																																																			
+Q	!	socio13ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 2) AND (socio1.NAOK == 156))	What is your pay-level?		en			Y		1																																																																																																							1						1																	
+A	0	1		﻿Higher Education Worker Level 1		en																																																																																																																																			
+A	0	2		Higher Education Worker Level 2		en																																																																																																																																			
+A	0	3		Higher Education Worker Level 3		en																																																																																																																																			
+A	0	4		Higher Education Worker Level 4		en																																																																																																																																			
+A	0	5		Higher Education Worker Level 5		en																																																																																																																																			
+A	0	6		Higher Education Worker Level 6		en																																																																																																																																			
+A	0	7		Higher Education Worker Level 7		en																																																																																																																																			
+A	0	8		Higher Education Worker Level 8		en																																																																																																																																			
+A	0	9		Higher Education Worker Level 9		en																																																																																																																																			
+A	0	10		Higher Education Worker Level 10		en																																																																																																																																			
+Q	!	socio13ausnzlqaus	((socio11ausnzlqaus.NAOK == 2) AND (socio1.NAOK == 14))	What is your pay-level?		en			Y		1																																																																																																							1						1																	
+A	0	1		﻿Higher Education Worker Level 1		en																																																																																																																																			
+A	0	2		Higher Education Worker Level 2		en																																																																																																																																			
+A	0	3		Higher Education Worker Level 3		en																																																																																																																																			
+A	0	4		Higher Education Worker Level 4		en																																																																																																																																			
+A	0	5		Higher Education Worker Level 5		en																																																																																																																																			
+A	0	6		Higher Education Worker Level 6		en																																																																																																																																			
+A	0	7		Higher Education Worker Level 7		en																																																																																																																																			
+A	0	8		Higher Education Worker Level 8		en																																																																																																																																			
+A	0	9		Higher Education Worker Level 9		en																																																																																																																																			
+A	0	10		Higher Education Worker Level 10		en																																																																																																																																			
 G	G6	Final questions about you	1			en																																																																																																																																			
 Q	Y	ukrse1		Are you a member of an association of Research Software Developers (e.g. UK RSE)?		en			N		1																																																																																																							1																							
 Q	Y	org1can		Would you be interested in joining such an organisation?		en			N		1																																																																																																							1																							
@@ -7671,12 +7711,12 @@ A	0	4		≥ NZD 85,000 and < NZD 105,000		de-informal
 A	0	5		≥ NZD 105,000 and < NZD 120,000		de-informal																																																																																																																																			
 A	0	6		≥ NZD 120,000		de-informal																																																																																																																																			
 Q	!	socio4qaus	((socio1.NAOK == 14))	Bitte wähle Deine Gehaltsklasse aus!		de-informal			N		1																																																																																																							1						1																	
-A	0	1		< £18,031		de-informal																																																																																																																																			
-A	0	2		≥ £18,031 and < £24,057		de-informal																																																																																																																																			
-A	0	3		≥ £24,057 and < £32,277		de-informal																																																																																																																																			
-A	0	4		≥ £32,277 and < £43,325		de-informal																																																																																																																																			
-A	0	5		≥ £43,325 and < £58,172		de-informal																																																																																																																																			
-A	0	6		≥ £58,172		de-informal																																																																																																																																			
+A	0	1		+< AUD 45,000		de-informal																																																																																																																																			
+A	0	2		+≥ AUD 45,000 and < AUD 65,000		de-informal																																																																																																																																			
+A	0	3		+≥ AUD 65,000 and < AUD 85,000		de-informal																																																																																																																																			
+A	0	4		+≥ AUD 85,000 and < AUD 105,000		de-informal																																																																																																																																			
+A	0	5		+≥ AUD 105,000 and < AUD 120,000		de-informal																																																																																																																																			
+A	0	6		+≥ AUD 120,000		de-informal																																																																																																																																			
 Q	!	socio10deqde	((socio1.NAOK == 79))	Bitte wähle Deine Entgeltgruppe aus!		de-informal			N		1																																																																																																							1						1																	
 A	0	1		E1-E7		de-informal																																																																																																																																			
 A	0	2		E8		de-informal																																																																																																																																			
@@ -7687,6 +7727,46 @@ A	0	6		E12		de-informal
 A	0	7		E13		de-informal																																																																																																																																			
 A	0	8		E14		de-informal																																																																																																																																			
 A	0	9		E15		de-informal																																																																																																																																			
+Q	!	socio11ausnzlqnzl	((socio1.NAOK == 156))			de-informal			Y		1																																																																																																							1						1																	
+A	0	1		Academic		de-informal																																																																																																																																			
+A	0	2		Professional		de-informal																																																																																																																																			
+Q	!	socio11ausnzlqaus	((socio1.NAOK == 14))			de-informal			Y		1																																																																																																							1						1																	
+A	0	1		Academic		de-informal																																																																																																																																			
+A	0	2		Professional		de-informal																																																																																																																																			
+Q	!	socio12ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 1) AND (socio1.NAOK == 156))			de-informal			Y		1																																																																																																							1						1																	
+A	0	1		﻿A - Associate Lecturer / Research Associate		de-informal																																																																																																																																			
+A	0	2		B - Lecturer / Research Fellow		de-informal																																																																																																																																			
+A	0	3		C- Senior Lecturer / Senior Research Fellow		de-informal																																																																																																																																			
+A	0	4		D - Associate Professor / Principle Research Fellow		de-informal																																																																																																																																			
+A	0	5		E - Professor / Senior Principle Research Fellow		de-informal																																																																																																																																			
+Q	!	socio12ausnzlqaus	((socio11ausnzlqaus.NAOK == 1) AND (socio1.NAOK == 14))			de-informal			Y		1																																																																																																							1						1																	
+A	0	1		﻿A - Associate Lecturer / Research Associate		de-informal																																																																																																																																			
+A	0	2		B - Lecturer / Research Fellow		de-informal																																																																																																																																			
+A	0	3		C- Senior Lecturer / Senior Research Fellow		de-informal																																																																																																																																			
+A	0	4		D - Associate Professor / Principle Research Fellow		de-informal																																																																																																																																			
+A	0	5		E - Professor / Senior Principle Research Fellow		de-informal																																																																																																																																			
+Q	!	socio13ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 2) AND (socio1.NAOK == 156))			de-informal			Y		1																																																																																																							1						1																	
+A	0	1		﻿Higher Education Worker Level 1		de-informal																																																																																																																																			
+A	0	2		Higher Education Worker Level 2		de-informal																																																																																																																																			
+A	0	3		Higher Education Worker Level 3		de-informal																																																																																																																																			
+A	0	4		Higher Education Worker Level 4		de-informal																																																																																																																																			
+A	0	5		Higher Education Worker Level 5		de-informal																																																																																																																																			
+A	0	6		Higher Education Worker Level 6		de-informal																																																																																																																																			
+A	0	7		Higher Education Worker Level 7		de-informal																																																																																																																																			
+A	0	8		Higher Education Worker Level 8		de-informal																																																																																																																																			
+A	0	9		Higher Education Worker Level 9		de-informal																																																																																																																																			
+A	0	10		Higher Education Worker Level 10		de-informal																																																																																																																																			
+Q	!	socio13ausnzlqaus	((socio11ausnzlqaus.NAOK == 2) AND (socio1.NAOK == 14))			de-informal			Y		1																																																																																																							1						1																	
+A	0	1		﻿Higher Education Worker Level 1		de-informal																																																																																																																																			
+A	0	2		Higher Education Worker Level 2		de-informal																																																																																																																																			
+A	0	3		Higher Education Worker Level 3		de-informal																																																																																																																																			
+A	0	4		Higher Education Worker Level 4		de-informal																																																																																																																																			
+A	0	5		Higher Education Worker Level 5		de-informal																																																																																																																																			
+A	0	6		Higher Education Worker Level 6		de-informal																																																																																																																																			
+A	0	7		Higher Education Worker Level 7		de-informal																																																																																																																																			
+A	0	8		Higher Education Worker Level 8		de-informal																																																																																																																																			
+A	0	9		Higher Education Worker Level 9		de-informal																																																																																																																																			
+A	0	10		Higher Education Worker Level 10		de-informal																																																																																																																																			
 G	G6	Die letzen Fragen über Dich	1			de-informal																																																																																																																																			
 Q	Y	ukrse1		Bist Du Mitglied in einem Verband von Research Software Engineers (z. B. UK RSE, de-RSE, NL-RSE)?		de-informal			N		1																																																																																																							1																							
 Q	Y	org1can		Bist Du daran interessiert, einer solchen Organisation beizutreten?		de-informal			N		1																																																																																																							1																							
@@ -11467,12 +11547,12 @@ A	0	4		≥ NZD 85,000 and < NZD 105,000		fr
 A	0	5		≥ NZD 105,000 and < NZD 120,000		fr																																																																																																																																			
 A	0	6		≥ NZD 120,000		fr																																																																																																																																			
 Q	!	socio4qaus	((socio1.NAOK == 14))			fr			N		1																																																																																																							1						1																	
-A	0	1		< £18,031		fr																																																																																																																																			
-A	0	2		≥ £18,031 and < £24,057		fr																																																																																																																																			
-A	0	3		≥ £24,057 and < £32,277		fr																																																																																																																																			
-A	0	4		≥ £32,277 and < £43,325		fr																																																																																																																																			
-A	0	5		≥ £43,325 and < £58,172		fr																																																																																																																																			
-A	0	6		≥ £58,172		fr																																																																																																																																			
+A	0	1		+< AUD 45,000		fr																																																																																																																																			
+A	0	2		+≥ AUD 45,000 and < AUD 65,000		fr																																																																																																																																			
+A	0	3		+≥ AUD 65,000 and < AUD 85,000		fr																																																																																																																																			
+A	0	4		+≥ AUD 85,000 and < AUD 105,000		fr																																																																																																																																			
+A	0	5		+≥ AUD 105,000 and < AUD 120,000		fr																																																																																																																																			
+A	0	6		+≥ AUD 120,000		fr																																																																																																																																			
 Q	!	socio10deqde	((socio1.NAOK == 79))			fr			N		1																																																																																																							1						1																	
 A	0	1		E1-E7		fr																																																																																																																																			
 A	0	2		E8		fr																																																																																																																																			
@@ -11483,6 +11563,46 @@ A	0	6		E12		fr
 A	0	7		E13		fr																																																																																																																																			
 A	0	8		E14		fr																																																																																																																																			
 A	0	9		E15		fr																																																																																																																																			
+Q	!	socio11ausnzlqnzl	((socio1.NAOK == 156))			fr			Y		1																																																																																																							1						1																	
+A	0	1		Academic		fr																																																																																																																																			
+A	0	2		Professional		fr																																																																																																																																			
+Q	!	socio11ausnzlqaus	((socio1.NAOK == 14))			fr			Y		1																																																																																																							1						1																	
+A	0	1		Academic		fr																																																																																																																																			
+A	0	2		Professional		fr																																																																																																																																			
+Q	!	socio12ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 1) AND (socio1.NAOK == 156))			fr			Y		1																																																																																																							1						1																	
+A	0	1		﻿A - Associate Lecturer / Research Associate		fr																																																																																																																																			
+A	0	2		B - Lecturer / Research Fellow		fr																																																																																																																																			
+A	0	3		C- Senior Lecturer / Senior Research Fellow		fr																																																																																																																																			
+A	0	4		D - Associate Professor / Principle Research Fellow		fr																																																																																																																																			
+A	0	5		E - Professor / Senior Principle Research Fellow		fr																																																																																																																																			
+Q	!	socio12ausnzlqaus	((socio11ausnzlqaus.NAOK == 1) AND (socio1.NAOK == 14))			fr			Y		1																																																																																																							1						1																	
+A	0	1		﻿A - Associate Lecturer / Research Associate		fr																																																																																																																																			
+A	0	2		B - Lecturer / Research Fellow		fr																																																																																																																																			
+A	0	3		C- Senior Lecturer / Senior Research Fellow		fr																																																																																																																																			
+A	0	4		D - Associate Professor / Principle Research Fellow		fr																																																																																																																																			
+A	0	5		E - Professor / Senior Principle Research Fellow		fr																																																																																																																																			
+Q	!	socio13ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 2) AND (socio1.NAOK == 156))			fr			Y		1																																																																																																							1						1																	
+A	0	1		﻿Higher Education Worker Level 1		fr																																																																																																																																			
+A	0	2		Higher Education Worker Level 2		fr																																																																																																																																			
+A	0	3		Higher Education Worker Level 3		fr																																																																																																																																			
+A	0	4		Higher Education Worker Level 4		fr																																																																																																																																			
+A	0	5		Higher Education Worker Level 5		fr																																																																																																																																			
+A	0	6		Higher Education Worker Level 6		fr																																																																																																																																			
+A	0	7		Higher Education Worker Level 7		fr																																																																																																																																			
+A	0	8		Higher Education Worker Level 8		fr																																																																																																																																			
+A	0	9		Higher Education Worker Level 9		fr																																																																																																																																			
+A	0	10		Higher Education Worker Level 10		fr																																																																																																																																			
+Q	!	socio13ausnzlqaus	((socio11ausnzlqaus.NAOK == 2) AND (socio1.NAOK == 14))			fr			Y		1																																																																																																							1						1																	
+A	0	1		﻿Higher Education Worker Level 1		fr																																																																																																																																			
+A	0	2		Higher Education Worker Level 2		fr																																																																																																																																			
+A	0	3		Higher Education Worker Level 3		fr																																																																																																																																			
+A	0	4		Higher Education Worker Level 4		fr																																																																																																																																			
+A	0	5		Higher Education Worker Level 5		fr																																																																																																																																			
+A	0	6		Higher Education Worker Level 6		fr																																																																																																																																			
+A	0	7		Higher Education Worker Level 7		fr																																																																																																																																			
+A	0	8		Higher Education Worker Level 8		fr																																																																																																																																			
+A	0	9		Higher Education Worker Level 9		fr																																																																																																																																			
+A	0	10		Higher Education Worker Level 10		fr																																																																																																																																			
 G	G6	Dernières questions à propos de vous	1			fr																																																																																																																																			
 Q	Y	ukrse1		Faites-vous partie d’une association de développeurs de logiciels scientifiques (par ex., la RSE du R.-U.)?		fr			N		1																																																																																																							1																							
 Q	Y	org1can		Aimeriez-vous être membre d’une telle organisation si on en créait une au Canada?		fr			N		1																																																																																																							1																							
