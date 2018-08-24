@@ -6,14 +6,14 @@ RSE ist ein Sammelbegriff für in der Forschung und in den Wissenschaften tätig
 Warum habe ich diese Einladung erhalten?
 ----------------------------------------
 
-Du hast diese Einladung erhalten, weil Du als Software entwickelnde Person in Wissenschaft und Forschung ermittelt wurdest oder auf einer Mailinglisten registriert bist, die zur Verbreitung der Umfrage genutzt wird. Es gibt derzeit wenige zuverlässige Informationen über die Gemeinschaft der Software entwickelnden Personen in Forschung und Wissenschaft. Diese Umfrage soll helfen, um diese Informationen zu erhalten und Förderorganisationen und Wissenschaftseinrichtungen bei der Entwicklung von Strategien und Förderprogrammen sowie von Leit- und Richtlinien mit den Ergebnissen dieser Umfrage zu unterstützen. Die Umfrage gibt Dir eine Möglichkeit daran teilzuhaben und Deine Sicht und Erfahrungen einfließen zu lassen sowie Informationen zu Deinem Karriereweg mitzuteilen.
+Du hast diese Einladung erhalten, weil Du als Software entwickelnde Person in Wissenschaft und Forschung ermittelt wurdest oder auf einer Mailinglisten registriert bist, die zur Verbreitung der Umfrage genutzt wird. Es gibt derzeit wenige zuverlässige Informationen über die Gemeinschaft der Software entwickelnden Personen in Forschung und Wissenschaft. Die Umfrage soll helfen, diese Informationen zu gewinnen und mit den Ergebnissen der Umfrage Förderorganisationen und Wissenschaftseinrichtungen bei der Entwicklung von Strategien und Förderprogrammen sowie von Leit- und Richtlinien zu unterstützen. Die Umfrage gibt Dir eine Möglichkeit daran teilzuhaben und Deine Sicht und Erfahrungen einfließen zu lassen sowie Informationen zu Deinem Karriereweg mitzuteilen.
 
 Bitte beachte, dass diese Umfrage nicht verpflichtend ist und du jederzeit deine Teilnahme abbrechen kannst.
 
 Wie lang ist die Umfrage?
 -------------------------
 
-Es gibt ungefähr 80 Fragen, die 15-20 Minuten Antwortzeit erfordern.
+Es gibt ungefähr 80 Fragen, die 10-15 Minuten Antwortzeit erfordern.
 
 Was passiert, wenn ich daran teilnehme?
 ---------------------------------------
@@ -23,7 +23,7 @@ Auf den nächsten Seite werden verschiedene Fragen zur Beantwortung deinerseits 
 Gibt es bei einer Teilnahme Vorteile für mich?
 ----------------------------------------------
 
-Es gibt keinen direkten individuellen Nutzen für die Beantwortung dieser Umfrage. Die Ergebnisse der Umfrage werden jedoch auch genutzt, um Entwicklern von Forschungssoftware zu helfen, damit die Anerkennung ihrer Beiträge zur Forschung auf institutioneller Ebene gestärkt wird.
+Es gibt keinen direkten individuellen Nutzen für die Beantwortung dieser Umfrage. Die Ergebnisse der Umfrage werden jedoch unter anderem dafür genutzt, um Personen zu unterstützen, die wissenschaftliche Software für die Forschung entwickeln, und um die Anerkennung ihrer Beiträge auf institutioneller Ebene zu stärken.
 
 Gibt es Risiken?
 ----------------
