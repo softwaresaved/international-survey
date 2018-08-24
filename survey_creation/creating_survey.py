@@ -191,9 +191,9 @@ class surveyCreation:
                 if element["name"] == "surveyls_{}text".format(type_message):
                     message_done = True
                     element["text"] = message
-                if element["name"] == "surveyls_{}".format(type_message):
-                    message_done = True
-                    element["text"] = message
+                # if element["name"] == "surveyls_{}".format(type_message):
+                #     message_done = True
+                #     element["text"] = message
             return_list.append(element)
         return return_list
 
@@ -209,6 +209,7 @@ class surveyCreation:
                 filename = "{}_message_{}.md".format(type_message, lang)
             else:
                 filename = "{}_message.md".format(type_message)
+            print(filename)
 
             folder = os.path.join(self.year, "texts")
             path = os.path.join(folder, filename)
@@ -232,6 +233,7 @@ class surveyCreation:
             survey_title_row = None
             # Get the welcome message
             welcome_message = get_text("welcome", lang)
+            print(welcome_message)
             # Get the end message
             end_message = get_text("end", lang)
             survey_settings = self._to_modify(
