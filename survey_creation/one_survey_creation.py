@@ -141,7 +141,6 @@ class gettingQuestions:
                                 new_question['answer_format'] = 'FREETEXT'
                                 new_question['other'] = ''
                                 new_question['country_specific'] = ''
-                                country = 'world'
 
                     new_code = '{}q{}'.format(k, country)
                     new_question['country_specific'] = ''
@@ -155,7 +154,6 @@ class gettingQuestions:
                 new_dict[k] = self.dict_questions[k].copy()
                 if new_dict[k]['answer_file'] != '':
                     new_dict[k]['answer_file'] = os.path.join(self.year, 'answers', "{}.csv".format(new_dict[k]['answer_file']))
-
         self.dict_questions = new_dict.copy()
 
     def insert_code_in_dict(self):
@@ -188,10 +186,6 @@ class gettingQuestions:
 
         # Run the condition formating for all the questions
         self.format_condition()
-        for k in self.dict_questions:
-            print(k)
-            print(self.dict_questions[k])
-            print('\n')
         self.insert_code_in_dict()
 
 
