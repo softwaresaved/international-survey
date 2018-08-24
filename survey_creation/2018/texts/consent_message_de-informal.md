@@ -1,5 +1,3 @@
-I have read and understood the information and have had the opportunity to ask questions about the study.
-I agree to take part in this research project and agree for my data to be used for the purpose of this study.
-I understand my participation is voluntary and I may withdraw (at any time)for any reason without my participation rights being affected.
+Ich habe die Informationen gelesen und verstanden. Ich bestätige, dass ich Gelegenheit hatte Fragen zur Studie zu stellen. Ich stimme der Teilnahme an dieser Studie zu und stimme zu, dass meine Daten für die Zwecke dieser Studie verwendet werden. Ich nehme zur Kenntnis, dass meine Teilnahme freiwillig ist und ich (jederzeit) ohne Angabe von Gründen von der Studie zurücktreten kann, ohne dass meine Mitwirkungsrechte betroffen sind oder mir dadurch anderweitig Nachteile entstehen.
 
-I agree with the above statements and wish to continue
+Ich stimme den obigen Bedingungen zu und möchte fortfahren.
