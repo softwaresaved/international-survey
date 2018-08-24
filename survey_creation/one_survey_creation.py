@@ -191,13 +191,6 @@ class gettingQuestions:
 
 def main():
 
-    # logger.info('Read config file')
-    # config_file = "../config/" + args.config
-    #
-    # # set up access credentials
-    # config_value = configParser()
-    # config_value.read(config_file)
-
     # Get the file and transform it to create all the questions and conditions for each country
 
     logger.info('Getting the file and transforming it for the country specific conditions')

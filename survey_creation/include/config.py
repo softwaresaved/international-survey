@@ -11,17 +11,19 @@ class config:
                         {'class': 'S', 'name': 'allowprev', 'text': 'N'}]
     # Add header and description. Tuple of a dictionary + the position where it is supposed
     # to be inserted
-    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'de-informal, fr'}, 12)]
+    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'fr, de-informal'}, 12)]
+    # header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'de-informal'}, 12)]
 
     # Same as header_to_modify
     settings_to_modify = []
     settings_to_add = []
     languages_to_add = ['de-informal', 'fr']
+    # languages_to_add = ['de-informal']
 
     # The index positions starts at 0
     # Adding the survey title to the global description. The index position is at 0 and the structure of the dictionary is as follow:
     survey_title = {'en': 'Study about people writing scientific software',
-                    'de-informal': '',
+                    'de-informal': 'STUDY TEST',
                     'fr': 'Etude sur les personnes écrivant des programmes informatiques scientifiques'}
 
     sections_txt = {0: {'en': {'name': 'Questions about you', 'text': ''},
