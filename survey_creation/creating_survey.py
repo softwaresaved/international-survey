@@ -381,6 +381,9 @@ class surveyCreation:
         else:
             question["name"] = row["code"]
             question["text"] = row[txt_lang]
+            # In case no translation is provided, need to get the english text by default
+            if question["text"] == "":
+                question["text"] = row["question"]
 
         question["relevance"] = row["condition"]
         # question["relevance"] = ""
@@ -413,6 +416,9 @@ class surveyCreation:
                 subquestion["language"] = lang
                 subquestion["name"] = row["code"]
                 subquestion["text"] = row[txt_lang]
+                # In case no translation is provided, need to get the english text by default
+                if subquestion["text"] == "":
+                    subquestion["text"] = row['question']
                 self._write_row(subquestion)
 
         if type_question == "ranking":
