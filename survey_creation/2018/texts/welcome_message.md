@@ -6,7 +6,7 @@
 Why have I been asked to participate?
 ----------------------------------
 
-You have received this link because you were identified as someone creating scientific software and because you are on one of the mailing list we used to disseminate the survey. There is currently little reliable information about the community of people creating research related software, so we have decided to use this survey to gather information to help funders and other research organisations develop policies. This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.
+You have received this link because you were identified as someone creating research software and because you are on one of the mailing list we used to disseminate the survey. There is currently little reliable information about the community of people creating research related software, so we have decided to use this survey to gather information to help funders and other research organisations develop policies. This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.
 
 Please note that this research is not compulsory and even if you decide to participate, you can withdraw at any moment.
 
