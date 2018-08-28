@@ -11,7 +11,7 @@ class config:
                         {'class': 'S', 'name': 'allowprev', 'text': 'N'}]
     # Add header and description. Tuple of a dictionary + the position where it is supposed
     # to be inserted
-    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'fr, de-informal'}, 12)]
+    header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': '"fr de-informal"'}, 12)]
     # header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'de-informal'}, 12)]
 
     # Same as header_to_modify
