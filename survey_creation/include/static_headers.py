@@ -44,9 +44,7 @@ class creationConfig:
     # List of parameters that needs to be added at the start of the survey. They are all under the value 'S' for the key 'class'
 
     global_headers = [{'class': 'S', 'name': 'sid', 'text': '421498'},
-                      {'class': 'S', 'name': 'owner_id', 'text': '1'},
                       {'class': 'S', 'name': 'admin', 'text': 'Administrator'},
-                      {'class': 'S', 'name': 'active', 'text': 'Y'},
                       {'class': 'S', 'name': 'adminemail', 'text': 'orp2c15@soton.ac.uk'},
                       {'class': 'S', 'name': 'anonymized', 'text': 'N'},
                       {'class': 'S', 'name': 'format', 'text': 'G'},
@@ -63,7 +61,6 @@ class creationConfig:
                       {'class': 'S', 'name': 'printanswers', 'text': 'Y'},
                       {'class': 'S', 'name': 'ipaddr', 'text': 'Y'},
                       {'class': 'S', 'name': 'refurl', 'text': 'Y'},
-                      {'class': 'S', 'name': 'datecreated', 'text': '2018-09-03'},
                       {'class': 'S', 'name': 'publicstatistics', 'text': 'N'},
                       {'class': 'S', 'name': 'publicgraphs', 'text': 'N'},
                       {'class': 'S', 'name': 'listpublic', 'text': 'N'},
@@ -86,7 +83,9 @@ class creationConfig:
                       {'class': 'S', 'name': 'navigationdelay', 'text': '0'},
                       {'class': 'S', 'name': 'nokeyboard', 'text': 'N'},
                       {'class': 'S', 'name': 'alloweditaftercompletion', 'text': 'N'},
-                      {'class': 'S', 'name': 'googleanalyticsstyle', 'text': '0'}]
+                      {'class': 'S', 'name': 'googleanalyticsstyle', 'text': '0'},
+                      {'class': 'S', 'name': 'gsid', 'text': '1'},
+                      {'class': 'S', 'name': 'showsurveypolicynotice', 'text': '0'}]
 
     # List of parameters that comprise the survey title and the welcome text
     global_settings = [{'class': 'SL', 'name': 'surveyls_welcometext', 'text': None, 'language': 'en'},
