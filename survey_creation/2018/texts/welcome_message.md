@@ -1,4 +1,5 @@
-**The purpose of this survey is to collect information about people who develop software that is used in research. We also call these people *[Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers)* [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers), but they use many different job titles (including postdoctoral researcher and research assistant).**
+The purpose of this survey is to collect information about people who develop the software that is used in research. We call these people [Research Software Engineers](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers) [(RSEs)](https://www.software.ac.uk/blog/2016-11-17-not-so-brief-history-research-software-engineers), but they exist under many job titles (from postdoctoral researcher to applications consultant, to bioinformatician).
+
 
 
 **Survey number: ERGO/FPSE/45232**
@@ -6,9 +7,10 @@
 Why have I been asked to participate?
 ----------------------------------
 
-You have received this link because you were identified as someone creating research software and because you are on one of the mailing list we used to disseminate the survey. There is currently little reliable information about the community of people creating research related software, so we have decided to use this survey to gather information to help funders and other research organisations develop policies. This questionnaire gives you the opportunity to express your views about your current job and give us information about your career path.
+You have received this link because you were identified as someone who writes research software or because you are on one of the mailing list we used to disseminate the survey. This questionnaire gives you the opportunity to express your views about your current job and your career path.
 
 Please note that this research is not compulsory and even if you decide to participate, you can withdraw at any moment.
+
 
 How long will it take?
 ----------------------
@@ -18,17 +20,17 @@ There are 80 questions in this survey. It takes about 10 to 15 minutes to comple
 What will happen to me if I take part?
 --------------------------------------
 
-You will continue to the next page and begin to answer questions based on the country you are working from.
+You will continue to the next page and begin to answer questions.
 
 Are there any benefits in my taking part?
 -----------------------------------------
 
-We try to help Research Software Developer/Engineer to be recognised at an institutional level. There is no direct individual benefit to answering this survey.
+We use these surveys to gather information that will help persuade universities, funders and other research organisations to develop policies that recognise the fundamental role played by the people who write software in research. There is no direct individual benefit to answering this survey, but there is a significant benefit to the research community
 
 Are there any risks involved?
 -----------------------------
 
-No
+We know of no risks in taking part in this survey.
 
 Do I have to take part?
 -----------------------
@@ -38,32 +40,32 @@ No, it is entirely up to you to decide whether or not to take part. If you decid
 What happens if I change my mind?
 ---------------------------------
 
-You have the right to change your mind and withdraw at any time without giving a reason and without your participant rights being affected. If you decide to withdraw, just close the survey at any time.
-If you withdraw from the study, we will keep the information about you that we have already obtained for the purposes of achieving the objectives of the study only.
+You have the right to change your mind and withdraw at any time without your participant rights being affected.
+
+If you decide not to continue with the survey, you can just close the survey window at any time.
+
+If you wish to withdraw from the survey entirely, you can select "Exit and clear survey" at the top right of the survey window, and all the information you have provided will be deleted..
+
+You can remove your data from our records after completing the survey. We do not collect your name or contact details, so you must record the response ID at the end of the survey so we can identify the correct data to remove.
 
 What will happen to the results of the research?
 ------------------------------------------------
 
-We do not collect personal information such as email address or name. Research findings made available in any reports or publications will not include personal information that can directly identify you.
+We will publish a summary of the data and make the original data available under an open licence. We do not collect personal data in this survey, so any reports or publications cannot be used to  directly identify you.
 
 
 Will my participation be confidential?
 --------------------------------------
 
-Your participation and the information we collect about you during the course of the research will be kept strictly confidential.
+We share the survey results under an open licence ([Creative Commons by attribution, non-commercial licence](https://creativecommons.org/licenses/by-nc/2.5/scotland/)). We anonymise the data before release, so that it does not contain personal information.
 
 Only members of the research team and responsible members of the University of Southampton may be given access to data about you for monitoring purposes and/or to carry out an audit of the study to ensure that the research is complying with applicable regulations. Individuals from regulatory authorities (people who check that we are carrying out the study correctly) may require access to your data. All of these people have a duty to keep your information, as a research participant, strictly confidential.
-
-However we share the data as open source. These data does not contain personal information.
 
 
 Who is responsible for this survey?
 -----------------------------------
 
-This study is conducted by the University of Southampton on behalf of the [Software Sustainability Institute](http://software.ac.uk/) (SSI) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/45232).
-The investigators are [Simon Hettrick](mailto:s.hettrick@software.ac.uk) and [Olivier Philippe](mailto:olivier.philippe@soton.ac.uk).
-The survey is hosted on Limesurvey servers in Germany and respects the provisions of the [Data Protection Act](https://www.gov.uk/data-protection/the-data-protection-act).
-These records are anonymised and access is strictly protected and granted to the main researchers only. The results of the survey will be released publicly but only after they have been processed to ensure that individual respondents can not be identified. The results will be released under a [Creative Commons by attribution, non-commercial licence](https://creativecommons.org/licenses/by-nc/2.5/scotland/).
+This study is conducted by the University of Southampton on behalf of the [Software Sustainability Institute](http://software.ac.uk/) (SSI) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/45232). The investigators are Simon Hettrick and Olivier Philippe. The survey is hosted on Limesurvey servers in Germany and respects the provisions of the [Data Protection Act](https://www.gov.uk/data-protection/the-data-protection-act) and the EU General Data Protection Regulation (GDPR) .
 
 What happens if there is a problem?
 -----------------------------------
@@ -73,8 +75,8 @@ If you have a concern or would like to make a complaint, please contact [Simon H
 
 By clicking on the "next" button I confirm:
 -------------------------------------------
-* I have read and understood the information and have had the opportunity to ask questions about the study.
-* I agree to take part in this research project and agree for my data to be used for the purpose of this study.
-* I understand my participation is voluntary and I may withdraw (at any time)for any reason without my participation rights being affected.
 
-* I agree with the above statements and wish to continue
+*   I have read and understood the information and have had the opportunity to ask questions about the study.
+*   I agree to take part in this research project and agree for my data to be used for the purpose of this study.
+*   I understand my participation is voluntary and I may withdraw at any time for any reason without my participation rights being affected.
+*   I agree with the above statements and wish to continue.
