@@ -255,15 +255,17 @@ class conditionFormat:
             try:
                 answer = condition.split('"')[-2].lower()
             except IndexError:
-                raise TypeError('Error in finding the answer in: {}'.format(condition))
+                print(condition)
+                raise
             yield code, operator, answer
 
     def get_position_answer(self, current_question, answer, code):
         """
-        For limesurve, the answer need to be the index position of the text in the inserted
+        For limesurvey, the answer need to be the index position of the text in the inserted
         answers choice or Y-N in case of Y/N.
         This function take the answer and retrieve the proper index in the self.order_answer_one_choice
         """
+
         position_answer = None
         # set up a variable to confirm the
         # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
@@ -300,11 +302,6 @@ class conditionFormat:
                         position_answer = "{}".format(n)
                         break
 
-        # if code != 'socio1':
-        #     try:
-        #         print(code, position_answer, self.order_answer_one_choice[code])
-        #     except KeyError:
-        #         pass
         return position_answer, code
 
     def format_for_lime(self, code, operator, answer):
