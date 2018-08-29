@@ -102,7 +102,7 @@ class conditionFormat:
         for q in self.questions:
             n = 1
             type_question = self.questions[q]['answer_format'].lower().rstrip()
-            if (type_question == "one choice" or type_question == 'multi choice'):
+            if (type_question == "one choice" or type_question == 'multiple choices'):
                 # add the answer and its position to the self.order_answer_one_choice dict for
                 # the self.setup_condition()
                 for text_answer in self.get_answer(self.year, self.questions[q]["answer_file"]):
@@ -178,7 +178,7 @@ class conditionFormat:
             list_str_countries.append(country_condition)
 
         if len(extracted_condition) == 1:
-            list_str_countries = ["({} AND {})".format(extracted_condition[0], i) for i in list_str_countries]
+            list_str_countries = ["(({} AND {}))".format(extracted_condition[0], i) for i in list_str_countries]
 
         if operator == '!=':
             return '{}'.format(" AND ".join(list_str_countries))
@@ -277,6 +277,7 @@ class conditionFormat:
             # of that answer
             try:
                 for n in self.order_answer_one_choice[code]:
+
                     if self.order_answer_one_choice[code][n].lower().rstrip() == answer.lower().rstrip():
                         position_answer = "{}".format(n)
                         break
@@ -299,6 +300,11 @@ class conditionFormat:
                         position_answer = "{}".format(n)
                         break
 
+        # if code != 'socio1':
+        #     try:
+        #         print(code, position_answer, self.order_answer_one_choice[code])
+        #     except KeyError:
+        #         pass
         return position_answer, code
 
     def format_for_lime(self, code, operator, answer):
@@ -306,10 +312,20 @@ class conditionFormat:
         """
         # In case of exclusion for some countries, need to look like that
         # (is_empty(socio1.NAOK) || (socio1.NAOK != 236)) or (is_empty(socio1.NAOK) || (socio1.NAOK != 237)) or (is_empty(socio1.NAOK) || (socio1.NAOK != 44))))
+        format_condition = None
         if operator == '!=':
-            format_condition = """(!is_empty({0}.NAOK) and ({0}.NAOK {1} {2}))""".format(code, operator, answer)
+            if self.questions[code]['answer_format'].lower() == 'multiple choices':
+                format_condition = """(is_empty({0}_SQ00{1}.NAOK))""".format(code, answer)
+                print(format_condition)
+            else:
+                format_condition = """(!is_empty({0}.NAOK) and ({0}.NAOK {1} {2}))""".format(code, operator, answer)
         else:
-            format_condition = """({}.NAOK {} {})""".format(code, operator, answer)
+            if self.questions[code]['answer_format'].lower() == 'multiple choices':
+                format_condition = """({}_SQ00{}.NAOK == 'Y')""".format(code, answer)
+            else:
+                format_condition = """({}.NAOK {} {})""".format(code, operator, answer)
+        if format_condition is None:
+            raise
         return format_condition
 
     def final_formating(self, list_formated_conditions, dict_of_bool):
