@@ -268,7 +268,7 @@ class conditionFormat:
         # set up a variable to confirm the
         # if answer is Y or N, it is simply need to be formated as 'Y' or 'N'
         if answer in ["y", "n", "yes", "no"]:
-            position_answer = "'{}'".format(answer[0].upper())  # Only need the Y or N
+            position_answer = '"{}"'.format(answer[0].upper())  # Only need the Y or N
 
         # If not it means it is from a one choice question and the position of the answer
         # needs to be retrieved
