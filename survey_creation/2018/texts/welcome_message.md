@@ -9,7 +9,7 @@ Why have I been asked to participate?
 
 You have received this link because you were identified as someone who writes research software or because you are on one of the mailing list we used to disseminate the survey. This questionnaire gives you the opportunity to express your views about your current job and your career path.
 
-Please note that this research is not compulsory and even if you decide to participate, you can withdraw at any moment.
+Please note that this survey is not compulsory and even if you decide to participate, you can withdraw at any moment.
 
 
 How long will it take?
@@ -25,7 +25,7 @@ You will continue to the next page and begin to answer questions.
 Are there any benefits in my taking part?
 -----------------------------------------
 
-We use these surveys to gather information that will help persuade universities, funders and other research organisations to develop policies that recognise the fundamental role played by the people who write software in research. There is no direct individual benefit to answering this survey, but there is a significant benefit to the research community
+We use these surveys to gather information that will help persuade universities, funders and other research organisations to develop policies that recognise the fundamental role played by the people who write software in research. There is no direct individual benefit to answering this survey, but there is a significant benefit to the community of Research Software Engineers/Developers.
 
 Are there any risks involved?
 -----------------------------
