@@ -44,26 +44,23 @@ class creationConfig:
     # List of parameters that needs to be added at the start of the survey. They are all under the value 'S' for the key 'class'
 
     global_headers = [{'class': 'S', 'name': 'sid', 'text': '421498'},
-                      {'class': 'S', 'name': 'owner_id', 'text': '1'},
                       {'class': 'S', 'name': 'admin', 'text': 'Administrator'},
-                      {'class': 'S', 'name': 'active', 'text': 'Y'},
                       {'class': 'S', 'name': 'adminemail', 'text': 'orp2c15@soton.ac.uk'},
                       {'class': 'S', 'name': 'anonymized', 'text': 'N'},
                       {'class': 'S', 'name': 'format', 'text': 'G'},
                       {'class': 'S', 'name': 'savetimings', 'text': 'Y'},
-                      {'class': 'S', 'name': 'template', 'text': 'ubuntu_orange'},
+                      {'class': 'S', 'name': 'template', 'text': 'extends_fruity'},
                       {'class': 'S', 'name': 'language', 'text': 'en'},
                       {'class': 'S', 'name': 'datestamp', 'text': 'Y'},
                       {'class': 'S', 'name': 'usecookie', 'text': 'N'},
                       {'class': 'S', 'name': 'allowregister', 'text': 'N'},
-                      {'class': 'S', 'name': 'allowsave', 'text': 'Y'},
+                      {'class': 'S', 'name': 'allowsave', 'text': 'N'},
                       {'class': 'S', 'name': 'autonumber_start', 'text': '15'},
                       {'class': 'S', 'name': 'autoredirect', 'text': 'N'},
-                      {'class': 'S', 'name': 'allowprev', 'text': 'N'},
+                      {'class': 'S', 'name': 'allowprev', 'text': 'Y'},
                       {'class': 'S', 'name': 'printanswers', 'text': 'Y'},
                       {'class': 'S', 'name': 'ipaddr', 'text': 'Y'},
                       {'class': 'S', 'name': 'refurl', 'text': 'Y'},
-                      {'class': 'S', 'name': 'datecreated', 'text': '2017-05-24'},
                       {'class': 'S', 'name': 'publicstatistics', 'text': 'N'},
                       {'class': 'S', 'name': 'publicgraphs', 'text': 'N'},
                       {'class': 'S', 'name': 'listpublic', 'text': 'N'},
@@ -78,7 +75,7 @@ class creationConfig:
                       {'class': 'S', 'name': 'showxquestions', 'text': 'N'},
                       {'class': 'S', 'name': 'showgroupinfo', 'text': 'B'},
                       {'class': 'S', 'name': 'shownoanswer', 'text': 'Y'},
-                      {'class': 'S', 'name': 'showqnumcode', 'text': 'N'},
+                      {'class': 'S', 'name': 'showqnumcode', 'text': 'X'},
                       {'class': 'S', 'name': 'bounceprocessing', 'text': 'N'},
                       {'class': 'S', 'name': 'showwelcome', 'text': 'Y'},
                       {'class': 'S', 'name': 'showprogress', 'text': 'Y'},
@@ -86,7 +83,9 @@ class creationConfig:
                       {'class': 'S', 'name': 'navigationdelay', 'text': '0'},
                       {'class': 'S', 'name': 'nokeyboard', 'text': 'N'},
                       {'class': 'S', 'name': 'alloweditaftercompletion', 'text': 'N'},
-                      {'class': 'S', 'name': 'googleanalyticsstyle', 'text': '0'}]
+                      {'class': 'S', 'name': 'googleanalyticsstyle', 'text': '0'},
+                      {'class': 'S', 'name': 'gsid', 'text': '1'},
+                      {'class': 'S', 'name': 'showsurveypolicynotice', 'text': '0'}]
 
     # List of parameters that comprise the survey title and the welcome text
     global_settings = [{'class': 'SL', 'name': 'surveyls_welcometext', 'text': None, 'language': 'en'},
@@ -104,13 +103,15 @@ class creationConfig:
                        {'class': 'SL', 'name': 'email_admin_notification', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}""", 'language': 'en'},
                        {'class': 'SL', 'name': 'email_admin_responses_subj', 'text': """Response submission for survey {SURVEYNAME} with results""", 'language': 'en'},
                        {'class': 'SL', 'name': 'email_admin_responses', 'text': """Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}""", 'language': 'en'},
-                       {'class': 'SL', 'name': 'surveyls_numberformat', 'text': '0', 'language': 'en'}]
+                       {'class': 'SL', 'name': 'surveyls_numberformat', 'text': '0', 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_policy_notice', 'text': "", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_policy_error', 'text': "", 'language': 'en'},
+                       {'class': 'SL', 'name': 'surveyls_policy_notice_label', 'text': "", 'language': 'en'}]
 
     # Standard layout for groups
     group_format = {'class': 'G', 'type/scale': 'G+inc_number', 'relevance': '1'}
 
     # Standard layout for questions
-
     one_choice_question = {'class': 'Q', 'type/scale': '!', 'relevance': '1', 'same_default': '1', 'statistics_showgraph': '1', 'time_limit_action': 1}
     one_choice_answer = {'class': 'A', 'type/scale': '0'}
 
@@ -127,7 +128,6 @@ class creationConfig:
 
     freenumeric_question = {'class': 'Q', 'type/scale': 'N', 'allowed_filetypes': '1', 'statistics_showmap': '1'}
 
-    # freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1', 'same_default': '1', 'location_mapheight': '300', 'location_mapwidth': '500', 'location_mapzoom': '110500', 'statistics_showgraph': '1', 'statistics_showmap': '1', 'text_input_width': '12', 'time_limit_action': '1', 'allowed_filetypes': '1', 'location_mapservice': '300.0', 'location_nodefaultfromip': '11.0', 'suffix': '1.0'}
     freetext_question = {'class': 'Q', 'type/scale': 'S', 'relevance': '1'}
 
     likert_question = {'class': 'Q', 'type/scale': 'F', 'same_default': '1', 'statistics_showgraph': '1'}

@@ -1,8 +1,8 @@
 {
-    "description": "<p>This is the first official release for the 2017 international survey. It also contains the 2016 results for United-Kingdom only.</p>", 
+    "description": "<p>2018 RSE international survey</p>", 
     "license": "other-open", 
-    "title": "softwaresaved/international-survey: Public release for 2017 results", 
-    "version": "2017-v1.1", 
+    "title": "softwaresaved/international-survey: Public release for 2018 results", 
+    "version": "2018-v1.0", 
     "upload_type": "software", 
     "publication_date": "2018-03-27", 
     "creators": [
@@ -20,7 +20,8 @@
             "name": "Anelda van der Walt"
         }, 
         {
-            "name": "Ben van Werkhoven"
+            "name": "Ben van Werkhoven",
+            "affiliation": "Netherlands eScience Center"
         }, 
         {
             "affiliation": "Software Sustainability Institute", 
@@ -43,17 +44,29 @@
         {
             "name": "Scott Henwood"
         }
+        {
+            "name": "Nicholas R. May",
+            "affiliation": "RMIT University"
+        }
+        {
+            "name": "Nooriyah P. Lohani",
+            "affiliation": "New Zealand eScience Infrastructure"
+        }      
+        {
+            "name": "Manodeep Sinha",
+            "affiliation": "Swinburne University of Technology",
+            "affiliation": "ASTRO 3D Centre of Excellence"
+        }      
     ], 
     "access_right": "open", 
     "related_identifiers": [
         {
             "scheme": "url", 
-            "identifier": "https://github.com/softwaresaved/international-survey/tree/2017-v1.1", 
+            "identifier": "https://github.com/softwaresaved/international-survey/tree/2018-v1.0", 
             "relation": "isSupplementTo"
         }, 
         {
             "scheme": "doi", 
-            "identifier": "10.5281/zenodo.1194668", 
             "relation": "isPartOf"
         }
     ]

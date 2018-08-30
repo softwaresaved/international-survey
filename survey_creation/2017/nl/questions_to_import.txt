@@ -58,7 +58,7 @@ develop policies that will support RSEs. This questionnaire gives you the opport
 <h2>How long will it take?</h2>
 <p>There is a maximum of 45 questions in this survey. It takes about 10 minutes to complete.</p>
 <h2>Who is responsible for this survey?</h2>
-<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/25269).
+<p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/30610).
 The investigators are <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a> and <a href=""mailto:olivier.philippe@soton.ac.uk"" target=""_blank"">Olivier Philippe</a>. Contact persons in the Netherlands are
 <a href=""mailto:b.vanwerkhoven@esciencecenter.nl"" target=""_blank"">Ben van Werkhoven</a> and <a href=""mailto:t.bakker@esciencecenter.nl"" target=""_blank"">Tom Bakker</a> from the Netherlands eScience Center.</p>
 <p>The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">Data Protection Act</a>.
@@ -84,7 +84,7 @@ SL		email_admin_responses_subj		Response submission for survey {SURVEYNAME} with
 SL		email_admin_responses		Hello,  A new response was submitted for your survey '{SURVEYNAME}'.  Click the following link to reload the survey: {RELOADURL}  Click the following link to see the individual response: {VIEWRESPONSEURL}  Click the following link to edit the individual response: {EDITRESPONSEURL}  View statistics by clicking here: {STATISTICSURL}   The following answers were given by the participant: {ANSWERTABLE}		en																																																																																																																																			
 SL		surveyls_numberformat		0		en																																																																																																																																			
 G	G0	Questions about you	1			en																																																																																																																																			
-Q	!	socio1	1	In which country do you work?		en		Y	N		1																																																																																																							1						1																	
+Q	!	socio1		In which country do you work?		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Afghanistan		en																																																																																																																																			
 A	0	2		Åland Islands		en																																																																																																																																			
 A	0	3		Albania		en																																																																																																																																			
@@ -334,7 +334,7 @@ A	0	246		Western Sahara		en
 A	0	247		Yemen		en																																																																																																																																			
 A	0	248		Zambia		en																																																																																																																																			
 A	0	249		Zimbabwe		en																																																																																																																																			
-Q	!	edu1	1	What is the highest qualification you have obtained?		en		Y	Y		1																																																																																																							1						1																	
+Q	!	edu1		What is the highest qualification you have obtained?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		None		en																																																																																																																																			
 A	0	2		High-school diploma		en																																																																																																																																			
 A	0	3		MBO (Middelbaar beroepsonderwijs)		en																																																																																																																																			
@@ -343,7 +343,7 @@ A	0	5		HBO (Hoger beroepsonderwijs) Master		en
 A	0	6		WO (Wetenschappelijk onderwijs) Bachelor		en																																																																																																																																			
 A	0	7		WO (Wetenschappelijk onderwijs) Master		en																																																																																																																																			
 A	0	8		PhD		en																																																																																																																																			
-Q	!	edu2	1	In which subject is your highest academic qualification?		en		Y	Y		1																																																																																																							1						1																	
+Q	!	edu2	"((edu1.NAOK != ""1""))"	In which subject is your highest academic qualification?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Accounting & Finance		en																																																																																																																																			
 A	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
 A	0	3		Agriculture & Forestry		en																																																																																																																																			
@@ -409,7 +409,7 @@ A	0	62		Theology & Religious Studies		en
 A	0	63		Town & Country Planning and Landscape Design		en																																																																																																																																			
 A	0	64		Veterinary Medicine		en																																																																																																																																			
 A	0	65		Youth Work		en																																																																																																																																			
-Q	Y	rse1	1	Do you write code as part of your job?		en		Y	N		1																																																																																																							1																							
+Q	Y	rse1		Do you write code as part of your job?		en		Y	N		1																																																																																																							1																							
 Q	F	rse3		Who uses the code that you write?		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		0 - Mostly me		en																																																																																																																																			
@@ -418,7 +418,7 @@ A	0	3		2		en
 A	0	4		3		en																																																																																																																																			
 A	0	5		4		en																																																																																																																																			
 A	0	6		5 - Mostly other people		en																																																																																																																																			
-Q	Y	soft2can	1	Do you consider yourself a professional software developer?		en		Y	N		1																																																																																																							1																							
+Q	Y	soft2can		Do you consider yourself a professional software developer?		en		Y	N		1																																																																																																							1																							
 Q	N	soft1can		How many years of software development experience do you have?		en		Y	N			1																																																																																																							1																						
 Q	F	likert0				en		Y	N		1																																																																																																							1																							
 SQ	0	time1can	1	In an average month, how much time do you spend on software development		en																																																																																																																																			
@@ -437,11 +437,11 @@ A	0	8		8		en
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
 G	G1	Your current employment	1			en																																																																																																																																			
-Q	!	currentEmp1	1	What type of organisation do you work for?		en		Y	Y		1																																																																																																							1						1																	
+Q	!	currentEmp1		What type of organisation do you work for?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		University / University Medical Center / Applied University (HBO)		en																																																																																																																																			
 A	0	2		Research Institute (Onderzoeksinstituut / Publieke Kennisorganisatie)		en																																																																																																																																			
 A	0	3		Private Company		en																																																																																																																																			
-Q	!	currentEmp2	1	Which University / Medical Center / Applied University (HBO)?	IMPORTANT: This information will not be made publicly available	en			Y		1																																																																																																							1						1																	
+Q	!	currentEmp2	"((currentEmp1.NAOK == ""1""))"	Which University / Medical Center / Applied University (HBO)?		en			Y		1																																																																																																							1						1																	
 A	0	1		Aeres Hogeschool		en																																																																																																																																			
 A	0	2		AMC, Academisch Medisch Centrum		en																																																																																																																																			
 A	0	3		Amsterdamse Hogeschool voor de Kunsten		en																																																																																																																																			
@@ -502,7 +502,7 @@ A	0	57		VUmc, VU medisch centrum		en
 A	0	58		VU University Amsterdam		en																																																																																																																																			
 A	0	59		Wageningen University		en																																																																																																																																			
 A	0	60		Windesheim		en																																																																																																																																			
-Q	!	currentEmp4	1	Which organisation do you work for?	IMPORTANT: This information will not be made publicly available	en			Y		1																																																																																																							1						1																	
+Q	!	currentEmp4	"((currentEmp1.NAOK == ""2""))"	Which organisation do you work for?		en			Y		1																																																																																																							1						1																	
 A	0	1		AMOLF		en																																																																																																																																			
 A	0	2		ARCNL		en																																																																																																																																			
 A	0	3		ASTRON		en																																																																																																																																			
@@ -558,104 +558,104 @@ A	0	52		Vilans		en
 A	0	53		Wageningen Research (DLO)		en																																																																																																																																			
 A	0	54		Westerdijk Fungal Biodiversity Institute		en																																																																																																																																			
 A	0	55		WODC		en																																																																																																																																			
-Q	S	currentEmp20	1	Which company do you work for?	IMPORTANT: This information will not be made publicly available	en			N																																																																																																																																
-Q	S	currentEmp5	1	What is your official job title?	IMPORTANT: This information will not be made publicly available	en			N																																																																																																																																
-Q	S	currentEmp6	1	Are you known by a different job title? If so, please enter the job title you use	IMPORTANT: This information will not be made publicly available	en			N																																																																																																																																
-Q	!	currentEmp12	1	Do you work full time (36 hours or more) or part time?		en		Y	N		1																																																																																																							1						1																	
+Q	S	currentEmp20	"((currentEmp1.NAOK == ""3""))"	Which company do you work for?		en			N																																																																																																																																
+Q	S	currentEmp5		What is your official job title?		en			N																																																																																																																																
+Q	S	currentEmp6		Are you known by a different job title? If so, please enter the job title you use		en			N																																																																																																																																
+Q	!	currentEmp12		Do you work full time (36 hours or more) or part time?		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Full time		en																																																																																																																																			
 A	0	2		Part time		en																																																																																																																																			
-Q	!	currentEmp10	1	What type of contract are you employed on?		en		Y	Y		1																																																																																																							1						1																	
+Q	!	currentEmp10		What type of? contract are you employed on?		en		Y	Y		1																																																																																																							1						1																	
 A	0	1		Permanent		en																																																																																																																																			
 A	0	2		Fixed term		en																																																																																																																																			
 Q	N	currentEmp11		What is the duration of your current contract?		en		Y	N			1																																																																																																							1																						
-Q	M	currentEmp13	1	In which disciplines do you work (select as many as apply)		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
-SQ	0	1		Accounting & Finance		en																																																																																																																																			
-SQ	0	2		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
-SQ	0	3		Agriculture & Forestry		en																																																																																																																																			
-SQ	0	4		American Studies		en																																																																																																																																			
-SQ	0	5		Anatomy & Physiology		en																																																																																																																																			
-SQ	0	6		Anthropology		en																																																																																																																																			
-SQ	0	7		Architecture		en																																																																																																																																			
-SQ	0	8		Art & Design		en																																																																																																																																			
-SQ	0	9		Biological Sciences		en																																																																																																																																			
-SQ	0	10		Business & Management Studies		en																																																																																																																																			
-SQ	0	11		Chemical Engineering		en																																																																																																																																			
-SQ	0	12		Chemistry		en																																																																																																																																			
-SQ	0	13		Civil Engineering		en																																																																																																																																			
-SQ	0	14		Classics & Ancient History		en																																																																																																																																			
-SQ	0	15		Communication & Media Studies		en																																																																																																																																			
-SQ	0	16		Complementary Medicine		en																																																																																																																																			
-SQ	0	17		Computer Science		en																																																																																																																																			
-SQ	0	18		Counselling		en																																																																																																																																			
-SQ	0	19		Criminology		en																																																																																																																																			
-SQ	0	20		Dentistry		en																																																																																																																																			
-SQ	0	21		East & South Asian Studies		en																																																																																																																																			
-SQ	0	22		Economics		en																																																																																																																																			
-SQ	0	23		Education		en																																																																																																																																			
-SQ	0	24		Electrical & Electronic Engineering		en																																																																																																																																			
-SQ	0	25		English		en																																																																																																																																			
-SQ	0	26		Fashion		en																																																																																																																																			
-SQ	0	27		Food Science		en																																																																																																																																			
-SQ	0	28		French		en																																																																																																																																			
-SQ	0	29		Geography & Environmental Sciences		en																																																																																																																																			
-SQ	0	30		Geology		en																																																																																																																																			
-SQ	0	31		General Engineering		en																																																																																																																																			
-SQ	0	32		German		en																																																																																																																																			
-SQ	0	33		History		en																																																																																																																																			
-SQ	0	34		History of Art, Architecture & Design		en																																																																																																																																			
-SQ	0	35		Hospitality, Leisure, Recreation & Tourism		en																																																																																																																																			
-SQ	0	36		Iberian Languages/Hispanic Studies		en																																																																																																																																			
-SQ	0	37		Land & Property Management		en																																																																																																																																			
-SQ	0	38		Law		en																																																																																																																																			
-SQ	0	39		Librarianship & Information Management		en																																																																																																																																			
-SQ	0	40		Linguistics		en																																																																																																																																			
-SQ	0	41		Marketing		en																																																																																																																																			
-SQ	0	42		Materials Technology		en																																																																																																																																			
-SQ	0	43		Mathematics		en																																																																																																																																			
-SQ	0	44		Mechanical Engineering		en																																																																																																																																			
-SQ	0	45		Medicine		en																																																																																																																																			
-SQ	0	46		Middle Eastern and African Studies		en																																																																																																																																			
-SQ	0	47		Music		en																																																																																																																																			
-SQ	0	48		Nursing		en																																																																																																																																			
-SQ	0	49		Ophthalmics		en																																																																																																																																			
-SQ	0	50		Pharmacology & Pharmacy		en																																																																																																																																			
-SQ	0	51		Philosophy		en																																																																																																																																			
-SQ	0	52		Physics and Astronomy		en																																																																																																																																			
-SQ	0	53		Physiotherapy		en																																																																																																																																			
-SQ	0	54		Politics		en																																																																																																																																			
-SQ	0	55		Psychology		en																																																																																																																																			
-SQ	0	56		Robotics		en																																																																																																																																			
-SQ	0	57		Russian & East European Languages		en																																																																																																																																			
-SQ	0	58		Social Policy		en																																																																																																																																			
-SQ	0	59		Social Work		en																																																																																																																																			
-SQ	0	60		Sociology		en																																																																																																																																			
-SQ	0	61		Sports Science		en																																																																																																																																			
-SQ	0	62		Theology & Religious Studies		en																																																																																																																																			
-SQ	0	63		Town & Country Planning and Landscape Design		en																																																																																																																																			
-SQ	0	64		Veterinary Medicine		en																																																																																																																																			
-SQ	0	65		Youth Work		en																																																																																																																																			
+Q	M	currentEmp13		In which disciplines do you work (select as many as apply)		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		Accounting & Finance		en																																																																																																																																			
+SQ	0	SQ002		Aeronautical & Manufacturing Engineering		en																																																																																																																																			
+SQ	0	SQ003		Agriculture & Forestry		en																																																																																																																																			
+SQ	0	SQ004		American Studies		en																																																																																																																																			
+SQ	0	SQ005		Anatomy & Physiology		en																																																																																																																																			
+SQ	0	SQ006		Anthropology		en																																																																																																																																			
+SQ	0	SQ007		Architecture		en																																																																																																																																			
+SQ	0	SQ008		Art & Design		en																																																																																																																																			
+SQ	0	SQ009		Biological Sciences		en																																																																																																																																			
+SQ	0	SQ010		Business & Management Studies		en																																																																																																																																			
+SQ	0	SQ011		Chemical Engineering		en																																																																																																																																			
+SQ	0	SQ012		Chemistry		en																																																																																																																																			
+SQ	0	SQ013		Civil Engineering		en																																																																																																																																			
+SQ	0	SQ014		Classics & Ancient History		en																																																																																																																																			
+SQ	0	SQ015		Communication & Media Studies		en																																																																																																																																			
+SQ	0	SQ016		Complementary Medicine		en																																																																																																																																			
+SQ	0	SQ017		Computer Science		en																																																																																																																																			
+SQ	0	SQ018		Counselling		en																																																																																																																																			
+SQ	0	SQ019		Criminology		en																																																																																																																																			
+SQ	0	SQ020		Dentistry		en																																																																																																																																			
+SQ	0	SQ021		East & South Asian Studies		en																																																																																																																																			
+SQ	0	SQ022		Economics		en																																																																																																																																			
+SQ	0	SQ023		Education		en																																																																																																																																			
+SQ	0	SQ024		Electrical & Electronic Engineering		en																																																																																																																																			
+SQ	0	SQ025		English		en																																																																																																																																			
+SQ	0	SQ026		Fashion		en																																																																																																																																			
+SQ	0	SQ027		Food Science		en																																																																																																																																			
+SQ	0	SQ028		French		en																																																																																																																																			
+SQ	0	SQ029		Geography & Environmental Sciences		en																																																																																																																																			
+SQ	0	SQ030		Geology		en																																																																																																																																			
+SQ	0	SQ031		General Engineering		en																																																																																																																																			
+SQ	0	SQ032		German		en																																																																																																																																			
+SQ	0	SQ033		History		en																																																																																																																																			
+SQ	0	SQ034		History of Art, Architecture & Design		en																																																																																																																																			
+SQ	0	SQ035		Hospitality, Leisure, Recreation & Tourism		en																																																																																																																																			
+SQ	0	SQ036		Iberian Languages/Hispanic Studies		en																																																																																																																																			
+SQ	0	SQ037		Land & Property Management		en																																																																																																																																			
+SQ	0	SQ038		Law		en																																																																																																																																			
+SQ	0	SQ039		Librarianship & Information Management		en																																																																																																																																			
+SQ	0	SQ040		Linguistics		en																																																																																																																																			
+SQ	0	SQ041		Marketing		en																																																																																																																																			
+SQ	0	SQ042		Materials Technology		en																																																																																																																																			
+SQ	0	SQ043		Mathematics		en																																																																																																																																			
+SQ	0	SQ044		Mechanical Engineering		en																																																																																																																																			
+SQ	0	SQ045		Medicine		en																																																																																																																																			
+SQ	0	SQ046		Middle Eastern and African Studies		en																																																																																																																																			
+SQ	0	SQ047		Music		en																																																																																																																																			
+SQ	0	SQ048		Nursing		en																																																																																																																																			
+SQ	0	SQ049		Ophthalmics		en																																																																																																																																			
+SQ	0	SQ050		Pharmacology & Pharmacy		en																																																																																																																																			
+SQ	0	SQ051		Philosophy		en																																																																																																																																			
+SQ	0	SQ052		Physics and Astronomy		en																																																																																																																																			
+SQ	0	SQ053		Physiotherapy		en																																																																																																																																			
+SQ	0	SQ054		Politics		en																																																																																																																																			
+SQ	0	SQ055		Psychology		en																																																																																																																																			
+SQ	0	SQ056		Robotics		en																																																																																																																																			
+SQ	0	SQ057		Russian & East European Languages		en																																																																																																																																			
+SQ	0	SQ058		Social Policy		en																																																																																																																																			
+SQ	0	SQ059		Social Work		en																																																																																																																																			
+SQ	0	SQ060		Sociology		en																																																																																																																																			
+SQ	0	SQ061		Sports Science		en																																																																																																																																			
+SQ	0	SQ062		Theology & Religious Studies		en																																																																																																																																			
+SQ	0	SQ063		Town & Country Planning and Landscape Design		en																																																																																																																																			
+SQ	0	SQ064		Veterinary Medicine		en																																																																																																																																			
+SQ	0	SQ065		Youth Work		en																																																																																																																																			
 G	G3	Your working practices	1			en																																																																																																																																			
-Q	Y	paper1	1	Has your software contributed to research that has been published in a journal or at a conference?		en		Y	N		1																																																																																																							1																							
-Q	Y	paper2	1	In general, when your software contributes to a paper, are you acknowledged in that paper?		en		Y	N		1																																																																																																							1																							
-Q	Y	paper3	1	Are you generally named as the main author of the paper?		en		Y	N		1																																																																																																							1																							
-Q	Y	paper4	1	Are you generally named as a co-author of the paper?		en		Y	N		1																																																																																																							1																							
-Q	Y	paper5	1	Are you generally acknowledged in the main text of the paper? 		en		Y	N		1																																																																																																							1																							
-Q	Y	conf1can	1	Have you ever presented your software work at a conference or workshop?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper1		Has? your software contributed to research that has been published? in? a journal or at a conference?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper2		In general, when your software contributes to a paper, are you acknowledged in that paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper3	"((paper2.NAOK == ""Y""))"	Are you generally named as the main author of the paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper4	"((paper3.NAOK == ""N"") AND (paper2.NAOK == ""Y""))"	Are you generally named as a co-author of the paper?		en		Y	N		1																																																																																																							1																							
+Q	Y	paper5	"((paper4.NAOK == ""N"") AND (paper2.NAOK == ""Y""))"	Are you generally acknowledged in the main text of the paper? 		en		Y	N		1																																																																																																							1																							
+Q	Y	conf1can		Have you ever presented your software work at a conference or workshop?		en		Y	N		1																																																																																																							1																							
 Q	N	proj1can		How many software projects are you currently involved in?		en		Y	N			1																																																																																																							1																						
-Q	!	stability1	1	What is the bus factor of your most important software project? (the bus factor is the number of team members who if run over by a bus  would put the project in jeopardy so 1 means the project is dependent on a single person)		en		Y	N		1																																																																																																							1						1																	
+Q	!	stability1		What is the bus factor of your most important software project? (the bus factor is the number of team members who if run over by a bus  would put the project in jeopardy so 1 means the project is dependent on a single person)		en		Y	N		1																																																																																																							1						1																	
 A	0	1		1		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
 A	0	3		3		en																																																																																																																																			
 A	0	4		4		en																																																																																																																																			
 A	0	5		5+		en																																																																																																																																			
-Q	Y	stability2	1	Is there a technical hand-over plan for your most important software project?		en		Y	N		1																																																																																																							1																							
-Q	M	proj4can	1	In general, what sort of testing do you conduct on your software? (check all that apply) 		en		Y	N	Y	1	1						1	1									1	1																																																																																					1	1																						
-SQ	0	1		No formal testing		en																																																																																																																																			
-SQ	0	2		Developers conduct testing		en																																																																																																																																			
-SQ	0	3		test engineers conduct testing		en																																																																																																																																			
-SQ	0	4		Users conduct testing		en																																																																																																																																			
-Q	Y	open01can	1	Have you ever released your software under an open-source licence? 		en		Y	N		1																																																																																																							1																							
-Q	F	open1can		How often do you release the software projects you've worked on under an open-source licence?		en		Y	N		1																																																																																																							1																							
+Q	Y	stability2		Is there a? technical hand-over plan for your most important software project?		en		Y	N		1																																																																																																							1																							
+Q	M	proj4can		In general, what sort of testing do you conduct on your software? (check all that apply) 		en		Y	N	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		No formal testing		en																																																																																																																																			
+SQ	0	SQ002		Developers conduct testing		en																																																																																																																																			
+SQ	0	SQ003		test engineers conduct testing		en																																																																																																																																			
+SQ	0	SQ004		Users conduct testing		en																																																																																																																																			
+Q	Y	open01can		Have you ever released your software under an open-source licence? 		en		Y	N		1																																																																																																							1																							
+Q	F	open1can	"((open01can.NAOK == ""Y""))"	How often do you release the software projects you've worked on under an open-source licence?		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
@@ -667,8 +667,8 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
-Q	Y	open03can	1	Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en		Y	N		1																																																																																																							1																							
-Q	F	open3can		How often do you associate your software with a Digital Object Identifier (DOI)? 		en		Y	N		1																																																																																																							1																							
+Q	Y	open03can		Have you ever used a Digital Object Identifier (DOI) to identify your software? 		en		Y	N		1																																																																																																							1																							
+Q	F	open3can	"((open03can.NAOK == ""Y""))"	How often do you associate your software with a Digital Object Identifier (DOI)? 		en		Y	N		1																																																																																																							1																							
 SQ	0	SQ001	1			en																																																																																																																																			
 A	0	1		1 (None at all)		en																																																																																																																																			
 A	0	2		2		en																																																																																																																																			
@@ -680,17 +680,17 @@ A	0	7		7		en
 A	0	8		8		en																																																																																																																																			
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All my time)		en																																																																																																																																			
-Q	Y	train1	1	Have you ever trained researchers in computational techniques? 		en		Y	N		1																																																																																																							1																							
-Q	N	train2		On average, how many times a year do you take part in providing training? 		en		Y	N			1																																																																																																							1																						
-Q	S	train3	1	What training programs are you involved with (comma separated list)  (For example, Software Carpentry, local university training, etc.) 		en		Y	N																																																																																																																																
+Q	Y	train1		Have you ever trained researchers in computational techniques? 		en		Y	N		1																																																																																																							1																							
+Q	N	train2	"((train1.NAOK == ""Y""))"	On average, how many times a year do you take part in providing training? 		en		Y	N			1																																																																																																							1																						
+Q	S	train3	"((train1.NAOK == ""Y""))"	What training programs are you involved with (comma separated list)  (For example, Software Carpentry, local university training, etc.) 		en		Y	N																																																																																																																																
 G	G4	Your perception of your current position	1			en																																																																																																																																			
 Q	F	likert1				en		Y	N		1																																																																																																							1																							
 SQ	0	perfCheck4	1	Do you receive sufficient information on the purpose of your work?		en																																																																																																																																			
-SQ	0	perfCheck7	1	Do your colleagues inform you about how well you are doing your work?		en																																																																																																																																			
 SQ	0	perfCheck3	1	In your work, do you have access to sufficient data and information?		en																																																																																																																																			
-SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
 SQ	0	perfCheck6	1	Does your supervisor/line manager inform you about how well you are doing your work?		en																																																																																																																																			
 SQ	0	perfCheck1	1	Do you receive sufficient information on the results of your work?		en																																																																																																																																			
+SQ	0	perfCheck2	1	Does your work give you the opportunity to check on how well you are doing your work?		en																																																																																																																																			
+SQ	0	perfCheck7	1	Do your colleagues inform you about how well you are doing your work?		en																																																																																																																																			
 SQ	0	perfCheck5	1	Does your work provide you with direct feedback on how well you are doing your work?		en																																																																																																																																			
 A	0	1		Never		en																																																																																																																																			
 A	0	2		Sometimes		en																																																																																																																																			
@@ -698,33 +698,33 @@ A	0	3		Often		en
 A	0	4		Very Often		en																																																																																																																																			
 A	0	5		Always		en																																																																																																																																			
 Q	F	likert2				en		Y	N		1																																																																																																							1																							
-SQ	0	progRSE4	1	My current position is an integral part of my career plan		en																																																																																																																																			
 SQ	0	progRSE1	1	It is likely that I will gain a promotion within my current group		en																																																																																																																																			
-SQ	0	progRSE3	1	There are many opportunities within my chosen career plan		en																																																																																																																																			
 SQ	0	progRSE2	1	The process I have to complete to gain a promotion is clear and understandable		en																																																																																																																																			
+SQ	0	progRSE4	1	My current position is an integral part of my career plan		en																																																																																																																																			
 SQ	0	progRSE5	1	It is likely that my next position will be an RSE role		en																																																																																																																																			
+SQ	0	progRSE3	1	There are many opportunities within my chosen career plan		en																																																																																																																																			
 A	0	1		Strongly disagree		en																																																																																																																																			
 A	0	2		Disagree		en																																																																																																																																			
 A	0	3		Neither agree or disagree		en																																																																																																																																			
 A	0	4		Agree		en																																																																																																																																			
 A	0	5		Strongly Agree		en																																																																																																																																			
 Q	F	likert3				en		Y	N		1																																																																																																							1																							
-SQ	0	turnOver4	1	How often do you dream about getting another job that will better suit your needs?		en																																																																																																																																			
 SQ	0	turnOver2	1	How often do you look forward to another day at work?		en																																																																																																																																			
+SQ	0	turnOver4	1	How often do you dream about getting another job that will better suit your needs?		en																																																																																																																																			
 A	0	1		Never		en																																																																																																																																			
 A	0	2		Sometimes		en																																																																																																																																			
 A	0	3		Often		en																																																																																																																																			
 A	0	4		Very Often		en																																																																																																																																			
 A	0	5		Always		en																																																																																																																																			
 Q	F	likert4				en		Y	N		1																																																																																																							1																							
-SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
-SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
 SQ	0	affSat2	1	Most days I am enthusiastic about my job		en																																																																																																																																			
 SQ	0	percEmp1	1	It would not be very difficult for me to get an equivalent job in a different organisation		en																																																																																																																																			
-SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
-SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
-SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
 SQ	0	percEmp2	1	I can think of a number of organisations that would probably offer me a job		en																																																																																																																																			
+SQ	0	affRec3	1	I am satisfied with the recognition I receive from my supervisor/line manager for doing my job		en																																																																																																																																			
+SQ	0	percEmp3	1	My experience is in demand on the labour market		en																																																																																																																																			
+SQ	0	affRec1	1	I am satisfied with my supervisor/line manager's confidence in me		en																																																																																																																																			
+SQ	0	percEmp4	1	Given my qualifications and experience, getting a new job would not be very hard at all		en																																																																																																																																			
+SQ	0	affSat1	1	I find real enjoyment in my job		en																																																																																																																																			
 A	0	1		Strongly disagree		en																																																																																																																																			
 A	0	2		Disagree		en																																																																																																																																			
 A	0	3		Neither agree or disagree		en																																																																																																																																			
@@ -745,18 +745,18 @@ A	0	9		8		en
 A	0	10		9		en																																																																																																																																			
 A	0	11		10 - Completely satisfied		en																																																																																																																																			
 G	G5	Demographic questions	1			en																																																																																																																																			
-Q	!	socio2	1	Please select your gender	IMPORTANT: This information will not be made publicly available	en			Y		1																																																																																																							1						1																	
+Q	!	socio2		Please select your gender		en			Y		1																																																																																																							1						1																	
 A	0	1		Female		en																																																																																																																																			
 A	0	2		Male		en																																																																																																																																			
 A	0	3		Prefer not to say		en																																																																																																																																			
-Q	!	socio3	1	Please select your age	IMPORTANT: This information will not be made publicly available	en			N		1																																																																																																							1						1																	
+Q	!	socio3		Please select your age		en			N		1																																																																																																							1						1																	
 A	0	1		18 to 24 years		en																																																																																																																																			
 A	0	2		25 to 34 years		en																																																																																																																																			
 A	0	3		35 to 44 years		en																																																																																																																																			
 A	0	4		45 to 54 years		en																																																																																																																																			
 A	0	5		55 to 64 years		en																																																																																																																																			
 A	0	6		Age 65 or older		en																																																																																																																																			
-Q	!	socio4	1	Please select the range of your salary	IMPORTANT: This information will not be made publicly available	en			N		1																																																																																																							1						1																	
+Q	!	socio4		Please select the range of your salary		en			N		1																																																																																																							1						1																	
 A	0	1		Less than 27.499 EUR		en																																																																																																																																			
 A	0	2		Between 27.500 and 32.999 EUR		en																																																																																																																																			
 A	0	3		Between 33.000 and 38.499 EUR		en																																																																																																																																			
@@ -769,9 +769,9 @@ A	0	9		Between 77.000 and 109.999 EUR		en
 A	0	10		More than 110.000 EUR		en																																																																																																																																			
 A	0	11		Prefer not to say		en																																																																																																																																			
 G	G6	Final questions about you	1			en																																																																																																																																			
-Q	Y	ukrse1	1	Are you a member of the NL-RSE Association? (Members are people who have signed up to the NL-RSE mailing list)		en			N		1																																																																																																							1																							
-Q	M	ukrse2	1	How do you meet other RSEs?		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
-SQ	0	1		UK RSE Association / Conference		en																																																																																																																																			
-SQ	0	2		NL-RSE Association		en																																																																																																																																			
-SQ	0	3		Local group/network		en																																																																																																																																			
-SQ	0	4		N/A		en																																																																																																																																			
+Q	Y	ukrse1		Are you a member of the NL-RSE Association? (Members are people who have signed up to the NL-RSE mailing list)		en			N		1																																																																																																							1																							
+Q	M	ukrse2		How do you meet other RSEs?		en			N	Y	1	1						1	1									1	1																																																																																					1	1																						
+SQ	0	SQ001		UK RSE Association / Conference		en																																																																																																																																			
+SQ	0	SQ002		NL-RSE Association		en																																																																																																																																			
+SQ	0	SQ003		Local group/network		en																																																																																																																																			
+SQ	0	SQ004		N/A		en																																																																																																																																			
