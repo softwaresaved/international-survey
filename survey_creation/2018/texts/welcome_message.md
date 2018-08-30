@@ -77,7 +77,7 @@ Any personal data we collect in this study will be used only for the purposes of
 
 Data protection law requires us to have a valid legal reason (‘lawful basis’) to process and use your Personal data. The lawful basis for processing personal information in this research study is for the performance of a task carried out in the public interest. Personal data collected for research will not be used for any other purpose.
 
-For the purposes of data protection law, the University of Southampton is the ‘Data Controller’ for this study, which means that we are responsible for looking after your information and using it properly. The University of Southampton will keep identifiable information about you for xx years after the study has finished after which time any link between you and your information will be removed.
+For the purposes of data protection law, the University of Southampton is the ‘Data Controller’ for this study, which means that we are responsible for looking after your information and using it properly. The University of Southampton will keep identifiable information about you for 10 years after the study has finished after which time any link between you and your information will be removed.
 
 We aim to store the entire dataset for a period of 10 years. After that period, the data will be only kept in its anonymised version. 
 
