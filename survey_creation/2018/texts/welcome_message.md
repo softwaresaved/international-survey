@@ -57,10 +57,29 @@ We will publish a summary of the data and make the original data available under
 Will my participation be confidential?
 --------------------------------------
 
-We share the survey results under an open licence ([Creative Commons by attribution, non-commercial licence](https://creativecommons.org/licenses/by-nc/2.5/scotland/)). We anonymise the data before release, so that it does not contain personal information.
+We share the survey results under an open licence ([Creative Commons by attribution, non-commercial licence](https://creativecommons.org/licenses/by-nc/2.5/scotland/)). We anonymise the data before release, so that it does not contain personal information and we remove any data that could lead to cross identification (such as job title, salary and specific work organisation). 
 
 Only members of the research team and responsible members of the University of Southampton may be given access to data about you for monitoring purposes and/or to carry out an audit of the study to ensure that the research is complying with applicable regulations. Individuals from regulatory authorities (people who check that we are carrying out the study correctly) may require access to your data. All of these people have a duty to keep your information, as a research participant, strictly confidential.
 
+
+What personal data is collected and why?
+--------------------------------
+
+For some countries, we ask to collect information about gender and ethnicity. These questions are not mandatory and this information will not be shared. We want to collect this information to understand the composition of the Research Software community. 
+
+We would also like to collect your Github account. Again, this question is not mandatory, and the information will only be accessible to the main researchers (Olivier Philippe and Simon Hettrick), who will use the information to conduct further analysis on how Research Software Engineers/Developers are develop their code.
+
+The University of Southampton conducts research to the highest standards of research integrity. As a publicly-funded organisation, the University has to ensure that it is in the public interest when we use personally-identifiable information about people who have agreed to take part in research.  This means that when you agree to take part in a research study, we will use information about you in the ways needed, and for the purposes specified, to conduct and complete the research project. Under data protection law, ‘Personal data’ means any information that relates to and is capable of identifying a living individual. The University’s data protection policy governing the use of personal data by the University can be found on its [website](https://www.southampton.ac.uk/legalservices/what-we-do/data-protection-and-foi.page). 
+
+Our privacy notice for research participants provides more information on how the University of Southampton collects and uses your personal data when you take part in one of our research projects and can be found at (http://www.southampton.ac.uk/assets/sharepoint/intranet/ls/Public/Research%20and%20Integrity%20Privacy%20Notice/Privacy%20Notice%20for%20Research%20Participants.pdf)
+
+Any personal data we collect in this study will be used only for the purposes of carrying out our research and will be handled according to the University’s policies in line with data protection law. If any personal data is used from which you can be identified directly, it will not be disclosed to anyone else without your consent unless the University of Southampton is required by law to disclose it. 
+
+Data protection law requires us to have a valid legal reason (‘lawful basis’) to process and use your Personal data. The lawful basis for processing personal information in this research study is for the performance of a task carried out in the public interest. Personal data collected for research will not be used for any other purpose.
+
+For the purposes of data protection law, the University of Southampton is the ‘Data Controller’ for this study, which means that we are responsible for looking after your information and using it properly. The University of Southampton will keep identifiable information about you for xx years after the study has finished after which time any link between you and your information will be removed.
+
+We aim to store the entire dataset for a period of 10 years. After that period, the data will be only kept in its anonymised version. 
 
 Who is responsible for this survey?
 -----------------------------------
@@ -71,12 +90,14 @@ What happens if there is a problem?
 -----------------------------------
 
 If you have a concern or would like to make a complaint, please contact [Simon Hettrick](mailto:s.hettrick@software.ac.uk).
+If you remain unhappy or have a complaint about any aspect of this study, please contact the University of Southampton Research Integrity and Governance Manager (+44 23 8059 5058, rgoinfo@soton.ac.uk).
+
 
 
 By clicking on the "next" button I confirm:
 -------------------------------------------
 
-*   I have read and understood the information and have had the opportunity to ask questions about the study.
+*   I have read and understood the information and have had the opportunity to ask questions about the study (by emailing [Simon Hettrick](mailto:s.hettrick@software.ac.uk) or [Olivier Philippe](mailto:orp2c15@soton.ac.uk) .
 *   I agree to take part in this research project and agree for my data to be used for the purpose of this study.
 *   I understand my participation is voluntary and I may withdraw at any time for any reason without my participation rights being affected.
 *   I agree with the above statements and wish to continue.
