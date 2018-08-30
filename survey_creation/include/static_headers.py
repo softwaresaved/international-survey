@@ -75,7 +75,7 @@ class creationConfig:
                       {'class': 'S', 'name': 'showxquestions', 'text': 'N'},
                       {'class': 'S', 'name': 'showgroupinfo', 'text': 'B'},
                       {'class': 'S', 'name': 'shownoanswer', 'text': 'Y'},
-                      {'class': 'S', 'name': 'showqnumcode', 'text': 'N'},
+                      {'class': 'S', 'name': 'showqnumcode', 'text': 'X'},
                       {'class': 'S', 'name': 'bounceprocessing', 'text': 'N'},
                       {'class': 'S', 'name': 'showwelcome', 'text': 'Y'},
                       {'class': 'S', 'name': 'showprogress', 'text': 'Y'},

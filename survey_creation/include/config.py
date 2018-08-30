@@ -8,7 +8,7 @@ class config:
     # To modify, just add the keys of the dictionary
     header_to_modify = [{'class': 'S', 'name': 'sid', 'text': '421498'},
                         {'class': 'S', 'name': 'admin_email', 'text': 'olivier.philippe@soton.ac.uk'},
-                        {'class': 'S', 'name': 'allowprev', 'text': 'N'}]
+                        {'class': 'S', 'name': 'allowprev', 'text': 'Y'}]
     # Add header and description. Tuple of a dictionary + the position where it is supposed
     # to be inserted
     header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': '"fr de-informal"'}, 12)]
