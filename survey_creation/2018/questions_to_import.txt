@@ -14,7 +14,7 @@ S		allowsave		N
 S		additional_languages		"""fr de-informal"""																																																																																																																																					
 S		autonumber_start		15																																																																																																																																					
 S		autoredirect		N																																																																																																																																					
-S		allowprev		N																																																																																																																																					
+S		allowprev		Y																																																																																																																																					
 S		printanswers		Y																																																																																																																																					
 S		ipaddr		Y																																																																																																																																					
 S		refurl		Y																																																																																																																																					
@@ -32,7 +32,7 @@ S		tokenlength		15
 S		showxquestions		N																																																																																																																																					
 S		showgroupinfo		B																																																																																																																																					
 S		shownoanswer		Y																																																																																																																																					
-S		showqnumcode		N																																																																																																																																					
+S		showqnumcode		X																																																																																																																																					
 S		bounceprocessing		N																																																																																																																																					
 S		showwelcome		Y																																																																																																																																					
 S		showprogress		Y																																																																																																																																					
@@ -48,13 +48,13 @@ SL		surveyls_welcometext		"<p>The purpose of this survey is to collect informati
 <p><strong>Survey number: ERGO/FPSE/45232</strong></p>
 <h2>Why have I been asked to participate?</h2>
 <p>You have received this link because you were identified as someone who writes research software or because you are on one of the mailing list we used to disseminate the survey. This questionnaire gives you the opportunity to express your views about your current job and your career path.</p>
-<p>Please note that this research is not compulsory and even if you decide to participate, you can withdraw at any moment.</p>
+<p>Please note that this survey is not compulsory and even if you decide to participate, you can withdraw at any moment.</p>
 <h2>How long will it take?</h2>
 <p>There are 80 questions in this survey. It takes about 10 to 15 minutes to complete.</p>
 <h2>What will happen to me if I take part?</h2>
 <p>You will continue to the next page and begin to answer questions.</p>
 <h2>Are there any benefits in my taking part?</h2>
-<p>We use these surveys to gather information that will help persuade universities, funders and other research organisations to develop policies that recognise the fundamental role played by the people who write software in research. There is no direct individual benefit to answering this survey, but there is a significant benefit to the research community</p>
+<p>We use these surveys to gather information that will help persuade universities, funders and other research organisations to develop policies that recognise the fundamental role played by the people who write software in research. There is no direct individual benefit to answering this survey, but there is a significant benefit to the community of Research Software Engineers/Developers.</p>
 <h2>Are there any risks involved?</h2>
 <p>We know of no risks in taking part in this survey.</p>
 <h2>Do I have to take part?</h2>
@@ -67,15 +67,25 @@ SL		surveyls_welcometext		"<p>The purpose of this survey is to collect informati
 <h2>What will happen to the results of the research?</h2>
 <p>We will publish a summary of the data and make the original data available under an open licence. We do not collect personal data in this survey, so any reports or publications cannot be used to  directly identify you.</p>
 <h2>Will my participation be confidential?</h2>
-<p>We share the survey results under an open licence (<a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"" target=""_blank"">Creative Commons by attribution, non-commercial licence</a>). We anonymise the data before release, so that it does not contain personal information.</p>
+<p>We share the survey results under an open licence (<a href=""https://creativecommons.org/licenses/by-nc/2.5/scotland/"" target=""_blank"">Creative Commons by attribution, non-commercial licence</a>). We anonymise the data before release, so that it does not contain personal information and we remove any data that could lead to cross identification (such as job title, salary and specific work organisation). </p>
 <p>Only members of the research team and responsible members of the University of Southampton may be given access to data about you for monitoring purposes and/or to carry out an audit of the study to ensure that the research is complying with applicable regulations. Individuals from regulatory authorities (people who check that we are carrying out the study correctly) may require access to your data. All of these people have a duty to keep your information, as a research participant, strictly confidential.</p>
+<h2>What personal data is collected and why?</h2>
+<p>For some countries, we ask to collect information about gender and ethnicity. These questions are not mandatory and this information will not be shared. We want to collect this information to understand the composition of the Research Software community. </p>
+<p>We would also like to collect your Github account. Again, this question is not mandatory, and the information will only be accessible to the main researchers (Olivier Philippe and Simon Hettrick), who will use the information to conduct further analysis on how Research Software Engineers/Developers are develop their code.</p>
+<p>The University of Southampton conducts research to the highest standards of research integrity. As a publicly-funded organisation, the University has to ensure that it is in the public interest when we use personally-identifiable information about people who have agreed to take part in research.  This means that when you agree to take part in a research study, we will use information about you in the ways needed, and for the purposes specified, to conduct and complete the research project. Under data protection law, ‘Personal data’ means any information that relates to and is capable of identifying a living individual. The University’s data protection policy governing the use of personal data by the University can be found on its <a href=""https://www.southampton.ac.uk/legalservices/what-we-do/data-protection-and-foi.page"" target=""_blank"">website</a>. </p>
+<p>Our privacy notice for research participants provides more information on how the University of Southampton collects and uses your personal data when you take part in one of our research projects and can be found at (http://www.southampton.ac.uk/assets/sharepoint/intranet/ls/Public/Research%20and%20Integrity%20Privacy%20Notice/Privacy%20Notice%20for%20Research%20Participants.pdf)</p>
+<p>Any personal data we collect in this study will be used only for the purposes of carrying out our research and will be handled according to the University’s policies in line with data protection law. If any personal data is used from which you can be identified directly, it will not be disclosed to anyone else without your consent unless the University of Southampton is required by law to disclose it. </p>
+<p>Data protection law requires us to have a valid legal reason (‘lawful basis’) to process and use your Personal data. The lawful basis for processing personal information in this research study is for the performance of a task carried out in the public interest. Personal data collected for research will not be used for any other purpose.</p>
+<p>For the purposes of data protection law, the University of Southampton is the ‘Data Controller’ for this study, which means that we are responsible for looking after your information and using it properly. The University of Southampton will keep identifiable information about you for 10 years after the study has finished after which time any link between you and your information will be removed.</p>
+<p>We aim to store the entire dataset for a period of 10 years. After that period, the data will be only kept in its anonymised version. </p>
 <h2>Who is responsible for this survey?</h2>
 <p>This study is conducted by the University of Southampton on behalf of the <a href=""http://software.ac.uk/"" target=""_blank"">Software Sustainability Institute</a> (SSI) and complies with University of Southampton ethics guidelines (reference no.: ERGO/FPSE/45232). The investigators are Simon Hettrick and Olivier Philippe. The survey is hosted on Limesurvey servers in Germany and respects the provisions of the <a href=""https://www.gov.uk/data-protection/the-data-protection-act"" target=""_blank"">Data Protection Act</a> and the EU General Data Protection Regulation (GDPR) .</p>
 <h2>What happens if there is a problem?</h2>
-<p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.</p>
+<p>If you have a concern or would like to make a complaint, please contact <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a>.
+If you remain unhappy or have a complaint about any aspect of this study, please contact the University of Southampton Research Integrity and Governance Manager (+44 23 8059 5058, rgoinfo@soton.ac.uk).</p>
 <h2>By clicking on the ""next"" button I confirm:</h2>
 <ul>
-<li>I have read and understood the information and have had the opportunity to ask questions about the study.</li>
+<li>I have read and understood the information and have had the opportunity to ask questions about the study (by emailing <a href=""mailto:s.hettrick@software.ac.uk"" target=""_blank"">Simon Hettrick</a> or <a href=""mailto:orp2c15@soton.ac.uk"" target=""_blank"">Olivier Philippe</a> .</li>
 <li>I agree to take part in this research project and agree for my data to be used for the purpose of this study.</li>
 <li>I understand my participation is voluntary and I may withdraw at any time for any reason without my participation rights being affected.</li>
 <li>I agree with the above statements and wish to continue.</li>
@@ -3589,7 +3599,7 @@ SQ	0	SQ063		Town & Country Planning and Landscape Design		en
 SQ	0	SQ064		Veterinary Medicine		en																																																																																																																																			
 SQ	0	SQ065		Youth Work		en																																																																																																																																			
 G	G2	Your employment history	1			en																																																																																																																																			
-Q	!	prevEmp1qde	((socio1.NAOK == 82))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qde	((socio1.NAOK == 82))	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		University of Applied Sciences		en																																																																																																																																			
 A	0	3		Private Company		en																																																																																																																																			
@@ -3598,42 +3608,42 @@ A	0	5		Fraunhofer Society		en
 A	0	6		Helmholtz Association of German Research Centres		en																																																																																																																																			
 A	0	7		Leibniz Association		en																																																																																																																																			
 A	0	8		Max Planck Society		en																																																																																																																																			
-Q	!	prevEmp1quk	((socio1.NAOK == 235))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1quk	((socio1.NAOK == 235))	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Private company		en																																																																																																																																			
 A	0	3		Government		en																																																																																																																																			
 A	0	4		NGO		en																																																																																																																																			
 A	0	5		National laboratory		en																																																																																																																																			
 A	0	6		Non-profit organization		en																																																																																																																																			
-Q	!	prevEmp1qus	((socio1.NAOK == 236))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qus	((socio1.NAOK == 236))	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Private company		en																																																																																																																																			
 A	0	3		Government		en																																																																																																																																			
 A	0	4		NGO		en																																																																																																																																			
 A	0	5		National laboratory		en																																																																																																																																			
 A	0	6		Non-profit organization		en																																																																																																																																			
-Q	!	prevEmp1qzaf	((socio1.NAOK == 206))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qzaf	((socio1.NAOK == 206))	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Private company		en																																																																																																																																			
 A	0	3		Government		en																																																																																																																																			
 A	0	4		NGO		en																																																																																																																																			
 A	0	5		National laboratory		en																																																																																																																																			
 A	0	6		Non-profit organization		en																																																																																																																																			
-Q	!	prevEmp1qnzl	((socio1.NAOK == 159))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qnzl	((socio1.NAOK == 159))	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Private company		en																																																																																																																																			
 A	0	3		Government		en																																																																																																																																			
 A	0	4		NGO		en																																																																																																																																			
 A	0	5		National laboratory		en																																																																																																																																			
 A	0	6		Non-profit organization		en																																																																																																																																			
-Q	!	prevEmp1qaus	((socio1.NAOK == 14))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qaus	((socio1.NAOK == 14))	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Private company		en																																																																																																																																			
 A	0	3		Government		en																																																																																																																																			
 A	0	4		NGO		en																																																																																																																																			
 A	0	5		National laboratory		en																																																																																																																																			
 A	0	6		Non-profit organization		en																																																																																																																																			
-Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 235)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Where was your previous job based?		en			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 235)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Where was your previous job based?		en			Y		1																																																																																																							1						1																	
 A	0	1		University		en																																																																																																																																			
 A	0	2		Private company		en																																																																																																																																			
 A	0	3		Government		en																																																																																																																																			
@@ -3750,8 +3760,9 @@ A	0	5		Genome Canada		en
 A	0	6		NSERC		en																																																																																																																																			
 A	0	7		SSHRC		en																																																																																																																																			
 A	0	8		Don't know		en																																																																																																																																			
+G	G4	Your professional Github account	1			en																																																																																																																																			
 Q	S	proj6uk	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	We're interested in the difference in coding habits between people who identify as RSEs and other researchers who code. Could we take a look at your code? If so, please enter your Github ID here (if you use it for your professional work). We will not share this information with anyone.	IMPORTANT: This information will not be made publicly available	en			N																																																																																																																																
-G	G4	Your perception of your current position	1			en																																																																																																																																			
+G	G5	Your perception of your current position	1			en																																																																																																																																			
 Q	F	likert3	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))			en			N		1																																																																																																							1																							
 SQ	0	satisGen1	1	In general, how satisfied are you with your current position		en																																																																																																																																			
 SQ	0	satisGen2	1	In general, how satisfied are you with your career		en																																																																																																																																			
@@ -3806,7 +3817,7 @@ A	0	2		Disagree		en
 A	0	3		Neither agree or disagree		en																																																																																																																																			
 A	0	4		Agree		en																																																																																																																																			
 A	0	5		Strongly Agree		en																																																																																																																																			
-G	G5	Demographic questions	1			en																																																																																																																																			
+G	G6	Demographic questions	1			en																																																																																																																																			
 Q	!	socio2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	Please select your gender		en			Y		1																																																																																																							1						1																	
 A	0	1		Female		en																																																																																																																																			
 A	0	2		Male		en																																																																																																																																			
@@ -3930,9 +3941,11 @@ A	0	9		E15		en
 Q	!	socio11ausnzlqnzl	((socio1.NAOK == 159))	What is the category of your pay-scale?		en			Y		1																																																																																																							1						1																	
 A	0	1		Academic		en																																																																																																																																			
 A	0	2		Professional		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
 Q	!	socio11ausnzlqaus	((socio1.NAOK == 14))	What is the category of your pay-scale?		en			Y		1																																																																																																							1						1																	
 A	0	1		Academic		en																																																																																																																																			
 A	0	2		Professional		en																																																																																																																																			
+A	0	3		Government		en																																																																																																																																			
 Q	!	socio12ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 1) AND (socio1.NAOK == 159))	What is your academic pay-level?		en			Y		1																																																																																																							1						1																	
 A	0	1		﻿A - Associate Lecturer / Research Associate		en																																																																																																																																			
 A	0	2		B - Lecturer / Research Fellow		en																																																																																																																																			
@@ -3967,8 +3980,8 @@ A	0	7		Higher Education Worker Level 7		en
 A	0	8		Higher Education Worker Level 8		en																																																																																																																																			
 A	0	9		Higher Education Worker Level 9		en																																																																																																																																			
 A	0	10		Higher Education Worker Level 10		en																																																																																																																																			
-Q	S	socio14ausnzlqnzl	((socio11ausnzlqnzl.NAOK == None) AND (socio1.NAOK == 159))	What is your government pay-level?		en			N																																																																																																																																
-Q	!	socio14ausnzlqaus	((socio11ausnzlqaus.NAOK == None) AND (socio1.NAOK == 14))	What is your government pay-level?		en			N		1																																																																																																							1						1																	
+Q	S	socio14ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 3) AND (socio1.NAOK == 159))	What is your government pay-level?		en			N																																																																																																																																
+Q	!	socio14ausnzlqaus	((socio11ausnzlqaus.NAOK == 3) AND (socio1.NAOK == 14))	What is your government pay-level?		en			N		1																																																																																																							1						1																	
 A	0	1		APS1 - Australian Public Service Level 1		en																																																																																																																																			
 A	0	2		APS2 - Australian Public Service Level 2		en																																																																																																																																			
 A	0	3		APS3 - Australian Public Service Level 3		en																																																																																																																																			
@@ -3988,8 +4001,8 @@ A	0	16		CSOF7 - CSIRO Officer Level 7		en
 A	0	17		CSOF8 - CSIRO Officer Level 8		en																																																																																																																																			
 A	0	18		CSOF9 - CSIRO Officer Level 9		en																																																																																																																																			
 A	0	19		Other		en																																																																																																																																			
-G	G6	Final questions about you	1			en																																																																																																																																			
-Q	Y	ukrse1		Are you a member of an association of Research Software Developers (e.g. UK RSE)?		en			N		1																																																																																																							1																							
+G	G7	Final questions about you	1			en																																																																																																																																			
+Q	Y	ukrse1		Are you a member of an association of Research Software Developers (e.g. UK RSE, DE-RSE, AUS-RSE, CANARIE, …)?		en			N		1																																																																																																							1																							
 Q	Y	org1can		Would you be interested in joining such an organisation?		en			N		1																																																																																																							1																							
 Q	M	org2can	"((org1can.NAOK == ""Y""))"	What would you hope to get out of such an organisation (check all that apply)?		en			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		Networking		en																																																																																																																																			
@@ -7449,7 +7462,7 @@ SQ	0	SQ063		Stadt- und Landschaftsplanung und Landschaftsgestaltung		de-informal
 SQ	0	SQ064		Tiermedizin		de-informal																																																																																																																																			
 SQ	0	SQ065		Jugendarbeit		de-informal																																																																																																																																			
 G	G2	Fragen zu Deinen bisherigen Anstellung(en)	1			de-informal																																																																																																																																			
-Q	!	prevEmp1qde	((socio1.NAOK == 82))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qde	((socio1.NAOK == 82))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de-informal																																																																																																																																			
 A	0	2		Fachhochschule		de-informal																																																																																																																																			
 A	0	3		Wirtschaft, Industrie		de-informal																																																																																																																																			
@@ -7458,42 +7471,42 @@ A	0	5		Fraunhofer-Gesellschaft		de-informal
 A	0	6		Helmholtz-Gemeinschaft Deutscher Forschungszentren		de-informal																																																																																																																																			
 A	0	7		Leibniz-Gemeinschaft		de-informal																																																																																																																																			
 A	0	8		Max-Planck-Gesellschaft 		de-informal																																																																																																																																			
-Q	!	prevEmp1quk	((socio1.NAOK == 235))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
+Q	!	prevEmp1quk	((socio1.NAOK == 235))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de-informal																																																																																																																																			
 A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
 A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
 A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
 A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
 A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
-Q	!	prevEmp1qus	((socio1.NAOK == 236))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qus	((socio1.NAOK == 236))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de-informal																																																																																																																																			
 A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
 A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
 A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
 A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
 A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
-Q	!	prevEmp1qzaf	((socio1.NAOK == 206))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qzaf	((socio1.NAOK == 206))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de-informal																																																																																																																																			
 A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
 A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
 A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
 A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
 A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
-Q	!	prevEmp1qnzl	((socio1.NAOK == 159))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qnzl	((socio1.NAOK == 159))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de-informal																																																																																																																																			
 A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
 A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
 A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
 A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
 A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
-Q	!	prevEmp1qaus	((socio1.NAOK == 14))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qaus	((socio1.NAOK == 14))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de-informal																																																																																																																																			
 A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
 A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
 A	0	4		Nichtregierungsorganisation		de-informal																																																																																																																																			
 A	0	5		Nationales Forschungsinstitut		de-informal																																																																																																																																			
 A	0	6		Gemeinnützige Organisation		de-informal																																																																																																																																			
-Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 235)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 235)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Wo hast Du in Deinem vorherigem Job gearbeitet?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Universität		de-informal																																																																																																																																			
 A	0	2		Privatwirtschaft		de-informal																																																																																																																																			
 A	0	3		Öffentliche Verwaltung		de-informal																																																																																																																																			
@@ -7610,8 +7623,9 @@ A	0	5		Genome Canada		de-informal
 A	0	6		NSERC		de-informal																																																																																																																																			
 A	0	7		SSHRC		de-informal																																																																																																																																			
 A	0	8		Don't know		de-informal																																																																																																																																			
+G	G4	Your professional Github account	1			de-informal																																																																																																																																			
 Q	S	proj6uk	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	We're interested in the difference in coding habits between people who identify as RSEs and other researchers who code. Could we take a look at your code? If so, please enter your Github ID here (if you use it for your professional work). We will not share this information with anyone.	IMPORTANT: This information will not be made publicly available [DE-INFORMAL]	de-informal			N																																																																																																																																
-G	G4	Deine Wahrnehmung Deiner aktuellen Position	1			de-informal																																																																																																																																			
+G	G5	Deine Wahrnehmung Deiner aktuellen Position	1			de-informal																																																																																																																																			
 Q	F	likert3	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))			de-informal			N		1																																																																																																							1																							
 SQ	0	satisGen1	1	Wie bist Du mit Deiner Position insgesamt zufrieden?		de-informal																																																																																																																																			
 SQ	0	satisGen2	1	Wie bist Du insgesamt mit Deiner Karriere zufrieden?		de-informal																																																																																																																																			
@@ -7666,7 +7680,7 @@ A	0	2		Stimme nicht zu		de-informal
 A	0	3		Weder Zustimmung noch Ablehnung		de-informal																																																																																																																																			
 A	0	4		Stimme zu		de-informal																																																																																																																																			
 A	0	5		Stimme voll zu		de-informal																																																																																																																																			
-G	G5	Demographische Fragen	1			de-informal																																																																																																																																			
+G	G6	Demographische Fragen	1			de-informal																																																																																																																																			
 Q	!	socio2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	Dein Geschlecht		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Weiblich		de-informal																																																																																																																																			
 A	0	2		Männlich		de-informal																																																																																																																																			
@@ -7790,9 +7804,11 @@ A	0	9		E15		de-informal
 Q	!	socio11ausnzlqnzl	((socio1.NAOK == 159))	What is the category of your pay-scale?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Academic		de-informal																																																																																																																																			
 A	0	2		Professional		de-informal																																																																																																																																			
+A	0	3		Government		de-informal																																																																																																																																			
 Q	!	socio11ausnzlqaus	((socio1.NAOK == 14))	What is the category of your pay-scale?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		Academic		de-informal																																																																																																																																			
 A	0	2		Professional		de-informal																																																																																																																																			
+A	0	3		Government		de-informal																																																																																																																																			
 Q	!	socio12ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 1) AND (socio1.NAOK == 159))	What is your academic pay-level?		de-informal			Y		1																																																																																																							1						1																	
 A	0	1		﻿A - Associate Lecturer / Research Associate		de-informal																																																																																																																																			
 A	0	2		B - Lecturer / Research Fellow		de-informal																																																																																																																																			
@@ -7827,8 +7843,8 @@ A	0	7		Higher Education Worker Level 7		de-informal
 A	0	8		Higher Education Worker Level 8		de-informal																																																																																																																																			
 A	0	9		Higher Education Worker Level 9		de-informal																																																																																																																																			
 A	0	10		Higher Education Worker Level 10		de-informal																																																																																																																																			
-Q	S	socio14ausnzlqnzl	((socio11ausnzlqnzl.NAOK == None) AND (socio1.NAOK == 159))	What is your government pay-level?		de-informal			N																																																																																																																																
-Q	!	socio14ausnzlqaus	((socio11ausnzlqaus.NAOK == None) AND (socio1.NAOK == 14))	What is your government pay-level?		de-informal			N		1																																																																																																							1						1																	
+Q	S	socio14ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 3) AND (socio1.NAOK == 159))	What is your government pay-level?		de-informal			N																																																																																																																																
+Q	!	socio14ausnzlqaus	((socio11ausnzlqaus.NAOK == 3) AND (socio1.NAOK == 14))	What is your government pay-level?		de-informal			N		1																																																																																																							1						1																	
 A	0	1		APS1 - Australian Public Service Level 1		de-informal																																																																																																																																			
 A	0	2		APS2 - Australian Public Service Level 2		de-informal																																																																																																																																			
 A	0	3		APS3 - Australian Public Service Level 3		de-informal																																																																																																																																			
@@ -7848,7 +7864,7 @@ A	0	16		CSOF7 - CSIRO Officer Level 7		de-informal
 A	0	17		CSOF8 - CSIRO Officer Level 8		de-informal																																																																																																																																			
 A	0	18		CSOF9 - CSIRO Officer Level 9		de-informal																																																																																																																																			
 A	0	19		Other		de-informal																																																																																																																																			
-G	G6	Die letzen Fragen über Dich	1			de-informal																																																																																																																																			
+G	G7	Die letzen Fragen über Dich	1			de-informal																																																																																																																																			
 Q	Y	ukrse1		Bist Du Mitglied in einem Verband von Research Software Engineers (z. B. UK RSE, de-RSE, NL-RSE)?		de-informal			N		1																																																																																																							1																							
 Q	Y	org1can		Bist Du daran interessiert, einer solchen Organisation beizutreten?		de-informal			N		1																																																																																																							1																							
 Q	M	org2can	"((org1can.NAOK == ""Y""))"	Was würdest Du von einer solchen Organisation erwarten? (wähle alle zutreffenden)		de-informal			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
@@ -11309,7 +11325,7 @@ SQ	0	SQ063		Town & Country Planning and Landscape Design		fr
 SQ	0	SQ064		Veterinary Medicine		fr																																																																																																																																			
 SQ	0	SQ065		Youth Work		fr																																																																																																																																			
 G	G2	Votre passé professionel	1			fr																																																																																																																																			
-Q	!	prevEmp1qde	((socio1.NAOK == 82))	Where was your previous job based?		fr			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qde	((socio1.NAOK == 82))	Where was your previous job based?		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
 A	0	2		University of Applied Sciences		fr																																																																																																																																			
 A	0	3		Private Company		fr																																																																																																																																			
@@ -11318,42 +11334,42 @@ A	0	5		Fraunhofer Society		fr
 A	0	6		Helmholtz Association of German Research Centres		fr																																																																																																																																			
 A	0	7		Leibniz Association		fr																																																																																																																																			
 A	0	8		Max Planck Society		fr																																																																																																																																			
-Q	!	prevEmp1quk	((socio1.NAOK == 235))	Where was your previous job based?		fr			N		1																																																																																																							1						1																	
+Q	!	prevEmp1quk	((socio1.NAOK == 235))	Where was your previous job based?		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
 A	0	2		Private company		fr																																																																																																																																			
 A	0	3		Government		fr																																																																																																																																			
 A	0	4		NGO		fr																																																																																																																																			
 A	0	5		National laboratory		fr																																																																																																																																			
 A	0	6		Non-profit organization		fr																																																																																																																																			
-Q	!	prevEmp1qus	((socio1.NAOK == 236))	Where was your previous job based?		fr			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qus	((socio1.NAOK == 236))	Where was your previous job based?		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
 A	0	2		Private company		fr																																																																																																																																			
 A	0	3		Government		fr																																																																																																																																			
 A	0	4		NGO		fr																																																																																																																																			
 A	0	5		National laboratory		fr																																																																																																																																			
 A	0	6		Non-profit organization		fr																																																																																																																																			
-Q	!	prevEmp1qzaf	((socio1.NAOK == 206))	Where was your previous job based?		fr			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qzaf	((socio1.NAOK == 206))	Where was your previous job based?		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
 A	0	2		Private company		fr																																																																																																																																			
 A	0	3		Government		fr																																																																																																																																			
 A	0	4		NGO		fr																																																																																																																																			
 A	0	5		National laboratory		fr																																																																																																																																			
 A	0	6		Non-profit organization		fr																																																																																																																																			
-Q	!	prevEmp1qnzl	((socio1.NAOK == 159))	Where was your previous job based?		fr			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qnzl	((socio1.NAOK == 159))	Where was your previous job based?		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
 A	0	2		Private company		fr																																																																																																																																			
 A	0	3		Government		fr																																																																																																																																			
 A	0	4		NGO		fr																																																																																																																																			
 A	0	5		National laboratory		fr																																																																																																																																			
 A	0	6		Non-profit organization		fr																																																																																																																																			
-Q	!	prevEmp1qaus	((socio1.NAOK == 14))	Where was your previous job based?		fr			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qaus	((socio1.NAOK == 14))	Where was your previous job based?		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
 A	0	2		Private company		fr																																																																																																																																			
 A	0	3		Government		fr																																																																																																																																			
 A	0	4		NGO		fr																																																																																																																																			
 A	0	5		National laboratory		fr																																																																																																																																			
 A	0	6		Non-profit organization		fr																																																																																																																																			
-Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 235)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Where was your previous job based?		fr			N		1																																																																																																							1						1																	
+Q	!	prevEmp1qworld	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 235)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	Where was your previous job based?		fr			Y		1																																																																																																							1						1																	
 A	0	1		University		fr																																																																																																																																			
 A	0	2		Private company		fr																																																																																																																																			
 A	0	3		Government		fr																																																																																																																																			
@@ -11470,8 +11486,9 @@ A	0	5		Genome Canada		fr
 A	0	6		NSERC		fr																																																																																																																																			
 A	0	7		SSHRC		fr																																																																																																																																			
 A	0	8		Don't know		fr																																																																																																																																			
+G	G4	Votre compte Github professionel	1			fr																																																																																																																																			
 Q	S	proj6uk	((!is_empty(socio1.NAOK) and (socio1.NAOK != 82)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 157)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 236)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 206)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 159)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 41)) AND (!is_empty(socio1.NAOK) and (socio1.NAOK != 14)))	We're interested in the difference in coding habits between people who identify as RSEs and other researchers who code. Could we take a look at your code? If so, please enter your Github ID here (if you use it for your professional work). We will not share this information with anyone.	IMPORTANT: Cette information ne sera pas rendue publique [FR]	fr			N																																																																																																																																
-G	G4	Votre perception sur votre position actuelle	1			fr																																																																																																																																			
+G	G5	Votre perception sur votre position actuelle	1			fr																																																																																																																																			
 Q	F	likert3	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))			fr			N		1																																																																																																							1																							
 SQ	0	satisGen1	1	In general, how satisfied are you with your current position		fr																																																																																																																																			
 SQ	0	satisGen2	1	In general, how satisfied are you with your career		fr																																																																																																																																			
@@ -11526,7 +11543,7 @@ A	0	2		Pas d’accord		fr
 A	0	3		Neutre		fr																																																																																																																																			
 A	0	4		D’accord		fr																																																																																																																																			
 A	0	5		Tout à fait d’accord		fr																																																																																																																																			
-G	G5	Questions démographiques	1			fr																																																																																																																																			
+G	G6	Questions démographiques	1			fr																																																																																																																																			
 Q	!	socio2	((!is_empty(socio1.NAOK) and (socio1.NAOK != 41)))	Please select your gender		fr			Y		1																																																																																																							1						1																	
 A	0	1		Female		fr																																																																																																																																			
 A	0	2		Male		fr																																																																																																																																			
@@ -11650,9 +11667,11 @@ A	0	9		E15		fr
 Q	!	socio11ausnzlqnzl	((socio1.NAOK == 159))	What is the category of your pay-scale?		fr			Y		1																																																																																																							1						1																	
 A	0	1		Academic		fr																																																																																																																																			
 A	0	2		Professional		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
 Q	!	socio11ausnzlqaus	((socio1.NAOK == 14))	What is the category of your pay-scale?		fr			Y		1																																																																																																							1						1																	
 A	0	1		Academic		fr																																																																																																																																			
 A	0	2		Professional		fr																																																																																																																																			
+A	0	3		Government		fr																																																																																																																																			
 Q	!	socio12ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 1) AND (socio1.NAOK == 159))	What is your academic pay-level?		fr			Y		1																																																																																																							1						1																	
 A	0	1		﻿A - Associate Lecturer / Research Associate		fr																																																																																																																																			
 A	0	2		B - Lecturer / Research Fellow		fr																																																																																																																																			
@@ -11687,8 +11706,8 @@ A	0	7		Higher Education Worker Level 7		fr
 A	0	8		Higher Education Worker Level 8		fr																																																																																																																																			
 A	0	9		Higher Education Worker Level 9		fr																																																																																																																																			
 A	0	10		Higher Education Worker Level 10		fr																																																																																																																																			
-Q	S	socio14ausnzlqnzl	((socio11ausnzlqnzl.NAOK == None) AND (socio1.NAOK == 159))	What is your government pay-level?		fr			N																																																																																																																																
-Q	!	socio14ausnzlqaus	((socio11ausnzlqaus.NAOK == None) AND (socio1.NAOK == 14))	What is your government pay-level?		fr			N		1																																																																																																							1						1																	
+Q	S	socio14ausnzlqnzl	((socio11ausnzlqnzl.NAOK == 3) AND (socio1.NAOK == 159))	What is your government pay-level?		fr			N																																																																																																																																
+Q	!	socio14ausnzlqaus	((socio11ausnzlqaus.NAOK == 3) AND (socio1.NAOK == 14))	What is your government pay-level?		fr			N		1																																																																																																							1						1																	
 A	0	1		APS1 - Australian Public Service Level 1		fr																																																																																																																																			
 A	0	2		APS2 - Australian Public Service Level 2		fr																																																																																																																																			
 A	0	3		APS3 - Australian Public Service Level 3		fr																																																																																																																																			
@@ -11708,7 +11727,7 @@ A	0	16		CSOF7 - CSIRO Officer Level 7		fr
 A	0	17		CSOF8 - CSIRO Officer Level 8		fr																																																																																																																																			
 A	0	18		CSOF9 - CSIRO Officer Level 9		fr																																																																																																																																			
 A	0	19		Other		fr																																																																																																																																			
-G	G6	Dernières questions à propos de vous	1			fr																																																																																																																																			
+G	G7	Dernières questions à propos de vous	1			fr																																																																																																																																			
 Q	Y	ukrse1		Faites-vous partie d’une association de développeurs de logiciels scientifiques (par ex., la RSE du R.-U.)?		fr			N		1																																																																																																							1																							
 Q	Y	org1can		Aimeriez-vous être membre d’une telle organisation si on en créait une au Canada?		fr			N		1																																																																																																							1																							
 Q	M	org2can	"((org1can.NAOK == ""Y""))"	Que vous attendriez-vous à retirer de l’adhésion à une telle organisation? Cocher toutes les réponses qui s’appliquent.		fr			Y	Y	1	1						1	1									1	1																																																																																					1	1																						
