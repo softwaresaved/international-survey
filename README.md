@@ -12,7 +12,7 @@ Our thanks to our partners: Scott Henwood (Canada), Stephan Janosch and Martin H
 This repository is used to create and analyse international surveys. It use csv file, limesurvey and jupyter notebook. Each country create a specific csv question file where the questions are stored. Then from this file a limesurvey's file is create and the service is used to collect answers. Once the answers are collected, the analysis are automated and create a jupyter notebook with all the descriptive analysis. For more details please refer to the [HOWTOCONTRIBUTE](https://github.com/softwaresaved/international-survey/blob/master/HOW%20TO%20CONTRIBUTE.md).
 
 
-## Published results
+## Published results for the 2017 survey
 
 We publish the results under the form of notebooks. All surveys have an attached 'public.csv' file. Theses files have been cleaned of all sensitive data. Therefore, the jupyter notebooks show some results that are not contained in the 'public.csv'.
 
@@ -24,17 +24,6 @@ We publish the results under the form of notebooks. All surveys have an attached
 |South Africa | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_zaf_2017_narrative.ipynb)  	 | [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/zaf/data/public_data.csv)|
 |UK  | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_uk_2017_narrative.ipynb) | [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/uk/data/public_data.csv)|
 |USA | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_us_2017_narrative.ipynb)  | [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/us/data/public_data.csv) |
-
-## Current status
-
-|country     |translation|adaptation|draft survey|Finalised|ethic|Survey started|Survey finished|analysis|publication|
-|  :-:       |  :-:   |  :-:   |  :-:   |  :-:   |  :-:   |  :-:     |  :-:     |  :-:   |  :-:   |
-|Canada     |  done  |  done  |  done  |  done  |  done  | N/A | N/A | N/A       |  27/03/18      |
-|Germany     |  done  |  done  |  done  |  done  |  done  | 17/10/17 | 31/12/17 | 09/03/18       |  11/03/18      |
-|Netherlands | N/A    |  done  |  done  | done |  done  |    29/11/17      |    31/12/17      |  09/03/18      |   11/03/18     |
-|South Africa| N/A  	 |  done  |  done  |done |  done  | 23/11/17         |     31/12/17     |    09/03/18    |   11/03/18     |
-|USA 	       | N/A  	 |  done  |  done	 |  done  |  done  | 14/11/17 |    31/12/17      |    09/03/18    | 11/03/18       |
-
 
 
 ## Contributors
@@ -48,7 +37,13 @@ Here is a list of contributors for the 2017 version of the survey (alphabetic or
 * Stephan Janosch
 * Katrin Leinweber
 * Olivier Philippe
+* Nooriyah P. Lohani
+* Nicholas R. May
+* Manodeep Sinha
 * Daniel S. Katz
 * Anelda van der Walt
 * Ben van Werkhoven
 
+
+## Funders
+The Software Sustainability Institute is supported by EPSRC grant EP/H043160/1 and EPSRC/ESRC/BBSRC grant EP/N006410/1, with additional project funding from Jisc and NERC. Collaboration between the universities of Edinburgh, Manchester, Oxford and Southampton.
