@@ -14,7 +14,10 @@
             "name": "Martin Hammitzsch"
         }, 
         {
-            "name": "Stephan Janosch"
+            "name": "Stephan Janosch",
+            "orcid": "0000-0002-2401-6862",
+            "affiliation": "Max Planck Institute of Molecular Cell Biology and Genetics"
+            
         }, 
         {
             "name": "Anelda van der Walt"
