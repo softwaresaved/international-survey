@@ -3704,6 +3704,7 @@ G	G3	Your working practices	1			en
 Q	!	currentWork1		Do you always work with the same researchers, or do you regularly change the researchers you work with? 		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Same researcher(s)		en																																																																																																																																			
 A	0	2		Regularly change researcher(s)		en																																																																																																																																			
+A	0	3		Different researchers, same research group		en																																																																																																																																			
 Q	Y	currentWork2		Are you part of a dedicated research software group within your institution?		en		Y	N		1																																																																																																							1																							
 Q	!	paper2mod		In general, when your software contributes to a paper, are you acknowledged in that paper?		en		Y	N		1																																																																																																							1						1																	
 A	0	1		Not mentioned at all		en																																																																																																																																			
@@ -3755,7 +3756,11 @@ A	0	8		8		en
 A	0	9		9		en																																																																																																																																			
 A	0	10		10 (All the time)		en																																																																																																																																			
 Q	S	open3de		Which tools do you use to mint a DOI (e.g. local library, Zenodo)?		en			Y																																																																																																																																
-Q	Y	open1de		Do you have an ORCID ID?		en			N		1																																																																																																							1																							
+Q	!	open1de		Do you have an ORCID ID?		en			N		1																																																																																																							1						1																	
+A	0	1		What is ORCID?		en																																																																																																																																			
+A	0	2		Yes		en																																																																																																																																			
+A	0	3		No		en																																																																																																																																			
+A	0	4		ORCID is not relevant for me		en																																																																																																																																			
 Q	M	proj5zaf		Which version control tools do you use for software development?		en		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		CVS		en																																																																																																																																			
 SQ	0	SQ002		SVN		en																																																																																																																																			
@@ -7566,6 +7571,7 @@ G	G3	Fragen zu Deinen Arbeitsgewohnheiten	1			de-informal
 Q	!	currentWork1		Arbeitest Du regelmässig mit den selben Wissenschaftlern oder arbeitest Du oft mit bzw. für verschiedene Wissenschaftler?		de-informal		Y	N		1																																																																																																							1						1																	
 A	0	1		Die selben Wissenschaftler		de-informal																																																																																																																																			
 A	0	2		Regelmäßig andere Wissenschaftler		de-informal																																																																																																																																			
+A	0	3		Verschiedene Forscher, selbe Arbeitsgruppe.		de-informal																																																																																																																																			
 Q	Y	currentWork2		Arbeitest Du in einer Gruppe		de-informal		Y	N		1																																																																																																							1																							
 Q	!	paper2mod		Wenn deine Software zu einer Publikation beigeträgst, wirst Du dafür normalerweise namentlich in der Publikation erwähnt bzw. zitiert?		de-informal		Y	N		1																																																																																																							1						1																	
 A	0	1		Überhaupt nicht erwähnt		de-informal																																																																																																																																			
@@ -7617,7 +7623,11 @@ A	0	8		8		de-informal
 A	0	9		9		de-informal																																																																																																																																			
 A	0	10		10 (jederzeit, immer)		de-informal																																																																																																																																			
 Q	S	open3de		Welche Werkzeuge nutzt Du, um DOIs zuzuweisen (z. Bsp. Bibliothek vor Ort, Zenodo)?		de-informal			Y																																																																																																																																
-Q	Y	open1de		Hast Du eine ORCID ID?		de-informal			N		1																																																																																																							1																							
+Q	!	open1de		Hast Du eine ORCID ID?		de-informal			N		1																																																																																																							1						1																	
+A	0	1		Was ist eine ORCID?		de-informal																																																																																																																																			
+A	0	2		Ja		de-informal																																																																																																																																			
+A	0	3		Nein		de-informal																																																																																																																																			
+A	0	4		ORCID ist für mich nicht relevant		de-informal																																																																																																																																			
 Q	M	proj5zaf		Welche Tools zur Versionskontrolle verwendest Du für die Softwareentwicklung?		de-informal		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		CVS		de-informal																																																																																																																																			
 SQ	0	SQ002		SVN		de-informal																																																																																																																																			
@@ -11428,6 +11438,7 @@ G	G3	Vos pratiques profesionnelles	1			fr
 Q	!	currentWork1		Travaillez-vous toujours avec le ou les mêmes chercheurs ou les chercheurs avec lesquels vous travaillez changent-ils fréquemment?		fr		Y	N		1																																																																																																							1						1																	
 A	0	1		Même(s) chercheur(s)		fr																																																																																																																																			
 A	0	2		Les chercheurs changent souvent.		fr																																																																																																																																			
+A	0	3		Different researchers, same research group		fr																																																																																																																																			
 Q	Y	currentWork2		Êtes-vous membre d’une équipe dont le seul but est de créer des logiciels scientifiques à votre institution?		fr		Y	N		1																																																																																																							1																							
 Q	!	paper2mod		En général, les articles mentionnent-ils votre participation quand votre logiciel a concouru à la publication de résultats scientifiques dans un périodique?		fr		Y	N		1																																																																																																							1						1																	
 A	0	1		Pas du tout mentionné		fr																																																																																																																																			
@@ -11479,7 +11490,11 @@ A	0	8		8		fr
 A	0	9		9		fr																																																																																																																																			
 A	0	10		10 (Tout le temps)		fr																																																																																																																																			
 Q	S	open3de		Quels outils (infrastructure) utilisez-vous quand vous attribuez un DOI à votre logiciel (par ex., bibliothèque locale, Zenodo)?		fr			Y																																																																																																																																
-Q	Y	open1de		Avez-vous un identifiant ORCID ID?		fr			N		1																																																																																																							1																							
+Q	!	open1de		Avez-vous un identifiant ORCID ID?		fr			N		1																																																																																																							1						1																	
+A	0	1		What is ORCID?		fr																																																																																																																																			
+A	0	2		Yes		fr																																																																																																																																			
+A	0	3		No		fr																																																																																																																																			
+A	0	4		ORCID is not relevant for me		fr																																																																																																																																			
 Q	M	proj5zaf		Quels outils, s’il y a lieu, utilisez-vous pour suivre les versions du logiciel développé?		fr		Y	Y	Y	1	1						1	1									1	1																																																																																					1	1																						
 SQ	0	SQ001		CVS		fr																																																																																																																																			
 SQ	0	SQ002		SVN		fr																																																																																																																																			
