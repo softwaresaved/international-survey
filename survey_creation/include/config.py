@@ -6,13 +6,12 @@ Config file for survey creation
 class config:
 
     # To modify, just add the keys of the dictionary
-    header_to_modify = [{'class': 'S', 'name': 'sid', 'text': '421498'},
+    header_to_modify = [{'class': 'S', 'name': 'sid', 'text': '20181'},
                         {'class': 'S', 'name': 'admin_email', 'text': 'olivier.philippe@soton.ac.uk'},
                         {'class': 'S', 'name': 'allowprev', 'text': 'Y'}]
     # Add header and description. Tuple of a dictionary + the position where it is supposed
     # to be inserted
     header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': '"fr de-informal"'}, 12)]
-    # header_to_add = [({'class': 'S', 'name': 'additional_languages', 'text': 'de-informal'}, 12)]
 
     # Same as header_to_modify
     settings_to_modify = []
