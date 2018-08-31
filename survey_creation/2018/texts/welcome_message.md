@@ -97,7 +97,7 @@ If you remain unhappy or have a complaint about any aspect of this study, please
 By clicking on the "next" button I confirm:
 -------------------------------------------
 
-*   I have read and understood the information and have had the opportunity to ask questions about the study (by emailing [Simon Hettrick](mailto:s.hettrick@software.ac.uk) or [Olivier Philippe](mailto:orp2c15@soton.ac.uk) .
+*   I have read and understood the information and have had the opportunity to ask questions about the study (by emailing [Simon Hettrick](mailto:s.hettrick@software.ac.uk) or [Olivier Philippe](mailto:orp2c15@soton.ac.uk)).
 *   I agree to take part in this research project and agree for my data to be used for the purpose of this study.
 *   I understand my participation is voluntary and I may withdraw at any time for any reason without my participation rights being affected.
 *   I agree with the above statements and wish to continue.
