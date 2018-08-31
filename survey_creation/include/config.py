@@ -23,7 +23,7 @@ class config:
     # The index positions starts at 0
     # Adding the survey title to the global description. The index position is at 0 and the structure of the dictionary is as follow:
     survey_title = {'en': 'Study about people writing research software',
-                    'de-informal': 'STUDY TEST',
+                    'de-informal': 'Umfrage über Personen die Forschungssoftware erschaffen',
                     'fr': 'Etude sur les personnes écrivant des programmes informatiques scientifiques'}
 
     sections_txt = {0: {'en': {'name': 'Questions about you', 'text': ''},
@@ -52,5 +52,5 @@ class config:
                         'fr': {'name': 'Dernières questions à propos de vous', 'text': ''}}}
 
     private_data = {'en': 'IMPORTANT: This information will not be made publicly available',
-                    'de-informal': 'IMPORTANT: This information will not be made publicly available [DE-INFORMAL]',
+                    'de-informal': 'WICHTIG: Diese Information wird nicht veröffentlicht [DE-INFORMAL]',
                     'fr': 'IMPORTANT: Cette information ne sera pas rendue publique [FR]'}
