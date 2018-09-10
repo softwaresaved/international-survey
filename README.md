@@ -27,7 +27,7 @@ We publish the results under the form of notebooks. All surveys have an attached
 
 
 ## Contributors
-Here is a list of contributors for the 2017 version of the survey (alphabetic order). They are also mentioned in the [.zenodo.json](https://github.com/softwaresaved/international-survey/blob/master/.zenodo.json) to be automatically added to the DOI.
+Here is a list of contributors for the 2017/2018 version of the survey (alphabetic order). They are also mentioned in the [.zenodo.json](https://github.com/softwaresaved/international-survey/blob/master/.zenodo.json) to be automatically added to the DOI.
 
 * Stephan Druskat
 * Sandra Gesing
