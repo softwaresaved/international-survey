@@ -2,7 +2,8 @@
 
 
 [![DOI](https://zenodo.org/badge/63957124.svg)](https://zenodo.org/badge/latestdoi/63957124) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-***Collaboration tools to create surveys for RSE in the world. Also a place to centralised the data and and the analysis.***
+
+***Collaboration tool to create surveys and analyse data about Research Software Engineers around the world***
 
 
 In 2016 the Software Sustainability Institute ran the first survey of Research Software Engineers (RSEs) - the people who write code in academia. This produced the first insight into the demographics, job satisfaction, and practices of RSEs. To support and broaden this work, the Institute will run the UK survey every year and - it is hoped - will expand the survey so that insight and comparison can be made across different countries. Ultimately, we hope that these results, the anonymised version of which will all be open licensed, will act as a valuable resource to understand and improve the working conditions for RSEs.
