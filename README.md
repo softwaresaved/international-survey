@@ -6,10 +6,12 @@
 ***Collaboration tool to create surveys and analyse data about Research Software Engineers around the world***
 
 
-In 2016 the Software Sustainability Institute ran the first survey of Research Software Engineers (RSEs) - the people who write code in academia. This produced the first insight into the demographics, job satisfaction, and practices of RSEs. To support and broaden this work, the Institute will run the UK survey every year and - it is hoped - will expand the survey so that insight and comparison can be made across different countries. Ultimately, we hope that these results, the anonymised version of which will all be open licensed, will act as a valuable resource to understand and improve the working conditions for RSEs.
+In **2016** the Software Sustainability Institute ran the first survey of Research Software Engineers (RSEs) - the people who write code in academia. This produced the first insight into the demographics, job satisfaction, and practices of RSEs. To support and broaden this work, the Institute will run the UK survey every year and - it is hoped - will expand the survey so that insight and comparison can be made across different countries. Ultimately, we hope that these results, the anonymised version of which will all be open licensed, will act as a valuable resource to understand and improve the working conditions for RSEs.
 
-In 2017 we also surveyed Canadian RSEs and we added four further countries, Germany, Netherlands, South Africa and USA. 
+In **2017** we also surveyed Canadian RSEs and we added four further countries, Germany, Netherlands, South Africa and USA. 
 Our thanks to our partners: Scott Henwood (Canada), Stephan Janosch and Martin Hammitzsch (Germany), Ben van Werkhoven and Tom Bakker (Netherlands), Anelda van der Walt (South Africa) and Daniel Katz and Sandra Gesing (USA).
+
+In **2018** we have worked differently and created a survey for all countries (rather than one survey for each ones). The survey is currently open to participant until the 3th of December and can be found here: http://www.bit.ly/RSESurvey2018.
 
 This repository is used to create and analyse international surveys. It use csv files to store questions and answers that are later transformed into a limesurvey TSV file. The analysis are using python and are shared within jupyter notebooks.
 
