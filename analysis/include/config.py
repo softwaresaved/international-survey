@@ -10,16 +10,26 @@ class CleaningConfig:
     def __init__(self, year, country):
         self.country = country
         self.year = year
-
-        # Unprocessed dataset
-        self.raw_data = './{}/{}/data/raw_data.csv'.format(self.year, self.country)
-        # load the different answers to questions to classify questions based on that
-        self.question_file = './../survey_creation/{}/{}/questions.csv'.format(self.year, self.country)
-        self.answer_folder = './../survey_creation/{}/{}/listAnswers'.format(self.year, self.country)
-        # Location for the json file of all questions
-        self.json_to_plot_location = './{}/{}/data/to_plot.json'.format(self.year, self.country)
-        self.cleaned_df_location = './{}/{}/data/cleaned_data.csv'.format(self.year, self.country)
-        self.public_df_location = './{}/{}/data/public_data.csv'.format(self.year, self.country)
+        if int(self.year) < 2018:
+            # Unprocessed dataset
+            self.raw_data = './{}/{}/data/raw_data.csv'.format(self.year, self.country)
+            # load the different answers to questions to classify questions based on that
+            self.question_file = './../survey_creation/{}/{}/questions.csv'.format(self.year, self.country)
+            self.answer_folder = './../survey_creation/{}/{}/listAnswers'.format(self.year, self.country)
+            # Location for the json file of all questions
+            self.json_to_plot_location = './{}/{}/data/to_plot.json'.format(self.year, self.country)
+            self.cleaned_df_location = './{}/{}/data/cleaned_data.csv'.format(self.year, self.country)
+            self.public_df_location = './{}/{}/data/public_data.csv'.format(self.year, self.country)
+        else:
+            # Unprocessed dataset
+            self.raw_data = './{}/data/raw_data.csv'.format(self.year)
+            # load the different answers to questions to classify questions based on that
+            self.question_file = './../survey_creation/{}/questions.csv'.format(self.year)
+            self.answer_folder = './../survey_creation/{}/listAnswers'.format(self.year)
+            # Location for the json file of all questions
+            self.json_to_plot_location = './{}/data/to_plot.json'.format(self.year)
+            self.cleaned_df_location = './{}/data/cleaned_data.csv'.format(self.year)
+            self.public_df_location = './{}/data/public_data.csv'.format(self.year)
         self.section_nbr_to_keep_after = 1
         self.count_na = True
         self.normalise = False
