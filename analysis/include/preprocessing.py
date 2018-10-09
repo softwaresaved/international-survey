@@ -11,11 +11,20 @@ import numpy as np
 from collections import OrderedDict
 import pycountry
 
-
 try:
     from include.config import CleaningConfig
 except ModuleNotFoundError:
     from config import CleaningConfig
+
+dict_countries = {'de': "Germany",
+                  'nl': "Netherlands",
+                  'uk': "United Kingdom of Great Britain and Northern Ireland",
+                  'us': "United States of America",
+                  'zaf': "South Africa",
+                  'nzl': "New Zealand",
+                  'can': 'Canada',
+                  'aus': "Australia"}
+list_bool = ['yes', 'y', 't', 'true', 'Yes', 'YES', 'Y', 'T', 'True', 'TRUE']
 
 
 class CleaningData(CleaningConfig):
@@ -33,6 +42,8 @@ class CleaningData(CleaningConfig):
         self.answers_item_dict = self.get_answer_item(self.answer_folder)
         # Some likert items need to be reverted -- need a list
         self.likert_item_to_revert = ['turnOver2', 'turnOver3']
+        self.list_bool = list_bool
+        self.dict_countries = dict_countries
 
     def get_answer_item(self, path_to_file):
         """
@@ -162,14 +173,24 @@ class CleaningData(CleaningConfig):
         with open(self.question_file, 'r') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                result_dict[row['code']] = {'section': row['section'],
-                                            'original_question': row['question'],
-                                            'type_question': row['answer_file'],
-                                            'answer_format': row['answer_format'],
-                                            'file_answer': '{}/{}.csv'.format(self.answer_folder, row['answer_file']),
-                                            'country_specific': row['country_specific'],
-                                            'public': row['public']}
-
+                all_info= {'section': row['section'],
+                            'original_question': row['question'],
+                            'type_question': row['answer_file'],
+                            'answer_format': row['answer_format'],
+                            'file_answer': '{}/{}.csv'.format(self.answer_folder, row['answer_file']),
+                            'country_specific': row['country_specific'],
+                            'public': row['public']}
+                code = row['code']
+                if row['country_specific'] in self.list_bool:
+                    for country in self.dict_countries:
+                        if row[country] in self.list_bool:
+                            new_code = '{}q{}'.format(code, country)
+                            result_dict[new_code] = all_info
+                    if row['world'] in self.list_bool:
+                        new_code = '{}q{}'.format(code, 'world')
+                        result_dict[new_code] = all_info
+                else:
+                    result_dict[code] = all_info
         return result_dict
 
     def grouping_question(self, df, input_dict):
@@ -188,13 +209,15 @@ class CleaningData(CleaningConfig):
             """
             # Follow the structure given by limesurvey
             splitted_col = column_name.split('.')
+            splitted_col.remove('_')  # the new outformat from limesurve is '._.' btw the code
             if element_to_return == 0:
                 code = splitted_col[0].split('[')[0]
             if element_to_return == 1:
                 try:
                     code = splitted_col[0].split('[')[1][:-1]  # -1 to remove the last ] in the string
+
                 except IndexError:  # In case not splitting like that just return the other code
-                    return splitted_col[0].split('[')[0]
+                    code = splitted_col[0].split('[')[0]
             return code
 
         for col in df.columns:
@@ -211,6 +234,7 @@ class CleaningData(CleaningConfig):
                         input_dict[special_code].setdefault('survey_q', []).append(col)
                     except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
                         print('Not being able to process this columns: {}'.format(col))
+                        pass
 
         return input_dict
 
@@ -295,7 +319,6 @@ class CleaningData(CleaningConfig):
 
         def dictionary_by_section(input_dict):
             # for k in input_dict:
-            #     print(k, input_dict[k])
             output_dict = dict()
             for q in input_dict:
                 try:
@@ -309,7 +332,7 @@ class CleaningData(CleaningConfig):
                     pass
             return output_dict
 
-        def grouping_question(input_dict):
+        def grouping_question_for_notebook(input_dict):
             for section in input_dict:
                 for group in input_dict[section]:
                     group_to_parse = input_dict[section][group]
@@ -327,7 +350,7 @@ class CleaningData(CleaningConfig):
             return OrderedDict(sorted(input_dict.items()))
 
         dict_by_section = dictionary_by_section(input_dict)
-        dict_by_section = grouping_question(dict_by_section)
+        dict_by_section = grouping_question_for_notebook(dict_by_section)
         return ordering_dict(dict_by_section)
 
     def duplicating_other(self, df):
@@ -384,7 +407,6 @@ class CleaningData(CleaningConfig):
         # from limesurvey
         code_to_keep = [x for x in self.survey_structure.keys()]
         for col in self.public_df.columns:
-            print(col)
             remove = True
             for x in code_to_keep:
                 if x in col:
@@ -415,7 +437,7 @@ class CleaningData(CleaningConfig):
         self.survey_structure = self.get_survey_structure()
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
         self.structure_by_section = self.transform_for_notebook(self.survey_structure)
-        self.df = self.revert_inverted_likert(self.likert_item_to_revert)
+        # self.df = self.revert_inverted_likert(self.likert_item_to_revert)
         return self.df
 
     def write_config_file(self):

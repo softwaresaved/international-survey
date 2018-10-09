@@ -28,8 +28,7 @@ def main():
         print(i)
     cleaning_process.write_df()
     cleaning_process.remove_private_data()
-    # cleaning_process.write_config_file()
-    #
+    cleaning_process.write_config_file()
 
 if __name__ == "__main__":
     main()
