@@ -24,8 +24,6 @@ def main():
     else:
         cleaning_process = CleaningData(year, country, df)
     df = cleaning_process.cleaning()
-    for i in df.columns:
-        print(i)
     cleaning_process.write_df()
     cleaning_process.remove_private_data()
     cleaning_process.write_config_file()

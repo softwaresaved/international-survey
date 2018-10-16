@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import re
 import os
 import csv
 import json
@@ -9,7 +8,6 @@ import glob
 import pandas as pd
 import numpy as np
 from collections import OrderedDict
-import pycountry
 
 try:
     from include.config import CleaningConfig
@@ -81,6 +79,19 @@ class CleaningData(CleaningConfig):
         df.replace("Don't want to answer", np.NaN, inplace=True)
         return df
 
+    def clean_errors(self, df):
+        """
+        Some error such as typo can be present and discovered during the analysis
+        They are specific to the year, so this one is for the 2018 survey
+        It correct the errors in the df before any further analysis
+        """
+        # Typo in the code of one question. It is timeLie and should be timeLike
+        df.rename(columns={'likert1[timeLie9zaf]._. [In an average month, how much time would you like to spend on teaching]':
+                           'likert1[timeLike9zaf]._. [In an average month, how much time would you like to spend on teaching]'},
+                  inplace=True)
+
+        return df
+
     def cleaning_columns_white_space(self, df):
         """
         Various cleaning white spaces in columns name
@@ -107,15 +118,14 @@ class CleaningData(CleaningConfig):
             # Some columns have double space instead of one
             string = string.replace('  ', ' ')
             # FIXME compile the regex into the __init__()
-            string = re.sub("""(?<=\s) +|^ +(?=\s)| (?= +[\n\0])""", " ", string)
+            # string = re.sub("""(?<=\s) +|^ +(?=\s)| (?= +[\n\0])""", " ", string)
             # Replace all ending white space0
-            string = string.strip()
+            string = string.rstrip()
             return string
 
         return df.rename(columns=lambda x: cleaning_some_white_space(x))
 
     def dropping_lime_useless(self, df):
-
         """
         Dropping all the columns created by limesurvey and
         not needed for later analysis
@@ -174,18 +184,32 @@ class CleaningData(CleaningConfig):
             reader = csv.DictReader(f)
             for row in reader:
                 all_info= {'section': row['section'],
-                            'original_question': row['question'],
-                            'type_question': row['answer_file'],
-                            'answer_format': row['answer_format'],
-                            'file_answer': '{}/{}.csv'.format(self.answer_folder, row['answer_file']),
-                            'country_specific': row['country_specific'],
-                            'public': row['public']}
+                           'original_question': row['question'],
+                           'type_question': row['answer_file'],
+                           'answer_format': row['answer_format'],
+                           'country_specific': row['country_specific'],
+                           'public': row['public']}
+                if row['answer_file'] != '':
+                    if row['country_specific'] not in self.list_bool:
+                        all_info['file_answer'] = '{}/{}.csv'.format(self.answer_folder,
+                                                                     row['answer_file'])
+
+                else:
+                    all_info['file_answer'] = None
                 code = row['code']
                 if row['country_specific'] in self.list_bool:
                     for country in self.dict_countries:
                         if row[country] in self.list_bool:
                             new_code = '{}q{}'.format(code, country)
-                            result_dict[new_code] = all_info
+                            if row['answer_file'] != '':
+
+                                all_info['file_answer'] = '{}/{}/{}.csv'.format(self.answer_folder,
+                                                                             country,
+                                                                             row['answer_file'])
+                            else:
+                                all_info['file_answer'] = None
+                            result_dict[new_code] = all_info.copy()
+
                     if row['world'] in self.list_bool:
                         new_code = '{}q{}'.format(code, 'world')
                         result_dict[new_code] = all_info
@@ -211,17 +235,30 @@ class CleaningData(CleaningConfig):
             splitted_col = column_name.split('.')
             splitted_col.remove('_')  # the new outformat from limesurve is '._.' btw the code
             if element_to_return == 0:
-                code = splitted_col[0].split('[')[0]
+                return splitted_col[0].split('[')[0]
             if element_to_return == 1:
                 try:
-                    code = splitted_col[0].split('[')[1][:-1]  # -1 to remove the last ] in the string
+                    return splitted_col[0].split('[')[1][:-1]  # -1 to remove the last ] in the string
 
                 except IndexError:  # In case not splitting like that just return the other code
-                    code = splitted_col[0].split('[')[0]
-            return code
+                    print('Index_error: {}'.format(splitted_col))
+                    return splitted_col[0].split('[')[0]
+                    # code = splitted_col[0].split('[')[0]
 
-        for col in df.columns:
-            code = get_question_code(col, 0)
+        def add_question_to_dict(input_dict, code, col):
+            """
+            Add the questions from the responses to the dictionary
+            It can have several questions for several columns (in case of multiple choice, likert, one choice
+            It return the dictionary with the list of all questions that are similar
+
+            :params:
+                input_dict dict(): The dictionary to update
+                code str(): the code extracted from the column to match the key in the input_dict
+                col str(): the complete columns string to add
+
+            :return:
+                input_dict dict(): the updated dictionary
+            """
             try:
                 input_dict[code].setdefault('survey_q', []).append(col)
             except KeyError:
@@ -229,13 +266,12 @@ class CleaningData(CleaningConfig):
                 try:
                     input_dict[multiple_code].setdefault('survey_q', []).append(col)
                 except KeyError:  # Sometime the questions is stored as multiple choice in limesurvey but it is two specific question in the csv
-                    special_code = code[:-1] + multiple_code[-1]
-                    try:
-                        input_dict[special_code].setdefault('survey_q', []).append(col)
-                    except KeyError:  # FIXME Need to record all exception in a separated logfile for further investigation
-                        print('Not being able to process this columns: {}'.format(col))
-                        pass
+                    pass
+            return input_dict
 
+        for col in df.columns:
+            code = get_question_code(col, 0)
+            input_dict = add_question_to_dict(input_dict, code, col)
         return input_dict
 
     def transform_for_notebook(self, input_dict):
@@ -318,7 +354,6 @@ class CleaningData(CleaningConfig):
             yield group_survey_q, group_original_question, previous_answer_format, file_answer
 
         def dictionary_by_section(input_dict):
-            # for k in input_dict:
             output_dict = dict()
             for q in input_dict:
                 try:
@@ -431,12 +466,15 @@ class CleaningData(CleaningConfig):
             self.df = self.dropping_lime_useless(self.df)
         except ValueError:
             pass
+
+        self.df = self.clean_errors(self.df)
         self.df = self.cleaning_columns_white_space(self.df)
         self.df = self.cleaning_missing_na(self.df)
         self.df = self.duplicating_other(self.df)
         self.survey_structure = self.get_survey_structure()
+
         self.structure_by_question = self.grouping_question(self.df, self.survey_structure)
-        self.structure_by_section = self.transform_for_notebook(self.survey_structure)
+        self.structure_by_section = self.transform_for_notebook(self.structure_by_question)
         # self.df = self.revert_inverted_likert(self.likert_item_to_revert)
         return self.df
 

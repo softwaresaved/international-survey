@@ -386,7 +386,10 @@ class CleaningData(CleaningConfig):
         for col in df.columns:
             code = get_question_code(col, 0)
             try:
+                print('Add a question to the code: {}'.format(code))
+                print('Add the question: {}'.format(col))
                 input_dict[code].setdefault('survey_q', []).append(col)
+                print('Now the total of questions is: {}'.format(input_dict[code]['survey_q']))
             except KeyError:
                 multiple_code = get_question_code(col, 1)
                 try:
