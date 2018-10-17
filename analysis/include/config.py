@@ -25,7 +25,7 @@ class CleaningConfig:
             self.raw_data = './{}/data/raw_data.csv'.format(self.year)
             # load the different answers to questions to classify questions based on that
             self.question_file = './../survey_creation/{}/questions.csv'.format(self.year)
-            self.answer_folder = './../survey_creation/{}/listAnswers'.format(self.year)
+            self.answer_folder = './../survey_creation/{}/answers'.format(self.year)
             # Location for the json file of all questions
             self.json_to_plot_location = './{}/data/to_plot.json'.format(self.year)
             self.cleaned_df_location = './{}/data/cleaned_data.csv'.format(self.year)

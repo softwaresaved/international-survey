@@ -176,6 +176,14 @@ class CleaningData(CleaningConfig):
 
         return self.df
 
+    def get_answer(self, year, file_answer):
+        """
+        """
+        outfile = file_answer
+        with open(outfile, "r") as f:
+            list_answer = [x[:-1] for x in f.readlines()]
+            return [x.split(";")[0].strip('"') for x in list_answer]
+
     def get_survey_structure(self):
         """
         """
@@ -191,9 +199,20 @@ class CleaningData(CleaningConfig):
                            'public': row['public']}
                 if row['answer_file'] != '':
                     if row['country_specific'] not in self.list_bool:
-                        all_info['file_answer'] = '{}/{}.csv'.format(self.answer_folder,
-                                                                     row['answer_file'])
 
+                        # try:
+                        filename = '{}/{}.csv'.format(self.answer_folder,
+                                                    row['answer_file'])
+                        all_info['file_answer'] = self.get_answer(self.year, filename)
+                        # except FileNotFoundError:  # In case of despite not being country specific the question is in the country folder
+                        #
+                        #     for country in self.dict_countries:
+                        #         if row[country] in self.list_bool:
+                        #             filename = '{}/countries/{}/{}.csv'.format(self.answer_folder,
+                        #                                                         country,
+                        #                                                         row['answer_file'])
+                        #             all_info['file_answer'] = self.get_answer(self.year, filename)
+                        #
                 else:
                     all_info['file_answer'] = None
                 code = row['code']
@@ -203,9 +222,15 @@ class CleaningData(CleaningConfig):
                             new_code = '{}q{}'.format(code, country)
                             if row['answer_file'] != '':
 
-                                all_info['file_answer'] = '{}/{}/{}.csv'.format(self.answer_folder,
-                                                                             country,
-                                                                             row['answer_file'])
+                                try:
+                                    filename = '{}/countries/{}/{}.csv'.format(self.answer_folder,
+                                                                               country,
+                                                                               row['answer_file'])
+                                    all_info['file_answer'] = self.get_answer(self.year, filename)
+                                except FileNotFoundError:  # In case of despite being a country specific, it used the common one
+                                    filename = '{}/{}.csv'.format(self.answer_folder,
+                                                                row['answer_file'])
+                                    all_info['file_answer'] = self.get_answer(self.year, filename)
                             else:
                                 all_info['file_answer'] = None
                             result_dict[new_code] = all_info.copy()
