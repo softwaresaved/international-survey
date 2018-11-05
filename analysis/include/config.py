@@ -30,6 +30,9 @@ class CleaningConfig:
             self.json_to_plot_location = './{}/data/to_plot.json'.format(self.year)
             self.cleaned_df_location = './{}/data/cleaned_data.csv'.format(self.year)
             self.public_df_location = './{}/data/public_data.csv'.format(self.year)
+            # The merged df that bring together several years
+            self.clean_merged_location = './{}/data/clean_merged.csv'.format(self.year)
+            self.public_merged_location = './{}/data/public_merged.csv'.format(self.year)
         self.section_nbr_to_keep_after = 1
         self.count_na = True
         self.normalise = False

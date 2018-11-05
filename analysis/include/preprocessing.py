@@ -202,17 +202,8 @@ class CleaningData(CleaningConfig):
 
                         # try:
                         filename = '{}/{}.csv'.format(self.answer_folder,
-                                                    row['answer_file'])
+                                                      row['answer_file'])
                         all_info['file_answer'] = self.get_answer(self.year, filename)
-                        # except FileNotFoundError:  # In case of despite not being country specific the question is in the country folder
-                        #
-                        #     for country in self.dict_countries:
-                        #         if row[country] in self.list_bool:
-                        #             filename = '{}/countries/{}/{}.csv'.format(self.answer_folder,
-                        #                                                         country,
-                        #                                                         row['answer_file'])
-                        #             all_info['file_answer'] = self.get_answer(self.year, filename)
-                        #
                 else:
                     all_info['file_answer'] = None
                 code = row['code']
@@ -229,7 +220,7 @@ class CleaningData(CleaningConfig):
                                     all_info['file_answer'] = self.get_answer(self.year, filename)
                                 except FileNotFoundError:  # In case of despite being a country specific, it used the common one
                                     filename = '{}/{}.csv'.format(self.answer_folder,
-                                                                row['answer_file'])
+                                                                  row['answer_file'])
                                     all_info['file_answer'] = self.get_answer(self.year, filename)
                             else:
                                 all_info['file_answer'] = None
