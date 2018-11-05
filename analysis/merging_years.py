@@ -192,26 +192,14 @@ class MergingYear(CleaningConfig):
 
                 final_question = final_question.replace('. . ', '. ')
                 final_question = final_question.replace('.  . ', '. ').replace(' . ', '. ')
-                # try:
-                #     list_q = dict_of_q_to_merge[final_question]
-                #     list_q.append(i)
-                #     dict_of_q_to_merge[final_question] = list_q
-                # except KeyError:
-                #     dict_of_q_to_merge[final_question] = [i]
                 dict_of_q_to_merge.setdefault(final_question, []).append(i)
 
             for q in dict_of_q_to_merge:
                 dict_df.rename(index=str, columns={dict_of_q_to_merge[q][0]: q}, inplace=True)
-                # for original_q in dict_of_q_to_merge[q]:
-                    # dict_df.rename(index=str, columns={original_q: q}, inplace=True)
                 if len(dict_of_q_to_merge[q]) >1:
                     for col in dict_of_q_to_merge[q][1:]:
-                        # print('Type of original column: {}'.format(dict_df[q].dtype))
-                        # print('Type of new columns: {}'.format(dict_df[col].dtype))
-                        # dict_df[q] = dict_df[q] + dict_df[col]
                         dict_df[q] = dict_df[q].fillna(dict_df[col])
                         dict_df.drop(col, axis=1, inplace=True)
-                # print('number of columns = {}'.format(len(dict_df.columns)))
             dict_df['Year'] = '2018'
             return dict_df
 
@@ -230,20 +218,7 @@ class MergingYear(CleaningConfig):
     def _merge_both_years(self, df_2017, df_2018):
         """
         """
-        # df_2017 = df_2017.astype(str)
-        # df_2018 = df_2018.astype(str)
-        # n = 0
-        # o = 0
-        # for col in df_2017.columns:
-        #     n +=1
-        #     if col in df_2018.columns:
-        #         print(col)
-        #         o +=1
-        # print(n)
-        # print(o)
         return df_2018.merge(df_2017, how='outer')
-        # return pd.concat([df_2018, df_2017], ignore_index=True)
-        # return df_2018.append(df_2017, ignore_index=True)
 
     def merge_both_years(self):
         """
@@ -322,8 +297,6 @@ def main():
     print('Merging both years')
     merging_year.merge_both_years()
     merging_year.write_df()
-    # for col in merging_year.df_all_clean:
-        # print(col)
 
 
 if __name__ == "__main__":
