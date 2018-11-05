@@ -113,7 +113,7 @@ class MergingYear(CleaningConfig):
             code = code_.split('[')[1][:-1]
 
         common_code = code
-        for spec_code in ['quk', 'qcan', 'qus', 'qnl', 'qnzl', 'qaus', 'qde', 'qzaf']:
+        for spec_code in ['quk', 'qcan', 'qus', 'qnl', 'qnzl', 'qaus', 'qde', 'qzaf', 'qworld']:
             common_code = common_code.replace(spec_code, '')
 
         code = common_code
