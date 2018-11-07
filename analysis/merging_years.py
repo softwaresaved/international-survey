@@ -92,7 +92,7 @@ class MergingYear(CleaningConfig):
                     set_intersection = set_intersection.intersection(current_set)
         return set_intersection
 
-    def get_question_element(self, column_name, year):
+    def get_question_element(self, column_name, year, country=None):
         """
         :params:
             :column_name str(): text of the column name to split
@@ -108,8 +108,9 @@ class MergingYear(CleaningConfig):
         code_ = splitted_col[0]
         code = code_.split('[')[0]
 
-
         if code[:6] == 'likert':
+            code = code_.split('[')[1][:-1]
+        if code[:8] == 'time1can':
             code = code_.split('[')[1][:-1]
 
         common_code = code
@@ -128,7 +129,16 @@ class MergingYear(CleaningConfig):
                 q_text = question_text.split('[')
                 question_text = q_text[0]
                 try:
-                    if q_text[1].rstrip() != ']':
+                    if question_text.rstrip() == '':
+                        # In Uk only have the problem with skill2 questions
+                        if country == 'United Kingdom':
+                            question_text = splitted_col[1]
+                            value = splitted_col[2]
+                        else:
+                            question_text = q_text[1].replace(']', '')
+                            value = None
+                    elif q_text[1].rstrip() != ']':
+                        question_text = q_text[0]
                         value = '[{}'.format(q_text[1])
                     else:
                         value = None
@@ -144,7 +154,7 @@ class MergingYear(CleaningConfig):
                 list_question = list()
                 df = dict_df[country]
                 for i in df.columns:
-                    code, question_text, value = self.get_question_element(i, year=2017)
+                    code, question_text, value = self.get_question_element(i, year=2017, country=country)
                     if code:
                         try:
                             format_2017 = self.structure_2017[code]['answer_format']
@@ -159,7 +169,7 @@ class MergingYear(CleaningConfig):
                                 final_question = '. '.join([code, question_text])
 
                             final_question = final_question.replace('..', '.')
-                            final_question = final_question.replace('. . ', '. ')
+                            final_question = final_question.replace('.  . ', '. ').replace(' . ', '. ')
                             list_question.append(final_question)
                             df.rename(columns={i: final_question}, inplace=True)
                         except KeyError:
@@ -168,12 +178,12 @@ class MergingYear(CleaningConfig):
 
                 # Add column for year and Country
                 df['Country'] = country
-                df['Year'] = '2017'
-                try:
-                    final_df = final_df.merge(df, how='outer')
-                except AttributeError:  # final_df is init as None
+                df['Year'] = 2017
+                print('Merging: {}'.format(country))
+                if final_df is None:
                     final_df = df
-
+                else:
+                    final_df = final_df.merge(df, how='outer')
             return final_df
 
         if year == 2018:
@@ -185,8 +195,6 @@ class MergingYear(CleaningConfig):
                         final_question = '. '.join([code, question_text, value])
                     else:
                         final_question = '. '.join([code, question_text])
-
-
                 else:
                     final_question = i
 
@@ -206,7 +214,9 @@ class MergingYear(CleaningConfig):
     def merge_2017(self):
         """
         """
+        print('Merging 2017 -- Clean')
         self.df_countries_clean_2017 = self.rename_df(self.df_countries_clean_2017, year=2017)
+        print('Merging 2017 -- Public')
         self.df_countries_public_2017 = self.rename_df(self.df_countries_public_2017, year=2017)
 
     def merge_2018(self):
@@ -269,6 +279,29 @@ class MergingYear(CleaningConfig):
         with open(filename) as f:
             self.to_plot_json = json.load(f)
 
+    def _fix_remaining_issues(self, df_2017, df_2018):
+        """
+        Some columns still have issues with formating as they are different
+        between countries
+        Here, fix it manually
+        """
+        # Fixing time*can
+        time1can_list = list()
+        for col in df_2017:
+            # different columns for the same question time*can in 2017
+            if col[:8] == 'time1can':
+                ref_q = 'time1can. On average, how much of your time is spent developing software?'
+                if col != ref_q:
+                    df_2017[ref_q] = df_2017[ref_q].fillna(df_2017[col])
+                    df_2017.drop(col, axis=1, inplace=True)
+
+    def fix_remaining_issues(self):
+        print('Merging clean one')
+        self._fix_remaining_issues(self.df_countries_clean_2017, self.df_countries_clean_2018)
+        print('Merging public one')
+        self._fix_remaining_issues(self.df_countries_public_2017, self.df_countries_public_2018)
+
+
     def write_config_file(self):
         """
         """
@@ -295,6 +328,7 @@ def main():
     merging_year.merge_2018()
     merging_year.get_to_plot_2018()
     print('Merging both years')
+    merging_year.fix_remaining_issues()
     merging_year.merge_both_years()
     merging_year.write_df()
 
