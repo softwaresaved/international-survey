@@ -16,7 +16,7 @@ section,code,question,help,condition,answer_format,answer_file,de,nl,uk,us,zaf,n
 1,timeLike6zaf,"In an average month, how much time would you like to spend on software development?",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit der Entwicklung von Software verbringen?,
 1,timeLike7zaf,"In an average month, how much time would you like to spend on research",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit Forschung verbringen?,
 1,timeLike8zaf,"In an average month, how much time would you like to spend on management",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit Management verbringen?,
-1,TimeLike9zaf,"In an average month, how much time would you like to spend on teaching",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit Lehre verbringen?,
+1,timeLike9zaf,"In an average month, how much time would you like to spend on teaching",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit Lehre verbringen?,
 1,timeLike10zaf,"In an average month, how much time would you like to spend on other activities",,,LIKERT,likert_time_10,Y,,Y,Y,Y,Y,Y,,Y,,,,,,Wieviel Zeit würdest Du gerne im Durchschnitt mit anderen Aktivitäten verbringen?,
 2,currentEmp1,Please select your organization type,,,ONE CHOICE,type_organisation,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,,Wo arbeitest Du?,Veuillez indiquer la nature de votre organisation.
 2,currentEmp2,Which university do you work for?,,"(currentEmp1 = ""University"")",ONE CHOICE,universities,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,,Y,FALSE,An welcher Universität arbeitest Du?,
