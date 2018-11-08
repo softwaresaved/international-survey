@@ -294,13 +294,13 @@ class MergingYear(CleaningConfig):
 
         for df in [df_2017, df_2018]:
             for col in df:
+                print(col)
                 # different columns for the same question time*can in 2017
                 if col[:8] in time_fix.keys():
                     ref_q = time_fix[col[:8]]
                     if col != ref_q:
                         df[ref_q] = df[ref_q].fillna(df[col])
                         df.drop(col, axis=1, inplace=True)
-                        # df.rename(columns={col: ref_q}, inplace=True)
 
     def fix_remaining_issues(self):
         print('Merging clean one')
