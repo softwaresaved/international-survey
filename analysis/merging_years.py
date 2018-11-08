@@ -286,14 +286,20 @@ class MergingYear(CleaningConfig):
         Here, fix it manually
         """
         # Fixing time*can
-        time1can_list = list()
-        for col in df_2017:
-            # different columns for the same question time*can in 2017
-            if col[:8] == 'time1can':
-                ref_q = 'time1can. On average, how much of your time is spent developing software?'
-                if col != ref_q:
-                    df_2017[ref_q] = df_2017[ref_q].fillna(df_2017[col])
-                    df_2017.drop(col, axis=1, inplace=True)
+        time_fix = {'time2can': 'time2can. On average, how much of your time is spent on research',
+                    'time3can': 'time3can. On average, how much of your time is spent on management',
+                    'time4can': 'time4can. On average, how much of your time is spent on teaching',
+                    'time5can': 'time5can. On average, how much of your time is spent on other activities'}
+
+        for df in [df_2017, df_2018]:
+            for col in df:
+                # different columns for the same question time*can in 2017
+                if col[:8] in time_fix.keys():
+                    ref_q = time_fix[col[:8]]
+                    if col != ref_q:
+                        df[ref_q] = df[ref_q].fillna(df[col])
+                        df.drop(col, axis=1, inplace=True)
+                        # df.rename(columns={col: ref_q}, inplace=True)
 
     def fix_remaining_issues(self):
         print('Merging clean one')
