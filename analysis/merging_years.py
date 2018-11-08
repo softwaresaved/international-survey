@@ -286,7 +286,8 @@ class MergingYear(CleaningConfig):
         Here, fix it manually
         """
         # Fixing time*can
-        time_fix = {'time2can': 'time2can. On average, how much of your time is spent on research',
+        time_fix = {'time1can': 'time1can. On average, how much of your time is spent developing software?',
+                    'time2can': 'time2can. On average, how much of your time is spent on research',
                     'time3can': 'time3can. On average, how much of your time is spent on management',
                     'time4can': 'time4can. On average, how much of your time is spent on teaching',
                     'time5can': 'time5can. On average, how much of your time is spent on other activities'}
