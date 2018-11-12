@@ -203,24 +203,25 @@ def add_labels(df, ax, bars, rotation=0, rounding=True):
                     ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
 
 
-def draw_middle_line(normalise, longest_middle):
+def draw_middle_line(ax, normalise, longest_middle):
     """
     """
     # Draw a dashed line on the middle to visualise it
     if normalise:
-        z = plt.axvline(100, linestyle='--', color='black', alpha=.5)
+        z = ax.axvline(100, linestyle='--', color='black', alpha=.5)
     else:
-        z = plt.axvline(longest_middle, linestyle='--', color='black', alpha=.5)
+        z = ax.axvline(longest_middle, linestyle='--', color='black', alpha=.5)
     # Plot the line behind the barchart
     z.set_zorder(-1)
 
 
-def drawing_x_labels(normalise, complete_longest, longest_middle):
+def drawing_x_labels(ax, normalise, complete_longest, longest_middle):
     """
     """
     # Create the values with the same length as the xlim
     if normalise:
         xvalues = range(0, 210, 10)
+        print(xvalues)
         xlabels = [str(math.floor(abs(x - 100))) for x in xvalues]
     else:
         print('NOT normalised')
@@ -228,10 +229,11 @@ def drawing_x_labels(normalise, complete_longest, longest_middle):
                    for i in range(0, int(complete_longest),
                                   int(int(longest_middle)/ 5))]
         xlabels = [str(math.floor(abs(x - longest_middle))) for x in xvalues]
-    plt.xticks(xvalues, xlabels)
+    ax.set_xticks(xvalues, xlabels)
+    # ax.xticks(xvalues, xlabels)
 
 
-def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True, rotation=0, title_plot=False, rounding=True):
+def likert_scale(df, ax=None, normalise=True, labels=True, middle_line=True, legend=True, rotation=0, title_plot=False, rounding=True):
     """
     The idea is to create a fake bar on the left to center the bar on the same point.
     :params:
@@ -247,7 +249,10 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
         #     fig = plt.figure(figsize=figsize)
         # # Create an axes object in the figure
         # ax = fig.add_subplot(111)
-        fig, ax = plt.subplots()
+        # fig, ax = plt.subplots()
+        if ax is None:
+            fig = plt.figure()
+            ax = fig.add_subplot(1,1,1) # make a blank plotting area
 
         # Generate an array of colors based on different colormap. The default value
         # Use a divergent colormap.
@@ -288,7 +293,7 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
         ax.set_xlim([-0.5, complete_longest + 0.5])
 
         # Drawing x_labels
-        drawing_x_labels(normalise, complete_longest, longest_middle)
+        drawing_x_labels(ax, normalise, complete_longest, longest_middle)
         ax.set_xlabel('Percentage')
 
         # Setting up the y-axis
@@ -301,7 +306,7 @@ def likert_scale(df, normalise=True, labels=True, middle_line=True, legend=True,
 
         # Create a line on the middle
         if middle_line:
-            draw_middle_line(normalise, longest_middle)
+            draw_middle_line(ax, normalise, longest_middle)
 
         # Add legend
         if legend:
