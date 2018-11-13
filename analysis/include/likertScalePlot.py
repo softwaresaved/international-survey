@@ -221,16 +221,16 @@ def drawing_x_labels(ax, normalise, complete_longest, longest_middle):
     # Create the values with the same length as the xlim
     if normalise:
         xvalues = range(0, 210, 10)
-        print(xvalues)
         xlabels = [str(math.floor(abs(x - 100))) for x in xvalues]
     else:
-        print('NOT normalised')
         xvalues = [math.floor(i - (longest_middle %5))
                    for i in range(0, int(complete_longest),
                                   int(int(longest_middle)/ 5))]
         xlabels = [str(math.floor(abs(x - longest_middle))) for x in xvalues]
-    ax.set_xticks(xvalues, xlabels)
-    # ax.xticks(xvalues, xlabels)
+    # Set the tick positions
+    ax.set_xticks(xvalues)
+    # Set the tick labels
+    ax.set_xticklabels(xlabels)
 
 
 def likert_scale(df, ax=None, normalise=True, labels=True, middle_line=True, legend=True, rotation=0, title_plot=False, rounding=True):
