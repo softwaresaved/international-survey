@@ -119,7 +119,7 @@ class CleaningData(CleaningConfig):
             string = string.replace('  ', ' ')
             # FIXME compile the regex into the __init__()
             # string = re.sub("""(?<=\s) +|^ +(?=\s)| (?= +[\n\0])""", " ", string)
-            # Replace all ending white space0
+            # Replace all ending white space
             string = string.rstrip()
             return string
 

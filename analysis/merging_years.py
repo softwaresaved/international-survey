@@ -200,6 +200,7 @@ class MergingYear(CleaningConfig):
 
                 final_question = final_question.replace('. . ', '. ')
                 final_question = final_question.replace('.  . ', '. ').replace(' . ', '. ')
+                final_question = final_question.rstrip()
                 dict_of_q_to_merge.setdefault(final_question, []).append(i)
 
             for q in dict_of_q_to_merge:
@@ -330,7 +331,7 @@ class MergingYear(CleaningConfig):
 def main():
     """
     """
-    merging_year = MergingYear('2018')
+    merging_year = MergingYear(year='2018')
     merging_year.merge_2017()
     merging_year.merge_2018()
     merging_year.get_to_plot_2018()
