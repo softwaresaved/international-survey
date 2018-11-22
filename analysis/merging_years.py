@@ -170,6 +170,7 @@ class MergingYear(CleaningConfig):
 
                             final_question = final_question.replace('..', '.')
                             final_question = final_question.replace('.  . ', '. ').replace(' . ', '. ')
+                            final_question = final_question.rstrip()
                             list_question.append(final_question)
                             df.rename(columns={i: final_question}, inplace=True)
                         except KeyError:
