@@ -61,11 +61,11 @@ class MergingYear(CleaningConfig):
         for type_data in ['cleaned_data', 'public_data']:
             if year == 2017:
                 df = dict()
+                df['United States'] = pd.read_csv('{}us/data/{}.csv'.format(self.folder_2017, type_data))
                 df['Germany'] = pd.read_csv('{}de/data/{}.csv'.format(self.folder_2017, type_data))
                 df['Netherlands'] = pd.read_csv('{}nl/data/{}.csv'.format(self.folder_2017, type_data))
                 df['South Africa'] = pd.read_csv('{}zaf/data/{}.csv'.format(self.folder_2017, type_data))
                 df['United Kingdom'] = pd.read_csv('{}uk/data/{}.csv'.format(self.folder_2017, type_data))
-                df['United States'] = pd.read_csv('{}us/data/{}.csv'.format(self.folder_2017, type_data))
 
             if year == 2018:
                 df = pd.read_csv('{}/data/{}.csv'.format(self.folder_2018, type_data))
@@ -122,7 +122,7 @@ class MergingYear(CleaningConfig):
             return None, splitted_col[0], None
 
         else:
-            question_text = ''.join(splitted_col[-1:])
+            question_text = ''.join(splitted_col[1:])
             if len(question_text.split('[')) == 1:
                 return code, question_text, None
             else:
@@ -173,6 +173,7 @@ class MergingYear(CleaningConfig):
                             final_question = final_question.rstrip()
                             list_question.append(final_question)
                             df.rename(columns={i: final_question}, inplace=True)
+
                         except KeyError:
                             pass
                 df = df[list_question]
@@ -237,6 +238,7 @@ class MergingYear(CleaningConfig):
         """
         print('Merging clean one')
         self.df_all_clean = self._merge_both_years(self.df_countries_clean_2017, self.df_countries_clean_2018)
+        print('Checking after merging')
         print('Merging public one')
         self.df_all_public = self._merge_both_years(self.df_countries_public_2017, self.df_countries_public_2018)
 
@@ -294,15 +296,19 @@ class MergingYear(CleaningConfig):
                     'time4can': 'time4can. On average, how much of your time is spent on teaching',
                     'time5can': 'time5can. On average, how much of your time is spent on other activities'}
 
+        # Fixing salary for salary in US 2017
+        salary = 'socio4. Please select the range of your salary'
+
         for df in [df_2017, df_2018]:
             for col in df:
-                print(col)
                 # different columns for the same question time*can in 2017
                 if col[:8] in time_fix.keys():
                     ref_q = time_fix[col[:8]]
                     if col != ref_q:
                         df[ref_q] = df[ref_q].fillna(df[col])
                         df.drop(col, axis=1, inplace=True)
+                elif col == salary:
+                    df[col] = df[col].str.replace('\\\\', '')
 
     def fix_remaining_issues(self):
         print('Merging clean one')
