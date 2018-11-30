@@ -309,6 +309,7 @@ class MergingYear(CleaningConfig):
                         df.drop(col, axis=1, inplace=True)
                 elif col == salary:
                     df[col] = df[col].str.replace('\\\\', '')
+                    df[col] = df[col].str.replace('$', '\\$')
 
     def fix_remaining_issues(self):
         print('Merging clean one')
