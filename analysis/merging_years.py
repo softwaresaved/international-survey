@@ -299,7 +299,17 @@ class MergingYear(CleaningConfig):
         # Fixing salary for salary in US 2017
         salary = 'socio4. Please select the range of your salary'
 
+
+        ## Fixing bus factor
+
+
         for df in [df_2017, df_2018]:
+
+            # Fixing a typo on one timeLike10zaf. with a capital K instead of a lower one
+            df.rename(index=str, columns={"timeLiKe10zaf. In an average month, how much time would you like to spend on other activities":
+                                        "timeLike10zaf. In an average month, how much time would you like to spend on other activities"},
+                    inplace=True)
+
             for col in df:
                 # different columns for the same question time*can in 2017
                 if col[:8] in time_fix.keys():
@@ -307,6 +317,8 @@ class MergingYear(CleaningConfig):
                     if col != ref_q:
                         df[ref_q] = df[ref_q].fillna(df[col])
                         df.drop(col, axis=1, inplace=True)
+
+                # Fixing the salary for the symbol $ in USA
                 elif col == salary:
                     df[col] = df[col].str.replace('\\\\', '')
                     df[col] = df[col].str.replace('$', '\\$')
