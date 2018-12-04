@@ -62,8 +62,8 @@ class NotebookConfig(PlottingConfig):
 
     def __init__(self, year, country):
         super().__init__(year, country)
-        self.notebook_filename = '{}_{}.ipynb'.format(self.country, self.year)
-        self.notebook_html = '{}_{}.html'.format(self.country, self.year)
+        self.notebook_filename = './{}/{}.ipynb'.format(self.year, self.country)
+        self.notebook_html = './{}/{}.html'.format(self.year, self.country)
         self.allow_errors = True
         self.to_import = ['import pandas as pd',
                           'import numpy as np',
@@ -72,6 +72,9 @@ class NotebookConfig(PlottingConfig):
                           'from IPython.display import display',
                           'import IPython.core.display as di',
                           'from IPython.core.interactiveshell import InteractiveShell',
+                          'import sys',
+                          'from pathlib import Path',
+                          'sys.path.append(str(Path('.').absolute().parent))',
                           'from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
                           'from include.counting import get_count, get_percentage',
                           'from include.plotting import get_plot, display_side_by_side',
