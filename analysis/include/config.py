@@ -74,7 +74,7 @@ class NotebookConfig(PlottingConfig):
                           'from IPython.core.interactiveshell import InteractiveShell',
                           'import sys',
                           'from pathlib import Path',
-                          'sys.path.append(str(Path('.').absolute().parent))',
+                          "sys.path.append(str(Path('.').absolute().parent))",
                           'from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
                           'from include.counting import get_count, get_percentage',
                           'from include.plotting import get_plot, display_side_by_side',
