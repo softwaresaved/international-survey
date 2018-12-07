@@ -3,3 +3,17 @@
 **/venv/*
 **/__pycache__/*
 **/logs/*
+
+venv/*
+notebooks/.ipynb_checkpoints/
+raw_*.csv
+__pycache__/
+to_plot.json
+cleaned_data.*
+raw_data*
+.ipynb_checkpoints/
+venv/
+logs/
+__pycache__/
+original_data.csv
+data_17.csv
