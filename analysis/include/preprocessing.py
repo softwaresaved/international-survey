@@ -130,7 +130,7 @@ class CleaningData(CleaningConfig):
         Dropping all the columns created by limesurvey and
         not needed for later analysis
         """
-        columns_to_drop = ['id._.Response ID', 'startdate._.Date started',
+        columns_to_drop = ['id._.Response ID',
                            'datestamp._.Date last action', 'refurl._.Referrer URL', 'ipaddr._.IP address',
                            'seed._.Seed']
         df = df.drop(columns_to_drop, axis=1)
