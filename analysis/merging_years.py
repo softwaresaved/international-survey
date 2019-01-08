@@ -303,8 +303,8 @@ class MergingYear(CleaningConfig):
         ## Fixing bus factor
 
 
-        for df in [df_2017, df_2018]:
-
+        for year, df in [('2017', df_2017), ('2018', df_2018)]:
+            print(year)
             # Fixing a typo on one timeLike10zaf. with a capital K instead of a lower one
             df.rename(index=str, columns={"timeLiKe10zaf. In an average month, how much time would you like to spend on other activities":
                                         "timeLike10zaf. In an average month, how much time would you like to spend on other activities"},
