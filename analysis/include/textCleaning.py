@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# from nltk.corpus import stopwords
 import re
 import string
 import itertools
 import numpy as np
 from wordcloud import WordCloud, STOPWORDS
 
-# to_remove = list(string.punctuation) + stopwords.words('english')
 to_remove = set(string.punctuation) | STOPWORDS | set(['nan', np.NaN])
 
 
@@ -49,7 +47,7 @@ def split_within(txt_list, separators=[',', ';', '/']):
 
     for i in txt_list:
         for sep in separators:
-            i = i.replace(sep, '___')
+            i = str(i).replace(sep, '___')
         splitted_i = [el for el in i.split('___')]
         for el in splitted_i:
             to_return.append(el)
@@ -76,6 +74,17 @@ def remove_punctuation(txt):
 
 
 def remove_white_space(txt_list):
+    """
+    Remove unwanted white space and replaced them with single white space
+
+    params:
+    -------
+        txt_list list(): of str() that contains the text to clean
+
+    :return:
+    --------
+        txt_list list(): of str() transformed
+    """
     return [" ".join(txt.split()) for txt in txt_list]
 
 
@@ -129,7 +138,7 @@ def wrap_clean_text(df, columns, conference=False, skills=False):
     text_list = clean_column(df, columns)
     cleaned_text = split_within(text_list)
 
-    # cleaned_text = remove_punctuation(splitted_text)
+    cleaned_text = remove_punctuation(cleaned_text)
     cleaned_text = remove_white_space(cleaned_text)
     cleaned_text = remove_empty_entry(cleaned_text)
     if conference:
@@ -147,6 +156,8 @@ def plot_wordcloud(text_to_plot):
     # The width and the height match the comfiguration in generate_notebook for the size
     # of the plot width=15.0, height=8.0 inch with 100 DPI. be careful not changning these
     # value without modifying the corresponding value in _setup_matplotlib() in generate_notebook.py
+    if isinstance(text_to_plot, list):
+        text_to_plot = ' '.join(text_to_plot)
     return WordCloud(background_color='white', width=1500, height=800).generate(text_to_plot)
 
 
@@ -166,13 +177,15 @@ if __name__ == "__main__":
 
     df = pd.read_csv('../2018/data/clean_merged.csv')
     column = 'conf2can. At which conference(s)/workshop(s) have you presented your software work?'
-    cleaned_text = wrap_clean_text(df, column, conference=True)
+    column2 = 'ukrse3. How did you learn the skills you need to become an Research Software Engineer / Research Software Developer?'
+
+    cleaned_text = wrap_clean_text(df, column2, conference=True)
 
     # for i in cleaned_text:
     #     print(i)
     print('Size of all: {}'.format(len(cleaned_text)))
     print('Size of unique: {}'.format(len(set(cleaned_text))))
-    plt.imshow(plot_wordcloud(' '.join(cleaned_text)), cmap=plt.cm.gray, interpolation="bilinear")
+    plt.imshow(plot_wordcloud(cleaned_text), cmap=plt.cm.gray, interpolation="bilinear")
 
     plt.axis('off')
     plt.show()
