@@ -158,7 +158,6 @@ def get_total_mid_answers(df):
     return compute_middle_sum(df, first_half, middle)
 
 
-# TODO Simplify this function
 def compute_percentage(df, by_row=True, by_col=False):
     """
     Transform every cell into a percentage
@@ -196,11 +195,11 @@ def add_labels(df, ax, bars, rotation=0, rounding=True):
             x = 0.5 *bar.get_width() +bl[0]
             y = 0.5 *bar.get_height() +bl[1]
             # Avoid labels when percentage is under 5 (the bar is too small)
-            if percentages[i, j] > 5:
+            if percentages[i][j] > 5:
                 if rounding is True:
-                    ax.text(x, y, "{}".format(str(int(round(percentages[i, j])))), ha='center', rotation=rotation)
+                    ax.text(x, y, "{}".format(str(int(round(percentages[i][j])))), ha='center', rotation=rotation)
                 else:
-                    ax.text(x, y, "{}".format(percentages[i, j]), ha='center', rotation=rotation)
+                    ax.text(x, y, "{}".format(percentages[i][j]), ha='center', rotation=rotation)
 
 
 def draw_middle_line(ax, normalise, longest_middle):

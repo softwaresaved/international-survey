@@ -182,10 +182,13 @@ class MergingYear(CleaningConfig):
                 df['Country'] = country
                 df['Year'] = 2017
                 print('Merging: {}'.format(country))
+                df = df.astype(object)
+                df = df.infer_objects()
                 if final_df is None:
                     final_df = df
                 else:
-                    final_df = final_df.merge(df, how='outer')
+                    final_df = pd.concat([final_df, df], axis=0, join='outer', sort=False)
+                    # final_df = final_df.merge(df, how='outer')
             return final_df
 
         if year == 2018:
@@ -231,7 +234,8 @@ class MergingYear(CleaningConfig):
     def _merge_both_years(self, df_2017, df_2018):
         """
         """
-        return df_2018.merge(df_2017, how='outer')
+        return pd.concat([df_2018, df_2017], axis=0, join='outer', sort=False)
+        # return df_2018.merge(df_2017, how='outer')
 
     def merge_both_years(self):
         """
@@ -283,7 +287,7 @@ class MergingYear(CleaningConfig):
         with open(filename) as f:
             self.to_plot_json = json.load(f)
 
-    def _fix_remaining_issues(self, df_2017, df_2018):
+    def _fix_remaining_issues(self, df):
         """
         Some columns still have issues with formating as they are different
         between countries
@@ -297,37 +301,37 @@ class MergingYear(CleaningConfig):
                     'time5can': 'time5can. On average, how much of your time is spent on other activities'}
 
         # Fixing salary for salary in US 2017
-        salary = 'socio4. Please select the range of your salary'
+        salary = 'socio4'
 
+        # Fixing potential trailing white spaces in cells
+        df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+        # Fixing a typo on one timeLike10zaf. with a capital K instead of a lower one
+        df.rename(index=str, columns={"timeLiKe10zaf. In an average month, how much time would you like to spend on other activities":
+                                    "timeLike10zaf. In an average month, how much time would you like to spend on other activities"},
+                inplace=True)
 
-        ## Fixing bus factor
+        for col in df:
+            # different columns for the same question time*can in 2017
+            if col[:8] in time_fix.keys():
+                ref_q = time_fix[col[:8]]
+                if col != ref_q:
+                    df[ref_q] = df[ref_q].fillna(df[col])
+                    df.drop(col, axis=1, inplace=True)
 
+            # Fixing the salary for the symbol $ in USA
+            elif col[:6] == salary:
+                df[col] = df[col].str.replace('\\\\', '')
+                df[col] = df[col].str.replace('$', '\\$')
+        return df
 
-        for year, df in [('2017', df_2017), ('2018', df_2018)]:
-            print(year)
-            # Fixing a typo on one timeLike10zaf. with a capital K instead of a lower one
-            df.rename(index=str, columns={"timeLiKe10zaf. In an average month, how much time would you like to spend on other activities":
-                                        "timeLike10zaf. In an average month, how much time would you like to spend on other activities"},
-                    inplace=True)
-
-            for col in df:
-                # different columns for the same question time*can in 2017
-                if col[:8] in time_fix.keys():
-                    ref_q = time_fix[col[:8]]
-                    if col != ref_q:
-                        df[ref_q] = df[ref_q].fillna(df[col])
-                        df.drop(col, axis=1, inplace=True)
-
-                # Fixing the salary for the symbol $ in USA
-                elif col == salary:
-                    df[col] = df[col].str.replace('\\\\', '')
-                    df[col] = df[col].str.replace('$', '\\$')
 
     def fix_remaining_issues(self):
         print('Merging clean one')
-        self._fix_remaining_issues(self.df_countries_clean_2017, self.df_countries_clean_2018)
+        self.df_countries_clean_2017 = self._fix_remaining_issues(self.df_countries_clean_2017)
+        self.df_countries_clean_2018 = self._fix_remaining_issues(self.df_countries_clean_2018)
         print('Merging public one')
-        self._fix_remaining_issues(self.df_countries_public_2017, self.df_countries_public_2018)
+        self.df_countries_public_2017 = self._fix_remaining_issues(self.df_countries_public_2017)
+        self.df_countries_public_2018 = self._fix_remaining_issues(self.df_countries_public_2018)
 
 
     def write_config_file(self):
