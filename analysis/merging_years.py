@@ -293,6 +293,19 @@ class MergingYear(CleaningConfig):
         between countries
         Here, fix it manually
         """
+        # Fixing potential trailing white spaces in cells
+        df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+        # Fixing a typo on one timeLike10zaf. with a capital K instead of a lower one
+        df.rename(index=str, columns={"timeLiKe10zaf. In an average month, how much time would you like to spend on other activities":
+                                    "timeLike10zaf. In an average month, how much time would you like to spend on other activities"},
+                inplace=True)
+
+        # Replacing values in the type of organisation as we simplified it to University only
+        orga_replace = {'University - within an academic group': 'University',
+                        'University - within an HPC group': 'University',
+                        'University - within an IT service': 'University'}
+        df['currentEmp1. Please select your organization type'] = df['currentEmp1. Please select your organization type'].replace(orga_replace)
+
         # Fixing time*can
         time_fix = {'time1can': 'time1can. On average, how much of your time is spent developing software?',
                     'time2can': 'time2can. On average, how much of your time is spent on research',
@@ -302,13 +315,6 @@ class MergingYear(CleaningConfig):
 
         # Fixing salary for salary in US 2017
         salary = 'socio4'
-
-        # Fixing potential trailing white spaces in cells
-        df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-        # Fixing a typo on one timeLike10zaf. with a capital K instead of a lower one
-        df.rename(index=str, columns={"timeLiKe10zaf. In an average month, how much time would you like to spend on other activities":
-                                    "timeLike10zaf. In an average month, how much time would you like to spend on other activities"},
-                inplace=True)
 
         for col in df:
             # different columns for the same question time*can in 2017
