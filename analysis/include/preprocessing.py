@@ -457,6 +457,9 @@ class CleaningData(CleaningConfig):
         # Finally remove all the columns that are not in the questions.csv to be sure it remove any additional data
         # from limesurvey
         code_to_keep = [x for x in self.survey_structure.keys()]
+
+        # Adding the starting date of the survey
+        code_to_keep.append('startdate. Date started')
         for col in self.public_df.columns:
             remove = True
             for x in code_to_keep:
