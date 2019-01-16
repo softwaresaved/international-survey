@@ -313,18 +313,18 @@ class MergingYear(CleaningConfig):
         # Replacing values for testing to match the 2017 survey with the 2018 survey
         proj4_can_col_name = 'proj4can. How are your projects typically tested? Please check all that apply. '
         testing_replace = {'Users conduct testing': 'No formal testing but users provide feedback',
-                           'The developers do their own testing': 'Developers conduct testing'}
-        print('next df')
+                           'Developers conduct testing': 'The developers do their own testing'}
         for col_val in testing_replace:
             col_2017 = '{}[{}]'.format(proj4_can_col_name, col_val)
             col_2018 = '{}[{}]'.format(proj4_can_col_name, testing_replace[col_val])
             df.rename(columns={col_2017: col_2018}, inplace=True)
 
         # it exists two versions of testing engineers with capital letter or not, merging both columns if they exists
-        testing_eng = ('{} [test engineers conduct testing]'.format(proj4_can_col_name),
-                       '{} [Test engineers conduct testing]'.format(proj4_can_col_name))
+        testing_eng = ('{}[test engineers conduct testing]'.format(proj4_can_col_name),
+                       '{}[Test engineers conduct testing]'.format(proj4_can_col_name))
         if testing_eng[0] in df.columns and testing_eng[1] in df.columns:
-            df[testing_eng[1]].combine_first(df[testing_eng[0]], inplace=True)
+            df[testing_eng[1]] = df[testing_eng[1]].combine_first(df[testing_eng[0]])
+            df.drop(columns=testing_eng[0], inplace=True)
 
         # Fixing time*can
         time_fix = {'time1can': 'time1can. On average, how much of your time is spent developing software?',
@@ -348,9 +348,6 @@ class MergingYear(CleaningConfig):
             elif col[:6] == salary:
                 df[col] = df[col].str.replace('\\\\', '')
                 df[col] = df[col].str.replace('$', '\\$')
-        for col in df.columns:
-            if col[:len('proj4can')] == 'proj4can':
-                print(col)
         return df
 
 
