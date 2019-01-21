@@ -73,14 +73,27 @@ We publish the results under the form of notebooks. All surveys have an attached
     </tbody>
 </table>
 
+## Composition of the survey
+The [base questions](https://github.com/softwaresaved/international-survey/blob/master/survey_creation/2018/questions.csv) for the survey were tailored to meet the requirements of each country. They covered ten subjects:
+   1. **Demographics**: traditional social and economic questions, such as gender, age, salary and education.
+   1. **Coding**: how much code do RSEs write, how often, and for whom.
+   1. **Employment**: questions about where RSEs work and in which disciplines.
+   1. **Current contract**: understanding stability of employment by questioning the type of employment contract RSEs receive.
+   1. **Previous employment**: understanding routes into the profession the reasons for choosing it.
+   1. **Collaboration and training**: who RSEs work with, how many people they work with, and the training they conduct.
+   1. **Publications**: do RSEs contribute to publications and are they acknowledged?
+   1. **Sustainability and tools**: testing, bus factor, technical handover. Also which tools they are using
+   1. **Job satisfaction**: what do RSEs think about their job and their career?
+   1. **Network**: how do RSEs meet and gain representation?
+These subjects are not necessarily  investigated under this order, neither published with that order. 
 
+## Contribution
 
-## Contributing
+### Contributing
 If you wish to contribute and being involved in the survey creation please follow the [HOWTOCONTRIBUTE](https://github.com/softwaresaved/international-survey/blob/master/HOW%20TO%20CONTRIBUTE.md).
 If you have discover an issue in the survey or wish to participate to the conversation we welcome any [issue submission](https://github.com/softwaresaved/international-survey/issues).
 
-
-## Contributors
+### Current contributors
 Here is a list of contributors for the 2017/2018 version of the survey (alphabetic order). They are also mentioned in the [.zenodo.json](https://github.com/softwaresaved/international-survey/blob/master/.zenodo.json) to be automatically added to the DOI.
 * Stephan Druskat
 * Sandra Gesing
