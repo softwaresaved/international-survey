@@ -19,14 +19,60 @@ This repository is used to create and analyse international surveys. It use csv 
 ## Published results
 We publish the results under the form of notebooks. All surveys have an attached 'public.csv' file. Theses files have been cleaned of all sensitive data. Therefore, the jupyter notebooks show some results that are not contained in the 'public.csv'.
 
-|Country | 2016 | 2017 |
-|  :-:       |  :-:   |  :-:  |
-|Canada| N/A  | 	[Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_can_2017_narrative.ipynb) / [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/can/data/public_data.csv)|
-|Germany| N/A | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_de_2017_narrative.ipynb) / [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/de/data/public_data.csv)|
-|Netherlands | N/A | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_nl_2017_narrative.ipynb) / [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/nl/data/public_data.csv)|
-|South Africa | N/A | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_zaf_2017_narrative.ipynb) / [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/zaf/data/public_data.csv)|
-|UK  | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_uk_2016_narrative.ipynb) / [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2016/uk/data/public_data.csv) |  [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_uk_2017_narrative.ipynb) / [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/uk/data/public_data.csv)|
-|USA | N/A | [Narrative](https://github.com/softwaresaved/international-survey/blob/master/analysis/results_us_2017_narrative.ipynb)  /  [data](https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/us/data/public_data.csv) |
+<table>
+    <thead>
+      <tr>
+            <th>Country</th>
+            <th>2016</th>
+            <th>2017</th>
+            <th>2018</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Australia</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td rowspan=8><a href="https://github.com/softwaresaved/international-survey/tree/master/analysis/2018">Analysis</a> / <a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2018/data/public_data.csv">Public data</a></td>
+        </tr>
+        <tr>
+            <td>Canada</td>
+            <td>N/A</td>
+            <td><a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/results_can.ipynb">Analysis</a> / <a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/can/data/public_data.csv">Public data</a></td>
+        </tr>
+        <tr>
+            <td>Germany</td>
+            <td>N/A</td>
+            <td><a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/results_de_narrative.ipynb">Analysis</a> / <a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/de/data/public_data.csv">Public data</a></td>
+        </tr>
+        <tr>
+            <td>Netherlands</td>
+            <td>N/A</td>
+            <td><a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/results_nl_narrative.ipynb">Analysis</a> / <a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/nl/data/public_data.csv">Public data</a></td>
+        </tr>
+        <tr>
+            <td>New Zealand</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>United Kingdom</td>
+            <td><a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2016/results_uk_narrative.ipynb">Analysis</a> / <a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2016/uk/data/public_data.csv">Public data</a></td>
+            <td><a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/results_uk_narrative.ipynb">Analysis</a> / <a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/uk/data/public_data.csv">Public data</a></td>
+        </tr>
+        <tr>
+            <td>United States</td>
+            <td>N/A</td>
+            <td><a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/results_us_narrative.ipynb">Analysis</a> / <a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/us/data/public_data.csv">Public data</a></td>
+        </tr>
+        <tr>
+            <td>South Africa</td>
+            <td>N/A</td>
+            <td><a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/results_zaf_narrative.ipynb">Analysis</a> / <a href="https://github.com/softwaresaved/international-survey/blob/master/analysis/2017/zaf/data/public_data.csv">Public data</a></td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 ## Contributing
