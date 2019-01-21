@@ -1,9 +1,12 @@
 # International collaboration for survey
 
-
 [![DOI](https://zenodo.org/badge/63957124.svg)](https://zenodo.org/badge/latestdoi/63957124) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
+
+
 ***Collaboration tool to create surveys and analyse data about Research Software Engineers around the world***
+
+This repository is used to create and analyse international surveys. It use csv files to store questions and answers that are later transformed into a limesurvey TSV file. The analysis are using python and are shared within jupyter notebooks.
 
 
 In **2016** the Software Sustainability Institute ran the first survey of Research Software Engineers (RSEs) - the people who write code in academia. This produced the first insight into the demographics, job satisfaction, and practices of RSEs. To support and broaden this work, the Institute will run the UK survey every year and - it is hoped - will expand the survey so that insight and comparison can be made across different countries. Ultimately, we hope that these results, the anonymised version of which will all be open licensed, will act as a valuable resource to understand and improve the working conditions for RSEs.
@@ -11,9 +14,8 @@ In **2016** the Software Sustainability Institute ran the first survey of Resear
 In **2017** we also surveyed Canadian RSEs and we added four further countries, Germany, Netherlands, South Africa and USA. 
 Our thanks to our partners: Scott Henwood (Canada), Stephan Janosch and Martin Hammitzsch (Germany), Ben van Werkhoven and Tom Bakker (Netherlands), Anelda van der Walt (South Africa) and Daniel Katz and Sandra Gesing (USA).
 
-In **2018** we have worked differently and created a survey for all countries (rather than one survey for each ones). The survey is currently open to participant until the 3th of December and can be found here: http://www.bit.ly/RSESurvey2018.
+In **2018** we have worked differently and created a survey for all countries (rather than one survey for each ones). 
 
-This repository is used to create and analyse international surveys. It use csv files to store questions and answers that are later transformed into a limesurvey TSV file. The analysis are using python and are shared within jupyter notebooks.
 
 
 ## Published results
@@ -59,7 +61,11 @@ This repository contains code and public data. We have different licence for eac
 
 The repository is also archived on zenodo: https://doi.org/10.5281/zenodo.1194668.
 If you want to cite this work and need a citation in a specific format, you can use the citation service on the zenodo.
-The citation for the current archived version is:
+
+The citation for the 2018 version is:
+[TODO]
+
+The citation for the 2017 version is:
 > Olivier Philippe, Martin Hammitzsch, Stephan Janosch, Anelda van der Walt, Ben van Werkhoven, Simon Hettrick, … Scott Henwood. (2018, March 27). softwaresaved/international-survey: Public release for 2017 results (Version 2017-v1.1). Zenodo. http://doi.org/10.5281/zenodo.1406215
 
 
