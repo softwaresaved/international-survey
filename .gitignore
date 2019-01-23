@@ -10,6 +10,7 @@ raw_*.csv
 __pycache__/
 to_plot.json
 cleaned_data.*
+clean_merged.csv
 raw_data*
 .ipynb_checkpoints/
 venv/
