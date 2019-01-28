@@ -333,6 +333,24 @@ class MergingYear(CleaningConfig):
                     'time4can': 'time4can. On average, how much of your time is spent on teaching',
                     'time5can': 'time5can. On average, how much of your time is spent on other activities'}
 
+
+        # Fixing some academic fields
+        # Fixing one issue with a choice for academic field with a comma
+        hist_field_to_replace = "currentEmp13. Please select the discipline in which you work. Please select all that apply. [History of Art, Architecture & Design,]"
+        hist_field_to_replace_with = "currentEmp13. Please select the discipline in which you work. Please select all that apply. [History of Art, Architecture & Design]"
+        try:
+            df[hist_field_to_replace_with] = df[hist_field_to_replace_with].combine_first(df[hist_field_to_replace])
+            df.drop(columns=hist_field_to_replace, inplace=True)
+        except KeyError:
+            pass
+
+        for col in df:
+            if col[len('currentEmp13'):] == 'currentEmp13':
+
+                df[col] = df[col].replace({'History of Art, Architecture & Design,': 'History of Art, Architecture & Design'})
+
+
+
         # Fixing salary for salary in US 2017
         salary = 'socio4'
 
