@@ -459,7 +459,7 @@ class CleaningData(CleaningConfig):
         code_to_keep = [x for x in self.survey_structure.keys()]
 
         # Adding the starting date of the survey
-        code_to_keep.append('startdate. Date started')
+        code_to_keep.append('startdate._.Date started')
         for col in self.public_df.columns:
             remove = True
             for x in code_to_keep:
