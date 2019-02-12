@@ -2,9 +2,6 @@
 	"description": "2018 RSE international survey",
 	"license": "other-open",
 	"title": "softwaresaved/international-survey: Public release for 2018 results",
-	"version": "2018-v1.0",
-	"upload_type": "software",
-	"publication_date": "2018-03-27",
 	"creators": [{
 			"affiliation": "Software Sustainability Institute",
 			"name": "Olivier Philippe"
