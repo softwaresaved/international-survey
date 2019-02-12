@@ -1,77 +1,74 @@
 {
-    "description": "<p>2018 RSE international survey</p>", 
-    "license": "other-open", 
-    "title": "softwaresaved/international-survey: Public release for 2018 results", 
-    "version": "2018-v1.0", 
-    "upload_type": "software", 
-    "publication_date": "2018-03-27", 
-    "creators": [
-        {
-            "affiliation": "Software Sustainability Institute", 
-            "name": "Olivier Philippe"
-        }, 
-        {
-            "name": "Martin Hammitzsch",
-            "affiliation": "Helmholtz Centre Potsdam - GFZ German Research Centre for Geosciences"
-        }, 
-        {
-            "name": "Stephan Janosch",
-            "orcid": "0000-0002-2401-6862",
-            "affiliation": "Max Planck Institute of Molecular Cell Biology and Genetics"
-            
-        }, 
-        {
-            "name": "Anelda van der Walt"
-        }, 
-        {
-            "name": "Ben van Werkhoven",
-            "affiliation": "Netherlands eScience Center"
-        }, 
-        {
-            "affiliation": "Software Sustainability Institute", 
-            "name": "Simon Hettrick"
-        }, 
-        {
-            "name": "Daniel S. Katz",
-            "orcid": "0000-0001-5934-7525",
-            "affiliation": "University of Illinois, Urbana-Champaign"
-        }, 
-        {
-            "name": "Katrin Leinweber"
-        }, 
-        {
-            "name": "Sandra Gesing"
-        }, 
-        {
-            "name": "Stephan Druskat"
-        },
-        {
-            "name": "Scott Henwood"
-        }
-        {
-            "name": "Nicholas R. May",
-            "affiliation": "RMIT University"
-        }
-        {
-            "name": "Nooriyah P. Lohani",
-            "affiliation": "New Zealand eScience Infrastructure"
-        }      
-        {
-            "name": "Manodeep Sinha",
-            "affiliation": "Swinburne University of Technology",
-            "affiliation": "ASTRO 3D Centre of Excellence"
-        }      
-    ], 
-    "access_right": "open", 
-    "related_identifiers": [
-        {
-            "scheme": "url", 
-            "identifier": "https://github.com/softwaresaved/international-survey/tree/2018-v1.0", 
-            "relation": "isSupplementTo"
-        }, 
-        {
-            "scheme": "doi", 
-            "relation": "isPartOf"
-        }
-    ]
+	"description": "2018 RSE international survey",
+	"license": "other-open",
+	"title": "softwaresaved/international-survey: Public release for 2018 results",
+	"version": "2018-v1.0",
+	"upload_type": "software",
+	"publication_date": "2018-03-27",
+	"creators": [{
+			"affiliation": "Software Sustainability Institute",
+			"name": "Olivier Philippe"
+		},
+		{
+			"name": "Martin Hammitzsch",
+			"affiliation": "Helmholtz Centre Potsdam - GFZ German Research Centre for Geosciences"
+		},
+		{
+			"name": "Stephan Janosch",
+			"orcid": "0000-0002-2401-6862",
+			"affiliation": "Max Planck Institute of Molecular Cell Biology and Genetics"
+
+		},
+		{
+			"name": "Anelda van der Walt"
+		},
+		{
+			"name": "Ben van Werkhoven",
+			"affiliation": "Netherlands eScience Center"
+		},
+		{
+			"affiliation": "Software Sustainability Institute",
+			"name": "Simon Hettrick"
+		},
+		{
+			"name": "Daniel S. Katz",
+			"orcid": "0000-0001-5934-7525",
+			"affiliation": "University of Illinois, Urbana-Champaign"
+		},
+		{
+			"name": "Katrin Leinweber"
+		},
+		{
+			"name": "Sandra Gesing"
+		},
+		{
+			"name": "Stephan Druskat"
+		},
+		{
+			"name": "Scott Henwood"
+		},
+		{
+			"name": "Nicholas R. May",
+			"affiliation": "RMIT University"
+		},
+		{
+			"name": "Nooriyah P. Lohani",
+			"affiliation": "New Zealand eScience Infrastructure"
+		},
+		{
+			"name": "Manodeep Sinha",
+			"affiliation": "Swinburne University of Technology - ASTRO 3D Centre of Excellence"
+		}
+	],
+	"access_right": "open",
+	"related_identifiers": [{
+			"scheme": "url",
+			"identifier": "https://github.com/softwaresaved/international-survey/tree/2018-v1.0",
+			"relation": "isSupplementTo"
+		},
+		{
+			"scheme": "doi",
+			"relation": "isPartOf"
+		}
+	]
 }
