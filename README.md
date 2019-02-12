@@ -112,7 +112,7 @@ Here is a list of contributors for the 2017/2018 version of the survey (alphabet
 * Anelda van der Walt
 * Ben van Werkhoven
 
-## Licence and citations
+## Licence 
 
 This repository contains code and public data. We have different licence for each
 * The code is released under [BSD 3-Clause License](https://github.com/softwaresaved/international-survey/blob/master/LICENSE.md).
@@ -121,6 +121,7 @@ This repository contains code and public data. We have different licence for eac
 The repository is also archived on zenodo: https://doi.org/10.5281/zenodo.1194668.
 If you want to cite this work and need a citation in a specific format, you can use the citation service on the zenodo.
 
+## Citations
 The citation for the 2018 version is:
 [TODO]
 
