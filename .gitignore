@@ -4,6 +4,10 @@
 **/__pycache__/*
 **/logs/*
 
+## Blacklist all csv files
+
+*.csv
+
 venv/*
 notebooks/.ipynb_checkpoints/
 raw_*.csv
