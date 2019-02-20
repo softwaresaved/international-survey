@@ -31,6 +31,8 @@ def get_arguments(argv):
     if country and year:
         # folder_path = os.path.join(year, country)
         return year, country
+    elif int(year) >= 2018:
+        return 2018, None
     else:
         print('Need a country and a year. Please use the following command:\n' +
               '\trun.py -c <country> -y <year>')
