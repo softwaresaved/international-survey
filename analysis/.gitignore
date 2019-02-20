@@ -1,0 +1,18 @@
+# Blacklists all csv files in analysis
+*.csv
+
+# Whitelist only cherry-picked csv files
+
+# 2018 survey
+!/2018/data/public_merged.csv
+!/2018/data/public_data.csv
+
+# 2017 survey
+!/2017/de/data/public_data.csv
+!/2017/nl/data/public_data.csv
+!/2017/uk/data/public_data.csv
+!/2017/us/data/public_data.csv
+!/2017/zaf/data/public_data.csv
+
+# 2016 survey
+!/2016/uk/data/public_data.csv
