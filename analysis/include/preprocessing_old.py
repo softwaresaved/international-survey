@@ -307,7 +307,11 @@ class CleaningData(CleaningConfig):
         """
         columns_to_drop = ['id. Response ID', 'submitdate. Date submitted', 'startdate. Date started',
                            'datestamp. Date last action', 'refurl. Referrer URL', 'ipaddr. IP address']
-        df = df.drop(columns_to_drop, axis=1)
+        for col in columns_to_drop:
+            try:
+                df = df.drop(col, axis=1)
+            except KeyError:
+                print('Cannot remove: {} -- Not present'.format(col))
 
         # Drop the columns about the time for each questions if present (from limesurvey)
         # FIXME See if the regex works or not
@@ -386,10 +390,7 @@ class CleaningData(CleaningConfig):
         for col in df.columns:
             code = get_question_code(col, 0)
             try:
-                print('Add a question to the code: {}'.format(code))
-                print('Add the question: {}'.format(col))
                 input_dict[code].setdefault('survey_q', []).append(col)
-                print('Now the total of questions is: {}'.format(input_dict[code]['survey_q']))
             except KeyError:
                 multiple_code = get_question_code(col, 1)
                 try:
@@ -581,7 +582,6 @@ class CleaningData(CleaningConfig):
         # from limesurvey
         code_to_keep = [x for x in self.survey_structure.keys()]
         for col in self.public_df.columns:
-            print(col)
             remove = True
             for x in code_to_keep:
                 if x in col:
