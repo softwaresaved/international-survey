@@ -445,8 +445,9 @@ class CleaningData(CleaningConfig):
             public_choice = self.survey_structure[entry]['public'].lower()
             if public_choice == 'false' or public_choice == 'n' or public_choice == 'no' or public_choice == 'f':
                 try:
-                    col_to_remove = self.survey_structure[entry]['survey_q'][0]
-                    self.public_df.drop(col_to_remove, axis=1, inplace=True)
+                    for col in self.survey_structure[entry]['survey_q']:
+                        print('Removing: {}'.format(col))
+                        self.public_df.drop(col, axis=1, inplace=True)
                 except KeyError:
                     print('Not finding survey_q in: {}'.format(self.survey_structure[entry]))
         # Delete all the columns created from the 'other field' to be sure none of these are uploaded
