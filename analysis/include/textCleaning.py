@@ -130,6 +130,33 @@ def link_words(txt):
         to_return.append(entry.replace(' ', '_'))
     return to_return
 
+def wordcloud(df, columns):
+    """
+    For compatibility purpose with the 2017 survey only
+    NOT TO USE after
+    """
+    def clean_txt(txt, clean_by_word=False):
+        """
+        Return cleaned text after removing punctuation and stopwords
+        """
+        list_each_entry = ' '.join([str(term) for term in txt if term not in to_remove])
+        if clean_by_word:
+            list_by_word = list()
+            for entry in list_each_entry:
+                for word in entry.split():
+                    list_by_word.append(word)
+            return list_by_word
+        return list_each_entry
+
+    # TODO make a quicker way than that
+    txt = list(itertools.chain.from_iterable(df[columns].values))
+    cleaned_txt = clean_txt(txt)
+    # The width and the height match the comfiguration in generate_notebook for the size
+    # of the plot width=15.0, height=8.0 inch with 100 DPI. be careful not changning these
+    # value without modifying the corresponding value in _setup_matplotlib() in generate_notebook.py
+    all_words = WordCloud(background_color='white', width=1500, height=800).generate(cleaned_txt)
+    print(all_words)
+    return all_words
 
 
 def wrap_clean_text(df, columns, conference=False, skills=False):
