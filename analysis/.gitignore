@@ -1,5 +1,5 @@
 # Blacklists all csv files in analysis
-*.csv
+**/*.csv
 
 # Whitelist only cherry-picked csv files
 
