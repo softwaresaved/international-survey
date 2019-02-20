@@ -19,7 +19,7 @@ def main():
     # load dataset
     cleaning_config = CleaningConfig(year, country)
     df = pd.read_csv(cleaning_config.raw_data)
-    if year < 2018:
+    if int(year) < 2018:
         cleaning_process = CleaningData_old(year, country, df)
     else:
         cleaning_process = CleaningData(year, country, df)
