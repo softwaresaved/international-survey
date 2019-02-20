@@ -168,7 +168,7 @@ def compute_percentage(df, by_row=True, by_col=False):
         return [((x /total) *100) for x in row]
 
     if by_row is True and by_col is False:
-        return np.array(df.apply(compute_perc, axis=1))
+        return [x for x in df.apply(compute_perc, axis=1)]
 
     elif by_col is True and by_row is False:
         return np.array(df.apply(compute_perc, axis=0))
