@@ -369,6 +369,8 @@ def get_percentage(df, filename=None, dropna=True):
             df = df.drop(np.nan, axis=1)
         except ValueError:
             df = df.fillna(0)  # In case of likert, the df is transpose and here replace with 0 to be able to compute percentage
+        except KeyError:
+            pass  # In case no nan
     value = compute_percentage(df, by_row, by_col)
 
     index_df = df.index
