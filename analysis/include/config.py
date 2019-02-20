@@ -44,7 +44,15 @@ class CountingConfig(CleaningConfig):
         super().__init__(year, country)
 
         # Folder where to store the dataframe in a csv format
-        self.folder_df = './{}/{}/output/'.format(self.year, self.country)
+        self.folder_df = './{}/output/'.format(self.country)
+
+        # load the different answers to questions to classify questions based on that
+        self.question_file = './../../survey_creation/{}/{}/questions.csv'.format(self.year, self.country)
+        self.answer_folder = './../../survey_creation/{}/{}/listAnswers'.format(self.year, self.country)
+        # Location for the json file of all questions
+        self.json_to_plot_location = './{}/data/to_plot.json'.format(self.country)
+        self.cleaned_df_location = './{}/data/cleaned_data.csv'.format(self.country)
+        self.public_df_location = './{}/data/public_data.csv'.format(self.country)
 
 
 class PlottingConfig(CountingConfig):
@@ -62,7 +70,7 @@ class NotebookConfig(PlottingConfig):
 
     def __init__(self, year, country):
         super().__init__(year, country)
-        self.notebook_filename = './{}/{}.ipynb'.format(self.year, self.country)
+        self.notebook_filename = './results_{}.ipynb'.format(self.country)
         self.notebook_html = './{}/{}.html'.format(self.year, self.country)
         self.allow_errors = True
         self.to_import = ['import pandas as pd',
@@ -79,5 +87,19 @@ class NotebookConfig(PlottingConfig):
                           'from include.counting import get_count, get_percentage',
                           'from include.plotting import get_plot, display_side_by_side',
                           'from include.likertScalePlot import likert_scale',
-                          'from include.textCleaning import wordcloud']
+                          'from include.textCleaning import wordcloud',
+                          "try:",
+                          '    from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
+                          '    from include.counting import get_count, get_percentage',
+                          '    from include.plotting import get_plot, display_side_by_side',
+                          '    from include.likertScalePlot import likert_scale',
+                          '    from include.textCleaning import wordcloud',
+                          'except ModuleNotFoundError:',
+                          '    sys.path.append("../..")',
+                          '    from include.config import CleaningConfig, PlottingConfig, NotebookConfig',
+                          '    from include.counting import get_count, get_percentage',
+                          '    from include.plotting import get_plot, display_side_by_side',
+                          '    from include.likertScalePlot import likert_scale',
+                          '    from include.textCleaning import wordcloud',
+                         ]
         self.processing_options = {'metadata': {'path': './'}}

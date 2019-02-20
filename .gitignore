@@ -9,8 +9,7 @@
 
 
 ## Blaclist specific files from the project
-to_plot.json
-
+**/to_plot.json
 
 ## Blacklist all backups files
 **/*bak
