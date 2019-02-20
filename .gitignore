@@ -1,5 +1,16 @@
+## Blacklist temp files
 .~*
 .DS_Store
 **/venv/*
 **/__pycache__/*
 **/logs/*
+
+**/.ipynb_checkpoints/
+
+
+## Blaclist specific files from the project
+**/to_plot.json
+
+
+## Blacklist all backups files
+**/*bak
