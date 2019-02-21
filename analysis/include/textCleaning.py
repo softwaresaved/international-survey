@@ -102,8 +102,8 @@ def remove_empty_entry(txt_list):
 
 
 def keep_acronyme(txt):
-<<<<<<< HEAD
     """
+    TODO
     """
     dict_acro = dict()
     for entry in txt:
@@ -113,8 +113,6 @@ def keep_acronyme(txt):
         regex = re.compile(".*?\((.*?)\)")
         test = re.findall(regex, entry)
         print(test)
-
-
             # print(acronyme, rest_of_sentence)
 
         # # if work.isupper():
