@@ -60,9 +60,9 @@
 	"access_right": "open",
 	"related_identifiers": [{
 			"scheme": "url",
-			"identifier": "https://github.com/softwaresaved/international-survey/tree/2018-v1.0",
+			"identifier": "10.5281/zenodo.1194668.",
 			"relation": "isSupplementTo"
-		},
+	},
 		{
 			"scheme": "doi",
 			"relation": "isPartOf"
