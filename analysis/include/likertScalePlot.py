@@ -232,9 +232,9 @@ def drawing_x_labels(ax, normalise, complete_longest, longest_middle):
     ax.set_xticklabels(xlabels)
 
 
-def likert_scale(df, ax=None, normalise=True, labels=True, middle_line=True, legend=True, rotation=0, title_plot=False, rounding=True):
+def likert_scale(df, ax=None, normalise=True, labels=True, middle_line=True, legend=True, rotation=0, title_plot=False, rounding=True, font_size=16):
     """
-    The idea is to create a fake bar on the left to center the bar on the same point.
+    The idea is to create a fake bar on the left to centre the bar on the same point.
     :params:
     :return:
     """
@@ -251,7 +251,7 @@ def likert_scale(df, ax=None, normalise=True, labels=True, middle_line=True, leg
         # fig, ax = plt.subplots()
         if ax is None:
             fig = plt.figure()
-            ax = fig.add_subplot(1,1,1) # make a blank plotting area
+            ax = fig.add_subplot(1, 1, 1)  # make a blank plotting area
 
         # Generate an array of colors based on different colormap. The default value
         # Use a divergent colormap.
@@ -313,7 +313,7 @@ def likert_scale(df, ax=None, normalise=True, labels=True, middle_line=True, leg
 
         # Change the plot title
         if title_plot:
-            plt.suptitle(title_plot)
+            plt.suptitle(title_plot, fontsize=font_size)
         return ax
     except Exception:
         raise
