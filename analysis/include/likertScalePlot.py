@@ -58,7 +58,7 @@ def get_colors(df, colormap=plt.cm.RdBu, vmin=None, vmax=None, axis=1):
         return colormap(norm(range(len(values))))
 
 
-def wrap_labels(label, max_size=30):
+def wrap_label(label, max_size=30, splitter=' '):
     """
     Function to automatically wrap labels if they are too long
     Split only if whitespace
@@ -69,19 +69,19 @@ def wrap_labels(label, max_size=30):
     :return:
         :str() of wrapped labels according to the max size
     """
-    def split_at_whitespace(label):
+    def split_at_whitespace(label, splitter):
         label_to_return = list()
         n = 0
         for letter in label:
             n +=1
             if n >= max_size:
-                if letter == ' ':
+                if letter == splitter:
                     letter = '\n'
                     n = 0
             label_to_return.append(letter)
         return ''.join(label_to_return)
 
-    return split_at_whitespace(label)
+    return split_at_whitespace(label, splitter)
 
 
 def create_bars(df, ax, y_pos, colors, left_gap):
@@ -297,7 +297,7 @@ def likert_scale(df, ax=None, normalise=True, labels=True, middle_line=True, leg
 
         # Setting up the y-axis
         ax.set_yticks(y_pos)
-        ax.set_yticklabels([wrap_labels(labels) for labels in df.index], fontsize=14)
+        ax.set_yticklabels([wrap_label(labels) for labels in df.index], fontsize=14)
 
         # Add labels to each box
         if labels:
