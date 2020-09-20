@@ -65,9 +65,9 @@ Solo los miembros del equipo de investigación y los miembros responsables de la
 ¿Qué datos personales se recopilan y por qué?
 --------------------------------
 
-En algunos países, solicitamos recopilar información sobre género y etnia. Estas preguntas no son obligatorias y esta información no se compartirá. Queremos recopilar esta información para comprender la composición de la comunidad de software de investigación.
+En algunos países, solicitamos recopilar información sobre género y etnia. Estas preguntas no son obligatorias y esta información no se compartirá. Queremos recopilar esta información para comprender la composición de la comunidad que desarolla software de investigación.
 
-También nos gustaría recopilar su cuenta de Github. Nuevamente, esta pregunta no es obligatoria, y la información solo será accesible para los investigadores principales (Olivier Philippe y Simon Hettrick), quienes usarán la información para realizar un análisis adicional sobre cómo los ingenieros / desarrolladores de software de investigación desarrollan su código.
+También nos gustaría pedirle su cuenta de Github. Nuevamente, esta pregunta no es obligatoria, y la información solo será accesible para los investigadores principales (Olivier Philippe y Simon Hettrick), quienes usarán la información para realizar un análisis adicional sobre cómo los ingenieros / desarrolladores de software de investigación desarrollan su código.
 
 La Universidad de Southampton realiza investigaciones con los más altos estándares de integridad en la investigación. Como organización financiada con fondos públicos, la Universidad debe asegurarse de que es de interés público cuando utilizamos información de identificación personal sobre personas que han aceptado participar en la investigación. Esto significa que cuando acepta participar en un estudio de investigación, usaremos su información en las formas necesarias y para los fines especificados para realizar y completar el proyecto de investigación. Según la ley de protección de datos, "datos personales" significa cualquier información que se relacione con una persona viva y pueda identificarla. La política de protección de datos de la Universidad que rige el uso de datos personales por parte de la Universidad se puede encontrar en su [sitio web](https://www.southampton.ac.uk/legalservices/what-we-do/data-protection-and-foi.page).
 
@@ -84,7 +84,7 @@ Nuestro objetivo es almacenar todo el conjunto de datos durante un período de 1
 ¿Quién es responsable de esta encuesta?
 -----------------------------------
 
-Este estudio es realizado por la Universidad de Southampton en nombre del [Software Sustainability Institute](http://software.ac.uk/)(SSI) y cumple con las pautas de ética de la Universidad de Southampton (número de referencia: ERGO / FPSE / 45232). Los investigadores son Simon Hettrick y Olivier Philippe. La encuesta está alojada en los servidores de Limesurvey en Alemania y respeta las disposiciones de la [Ley de protección de datos](https://www.gov.uk/data-protection/the-data-protection-act) y el Reglamento general de protección de datos de la Unión Europea (GDPR).
+Este estudio es realizado por la Universidad de Southampton en nombre del [Software Sustainability Institute](http://software.ac.uk/)(SSI) y cumple con las pautas de ética de la Universidad de Southampton (número de referencia: ERGO / FPSE / 45232). Los investigadores son Simon Hettrick y Olivier Philippe. La encuesta está alojada en los servidores de Limesurvey en Alemania y respeta las disposiciones de la [Ley de protección de datos](https://www.gov.uk/data-protection/the-data-protection-act) y la EU General Data Protection Regulation (GDPR).
 
 ¿Qué pasa si surge algún problema?
 -----------------------------------
