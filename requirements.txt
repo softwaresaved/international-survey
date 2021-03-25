@@ -72,7 +72,7 @@ pyparsing==2.3.0
 pyproj==1.9.6
 python-dateutil==2.7.5
 pytz==2018.9
-PyYAML==3.13
+PyYAML==5.4
 pyzmq==17.1.2
 qtconsole==4.4.3
 requests==2.21.0
