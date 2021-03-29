@@ -66,7 +66,7 @@ prompt-toolkit==1.0.15
 psutil==5.4.8
 ptyprocess==0.6.0
 pycountry==18.12.8
-Pygments==2.3.1
+Pygments==2.7.4
 pynvim==0.3.1
 pyparsing==2.3.0
 pyproj==1.9.6
